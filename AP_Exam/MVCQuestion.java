@@ -1,7 +1,13 @@
 package AP_Exam;
 
+import java.util.Random;
 
 public class MVCQuestion extends Question{
+	public MVCQuestion()
+    {
+    	setupQuestion();
+    }
+	
 	public void setupQuestion() {
 		int random = (int) Math.floor(Math.random()*5);
 		
