@@ -112,7 +112,7 @@ public class AP_UI extends MenuControl {
 		
 		JButton btnPower = new JButton("Power");
 		btnPower.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
-		btnPower.setBounds(456, 133, 109, 51);
+		btnPower.setBounds(456, 171, 109, 51);
 		contentPane.add(btnPower);
 		
 		testQuestion.setEditable(false);
