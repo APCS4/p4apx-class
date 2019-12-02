@@ -145,6 +145,14 @@ public class AP_UI extends MenuControl {
 		});
 		btnMVC.setBounds(446, 92, 138, 29);
 		contentPane.add(btnMVC);
+		
+		JButton btnNewButton = new JButton("DanielAndFox");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnNewButton.setBounds(446, 133, 120, 39);
+		contentPane.add(btnNewButton);
 	
 	}
 }
