@@ -18,7 +18,7 @@ public class CA extends Question{
 			this.answerKey = 'B';
 			break;
 		case 1:
-			this.question = "What does the View part of MVC contain";
+			this.question = "blah does the View part of MVC contain";
 			this.choiceA = "The GUI and Consol	e IO code";
 			this.choiceB = "The Logic for the program";
 			this.choiceC = "A mix of all part of program";
