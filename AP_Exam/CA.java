@@ -18,13 +18,13 @@ public class CA extends Question{
 			this.answerKey = 'B';
 			break;
 		case 1:
-			this.question = "blah does the View part of MVC contain";
-			this.choiceA = "The GUI and Consol	e IO code";
-			this.choiceB = "The Logic for the program";
-			this.choiceC = "A mix of all part of program";
-			this.choiceD = "Data pulled from an outside source";
-			this.choiceE = "A,B,C,D, but not E";
-			this.answerKey = 'A';
+			this.question = "Refer to the following code:\ndouble x = 10 * Math.random() + 3;\nSystem.out.println(x);\n\nWhat is the range of possible outputs?";
+			this.choiceA = "(0,1)";
+			this.choiceB = "[0,1)";
+			this.choiceC = "[3,10)";
+			this.choiceD = "(3,13)";
+			this.choiceE = "[3,13)";
+			this.answerKey = 'E';
 			break;
 		case 2:
 			this.question = "What does the Control part of MVC contain";
