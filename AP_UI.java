@@ -16,6 +16,8 @@ import java.awt.Font;
 import javax.swing.JSeparator;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 
 public class AP_UI extends MenuControl {
 
@@ -27,6 +29,7 @@ public class AP_UI extends MenuControl {
     private JTextArea testQuestion = new JTextArea();
     private JTextArea testChoices = new JTextArea();
     private JTextArea testQuestionAnswer = new JTextArea();
+    private final Action action = new SwingAction();
 	
 	/**
 	 * Create the frame.
@@ -100,8 +103,12 @@ public class AP_UI extends MenuControl {
 		btnConsole.setBackground(Color.LIGHT_GRAY);
 		btnConsole.setBounds(406, 21, 21, 18);
 		contentPane.add(btnConsole);
-		
-		
+
+		JButton btnPower = new JButton("Power");
+		btnPower.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
+		btnPower.setBounds(457, 236, 109, 51);
+		contentPane.add(btnPower);
+
 		
 		testQuestion.setEditable(false);
 		testQuestion.setLineWrap(true);
@@ -158,22 +165,32 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
+
 		btnNewButton.setBounds(456, 184, 120, 39);
 		contentPane.add(btnNewButton);
 
 		JButton btnArraylist = new JButton("ArrayList");
 		btnArraylist.setBounds(446, 130, 138, 29);
 		contentPane.add(btnArraylist);
-
+		
+		JButton btnTeamboba = new JButton("✧･ﾟ: *✧･ﾟ:* Team Boba *:･ﾟ✧*:･ﾟ✧");
+		btnTeamboba.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		btnTeamboba.setAction(action);
+		btnTeamboba.setForeground(Color.RED);
+		btnTeamboba.setBackground(Color.RED);
+		btnTeamboba.setFont(new Font("Papyrus", Font.BOLD, 16));
+		btnTeamboba.setBounds(457, 299, 279, 39);
+		contentPane.add(btnTeamboba);
 
 
 		//JButton btnArraylist = new JButton("ArrayList");
 		//btnArraylist.setBounds(461, 101, 138, 29);
 		//contentPane.add(btnArraylist);
 		
-		////JButton btnTeamboba = new JButton("TeamBoba");
-		//btnTeamboba.setBounds(461, 223, 117, 29);
-		//contentPane.add(btnTeamboba);
 
 	
 		JButton Power = new JButton("Power");
@@ -193,5 +210,13 @@ public class AP_UI extends MenuControl {
 	
 
 	
+	}
+	private class SwingAction extends AbstractAction {
+		public SwingAction() {
+			putValue(NAME, "SwingAction");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+		}
 	}
 }
