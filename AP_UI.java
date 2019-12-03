@@ -105,21 +105,21 @@ public class AP_UI extends MenuControl {
 		
 		testQuestion.setEditable(false);
 		testQuestion.setLineWrap(true);
-		testQuestion.setBounds(16, 62, 418, 171);
+		testQuestion.setBounds(16, 62, 418, 204);
 		contentPane.add(testQuestion);
 	    
 		testChoices.setEditable(false);
 		testChoices.setLineWrap(true);
-		testChoices.setBounds(18, 245, 418, 86);
+		testChoices.setBounds(16, 278, 418, 86);
 		contentPane.add(testChoices);
 		
 		JLabel lblAnswer = new JLabel("Answer");
-		lblAnswer.setBounds(18, 343, 61, 16);
+		lblAnswer.setBounds(18, 376, 61, 16);
 		contentPane.add(lblAnswer);
 		
 		testQuestionAnswer.setEditable(false);
 		testQuestionAnswer.setLineWrap(true);
-		testQuestionAnswer.setBounds(74, 343, 357, 39);
+		testQuestionAnswer.setBounds(74, 376, 357, 39);
 		contentPane.add(testQuestionAnswer);
 		
 		JButton btnLucyandcynthia = new JButton("Code Analysis");
