@@ -168,6 +168,10 @@ public class AP_UI extends MenuControl {
 		JButton btnArraylist = new JButton("ArrayList");
 		btnArraylist.setBounds(446, 130, 138, 29);
 		contentPane.add(btnArraylist);
+		
+		JButton btnTeamboba = new JButton("TeamBoba");
+		btnTeamboba.setBounds(456, 252, 117, 29);
+		contentPane.add(btnTeamboba);
 
 	
 	}
