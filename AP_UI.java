@@ -40,7 +40,7 @@ public class AP_UI extends MenuControl {
 		contentPane.setLayout(null);
 
 		JLabel lblExamSections = new JLabel("Exam Sections");
-		lblExamSections.setBounds(16, 6, 91, 16);
+		lblExamSections.setBounds(41, -7, 91, 16);
 		contentPane.add(lblExamSections);
 		
 		JButton btnMath = new JButton("Math");
@@ -79,19 +79,9 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-
-		/*
-		JButton btnPower = new JButton("Power");
-		btnBinaryMath.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
-		btnBinaryMath.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				AP_Exam.Question q = new AP_Exam.Power();
-				testQuestion.setText(q.getQuestion());
-				testChoices.setText(q.getChoices());
-				testQuestionAnswer.setText(q.getAnswer());
-			}
-		});
-		*/
+		
+		
+		
 		btnBinaryMath.setBounds(107, 21, 61, 29);
 
 		btnBinaryMath.setBounds(144, 21, 101, 29);
@@ -110,10 +100,7 @@ public class AP_UI extends MenuControl {
 		btnConsole.setBounds(406, 21, 21, 18);
 		contentPane.add(btnConsole);
 		
-		JButton btnPower = new JButton("Power");
-		btnPower.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
-		btnPower.setBounds(456, 171, 109, 51);
-		contentPane.add(btnPower);
+		
 		
 		testQuestion.setEditable(false);
 		testQuestion.setLineWrap(true);
@@ -153,12 +140,29 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnMVC.setBounds(446, 92, 138, 29);
+		btnMVC.setBounds(471, 131, 138, 29);
 		contentPane.add(btnMVC);
 		
+		
 		JButton btnArraylist = new JButton("ArrayList");
-		btnArraylist.setBounds(446, 130, 138, 29);
+		btnArraylist.setBounds(461, 101, 138, 29);
 		contentPane.add(btnArraylist);
+	
+		JButton Power = new JButton("Power");
+		Power.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AP_Exam.Question q = new AP_Exam.Power();
+				testQuestion.setText(q.getQuestion());
+				testChoices.setText(q.getChoices());
+				testQuestionAnswer.setText(q.getAnswer());
+			}
+		});
+		Power.setBounds(471, 172, 138, 29);
+		contentPane.add(Power);
+	
+	
+	
+	
 	
 	}
 }
