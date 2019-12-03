@@ -29,7 +29,6 @@ public class AP_UI extends MenuControl {
     private JTextArea testQuestion = new JTextArea();
     private JTextArea testChoices = new JTextArea();
     private JTextArea testQuestionAnswer = new JTextArea();
-    private final Action action = new SwingAction();
 	
 	/**
 	 * Create the frame.
@@ -176,7 +175,6 @@ public class AP_UI extends MenuControl {
 		contentPane.add(btnArraylist);
 		
 		JButton btnTeamboba = new JButton("✧･ﾟ: *✧･ﾟ:* Team Boba *:･ﾟ✧*:･ﾟ✧");
-		btnTeamboba.setAction(action);
 		btnTeamboba.setForeground(Color.RED);
 		btnTeamboba.setBackground(Color.RED);
 		btnTeamboba.setFont(new Font("Papyrus", Font.BOLD, 16));
@@ -216,12 +214,5 @@ public class AP_UI extends MenuControl {
 
 	
 	}
-	private class SwingAction extends AbstractAction {
-		public SwingAction() {
-			putValue(NAME, "SwingAction");
-			putValue(SHORT_DESCRIPTION, "Some short description");
-		}
-		public void actionPerformed(ActionEvent e) {
-		}
+	
 	}
-}
