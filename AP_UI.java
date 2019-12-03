@@ -125,7 +125,10 @@ public class AP_UI extends MenuControl {
 		JButton btnLucyandcynthia = new JButton("LucyandCynthia");
 		btnLucyandcynthia.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				AP_Exam.Question q = new AP_Exam.CA();
+				testQuestion.setText(q.getQuestion());
+				testChoices.setText(q.getChoices());
+				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
 		btnLucyandcynthia.setFont(new Font("Lucida Grande", Font.PLAIN, 22));
@@ -141,7 +144,7 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnMVC.setBounds(461, 128, 138, 29);
+		btnMVC.setBounds(446, 101, 138, 29);
 		contentPane.add(btnMVC);
 		
 
@@ -155,7 +158,7 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnNewButton.setBounds(461, 186, 120, 39);
+		btnNewButton.setBounds(456, 186, 120, 39);
 		contentPane.add(btnNewButton);
 
 		JButton btnArraylist = new JButton("ArrayList");
@@ -182,7 +185,7 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		Power.setBounds(461, 157, 138, 29);
+		Power.setBounds(446, 158, 138, 29);
 		contentPane.add(Power);
 	
 		//alex and mithil code
