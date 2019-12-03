@@ -176,17 +176,20 @@ public class AP_UI extends MenuControl {
 		contentPane.add(btnArraylist);
 		
 		JButton btnTeamboba = new JButton("✧･ﾟ: *✧･ﾟ:* Team Boba *:･ﾟ✧*:･ﾟ✧");
-		btnTeamboba.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
 		btnTeamboba.setAction(action);
 		btnTeamboba.setForeground(Color.RED);
 		btnTeamboba.setBackground(Color.RED);
 		btnTeamboba.setFont(new Font("Papyrus", Font.BOLD, 16));
 		btnTeamboba.setBounds(457, 299, 279, 39);
 		contentPane.add(btnTeamboba);
+		btnTeamboba.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AP_Exam.Question q = new AP_Exam.BobaQuestions();
+				testQuestion.setText(q.getQuestion());
+				testChoices.setText(q.getChoices());
+				testQuestionAnswer.setText(q.getAnswer());
+			}
+		});
 
 
 		//JButton btnArraylist = new JButton("ArrayList");
