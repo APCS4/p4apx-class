@@ -12,10 +12,10 @@ public class ArrayListQuestions extends Question
 		 * question
 		 * answer
 		 * choiceA
-		 * choiceBasd
+		 * choiceB
 		 * choiceC
 		 * choiceD
-		 * choiceEaasdasdasd
+		 * choiceE
 		 */
 		
 		loadMethods();
