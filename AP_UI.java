@@ -44,7 +44,7 @@ public class AP_UI extends MenuControl {
 		contentPane.setLayout(null);
 
 		JLabel lblExamSections = new JLabel("Exam Sections");
-		lblExamSections.setBounds(41, 6, 91, 16);
+		lblExamSections.setBounds(18, 6, 91, 16);
 		contentPane.add(lblExamSections);
 		
 		JButton btnMath = new JButton("Math");
