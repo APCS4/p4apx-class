@@ -112,7 +112,7 @@ public class AP_UI extends MenuControl {
 		
 		JButton btnPower = new JButton("Power");
 		btnPower.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
-		btnPower.setBounds(456, 171, 109, 51);
+		btnPower.setBounds(457, 236, 109, 51);
 		contentPane.add(btnPower);
 		
 		testQuestion.setEditable(false);
@@ -162,15 +162,18 @@ public class AP_UI extends MenuControl {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton.setBounds(446, 133, 120, 39);
+		btnNewButton.setBounds(457, 185, 120, 39);
 		contentPane.add(btnNewButton);
 
 		JButton btnArraylist = new JButton("ArrayList");
 		btnArraylist.setBounds(446, 130, 138, 29);
 		contentPane.add(btnArraylist);
 		
-		JButton btnTeamboba = new JButton("TeamBoba");
-		btnTeamboba.setBounds(456, 252, 117, 29);
+		JButton btnTeamboba = new JButton("✧･ﾟ: *✧･ﾟ:* Team Boba *:･ﾟ✧*:･ﾟ✧");
+		btnTeamboba.setForeground(Color.RED);
+		btnTeamboba.setBackground(Color.RED);
+		btnTeamboba.setFont(new Font("Papyrus", Font.BOLD, 16));
+		btnTeamboba.setBounds(406, 289, 279, 39);
 		contentPane.add(btnTeamboba);
 
 	
