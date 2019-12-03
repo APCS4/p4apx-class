@@ -172,6 +172,14 @@ public class AP_UI extends MenuControl {
 		JButton btnTeamboba = new JButton("TeamBoba");
 		btnTeamboba.setBounds(456, 252, 117, 29);
 		contentPane.add(btnTeamboba);
+		
+		JButton btnAnthonyjude = new JButton("Anthony&Jude");
+		btnAnthonyjude.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnAnthonyjude.setBounds(588, 350, 117, 29);
+		contentPane.add(btnAnthonyjude);
 
 	
 	}
