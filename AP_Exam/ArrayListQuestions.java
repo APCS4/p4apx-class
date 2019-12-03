@@ -14,7 +14,7 @@ public class ArrayListQuestions extends Question
 		 * choiceA
 		 * choiceB
 		 * choiceC
-		 * choiceDqasd
+		 * choiceD
 		 * choiceE
 		 */
 		
