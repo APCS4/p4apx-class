@@ -10,12 +10,12 @@ public class CA extends Question{
 		switch(random){
 		case 0:
 			this.question = "Refer to the following code:\nswitch(ans)\n{\n     case 1:\n          ans = 11;\n          break;\n     case 2:\n          ans = 78;\n          break;\n}\n\nIf ans is 1, what is it after the switch case?";
-			this.choiceA = "Most Valuable Concept";
-			this.choiceB = "Model View Concept";
-			this.choiceC = "Model View Control";
-			this.choiceD = "Model Vision Control";
-			this.choiceE = "None of the Above";
-			this.answerKey = 'C';
+			this.choiceA = "1";
+			this.choiceB = "11";
+			this.choiceC = "78";
+			this.choiceD = "67";
+			this.choiceE = "89";
+			this.answerKey = 'B';
 			break;
 		case 1:
 			this.question = "What does the View part of MVC contain";
