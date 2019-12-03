@@ -38,12 +38,13 @@ public class AP_UI extends MenuControl {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 784, 488);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(220, 220, 220));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		JLabel lblExamSections = new JLabel("Exam Sections");
-		lblExamSections.setBounds(41, -7, 91, 16);
+		lblExamSections.setBounds(41, 6, 91, 16);
 		contentPane.add(lblExamSections);
 		
 		JButton btnMath = new JButton("Math");
@@ -56,7 +57,7 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnMath.setBounds(41, 21, 91, 29);
+		btnMath.setBounds(18, 21, 91, 29);
 		contentPane.add(btnMath);
 		
 		JButton btnDataTypes = new JButton("Data Types");
@@ -69,7 +70,7 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnDataTypes.setBounds(257, 21, 101, 29);
+		btnDataTypes.setBounds(264, 21, 101, 29);
 		contentPane.add(btnDataTypes);
 		
 		JButton btnBinaryMath = new JButton("Binary Math");
@@ -85,7 +86,7 @@ public class AP_UI extends MenuControl {
 		
 		
 		
-		btnBinaryMath.setBounds(107, 21, 61, 29);
+		btnBinaryMath.setBounds(91, 34, 61, 29);
 
 		btnBinaryMath.setBounds(144, 21, 101, 29);
 
@@ -111,27 +112,30 @@ public class AP_UI extends MenuControl {
 		
 		testQuestion.setEditable(false);
 		testQuestion.setLineWrap(true);
-		testQuestion.setBounds(16, 62, 418, 39);
+		testQuestion.setBounds(16, 62, 418, 171);
 		contentPane.add(testQuestion);
 	    
 		testChoices.setEditable(false);
 		testChoices.setLineWrap(true);
-		testChoices.setBounds(16, 113, 418, 86);
+		testChoices.setBounds(18, 245, 418, 86);
 		contentPane.add(testChoices);
 		
 		JLabel lblAnswer = new JLabel("Answer");
-		lblAnswer.setBounds(16, 211, 61, 16);
+		lblAnswer.setBounds(18, 343, 61, 16);
 		contentPane.add(lblAnswer);
 		
 		testQuestionAnswer.setEditable(false);
 		testQuestionAnswer.setLineWrap(true);
-		testQuestionAnswer.setBounds(74, 211, 357, 39);
+		testQuestionAnswer.setBounds(74, 343, 357, 39);
 		contentPane.add(testQuestionAnswer);
 		
 		JButton btnLucyandcynthia = new JButton("LucyandCynthia");
 		btnLucyandcynthia.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				AP_Exam.Question q = new AP_Exam.CA();
+				testQuestion.setText(q.getQuestion());
+				testChoices.setText(q.getChoices());
+				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
 		btnLucyandcynthia.setFont(new Font("Lucida Grande", Font.PLAIN, 22));
@@ -147,7 +151,7 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnMVC.setBounds(461, 128, 138, 29);
+		btnMVC.setBounds(446, 101, 138, 29);
 		contentPane.add(btnMVC);
 		
 
@@ -155,12 +159,12 @@ public class AP_UI extends MenuControl {
 		JButton btnNewButton = new JButton("DanielAndFox");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				AP_Exam.Question q = new AP_Exam.OperatorQuestions();
+				testQuestion.setText(q.getQuestion());
+				testChoices.setText(q.getChoices());
+				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-
-		btnNewButton.setBounds(457, 185, 120, 39);
-		btnNewButton.setBounds(461, 186, 120, 39);
-		contentPane.add(btnNewButton);
 
 		JButton btnArraylist = new JButton("ArrayList");
 		btnArraylist.setBounds(446, 130, 138, 29);
@@ -195,12 +199,13 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		Power.setBounds(461, 157, 138, 29);
+		Power.setBounds(446, 158, 138, 29);
 		contentPane.add(Power);
 	
 		//alex and mithil code
 	
 	
+
 	
 	}
 	private class SwingAction extends AbstractAction {
