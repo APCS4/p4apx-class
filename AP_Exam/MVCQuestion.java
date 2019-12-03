@@ -19,7 +19,7 @@ public class MVCQuestion extends Question{
 			this.choiceC = "Model View Control";
 			this.choiceD = "Model Vision Control";
 			this.choiceE = "None of the Above";
-			this.answerKey = 'C';
+			this.answerKey = this.answerC;
 			break;
 		case 1:
 			this.question = "What does the View part of MVC contain";
