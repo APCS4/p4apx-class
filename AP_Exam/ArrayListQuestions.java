@@ -4,9 +4,9 @@ import java.util.ArrayList.*;
 public class ArrayListQuestions extends Question 
 {
 	
-	public ArrayListQuestions()
+	public ArrayListQuestions() //t
 	{
-		
+		System.out.println("");
 	}
 
 	
