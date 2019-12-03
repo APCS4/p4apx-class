@@ -35,12 +35,13 @@ public class AP_UI extends MenuControl {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 784, 488);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(220, 220, 220));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		JLabel lblExamSections = new JLabel("Exam Sections");
-		lblExamSections.setBounds(41, -7, 91, 16);
+		lblExamSections.setBounds(41, 6, 91, 16);
 		contentPane.add(lblExamSections);
 		
 		JButton btnMath = new JButton("Math");
@@ -53,7 +54,7 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnMath.setBounds(41, 21, 91, 29);
+		btnMath.setBounds(18, 21, 91, 29);
 		contentPane.add(btnMath);
 		
 		JButton btnDataTypes = new JButton("Data Types");
@@ -66,7 +67,7 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnDataTypes.setBounds(257, 21, 101, 29);
+		btnDataTypes.setBounds(231, 21, 101, 29);
 		contentPane.add(btnDataTypes);
 		
 		JButton btnBinaryMath = new JButton("Binary Math");
@@ -82,7 +83,7 @@ public class AP_UI extends MenuControl {
 		
 		
 		
-		btnBinaryMath.setBounds(107, 21, 61, 29);
+		btnBinaryMath.setBounds(100, 21, 61, 29);
 
 		btnBinaryMath.setBounds(144, 21, 101, 29);
 
@@ -104,21 +105,21 @@ public class AP_UI extends MenuControl {
 		
 		testQuestion.setEditable(false);
 		testQuestion.setLineWrap(true);
-		testQuestion.setBounds(16, 62, 418, 39);
+		testQuestion.setBounds(16, 62, 418, 171);
 		contentPane.add(testQuestion);
 	    
 		testChoices.setEditable(false);
 		testChoices.setLineWrap(true);
-		testChoices.setBounds(16, 113, 418, 86);
+		testChoices.setBounds(18, 245, 418, 86);
 		contentPane.add(testChoices);
 		
 		JLabel lblAnswer = new JLabel("Answer");
-		lblAnswer.setBounds(16, 211, 61, 16);
+		lblAnswer.setBounds(18, 343, 61, 16);
 		contentPane.add(lblAnswer);
 		
 		testQuestionAnswer.setEditable(false);
 		testQuestionAnswer.setLineWrap(true);
-		testQuestionAnswer.setBounds(74, 211, 357, 39);
+		testQuestionAnswer.setBounds(74, 343, 357, 39);
 		contentPane.add(testQuestionAnswer);
 		
 		JButton btnLucyandcynthia = new JButton("LucyandCynthia");
