@@ -3,10 +3,10 @@ package AP_Exam;
 import java.util.Random;
 
 /**
- * Write a description of class MathOps here.
+ * Grace Liu and Cynthia Li's boba questions basically math stuff
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Team Boba
+ * @version 6.9
  */
 public class BobaQuestions extends Question
 { 
@@ -44,7 +44,7 @@ public class BobaQuestions extends Question
     public void setupQuestion(int arg1, char operator, int arg2)
     {        
         // format question
-        this.question = String.format("What is (int)" + arg1 + " " + "%s" + " (int)" + arg2, operator );
+        this.question = String.format("What is (int)" + arg1 + " " + "%s" + " (int)" + arg2 + "!!!??" , operator );
         
         // format question choices
         this.choiceA = String.format("%f",(float)arg1/(float)arg2);
