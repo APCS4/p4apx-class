@@ -176,7 +176,10 @@ public class AP_UI extends MenuControl {
 		JButton btnTeamboba = new JButton("✧･ﾟ: *✧･ﾟ:* Team Boba *:･ﾟ✧*:･ﾟ✧");
 		btnTeamboba.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				AP_Exam.Question q = new AP_Exam.BobaQuestions();
+				testQuestion.setText(q.getQuestion());
+				testChoices.setText(q.getChoices());
+				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
 		btnTeamboba.setAction(action);
