@@ -211,17 +211,8 @@ public class AP_UI extends MenuControl {
 		contentPane.add(Power);
 	
 		//alex and mithil code
-	
-	
 
 	
 	}
-	private class SwingAction extends AbstractAction {
-		public SwingAction() {
-			putValue(NAME, "SwingAction");
-			putValue(SHORT_DESCRIPTION, "Some short description");
-		}
-		public void actionPerformed(ActionEvent e) {
-		}
+	
 	}
-}
