@@ -20,8 +20,15 @@ public class Power extends Question{
 			this.choiceE = "Thats done by the user";
 			this.answerKey = 'C';
 			break;
+		case 1:
+			//stuff
+			break;
+		
+		
 		default:
 			System.out.print("elproblem");
+		
+		
 		}
 	}
 	

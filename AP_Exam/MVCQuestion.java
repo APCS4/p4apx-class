@@ -20,6 +20,7 @@ public class MVCQuestion extends Question{
 			this.choiceD = "Model Vision Control";
 			this.choiceE = "None of the Above";
 			this.answerKey = this.answerC;
+			this.answer = "Model View Control, that's the name";
 			break;
 		case 1:
 			this.question = "What does the View part of MVC contain";
@@ -29,6 +30,8 @@ public class MVCQuestion extends Question{
 			this.choiceD = "Data pulled from an outside source";
 			this.choiceE = "A,B,C,D, but not E";
 			this.answerKey = 'A';
+			this.answer = "View conists of what the user actually sees and interacts."
+					+ " Get's input, gives output, no logic";
 			break;
 		case 2:
 			this.question = "What does the Control part of MVC contain";
@@ -38,6 +41,7 @@ public class MVCQuestion extends Question{
 			this.choiceD = "How the program looks and the data it uses";
 			this.choiceE = "The brains of the program; logic code is here";
 			this.answerKey = 'E';
+			this.answer = "Control consists of the logic of the code. It interacts with data and manipulates it.";
 			break;
 		case 3:
 			this.question = "What does the Model part of MVC control.";
@@ -47,6 +51,7 @@ public class MVCQuestion extends Question{
 			this.choiceD = "The efficiency that the program runs at.";
 			this.choiceE = "All of the above.";
 			this.answerKey = 'B';
+			this.answer = "The \"Model\" in MVC refers to the data that the program performs actions on.";
 			break;
 		case 4:
 			this.question = "What is the purpose of MVC?";
@@ -56,6 +61,8 @@ public class MVCQuestion extends Question{
 			this.choiceD = "To make coding more confusing and difficult.";
 			this.choiceE = "A, B, C, but not D";
 			this.answerKey = 'E';
+			this.answer = "The MVC organizational pattern isolates different aspects of code to ensure "
+					+ "that code is purposeful, effective, and easy to modify in the long term.";
 			break;
 		default:
 			System.out.print("ERROR");

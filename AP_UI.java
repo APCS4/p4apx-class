@@ -140,7 +140,7 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnMVC.setBounds(471, 131, 138, 29);
+		btnMVC.setBounds(461, 128, 138, 29);
 		contentPane.add(btnMVC);
 		
 
@@ -150,17 +150,17 @@ public class AP_UI extends MenuControl {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton.setBounds(446, 133, 120, 39);
+		btnNewButton.setBounds(461, 186, 120, 39);
 		contentPane.add(btnNewButton);
 
 
-		JButton btnArraylist = new JButton("ArrayList");
-		btnArraylist.setBounds(461, 101, 138, 29);
-		contentPane.add(btnArraylist);
+		//JButton btnArraylist = new JButton("ArrayList");
+		//btnArraylist.setBounds(461, 101, 138, 29);
+		//contentPane.add(btnArraylist);
 		
-		JButton btnTeamboba = new JButton("TeamBoba");
-		btnTeamboba.setBounds(456, 252, 117, 29);
-		contentPane.add(btnTeamboba);
+		////JButton btnTeamboba = new JButton("TeamBoba");
+		//btnTeamboba.setBounds(461, 223, 117, 29);
+		//contentPane.add(btnTeamboba);
 
 	
 		JButton Power = new JButton("Power");
@@ -172,10 +172,10 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		Power.setBounds(471, 172, 138, 29);
+		Power.setBounds(461, 157, 138, 29);
 		contentPane.add(Power);
 	
-	
+		//alex and mithil code
 	
 	
 	
