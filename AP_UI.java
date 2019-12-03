@@ -67,7 +67,7 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnDataTypes.setBounds(231, 21, 101, 29);
+		btnDataTypes.setBounds(264, 21, 101, 29);
 		contentPane.add(btnDataTypes);
 		
 		JButton btnBinaryMath = new JButton("Binary Math");
@@ -83,7 +83,7 @@ public class AP_UI extends MenuControl {
 		
 		
 		
-		btnBinaryMath.setBounds(100, 21, 61, 29);
+		btnBinaryMath.setBounds(91, 34, 61, 29);
 
 		btnBinaryMath.setBounds(144, 21, 101, 29);
 
