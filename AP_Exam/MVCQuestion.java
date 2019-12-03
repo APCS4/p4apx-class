@@ -47,6 +47,7 @@ public class MVCQuestion extends Question{
 			this.choiceD = "The efficiency that the program runs at.";
 			this.choiceE = "All of the above.";
 			this.answerKey = 'B';
+			this.answer = "The \"Model\" in MVC refers to the data that the program performs actions on.";
 			break;
 		case 4:
 			this.question = "What is the purpose of MVC?";
@@ -56,6 +57,8 @@ public class MVCQuestion extends Question{
 			this.choiceD = "To make coding more confusing and difficult.";
 			this.choiceE = "A, B, C, but not D";
 			this.answerKey = 'E';
+			this.answer = "The MVC organizational pattern isolates different aspects of code to ensure "
+					+ "that code is purposeful, effective, and easy to modify in the long term.";
 			break;
 		default:
 			System.out.print("ERROR");
