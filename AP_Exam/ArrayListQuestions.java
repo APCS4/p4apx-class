@@ -39,18 +39,52 @@ public class ArrayListQuestions extends Question
 		switch (questionNum)
 		{
 		case 0:
+			addMethod();
 			break;
 		case 1:
+			removeMethod();
 			break;
 		case 2:
+			containsMethod();
 			break;
 		case 3:
+			setMethod();
 			break;
 		case 4:
+			cloneMethod();
 			break;
 		default:
 			break;
 		}
+	}
+
+	private void cloneMethod() 
+	{
+		// TODO Auto-generatasdadasded method stub
+		
+	}
+
+	private void setMethod() 
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void containsMethod() 
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void removeMethod() 
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void addMethod() 
+	{
+		
 	}
 }
 
