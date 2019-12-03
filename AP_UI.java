@@ -130,6 +130,8 @@ public class AP_UI extends MenuControl {
 		contentPane.add(testQuestionAnswer);
 		
 		JButton btnLucyandcynthia = new JButton("Code Analysis");
+		btnLucyandcynthia.setForeground(new Color(0, 255, 0));
+		btnLucyandcynthia.setBackground(new Color(255, 20, 147));
 		btnLucyandcynthia.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AP_Exam.Question q = new AP_Exam.CA();
@@ -138,7 +140,7 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnLucyandcynthia.setFont(new Font("Lucida Grande", Font.PLAIN, 22));
+		btnLucyandcynthia.setFont(new Font("Comic Sans MS", Font.BOLD | Font.ITALIC, 22));
 		btnLucyandcynthia.setBounds(451, 50, 188, 39);
 		contentPane.add(btnLucyandcynthia);
 		
