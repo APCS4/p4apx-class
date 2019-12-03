@@ -9,7 +9,7 @@ public class CA extends Question{
 		int random = (int) Math.floor(Math.random()*5);
 		switch(random){
 		case 0:
-			this.question = "Refer to the following code:\nswitch(ans)\n{\n   case 1:\n      ans = 1;\n      break;\n   case 2:\n      ans = 2;\n      break;\n}";
+			this.question = "Refer to the following code:\nswitch(ans)\n{\n     case 1:\n          ans = 1;\n          break;\n     case 2:\n          ans = 2;\n          break;\n}";
 			this.choiceA = "Most Valuable Concept";
 			this.choiceB = "Model View Concept";
 			this.choiceC = "Model View Control";

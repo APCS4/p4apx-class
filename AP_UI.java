@@ -129,7 +129,7 @@ public class AP_UI extends MenuControl {
 		testQuestionAnswer.setBounds(74, 343, 357, 39);
 		contentPane.add(testQuestionAnswer);
 		
-		JButton btnLucyandcynthia = new JButton("LucyandCynthia");
+		JButton btnLucyandcynthia = new JButton("Code Analysis");
 		btnLucyandcynthia.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AP_Exam.Question q = new AP_Exam.CA();
@@ -165,6 +165,9 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
+
+		btnNewButton.setBounds(456, 184, 120, 39);
+		contentPane.add(btnNewButton);
 
 		JButton btnArraylist = new JButton("ArrayList");
 		btnArraylist.setBounds(446, 130, 138, 29);
