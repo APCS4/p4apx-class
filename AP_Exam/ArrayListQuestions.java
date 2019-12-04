@@ -4,17 +4,7 @@ import java.util.ArrayList;
 
 import java.util.Random;
 
-<<<<<<< HEAD
-=======
-public class ArrayListQuestions extends Question
-{
-	public ArrayList<String> methods = new ArrayList<String>(Arrays.asList(list(new String[] {"list.add(\"Ethan\");","list.remove(2);","\"list.contains(\"Ethan\");\"","list.set(2,\"Ethan\");","list.clone()"})));
-	private int questionType;
-	ArrayList<String> answerList = new ArrayList<String>(Arrays.asList(list(new String[] {"Andrei","Edgar","Jared","Ethan"})));
-	private String[] tempAnswers;
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 
-<<<<<<< HEAD
 
 public class ArrayListQuestions extends Question 
 
@@ -28,22 +18,6 @@ public class ArrayListQuestions extends Question
 
 		
 
-=======
-	public ArrayListQuestions() 
-	{
-		/*
-		 * question//
-		 * answer
-		 * choiceA
-		 * choiceB
-		 * choiceC
-		 * choiceD
-		 * choiceE
-		 */
-		
-		questionType = (int) Math.floor(Math.random()*methods.size());
-		setupQuestion();
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 	}
 
 	
@@ -79,7 +53,6 @@ public class ArrayListQuestions extends Question
 		 
 
 	
-<<<<<<< HEAD
 
 		// int correct = random.nextInt(5);
 
@@ -105,15 +78,7 @@ public class ArrayListQuestions extends Question
 
 
 
-=======
-	Random rgen = new Random();
-	   
-	public int[] shuffleNumbers(int amount, int min)
-	{
-	    int[] cards = new int[amount];
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 	
-<<<<<<< HEAD
 
 	 int randnum = random.nextInt(5);
 
@@ -229,28 +194,9 @@ public class ArrayListQuestions extends Question
 
 	}
 
-=======
-	    for (int i=min; i<amount; i++) 
-	    {
-	        cards[i-min] = i;
-	    }
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 	
-<<<<<<< HEAD
 
-=======
-	    for (int i=0; i<cards.length; i++) 
-	    {
-	        int randomPosition = rgen.nextInt(cards.length); 
-	        int temp = cards[i];             
-	        cards[i] = cards[randomPosition];
-	        cards[randomPosition] = temp;
-	    }
-	    return cards;
-	}
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 	
-<<<<<<< HEAD
 
 	
 
@@ -266,19 +212,5 @@ public class ArrayListQuestions extends Question
 
 	
 
-=======
-	int[] order;
-	public String[] list(String[] answers) 
-	{
-	    String[] newList = new String[answers.length];
-	    order = shuffleNumbers(answers.length,0);
-	       
-	    for (int i=0; i<newList.length; i++)
-	    {
-	        newList[i] = answers[order[i]];
-	    }
-	    return newList;
-	}
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 }
 
