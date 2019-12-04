@@ -3,7 +3,7 @@ import java.lang.reflect.Array;
 import java.util.Random;
 
 /**
- * Grace Liu and Cynthia Li's boba questions
+ * Grace Liu and Cynthia Li's boba questions BOBAA
  *
  * @author Team Boba
  * @version 6.9
@@ -68,30 +68,33 @@ public class BobaQuestions extends Question
         this.choiceE = String.format("%f",(here.substring(arg9, arg10)));
         
         // real time calc answer based off args AND operator
-        //int answerCalc;
-        //switch(operator)
-        /*
+        String answerCalc;
+        switch(i)
         {
             case '/':
-                answerCalc = arg1 / arg2;
+                answerCalc = here.substring(arg1, arg2);
                 this.answerKey = this.answerA;
                 break;
             case '+':
-                answerCalc = arg1 + arg2;
+                answerCalc = here.substring(arg3, arg4);
                 this.answerKey = this.answerB;
                 break;
             case '-':
-                answerCalc = arg1 - arg2;
+                answerCalc = here.substring(arg5, arg6);
                 this.answerKey = this.answerC;
                 break;
             case '%':
-                answerCalc = arg1 % arg2;
+                answerCalc = here.substring(arg7, arg8);
                 this.answerKey = this.answerD;
                 break;
+            case '#':
+                answerCalc = here.substring(arg9, arg10);
+                this.answerKey = this.answerD;
+                break;    
             default: // not supported
                 return;
         }
-        */
+       
         
         // format question answer based off of operation calculation
         
