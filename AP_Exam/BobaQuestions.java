@@ -3,7 +3,7 @@ package AP_Exam;
 import java.util.Random;
 
 /**
- * Grace Liu and Cynthia Li's boba questions basically math stuff
+ * Grace Liu and Cynthia Li's boba questions 
  *
  * @author Team Boba
  * @version 6.9
@@ -45,7 +45,8 @@ public class BobaQuestions extends Question
     {   
 		//Make an array
 		String[] sentence = new String[] {"The most common black boba pearls are made of tapioca", "Classic boba drinks are made from milk tea", "Boba can come in many flavors such as taro or mango", "Cool boba places include ICMonster, Sharetea and MeetFresh", "Boba is a drink with origins in Taiwan", "Each boba pearl is around 10-15 calories", "Boba can also be called pearl tea, tapioca tea, and bubble tea", "Boba isn't the healthiest but it's G O D L Y", "A cool substitute for tapioca pearls are popping boba pearls"};
-        // format question
+        
+		// format question
         this.question = String.format("What is (int)" + arg1 + " " + "%s" + " (int)" + arg2 + "!!!??" , operator );
         
         // format question choices
@@ -56,7 +57,7 @@ public class BobaQuestions extends Question
         this.choiceE = "None of the above";
         
         // real time calc answer based off args AND operator
-        int answerCalc;
+        int answerCalc; 
         switch(operator) 
         {
             case '/':

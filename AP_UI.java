@@ -38,7 +38,7 @@ public class AP_UI extends MenuControl {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 784, 488);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(220, 220, 220));
+		contentPane.setBackground(Color.YELLOW);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -175,7 +175,7 @@ public class AP_UI extends MenuControl {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnAnthonyjude.setBounds(588, 350, 117, 29);
+		btnAnthonyjude.setBounds(609, 101, 117, 29);
 		contentPane.add(btnAnthonyjude);
 
 
@@ -207,7 +207,7 @@ public class AP_UI extends MenuControl {
 		btnTeamboba.setForeground(Color.RED);
 		btnTeamboba.setBackground(Color.CYAN);
 		btnTeamboba.setFont(new Font("Papyrus", Font.BOLD, 16));
-		btnTeamboba.setBounds(457, 299, 279, 39);
+		btnTeamboba.setBounds(448, 230, 279, 39);
 		contentPane.add(btnTeamboba);
 		btnTeamboba.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -231,6 +231,10 @@ public class AP_UI extends MenuControl {
 		});
 		btnBackground.setBounds(600, 130, 138, 29);
 		contentPane.add(btnBackground);
+		
+		JButton btnNewButton_1 = new JButton("declarations");
+		btnNewButton_1.setBounds(588, 185, 117, 51);
+		contentPane.add(btnNewButton_1);
 
 
 		
