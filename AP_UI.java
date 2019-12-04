@@ -18,6 +18,12 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
+import javax.swing.JScrollBar;
+import javax.swing.border.SoftBevelBorder;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.TitledBorder;
+import javax.swing.border.MatteBorder;
+import javax.swing.border.EtchedBorder;
 
 public class AP_UI extends MenuControl {
 
@@ -34,16 +40,14 @@ public class AP_UI extends MenuControl {
 	 * Create the frame.
 	 */
 	public AP_UI() {
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 784, 488);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(220, 220, 220));
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBackground(new Color(211, 211, 211));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		JLabel lblExamSections = new JLabel("Exam Sections");
-		lblExamSections.setBounds(18, 0, 91, 16);
+		lblExamSections.setBounds(18, 6, 91, 16);
 		contentPane.add(lblExamSections);
 		
 		JButton btnMath = new JButton("Math");
@@ -56,7 +60,7 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnMath.setBounds(18, 14, 91, 29);
+		btnMath.setBounds(18, 24, 91, 29);
 		contentPane.add(btnMath);
 		
 		JButton btnDataTypes = new JButton("Data Types");
@@ -79,7 +83,7 @@ public class AP_UI extends MenuControl {
 			}
 		});
 
-		Power.setBounds(588, 189, 138, 29);
+		Power.setBounds(446, 281, 138, 29);
 		contentPane.add(Power);
 		
 		
@@ -114,21 +118,21 @@ public class AP_UI extends MenuControl {
 		
 		testQuestion.setEditable(false);
 		testQuestion.setLineWrap(true);
-		testQuestion.setBounds(16, 62, 418, 116);
+		testQuestion.setBounds(18, 55, 418, 177);
 		contentPane.add(testQuestion);
 	    
 		testChoices.setEditable(false);
 		testChoices.setLineWrap(true);
-		testChoices.setBounds(18, 190, 418, 129);
+		testChoices.setBounds(18, 244, 418, 98);
 		contentPane.add(testChoices);
 		
 		JLabel lblAnswer = new JLabel("Answer");
-		lblAnswer.setBounds(18, 331, 61, 16);
+		lblAnswer.setBounds(18, 354, 61, 16);
 		contentPane.add(lblAnswer);
 		
 		testQuestionAnswer.setEditable(false);
 		testQuestionAnswer.setLineWrap(true);
-		testQuestionAnswer.setBounds(77, 331, 357, 72);
+		testQuestionAnswer.setBounds(79, 354, 357, 72);
 		contentPane.add(testQuestionAnswer);
 		
 		JButton btnLucyandcynthia = new JButton("Code Analysis");
@@ -169,7 +173,7 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnNewButton.setBounds(461, 186, 120, 39);
+		btnNewButton.setBounds(448, 171, 120, 39);
 		contentPane.add(btnNewButton);
 
 		
@@ -178,7 +182,7 @@ public class AP_UI extends MenuControl {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnAnthonyjude.setBounds(588, 350, 117, 29);
+		btnAnthonyjude.setBounds(596, 101, 117, 29);
 		contentPane.add(btnAnthonyjude);
 
 
@@ -209,8 +213,8 @@ public class AP_UI extends MenuControl {
 		JButton btnTeamboba = new JButton("✧･ﾟ: *✧･ﾟ:* Team Boba *:･ﾟ✧*:･ﾟ✧");
 		btnTeamboba.setForeground(Color.RED);
 		btnTeamboba.setBackground(Color.CYAN);
-		btnTeamboba.setFont(new Font("Papyrus", Font.BOLD, 16));
-		btnTeamboba.setBounds(457, 299, 279, 39);
+		btnTeamboba.setFont(new Font("Snell Roundhand", Font.BOLD, 16));
+		btnTeamboba.setBounds(448, 230, 279, 39);
 		contentPane.add(btnTeamboba);
 		btnTeamboba.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -232,8 +236,12 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnBackground.setBounds(600, 130, 138, 29);
+		btnBackground.setBounds(596, 130, 138, 29);
 		contentPane.add(btnBackground);
+		
+		JButton btnNewButton_1 = new JButton("declarations");
+		btnNewButton_1.setBounds(596, 165, 117, 51);
+		contentPane.add(btnNewButton_1);
 
 
 		
