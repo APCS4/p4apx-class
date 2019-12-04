@@ -19,6 +19,11 @@ public class MVCQuestion extends Question{
 			
 			choices = loadQuestArray("Most Valuable Concept","Model View Concept", "Model View Control", 
 					"Model Vision Control", "None of the Above");
+			this.choiceA = choices[0];
+			this.choiceB = choices[1];
+			this.choiceC = choices[2];
+			this.choiceD = choices[3];
+			this.choiceE = choices[4];
 			
 			this.answerKey = getAns(choices, "Model View Control");
 			this.answer = "Model View Control, that's the name";
@@ -28,6 +33,11 @@ public class MVCQuestion extends Question{
 			
 			choices = loadQuestArray("The GUI and Console IO code","The Logic for the program", "A mix of all part of program", 
 					"Data pulled from an outside source", "A,B,C,D, but not E");
+			this.choiceA = choices[0];
+			this.choiceB = choices[1];
+			this.choiceC = choices[2];
+			this.choiceD = choices[3];
+			this.choiceE = choices[4];
 			
 			this.answerKey = getAns(choices, "The GUI and Console IO code");
 			this.answer = "View conists of what the user actually sees and interacts."
@@ -38,6 +48,11 @@ public class MVCQuestion extends Question{
 			
 			choices = loadQuestArray("All of the above","There is no control is MVC", "How the program looks but not the data", 
 					"How the program looks and the data it uses", "The brains of the program; logic code is here");
+			this.choiceA = choices[0];
+			this.choiceB = choices[1];
+			this.choiceC = choices[2];
+			this.choiceD = choices[3];
+			this.choiceE = choices[4];
 			
 			this.answerKey = getAns(choices, "The brains of the program; logic code is here");
 			this.answer = "Control consists of the logic of the code. It interacts with data and manipulates it.";
