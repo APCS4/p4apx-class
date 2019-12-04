@@ -176,7 +176,7 @@ public class AP_UI extends MenuControl {
 		
 		JButton btnTeamboba = new JButton("✧･ﾟ: *✧･ﾟ:* Team Boba *:･ﾟ✧*:･ﾟ✧");
 		btnTeamboba.setForeground(Color.RED);
-		btnTeamboba.setBackground(Color.RED);
+		btnTeamboba.setBackground(Color.CYAN);
 		btnTeamboba.setFont(new Font("Papyrus", Font.BOLD, 16));
 		btnTeamboba.setBounds(457, 299, 279, 39);
 		contentPane.add(btnTeamboba);
