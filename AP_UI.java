@@ -158,15 +158,8 @@ public class AP_UI extends MenuControl {
 		btnNewButton.setBounds(461, 186, 120, 39);
 		contentPane.add(btnNewButton);
 
-		JButton btnArraylist = new JButton("ArrayList");
-		btnArraylist.setBounds(446, 130, 138, 29);
-		contentPane.add(btnArraylist);
 		
-		JButton btnTeamboba = new JButton("TeamBoba");
-		btnTeamboba.setBounds(456, 252, 117, 29);
-		contentPane.add(btnTeamboba);
-		
-		JButton btnAnthonyjude = new JButton("Anthony&Jude");
+		JButton btnAnthonyjude = new JButton("BooleanQuestions");
 		btnAnthonyjude.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -188,7 +181,7 @@ public class AP_UI extends MenuControl {
 		Power.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AP_Exam.Question q = new AP_Exam.Power();
-				AP_Exam.Question q = new AP_Exam.OperatorQuestions();
+				AP_Exam.Question qe = new AP_Exam.OperatorQuestions();
 				testQuestion.setText(q.getQuestion());
 				testChoices.setText(q.getChoices());
 				testQuestionAnswer.setText(q.getAnswer());
