@@ -3,7 +3,7 @@ package AP_Exam;
 import java.util.Random;
 
 /**
- * Grace Liu and Cynthia Li's boba questions basically math stuff
+ * Grace Liu and Cynthia Li's boba questions 
  *
  * @author Team Boba
  * @version 6.9
