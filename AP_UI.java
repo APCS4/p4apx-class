@@ -232,10 +232,13 @@ public class AP_UI extends MenuControl {
 		});
 		btnBackground.setBounds(600, 130, 138, 29);
 		contentPane.add(btnBackground);
+		
+		JButton btnNewButton_1 = new JButton("declarations");
+		btnNewButton_1.setBounds(588, 185, 117, 51);
+		contentPane.add(btnNewButton_1);
 
 		//JButton btnArraylist = new JButton("ArrayList");
 		//btnArraylist.setBounds(461, 101, 138, 29);
 		//contentPane.add(btnArraylist);
 	}
-	
 }
