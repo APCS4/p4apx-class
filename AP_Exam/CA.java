@@ -15,7 +15,8 @@ public class CA extends Question{
 			this.choiceC = "78";
 			this.choiceD = "67";
 			this.choiceE = "89";
-			this.answerKey = 'B';
+			this.answerKey = this.answerB;
+			this.answer = "11";
 			break;
 		case 1:
 			this.question = "Refer to the following code:\ndouble x = 10 * Math.random() + 3;\nSystem.out.println(x);\n\nWhat is the range of possible outputs?";
@@ -24,7 +25,8 @@ public class CA extends Question{
 			this.choiceC = "[3,10)";
 			this.choiceD = "(3,13)";
 			this.choiceE = "[3,13)";
-			this.answerKey = 'E';
+			this.answerKey = this.answerE;
+			this.answer = "[3,13)";
 			break;
 		case 2:
 			this.question = "int[][]  A  =  {{1,0,3},{7,-3,6},{2,-9,-1}};\nWhat int is in the 2nd row, 3rd column?";
@@ -33,7 +35,8 @@ public class CA extends Question{
 			this.choiceC = "-3";
 			this.choiceD = "7";
 			this.choiceE = "325";
-			this.answerKey = 'A';
+			this.answerKey = this.answerA;
+			this.answer = "6";
 			break;
 		case 3:
 			this.question = "int[][]  A  =  {{1,0,3}, {7,-3,6}, {2,-9,-1}};\nWhat int is in the 3rd row, 1st column?";
@@ -42,7 +45,8 @@ public class CA extends Question{
 			this.choiceC = "3";
 			this.choiceD = "6";
 			this.choiceE = "0";
-			this.answerKey = 'B';
+			this.answerKey = this.answerB;
+			this.answer = "2";
 			break;
 		case 4:
 			this.question = "What is the code to write a matrix of the form: \n3    4    8    9 \n6  -1    4  10 ?";
@@ -51,7 +55,8 @@ public class CA extends Question{
 			this.choiceC = "int[][]  C  =  {{6,-1,4,10},{3,4,8,9}};";
 			this.choiceD = "int[][]  D  =  {{3,4,8,9\\n6,-1,4,10}};";
 			this.choiceE = "None of the above";
-			this.answerKey = 'A';
+			this.answerKey = this.answerA;
+			this.answer = "int[][]  A  =  {{3,4,8,9},{6,-1,4,10}};";
 			break;
 		case 5:
 			this.question = "double x = 3.87;\nint y = (int)(x - 0.5);\nSystem.out.println(y);\n\nWhat will be printed?";
@@ -60,7 +65,8 @@ public class CA extends Question{
 			this.choiceC = "4";
 			this.choiceD = "The code will result in an error";
 			this.choiceE = "None of the above";
-			this.answerKey = 'D';
+			this.answerKey = this.answerD;
+			this.answer = "The code will result in an error";
 			break;
 		case 6:
 			this.question = "double x = -11.96;\nint y = (int)(x - 0.5);\nSystem.out.println(y);\n\nWhat will be printed?";
@@ -69,10 +75,12 @@ public class CA extends Question{
 			this.choiceC = "-11.9";
 			this.choiceD = "-11.96";
 			this.choiceE = "-12.0";
-			this.answerKey = 'B';
+			this.answerKey = this.answerB;
+			this.answer = "-12";
 			break;
 		default:
 			System.out.print("ERROR");
 		}
 	}
+	// bruh
 }
