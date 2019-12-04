@@ -80,7 +80,7 @@ public class AP_UI extends MenuControl {
 			}
 		});
 
-		Power.setBounds(588, 189, 138, 29);
+		Power.setBounds(446, 281, 138, 29);
 		contentPane.add(Power);
 		
 		
@@ -166,7 +166,7 @@ public class AP_UI extends MenuControl {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton.setBounds(461, 186, 120, 39);
+		btnNewButton.setBounds(448, 171, 120, 39);
 		contentPane.add(btnNewButton);
 
 		
@@ -175,7 +175,7 @@ public class AP_UI extends MenuControl {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnAnthonyjude.setBounds(609, 101, 117, 29);
+		btnAnthonyjude.setBounds(596, 101, 117, 29);
 		contentPane.add(btnAnthonyjude);
 
 
@@ -200,7 +200,7 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnArraylist.setBounds(448, 130, 138, 29);
+		btnArraylist.setBounds(446, 130, 138, 29);
 		contentPane.add(btnArraylist);
 	
 		JButton btnTeamboba = new JButton("✧･ﾟ: *✧･ﾟ:* Team Boba *:･ﾟ✧*:･ﾟ✧");
@@ -229,11 +229,11 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnBackground.setBounds(600, 130, 138, 29);
+		btnBackground.setBounds(596, 130, 138, 29);
 		contentPane.add(btnBackground);
 		
 		JButton btnNewButton_1 = new JButton("declarations");
-		btnNewButton_1.setBounds(588, 185, 117, 51);
+		btnNewButton_1.setBounds(596, 165, 117, 51);
 		contentPane.add(btnNewButton_1);
 
 
