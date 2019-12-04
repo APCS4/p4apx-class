@@ -28,6 +28,7 @@ public class BooleanQuestions extends Question
 			this.answer = "Choice D is correct. % is not a boolean operator";
 			break;
 		case 1:
+<<<<<<< HEAD
 			this.question = "What is the output of the following code?\n"
 						  + "if(3 < 5)\n"
 						  + "{\n"
@@ -37,6 +38,9 @@ public class BooleanQuestions extends Question
 			this.choiceB = "false";
 			this.choiceC = "The code does not execute";
 			numChoices = 3;
+=======
+			this.question = ""; 
+>>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 		}
 	}
 }
