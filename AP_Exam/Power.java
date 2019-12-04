@@ -8,7 +8,7 @@ public class Power extends Question{
     }
 	
 	public void setupQuestion() {
-		int rando = (int) Math.floor(Math.random()*2);
+		int rando = (int) Math.floor(Math.random()*1);
 		int zero =2;
 		switch(rando){
 		case 0:
@@ -33,10 +33,34 @@ public class Power extends Question{
 			
 		case 2:
 			
-			//this.question = ""
+			this.question = "Which of the following is most closely associated with iterations?"
+			this.choiceA = "loops such as for loops";
+			this.choiceB = "Recursion";
+			this.choiceC = "Instance Initialization Blocks";
+			this.choiceD = "Public Static Void";
+			this.choiceE = "if else statements";
+			this.answerKey = 'A';
 			break;
 		case 3:
-			//new
+		
+			this.question = "Which of the following is most closely associated with iterations?";
+			this.choiceA = "loops such as for loops";
+			this.choiceB = "Recursion";
+			this.choiceC = "Instance Initialization Blocks";
+			this.choiceD = "Public Static Void";
+			this.choiceE = "if else statements";
+			this.answerKey = 'A';
+			break;
+		case 4:
+		
+			this.question = "Consider the following code segment:\n for (int k = 1; k <= 100; k++)\n' + 'if ((k % 4) == 0)\n' + 'System.out.println(k);'";
+				
+			this.choiceA = "for(intk=1;k<=25;k++)\n' + 'System.out.println(k);'";
+			this.choiceB = "Recursion";
+			this.choiceC = "Instance Initialization Blocks";
+			this.choiceD = "Public Static Void";
+			this.choiceE = "if else statements";
+			this.answerKey = 'A';
 			break;
 		
 		default:
