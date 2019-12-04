@@ -6,7 +6,7 @@ public class CA extends Question{
     	setupQuestion();
     }
 	public void setupQuestion() {
-		int random = (int) Math.floor(Math.random()*6);
+		int random = (int) Math.floor(Math.random()*9);
 		switch(random){
 		case 0:
 			this.question = "Refer to the following code:\nswitch(ans)\n{\n     case 1:\n          ans = 11;\n          break;\n     case 2:\n          ans = 78;\n          break;\n}\n\nIf ans is 1, what is it after the switch case?";
@@ -63,6 +63,65 @@ public class CA extends Question{
 			this.choiceA = "3.87";
 			this.choiceB = "3";
 			this.choiceC = "4";
+			this.choiceD = "The code will result in an error";
+			this.choiceE = "None of the above";
+			this.answerKey = this.answerD;
+			this.answer = "The code will result in an error";
+			break;
+		case 6:
+			this.question = "double x = -11.96;\nint y = (int)(x - 0.5);\nSystem.out.println(y);\n\nWhat will be printed?";
+			this.choiceA = "-11";
+			this.choiceB = "-12";
+			this.choiceC = "-11.9";
+			this.choiceD = "-11.96";
+			this.choiceE = "-12.0";
+			this.answerKey = this.answerB;
+			this.answer = "-12";
+			break;
+		case 7:
+			this.question = "Refer to the code below:\n" +
+					"public static void main(String[] args)\n" +
+					"    {\n" +
+					"        int num = 4;\n" +
+					"        System.out.println(abc(4));\n" +
+					"    }\n" +
+					"static int abc(int n)\n" +
+					"    {\n" +
+					"        if (n == 0)\n" +
+					"          return 1;\n" +
+					"        return n*abc(n-1);\n" +
+					"    }\n\nWhat is printed?";
+			this.choiceA = "60";
+			this.choiceB = "0";
+			this.choiceC = "24";
+			this.choiceD = "12";
+			this.choiceE = "120";
+			this.answerKey = this.answerC;
+			this.answer = "24";
+			break;
+		case 8:
+			this.question = "Refer to the code below:\nint[][]  A  =  {{1,0,12},{ 7, -3, 2}};\n" +
+					"int x, y;\n" +
+					"for (x = 0; x <= 2; x++)\n" +
+					"{\n" +
+					"     for (y = 0; y <= 1; y++)\n" +
+					"     {\n" +
+					"            System.out.print(\" \"+A[y][x]);\n" +
+					"     }\n" +
+					"System.out.println(\"\");\n\nWhat will be printed?";
+			this.choiceA = "1 7\n    0 3\n    12 2";
+			this.choiceB = "1 0 12 7 -3 2";
+			this.choiceC = "1 0 12\n    7 -3 2";
+			this.choiceD = "0 2 11 8 6 7";
+			this.choiceE = "None of the above";
+			this.answerKey = this.answerA;
+			this.answer = "1 7\n    0 3\n    12 2";
+			break;
+		default:
+			System.out.print("ERROR");
+		}
+	}
+}C = "4";
 			this.choiceD = "The code will result in an error";
 			this.choiceE = "None of the above";
 			this.answerKey = this.answerD;
