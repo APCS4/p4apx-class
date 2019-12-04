@@ -27,13 +27,13 @@ public class CA extends Question{
 			this.answerKey = 'E';
 			break;
 		case 2:
-			this.question = "bl;eh";
-			this.choiceA = "All of the above";
-			this.choiceB = "There is no control is MVC";
-			this.choiceC = "How the program looks but not the data";
-			this.choiceD = "How the program looks and the data it uses";
-			this.choiceE = "The brains of the program; logic code is here";
-			this.answerKey = 'E';
+			this.question = "int[][]  A  =  {{1,0,3},{7,-3,6},{2,-9,-1}};\nWhat int is in the 2nd row, 3rd column?";
+			this.choiceA = "6";
+			this.choiceB = "-9";
+			this.choiceC = "-3";
+			this.choiceD = "7";
+			this.choiceE = "325";
+			this.answerKey = 'A';
 			break;
 		case 3:
 			this.question = "What does the Model part of MVC control.";
