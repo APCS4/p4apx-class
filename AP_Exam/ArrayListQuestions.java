@@ -5,13 +5,15 @@ import java.util.Random;
 
 public class ArrayListQuestions extends Question
 {
-	public ArrayList<String> methods = new ArrayList<String>();
-	public ArrayList<String> names = new ArrayList<String>(Arrays.asList(list(new String[] {"",""})));
+	private ArrayList<String> methods = new ArrayList<String>(Arrays.asList(new String[] {"list.add(\"Ethan\");","list.remove(2);","\"list.contains(\"Ethan\");\"","list.set(2,\"Ethan\");","list.get(1)"}));
+	private ArrayList<String> names = new ArrayList<String>(Arrays.asList(list(new String[] {"Andrei","Edgar","Jared","Ethan"})));
 	private int questionType;
-	private String[] tempAnswers;
+	private String[] tempAnswers = new String[5];
+	private String[] shuffledAnswers;
+	private int answer;
 
-	public ArrayListQuestions() 
-	{		
+	public ArrayListQuestions()
+	{
 		questionType = (int) Math.floor(Math.random()*methods.size());
 		setupQuestion();
 	}
@@ -19,104 +21,66 @@ public class ArrayListQuestions extends Question
 	public void setupQuestion()
 	{
 		this.question = "What does " + methods.get(questionType) + " do to list " + names.toString();
+		generateAnswers();
+	}
+	
+	private void generateAnswers()
+	{
+		ArrayList<String> answer1 = names;
+		answer1.add("Ethan");
+		tempAnswers[0] = answer1.toString();
 		
-		ArrayList<String> answerList = new ArrayList<String>(Arrays.asList(new String[] {"bruh","bruh","bruh"}));
+		ArrayList<String> answer2 = names;
+		answer2.remove("Ethan");
+		tempAnswers[1] = answer2.toString();
+
+		tempAnswers[2] = Boolean.toString(names.contains("Ethan"));
 		
-		ArrayList<String> answerA = answerList;
-		answerA.add("Ethan");
-		tempAnswers[0] = answerA.toString();
+		ArrayList<String> answer4 = names;
+		answer4.set(2,"Ethan");
+		tempAnswers[3] = answer4.toString();
+
+		tempAnswers[4] = names.get(1);
 		
-		ArrayList<String> answerB = answerList;
-		answerB.remove(2);
-		tempAnswers[1] = answerB.toString();
+		shuffledAnswers = list(tempAnswers);
 		
-		ArrayList<String> answerC = answerList;
-		answerC.contains("Ethan");
-		tempAnswers[1] = answerC.toString();
-		
-		
-		switch (questionType)
+		for(int i = 0; i<shuffledAnswers.length;i++)
 		{
-		case 0:
-			addMethod();
-			break;
-		case 1:
-			removeMethod();
-			break;
-		case 2:
-			containsMethod();
-			break;
-		case 3:
-			setMethod();
-			break;
-		case 4:
-			cloneMethod();
-			break;
-		default:
-			break;
+			if (questionType == order[i]) answer = i;
 		}
 	}
 
-	private void cloneMethod() 
-	{
-		// TODO Auto-generatasdadasded method stub
-		
-	}
-
-	private void setMethod() 
-	{
-		// TODO Auto-generated method stub
-		
-	}
-
-	private void containsMethod() 
-	{
-		// TODO Auto-generated method stub
-		
-	}
-
-	private void removeMethod() 
-	{
-		// TODO Auto-generated method stub
-		
-	}
-
-	private void addMethod() 
-	{
-		this.question = "What does " + methods.get(questionType) + " do to list " + names.toString();		
-	}
-	
 	Random rgen = new Random();
 	   
-	   public int[] shuffleNumbers(int amount, int min)
-	   {
-	       int[] cards = new int[amount];
+	public int[] shuffleNumbers(int amount, int min)
+	{
+	    int[] cards = new int[amount];
 	
-	       for (int i=min; i<amount; i++) 
-	       {
-	           cards[i-min] = i;
-	       }
+	    for (int i=min; i<amount; i++) 
+	    {
+	        cards[i-min] = i;
+	    }
 	
-	       for (int i=0; i<cards.length; i++) 
-	       {
-	           int randomPosition = rgen.nextInt(cards.length); 
-	           int temp = cards[i];             
-	           cards[i] = cards[randomPosition];
-	           cards[randomPosition] = temp;
-	       }
-	       return cards;
-	   }
+	    for (int i=0; i<cards.length; i++) 
+	    {
+	        int randomPosition = rgen.nextInt(cards.length); 
+	        int temp = cards[i];             
+	        cards[i] = cards[randomPosition];
+	        cards[randomPosition] = temp;
+	    }
+	    return cards;
+	}
 	
-	   int[] order;
-	   public String[] list(String[] answers) 
-	   {
-	       String[] newList = new String[answers.length];
-	       order = shuffleNumbers(answers.length,0);
+	int[] order;
+	public String[] list(String[] answers) 
+	{
+	    String[] newList = new String[answers.length];
+	    order = shuffleNumbers(answers.length,0);
 	       
-	       for (int i=0; i<newList.length; i++)
-	       {
-	           newList[i] = answers[order[i]];
-	       }
-	       return newList;
-	   }
+	    for (int i=0; i<newList.length; i++)
+	    {
+	        newList[i] = answers[order[i]];
+	    }
+	    return newList;
+	}
 }
