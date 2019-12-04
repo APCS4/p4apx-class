@@ -96,13 +96,3 @@ public class BobaQuestions extends Question
     }
     
 }
-
-//The most common black boba pearls are made of tapioca
-//Classic boba drinks are made from milk tea
-//Boba can come in many flavors such as taro or mango
-//Cool boba places include ICMonster, Sharetea and MeetFresh
-//Boba is a drink with origins in Taiwan
-//Each boba pearl is around 10-15 calories
-//Boba can also be called pearl tea, tapioca tea, and bubble tea
-//Boba isn't the healthiest but it's G O D L Y
-//A cool substitute for tapioca pearls are popping boba pearls
