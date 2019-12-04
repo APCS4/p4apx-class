@@ -12,176 +12,104 @@ public class ListQuestions2 extends Question
 
 		
 
-		Random random = new Random(); 
+		Random rand = new Random(); 
 
-		int num1=getRandNum();
-
-		int num2=getRandNum();
-
-		int num3=getRandNum();
-
-		int num4=getRandNum();
-
-		int num5 = getRandNum(); 
-		
-		int num6 = getRandNum();
+		//getting random numbers to fill array
+		int num1=getRandNum(), num2=getRandNum(), num3=getRandNum(), num4=getRandNum(), num5 = getRandNum(), num6 = getRandNum();
 		
 
 		this.question = String.format("What is the output of the following code segment:\nlist.add(" +num1
 
 				+ ");\nlist.add(" +num2
+				+ ");\nlist.add(" +num3
+				+ ");\nlist.add(" +num4
+				+ ");\nlist.add(" +num5
+				+ ");\nlist.add(" +num6
+				+ ");\n list.remove(1); \nlist.set(1, "+ num6+");");
+		
+		
 
-				+ ");\n list.remove(1); \nlist.add("+ num3
-				
-				+ ");\n list.add(" + num5
-				
-				+ ");\n list.add(" + num6
+		//create correct array
+		//if num 1=1, num2=2, num3=3, etc... this algo will will create an array like [1,6,4,5,6] 
+		ArrayList<Integer> correct = new ArrayList<Integer>();
+		correct.add(num1);
+		correct.add(num2);
+		correct.add(num3);
+		correct.add(num4);
+		correct.add(num5);
+		correct.add(num6);
+		correct.remove(1); 
+		correct.set(1, num6); 
 
-				+"\n list.set(2,"+num4+");");
+		//create wrong arrays
+		ArrayList<Integer> wrong1 = new ArrayList<Integer>();
 
-		 
+		ArrayList<Integer> wrong2 = new ArrayList<Integer>();
 
-		 
+		ArrayList<Integer> wrong3 = new ArrayList<Integer>();
 
-	
-
-		// int correct = random.nextInt(5);
-
-		ArrayList<Integer> choice1 = new ArrayList<Integer>();
-
-		choice1.add(num1);
-
-		choice1.add(num2);
-
-		choice1.remove(1); 
-
-		choice1.add(num3); 
-
-		choice1.set(2, num4); 
-
-		ArrayList<Integer> choice2 = new ArrayList<Integer>();
-
-		ArrayList<Integer> choice3 = new ArrayList<Integer>();
-
-		ArrayList<Integer> choice4 = new ArrayList<Integer>();
-
-		ArrayList<Integer> choice5 = new ArrayList<Integer>();
+		ArrayList<Integer> wrong4 = new ArrayList<Integer>();
 
 
 
 	
 
-	 int randnum = random.nextInt(5);
+	//generates a random number between 0-4 to determine where the correct answer will be (Letter A, B, C, or D)
+	int random = rand.nextInt(5);
 
-	 switch (randnum)
+	 switch (random)
 
 	 {
 
-	 	case 0:
-
-	 		this.choiceA = String.format(String.valueOf(choice1));
-
-	 		this.choiceB = String.format(String.valueOf(choice2));
-
-	 		this.choiceC = String.format(String.valueOf(choice3));
-
-	 		this.choiceD = String.format(String.valueOf(choice4));
-
-	 		this.choiceE = String.format(String.valueOf(choice5));
-
-	 		
-
-
-
+	 	case 0: //correct at letter a
+	 		this.choiceA = String.format(String.valueOf(correct));
+	 		this.choiceB = String.format(String.valueOf(wrong1));
+	 		this.choiceC = String.format(String.valueOf(wrong2));
+	 		this.choiceD = String.format(String.valueOf(wrong3));
+	 		this.choiceE = String.format(String.valueOf(wrong4));
 	 		break;
 
-	 	case 1:
-
-	 		this.choiceA = String.format(String.valueOf(choice2));
-
-	 		this.choiceB = String.format(String.valueOf(choice3));
-
-	 		this.choiceC = String.format(String.valueOf(choice4));
-
-	 		this.choiceD = String.format(String.valueOf(choice5));
-
-	 		this.choiceE = String.format(String.valueOf(choice1));
-
-
-
-
-
+	 	case 1: //correct at letter b
+	 		this.choiceA = String.format(String.valueOf(wrong1));
+	 		this.choiceB = String.format(String.valueOf(correct));
+	 		this.choiceC = String.format(String.valueOf(wrong2));
+	 		this.choiceD = String.format(String.valueOf(wrong3));
+	 		this.choiceE = String.format(String.valueOf(wrong4));
 	 		break;
 
-	 	case 2:
-
-	 		this.choiceA = String.format(String.valueOf(choice3));
-
-	 		this.choiceB = String.format(String.valueOf(choice2));
-
-	 		this.choiceC = String.format(String.valueOf(choice3));
-
-	 		this.choiceD = String.format(String.valueOf(choice4));
-
-	 		this.choiceE = String.format(String.valueOf(choice5));
-
-
-
+	 	case 2: //correct at letter c
+	 		this.choiceA = String.format(String.valueOf(wrong1));
+	 		this.choiceB = String.format(String.valueOf(wrong2));
+	 		this.choiceC = String.format(String.valueOf(correct));
+	 		this.choiceD = String.format(String.valueOf(wrong3));
+	 		this.choiceE = String.format(String.valueOf(wrong4));
 	 		break;
 
-	 	case 3:
+	 	case 3: //correct at letter d
 
-	 		this.choiceA = String.format(String.valueOf(choice4));
-
-	 		this.choiceB = String.format(String.valueOf(choice4));
-
-	 		this.choiceC = String.format(String.valueOf(choice3));
-
-	 		this.choiceD = String.format(String.valueOf(choice3));
-
-	 		this.choiceE = String.format(String.valueOf(choice5));
-
-
-
+	 		this.choiceA = String.format(String.valueOf(wrong1));
+	 		this.choiceB = String.format(String.valueOf(wrong2));
+	 		this.choiceC = String.format(String.valueOf(wrong3));
+	 		this.choiceD = String.format(String.valueOf(correct));
+	 		this.choiceE = String.format(String.valueOf(wrong4));
 	 		break;
 
-	 	case 4:
-
-	 		this.choiceA = String.format(String.valueOf(choice5));
-
-	 		this.choiceB = String.format(String.valueOf(choice4));
-
-	 		this.choiceC = String.format(String.valueOf(choice3));
-
-	 		this.choiceD = String.format(String.valueOf(choice3));
-
-	 		this.choiceE = String.format(String.valueOf(choice5));
-
-
-
+	 	case 4: //correct at letter e
+	 		this.choiceA = String.format(String.valueOf(wrong1));
+	 		this.choiceB = String.format(String.valueOf(wrong2));
+	 		this.choiceC = String.format(String.valueOf(wrong3));
+	 		this.choiceD = String.format(String.valueOf(wrong4));
+	 		this.choiceE = String.format(String.valueOf(correct));
 	 		break;
 
-		 
+	 }	
 
-	 }
+}
 
-	 
-
-
-
-		
-
-	}
-
-	
-
-	public int getRandNum()
-
+	public int getRandNum() //generates random numbers to fill the arrays
 	{
-
 		Random rand = new Random();
-
 		return(rand.nextInt(10));
-
 	}
+	
 }
