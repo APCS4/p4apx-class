@@ -1,7 +1,9 @@
 package AP_Exam;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
+
 
 public class ArrayListQuestions extends Question
 {
@@ -55,12 +57,7 @@ public class ArrayListQuestions extends Question
 	public int[] shuffleNumbers(int amount, int min)
 	{
 	    int[] cards = new int[amount];
-	
-	    for (int i=min; i<amount; i++) 
-	    {
-	        cards[i-min] = i;
-	    }
-	
+
 	    for (int i=0; i<cards.length; i++) 
 	    {
 	        int randomPosition = rgen.nextInt(cards.length); 
@@ -70,7 +67,7 @@ public class ArrayListQuestions extends Question
 	    }
 	    return cards;
 	}
-	
+
 	int[] order;
 	public String[] list(String[] answers) 
 	{
@@ -83,4 +80,7 @@ public class ArrayListQuestions extends Question
 	    }
 	    return newList;
 	}
+
+
 }
+
