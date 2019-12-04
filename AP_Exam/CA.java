@@ -36,12 +36,12 @@ public class CA extends Question{
 			this.answerKey = 'A';
 			break;
 		case 3:
-			this.question = "What does the Model part of MVC control.";
-			this.choiceA = "The \"brain\" of the program, uses data + user input to complete purpose.";
-			this.choiceB = "The long-term stored information of a program. (Database)";
-			this.choiceC = "The GUI; how the user interacts with the program.";
-			this.choiceD = "The efficiency that the program runs at.";
-			this.choiceE = "All of the above.";
+			this.question = "int[][]  A  =  {{1,0,3},{7,-3,6},{2,-9,-1}};\nWhat int is in the 3rd row, 1st column?";
+			this.choiceA = "-9";
+			this.choiceB = "2";
+			this.choiceC = "3";
+			this.choiceD = "6";
+			this.choiceE = "0";
 			this.answerKey = 'B';
 			break;
 		case 4:
