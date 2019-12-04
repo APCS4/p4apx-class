@@ -8,7 +8,7 @@ public class Power extends Question{
     }
 	
 	public void setupQuestion() {
-		int rando = (int) Math.floor(Math.random()*1);
+		int rando = (int) Math.floor(Math.random()*2);
 		int zero =2;
 		switch(rando){
 		case 0:
@@ -20,7 +20,7 @@ public class Power extends Question{
 			this.choiceE = "Thats done by the user";
 			this.answerKey = 'C';
 			break;
-		/*
+		
 		case 1:
 			this.question = "What is the correct format for writing a for loop?";
 			this.choiceA = "for; ";
@@ -38,7 +38,7 @@ public class Power extends Question{
 		case 3:
 			
 			break;
-		*/
+		
 		default:
 			System.out.print("elproblem");
 		
