@@ -109,7 +109,7 @@ public class AP_UI extends MenuControl {
 				AP_Console.main();
 			}
 		});
-		btnConsole.setForeground(Color.RED);
+		btnConsole.setForeground(new Color(102, 0, 204));
 		btnConsole.setFont(new Font("Lucida Grande", Font.PLAIN, 8));
 		btnConsole.setBackground(Color.LIGHT_GRAY);
 		btnConsole.setBounds(406, 21, 21, 18);
