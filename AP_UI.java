@@ -203,10 +203,7 @@ public class AP_UI extends MenuControl {
 		});
 		btnArraylist.setBounds(446, 130, 138, 29);
 		contentPane.add(btnArraylist);
-		
-<<<<<<< HEAD
 	
-=======
 		JButton btnTeamboba = new JButton("✧･ﾟ: *✧･ﾟ:* Team Boba *:･ﾟ✧*:･ﾟ✧");
 		btnTeamboba.setForeground(Color.RED);
 		btnTeamboba.setBackground(Color.CYAN);
@@ -239,7 +236,6 @@ public class AP_UI extends MenuControl {
 		//JButton btnArraylist = new JButton("ArrayList");
 		//btnArraylist.setBounds(461, 101, 138, 29);
 		//contentPane.add(btnArraylist);
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 	}
 	
 }
