@@ -82,13 +82,7 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		
-		
-		
-		btnBinaryMath.setBounds(91, 34, 61, 29);
-
 		btnBinaryMath.setBounds(144, 21, 101, 29);
-
 		contentPane.add(btnBinaryMath);
 		
 		JButton btnConsole = new JButton("C");
@@ -107,7 +101,6 @@ public class AP_UI extends MenuControl {
 		btnPower.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
 		btnPower.setBounds(457, 236, 109, 51);
 		contentPane.add(btnPower);
-
 		
 		testQuestion.setEditable(false);
 		testQuestion.setLineWrap(true);
@@ -152,10 +145,10 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
+
 		btnMVC.setBounds(446, 101, 138, 29);
 		contentPane.add(btnMVC);
 		
-
 
 		JButton btnNewButton = new JButton("DanielAndFox");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -166,7 +159,6 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-
 		btnNewButton.setBounds(456, 184, 120, 39);
 		contentPane.add(btnNewButton);
 
@@ -188,31 +180,24 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-
-
-		//JButton btnArraylist = new JButton("ArrayList");
-		//btnArraylist.setBounds(461, 101, 138, 29);
-		//contentPane.add(btnArraylist);
 		
-
-	
-		JButton Power = new JButton("Power");
-		Power.addActionListener(new ActionListener() {
+		
+		JButton btnBackground = new JButton("Background Info");
+		btnBackground.setFont(new Font("Lucida Grande", Font.BOLD, 12));
+		btnBackground.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				AP_Exam.Question q = new AP_Exam.Power();
+				AP_Exam.Question q = new AP_Exam.BackgroundInfoQuestions();
 				testQuestion.setText(q.getQuestion());
 				testChoices.setText(q.getChoices());
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		Power.setBounds(446, 158, 138, 29);
-		contentPane.add(Power);
-	
-		//alex and mithil code
-	
-	
+		btnBackground.setBounds(600, 130, 138, 29);
+		contentPane.add(btnBackground);
 
-	
+		//JButton btnArraylist = new JButton("ArrayList");
+		//btnArraylist.setBounds(461, 101, 138, 29);
+		//contentPane.add(btnArraylist);
 	}
 	
-	}
+}
