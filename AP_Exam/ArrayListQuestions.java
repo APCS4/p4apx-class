@@ -6,37 +6,20 @@ import java.util.Random;
 public class ArrayListQuestions extends Question
 {
 	public ArrayList<String> methods = new ArrayList<String>();
+	public ArrayList<String> names = new ArrayList<String>(Arrays.asList(list(new String[] {"",""})));
 	private int questionType;
 	private String[] tempAnswers;
 
 	public ArrayListQuestions() 
-	{
-		/*
-		 * question
-		 * answer
-		 * choiceA
-		 * choiceB
-		 * choiceC
-		 * choiceD
-		 * choiceE
-		 */
-		
-		loadMethods();
+	{		
 		questionType = (int) Math.floor(Math.random()*methods.size());
 		setupQuestion();
-	}
-	
-	private void loadMethods() 
-	{
-		methods.add("list.add(\"Ethan\");");
-		methods.add("list.remove(2);");
-		methods.add("list.contains(\"Ethan\");");
-		methods.add("list.set(2,\"Ethan\");");
-		methods.add("list.clone()");
 	}
 
 	public void setupQuestion()
 	{
+		this.question = "What does " + methods.get(questionType) + " do to list " + names.toString();
+		
 		ArrayList<String> answerList = new ArrayList<String>(Arrays.asList(new String[] {"bruh","bruh","bruh"}));
 		
 		ArrayList<String> answerA = answerList;
@@ -100,9 +83,7 @@ public class ArrayListQuestions extends Question
 
 	private void addMethod() 
 	{
-		this.question = "What does " + methods.get(questionType) + " do to list {\"bruh\",\"bruh\",\"bruh\"}";
-		
-		
+		this.question = "What does " + methods.get(questionType) + " do to list " + names.toString();		
 	}
 	
 	Random rgen = new Random();
