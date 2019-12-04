@@ -167,6 +167,10 @@ public class AP_UI extends MenuControl {
 		JButton btnNewButton = new JButton("DanielAndFox");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				AP_Exam.Question q = new AP_Exam.OperatorQuestions();
+				testQuestion.setText(q.getQuestion());
+				testChoices.setText(q.getChoices());
+				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
 		btnNewButton.setBounds(448, 171, 120, 39);
