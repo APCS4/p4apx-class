@@ -42,11 +42,12 @@ public class AP_UI extends MenuControl {
 	public AP_UI() {
 		setBounds(100, 100, 784, 488);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(211, 211, 211));
+		contentPane.setBackground(new Color(204, 204, 255));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		JLabel lblExamSections = new JLabel("Exam Sections");
+		lblExamSections.setForeground(new Color(102, 0, 204));
 		lblExamSections.setBounds(18, 6, 91, 16);
 		contentPane.add(lblExamSections);
 		
@@ -113,6 +114,8 @@ public class AP_UI extends MenuControl {
 		btnConsole.setBackground(Color.LIGHT_GRAY);
 		btnConsole.setBounds(406, 21, 21, 18);
 		contentPane.add(btnConsole);
+		testQuestion.setForeground(new Color(0, 102, 255));
+		testQuestion.setBackground(new Color(204, 255, 255));
 
 		
 		
@@ -120,6 +123,8 @@ public class AP_UI extends MenuControl {
 		testQuestion.setLineWrap(true);
 		testQuestion.setBounds(18, 55, 418, 177);
 		contentPane.add(testQuestion);
+		testChoices.setForeground(new Color(0, 102, 255));
+		testChoices.setBackground(new Color(204, 255, 255));
 	    
 		testChoices.setEditable(false);
 		testChoices.setLineWrap(true);
@@ -127,8 +132,11 @@ public class AP_UI extends MenuControl {
 		contentPane.add(testChoices);
 		
 		JLabel lblAnswer = new JLabel("Answer");
+		lblAnswer.setForeground(new Color(102, 0, 204));
 		lblAnswer.setBounds(18, 354, 61, 16);
 		contentPane.add(lblAnswer);
+		testQuestionAnswer.setForeground(new Color(0, 102, 255));
+		testQuestionAnswer.setBackground(new Color(204, 255, 255));
 		
 		testQuestionAnswer.setEditable(false);
 		testQuestionAnswer.setLineWrap(true);
@@ -167,10 +175,6 @@ public class AP_UI extends MenuControl {
 		JButton btnNewButton = new JButton("DanielAndFox");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				AP_Exam.Question q = new AP_Exam.OperatorQuestions();
-				testQuestion.setText(q.getQuestion());
-				testChoices.setText(q.getChoices());
-				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
 		btnNewButton.setBounds(448, 171, 120, 39);
