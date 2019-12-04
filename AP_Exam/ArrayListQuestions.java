@@ -67,7 +67,6 @@ public class ArrayListQuestions extends Question
 	    }
 	    return cards;
 	}
-
 	
 	int[] order;
 	public String[] list(String[] answers) 
