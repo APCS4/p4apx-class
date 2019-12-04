@@ -15,42 +15,30 @@ public class MVCQuestion extends Question{
 		
 		switch(random){
 		case 0:
+			this.question = "What does MVC stand for?";
+			
 			choices = loadQuestArray("Most Valuable Concept","Model View Concept", "Model View Control", 
 					"Model Vision Control", "None of the Above");
 			
-			this.question = "What does MVC stand for?";
-			this.choiceA = choices[0];
-			this.choiceB = choices[1];
-			this.choiceC = choices[2];
-			this.choiceD = choices[3];
-			this.choiceE = choices[4];
 			this.answerKey = getAns(choices, "Model View Control");
 			this.answer = "Model View Control, that's the name";
 			break;
 		case 1:
+			this.question = "What does the View part of MVC contain";
+			
 			choices = loadQuestArray("The GUI and Console IO code","The Logic for the program", "A mix of all part of program", 
 					"Data pulled from an outside source", "A,B,C,D, but not E");
 			
-			this.question = "What does the View part of MVC contain";
-			this.choiceA = choices[0];
-			this.choiceB = choices[1];
-			this.choiceC = choices[2];
-			this.choiceD = choices[3];
-			this.choiceE = choices[4];
 			this.answerKey = getAns(choices, "The GUI and Console IO code");
 			this.answer = "View conists of what the user actually sees and interacts."
 					+ " Get's input, gives output, no logic";
 			break;
 		case 2:
+			this.question = "What does the Control part of MVC contain";
+			
 			choices = loadQuestArray("All of the above","There is no control is MVC", "How the program looks but not the data", 
 					"How the program looks and the data it uses", "The brains of the program; logic code is here");
 			
-			this.question = "What does the Control part of MVC contain";
-			this.choiceA = choices[0];
-			this.choiceB = choices[1];
-			this.choiceC = choices[2];
-			this.choiceD = choices[3];
-			this.choiceE = choices[4];
 			this.answerKey = getAns(choices, "The brains of the program; logic code is here");
 			this.answer = "Control consists of the logic of the code. It interacts with data and manipulates it.";
 			break;
