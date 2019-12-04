@@ -32,7 +32,7 @@ public class Power extends Question{
 			break;
 			
 		case 2:
-			//rando
+			
 			//this.question = ""
 			break;
 		case 3:
