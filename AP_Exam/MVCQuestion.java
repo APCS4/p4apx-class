@@ -89,19 +89,22 @@ public class MVCQuestion extends Question{
 		}
 	}
 	
+	//loadQuestArray loads an array with the 5 possible questions
 	private String[] loadQuestArray (String q0, String q1, String q2, String q3, String q4)
 	{
-		int rand;
-		String[] choices = new String[5];
+		int rand; //random int placehold
+		String[] choices = new String[5]; //temporary storage for questions
 		
-		String hold;
+		String hold; //for swap algo
 		
+		//load questions into array
 		choices[0] = q0;
 		choices[1] = q1;
 		choices[2] = q2;
 		choices[3] = q3;
 		choices[4] = q4;
 		
+		//randomly swap the Strings 
 		for(int i = 0; i <5; i++)
 		{
 			hold = choices[i];
@@ -113,8 +116,11 @@ public class MVCQuestion extends Question{
 		return choices;	
 	}
 	
+	//Determines which choice the answer string is in
 	private char getAns(String quests[], String ans) {
 		char retVal;
+		
+		//Compares each question in array to the correct answer string
 		if(quests[0].equals(ans) == true)
 			retVal = 'A';
 		else if(quests[1].equals(ans) == true)
@@ -125,7 +131,7 @@ public class MVCQuestion extends Question{
 			retVal = 'D';
 		else if(quests[4].equals(ans) == true)
 			retVal = 'E';
-		else retVal = 'X';
+		else retVal = 'X'; //default case for if there is an error
 		
 		return retVal;
 	}
