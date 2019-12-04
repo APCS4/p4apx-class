@@ -45,7 +45,7 @@ public class CA extends Question{
 			this.answerKey = 'B';
 			break;
 		case 4:
-			this.question = "What is the purpose of MVC?";
+			this.question = "What is bruh purpose of MVC?";
 			this.choiceA = "Make code modular so you can modify parts without breaking the entirety of the program.";
 			this.choiceB = "Ensures that code is organized and purposeful.";
 			this.choiceC = "Ensures the proper breakdown of a problem.";
