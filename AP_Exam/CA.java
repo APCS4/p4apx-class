@@ -9,25 +9,25 @@ public class CA extends Question{
 		int random = (int) Math.floor(Math.random()*5);
 		switch(random){
 		case 0:
-			this.question = "Refer to the following code:\nswitch(ans)\n{\n   case 1:\n      ans = 1;\n      break;\n   case 2:\n      ans = 2;\n      break;\n}";
-			this.choiceA = "Most Valuable Concept";
-			this.choiceB = "Model View Concept";
-			this.choiceC = "Model View Control";
-			this.choiceD = "Model Vision Control";
-			this.choiceE = "None of the Above";
-			this.answerKey = 'C';
+			this.question = "Refer to the following code:\nswitch(ans)\n{\n     case 1:\n          ans = 11;\n          break;\n     case 2:\n          ans = 78;\n          break;\n}\n\nIf ans is 1, what is it after the switch case?";
+			this.choiceA = "1";
+			this.choiceB = "11";
+			this.choiceC = "78";
+			this.choiceD = "67";
+			this.choiceE = "89";
+			this.answerKey = 'B';
 			break;
 		case 1:
-			this.question = "What does the View part of MVC contain";
-			this.choiceA = "The GUI and Consol	e IO code";
-			this.choiceB = "The Logic for the program";
-			this.choiceC = "A mix of all part of program";
-			this.choiceD = "Data pulled from an outside source";
-			this.choiceE = "A,B,C,D, but not E";
-			this.answerKey = 'A';
+			this.question = "Refer to the following code:\ndouble x = 10 * Math.random() + 3;\nSystem.out.println(x);\n\nWhat is the range of possible outputs?";
+			this.choiceA = "(0,1)";
+			this.choiceB = "[0,1)";
+			this.choiceC = "[3,10)";
+			this.choiceD = "(3,13)";
+			this.choiceE = "[3,13)";
+			this.answerKey = 'E';
 			break;
 		case 2:
-			this.question = "What does the Control part of MVC contain";
+			this.question = "bl;eh";
 			this.choiceA = "All of the above";
 			this.choiceB = "There is no control is MVC";
 			this.choiceC = "How the program looks but not the data";

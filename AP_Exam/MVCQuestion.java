@@ -9,16 +9,21 @@ public class MVCQuestion extends Question{
     }
 	
 	public void setupQuestion() {
+		String[] choices = new String[5];
+		
 		int random = (int) Math.floor(Math.random()*5);
 		
 		switch(random){
 		case 0:
+			choices = loadQuestArray("Most Valuable Concept","Model View Concept", "Model View Control", 
+					"Model Vision Control", "None of the Above");
+			
 			this.question = "What does MVC stand for?";
-			this.choiceA = "Most Valuable Concept";
-			this.choiceB = "Model View Concept";
-			this.choiceC = "Model View Control";
-			this.choiceD = "Model Vision Control";
-			this.choiceE = "None of the Above";
+			this.choiceA = choices[0];
+			this.choiceB = choices[1];
+			this.choiceC = choices[2];
+			this.choiceD = choices[3];
+			this.choiceE = choices[4];
 			this.answerKey = this.answerC;
 			this.answer = "Model View Control, that's the name";
 			break;
@@ -69,5 +74,27 @@ public class MVCQuestion extends Question{
 		}
 	}
 	
-	
+	private String[] loadQuestArray (String q0, String q1, String q2, String q3, String q4)
+	{
+		int rand;
+		String[] choices = new String[5];
+		
+		String hold;
+		
+		choices[0] = q0;
+		choices[1] = q1;
+		choices[2] = q2;
+		choices[3] = q3;
+		choices[4] = q4;
+		
+		for(int i = 0; i <5; i++)
+		{
+			hold = choices[i];
+			rand = (int) Math.floor(Math.random() * 5);
+			choices[i] = choices[rand];
+			choices[rand] = hold;
+			
+		}
+		return choices;	
+	}
 }
