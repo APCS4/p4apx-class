@@ -27,31 +27,31 @@ public class CA extends Question{
 			this.answerKey = 'E';
 			break;
 		case 2:
-			this.question = "bl;eh";
-			this.choiceA = "All of the above";
-			this.choiceB = "There is no control is MVC";
-			this.choiceC = "How the program looks but not the data";
-			this.choiceD = "How the program looks and the data it uses";
-			this.choiceE = "The brains of the program; logic code is here";
-			this.answerKey = 'E';
+			this.question = "int[][]  A  =  {{1,0,3},{7,-3,6},{2,-9,-1}};\nWhat int is in the 2nd row, 3rd column?";
+			this.choiceA = "6";
+			this.choiceB = "-9";
+			this.choiceC = "-3";
+			this.choiceD = "7";
+			this.choiceE = "325";
+			this.answerKey = 'A';
 			break;
 		case 3:
-			this.question = "What does the Model part of MVC control.";
-			this.choiceA = "The \"brain\" of the program, uses data + user input to complete purpose.";
-			this.choiceB = "The long-term stored information of a program. (Database)";
-			this.choiceC = "The GUI; how the user interacts with the program.";
-			this.choiceD = "The efficiency that the program runs at.";
-			this.choiceE = "All of the above.";
+			this.question = "int[][]  A  =  {{1,0,3}, {7,-3,6}, {2,-9,-1}};\nWhat int is in the 3rd row, 1st column?";
+			this.choiceA = "-9";
+			this.choiceB = "2";
+			this.choiceC = "3";
+			this.choiceD = "6";
+			this.choiceE = "0";
 			this.answerKey = 'B';
 			break;
 		case 4:
-			this.question = "What is the purpose of MVC?";
-			this.choiceA = "Make code modular so you can modify parts without breaking the entirety of the program.";
-			this.choiceB = "Ensures that code is organized and purposeful.";
-			this.choiceC = "Ensures the proper breakdown of a problem.";
-			this.choiceD = "To make coding more confusing and difficult.";
-			this.choiceE = "A, B, C, but not D";
-			this.answerKey = 'E';
+			this.question = "What is the code to write a matrix of the form: \n3    4    8    9 \n6  -1    4  10 ?";
+			this.choiceA = "int[][]  A  =  {{3,4,8,9},{6,-1,4,10}};";
+			this.choiceB = "int[][]  B  =  {{3,-1},{4,-1},{8,4},{9,10}};";
+			this.choiceC = "int[][]  C  =  {{6,-1,4,10},{3,4,8,9}};";
+			this.choiceD = "int[][]  D  =  {{3,4,8,9\\n6,-1,4,10}};";
+			this.choiceE = "None of the above";
+			this.answerKey = 'A';
 			break;
 		default:
 			System.out.print("ERROR");
