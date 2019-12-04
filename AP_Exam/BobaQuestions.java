@@ -57,7 +57,7 @@ public class BobaQuestions extends Question
         this.choiceE = "None of the above";
         
         // real time calc answer based off args AND operator
-        int answerCalc;
+        int answerCalc; 
         switch(operator) 
         {
             case '/':
