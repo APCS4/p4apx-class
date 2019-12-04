@@ -13,7 +13,7 @@ public class ArrayListQuestions extends Question
 	public ArrayListQuestions() 
 	{
 		/*
-		 * question
+		 * question//
 		 * answer
 		 * choiceA
 		 * choiceB
