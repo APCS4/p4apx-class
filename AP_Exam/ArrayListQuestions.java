@@ -80,7 +80,5 @@ public class ArrayListQuestions extends Question
 	    }
 	    return newList;
 	}
-
-
 }
 
