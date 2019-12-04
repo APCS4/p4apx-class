@@ -19,6 +19,11 @@ import javax.swing.JTextField;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JScrollBar;
+import javax.swing.border.SoftBevelBorder;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.TitledBorder;
+import javax.swing.border.MatteBorder;
+import javax.swing.border.EtchedBorder;
 
 public class AP_UI extends MenuControl {
 
@@ -35,11 +40,9 @@ public class AP_UI extends MenuControl {
 	 * Create the frame.
 	 */
 	public AP_UI() {
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 784, 488);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(211, 211, 211));
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
@@ -206,7 +209,7 @@ public class AP_UI extends MenuControl {
 		JButton btnTeamboba = new JButton("✧･ﾟ: *✧･ﾟ:* Team Boba *:･ﾟ✧*:･ﾟ✧");
 		btnTeamboba.setForeground(Color.RED);
 		btnTeamboba.setBackground(Color.CYAN);
-		btnTeamboba.setFont(new Font("Papyrus", Font.BOLD, 16));
+		btnTeamboba.setFont(new Font("Snell Roundhand", Font.BOLD, 16));
 		btnTeamboba.setBounds(448, 230, 279, 39);
 		contentPane.add(btnTeamboba);
 		btnTeamboba.addActionListener(new ActionListener() {
