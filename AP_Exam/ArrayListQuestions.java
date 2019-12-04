@@ -5,6 +5,14 @@ import java.util.ArrayList;
 import java.util.Random;
 
 
+public class ArrayListQuestions extends Question
+{
+	public ArrayList<String> methods = new ArrayList<String>(Arrays.asList(list(new String[] {"list.add(\"Ethan\");","list.remove(2);","\"list.contains(\"Ethan\");\"","list.set(2,\"Ethan\");","list.clone()"})));
+	private int questionType;
+	ArrayList<String> answerList = new ArrayList<String>(Arrays.asList(list(new String[] {"Andrei","Edgar","Jared","Ethan"})));
+	private String[] tempAnswers;
+
+
 
 public class ArrayListQuestions extends Question 
 
@@ -17,6 +25,24 @@ public class ArrayListQuestions extends Question
 	{
 
 		
+
+
+
+	public ArrayListQuestions() 
+	{
+		/*
+		 * question//
+		 * answer
+		 * choiceA
+		 * choiceB
+		 * choiceC
+		 * choiceD
+		 * choiceE
+		 */
+		
+		questionType = (int) Math.floor(Math.random()*methods.size());
+		setupQuestion();
+
 
 	}
 
@@ -54,6 +80,7 @@ public class ArrayListQuestions extends Question
 
 	
 
+
 		// int correct = random.nextInt(5);
 
 		ArrayList<Integer> choice1 = new ArrayList<Integer>();
@@ -78,7 +105,15 @@ public class ArrayListQuestions extends Question
 
 
 
-	
+
+
+	Random rgen = new Random();
+	   
+	public int[] shuffleNumbers(int amount, int min)
+	{
+	    int[] cards = new int[amount];
+
+
 
 	 int randnum = random.nextInt(5);
 
@@ -194,7 +229,25 @@ public class ArrayListQuestions extends Question
 
 	}
 
-	
+
+
+	    for (int i=min; i<amount; i++) 
+	    {
+	        cards[i-min] = i;
+	    }
+
+
+
+	    for (int i=0; i<cards.length; i++) 
+	    {
+	        int randomPosition = rgen.nextInt(cards.length); 
+	        int temp = cards[i];             
+	        cards[i] = cards[randomPosition];
+	        cards[randomPosition] = temp;
+	    }
+	    return cards;
+	}
+
 
 	
 
@@ -210,7 +263,21 @@ public class ArrayListQuestions extends Question
 
 	
 
-	
+
+
+	int[] order;
+	public String[] list(String[] answers) 
+	{
+	    String[] newList = new String[answers.length];
+	    order = shuffleNumbers(answers.length,0);
+	       
+	    for (int i=0; i<newList.length; i++)
+	    {
+	        newList[i] = answers[order[i]];
+	    }
+	    return newList;
+	}
+
 
 }
 

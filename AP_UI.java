@@ -37,13 +37,13 @@ public class AP_UI extends MenuControl {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 784, 488);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(220, 220, 220));
+		contentPane.setBackground(Color.YELLOW);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		JLabel lblExamSections = new JLabel("Exam Sections");
-		lblExamSections.setBounds(18, 6, 91, 16);
+		lblExamSections.setBounds(18, 0, 91, 16);
 		contentPane.add(lblExamSections);
 		
 		JButton btnMath = new JButton("Math");
@@ -56,7 +56,7 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnMath.setBounds(18, 21, 91, 29);
+		btnMath.setBounds(18, 14, 91, 29);
 		contentPane.add(btnMath);
 		
 		JButton btnDataTypes = new JButton("Data Types");
@@ -69,8 +69,20 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnDataTypes.setBounds(264, 21, 101, 29);
-		contentPane.add(btnDataTypes);
+		JButton Power = new JButton("Power");
+		Power.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AP_Exam.Question q = new AP_Exam.Power();
+				testQuestion.setText(q.getQuestion());
+				testChoices.setText(q.getChoices());
+				testQuestionAnswer.setText(q.getAnswer());
+			}
+		});
+
+		Power.setBounds(588, 189, 138, 29);
+		contentPane.add(Power);
+		
+		
 		
 		JButton btnBinaryMath = new JButton("Binary Math");
 		btnBinaryMath.setFont(new Font("Lucida Grande", Font.PLAIN, 12));
@@ -82,8 +94,8 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnBinaryMath.setBounds(144, 21, 101, 29);
-		contentPane.add(btnBinaryMath);
+		
+		
 		
 		
 		JButton btnConsole = new JButton("C");
@@ -98,10 +110,7 @@ public class AP_UI extends MenuControl {
 		btnConsole.setBounds(406, 21, 21, 18);
 		contentPane.add(btnConsole);
 
-		JButton btnPower = new JButton("Power");
-		btnPower.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
-		btnPower.setBounds(457, 236, 109, 51);
-		contentPane.add(btnPower);
+		
 		
 		testQuestion.setEditable(false);
 		testQuestion.setLineWrap(true);
@@ -147,7 +156,7 @@ public class AP_UI extends MenuControl {
 			}
 		});
 
-		btnMVC.setBounds(446, 101, 138, 29);
+		btnMVC.setBounds(446, 102, 138, 29);
 		contentPane.add(btnMVC);
 		
 
@@ -165,7 +174,7 @@ public class AP_UI extends MenuControl {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnAnthonyjude.setBounds(588, 350, 117, 29);
+		btnAnthonyjude.setBounds(609, 101, 117, 29);
 		contentPane.add(btnAnthonyjude);
 
 
@@ -178,18 +187,7 @@ public class AP_UI extends MenuControl {
 		//contentPane.add(btnTeamboba);
 
 	
-		JButton Power = new JButton("Power");
-		Power.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				AP_Exam.Question q = new AP_Exam.Power();
-				AP_Exam.Question qe = new AP_Exam.OperatorQuestions();
-				testQuestion.setText(q.getQuestion());
-				testChoices.setText(q.getChoices());
-				testQuestionAnswer.setText(q.getAnswer());
-			}
-		});
-		btnNewButton.setBounds(456, 184, 120, 39);
-		contentPane.add(btnNewButton);
+		
 
 		JButton btnArraylist = new JButton("ArrayList");
 		btnArraylist.addActionListener(new ActionListener() {
@@ -208,7 +206,7 @@ public class AP_UI extends MenuControl {
 		btnTeamboba.setForeground(Color.RED);
 		btnTeamboba.setBackground(Color.CYAN);
 		btnTeamboba.setFont(new Font("Papyrus", Font.BOLD, 16));
-		btnTeamboba.setBounds(457, 299, 279, 39);
+		btnTeamboba.setBounds(448, 230, 279, 39);
 		contentPane.add(btnTeamboba);
 		btnTeamboba.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -237,6 +235,11 @@ public class AP_UI extends MenuControl {
 		btnNewButton_1.setBounds(588, 185, 117, 51);
 		contentPane.add(btnNewButton_1);
 
+
+		
+		
+		
+		
 		//JButton btnArraylist = new JButton("ArrayList");
 		//btnArraylist.setBounds(461, 101, 138, 29);
 		//contentPane.add(btnArraylist);
