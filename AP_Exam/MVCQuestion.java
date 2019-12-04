@@ -1,33 +1,45 @@
 package AP_Exam;
 
 import java.util.Random;
-
+//The class for all questions pertaining to MVC
 public class MVCQuestion extends Question{
 	public MVCQuestion()
     {
+		//This sets up all the questions to be used by the question class so when called a 
+		//question and answer is displayed and not null
     	setupQuestion();
     }
 	
 	public void setupQuestion() {
+		//string array that will contain the five options for each question
 		String[] choices = new String[5];
 		
+		//randomizes which question is asked
 		int random = (int) Math.floor(Math.random()*5);
 		
 		switch(random){
 		case 0:
+			//the question
 			this.question = "What does MVC stand for?";
 			
+			//loads the choices with strings based on what question is asked.
+			//The order will be randomized by the method loadQuestArry
 			choices = loadQuestArray("Most Valuable Concept","Model View Concept", "Model View Control", 
 					"Model Vision Control", "None of the Above");
+			//loading each choice in the question class with the choices I want
 			this.choiceA = choices[0];
+			//this. means this class, but since this class extends question 
+			//this. can access variables from question, such as choiceA, or answerKey
 			this.choiceB = choices[1];
 			this.choiceC = choices[2];
 			this.choiceD = choices[3];
 			this.choiceE = choices[4];
-			
+			//setting the answer
+			//getAns will determine which letter the answer from the randomized array and return that letter
 			this.answerKey = getAns(choices, "Model View Control");
 			this.answer = "Model View Control, that's the name";
 			break;
+		//All other cases the same idea as above
 		case 1:
 			this.question = "What does the View part of MVC contain";
 			
