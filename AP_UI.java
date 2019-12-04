@@ -19,6 +19,11 @@ import javax.swing.JTextField;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JScrollBar;
+import javax.swing.border.SoftBevelBorder;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.TitledBorder;
+import javax.swing.border.MatteBorder;
+import javax.swing.border.EtchedBorder;
 
 public class AP_UI extends MenuControl {
 
@@ -35,15 +40,14 @@ public class AP_UI extends MenuControl {
 	 * Create the frame.
 	 */
 	public AP_UI() {
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 784, 488);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(211, 211, 211));
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBackground(new Color(204, 204, 255));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		JLabel lblExamSections = new JLabel("Exam Sections");
+		lblExamSections.setForeground(new Color(102, 0, 204));
 		lblExamSections.setBounds(18, 6, 91, 16);
 		contentPane.add(lblExamSections);
 		
@@ -105,11 +109,13 @@ public class AP_UI extends MenuControl {
 				AP_Console.main();
 			}
 		});
-		btnConsole.setForeground(Color.RED);
+		btnConsole.setForeground(new Color(102, 0, 204));
 		btnConsole.setFont(new Font("Lucida Grande", Font.PLAIN, 8));
 		btnConsole.setBackground(Color.LIGHT_GRAY);
 		btnConsole.setBounds(406, 21, 21, 18);
 		contentPane.add(btnConsole);
+		testQuestion.setForeground(new Color(0, 102, 255));
+		testQuestion.setBackground(new Color(204, 255, 255));
 
 		
 		
@@ -117,6 +123,8 @@ public class AP_UI extends MenuControl {
 		testQuestion.setLineWrap(true);
 		testQuestion.setBounds(18, 55, 418, 177);
 		contentPane.add(testQuestion);
+		testChoices.setForeground(new Color(0, 102, 255));
+		testChoices.setBackground(new Color(204, 255, 255));
 	    
 		testChoices.setEditable(false);
 		testChoices.setLineWrap(true);
@@ -124,8 +132,11 @@ public class AP_UI extends MenuControl {
 		contentPane.add(testChoices);
 		
 		JLabel lblAnswer = new JLabel("Answer");
+		lblAnswer.setForeground(new Color(102, 0, 204));
 		lblAnswer.setBounds(18, 354, 61, 16);
 		contentPane.add(lblAnswer);
+		testQuestionAnswer.setForeground(new Color(0, 102, 255));
+		testQuestionAnswer.setBackground(new Color(204, 255, 255));
 		
 		testQuestionAnswer.setEditable(false);
 		testQuestionAnswer.setLineWrap(true);
@@ -146,7 +157,7 @@ public class AP_UI extends MenuControl {
 		btnLucyandcynthia.setFont(new Font("Comic Sans MS", Font.BOLD | Font.ITALIC, 22));
 		btnLucyandcynthia.setBounds(451, 50, 198, 39);
 		contentPane.add(btnLucyandcynthia);
-		
+
 		JButton btnMVC = new JButton("MVC");
 		btnMVC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -206,7 +217,7 @@ public class AP_UI extends MenuControl {
 		JButton btnTeamboba = new JButton("✧･ﾟ: *✧･ﾟ:* Team Boba *:･ﾟ✧*:･ﾟ✧");
 		btnTeamboba.setForeground(Color.RED);
 		btnTeamboba.setBackground(Color.CYAN);
-		btnTeamboba.setFont(new Font("Papyrus", Font.BOLD, 16));
+		btnTeamboba.setFont(new Font("Snell Roundhand", Font.BOLD, 16));
 		btnTeamboba.setBounds(448, 230, 279, 39);
 		contentPane.add(btnTeamboba);
 		btnTeamboba.addActionListener(new ActionListener() {

@@ -31,6 +31,7 @@ public class OperatorQuestions extends Question{
 			char Ans0 = indexClass.returnAns(Index0);
 			
 			this.answerKey = Ans0;
+			this.answer = "logical AND short circuit";
 			break;
 		case 1:
 			this.question = "What does || stand for?";
@@ -46,6 +47,7 @@ public class OperatorQuestions extends Question{
 			char Ans1 = indexClass.returnAns(Index1);
 			
 			this.answerKey = Ans1;
+			this.answer = "logical OR short circuit";
 			break;
 		case 2:
 			this.question = "What does & stand for?";
@@ -61,6 +63,7 @@ public class OperatorQuestions extends Question{
 			char Ans2 = indexClass.returnAns(Index2);
 			
 			this.answerKey = Ans2;
+			this.answer = "boolean logical AND";
 			break;
 			
 		case 3:
@@ -77,6 +80,7 @@ public class OperatorQuestions extends Question{
 			char Ans3 = indexClass.returnAns(Index3);
 			
 			this.answerKey = Ans3;
+			this.answer = "boolean logical OR";
 			break;
 		case 4:
 			this.question = "What does ^ stand for?";
@@ -92,6 +96,7 @@ public class OperatorQuestions extends Question{
 			char Ans4 = indexClass.returnAns(Index4);
 			
 			this.answerKey = Ans4;
+			this.answer = "boolean logical OR";
 			break;
 		}
 	}
