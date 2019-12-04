@@ -13,6 +13,7 @@ public class ArrayListQuestions extends Question
 	private String[] tempAnswers;
 
 
+
 public class ArrayListQuestions extends Question 
 
 {
@@ -24,6 +25,7 @@ public class ArrayListQuestions extends Question
 	{
 
 		
+
 
 
 	public ArrayListQuestions() 
@@ -40,6 +42,7 @@ public class ArrayListQuestions extends Question
 		
 		questionType = (int) Math.floor(Math.random()*methods.size());
 		setupQuestion();
+
 
 	}
 
@@ -103,11 +106,13 @@ public class ArrayListQuestions extends Question
 
 
 
+
 	Random rgen = new Random();
 	   
 	public int[] shuffleNumbers(int amount, int min)
 	{
 	    int[] cards = new int[amount];
+
 
 
 	 int randnum = random.nextInt(5);
@@ -225,6 +230,7 @@ public class ArrayListQuestions extends Question
 	}
 
 
+
 	    for (int i=min; i<amount; i++) 
 	    {
 	        cards[i-min] = i;
@@ -242,7 +248,6 @@ public class ArrayListQuestions extends Question
 	    return cards;
 	}
 
-	
 
 	
 
@@ -255,6 +260,9 @@ public class ArrayListQuestions extends Question
 	
 
 	
+
+	
+
 
 
 	int[] order;
@@ -269,6 +277,7 @@ public class ArrayListQuestions extends Question
 	    }
 	    return newList;
 	}
+
 
 }
 
