@@ -36,7 +36,7 @@ public class Power extends Question{
 			//this.question = ""
 			break;
 		case 3:
-			
+			//new
 			break;
 		
 		default:
