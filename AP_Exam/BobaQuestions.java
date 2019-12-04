@@ -61,7 +61,7 @@ public class BobaQuestions extends Question
         this.question = String.format("What is String substring(" + arg1 + ", " + arg2 + "of the following string: " + (String)Array.get(sentence, i));
         
         
-        // format question choices
+        // format question choices 
         this.choiceA = String.format("%f",(here.substring(arg1, arg2)));
         this.choiceB = String.format("%x",(here.substring(arg3, arg4)));
         this.choiceC = String.format("%f",(here.substring(arg5, arg6)));
