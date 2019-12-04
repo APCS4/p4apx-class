@@ -85,6 +85,7 @@ public class AP_UI extends MenuControl {
 		btnBinaryMath.setBounds(144, 21, 101, 29);
 		contentPane.add(btnBinaryMath);
 		
+		
 		JButton btnConsole = new JButton("C");
 		btnConsole.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
