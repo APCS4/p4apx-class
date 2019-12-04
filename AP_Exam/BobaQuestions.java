@@ -57,7 +57,7 @@ public class BobaQuestions extends Question
         
         // real time calc answer based off args AND operator
         int answerCalc;
-        switch(operator)
+        switch(operator) 
         {
             case '/':
                 answerCalc = arg1 / arg2;
