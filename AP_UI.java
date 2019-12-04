@@ -85,6 +85,7 @@ public class AP_UI extends MenuControl {
 		btnBinaryMath.setBounds(144, 21, 101, 29);
 		contentPane.add(btnBinaryMath);
 		
+		
 		JButton btnConsole = new JButton("C");
 		btnConsole.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -133,7 +134,7 @@ public class AP_UI extends MenuControl {
 			}
 		});
 		btnLucyandcynthia.setFont(new Font("Comic Sans MS", Font.BOLD | Font.ITALIC, 22));
-		btnLucyandcynthia.setBounds(451, 50, 188, 39);
+		btnLucyandcynthia.setBounds(451, 50, 198, 39);
 		contentPane.add(btnLucyandcynthia);
 		
 		JButton btnMVC = new JButton("MVC");
@@ -208,7 +209,7 @@ public class AP_UI extends MenuControl {
 =======
 		JButton btnTeamboba = new JButton("✧･ﾟ: *✧･ﾟ:* Team Boba *:･ﾟ✧*:･ﾟ✧");
 		btnTeamboba.setForeground(Color.RED);
-		btnTeamboba.setBackground(Color.RED);
+		btnTeamboba.setBackground(Color.CYAN);
 		btnTeamboba.setFont(new Font("Papyrus", Font.BOLD, 16));
 		btnTeamboba.setBounds(457, 299, 279, 39);
 		contentPane.add(btnTeamboba);
