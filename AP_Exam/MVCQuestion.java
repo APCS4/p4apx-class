@@ -55,11 +55,6 @@ public class MVCQuestion extends Question{
 			choices = loadQuestArray("Make code modular so you can modify parts without breaking the entirety of the program.", 
 					"Ensures that code is organized and purposeful.", "Ensures the proper breakdown of a problem.", 
 					"To make coding more confusing and difficult.", "All but \"To make coding more confusing and difficult\"");;
-			this.choiceA = choices[0];
-			this.choiceB = choices[1];
-			this.choiceC = choices[2];
-			this.choiceD = choices[3];
-			this.choiceE = choices[4];
 			this.answerKey = getAns(choices, "All but \"To make coding more confusing and difficult\"");
 			this.answer = "The MVC organizational pattern isolates different aspects of code to ensure "
 					+ "that code is purposeful, effective, and easy to modify in the long term.";
