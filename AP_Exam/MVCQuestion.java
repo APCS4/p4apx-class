@@ -24,7 +24,7 @@ public class MVCQuestion extends Question{
 			this.choiceC = choices[2];
 			this.choiceD = choices[3];
 			this.choiceE = choices[4];
-			this.answerKey = this.answerC;
+			this.answerKey = getAns(choices, "Model View Control");
 			this.answer = "Model View Control, that's the name";
 			break;
 		case 1:
@@ -97,4 +97,22 @@ public class MVCQuestion extends Question{
 		}
 		return choices;	
 	}
+	
+	private char getAns(String quests[], String ans) {
+		char retVal;
+		if(quests[0].equals(ans) == true)
+			retVal = 'A';
+		else if(quests[1].equals(ans) == true)
+			retVal = 'B';
+		else if(quests[2].equals(ans) == true)
+			retVal = 'C';
+		else if(quests[3].equals(ans) == true)
+			retVal = 'D';
+		else if(quests[4].equals(ans) == true)
+			retVal = 'E';
+		else retVal = 'X';
+		
+		return retVal;
+	}
+	
 }

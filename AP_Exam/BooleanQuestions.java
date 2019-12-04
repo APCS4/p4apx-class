@@ -26,8 +26,8 @@ public class BooleanQuestions extends Question
 			this.answerKey = answerD;
 			this.answer = "Choice D is correct. % is not a boolean operator";
 			break;
-		//case 1:
-			
+		case 1:
+			this.question = ""
 		}
 	}
 }

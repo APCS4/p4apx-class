@@ -153,7 +153,6 @@ public class AP_UI extends MenuControl {
 		JButton btnNewButton = new JButton("DanielAndFox");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-<<<<<<< HEAD
 			}
 		});
 		btnNewButton.setBounds(461, 186, 120, 39);
@@ -189,9 +188,7 @@ public class AP_UI extends MenuControl {
 		Power.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AP_Exam.Question q = new AP_Exam.Power();
-=======
 				AP_Exam.Question q = new AP_Exam.OperatorQuestions();
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 				testQuestion.setText(q.getQuestion());
 				testChoices.setText(q.getChoices());
 				testQuestionAnswer.setText(q.getAnswer());
@@ -218,7 +215,20 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-
+		
+		
+		JButton btnBackground = new JButton("Background Info");
+		btnBackground.setFont(new Font("Lucida Grande", Font.BOLD, 12));
+		btnBackground.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AP_Exam.Question q = new AP_Exam.BackgroundInfoQuestions();
+				testQuestion.setText(q.getQuestion());
+				testChoices.setText(q.getChoices());
+				testQuestionAnswer.setText(q.getAnswer());
+			}
+		});
+		btnBackground.setBounds(600, 130, 138, 29);
+		contentPane.add(btnBackground);
 
 		//JButton btnArraylist = new JButton("ArrayList");
 		//btnArraylist.setBounds(461, 101, 138, 29);
