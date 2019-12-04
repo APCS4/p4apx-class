@@ -43,7 +43,7 @@ public class AP_UI extends MenuControl {
 		contentPane.setLayout(null);
 
 		JLabel lblExamSections = new JLabel("Exam Sections");
-		lblExamSections.setBounds(18, 6, 91, 16);
+		lblExamSections.setBounds(18, 0, 91, 16);
 		contentPane.add(lblExamSections);
 		
 		JButton btnMath = new JButton("Math");
@@ -56,7 +56,7 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnMath.setBounds(18, 21, 91, 29);
+		btnMath.setBounds(18, 14, 91, 29);
 		contentPane.add(btnMath);
 		
 		JButton btnDataTypes = new JButton("Data Types");
@@ -69,8 +69,20 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnDataTypes.setBounds(264, 21, 101, 29);
-		contentPane.add(btnDataTypes);
+		JButton Power = new JButton("Power");
+		Power.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AP_Exam.Question q = new AP_Exam.Power();
+				testQuestion.setText(q.getQuestion());
+				testChoices.setText(q.getChoices());
+				testQuestionAnswer.setText(q.getAnswer());
+			}
+		});
+
+		Power.setBounds(588, 189, 138, 29);
+		contentPane.add(Power);
+		
+		
 		
 		JButton btnBinaryMath = new JButton("Binary Math");
 		btnBinaryMath.setFont(new Font("Lucida Grande", Font.PLAIN, 12));
@@ -82,8 +94,8 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnBinaryMath.setBounds(144, 21, 101, 29);
-		contentPane.add(btnBinaryMath);
+		
+		
 		
 		JButton btnConsole = new JButton("C");
 		btnConsole.addActionListener(new ActionListener() {
@@ -97,10 +109,7 @@ public class AP_UI extends MenuControl {
 		btnConsole.setBounds(406, 21, 21, 18);
 		contentPane.add(btnConsole);
 
-		JButton btnPower = new JButton("Power");
-		btnPower.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
-		btnPower.setBounds(457, 236, 109, 51);
-		contentPane.add(btnPower);
+		
 		
 		testQuestion.setEditable(false);
 		testQuestion.setLineWrap(true);
@@ -146,7 +155,7 @@ public class AP_UI extends MenuControl {
 			}
 		});
 
-		btnMVC.setBounds(446, 101, 138, 29);
+		btnMVC.setBounds(446, 102, 138, 29);
 		contentPane.add(btnMVC);
 		
 
@@ -195,9 +204,13 @@ public class AP_UI extends MenuControl {
 		btnBackground.setBounds(600, 130, 138, 29);
 		contentPane.add(btnBackground);
 
+
+		
+		
+		
+		
 		//JButton btnArraylist = new JButton("ArrayList");
 		//btnArraylist.setBounds(461, 101, 138, 29);
 		//contentPane.add(btnArraylist);
 	}
-	
 }
