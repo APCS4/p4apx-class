@@ -1,33 +1,45 @@
 package AP_Exam;
 
 import java.util.Random;
-
+//The class for all questions pertaining to MVC
 public class MVCQuestion extends Question{
 	public MVCQuestion()
     {
+		//This sets up all the questions to be used by the question class so when called a 
+		//question and answer is displayed and not null
     	setupQuestion();
     }
 	
 	public void setupQuestion() {
+		//string array that will contain the five options for each question
 		String[] choices = new String[5];
 		
+		//randomizes which question is asked
 		int random = (int) Math.floor(Math.random()*5);
 		
 		switch(random){
 		case 0:
+			//the question
 			this.question = "What does MVC stand for?";
 			
+			//loads the choices with strings based on what question is asked.
+			//The order will be randomized by the method loadQuestArry
 			choices = loadQuestArray("Most Valuable Concept","Model View Concept", "Model View Control", 
 					"Model Vision Control", "None of the Above");
+			//loading each choice in the question class with the choices I want
 			this.choiceA = choices[0];
+			//this. means this class, but since this class extends question 
+			//this. can access variables from question, such as choiceA, or answerKey
 			this.choiceB = choices[1];
 			this.choiceC = choices[2];
 			this.choiceD = choices[3];
 			this.choiceE = choices[4];
-			
+			//setting the answer
+			//getAns will determine which letter the answer from the randomized array and return that letter
 			this.answerKey = getAns(choices, "Model View Control");
 			this.answer = "Model View Control, that's the name";
 			break;
+		//All other cases the same idea as above
 		case 1:
 			this.question = "What does the View part of MVC contain";
 			
@@ -89,19 +101,22 @@ public class MVCQuestion extends Question{
 		}
 	}
 	
+	//loadQuestArray loads an array with the 5 possible questions
 	private String[] loadQuestArray (String q0, String q1, String q2, String q3, String q4)
 	{
-		int rand;
-		String[] choices = new String[5];
+		int rand; //random int placehold
+		String[] choices = new String[5]; //temporary storage for questions
 		
-		String hold;
+		String hold; //for swap algo
 		
+		//load questions into array
 		choices[0] = q0;
 		choices[1] = q1;
 		choices[2] = q2;
 		choices[3] = q3;
 		choices[4] = q4;
 		
+		//randomly swap the Strings 
 		for(int i = 0; i <5; i++)
 		{
 			hold = choices[i];
@@ -113,8 +128,11 @@ public class MVCQuestion extends Question{
 		return choices;	
 	}
 	
+	//Determines which choice the answer string is in
 	private char getAns(String quests[], String ans) {
 		char retVal;
+		
+		//Compares each question in array to the correct answer string
 		if(quests[0].equals(ans) == true)
 			retVal = 'A';
 		else if(quests[1].equals(ans) == true)
@@ -125,7 +143,7 @@ public class MVCQuestion extends Question{
 			retVal = 'D';
 		else if(quests[4].equals(ans) == true)
 			retVal = 'E';
-		else retVal = 'X';
+		else retVal = 'X'; //default case for if there is an error
 		
 		return retVal;
 	}
