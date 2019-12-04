@@ -162,6 +162,10 @@ public class AP_UI extends MenuControl {
 		JButton btnAnthonyjude = new JButton("BooleanQuestions");
 		btnAnthonyjude.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				AP_Exam.Question q = new AP_Exam.BooleanQuestions();
+				testQuestion.setText(q.getQuestion());
+				testChoices.setText(q.getChoices());
+				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
 		btnAnthonyjude.setBounds(588, 350, 117, 29);
@@ -181,7 +185,7 @@ public class AP_UI extends MenuControl {
 		Power.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AP_Exam.Question q = new AP_Exam.Power();
-				AP_Exam.Question qe = new AP_Exam.OperatorQuestions();
+				AP_Exam.Question q = new AP_Exam.OperatorQuestions();
 				testQuestion.setText(q.getQuestion());
 				testChoices.setText(q.getChoices());
 				testQuestionAnswer.setText(q.getAnswer());

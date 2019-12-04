@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class BooleanQuestions extends Question
 {
+	int numChoices = 0;
 	public BooleanQuestions()
 	{
 		setupQuestion();
@@ -27,7 +28,15 @@ public class BooleanQuestions extends Question
 			this.answer = "Choice D is correct. % is not a boolean operator";
 			break;
 		case 1:
-			this.question = ""
+			this.question = "What is the output of the following code?\n"
+						  + "if(3 < 5)\n"
+						  + "{\n"
+						  + "    System.out.println( false && false );\n"
+						  + "}";
+			this.choiceA = "true";
+			this.choiceB = "false";
+			this.choiceC = "The code does not execute";
+			numChoices = 3;
 		}
 	}
 }
