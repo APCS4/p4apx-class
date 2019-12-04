@@ -5,14 +5,15 @@ import java.util.Random;
 
 public class ArrayListQuestions extends Question
 {
-	public ArrayList<String> methods = new ArrayList<String>();
+	public ArrayList<String> methods = new ArrayList<String>(Arrays.asList(list(new String[] {"list.add(\"Ethan\");","list.remove(2);","\"list.contains(\"Ethan\");\"","list.set(2,\"Ethan\");","list.clone()"})));
 	private int questionType;
+	ArrayList<String> answerList = new ArrayList<String>(Arrays.asList(list(new String[] {"Andrei","Edgar","Jared","Ethan"})));
 	private String[] tempAnswers;
 
 	public ArrayListQuestions() 
 	{
 		/*
-		 * question
+		 * question//
 		 * answer
 		 * choiceA
 		 * choiceB
@@ -21,18 +22,8 @@ public class ArrayListQuestions extends Question
 		 * choiceE
 		 */
 		
-		loadMethods();
 		questionType = (int) Math.floor(Math.random()*methods.size());
 		setupQuestion();
-	}
-	
-	private void loadMethods() 
-	{
-		methods.add("list.add(\"Ethan\");");
-		methods.add("list.remove(2);");
-		methods.add("list.contains(\"Ethan\");");
-		methods.add("list.set(2,\"Ethan\");");
-		methods.add("list.clone()");
 	}
 
 	public void setupQuestion()
@@ -107,35 +98,35 @@ public class ArrayListQuestions extends Question
 	
 	Random rgen = new Random();
 	   
-	   public int[] shuffleNumbers(int amount, int min)
-	   {
-	       int[] cards = new int[amount];
+	public int[] shuffleNumbers(int amount, int min)
+	{
+	    int[] cards = new int[amount];
 	
-	       for (int i=min; i<amount; i++) 
-	       {
-	           cards[i-min] = i;
-	       }
+	    for (int i=min; i<amount; i++) 
+	    {
+	        cards[i-min] = i;
+	    }
 	
-	       for (int i=0; i<cards.length; i++) 
-	       {
-	           int randomPosition = rgen.nextInt(cards.length); 
-	           int temp = cards[i];             
-	           cards[i] = cards[randomPosition];
-	           cards[randomPosition] = temp;
-	       }
-	       return cards;
-	   }
+	    for (int i=0; i<cards.length; i++) 
+	    {
+	        int randomPosition = rgen.nextInt(cards.length); 
+	        int temp = cards[i];             
+	        cards[i] = cards[randomPosition];
+	        cards[randomPosition] = temp;
+	    }
+	    return cards;
+	}
 	
-	   int[] order;
-	   public String[] list(String[] answers) 
-	   {
-	       String[] newList = new String[answers.length];
-	       order = shuffleNumbers(answers.length,0);
+	int[] order;
+	public String[] list(String[] answers) 
+	{
+	    String[] newList = new String[answers.length];
+	    order = shuffleNumbers(answers.length,0);
 	       
-	       for (int i=0; i<newList.length; i++)
-	       {
-	           newList[i] = answers[order[i]];
-	       }
-	       return newList;
-	   }
+	    for (int i=0; i<newList.length; i++)
+	    {
+	        newList[i] = answers[order[i]];
+	    }
+	    return newList;
+	}
 }
