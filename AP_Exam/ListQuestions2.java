@@ -22,6 +22,9 @@ public class ListQuestions2 extends Question
 
 		int num4=getRandNum();
 
+		int num5 = getRandNum(); 
+		
+		int num6 = getRandNum();
 		
 
 		this.question = String.format("What is the output of the following code segment:\nlist.add(" +num1
@@ -29,6 +32,10 @@ public class ListQuestions2 extends Question
 				+ ");\nlist.add(" +num2
 
 				+ ");\n list.remove(1); \nlist.add("+ num3
+				
+				+ ");\n list.add(" + num5
+				
+				+ ");\n list.add(" + num6
 
 				+"\n list.set(2,"+num4+");");
 
