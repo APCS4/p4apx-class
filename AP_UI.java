@@ -105,21 +105,21 @@ public class AP_UI extends MenuControl {
 		
 		testQuestion.setEditable(false);
 		testQuestion.setLineWrap(true);
-		testQuestion.setBounds(16, 62, 418, 204);
+		testQuestion.setBounds(16, 62, 418, 116);
 		contentPane.add(testQuestion);
 	    
 		testChoices.setEditable(false);
 		testChoices.setLineWrap(true);
-		testChoices.setBounds(16, 278, 418, 86);
+		testChoices.setBounds(18, 190, 418, 129);
 		contentPane.add(testChoices);
 		
 		JLabel lblAnswer = new JLabel("Answer");
-		lblAnswer.setBounds(18, 376, 61, 16);
+		lblAnswer.setBounds(18, 331, 61, 16);
 		contentPane.add(lblAnswer);
 		
 		testQuestionAnswer.setEditable(false);
 		testQuestionAnswer.setLineWrap(true);
-		testQuestionAnswer.setBounds(74, 376, 357, 39);
+		testQuestionAnswer.setBounds(77, 331, 357, 72);
 		contentPane.add(testQuestionAnswer);
 		
 		JButton btnLucyandcynthia = new JButton("Code Analysis");
@@ -203,10 +203,7 @@ public class AP_UI extends MenuControl {
 		});
 		btnArraylist.setBounds(446, 130, 138, 29);
 		contentPane.add(btnArraylist);
-		
-<<<<<<< HEAD
 	
-=======
 		JButton btnTeamboba = new JButton("✧･ﾟ: *✧･ﾟ:* Team Boba *:･ﾟ✧*:･ﾟ✧");
 		btnTeamboba.setForeground(Color.RED);
 		btnTeamboba.setBackground(Color.CYAN);
@@ -239,7 +236,6 @@ public class AP_UI extends MenuControl {
 		//JButton btnArraylist = new JButton("ArrayList");
 		//btnArraylist.setBounds(461, 101, 138, 29);
 		//contentPane.add(btnArraylist);
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 	}
 	
 }
