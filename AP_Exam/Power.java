@@ -33,7 +33,7 @@ public class Power extends Question{
 			this.answerKey = Ans(pick,"For");
 			this.answer = "U got it homes";
 			break;
-		/*
+		
 		case 1:
 			this.question = "What is the correct format for writing a for loop?";
 			
@@ -44,16 +44,19 @@ public class Power extends Question{
 			this.choiceE = "for--a=3[b=2][c=5], i++";
 			this.answerKey = 'B';
 			break;
-		/*	
+		
 		case 2:
 			
 			this.question = "Which of the following is most closely associated with iterations?";
-			this.choiceA = "loops such as for loops";
-			this.choiceB = "Recursion";
-			this.choiceC = "Instance Initialization Blocks";
-			this.choiceD = "Public Static Void";
-			this.choiceE = "if else statements";
+			pick=loadArray("loops such as for loops","Recursion","Instance Initialization","Public Static Void","if else statements");
+			
+			this.choiceA = pick[0];
+			this.choiceB = pick[1];
+			this.choiceC = pick[2];
+			this.choiceD = pick[3];
+			this.choiceE = pick[4];
 			this.answerKey = 'A';
+			this.answer = "U got it homes";
 			break;
 		case 3:
 		
@@ -77,7 +80,7 @@ public class Power extends Question{
 			this.answerKey = 'E';
 			break;
 		
-		*/
+		
 		default:
 			System.out.print("elproblem");
 		
