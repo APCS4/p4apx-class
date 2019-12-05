@@ -36,7 +36,33 @@ public class ListQuestions2 extends Question
 		this.choiceC = String.format("[%d, %d, %d, %d, %d]", num1, num3, num4, num2, num3);
 		this.choiceD = String.format("[%d, %d, %d, %d, %d]", num2, num6, num4, num1, num6);
 		this.choiceE = String.format("[%d, %d, %d, %d, %d]", num3, num6, num4, num5, num6);
+		
+	    
+	        int option = rand.nextInt(5); 
+	        int option2 = rand.nextInt(5);
+	        while(option2 == option)
+	        {
+	             option2 = rand.nextInt(5); 
+	        } 
+	        int option3 = rand.nextInt(5); 
+	        while(option3==option || option3 ==option2)
+	        {
+	            option3 = rand.nextInt(5);
+	        }
+	        int option4= rand.nextInt(4);
+	        while(option4==option3 || option4 ==option2 || option4 == option)
+	        {
+	            option4 = rand.nextInt(5);
+	        }
+	        int option5 = rand.nextInt(4); 
+	        while (option5==option4 || option5 ==option3 || option5 ==option2 ||option5 ==option) 
+	        {
+	        	option5= rand.nextInt(5);
+	        }
+}
+	        
+	        
 
 }
 
-}
+
