@@ -1,6 +1,8 @@
 package AP_Exam;
 
 import java.util.Random;
+
+import Util.showCode;
 //The class for all questions pertaining to MVC
 public class MVCQuestion extends Question{
 	public MVCQuestion()
@@ -15,7 +17,7 @@ public class MVCQuestion extends Question{
 		String[] choices = new String[5];
 		
 		//randomizes which question is asked
-		int random = (int) Math.floor(Math.random()*5);
+		int random = (int) Math.floor(Math.random()*6);
 		
 		switch(random){
 		case 0:
@@ -96,6 +98,16 @@ public class MVCQuestion extends Question{
 			this.answer = "The MVC organizational pattern isolates different aspects of code to ensure "
 					+ "that code is purposeful, effective, and easy to modify in the long term.";
 			break;
+		case 5:
+			this.question = "What part of the MVC framework would this code fit into?";
+			choices = loadQuestArray("Model", "View", "Control", "Mode", "Volume");
+			this.choiceA = choices[0];
+			this.choiceB = choices[1];
+			this.choiceC = choices[2];
+			this.choiceD = choices[3];
+			this.choiceE = choices[4];
+			this.answerKey = getAns(choices, "View");
+			showCode.codeShow();
 		default:
 			System.out.print("ERROR");
 		}
