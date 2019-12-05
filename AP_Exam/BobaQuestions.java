@@ -36,28 +36,45 @@ public class BobaQuestions extends Question{
 			//Correct answer
 			this.answerKey = getAns(choices, "e most common black boba pearls are made of tapioca");
 			this.answer = "\"e most common black boba pearls are made of tapioca\"."
-					+ "Boba pearls are great.";
+					+ "Boba pearls are chewy.";
 			break;
 			
 		case 1:
 			this.question = "Using String \"Classic boba drinks are made from milk tea\","
-					+ "what would String.substring(8-11)) return?";
+					+ "what would String.substring(8-10)) return?";
 			
-			choices = answerArray("The GUI and Console IO code","The Logic for the program", "A mix of all part of program", 
-					"Data pulled from an outside source", "A,B,C,D, but not E");
+			choices = answerArray("milk","tea", "boba", 
+					"drink", "made");
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
 			this.choiceC = choices[2];
 			this.choiceD = choices[3];
 			this.choiceE = choices[4];
 			
-			this.answerKey = getAns(choices, "The GUI and Console IO code");
-			this.answer = "View conists of what the user actually sees and interacts."
-					+ " Get's input, gives output, no logic";
+			this.answerKey = getAns(choices, "boba");
+			this.answer = "\"boba\". Is good";
+			break;
+			
+		case 2:
+			this.question = "Using String \"Boba tea can come in many flavors such as taro or mango\","
+					+ "what would String.substring(10-20)) return?";
+			
+			choices = answerArray("n come in many","can come in many f", "an come in", 
+					"an come in m", "tea can come in m");
+			this.choiceA = choices[0];
+			this.choiceB = choices[1];
+			this.choiceC = choices[2];
+			this.choiceD = choices[3];
+			this.choiceE = choices[4];
+			
+			this.answerKey = getAns(choices, "an come in");
+			this.answer = "\"an come in\". You can pretty much add boba to anything really";
 			break;
 
 		default: 
 			System.out.print("ERROR");
+			
+			
 		}
 	}
 	
