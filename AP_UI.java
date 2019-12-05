@@ -238,7 +238,7 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnArraylist_2.setBounds(446, 313, 138, 29);
+		btnArraylist_2.setBounds(457, 350, 138, 29);
 		contentPane.add(btnArraylist_2);
 		
 		JScrollBar scrollBar = new JScrollBar();
