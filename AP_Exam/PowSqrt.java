@@ -77,7 +77,7 @@ public class PowSqrt extends Question
         this.choiceE = "None of the above";
         
         // real time calc answer based off args AND operator
-        double answerCalc;//hello hello again again
+        double answerCalc;//hello hello hello again again
         switch(which)
         {
             case '1':
