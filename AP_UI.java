@@ -194,10 +194,21 @@ public class AP_UI extends MenuControl {
 		});
 		btnBackground.setBounds(600, 130, 138, 29);
 		contentPane.add(btnBackground);
+		
+		JButton btnPowandsqrt = new JButton("PowAndSqrt");
+		btnPowandsqrt.setBounds(600, 262, 138, 29);
+		contentPane.add(btnPowandsqrt);
+		btnPowandsqrt.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AP_Exam.Question q = new AP_Exam.PowSqrt();
+				testQuestion.setText(q.getQuestion());
+				testChoices.setText(q.getChoices());
+				testQuestionAnswer.setText(q.getAnswer());
+			}
+		});
 
 		//JButton btnArraylist = new JButton("ArrayList");
 		//btnArraylist.setBounds(461, 101, 138, 29);
 		//contentPane.add(btnArraylist);
 	}
-	
 }

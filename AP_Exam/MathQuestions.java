@@ -43,6 +43,7 @@ public class MathQuestions extends Question
 	@Override
     public void setupQuestion(int arg1, char operator, int arg2)
     {        
+		//int randoom;
         // format question
         this.question = String.format("What is (int)" + arg1 + " " + "%s" + " (int)" + arg2, operator );
         
