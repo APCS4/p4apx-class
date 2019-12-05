@@ -8,7 +8,7 @@ public class Power extends Question{
     }
 	
 	public void setupQuestion() {
-		int rando = (int) Math.floor(Math.random()*1);
+		int rando = (int) Math.floor(Math.random()*4);
 		String[] pick = new String[5];
 
 		int zero =2;
@@ -33,39 +33,49 @@ public class Power extends Question{
 			this.answerKey = Ans(pick,"For");
 			this.answer = "U got it homes";
 			break;
-		/*
+		
 		case 1:
 			this.question = "What is the correct format for writing a for loop?";
+			pick=loadArray("For:","for(int z=12; z<=103; z--);","for{in i=1: i<6:}", "for {int i = 1: i<=6:} ()", "for: a=1, b=2, i++" );
 			
 			this.choiceA = pick[0];
 			this.choiceB = pick[1];
-			this.choiceC = "for {int i = 1: i<=6:} () ";
-			this.choiceD = "for: a=1, b=2, i++";
-			this.choiceE = "for--a=3[b=2][c=5], i++";
-			this.answerKey = 'B';
-			break;
-		/*	
-		case 2:
+			this.choiceC = pick[2];
+			this.choiceD = pick[3];
+			this.choiceE = pick[4];
 			
+			this.answerKey = Ans(pick, "for(int z=12; z<=103; z--);");
+			this.answer = "U got it homes";
+			break;
+		
+		case 2:
+			//newsss/
+			//sws
 			this.question = "Which of the following is most closely associated with iterations?";
-			this.choiceA = "loops such as for loops";
-			this.choiceB = "Recursion";
-			this.choiceC = "Instance Initialization Blocks";
-			this.choiceD = "Public Static Void";
-			this.choiceE = "if else statements";
+			pick=loadArray("loops such as for loops","Recursion","Instance Initialization","Public Static Void","if else statements");
+			
+			this.choiceA = pick[0];
+			this.choiceB = pick[1];
+			this.choiceC = pick[2];
+			this.choiceD = pick[3];
+			this.choiceE = pick[4];
 			this.answerKey = 'A';
+			this.answer = "U got it homes";
 			break;
 		case 3:
 		
 			this.question = "Which of the following is most closely associated with iterations?";
-			this.choiceA = "loops such as for loops";
-			this.choiceB = "Recursion";
-			this.choiceC = "Instance Initialization Blocks";
-			this.choiceD = "Public Static Void";
-			this.choiceE = "if else statements";
+			pick=loadArray("loops such as for loops","Recursion","Instance Initialzation Blocks","Public Static Void","if else statement");
+			
+			this.choiceA = pick[0];
+			this.choiceB = pick[1];
+			this.choiceC = pick[2];
+			this.choiceD = pick[3];
+			this.choiceE = pick[4];
 			this.answerKey = 'A';
+			this.answer = "U got it homes";
 			break;
-		
+		/*
 		case 4:
 		
 			this.question = "Consider the following code segment:\n for (int p = 1; p <= 100; k++)\n + if ((p % 4) == 0)\n + System.out.println(p);";

@@ -7,7 +7,20 @@ public class BobaQuestions extends Question{
     {
 		//Sets up all the questions to be used by the question class so when called a 
 		//question and answer is displayed and not null
-    	setupQuestion();
+		Random rand = new Random();
+		 	Integer arg1 = rand.nextInt(1);
+		 	Integer arg2 = rand.nextInt(20);
+	 	    Integer arg3 = rand.nextInt(1);
+			Integer arg4 = rand.nextInt(20);
+		 	Integer arg5 = rand.nextInt(1);
+		 	Integer arg6 = rand.nextInt(20);
+			Integer arg7 = rand.nextInt(1);
+		 	Integer arg8 = rand.nextInt(20);
+			Integer arg9 = rand.nextInt(1);
+			Integer arg10 = rand.nextInt(20);
+		//Integer opIndex = rand.nextInt(operators.length);
+			setupQuestion(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
+
     }
 	
 	public void setupQuestion() {
@@ -17,16 +30,34 @@ public class BobaQuestions extends Question{
 		//Randomizes questions
 		int random = (int) Math.floor(Math.random()*9);
 		
+		Random rand = new Random();
+		Integer arg1 = rand.nextInt(1);
+    	Integer arg2 = rand.nextInt(20);
+    	Integer arg3 = rand.nextInt(1);
+	 	Integer arg4 = rand.nextInt(20);
+	 	Integer arg5 = rand.nextInt(1);
+	 	Integer arg6 = rand.nextInt(20);
+		Integer arg7 = rand.nextInt(1);
+		Integer arg8 = rand.nextInt(20);
+		Integer arg9 = rand.nextInt(1);
+		Integer arg10 = rand.nextInt(20);
+		
 		
 		switch(random){
 		case 0:
 			//Question
+			//set up random limits for substringing later
+			
+			
+			String sentence = "The most common black boba pearls are made of tapioca";
+			
+			int i = rand.nextInt(11);
 			this.question = "Using String \"The most common black boba pearls are made of tapioca\", "
-					+ "what would String.substring(2) return?";
+					+ "what would String.substring(" + arg1 + ", "+ arg2 + ") return?";
 			
 			//Question Choices
-			choices = answerArray("h","e", "e most common black boba pearls are made of tapioca",
-					"he most common black boba pearls are made of tapioca", "hooloerafa");
+			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
+			
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
 			this.choiceC = choices[2];
@@ -34,14 +65,17 @@ public class BobaQuestions extends Question{
 			this.choiceE = choices[4];
 			
 			//Correct answer
-			this.answerKey = getAns(choices, "e most common black boba pearls are made of tapioca");
-			this.answer = "\"e most common black boba pearls are made of tapioca\"."
-					+ "Boba pearls are chewy.";
+			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
+			this.answer = sentence.substring(arg1, arg2);
 			break;
+
 			
 		case 1:
+			
+			String sentence1 = "The most common black boba pearls are made of tapioca";
+			
 			this.question = "Using String \"Classic boba drinks are made from milk tea\","
-					+ "what would String.substring(8-10)) return?";
+					+ "what would String.substring(" + arg1 + ", "+ arg2 + ") return?";
 			
 			choices = answerArray("milk","tea", "boba", 
 					"drink", "made");
@@ -60,6 +94,22 @@ public class BobaQuestions extends Question{
 					+ "what would String.substring(10-20)) return?";
 			
 			choices = answerArray("n come in many","can come in many f", "an come in", 
+					"an come in m", "tea can come in m");
+			this.choiceA = choices[0];
+			this.choiceB = choices[1];
+			this.choiceC = choices[2];
+			this.choiceD = choices[3];
+			this.choiceE = choices[4];
+			
+			this.answerKey = getAns(choices, "an come in");
+			this.answer = "\"an come in\". You can pretty much add boba to anything really";
+			break;
+			
+		case 3:
+			this.question = "Using String \"Cool boba places include ICMonster, Sharetea and MeetFresh\","
+					+ "what would String.substring(5-15)) return?";
+			
+			choices = answerArray("boba places","boba places i", " boba place", 
 					"an come in m", "tea can come in m");
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
