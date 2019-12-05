@@ -102,11 +102,6 @@ public class AP_UI extends MenuControl {
 		btnPower.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
 		btnPower.setBounds(457, 236, 109, 51);
 		contentPane.add(btnPower);
-	    
-		testChoices.setEditable(false);
-		testChoices.setLineWrap(true);
-		testChoices.setBounds(16, 278, 418, 86);
-		contentPane.add(testChoices);
 		
 		JLabel lblAnswer = new JLabel("Answer");
 		lblAnswer.setBounds(18, 376, 61, 16);
@@ -249,6 +244,15 @@ public class AP_UI extends MenuControl {
 		testQuestion.setLineWrap(true);
 		testQuestion.setBounds(16, 62, 418, 204);
 		contentPane.add(testQuestion);
+		
+		JScrollBar scrollBar_1 = new JScrollBar();
+		scrollBar_1.setBounds(419, 278, 15, 86);
+		contentPane.add(scrollBar_1);
+		
+		testChoices.setEditable(false);
+		testChoices.setLineWrap(true);
+		testChoices.setBounds(16, 278, 418, 86);
+		contentPane.add(testChoices);
 	}
 	
 }
