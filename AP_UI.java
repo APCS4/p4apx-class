@@ -7,6 +7,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import AP_Exam.AP_Console;
+import AP_Exam.encapsulationQuestions;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -60,6 +62,19 @@ public class AP_UI extends MenuControl {
 		});
 		btnMath.setBounds(18, 21, 91, 29);
 		contentPane.add(btnMath);
+		
+		JButton btnEncapsulation = new JButton("Encapsulation");
+		
+		btnMath.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				encapsulationQuestions q = new AP_Exam.encapsulationQuestions();
+				testQuestion.setText(q.getQuestion());
+				testChoices.setText(q.getChoices());
+				testQuestionAnswer.setText(q.getAnswer());
+			} 
+		});
+		btnEncapsulation.setBounds(25, 25, 110, 20);
+		contentPane.add(btnEncapsulation);
 		
 		JButton btnDataTypes = new JButton("Data Types");
 		btnDataTypes.setFont(new Font("Lucida Grande", Font.PLAIN, 12));
