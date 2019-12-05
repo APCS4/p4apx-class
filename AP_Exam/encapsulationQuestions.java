@@ -12,6 +12,7 @@ public class encapsulationQuestions {
 		this.setQuestions();
 		
 		
+		//comment
 	}
 	
 	private void setQuestions() {
