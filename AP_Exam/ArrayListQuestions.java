@@ -51,9 +51,15 @@ public class ArrayListQuestions extends Question
 			if (questionType == order[i]) answerLoc = i;
 		}
 		
-		char[] letterAnswers = {'A','B','C','D','E'};
-		answerKey = letterAnswers[answerLoc];
+		char[] letterAnswers = {'A','B','C','D','E'};		
 		
+		choiceA = shuffledAnswers[0];
+		choiceB = shuffledAnswers[1];
+		choiceC = shuffledAnswers[2];
+		choiceD = shuffledAnswers[3];
+		choiceE = shuffledAnswers[4];
+		answerKey = letterAnswers[answerLoc];
+		answer = shuffledAnswers[answerLoc];
 	}
 
 	Random rgen = new Random();
