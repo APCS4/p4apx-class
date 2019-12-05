@@ -9,7 +9,6 @@ public class Power extends Question{
 	
 	public void setupQuestion() {
 		int rando = (int) Math.floor(Math.random()*1);
-		int zero =2;
 		switch(rando){
 		case 0:
 			this.question = "What Iteration is a controlled by a programmer variable choice";
