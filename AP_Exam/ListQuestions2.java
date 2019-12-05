@@ -114,6 +114,43 @@ public class ListQuestions2 extends Question
 	        		this.choiceE= String.format("[%d, %d, %d, %d, %d]", num1, num3, num4, num2, num3);
 	        		break;
 	        }
+
+	        switch(option4)
+	        {
+	            case 0: 
+	            this.choiceA = String.format("[%d, %d, %d, %d, %d]", num2, num6, num4, num1, num6);
+	            break; 
+	            case 1:
+	            this.choiceB = String.format("[%d, %d, %d, %d, %d]", num2, num6, num4, num1, num6);
+	            break; 
+	            case 2:
+	            this.choiceC = String.format("[%d, %d, %d, %d, %d]", num2, num6, num4, num1, num6);
+	            case 3:
+	            this.choiceC = String.format("[%d, %d, %d, %d, %d]", num2, num6, num4, num1, num6);
+	            case 4:
+	            this.choiceE= String.format("[%d, %d, %d, %d, %d]", num2, num6, num4, num1, num6);
+	        }
+	        
+	        switch(option5) 
+	        {
+	            case 0: 
+	            this.choiceA = String.format("[%d, %d, %d, %d, %d]", num3, num6, num4, num5, num6);
+	            break; 
+	            case 1:
+	            this.choiceB = String.format("[%d, %d, %d, %d, %d]", num3, num6, num4, num5, num6);
+	            break; 
+	            case 2: 
+	            this.choiceC = String.format("[%d, %d, %d, %d, %d]", num3, num6, num4, num5, num6);
+	            break; 
+	            case 3:
+	            this.choiceD = String.format("[%d, %d, %d, %d, %d]", num3, num6, num4, num5, num6);
+	            break; 
+	            case 4: 
+	            this.choiceE = String.format("[%d, %d, %d, %d, %d]", num3, num6, num4, num5, num6);
+	            break;
+	            
+	            
+	        }
 }
 	        
 	        

@@ -30,22 +30,24 @@ public class BobaQuestions extends Question{
 		//Randomizes questions
 		int random = (int) Math.floor(Math.random()*9);
 		
+		Random rand = new Random();
+		Integer arg1 = rand.nextInt(1);
+    	Integer arg2 = rand.nextInt(20);
+    	Integer arg3 = rand.nextInt(1);
+	 	Integer arg4 = rand.nextInt(20);
+	 	Integer arg5 = rand.nextInt(1);
+	 	Integer arg6 = rand.nextInt(20);
+		Integer arg7 = rand.nextInt(1);
+		Integer arg8 = rand.nextInt(20);
+		Integer arg9 = rand.nextInt(1);
+		Integer arg10 = rand.nextInt(20);
+		
 		
 		switch(random){
 		case 0:
 			//Question
-			Random rand = new Random();
 			//set up random limits for substringing later
-			Integer arg1 = rand.nextInt(1);
-        	Integer arg2 = rand.nextInt(20);
-	    	Integer arg3 = rand.nextInt(1);
-		 	Integer arg4 = rand.nextInt(20);
-		 	Integer arg5 = rand.nextInt(1);
-		 	Integer arg6 = rand.nextInt(20);
-			Integer arg7 = rand.nextInt(1);
-			Integer arg8 = rand.nextInt(20);
-			Integer arg9 = rand.nextInt(1);
-			Integer arg10 = rand.nextInt(20);
+			
 			
 			String sentence = "The most common black boba pearls are made of tapioca";
 			
@@ -69,8 +71,11 @@ public class BobaQuestions extends Question{
 
 			
 		case 1:
+			
+			String sentence1 = "The most common black boba pearls are made of tapioca";
+			
 			this.question = "Using String \"Classic boba drinks are made from milk tea\","
-					+ "what would String.substring(8-10)) return?";
+					+ "what would String.substring(" + arg1 + ", "+ arg2 + ") return?";
 			
 			choices = answerArray("milk","tea", "boba", 
 					"drink", "made");
