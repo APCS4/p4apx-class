@@ -20,6 +20,7 @@ public class ArrayListQuestions extends Question
 		setupQuestion();
 	}
 
+	
 	public void setupQuestion()
 	{
 		this.question = "What does " + methods.get(questionType) + " do to list " + names.toString();
