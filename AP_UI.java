@@ -248,6 +248,13 @@ public class AP_UI extends MenuControl {
 		contentPane.add(btnArraylist_2);
 >>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 
+<<<<<<< HEAD
+=======
+
+		
+		
+		 
+>>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 		//JButton btnArraylist = new JButton("ArrayList");
 		//btnArraylist.setBounds(461, 101, 138, 29);
 		//contentPane.add(btnArraylist);
