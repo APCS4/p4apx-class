@@ -97,11 +97,6 @@ public class AP_UI extends MenuControl {
 		btnConsole.setBackground(Color.LIGHT_GRAY);
 		btnConsole.setBounds(406, 21, 21, 18);
 		contentPane.add(btnConsole);
-
-		JButton btnPower = new JButton("Power");
-		btnPower.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
-		btnPower.setBounds(457, 236, 109, 51);
-		contentPane.add(btnPower);
 		
 		JLabel lblAnswer = new JLabel("Answer");
 		lblAnswer.setBounds(18, 376, 61, 16);
@@ -137,7 +132,7 @@ public class AP_UI extends MenuControl {
 			}
 		});
 
-		btnMVC.setBounds(446, 101, 138, 29);
+		btnMVC.setBounds(489, 89, 138, 29);
 		contentPane.add(btnMVC);
 		
 
@@ -170,20 +165,20 @@ public class AP_UI extends MenuControl {
 		////JButton btnTeamboba = new JButton("TeamBoba");
 		//btnTeamboba.setBounds(461, 223, 117, 29);
 		//contentPane.add(btnTeamboba);
-
-	
 		JButton Power = new JButton("Power");
 		Power.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AP_Exam.Question q = new AP_Exam.Power();
-				AP_Exam.Question q1 = new AP_Exam.OperatorQuestions();
-				testQuestion.setText(q1.getQuestion());
-				testChoices.setText(q1.getChoices());
-				testQuestionAnswer.setText(q1.getAnswer());
+				testQuestion.setText(q.getQuestion());
+				testChoices.setText(q.getChoices());
+				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnNewButton.setBounds(456, 184, 120, 39);
-		contentPane.add(btnNewButton);
+
+		Power.setBounds(567, 250, 138, 29);
+		contentPane.add(Power);
+	
+		
 
 		JButton btnArraylist = new JButton("ArrayList");
 		btnArraylist.addActionListener(new ActionListener() {
