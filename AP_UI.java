@@ -197,10 +197,10 @@ public class AP_UI extends MenuControl {
 		JButton btnArraylist = new JButton("ArrayList");
 		btnArraylist.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				AP_Exam.Question q = new AP_Exam.ArrayListQuestions();
-				testQuestion.setText(q.getQuestion());
-				testChoices.setText(q.getChoices());
-				testQuestionAnswer.setText(q.getAnswer());
+				AP_Exam.Question a = new AP_Exam.ArrayListQuestions();
+				testQuestion.setText(a.getQuestion());
+				testChoices.setText(a.getChoices());
+				testQuestionAnswer.setText(a.getAnswer());
 			}
 		});
 		btnArraylist.setBounds(446, 130, 138, 29);
