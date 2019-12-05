@@ -56,7 +56,7 @@ public class BobaQuestions extends Question{
 					+ " Get's input, gives output, no logic";
 			break;
 
-		default:
+		default: 
 			System.out.print("ERROR");
 		}
 	}
