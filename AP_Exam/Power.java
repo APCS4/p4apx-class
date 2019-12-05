@@ -38,7 +38,7 @@ public class Power extends Question{
 			this.question = "What is the correct format for writing a for loop?";
 			
 			this.choiceA = pick[0];
-			this.choiceB = "for (int i = 1; i<=6; i++)";
+			this.choiceB = pick[1];
 			this.choiceC = "for {int i = 1: i<=6:} () ";
 			this.choiceD = "for: a=1, b=2, i++";
 			this.choiceE = "for--a=3[b=2][c=5], i++";
