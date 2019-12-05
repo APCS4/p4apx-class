@@ -10,7 +10,7 @@ public class encapsulationQuestions {
 	encapsulationQuestions() {
 		
 		this.setQuestions();
-		//comment
+		
 		
 	}
 	
