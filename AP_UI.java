@@ -225,6 +225,18 @@ public class AP_UI extends MenuControl {
 		});
 		btnBackground.setBounds(600, 130, 138, 29);
 		contentPane.add(btnBackground);
+		
+		JButton btnPowandsqrt = new JButton("PowAndSqrt");
+		btnPowandsqrt.setBounds(600, 262, 138, 29);
+		contentPane.add(btnPowandsqrt);
+		btnPowandsqrt.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AP_Exam.Question q = new AP_Exam.PowSqrt();
+				testQuestion.setText(q.getQuestion());
+				testChoices.setText(q.getChoices());
+				testQuestionAnswer.setText(q.getAnswer());
+			}
+		});
 
 		JButton btnNewButton_1 = new JButton("declarations");
 		btnNewButton_1.setBounds(596, 165, 117, 51);
@@ -263,5 +275,4 @@ public class AP_UI extends MenuControl {
 		contentPane.add(testChoices);
 
 	}
-	
 }
