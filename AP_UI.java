@@ -18,6 +18,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
+import javax.swing.JScrollBar;
 
 public class AP_UI extends MenuControl {
 
@@ -101,11 +102,6 @@ public class AP_UI extends MenuControl {
 		btnPower.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
 		btnPower.setBounds(457, 236, 109, 51);
 		contentPane.add(btnPower);
-		
-		testQuestion.setEditable(false);
-		testQuestion.setLineWrap(true);
-		testQuestion.setBounds(16, 62, 418, 204);
-		contentPane.add(testQuestion);
 	    
 		testChoices.setEditable(false);
 		testChoices.setLineWrap(true);
@@ -244,6 +240,15 @@ public class AP_UI extends MenuControl {
 		});
 		btnArraylist_2.setBounds(446, 313, 138, 29);
 		contentPane.add(btnArraylist_2);
+		
+		JScrollBar scrollBar = new JScrollBar();
+		scrollBar.setBounds(419, 62, 15, 204);
+		contentPane.add(scrollBar);
+		
+		testQuestion.setEditable(false);
+		testQuestion.setLineWrap(true);
+		testQuestion.setBounds(16, 62, 418, 204);
+		contentPane.add(testQuestion);
 	}
 	
 }
