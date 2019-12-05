@@ -150,7 +150,6 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-
 		btnMVC.setBounds(489, 89, 138, 29);
 		contentPane.add(btnMVC);
 		
@@ -166,8 +165,7 @@ public class AP_UI extends MenuControl {
 		});
 		btnNewButton.setBounds(461, 186, 120, 39);
 		contentPane.add(btnNewButton);
-
-		
+	
 		JButton btnAnthonyjude = new JButton("BooleanQuestions");
 		btnAnthonyjude.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -180,14 +178,6 @@ public class AP_UI extends MenuControl {
 		btnAnthonyjude.setBounds(588, 350, 117, 29);
 		contentPane.add(btnAnthonyjude);
 
-
-		//JButton btnArraylist = new JButton("ArrayList");
-		//btnArraylist.setBounds(461, 101, 138, 29);
-		//contentPane.add(btnArraylist);
-		
-		////JButton btnTeamboba = new JButton("TeamBoba");
-		//btnTeamboba.setBounds(461, 223, 117, 29);
-		//contentPane.add(btnTeamboba);
 		JButton Power = new JButton("Power");
 		Power.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -197,12 +187,9 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-
-		Power.setBounds(567, 250, 138, 29);
+		Power.setBounds(457, 258, 138, 29);
 		contentPane.add(Power);
 	
-		
-
 		JButton btnArraylist = new JButton("ArrayList");
 		btnArraylist.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -243,7 +230,6 @@ public class AP_UI extends MenuControl {
 		});
 		btnBackground.setBounds(600, 130, 138, 29);
 		contentPane.add(btnBackground);
-<<<<<<< HEAD
 		
 		JButton btnPowandsqrt = new JButton("PowAndSqrt");
 		btnPowandsqrt.setBounds(600, 262, 138, 29);
@@ -256,14 +242,9 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-=======
-<<<<<<< HEAD
-		
-=======
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
-		JButton btnNewButton_1 = new JButton("declarations");
+
+		JButton btnNewButton_1 = new JButton("Declarations");
 		btnNewButton_1.setBounds(596, 165, 117, 51);
 		contentPane.add(btnNewButton_1);
 		
@@ -280,22 +261,12 @@ public class AP_UI extends MenuControl {
 		});
 		btnArraylist_2.setBounds(457, 350, 138, 29);
 		contentPane.add(btnArraylist_2);
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(16, 62, 418, 204);
 		contentPane.add(scrollPane);
 		scrollPane.setViewportView(testQuestion);
 		
-<<<<<<< HEAD
-		 
-		//JButton btnArraylist = new JButton("ArrayList");
-		//btnArraylist.setBounds(461, 101, 138, 29);
-		//contentPane.add(btnArraylist);
-=======
 		testQuestion.setEditable(false);
 		testQuestion.setLineWrap(true);
 		
@@ -307,6 +278,5 @@ public class AP_UI extends MenuControl {
 		testChoices.setEditable(false);
 		testChoices.setLineWrap(true);
 
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 	}
 }
