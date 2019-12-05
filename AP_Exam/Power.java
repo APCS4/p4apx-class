@@ -8,7 +8,7 @@ public class Power extends Question{
     }
 	
 	public void setupQuestion() {
-		int rando = (int) Math.floor(Math.random()*1);
+		int rando = (int) Math.floor(Math.random()*4);
 		String[] pick = new String[5];
 
 		int zero =2;
@@ -36,13 +36,16 @@ public class Power extends Question{
 		
 		case 1:
 			this.question = "What is the correct format for writing a for loop?";
+			pick=loadArray("For:","for(int z=12; z<=103; z--);","for{in i=1: i<6:}", "for {int i = 1: i<=6:} ()", "for: a=1, b=2, i++" );
 			
 			this.choiceA = pick[0];
 			this.choiceB = pick[1];
-			this.choiceC = "for {int i = 1: i<=6:} () ";
-			this.choiceD = "for: a=1, b=2, i++";
-			this.choiceE = "for--a=3[b=2][c=5], i++";
-			this.answerKey = 'B';
+			this.choiceC = pick[2];
+			this.choiceD = pick[3];
+			this.choiceE = pick[4];
+			
+			this.answerKey = Ans(pick, "for(int z=12; z<=103; z--);");
+			this.answer = "U got it homes";
 			break;
 		
 		case 2:
