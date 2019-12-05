@@ -8,7 +8,7 @@ public class Power extends Question{
     }
 	
 	public void setupQuestion() {
-		int rando = (int) Math.floor(Math.random()*1);
+		int rando = (int) Math.floor(Math.random()*5);
 		switch(rando){
 		case 0:
 			this.question = "What Iteration is a controlled by a programmer variable choice";
@@ -52,8 +52,8 @@ public class Power extends Question{
 			break;
 		case 4:
 		
-			this.question = "Consider the following code segment:\n for (int p = 1; p <= 100; k++)\n' + 'if ((p % 4) == 0)\n' + 'System.out.println(p);'";
-			this.choiceA = "for(intp=1;p<=25;p++)\n' + 'System.out.println(p);'";
+			this.question = "Consider the following code segment:\n for (int p = 1; p <= 100; k++)\n + if ((p % 4) == 0)\n + System.out.println(p);";
+			this.choiceA = "for(intp=1;p<=25;p++)\n + System.out.println(p);";
 			this.choiceB = "for(intp=1;p<=100;p=p+4)\n System.out.println(p);";
 			this.choiceC = "for(intp=1;p<=100;p--)\n System.out.println(p % 9);";
 			this.choiceD = "for(intp=4;p<=25;p=19*p)\n System.out.println(p);";
