@@ -8,7 +8,7 @@ public class Power extends Question{
     }
 	
 	public void setupQuestion() {
-		int rando = (int) Math.floor(Math.random()*1);
+		int rando = (int) Math.floor(Math.random()*5);
 		int zero =2;
 		switch(rando){
 		case 0:
