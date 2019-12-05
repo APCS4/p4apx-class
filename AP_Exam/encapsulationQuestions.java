@@ -54,7 +54,7 @@ public class encapsulationQuestions {
 		question3[4] = "null";
 		question3[5] = "null";
 		question3[6] = "explanation";
-		
+		 
 		question4[0] = "";
 		question4[1] = "";
 		question4[2] = "";
