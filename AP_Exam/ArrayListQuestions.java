@@ -1,242 +1,62 @@
 package AP_Exam;
 
-import java.util.ArrayList; 
-
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 
 public class ArrayListQuestions extends Question
 {
-	public ArrayList<String> methods = new ArrayList<String>(Arrays.asList(list(new String[] {"list.add(\"Ethan\");","list.remove(2);","\"list.contains(\"Ethan\");\"","list.set(2,\"Ethan\");","list.clone()"})));
+	private ArrayList<String> methods = new ArrayList<String>(Arrays.asList(new String[] {"list.add(\"Ethan\");","list.remove(2);","\"list.contains(\"Ethan\");\"","list.set(2,\"Ethan\");","list.get(1)"}));
+	private ArrayList<String> names = new ArrayList<String>(Arrays.asList(list(new String[] {"Andrei","Edgar","Jared","Ethan"})));
 	private int questionType;
-	ArrayList<String> answerList = new ArrayList<String>(Arrays.asList(list(new String[] {"Andrei","Edgar","Jared","Ethan"})));
-	private String[] tempAnswers;
-
-
-
-public class ArrayListQuestions extends Question 
-
-{
-
-	
+	private String[] tempAnswers = new String[5];
+	private String[] shuffledAnswers;
+	private int answer;
 
 	public ArrayListQuestions()
-
 	{
-
-		
-
-
-
-	public ArrayListQuestions() 
-	{
-		/*
-		 * question//
-		 * answer
-		 * choiceA
-		 * choiceB
-		 * choiceC
-		 * choiceD
-		 * choiceE
-		 */
-		
 		questionType = (int) Math.floor(Math.random()*methods.size());
 		setupQuestion();
-
-
 	}
 
-	
-
 	public void setupQuestion()
-
 	{
-
-		
-
-		Random random = new Random(); 
-
-		int num1=getRandNum();
-
-		int num2=getRandNum();
-
-		int num3=getRandNum();
-
-		int num4=getRandNum();
-
-		
-
-		this.question = String.format("What is the output of the following code segment:\nlist.add(" +num1
-
-				+ ");\nlist.add(" +num2
-
-				+ ");\n list.remove(1); \nlist.add("+ num3
-
-				+"\n list.set(2,"+num4+");");
-
-		 
-
-		 
-
+		this.question = "What does " + methods.get(questionType) + " do to list " + names.toString();
+		generateAnswers();
+	}
 	
+	private void generateAnswers()
+	{
+		ArrayList<String> answer1 = names;
+		answer1.add("Ethan");
+		tempAnswers[0] = answer1.toString();
+		
+		ArrayList<String> answer2 = names;
+		answer2.remove("Ethan");
+		tempAnswers[1] = answer2.toString();
 
+		tempAnswers[2] = Boolean.toString(names.contains("Ethan"));
+		
+		ArrayList<String> answer4 = names;
+		answer4.set(2,"Ethan");
+		tempAnswers[3] = answer4.toString();
 
-		// int correct = random.nextInt(5);
-
-		ArrayList<Integer> choice1 = new ArrayList<Integer>();
-
-		choice1.add(num1);
-
-		choice1.add(num2);
-
-		choice1.remove(1); 
-
-		choice1.add(num3); 
-
-		choice1.set(2, num4); 
-
-		ArrayList<Integer> choice2 = new ArrayList<Integer>();
-
-		ArrayList<Integer> choice3 = new ArrayList<Integer>();
-
-		ArrayList<Integer> choice4 = new ArrayList<Integer>();
-
-		ArrayList<Integer> choice5 = new ArrayList<Integer>();
-
-
-
-
+		tempAnswers[4] = names.get(1);
+		
+		shuffledAnswers = list(tempAnswers);
+		
+		for(int i = 0; i<shuffledAnswers.length;i++)
+		{
+			if (questionType == order[i]) answer = i;
+		}
+	}
 
 	Random rgen = new Random();
 	   
 	public int[] shuffleNumbers(int amount, int min)
 	{
 	    int[] cards = new int[amount];
-
-
-
-	 int randnum = random.nextInt(5);
-
-	 switch (randnum)
-
-	 {
-
-	 	case 0:
-
-	 		this.choiceA = String.format(String.valueOf(choice1));
-
-	 		this.choiceB = String.format(String.valueOf(choice2));
-
-	 		this.choiceC = String.format(String.valueOf(choice3));
-
-	 		this.choiceD = String.format(String.valueOf(choice4));
-
-	 		this.choiceE = String.format(String.valueOf(choice5));
-
-	 		
-
-
-
-	 		break;
-
-	 	case 1:
-
-	 		this.choiceA = String.format(String.valueOf(choice2));
-
-	 		this.choiceB = String.format(String.valueOf(choice3));
-
-	 		this.choiceC = String.format(String.valueOf(choice4));
-
-	 		this.choiceD = String.format(String.valueOf(choice5));
-
-	 		this.choiceE = String.format(String.valueOf(choice1));
-
-
-
-
-
-	 		break;
-
-	 	case 2:
-
-	 		this.choiceA = String.format(String.valueOf(choice3));
-
-	 		this.choiceB = String.format(String.valueOf(choice2));
-
-	 		this.choiceC = String.format(String.valueOf(choice3));
-
-	 		this.choiceD = String.format(String.valueOf(choice4));
-
-	 		this.choiceE = String.format(String.valueOf(choice5));
-
-
-
-	 		break;
-
-	 	case 3:
-
-	 		this.choiceA = String.format(String.valueOf(choice4));
-
-	 		this.choiceB = String.format(String.valueOf(choice4));
-
-	 		this.choiceC = String.format(String.valueOf(choice3));
-
-	 		this.choiceD = String.format(String.valueOf(choice3));
-
-	 		this.choiceE = String.format(String.valueOf(choice5));
-
-
-
-	 		break;
-
-	 	case 4:
-
-	 		this.choiceA = String.format(String.valueOf(choice5));
-
-	 		this.choiceB = String.format(String.valueOf(choice4));
-
-	 		this.choiceC = String.format(String.valueOf(choice3));
-
-	 		this.choiceD = String.format(String.valueOf(choice3));
-
-	 		this.choiceE = String.format(String.valueOf(choice5));
-
-
-
-	 		break;
-
-		 
-
-	 }
-
-	 
-
-
-
-		
-
-	}
-
-	}
-
-	public int getRandNum()
-
-	{
-
-		Random rand = new Random();
-
-		return(rand.nextInt(10));
-
-	}
-
-
-
-	    for (int i=min; i<amount; i++) 
-	    {
-	        cards[i-min] = i;
-	    }
-
-
 
 	    for (int i=0; i<cards.length; i++) 
 	    {
@@ -247,24 +67,7 @@ public class ArrayListQuestions extends Question
 	    }
 	    return cards;
 	}
-
-
 	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
 	int[] order;
 	public String[] list(String[] answers) 
 	{
@@ -277,7 +80,5 @@ public class ArrayListQuestions extends Question
 	    }
 	    return newList;
 	}
-
-
 }
 
