@@ -53,7 +53,6 @@ public class ArrayListQuestions extends Question
 		}
 
 		setAnswers();
-		
 	}
 	
 	private void setAnswers()
