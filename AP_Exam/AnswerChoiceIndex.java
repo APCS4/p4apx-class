@@ -12,6 +12,7 @@ public class AnswerChoiceIndex {
 		}
 		return 0;
 	}
+	
 	public char returnAns(int Index) {
 		if (Index == 0) {
 			return 'A';

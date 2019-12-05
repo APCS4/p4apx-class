@@ -121,25 +121,4 @@ public class CA extends Question{
 			System.out.print("ERROR");
 		}
 	}
-}C = "4";
-			this.choiceD = "The code will result in an error";
-			this.choiceE = "None of the above";
-			this.answerKey = this.answerD;
-			this.answer = "The code will result in an error";
-			break;
-		case 6:
-			this.question = "double x = -11.96;\nint y = (int)(x - 0.5);\nSystem.out.println(y);\n\nWhat will be printed?";
-			this.choiceA = "-11";
-			this.choiceB = "-12";
-			this.choiceC = "-11.9";
-			this.choiceD = "-11.96";
-			this.choiceE = "-12.0";
-			this.answerKey = this.answerB;
-			this.answer = "-12";
-			break;
-		default:
-			System.out.print("ERROR");
-		}
-	}
-	// bruh
 }
