@@ -33,7 +33,7 @@ public class Power extends Question{
 			
 		case 2:
 			
-			this.question = "Which of the following is most closely associated with iterations?"
+			this.question = "Which of the following is most closely associated with iterations?";
 			this.choiceA = "loops such as for loops";
 			this.choiceB = "Recursion";
 			this.choiceC = "Instance Initialization Blocks";
@@ -53,14 +53,13 @@ public class Power extends Question{
 			break;
 		case 4:
 		
-			this.question = "Consider the following code segment:\n for (int k = 1; k <= 100; k++)\n' + 'if ((k % 4) == 0)\n' + 'System.out.println(k);'";
-				
-			this.choiceA = "for(intk=1;k<=25;k++)\n' + 'System.out.println(k);'";
-			this.choiceB = "Recursion";
-			this.choiceC = "Instance Initialization Blocks";
-			this.choiceD = "Public Static Void";
-			this.choiceE = "if else statements";
-			this.answerKey = 'A';
+			this.question = "Consider the following code segment:\n for (int p = 1; p <= 100; k++)\n' + 'if ((p % 4) == 0)\n' + 'System.out.println(p);'";
+			this.choiceA = "for(intp=1;p<=25;p++)\n' + 'System.out.println(p);'";
+			this.choiceB = "for(intp=1;p<=100;p=p+4)\n System.out.println(p);";
+			this.choiceC = "for(intp=1;p<=100;p--)\n System.out.println(p % 9);";
+			this.choiceD = "for(intp=4;p<=25;p=19*p)\n System.out.println(p);";
+			this.choiceE = "for(intp=4;p<=100;p=p+4)\n System.out.println(p);";
+			this.answerKey = 'E';
 			break;
 		
 		default:
