@@ -6,7 +6,6 @@ import java.util.Random;
 
 
 public class ArrayListQuestions extends Question
-//
 {
 	private ArrayList<String> methods = new ArrayList<String>(Arrays.asList(new String[] {"list.add(\"Ethan\");","list.remove(2);","\"list.contains(\"Ethan\");\"","list.set(2,\"Ethan\");","list.get(1)"}));
 	private ArrayList<String> names = new ArrayList<String>(Arrays.asList(list(new String[] {"Andrei","Edgar","Jared","Ethan"})));
@@ -52,15 +51,9 @@ public class ArrayListQuestions extends Question
 			if (questionType == order[i]) answerLoc = i;
 		}
 		
-		char[] letterAnswers = {'A','B','C','D','E'};		
-		
-		choiceA = shuffledAnswers[0];
-		choiceB = shuffledAnswers[1];
-		choiceC = shuffledAnswers[2];
-		choiceD = shuffledAnswers[3];
-		choiceE = shuffledAnswers[4];
+		char[] letterAnswers = {'A','B','C','D','E'};
 		answerKey = letterAnswers[answerLoc];
-		answer = shuffledAnswers[answerLoc];
+		
 	}
 
 	Random rgen = new Random();
