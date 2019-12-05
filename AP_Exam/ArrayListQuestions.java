@@ -6,13 +6,14 @@ import java.util.Random;
 
 
 public class ArrayListQuestions extends Question
+//
 {
 	private ArrayList<String> methods = new ArrayList<String>(Arrays.asList(new String[] {"list.add(\"Ethan\");","list.remove(2);","\"list.contains(\"Ethan\");\"","list.set(2,\"Ethan\");","list.get(1)"}));
 	private ArrayList<String> names = new ArrayList<String>(Arrays.asList(list(new String[] {"Andrei","Edgar","Jared","Ethan"})));
 	private int questionType;
 	private String[] tempAnswers = new String[5];
 	private String[] shuffledAnswers;
-	private int answer;
+	private int answerLoc;
 
 	public ArrayListQuestions()
 	{
@@ -20,6 +21,7 @@ public class ArrayListQuestions extends Question
 		setupQuestion();
 	}
 
+	
 	public void setupQuestion()
 	{
 		this.question = "What does " + methods.get(questionType) + " do to list " + names.toString();
@@ -48,8 +50,18 @@ public class ArrayListQuestions extends Question
 		
 		for(int i = 0; i<shuffledAnswers.length;i++)
 		{
-			if (questionType == order[i]) answer = i;
+			if (questionType == order[i]) answerLoc = i;
 		}
+		
+		char[] letterAnswers = {'A','B','C','D','E'};		
+		
+		choiceA = shuffledAnswers[0];
+		choiceB = shuffledAnswers[1];
+		choiceC = shuffledAnswers[2];
+		choiceD = shuffledAnswers[3];
+		choiceE = shuffledAnswers[4];
+		answerKey = letterAnswers[answerLoc];
+		answer = shuffledAnswers[answerLoc];
 	}
 
 	Random rgen = new Random();
