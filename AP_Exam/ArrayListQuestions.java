@@ -12,7 +12,7 @@ public class ArrayListQuestions extends Question
 	private int questionType;
 	private String[] tempAnswers = new String[5];
 	private String[] shuffledAnswers;
-	private int answer;
+	private int answerLoc;
 
 	public ArrayListQuestions()
 	{
@@ -48,8 +48,11 @@ public class ArrayListQuestions extends Question
 		
 		for(int i = 0; i<shuffledAnswers.length;i++)
 		{
-			if (questionType == order[i]) answer = i;
+			if (questionType == order[i]) answerLoc = i;
 		}
+		
+		char[] letterAnswers = {'A','B','C','D','E'};
+		answerKey = letterAnswers[answerLoc];
 	}
 
 	Random rgen = new Random();
