@@ -18,6 +18,8 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
+import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
 
 public class AP_UI extends MenuControl {
 
@@ -96,30 +98,18 @@ public class AP_UI extends MenuControl {
 		btnConsole.setBackground(Color.LIGHT_GRAY);
 		btnConsole.setBounds(406, 21, 21, 18);
 		contentPane.add(btnConsole);
-
-		JButton btnPower = new JButton("Power");
-		btnPower.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
-		btnPower.setBounds(457, 236, 109, 51);
-		contentPane.add(btnPower);
-		
-		testQuestion.setEditable(false);
-		testQuestion.setLineWrap(true);
-		testQuestion.setBounds(16, 62, 418, 204);
-		contentPane.add(testQuestion);
-	    
-		testChoices.setEditable(false);
-		testChoices.setLineWrap(true);
-		testChoices.setBounds(16, 278, 418, 86);
-		contentPane.add(testChoices);
 		
 		JLabel lblAnswer = new JLabel("Answer");
 		lblAnswer.setBounds(18, 376, 61, 16);
 		contentPane.add(lblAnswer);
 		
+		JScrollPane scrollPane_2 = new JScrollPane();
+		scrollPane_2.setBounds(74, 376, 363, 39);
+		contentPane.add(scrollPane_2);
+		scrollPane_2.setRowHeaderView(testQuestionAnswer);
+		
 		testQuestionAnswer.setEditable(false);
 		testQuestionAnswer.setLineWrap(true);
-		testQuestionAnswer.setBounds(74, 376, 357, 39);
-		contentPane.add(testQuestionAnswer);
 		
 		JButton btnLucyandcynthia = new JButton("Code Analysis");
 		btnLucyandcynthia.setForeground(new Color(0, 255, 0));
@@ -146,7 +136,7 @@ public class AP_UI extends MenuControl {
 			}
 		});
 
-		btnMVC.setBounds(446, 101, 138, 29);
+		btnMVC.setBounds(489, 89, 138, 29);
 		contentPane.add(btnMVC);
 		
 
@@ -179,22 +169,30 @@ public class AP_UI extends MenuControl {
 		////JButton btnTeamboba = new JButton("TeamBoba");
 		//btnTeamboba.setBounds(461, 223, 117, 29);
 		//contentPane.add(btnTeamboba);
-
-	
 		JButton Power = new JButton("Power");
 		Power.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AP_Exam.Question q = new AP_Exam.Power();
-				AP_Exam.Question q1 = new AP_Exam.OperatorQuestions();
-				testQuestion.setText(q1.getQuestion());
-				testChoices.setText(q1.getChoices());
-				testQuestionAnswer.setText(q1.getAnswer());
+				testQuestion.setText(q.getQuestion());
+				testChoices.setText(q.getChoices());
+				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnNewButton.setBounds(456, 184, 120, 39);
-		contentPane.add(btnNewButton);
+
+		Power.setBounds(567, 250, 138, 29);
+		contentPane.add(Power);
+	
+		
 
 		JButton btnArraylist = new JButton("ArrayList");
+		btnArraylist.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AP_Exam.Question a = new AP_Exam.ArrayListQuestions();
+				testQuestion.setText(a.getQuestion());
+				testChoices.setText(a.getChoices());
+				testQuestionAnswer.setText(a.getAnswer());
+			}
+		});
 		btnArraylist.setBounds(446, 130, 138, 29);
 		contentPane.add(btnArraylist);
 		
@@ -242,8 +240,25 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnArraylist_2.setBounds(446, 313, 138, 29);
+		btnArraylist_2.setBounds(457, 350, 138, 29);
 		contentPane.add(btnArraylist_2);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(16, 62, 418, 204);
+		contentPane.add(scrollPane);
+		scrollPane.setViewportView(testQuestion);
+		
+		testQuestion.setEditable(false);
+		testQuestion.setLineWrap(true);
+		
+		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBounds(16, 278, 418, 86);
+		contentPane.add(scrollPane_1);
+		scrollPane_1.setViewportView(testChoices);
+		
+		testChoices.setEditable(false);
+		testChoices.setLineWrap(true);
+
 	}
 	
 }
