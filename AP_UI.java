@@ -72,8 +72,8 @@ public class AP_UI extends MenuControl {
 				testChoices.setText(q.getChoices());
 				testQuestionAnswer.setText(q.getAnswer());
 			} 
-		});
-		btnEncapsulation.setBounds(25, 25, 110, 20);
+		}); 
+		btnEncapsulation.setBounds(255, 25, 110, 20);
 		contentPane.add(btnEncapsulation);
 		
 		JButton btnDataTypes = new JButton("Data Types");
