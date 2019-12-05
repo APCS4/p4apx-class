@@ -53,6 +53,7 @@ public class ArrayListQuestions extends Question
 		
 		char[] letterAnswers = {'A','B','C','D','E'};
 		answerKey = letterAnswers[answerLoc];
+		
 	}
 
 	Random rgen = new Random();
