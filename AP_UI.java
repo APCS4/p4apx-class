@@ -18,6 +18,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
+import javax.swing.JScrollBar;
 
 public class AP_UI extends MenuControl {
 
@@ -102,16 +103,6 @@ public class AP_UI extends MenuControl {
 		btnPower.setBounds(457, 236, 109, 51);
 		contentPane.add(btnPower);
 		
-		testQuestion.setEditable(false);
-		testQuestion.setLineWrap(true);
-		testQuestion.setBounds(16, 62, 418, 204);
-		contentPane.add(testQuestion);
-	    
-		testChoices.setEditable(false);
-		testChoices.setLineWrap(true);
-		testChoices.setBounds(16, 278, 418, 86);
-		contentPane.add(testChoices);
-		
 		JLabel lblAnswer = new JLabel("Answer");
 		lblAnswer.setBounds(18, 376, 61, 16);
 		contentPane.add(lblAnswer);
@@ -185,16 +176,24 @@ public class AP_UI extends MenuControl {
 		Power.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AP_Exam.Question q = new AP_Exam.Power();
-				AP_Exam.Question q = new AP_Exam.OperatorQuestions();
-				testQuestion.setText(q.getQuestion());
-				testChoices.setText(q.getChoices());
-				testQuestionAnswer.setText(q.getAnswer());
+				AP_Exam.Question q1 = new AP_Exam.OperatorQuestions();
+				testQuestion.setText(q1.getQuestion());
+				testChoices.setText(q1.getChoices());
+				testQuestionAnswer.setText(q1.getAnswer());
 			}
 		});
 		btnNewButton.setBounds(456, 184, 120, 39);
 		contentPane.add(btnNewButton);
 
 		JButton btnArraylist = new JButton("ArrayList");
+		btnArraylist.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AP_Exam.Question a = new AP_Exam.ArrayListQuestions();
+				testQuestion.setText(a.getQuestion());
+				testChoices.setText(a.getChoices());
+				testQuestionAnswer.setText(a.getAnswer());
+			}
+		});
 		btnArraylist.setBounds(446, 130, 138, 29);
 		contentPane.add(btnArraylist);
 		
@@ -226,9 +225,7 @@ public class AP_UI extends MenuControl {
 		});
 		btnBackground.setBounds(600, 130, 138, 29);
 		contentPane.add(btnBackground);
-<<<<<<< HEAD
-=======
-		
+
 		JButton btnNewButton_1 = new JButton("declarations");
 		btnNewButton_1.setBounds(596, 165, 117, 51);
 		contentPane.add(btnNewButton_1);
@@ -244,20 +241,27 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnArraylist_2.setBounds(446, 313, 138, 29);
+		btnArraylist_2.setBounds(457, 350, 138, 29);
 		contentPane.add(btnArraylist_2);
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
-
-<<<<<<< HEAD
-=======
-
 		
+		JScrollBar scrollBar = new JScrollBar();
+		scrollBar.setBounds(419, 62, 15, 204);
+		contentPane.add(scrollBar);
 		
-		 
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
-		//JButton btnArraylist = new JButton("ArrayList");
-		//btnArraylist.setBounds(461, 101, 138, 29);
-		//contentPane.add(btnArraylist);
+		testQuestion.setEditable(false);
+		testQuestion.setLineWrap(true);
+		testQuestion.setBounds(16, 62, 418, 204);
+		contentPane.add(testQuestion);
+		
+		JScrollBar scrollBar_1 = new JScrollBar();
+		scrollBar_1.setBounds(419, 278, 15, 86);
+		contentPane.add(scrollBar_1);
+		
+		testChoices.setEditable(false);
+		testChoices.setLineWrap(true);
+		testChoices.setBounds(16, 278, 418, 86);
+		contentPane.add(testChoices);
+
 	}
 	
 }
