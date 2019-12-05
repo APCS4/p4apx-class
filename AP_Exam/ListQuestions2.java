@@ -59,6 +59,61 @@ public class ListQuestions2 extends Question
 	        {
 	        	option5= rand.nextInt(5);
 	        }
+	        
+	        switch(option)
+	        {
+	        	case 0:
+	        		this.choiceA= String.format("[%d, %d, %d, %d, %d]", num1, num6, num4, num5, num6);
+	        		break;
+	        	case 1:
+	        		this.choiceB= String.format("[%d, %d, %d, %d, %d]", num1, num6, num4, num5, num6);
+	        		break;
+	        	case 2:
+	        		this.choiceC= String.format("[%d, %d, %d, %d, %d]", num1, num6, num4, num5, num6);
+	        		break;
+	        	case 3:
+	        		this.choiceD= String.format("[%d, %d, %d, %d, %d]", num1, num6, num4, num5, num6);
+	        		break;
+	        	case 4:
+	        		this.choiceE= String.format("[%d, %d, %d, %d, %d]", num1, num6, num4, num5, num6);
+	        		break;
+	        }
+	        switch(option2)
+	        {
+	        	case 0:
+	        		this.choiceA= String.format("[%d, %d, %d, %d, %d]", num2, num4, num4, num5, num6);
+	        		break;
+	        	case 1:
+	        		this.choiceB= String.format("[%d, %d, %d, %d, %d]", num2, num4, num4, num5, num6);
+	        		break;
+	        	case 2:
+	        		this.choiceC= String.format("[%d, %d, %d, %d, %d]", num2, num4, num4, num5, num6);
+	        		break;
+	        	case 3:
+	        		this.choiceD= String.format("[%d, %d, %d, %d, %d]", num2, num4, num4, num5, num6);
+	        		break;
+	        	case 4:
+	        		this.choiceE= String.format("[%d, %d, %d, %d, %d]", num2, num4, num4, num5, num6);
+	        		break;
+	        }
+	        switch(option3)
+	        {
+	        	case 0:
+	        		this.choiceA= String.format("[%d, %d, %d, %d, %d]", num1, num3, num4, num2, num3);
+	        		break;
+	        	case 1:
+	        		this.choiceB= String.format("[%d, %d, %d, %d, %d]", num1, num3, num4, num2, num3);
+	        		break;
+	        	case 2:
+	        		this.choiceC= String.format("[%d, %d, %d, %d, %d]", num1, num3, num4, num2, num3);
+	        		break;
+	        	case 3:
+	        		this.choiceD= String.format("[%d, %d, %d, %d, %d]", num1, num3, num4, num2, num3);
+	        		break;
+	        	case 4:
+	        		this.choiceE= String.format("[%d, %d, %d, %d, %d]", num1, num3, num4, num2, num3);
+	        		break;
+	        }
 }
 	        
 	        
