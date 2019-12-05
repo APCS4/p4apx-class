@@ -19,6 +19,7 @@ import javax.swing.JTextField;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
 
 public class AP_UI extends MenuControl {
 
@@ -102,10 +103,13 @@ public class AP_UI extends MenuControl {
 		lblAnswer.setBounds(18, 376, 61, 16);
 		contentPane.add(lblAnswer);
 		
+		JScrollPane scrollPane_2 = new JScrollPane();
+		scrollPane_2.setBounds(74, 376, 363, 39);
+		contentPane.add(scrollPane_2);
+		scrollPane_2.setRowHeaderView(testQuestionAnswer);
+		
 		testQuestionAnswer.setEditable(false);
 		testQuestionAnswer.setLineWrap(true);
-		testQuestionAnswer.setBounds(74, 376, 357, 39);
-		contentPane.add(testQuestionAnswer);
 		
 		JButton btnLucyandcynthia = new JButton("Code Analysis");
 		btnLucyandcynthia.setForeground(new Color(0, 255, 0));
@@ -239,23 +243,21 @@ public class AP_UI extends MenuControl {
 		btnArraylist_2.setBounds(457, 350, 138, 29);
 		contentPane.add(btnArraylist_2);
 		
-		JScrollBar scrollBar = new JScrollBar();
-		scrollBar.setBounds(419, 62, 15, 204);
-		contentPane.add(scrollBar);
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(16, 62, 418, 204);
+		contentPane.add(scrollPane);
+		scrollPane.setViewportView(testQuestion);
 		
 		testQuestion.setEditable(false);
 		testQuestion.setLineWrap(true);
-		testQuestion.setBounds(16, 62, 418, 204);
-		contentPane.add(testQuestion);
 		
-		JScrollBar scrollBar_1 = new JScrollBar();
-		scrollBar_1.setBounds(419, 278, 15, 86);
-		contentPane.add(scrollBar_1);
+		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBounds(16, 278, 418, 86);
+		contentPane.add(scrollPane_1);
+		scrollPane_1.setViewportView(testChoices);
 		
 		testChoices.setEditable(false);
 		testChoices.setLineWrap(true);
-		testChoices.setBounds(16, 278, 418, 86);
-		contentPane.add(testChoices);
 
 	}
 	
