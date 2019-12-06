@@ -49,7 +49,7 @@ public class ArrayListQuestions extends Question
 		answer4.set(2,"Ethan");
 		tempAnswers[3] = answer4.toString();
 		
-		//Get what is in the second box
+		//Get what is in the second box 
 		tempAnswers[4] = names.get(1);
 		
 		shuffledAnswers = list(tempAnswers);
