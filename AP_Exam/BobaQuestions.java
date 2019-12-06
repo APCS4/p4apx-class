@@ -42,6 +42,7 @@ public class BobaQuestions extends Question{
 		Integer arg9 = rand.nextInt(1);
 		Integer arg10 = rand.nextInt(20);
 		
+		//Create sentence and choices.
 		String sentence;
 		
 		switch(random){
@@ -51,13 +52,12 @@ public class BobaQuestions extends Question{
 			//set up random limits for substringing later
 			
 			sentence = "The most common black boba pearls are made of tapioca";
-			
 			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
 					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 			
 			int i = rand.nextInt(11);
 			this.question = "Using String \"The most common black boba pearls are made of tapioca\", "
-					+ "what would String.substring(" + arg1 + ", "+ arg2 + ") return?";
+					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?";
 			
 			//Question Choices
 			
@@ -75,13 +75,13 @@ public class BobaQuestions extends Question{
 			
 		case 1:
 			
-			sentence = "The most common black boba pearls are made of tapioca";
+			sentence = "Classic boba drinks are made from milk tea";
+			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
+					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 			
-			this.question = "Using String \"Classic boba drinks are made from milk tea\","
-					+ "what would String.substring(" + arg1 + ", "+ arg2 + ") return?";
+			this.question = "Using String \"Classic boba drinks are made from milk tea\", "
+					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?";
 			
-			choices = answerArray("milk","tea", "boba", 
-					"drink", "made");
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
 			this.choiceC = choices[2];
@@ -93,35 +93,41 @@ public class BobaQuestions extends Question{
 			break;
 			
 		case 2:
-			this.question = "Using String \"Boba tea can come in many flavors such as taro or mango\","
-					+ "what would String.substring(10-20)) return?";
 			
-			choices = answerArray("n come in many","can come in many f", "an come in", 
-					"an come in m", "tea can come in m");
+			sentence = "Boba tea can come in many flavors such as taro or mango";
+			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
+					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
+			
+			this.question = "Using String \"Boba tea can come in many flavors such as taro or mango\","
+					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?";
+			
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
 			this.choiceC = choices[2];
 			this.choiceD = choices[3];
 			this.choiceE = choices[4];
 			
-			this.answerKey = getAns(choices, "an come in");
-			this.answer = "\"an come in\". You can pretty much add boba to anything really";
+			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
+			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". You can pretty much add boba to anything really";
 			break;
 			
 		case 3:
-			this.question = "Using String \"Cool boba places include ICMonster, Sharetea and MeetFresh\","
-					+ "what would String.substring(5-15)) return?";
 			
-			choices = answerArray("boba places","boba places i", " boba place", 
-					"an come in m", "tea can come in m");
+			sentence = "Cool boba places include ICMonster, Sharetea and MeetFresh";
+			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
+					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
+			
+			this.question = "Using String \"Cool boba places include ICMonster, Sharetea and MeetFresh\","
+					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?";
+			
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
 			this.choiceC = choices[2];
 			this.choiceD = choices[3];
 			this.choiceE = choices[4];
-			
-			this.answerKey = getAns(choices, "an come in");
-			this.answer = "\"an come in\". You can pretty much add boba to anything really";
+
+			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
+			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". Too bad the good places are all the way in Mira Mesa though rip ";
 			break;
 
 		default: 
@@ -180,8 +186,6 @@ public class BobaQuestions extends Question{
 	
 }
 
-//"The most common black boba pearls are made of tapioca", "Classic boba drinks are made from milk tea",
-//"Boba can come in many flavors such as taro or mango", "Cool boba places include ICMonster, Sharetea and MeetFresh",
-//"Boba is a drink with origins in Taiwan", "Each boba pearl is around 10-15 calories",
-//"Boba can also be called pearl tea, tapioca tea, and bubble tea", 
-//"Boba isn't the healthiest but it's G O D L Y", "A cool substitute for tapioca pearls are popping boba pearls"};
+//"Cool boba places include ICMonster, Sharetea and MeetFresh", "Boba is a drink with origins in Taiwan", "Each boba pearl is around 10-15 calories",
+//"Boba can also be called pearl tea, tapioca tea, and bubble tea", "Boba isn't the healthiest but it's G O D L Y",
+//"A cool substitute for tapioca pearls are popping boba pearls"};
