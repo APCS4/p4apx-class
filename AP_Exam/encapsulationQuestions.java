@@ -16,7 +16,7 @@ public class encapsulationQuestions extends Question {
 		Random rand = new Random();
 		int r = rand.nextInt(3);
 		
-		switch(r) {
+		switch(r) { 
 		case 0: 
 			this.question = question1[0];
 			this.choiceA = question1[1];
