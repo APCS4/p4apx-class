@@ -19,7 +19,7 @@ public class CA extends Question{
 	
 	// setupQuestion method
 	/**
-     * method that sets up question,
+     * setupQuestion - method that sets up question,
      * includes switch case structure that picks the question to display based on 'random' variable
      * @param none
      * @return none
