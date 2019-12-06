@@ -45,7 +45,7 @@ public class ArrayListQuestions extends Question
 		//Check if it contains ethan
 		tempAnswers[2] = Boolean.toString(names.contains("Ethan"));
 		
-		//Set Ethans
+		//Set Ethan
 		answer4.set(2,"Ethan");
 		tempAnswers[3] = answer4.toString();
 		
