@@ -64,10 +64,9 @@ public class AP_UI extends MenuControl {
 		contentPane.add(btnMath);
 		
 		JButton btnEncapsulation = new JButton("Encapsulation");
-		
-		btnMath.addActionListener(new ActionListener() {
+		btnEncapsulation.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				encapsulationQuestions q = new AP_Exam.encapsulationQuestions();
+				AP_Exam.encapsulationQuestions q = new AP_Exam.encapsulationQuestions();
 				testQuestion.setText(q.getQuestion());
 				testChoices.setText(q.getChoices());
 				testQuestionAnswer.setText(q.getAnswer());
