@@ -37,7 +37,7 @@ public class encapsulationQuestions extends Question {
 		case 3: 
 			this.question = question3[0];
 			this.choiceA = question3[1];
-			this.choiceB = question3[2];
+			this.choiceB = question3[2]; 
 			this.choiceC = question3[3];
 			this.choiceD = question3[4];
 			 a = question3[5].charAt(0);
