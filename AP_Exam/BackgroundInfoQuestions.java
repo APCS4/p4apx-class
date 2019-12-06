@@ -6,6 +6,7 @@ public class BackgroundInfoQuestions extends Question {
 	public BackgroundInfoQuestions() {
 		setUpQuestion();
 	}
+	
 	public void setUpQuestion() {
 		Random rand = new Random();
 		int randQ = rand.nextInt(3);

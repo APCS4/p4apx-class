@@ -60,7 +60,7 @@ public class AP_UI extends MenuControl {
 			public void actionPerformed(ActionEvent e) {
 				AP_Exam.Question q = new AP_Exam.MathQuestions();
 				testQuestion.setText(q.getQuestion());
-				testChoices.setText(q.getChoices());
+				testChoices.setText(q.getChoices()); 
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
@@ -68,10 +68,9 @@ public class AP_UI extends MenuControl {
 		contentPane.add(btnMath);
 		
 		JButton btnEncapsulation = new JButton("Encapsulation");
-		
-		btnMath.addActionListener(new ActionListener() {
+		btnEncapsulation.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				encapsulationQuestions q = new AP_Exam.encapsulationQuestions();
+				AP_Exam.encapsulationQuestions q = new AP_Exam.encapsulationQuestions();
 				testQuestion.setText(q.getQuestion());
 				testChoices.setText(q.getChoices());
 				testQuestionAnswer.setText(q.getAnswer());
