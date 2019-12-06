@@ -25,7 +25,7 @@ public class encapsulationQuestions extends Question {
 			this.choiceB = question2[2];
 			this.choiceC = question2[3];
 			this.choiceD = question2[4];
-			 a = question2[5].charAt(0);
+			char a = question2[5].charAt(0);
 			this.answerKey = a;
 			break;
 		case 2: 
