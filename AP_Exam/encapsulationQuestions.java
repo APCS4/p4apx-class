@@ -12,11 +12,12 @@ public class encapsulationQuestions extends Question {
 	public encapsulationQuestions() {
 		
 		this.setQuestions();
-		Random rand = new Random();
-		int randQ = rand.nextInt(3);
 		
-		switch(randQ) {
-		case 1: 
+		Random rand = new Random();
+		int r = rand.nextInt(3);
+		
+		switch(r) {
+		case 0: 
 			this.question = question1[0];
 			this.choiceA = question1[1];
 			this.choiceB = question1[2];
@@ -25,7 +26,7 @@ public class encapsulationQuestions extends Question {
 			char a = question1[5].charAt(0);
 			this.answerKey = a;
 			break;
-		case 2: 
+		case 1: 
 			this.question = question2[0];
 			this.choiceA = question2[1];
 			this.choiceB = question2[2];
@@ -34,7 +35,7 @@ public class encapsulationQuestions extends Question {
 			 a = question2[5].charAt(0);
 			this.answerKey = a;
 			break;
-		case 3: 
+		case 2: 
 			this.question = question3[0];
 			this.choiceA = question3[1];
 			this.choiceB = question3[2]; 

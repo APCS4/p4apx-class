@@ -72,6 +72,7 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			} 
 		}); 
+		
 		btnEncapsulation.setBounds(609, 320, 110, 20);
 		contentPane.add(btnEncapsulation);
 		
