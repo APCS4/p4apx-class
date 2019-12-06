@@ -3,10 +3,10 @@ package AP_Exam;
 import java.util.Random;
 
 /**
- * Write a description of class MathOps here.
+ * Class to support divide and modulo Math questions.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (John Mortensen)
+ * @version (1.0)
  */
 public class MathQuestions extends Question
 { 
@@ -14,6 +14,7 @@ public class MathQuestions extends Question
 	
     /**
      * Constructor for objects of class MathQuestions
+     * @param  void
      */
     public MathQuestions()
     {
@@ -24,7 +25,11 @@ public class MathQuestions extends Question
     	setupQuestion(arg1, operators[opIndex], arg2);
     }
 
-    
+    /**
+     * Main test method to support console execution
+     * @param  void
+     * @return void
+     */
     public static String mainTest ()
     {
     	Question q = new MathQuestions();
@@ -33,17 +38,16 @@ public class MathQuestions extends Question
     }
     
     /**
-     * MathDivOps 
+     * MathDivOps question setup
      *
      * @param  arg1      1st argument in math expression
      * @param  operator  operator in math expression (/ or % only)
      * @param  arg2      2st argument in math expression
-     * @return    error code
+     * @return void
      */
 	@Override
     public void setupQuestion(int arg1, char operator, int arg2)
     {        
-		//int randoom;
         // format question
         this.question = String.format("What is (int)" + arg1 + " " + "%s" + " (int)" + arg2, operator );
         
