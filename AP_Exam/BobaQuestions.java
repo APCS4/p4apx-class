@@ -1,7 +1,7 @@
 package AP_Exam;
 
 import java.util.Random;
-//The class for all questions pertaining to MVC
+
 public class BobaQuestions extends Question{
 	public BobaQuestions()
     {
