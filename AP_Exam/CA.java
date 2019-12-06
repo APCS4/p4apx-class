@@ -1,4 +1,5 @@
 package AP_Exam;
+import java.util.Random;
 
 /**
  * CA class
@@ -26,7 +27,10 @@ public class CA extends Question{
      */
 	public void setupQuestion() {
 		// random - generates a random number between 0 and 8 inclusive
-		int random = (int) Math.floor(Math.random()*9);
+		// previous randomization way: int random = (int) Math.floor(Math.random()*9);
+		// new randomization - using modulo, borrowed idea from other class
+		Random rand = new Random();
+		int random = rand.nextInt(9999999) % 9;
 		
 		// choose the question based on 'random' - ex: if random == 0, then use case 0 and display the first question
 		switch(random){
