@@ -32,8 +32,8 @@ public class BobaQuestions extends Question{
 		
 		Random rand = new Random();
 		Integer arg1 = rand.nextInt(1);
-    	        Integer arg2 = rand.nextInt(20);
-    	        Integer arg3 = rand.nextInt(1);
+    	Integer arg2 = rand.nextInt(20);
+    	Integer arg3 = rand.nextInt(1);
 	 	Integer arg4 = rand.nextInt(20);
 	 	Integer arg5 = rand.nextInt(1);
 	 	Integer arg6 = rand.nextInt(20);
@@ -206,7 +206,7 @@ public class BobaQuestions extends Question{
 			this.choiceE = choices[4];
 
 			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
-			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". It's unhealthy but so GODLY FJFHGFUDJ";
+			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". It's unhealthy but so GODLY";
 			break;
 			
 		case 8:
