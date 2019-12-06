@@ -3,6 +3,11 @@ package AP_Exam;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * This class presents the series of questions based on boolean operators and logic
+ * 
+ * @author Anthony Tseng & Jude Giolitto
+ */
 public class BooleanQuestions extends Question
 {		
 	private String[] boolOp1 = {"^", "||", "&&", "==", "!="};
@@ -12,7 +17,9 @@ public class BooleanQuestions extends Question
 	{
 		setupQuestion();
 	}
-	
+	/**
+	 * setupQuestion is the method that sets up questions, choices, and answers
+	 */
 	private void setupQuestion()
 	{
 		Random rand = new Random();
@@ -70,6 +77,12 @@ public class BooleanQuestions extends Question
 		}
 	}
 	
+	/**
+	 * method that randomizes an ArrayList based on its size
+	 * 
+	 * @param quest the ArrayList to randomize
+	 * @return the randomized ArrayList
+	 */
 	private ArrayList<String> randomizeQuest(ArrayList<String> quest) //randomizes order of answer choices using ArrayList
 	{
 		ArrayList<String> randomized = quest;
@@ -85,6 +98,12 @@ public class BooleanQuestions extends Question
 		return randomized;
 	}
 	
+	/**
+	 * 
+	 * @param quest the ArrayList containing answer choices
+	 * @param ans the answer of datatype String
+	 * @return the character pertaining to the answer
+	 */
 	private char getAns(ArrayList<String> quest, String ans) //determines correct answer by comparing strings
 	{
 		char answer = 'X';
@@ -101,6 +120,11 @@ public class BooleanQuestions extends Question
 		return answer;
 	}
 	
+	/**
+	 * creates question 3(case 2) in the setupQuestion class
+	 * 
+	 * @return an ArrayList containing the question, answer choices, answer, and explanation
+	 */
 	private ArrayList<String> createQuestion() //creates randomized question based on boolean operators
 	{
 		Random rand = new Random();
