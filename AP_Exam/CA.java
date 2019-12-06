@@ -1,13 +1,27 @@
 package AP_Exam;
-import java.util.Random;
+
+/**
+ * CA class
+ * loads code analysis questions, extends Question class
+ *
+ * @author Lucy Gao, Cynthia Zhang
+ * @version 12/6/19
+ */
+
 public class CA extends Question{
+	/**
+     * Constructor for objects of class CA
+     */
 	public CA()
     {
     	setupQuestion();
     }
+	
+	// setupQuestion method
 	public void setupQuestion() {
 		int random = (int) Math.floor(Math.random()*9);
 		switch(random){
+		// first question
 		case 0:
 			this.question = "Refer to the following code:\nswitch(ans)\n{\n     case 1:\n          ans = 11;\n          break;\n     case 2:\n          ans = 78;\n          break;\n}\n\nIf ans is 1, what is it after the switch case?";
 			this.choiceA = "1";
