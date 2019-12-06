@@ -52,8 +52,7 @@ public class BobaQuestions extends Question{
 			//set up random limits for substringing later
 			
 			sentence = "The most common black boba pearls are made of tapioca";
-			choices = answersArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
-					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
+			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 			
 			int i = rand.nextInt(11);
 			this.question = "Using String \"The most common black boba pearls are made of tapioca\", "
@@ -236,7 +235,7 @@ public class BobaQuestions extends Question{
 		private String[] answerArray (String q0, String q1, String q2, String q3, String q4)
 		{
 			int rand; //random int placehold
-			String[] choices = new String[9]; //temporary storage for questions
+			String[] choices = new String[5]; //temporary storage for questions
 			
 			String hold; //for swap algo
 			
@@ -248,7 +247,7 @@ public class BobaQuestions extends Question{
 			choices[4] = q4; 
 			
 			//randomly swap the Strings 
-			for(int i = 0; i <8; i++)
+			for(int i = 0; i < 4; i++)
 			{
 				hold = choices[i];
 				rand = (int) Math.floor(Math.random() * 8);
