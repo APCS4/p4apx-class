@@ -2,9 +2,7 @@ package AP_Exam;
 
 import java.util.Random;
 
-<<<<<<< HEAD
 import Util.showCode;
-=======
 import Util.OutputCode;
 
 //The class for all questions pertaining to MVC
