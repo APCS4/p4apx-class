@@ -49,8 +49,7 @@ public class Power extends Question{
 			break;
 		
 		case 2:
-			//newsss/
-			//sws
+			
 			this.question = "Which of the following is most closely associated with iterations?";
 			pick=loadArray("loops such as for loops","Recursion","Instance Initialization","Public Static Void","if else statements");
 			
@@ -109,7 +108,7 @@ public class Power extends Question{
 		pick[3] = ques4;
 		pick[4] = ques5;
 		
-		//randomly swap the Strings 
+		
 		for(int i = 0; i <5; i++)
 		{
 			hold = pick[i];
@@ -121,11 +120,11 @@ public class Power extends Question{
 		return pick;	
 	}
 	
-	//Determines which choice the answer string is in
+	
 	private char Ans(String ques[], String an) {
 		char ret;
 		
-		//Compares each question in array to the correct answer string
+		
 		if(ques[0].equals(an) == true)
 			ret = 'A';
 		else if(ques[1].equals(an) == true)
@@ -136,7 +135,7 @@ public class Power extends Question{
 			ret = 'D';
 		else if(ques[4].equals(an) == true)
 			ret = 'E';
-		else ret = 'X'; //default case for if there is an error
+		else ret = 'X'; 
 		
 		return ret;
 	}
