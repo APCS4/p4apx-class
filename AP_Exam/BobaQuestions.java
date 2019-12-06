@@ -1,7 +1,15 @@
 package AP_Exam;
 
 import java.util.Random;
-//The class for all questions pertaining to MVC
+
+/**
+ * Boba questions with substrings
+ *
+ * @author Team Boba: Grace Liu and Cynthia Li 
+ * @version 6.9
+ */
+
+
 public class BobaQuestions extends Question{
 	public BobaQuestions()
     {

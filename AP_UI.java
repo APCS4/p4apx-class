@@ -7,11 +7,10 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import AP_Exam.AP_Console;
-<<<<<<< HEAD
+
 import Util.showCode;
-=======
+
 import AP_Exam.encapsulationQuestions;
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -76,6 +75,7 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			} 
 		}); 
+		
 		btnEncapsulation.setBounds(609, 320, 110, 20);
 		contentPane.add(btnEncapsulation);
 		
