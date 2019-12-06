@@ -45,14 +45,14 @@ public class Question extends Scoring
 		return question;
 	}
 	
-	public String getChoices() {
+	public String getChoices2() {
 		return String.format(
-	            "A. "+ choiceA + "\n"  + 
-	    	    "B. "+ choiceB + "\n"  + 
-	    	    "C. "+ choiceC + "\n"  + 
-	    	    "D. "+ choiceD + "\n"  + 
-	    	    "E. "+ choiceE + "\n" 
-	            );     
+	            "A. "+ "%s" + "%n"  + 
+	    	    "B. "+ "%s" + "%n"  + 
+	    	    "C. "+ "%s" + "%n"  + 
+	    	    "D. "+ "%s" + "%n"  + 
+	    	    "E. "+ "%s", choiceA, choiceB, choiceC, choiceD, choiceE
+	    	    );     
 	}
 	
 	public String getAnswer() {
