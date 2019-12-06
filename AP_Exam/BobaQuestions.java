@@ -20,7 +20,7 @@ public class BobaQuestions extends Question{
 			Integer arg10 = rand.nextInt(20);
 		//Integer opIndex = rand.nextInt(operators.length);
 			setupQuestion(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-
+ 
     }
 	
 	public void setupQuestion() {
@@ -28,7 +28,7 @@ public class BobaQuestions extends Question{
 		String[] choices = new String[5];
 		
 		//Randomizes questions
-		int random = (int) Math.floor(Math.random()*9);
+		int random = (int) Math.floor(Math.random()*8);
 		
 		Random rand = new Random();
 		Integer arg1 = rand.nextInt(1);
