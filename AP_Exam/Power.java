@@ -85,30 +85,32 @@ public class Power extends Question{
 			break;
 		case 3:
 		
-			this.question = "Which of the following is most closely associated with iterations?";
-			pick=loadArray("loops such as for loops","Recursion","Instance Initialzation Blocks","Public Static Void","if else statement");
+			this.question = "What is the function of a do while loop?";
+			pick=loadArray("to replace a for loopo in all cases for shortening code","Recursion only","Executing a block of code at least once and then repeatedly executing it based on a boolean condition","Allowing code to be repeatedly executed","To create simultaneous control flows for simplified code");
 			
 			this.choiceA = pick[0];
 			this.choiceB = pick[1];
 			this.choiceC = pick[2];
 			this.choiceD = pick[3];
 			this.choiceE = pick[4];
-			this.answerKey = 'A';
+			this.answerKey = Ans(pick, "Executing a block of code at least once and then repeatedly executing it based on a boolean condition\",\"Allowing code to be repeatedly executed");
 			this.answer = "U got it homes";
 			break;
-		/*
+		
 		case 4:
 		
 			this.question = "Consider the following code segment:\n for (int p = 1; p <= 100; k++)\n + if ((p % 4) == 0)\n + System.out.println(p);";
-			this.choiceA = "for(intp=1;p<=25;p++)\n + System.out.println(p);";
-			this.choiceB = "for(intp=1;p<=100;p=p+4)\n System.out.println(p);";
-			this.choiceC = "for(intp=1;p<=100;p--)\n System.out.println(p % 9);";
-			this.choiceD = "for(intp=4;p<=25;p=19*p)\n System.out.println(p);";
-			this.choiceE = "for(intp=4;p<=100;p=p+4)\n System.out.println(p);";
-			this.answerKey = 'E';
+			pick=loadArray("for(intp=1;p<=25;p++)\n + System.out.println(p);", "for(intp=1;p<=100;p=p+4)\n System.out.println(p);", "for(intp=1;p<=100;p--)\n System.out.println(p % 9);", "for(intp=4;p<=25;p=19*p)\n System.out.println(p);", "for(intp=4;p<=100;p=p+4)\n System.out.println(p);");
+			this.choiceA = pick[0];
+			this.choiceB = pick[1];
+			this.choiceC = pick[2];
+			this.choiceD = pick[3];
+			this.choiceE = pick[4];
+			this.answerKey = Ans(pick, "for(intp=4;p<=100;p=p+4)\n System.out.println(p);");
+			this.answer = "U got it homes";
 			break;
 		
-		*/
+		
 		default:
 			System.out.print("elproblem");
 		
@@ -170,7 +172,7 @@ public class Power extends Question{
 			ret = 'D';
 		else if(ques[4].equals(an) == true)
 			ret = 'E';
-		else ret = 'X'; 
+		else ret = 'Z'; 
 		
 		return ret;
 	}
