@@ -10,7 +10,7 @@ package AP_Exam;
 
 public class CA extends Question{
 	/**
-     * Constructor for objects of class CA
+     * calls setupQuestion, which creates question template and loads in values - answers, choices, question
      */
 	public CA()
     {
@@ -18,10 +18,18 @@ public class CA extends Question{
     }
 	
 	// setupQuestion method
+	/**
+     * setupQuestion - method that sets up question,
+     * includes switch case structure that picks the question to display based on 'random' variable
+     * @param none
+     * @return none
+     */
 	public void setupQuestion() {
+		// random - generates a random number between 0 and 8 inclusive
 		int random = (int) Math.floor(Math.random()*9);
-		switch(random){
 		
+		// choose the question based on 'random' - ex: if random == 0, then use case 0 and display the first question
+		switch(random){
 		// first question - code analysis, switch case
 		case 0:
 			this.question = "Refer to the following code:\nswitch(ans)\n{\n     case 1:\n          ans = 11;\n          break;\n     case 2:\n          ans = 78;\n          break;\n}\n\nIf ans is 1, what is it after the switch case?";
