@@ -42,21 +42,24 @@ public class BobaQuestions extends Question{
 		Integer arg9 = rand.nextInt(1);
 		Integer arg10 = rand.nextInt(20);
 		
+		String sentence;
 		
 		switch(random){
+		
 		case 0:
 			//Question
 			//set up random limits for substringing later
 			
+			sentence = "The most common black boba pearls are made of tapioca";
 			
-			String sentence = "The most common black boba pearls are made of tapioca";
+			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
+					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 			
 			int i = rand.nextInt(11);
 			this.question = "Using String \"The most common black boba pearls are made of tapioca\", "
 					+ "what would String.substring(" + arg1 + ", "+ arg2 + ") return?";
 			
 			//Question Choices
-			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 			
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
@@ -66,13 +69,13 @@ public class BobaQuestions extends Question{
 			
 			//Correct answer
 			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
-			this.answer = sentence.substring(arg1, arg2);
+			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". And tapioca is from cassava plant roots!" ;
 			break;
 
 			
 		case 1:
 			
-			String sentence1 = "The most common black boba pearls are made of tapioca";
+			sentence = "The most common black boba pearls are made of tapioca";
 			
 			this.question = "Using String \"Classic boba drinks are made from milk tea\","
 					+ "what would String.substring(" + arg1 + ", "+ arg2 + ") return?";
@@ -85,8 +88,8 @@ public class BobaQuestions extends Question{
 			this.choiceD = choices[3];
 			this.choiceE = choices[4];
 			
-			this.answerKey = getAns(choices, "boba");
-			this.answer = "\"boba\". Is good";
+			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
+			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". You can use any type of tea too.";
 			break;
 			
 		case 2:
