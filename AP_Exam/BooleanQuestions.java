@@ -56,7 +56,6 @@ public class BooleanQuestions extends Question
 			break;
 		case 2:
 			ArrayList<String> qArray = createQuestion();
-			System.out.println(qArray);
 			this.question = qArray.get(0);
 			this.choiceA = qArray.get(1);
 			this.choiceB = qArray.get(2);
@@ -67,7 +66,7 @@ public class BooleanQuestions extends Question
 			this.answer = "Choice " + answerKey + " is correct. " + qArray.get(4);
 			break;
 		default:
-			System.out.print("ERROR");
+			System.out.print("ERROR at BooleanQuestions.setupQuestion");
 		}
 	}
 	
