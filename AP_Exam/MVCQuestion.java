@@ -10,6 +10,12 @@ import Util.OutputCode;
  * @author Ethan Davies and Jared Jose
  * @version 12/6
  */
+
+
+
+
+import Util.OutputCode;
+
 public class MVCQuestion extends Question{
 	/**
 	 * MVCQuestion contructor
@@ -116,6 +122,16 @@ public class MVCQuestion extends Question{
 					+ "that code is purposeful, effective, and easy to modify in the long term.";
 			break;
 		case 5:
+			this.question = "What part of the MVC framework would this code fit into?";
+			choices = loadQuestArray("Model", "View", "Control", "Mode", "Volume");
+			this.choiceA = choices[0];
+			this.choiceB = choices[1];
+			this.choiceC = choices[2];
+			this.choiceD = choices[3];
+			this.choiceE = choices[4];
+			this.answerKey = getAns(choices, "View");
+			OutputCode.codeOutput();
+		case 6:
 			this.question = "What part of MVC would this code fit into?";
 			choices = loadQuestArray("Model", "Vision", "Control", "Version", "View");
 			this.choiceA = choices[0];
