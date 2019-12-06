@@ -175,7 +175,7 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnAnthonyjude.setBounds(609, 223, 117, 29);
+		btnAnthonyjude.setBounds(604, 226, 117, 29);
 		contentPane.add(btnAnthonyjude);
 
 		JButton Power = new JButton("Power");
@@ -232,7 +232,7 @@ public class AP_UI extends MenuControl {
 		contentPane.add(btnBackground);
 		
 		JButton btnPowandsqrt = new JButton("PowAndSqrt");
-		btnPowandsqrt.setBounds(606, 180, 138, 29);
+		btnPowandsqrt.setBounds(603, 191, 138, 29);
 		contentPane.add(btnPowandsqrt);
 		btnPowandsqrt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -245,7 +245,7 @@ public class AP_UI extends MenuControl {
 
 
 		JButton btnNewButton_1 = new JButton("Declarations");
-		btnNewButton_1.setBounds(604, 116, 117, 51);
+		btnNewButton_1.setBounds(604, 116, 137, 28);
 		contentPane.add(btnNewButton_1);
 		
 		//Anika and Aashi's arraylist questions
@@ -277,6 +277,18 @@ public class AP_UI extends MenuControl {
 		
 		testChoices.setEditable(false);
 		testChoices.setLineWrap(true);
+		
+		JButton btnPolymorphism = new JButton("Polymorphism");
+		btnPolymorphism.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				AP_Exam.Question q = new AP_Exam.PolymorphismQuestions();
+				testQuestion.setText(q.getQuestion());
+				testChoices.setText(q.getChoices());
+				testQuestionAnswer.setText(q.getAnswer());
+			}
+		});
+		btnPolymorphism.setBounds(604, 157, 137, 28);
+		contentPane.add(btnPolymorphism);
 
 	}
 }
