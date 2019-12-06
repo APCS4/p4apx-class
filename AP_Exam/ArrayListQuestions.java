@@ -56,7 +56,7 @@ public class ArrayListQuestions extends Question
 		
 		for(int i=0; i<tempAnswers.length; i++)
 		{
-			console(methods.get(i)+"\n	Answer: "+tempAnswers[i]+"\n	"+letterAnswers[order[i]]);
+			console(methods.get(i)+"\n	Answer: "+tempAnswers[i]+"\n");
 		}
 		
 		for(int i = 0; i < shuffledAnswers.length;i++)
