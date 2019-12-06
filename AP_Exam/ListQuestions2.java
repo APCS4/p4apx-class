@@ -127,7 +127,7 @@ public class ListQuestions2 extends Question
 		    	this.choiceC = String.format("[%d, %d, %d, %d, %d]", num2, num6, num4, num1, num6);
 		    	break;
 		    case 3:
-		    	this.choiceC = String.format("[%d, %d, %d, %d, %d]", num2, num6, num4, num1, num6);
+		    	this.choiceD = String.format("[%d, %d, %d, %d, %d]", num2, num6, num4, num1, num6);
 		    	break;
 		    case 4:
 		    	this.choiceE= String.format("[%d, %d, %d, %d, %d]", num2, num6, num4, num1, num6);
