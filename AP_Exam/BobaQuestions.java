@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * Boba questions with substrings
  *
- * @author Team Boba: Grace Liu and Cynthia Li
+ * @author Team Boba: Grace Liu and Cynthia Li 
  * @version 6.9
  */
 
