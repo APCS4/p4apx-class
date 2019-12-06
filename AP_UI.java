@@ -7,6 +7,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import AP_Exam.AP_Console;
+
+import Util.showCode;
+
 import AP_Exam.encapsulationQuestions;
 
 import javax.swing.JButton;
@@ -72,6 +75,7 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			} 
 		}); 
+		
 		btnEncapsulation.setBounds(609, 320, 110, 20);
 		contentPane.add(btnEncapsulation);
 		
@@ -147,6 +151,7 @@ public class AP_UI extends MenuControl {
 				testQuestion.setText(q.getQuestion());
 				testChoices.setText(q.getChoices());
 				testQuestionAnswer.setText(q.getAnswer());
+				
 			}
 		});
 		btnMVC.setBounds(453, 73, 138, 29);

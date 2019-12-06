@@ -2,7 +2,11 @@ package AP_Exam;
 
 import java.util.Random;
 
+<<<<<<< HEAD
+import Util.showCode;
+=======
 import Util.OutputCode;
+
 //The class for all questions pertaining to MVC
 public class MVCQuestion extends Question{
 	public MVCQuestion()
@@ -99,6 +103,17 @@ public class MVCQuestion extends Question{
 					+ "that code is purposeful, effective, and easy to modify in the long term.";
 			break;
 		case 5:
+
+			this.question = "What part of the MVC framework would this code fit into?";
+			choices = loadQuestArray("Model", "View", "Control", "Mode", "Volume");
+			this.choiceA = choices[0];
+			this.choiceB = choices[1];
+			this.choiceC = choices[2];
+			this.choiceD = choices[3];
+			this.choiceE = choices[4];
+			this.answerKey = getAns(choices, "View");
+			showCode.codeShow();
+
 			this.question = "What part of MVC would this code fit into?";
 			choices = loadQuestArray("Model", "Vision", "Control", "Version", "View");
 			this.choiceA = choices[0];
@@ -110,6 +125,7 @@ public class MVCQuestion extends Question{
 			this.answer = "This code receives input fron the View and manipulates the data, returning whether or not it is a palindrome. Logic code";
 			WeavetheRing(); //using threads here
 			break;
+
 		default:
 			System.out.print("ERROR");
 		}
