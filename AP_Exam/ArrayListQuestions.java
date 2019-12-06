@@ -30,24 +30,30 @@ public class ArrayListQuestions extends Question
 	private void generateAnswers()
 	{
 		ArrayList<String> answer1 = names;
+		ArrayList<String> answer2 = names;
+		ArrayList<String> answer4 = names;
+		
+		//Add Ethan
 		answer1.add("Ethan");
 		tempAnswers[0] = answer1.toString();
 		
-		ArrayList<String> answer2 = names;
-		answer2.remove("Ethan");
+		//Remove Ethan
+		answer2.remove(3);
 		tempAnswers[1] = answer2.toString();
 
+		//Check if it contains ethan
 		tempAnswers[2] = Boolean.toString(names.contains("Ethan"));
 		
-		ArrayList<String> answer4 = names;
+		//Set Ethans
 		answer4.set(2,"Ethan");
 		tempAnswers[3] = answer4.toString();
-
+		
+		//Get what is in the second box
 		tempAnswers[4] = names.get(1);
 		
 		shuffledAnswers = list(tempAnswers);
 		
-		for(int i = 0; i<shuffledAnswers.length;i++)
+		for(int i = 0; i < shuffledAnswers.length;i++)
 		{
 			if (questionType == order[i]) answerLoc = i;
 		}

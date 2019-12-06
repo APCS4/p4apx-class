@@ -7,6 +7,7 @@ public class BooleanQuestions extends Question
 {		
 	private String[] boolOp1 = {"^", "||", "&&", "==", "!="};
 	private String[] boolOp2 = {"!", ""};
+	
 	public BooleanQuestions()
 	{
 		setupQuestion();
@@ -16,7 +17,7 @@ public class BooleanQuestions extends Question
 	{
 		Random rand = new Random();
 		int random = rand.nextInt(3);
-		ArrayList<String> questArray = new ArrayList<>();
+		ArrayList<String> questArray = new ArrayList<>(); //Creates ArrayList to hold answers
 		
 		switch(random)
 		{
@@ -51,35 +52,25 @@ public class BooleanQuestions extends Question
 			this.choiceD = "Don't pick this one";
 			this.choiceE = "Or this one";
 			this.answerKey = getAns(questArray, "false");
-			this.answer = "Choice " + answerKey + " is correct. The boolean operator && only return true if both arguments are true.";
+			this.answer = "Choice " + answerKey + " is correct. The boolean operator && only returns true if both arguments are true.";
 			break;
 		case 2:
 			ArrayList<String> qArray = createQuestion();
-			System.out.println(qArray);
 			this.question = qArray.get(0);
 			this.choiceA = qArray.get(1);
 			this.choiceB = qArray.get(2);
 			this.choiceC = "Don't";
 			this.choiceD = "Choose";
+			this.choiceE = "These";
 			this.answerKey = qArray.get(3).charAt(0);
 			this.answer = "Choice " + answerKey + " is correct. " + qArray.get(4);
 			break;
-		/*case 3:
-			
-			this.question = "boolean bool = true;\r\n" + 
-					"\r\n" + 
-					"if ( !bool == true) {\r\n" + 
-					"System.out.println(\"true\");\r\n" + 
-					"}\r\n" + 
-					"else {\r\n" + 
-					"System.out.println(\"false\");\r\n" + 
-					"} ";*/
 		default:
-			System.out.print("ERROR");
+			System.out.print("ERROR at BooleanQuestions.setupQuestion");
 		}
 	}
 	
-	private ArrayList<String> randomizeQuest(ArrayList<String> quest)
+	private ArrayList<String> randomizeQuest(ArrayList<String> quest) //randomizes order of answer choices using ArrayList
 	{
 		ArrayList<String> randomized = quest;
 		String temp = "";
@@ -94,7 +85,7 @@ public class BooleanQuestions extends Question
 		return randomized;
 	}
 	
-	private char getAns(ArrayList<String> quest, String ans)
+	private char getAns(ArrayList<String> quest, String ans) //determines correct answer by comparing strings
 	{
 		char answer = 'X';
 		
@@ -110,27 +101,27 @@ public class BooleanQuestions extends Question
 		return answer;
 	}
 	
-	private ArrayList<String> createQuestion()
+	private ArrayList<String> createQuestion() //creates randomized question based on boolean operators
 	{
 		Random rand = new Random();
 		ArrayList<String> qArray = new ArrayList<>();
 		
-		String OP = boolOp1[rand.nextInt(boolOp1.length)];
-		String OP2 = boolOp2[rand.nextInt(boolOp2.length)];
-		boolean arg1 = rand.nextBoolean();
+		String OP = boolOp1[rand.nextInt(boolOp1.length)]; //randomly selects operator
+		String OP2 = boolOp2[rand.nextInt(boolOp2.length)]; //selects whether there will be ! before first argument or not
+		boolean arg1 = rand.nextBoolean(); //randomize arguments
 		boolean arg2 = rand.nextBoolean();
 		
 		String question;
-		question = String.format("What is " + OP2 + arg1 + " " + OP + " " + arg2 + "?");
-		qArray.add(question); //Question at index 0
+		question = String.format("What is " + OP2 + arg1 + " " + OP + " " + arg2 + "?"); //create question
+		qArray.add(question); //adds question at index 0
 		
-		qArray.add("true"); //Answer choices A and B at index 1 and 2, respectively
+		qArray.add("true"); //adds answer choices A and B at index 1 and 2, respectively
 		qArray.add("false");
 		
 		boolean answer = true;
 		String explanation = "";
 		
-		switch(OP) //Determines the answer and provides explanation
+		switch(OP) //determines answer and sets explanation
 		{
 		case "^":
 			explanation = "^  is an operator that provides true if both arguments are different and false if both arguments are equal";
@@ -188,10 +179,10 @@ public class BooleanQuestions extends Question
 			}
 			break;
 		default:
-			System.out.println("ERROR at createQuestion class");
+			System.out.println("ERROR at BooleanQuestion.createQuestion");
 		}
 			
-		if(answer)//Determines letter that corresponds to answer and adds it at index 3
+		if(answer)//determines letter that corresponds to answer and adds it at index 3
 		{
 			qArray.add("A");
 		}

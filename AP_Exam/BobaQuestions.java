@@ -32,8 +32,8 @@ public class BobaQuestions extends Question{
 		
 		Random rand = new Random();
 		Integer arg1 = rand.nextInt(1);
-    	Integer arg2 = rand.nextInt(20);
-    	Integer arg3 = rand.nextInt(1);
+    	        Integer arg2 = rand.nextInt(20);
+    	        Integer arg3 = rand.nextInt(1);
 	 	Integer arg4 = rand.nextInt(20);
 	 	Integer arg5 = rand.nextInt(1);
 	 	Integer arg6 = rand.nextInt(20);
@@ -53,7 +53,6 @@ public class BobaQuestions extends Question{
 			//set up random limits for substringing later
 			
 			sentence = "The most common black boba pearls are made of tapioca";
-			
 			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
 					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 			
@@ -252,7 +251,7 @@ public class BobaQuestions extends Question{
 			choices[4] = q4;
 			
 			//randomly swap the Strings 
-			for(int i = 0; i <8; i++)
+			for(int i = 0; i < 4; i++)
 			{
 				hold = choices[i];
 				rand = (int) Math.floor(Math.random() * 8);
