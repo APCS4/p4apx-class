@@ -3,7 +3,15 @@ package AP_Exam;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-
+/**
+ * 
+ * 
+ * 
+ * @author Edgar and Andrei 
+ * 
+ * @Version 1.0
+ * 
+ **/
 public class ArrayListQuestions extends Question
 {
 	private ArrayList<String> methods = new ArrayList<String>(Arrays.asList(new String[] {"list.add(\"Ethan\");","list.remove(2);","list.contains(\"Ethan\");","list.set(2,\"Ethan\");","list.get(1)"}));
@@ -29,9 +37,9 @@ public class ArrayListQuestions extends Question
 	
 	private void generateAnswers()
 	{
-		ArrayList<String> answer1 = names;
-		ArrayList<String> answer2 = names;
-		ArrayList<String> answer4 = names;
+		ArrayList<String> answer1 = new ArrayList<String>(names);
+		ArrayList<String> answer2 = new ArrayList<String>(names);
+		ArrayList<String> answer4 = new ArrayList<String>(names);
 		
 		//Add Ethan
 		answer1.add("Ethan");
@@ -55,7 +63,8 @@ public class ArrayListQuestions extends Question
 		
 		for(int i = 0; i < shuffledAnswers.length;i++)
 		{
-			if (questionType == order[i]) answerLoc = i;
+			if (questionType == order[i]) 
+				answerLoc = i;
 		}
 
 		setAnswers();
