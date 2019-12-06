@@ -22,7 +22,7 @@ public class Power extends Question{
 		 */
 		
 		
-		int rando = (int) Math.floor(Math.random()*4);
+		int rando = (int) Math.floor(Math.random()*5);
 		String[] pick = new String[5];
 		
 		int zero =2;
