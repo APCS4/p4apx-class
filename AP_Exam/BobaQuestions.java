@@ -24,8 +24,8 @@ public class BobaQuestions extends Question{
     }
 	
 	public void setupQuestion() {
-		//String array of questions
-		String[] choices = new String[9];
+		//String array of answers
+		String[] choices = new String[5];
 		
 		//Randomizes questions
 		int random = (int) Math.floor(Math.random()*9);
@@ -42,21 +42,24 @@ public class BobaQuestions extends Question{
 		Integer arg9 = rand.nextInt(1);
 		Integer arg10 = rand.nextInt(20);
 		
+		//Create sentence and choices.
+		String sentence;
 		
 		switch(random){
+		
 		case 0:
 			//Question
 			//set up random limits for substringing later
 			
-			
-			String sentence = "The most common black boba pearls are made of tapioca";
+			sentence = "The most common black boba pearls are made of tapioca";
+			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
+					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 			
 			int i = rand.nextInt(11);
 			this.question = "Using String \"The most common black boba pearls are made of tapioca\", "
-					+ "what would String.substring(" + arg1 + ", "+ arg2 + ") return?";
+					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?";
 			
 			//Question Choices
-			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 			
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
@@ -66,59 +69,160 @@ public class BobaQuestions extends Question{
 			
 			//Correct answer
 			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
-			this.answer = sentence.substring(arg1, arg2);
+			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". And tapioca is from cassava plant roots!" ;
 			break;
 
 			
 		case 1:
 			
-			String sentence1 = "The most common black boba pearls are made of tapioca";
+			sentence = "Classic boba drinks are made from milk tea";
+			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
+					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 			
-			this.question = "Using String \"Classic boba drinks are made from milk tea\","
-					+ "what would String.substring(" + arg1 + ", "+ arg2 + ") return?";
+			this.question = "Using String \"Classic boba drinks are made from milk tea\", "
+					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?";
 			
-			choices = answerArray("milk","tea", "boba", 
-					"drink", "made");
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
 			this.choiceC = choices[2];
 			this.choiceD = choices[3];
 			this.choiceE = choices[4];
 			
-			this.answerKey = getAns(choices, "boba");
-			this.answer = "\"boba\". Is good";
+			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
+			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". You can use any type of tea too.";
 			break;
 			
 		case 2:
-			this.question = "Using String \"Boba tea can come in many flavors such as taro or mango\","
-					+ "what would String.substring(10-20)) return?";
 			
-			choices = answerArray("n come in many","can come in many f", "an come in", 
-					"an come in m", "tea can come in m");
+			sentence = "Boba tea can come in many flavors such as taro or mango";
+			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
+					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
+			
+			this.question = "Using String \"Boba tea can come in many flavors such as taro or mango\","
+					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?";
+			
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
 			this.choiceC = choices[2];
 			this.choiceD = choices[3];
 			this.choiceE = choices[4];
 			
-			this.answerKey = getAns(choices, "an come in");
-			this.answer = "\"an come in\". You can pretty much add boba to anything really";
+			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
+			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". You can pretty much add boba to anything really";
 			break;
 			
 		case 3:
-			this.question = "Using String \"Cool boba places include ICMonster, Sharetea and MeetFresh\","
-					+ "what would String.substring(5-15)) return?";
 			
-			choices = answerArray("boba places","boba places i", " boba place", 
-					"an come in m", "tea can come in m");
+			sentence = "Cool boba places include ICMonster, Sharetea and MeetFresh";
+			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
+					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
+			
+			this.question = "Using String \"Cool boba places include ICMonster, Sharetea and MeetFresh\","
+					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?";
+			
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
 			this.choiceC = choices[2];
 			this.choiceD = choices[3];
 			this.choiceE = choices[4];
+
+			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
+			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". Too bad the good places are all the way in Mira Mesa though rip ";
+			break;
 			
-			this.answerKey = getAns(choices, "an come in");
-			this.answer = "\"an come in\". You can pretty much add boba to anything really";
+		case 4:
+			
+			sentence = "Boba is a drink with origins in Taiwan";
+			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
+					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
+			
+			this.question = "Using String \"Boba is a drink with origins in Taiwan\","
+					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?";
+			
+			this.choiceA = choices[0];
+			this.choiceB = choices[1];
+			this.choiceC = choices[2];
+			this.choiceD = choices[3];
+			this.choiceE = choices[4];
+
+			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
+			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". The name \"boba\" has Chinese origins too. ";
+			break;
+			
+		case 5:
+			
+			sentence = "Each boba pearl is around 10-15 calories";
+			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
+					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
+			
+			this.question = "Using String \"Each boba pearl is around 10-15 calories\","
+					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?";
+			
+			this.choiceA = choices[0];
+			this.choiceB = choices[1];
+			this.choiceC = choices[2];
+			this.choiceD = choices[3];
+			this.choiceE = choices[4];
+
+			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
+			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". Not a very healthy drink rip ";
+			break;
+			
+		case 6:
+			
+			sentence = "Boba can also be called pearl tea, tapioca tea, and bubble tea";
+			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
+					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
+			
+			this.question = "Using String \"Boba can also be called pearl tea, tapioca tea, and bubble tea\","
+					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?";
+			
+			this.choiceA = choices[0];
+			this.choiceB = choices[1];
+			this.choiceC = choices[2];
+			this.choiceD = choices[3];
+			this.choiceE = choices[4];
+
+			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
+			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". If you don't use the og name boba tho shame on you :) jkjk";
+			break;
+			
+		case 7:
+			
+			sentence = "The average cup of boba milk tea contains 299 calories and 38 grams of sugar";
+			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
+					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
+			
+			this.question = "Using String \"The average cup of boba milk tea contains 299 calories and 38 grams of sugar\","
+					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?";
+			
+			this.choiceA = choices[0];
+			this.choiceB = choices[1];
+			this.choiceC = choices[2];
+			this.choiceD = choices[3];
+			this.choiceE = choices[4];
+
+			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
+			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". It's unhealthy but so GODLY FJFHGFUDJ";
+			break;
+			
+		case 8:
+			
+			sentence = "A cool substitute for tapioca pearls are popping boba pearls";
+			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
+					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
+			
+			this.question = "Using String \"A cool substitute for tapioca pearls are popping boba pearls\","
+					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?";
+			
+			this.choiceA = choices[0];
+			this.choiceB = choices[1];
+			this.choiceC = choices[2];
+			this.choiceD = choices[3];
+			this.choiceE = choices[4];
+
+			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
+			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". Mini water balloons filled with juice.";
 			break;
 
 		default: 

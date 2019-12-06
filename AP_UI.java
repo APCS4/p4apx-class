@@ -73,7 +73,7 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			} 
 		}); 
-		btnEncapsulation.setBounds(255, 25, 110, 20);
+		btnEncapsulation.setBounds(609, 320, 110, 20);
 		contentPane.add(btnEncapsulation);
 		
 		JButton btnDataTypes = new JButton("Data Types");
@@ -138,7 +138,7 @@ public class AP_UI extends MenuControl {
 			}
 		});
 		btnLucyandcynthia.setFont(new Font("Comic Sans MS", Font.BOLD | Font.ITALIC, 22));
-		btnLucyandcynthia.setBounds(451, 50, 188, 39);
+		btnLucyandcynthia.setBounds(453, 21, 188, 39);
 		contentPane.add(btnLucyandcynthia);
 
 		JButton btnMVC = new JButton("MVC");
@@ -150,7 +150,7 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnMVC.setBounds(489, 89, 138, 29);
+		btnMVC.setBounds(453, 73, 138, 29);
 		contentPane.add(btnMVC);
 		
 
@@ -163,7 +163,7 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnNewButton.setBounds(461, 186, 120, 39);
+		btnNewButton.setBounds(453, 157, 120, 39);
 		contentPane.add(btnNewButton);
 	
 		JButton btnAnthonyjude = new JButton("BooleanQuestions");
@@ -175,7 +175,7 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnAnthonyjude.setBounds(588, 350, 117, 29);
+		btnAnthonyjude.setBounds(609, 223, 117, 29);
 		contentPane.add(btnAnthonyjude);
 
 		JButton Power = new JButton("Power");
@@ -187,7 +187,7 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		Power.setBounds(457, 258, 138, 29);
+		Power.setBounds(453, 209, 138, 29);
 		contentPane.add(Power);
 	
 		JButton btnArraylist = new JButton("ArrayList");
@@ -199,14 +199,14 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(a.getAnswer());
 			}
 		});
-		btnArraylist.setBounds(446, 130, 138, 29);
+		btnArraylist.setBounds(453, 115, 138, 29);
 		contentPane.add(btnArraylist);
 		
-		JButton btnTeamboba = new JButton("✧･ﾟ: *✧･ﾟ:* Team Boba *:･ﾟ✧*:･ﾟ✧");
+		JButton btnTeamboba = new JButton("\u2727\uFF65\uFF9F: *\u2727\uFF65\uFF9F:* Team Boba *:\uFF65\uFF9F\u2727*:\uFF65\uFF9F\u2727");
 		btnTeamboba.setForeground(Color.RED);
-		btnTeamboba.setBackground(Color.RED);
+		btnTeamboba.setBackground(new Color(255, 255, 0));
 		btnTeamboba.setFont(new Font("Papyrus", Font.BOLD, 16));
-		btnTeamboba.setBounds(457, 299, 279, 39);
+		btnTeamboba.setBounds(453, 264, 279, 39);
 		contentPane.add(btnTeamboba);
 		btnTeamboba.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -228,11 +228,11 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnBackground.setBounds(600, 130, 138, 29);
+		btnBackground.setBounds(603, 73, 138, 29);
 		contentPane.add(btnBackground);
 		
 		JButton btnPowandsqrt = new JButton("PowAndSqrt");
-		btnPowandsqrt.setBounds(600, 262, 138, 29);
+		btnPowandsqrt.setBounds(606, 180, 138, 29);
 		contentPane.add(btnPowandsqrt);
 		btnPowandsqrt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -245,7 +245,7 @@ public class AP_UI extends MenuControl {
 
 
 		JButton btnNewButton_1 = new JButton("Declarations");
-		btnNewButton_1.setBounds(596, 165, 117, 51);
+		btnNewButton_1.setBounds(604, 116, 117, 51);
 		contentPane.add(btnNewButton_1);
 		
 		//Anika and Aashi's arraylist questions
@@ -259,7 +259,7 @@ public class AP_UI extends MenuControl {
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnArraylist_2.setBounds(457, 350, 138, 29);
+		btnArraylist_2.setBounds(453, 316, 138, 29);
 		contentPane.add(btnArraylist_2);
 		
 		JScrollPane scrollPane = new JScrollPane();
