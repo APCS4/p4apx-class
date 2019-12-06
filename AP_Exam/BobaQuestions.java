@@ -32,8 +32,8 @@ public class BobaQuestions extends Question{
 		
 		Random rand = new Random();
 		Integer arg1 = rand.nextInt(1);
-    	Integer arg2 = rand.nextInt(20);
-    	Integer arg3 = rand.nextInt(1);
+    	        Integer arg2 = rand.nextInt(20);
+    	        Integer arg3 = rand.nextInt(1);
 	 	Integer arg4 = rand.nextInt(20);
 	 	Integer arg5 = rand.nextInt(1);
 	 	Integer arg6 = rand.nextInt(20);
@@ -52,7 +52,7 @@ public class BobaQuestions extends Question{
 			//set up random limits for substringing later
 			
 			sentence = "The most common black boba pearls are made of tapioca";
-			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
+			choices = answersArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
 					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 			
 			int i = rand.nextInt(11);
@@ -233,7 +233,7 @@ public class BobaQuestions extends Question{
 	}
 	
 	//loadQuestArray loads an array with the 5 possible questions
-		private String[] answerArray (String q0, String q1, String q2, String q3, String q4, String q5, String q6, String q7, String q8)
+		private String[] answerArray (String q0, String q1, String q2, String q3, String q4)
 		{
 			int rand; //random int placehold
 			String[] choices = new String[9]; //temporary storage for questions
@@ -246,10 +246,6 @@ public class BobaQuestions extends Question{
 			choices[2] = q2;
 			choices[3] = q3;
 			choices[4] = q4; 
-			choices[5] = q5;
-			choices[6] = q6;
-			choices[7] = q7;
-			choices[8] = q8;
 			
 			//randomly swap the Strings 
 			for(int i = 0; i <8; i++)
