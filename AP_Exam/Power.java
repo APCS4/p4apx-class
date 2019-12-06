@@ -58,7 +58,7 @@ public class Power extends Question{
 		
 		case 1:
 			this.question = "What is the correct format for writing a for loop?";
-			pick=loadArray("For:","for(int z=12; z<=103; z--);","for{in i=1: i<6:}", "for {int i = 1: i<=6:} ()", "for: a=1, b=2, i++" );
+			pick=loadArray("For:", "for(int z=12; z<=103; z--);" ,"for{in i=1: i<6:}", "for {int i = 1: i<=6:} ()", "for: a=1, b=2, i++" );
 			
 			this.choiceA = pick[0];
 			this.choiceB = pick[1];
@@ -93,7 +93,7 @@ public class Power extends Question{
 			this.choiceC = pick[2];
 			this.choiceD = pick[3];
 			this.choiceE = pick[4];
-			this.answerKey = Ans(pick, "Executing a block of code at least once and then repeatedly executing it based on a boolean condition\",\"Allowing code to be repeatedly executed");
+			this.answerKey = Ans(pick,"Executing a block of code at least once and then repeatedly executing it based on a boolean condition");
 			this.answer = "U got it homes";
 			break;
 		
