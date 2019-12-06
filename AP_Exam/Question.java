@@ -45,7 +45,7 @@ public class Question extends Scoring
 		return question;
 	}
 	
-	public String getChoices2() {
+	public String getChoices() {
 		return String.format(
 	            "A. "+ "%s" + "%n"  + 
 	    	    "B. "+ "%s" + "%n"  + 
@@ -54,6 +54,7 @@ public class Question extends Scoring
 	    	    "E. "+ "%s", choiceA, choiceB, choiceC, choiceD, choiceE
 	    	    );     
 	}
+	
 	
 	public String getAnswer() {
 		return answerKey + ": " + answer;

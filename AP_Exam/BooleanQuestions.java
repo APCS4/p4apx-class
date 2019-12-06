@@ -59,9 +59,8 @@ public class BooleanQuestions extends Question
 			this.question = qArray.get(0);
 			this.choiceA = qArray.get(1);
 			this.choiceB = qArray.get(2);
-			this.choiceC = "";
-			this.choiceD = "Don't";
-			this.choiceE = "";
+			this.choiceC = "Don't";
+			this.choiceD = "Choose";
 			this.answerKey = qArray.get(3).charAt(0);
 			this.answer = "Choice " + answerKey + " is correct. " + qArray.get(4);
 			break;
