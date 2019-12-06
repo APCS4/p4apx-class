@@ -2,18 +2,40 @@ package AP_Exam;
 import java.util.Random;
 
 public class Power extends Question{
+	/**
+	 *  Author: Alex Clanton, Mithil Pujar
+	 *	Power Button, rando questions and answers
+	 *
+	 *
+	 *	Ver 1.0
+	 */
+	
+	
 	public Power()
     {
     	setupQuestion();
     }
 	
 	public void setupQuestion() {
+		/**
+		 * setup the question 
+		 */
+		
+		
 		int rando = (int) Math.floor(Math.random()*4);
 		String[] pick = new String[5];
-
+		
 		int zero =2;
 
 		switch(rando){
+		/**
+		 * every case is a question, with the order of questions and answers randomized
+		 * done via arrays and a 2 method calls
+		 *
+		 *
+		 */
+		
+		
 		case 0:
 			
 			
@@ -44,13 +66,12 @@ public class Power extends Question{
 			this.choiceD = pick[3];
 			this.choiceE = pick[4];
 			
-			this.answerKey = Ans(pick, "for(int z=12; z<=103; z--);");
+			this.answerKey = Ans(pick,"for(int z=12; z<=103; z--);");
 			this.answer = "U got it homes";
 			break;
 		
 		case 2:
-			//newsss/
-			//sws
+			
 			this.question = "Which of the following is most closely associated with iterations?";
 			pick=loadArray("loops such as for loops","Recursion","Instance Initialization","Public Static Void","if else statements");
 			
@@ -59,7 +80,7 @@ public class Power extends Question{
 			this.choiceC = pick[2];
 			this.choiceD = pick[3];
 			this.choiceE = pick[4];
-			this.answerKey = 'A';
+			this.answerKey = Ans(pick,"loops such as for loops");
 			this.answer = "U got it homes";
 			break;
 		case 3:
@@ -97,6 +118,13 @@ public class Power extends Question{
 
 	private String[] loadArray (String ques1, String ques2, String ques3, String ques4, String ques5)
 	{
+		/**
+		 *  loadarray is used to take the 4 answer choices and randomize them in an array, then return the choice
+		 *
+		 *
+		 *
+		 */
+		
 		int rando; //random int placehold
 		String[] pick = new String[5]; //temporary storage for questions
 		
@@ -109,7 +137,7 @@ public class Power extends Question{
 		pick[3] = ques4;
 		pick[4] = ques5;
 		
-		//randomly swap the Strings 
+		
 		for(int i = 0; i <5; i++)
 		{
 			hold = pick[i];
@@ -121,11 +149,17 @@ public class Power extends Question{
 		return pick;	
 	}
 	
-	//Determines which choice the answer string is in
+	/**
+	 *  answer choice check to find if they are true then return that value as an char
+	 * 
+	 * @param ques
+	 * @param an
+	 * @return
+	 */
 	private char Ans(String ques[], String an) {
 		char ret;
 		
-		//Compares each question in array to the correct answer string
+		
 		if(ques[0].equals(an) == true)
 			ret = 'A';
 		else if(ques[1].equals(an) == true)
@@ -136,7 +170,7 @@ public class Power extends Question{
 			ret = 'D';
 		else if(ques[4].equals(an) == true)
 			ret = 'E';
-		else ret = 'X'; //default case for if there is an error
+		else ret = 'X'; 
 		
 		return ret;
 	}

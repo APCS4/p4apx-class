@@ -1,7 +1,15 @@
 package AP_Exam;
 
 import java.util.Random;
-//The class for all questions pertaining to MVC
+
+/**
+ * Boba questions with substrings
+ *
+ * @author Team Boba: Grace Liu and Cynthia Li 
+ * @version 6.9
+ */
+
+
 public class BobaQuestions extends Question{
 	public BobaQuestions()
     {
@@ -20,7 +28,7 @@ public class BobaQuestions extends Question{
 			Integer arg10 = rand.nextInt(20);
 		//Integer opIndex = rand.nextInt(operators.length);
 			setupQuestion(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
-
+ 
     }
 	
 	public void setupQuestion() {
@@ -28,7 +36,7 @@ public class BobaQuestions extends Question{
 		String[] choices = new String[5];
 		
 		//Randomizes questions
-		int random = (int) Math.floor(Math.random()*9);
+		int random = (int) Math.floor(Math.random()*8);
 		
 		Random rand = new Random();
 		Integer arg1 = rand.nextInt(1);
@@ -55,10 +63,9 @@ public class BobaQuestions extends Question{
 			sentence = "The most common black boba pearls are made of tapioca";
 			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
 					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
-			
-			int i = rand.nextInt(11);
-			this.question = "Using String \"The most common black boba pearls are made of tapioca\", "
-					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?";
+
+			this.question = String.format("Using String \"The most common black boba pearls are made of tapioca\", "
+					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?");
 			
 			//Question Choices
 			
@@ -70,20 +77,18 @@ public class BobaQuestions extends Question{
 			
 			//Correct answer
 			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
-			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". And tapioca is from cassava plant roots!" ;
+			this.answer = sentence.substring(arg1, arg2);
 			break;
 
 			
 		case 1:
 			
-			sentence = "Classic boba drinks are made from milk tea";
-			
-			
+			sentence = "Classic boba drinks are made from milk tea";			
 			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
 					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 			
-			this.question = "Using String \"Classic boba drinks are made from milk tea\", "
-					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?";
+			this.question = String.format("Using String \"Classic boba drinks are made from milk tea\", "
+					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?");
 			
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
@@ -92,7 +97,7 @@ public class BobaQuestions extends Question{
 			this.choiceE = choices[4];
 			
 			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
-			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". You can use any type of tea too.";
+			this.answer = sentence.substring(arg1, arg2);
 			break;
 			
 		case 2:
@@ -101,8 +106,8 @@ public class BobaQuestions extends Question{
 			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
 					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 			
-			this.question = "Using String \"Boba tea can come in many flavors such as taro or mango\","
-					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?";
+			this.question = String.format("Using String \"Boba tea can come in many flavors such as taro or mango\","
+					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?");
 			
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
@@ -111,7 +116,7 @@ public class BobaQuestions extends Question{
 			this.choiceE = choices[4];
 			
 			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
-			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". You can pretty much add boba to anything really";
+			this.answer = sentence.substring(arg1, arg2);
 			break;
 			
 		case 3:
@@ -120,8 +125,8 @@ public class BobaQuestions extends Question{
 			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
 					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 			
-			this.question = "Using String \"Cool boba places include ICMonster, Sharetea and MeetFresh\","
-					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?";
+			this.question = String.format("Using String \"Cool boba places include ICMonster, Sharetea and MeetFresh\","
+					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?");
 			
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
@@ -130,7 +135,7 @@ public class BobaQuestions extends Question{
 			this.choiceE = choices[4];
 
 			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
-			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". Too bad the good places are all the way in Mira Mesa though rip ";
+			this.answer = sentence.substring(arg1, arg2);
 			break;
 			
 		case 4:
@@ -139,8 +144,8 @@ public class BobaQuestions extends Question{
 			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
 					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 			
-			this.question = "Using String \"Boba is a drink with origins in Taiwan\","
-					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?";
+			this.question = String.format("Using String \"Boba is a drink with origins in Taiwan\","
+					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?");
 			
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
@@ -149,7 +154,7 @@ public class BobaQuestions extends Question{
 			this.choiceE = choices[4];
 
 			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
-			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". The name \"boba\" has Chinese origins too. ";
+			this.answer = sentence.substring(arg1, arg2);
 			break;
 			
 		case 5:
@@ -158,8 +163,8 @@ public class BobaQuestions extends Question{
 			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
 					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 			
-			this.question = "Using String \"Each boba pearl is around 10-15 calories\","
-					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?";
+			this.question = String.format("Using String \"Each boba pearl is around 10-15 calories\","
+					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?");
 			
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
@@ -168,7 +173,7 @@ public class BobaQuestions extends Question{
 			this.choiceE = choices[4];
 
 			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
-			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". Not a very healthy drink rip ";
+			this.answer = sentence.substring(arg1, arg2);
 			break;
 			
 		case 6:
@@ -177,8 +182,8 @@ public class BobaQuestions extends Question{
 			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
 					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 			
-			this.question = "Using String \"Boba can also be called pearl tea, tapioca tea, and bubble tea\","
-					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?";
+			this.question = String.format("Using String \"Boba can also be called pearl tea, tapioca tea, and bubble tea\","
+					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?");
 			
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
@@ -187,7 +192,7 @@ public class BobaQuestions extends Question{
 			this.choiceE = choices[4];
 
 			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
-			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". If you don't use the og name boba tho shame on you :) jkjk";
+			this.answer = sentence.substring(arg1, arg2);
 			break;
 			
 		case 7:
@@ -196,8 +201,8 @@ public class BobaQuestions extends Question{
 			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
 					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 			
-			this.question = "Using String \"The average cup of boba milk tea contains 299 calories and 38 grams of sugar\","
-					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?";
+			this.question = String.format("Using String \"The average cup of boba milk tea contains 299 calories and 38 grams of sugar\","
+					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?");
 			
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
@@ -206,7 +211,7 @@ public class BobaQuestions extends Question{
 			this.choiceE = choices[4];
 
 			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
-			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". It's unhealthy but so GODLY";
+			this.answer = sentence.substring(arg1, arg2);
 			break;
 			
 		case 8:
@@ -215,8 +220,8 @@ public class BobaQuestions extends Question{
 			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
 					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 			
-			this.question = "Using String \"A cool substitute for tapioca pearls are popping boba pearls\","
-					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?";
+			this.question = String.format("Using String \"A cool substitute for tapioca pearls are popping boba pearls\","
+					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?");
 			
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
@@ -225,7 +230,7 @@ public class BobaQuestions extends Question{
 			this.choiceE = choices[4];
 
 			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
-			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". Mini water balloons filled with juice.";
+			this.answer = sentence.substring(arg1, arg2);
 			break;
 
 		default: 
@@ -238,19 +243,19 @@ public class BobaQuestions extends Question{
 	//loadQuestArray loads an array with the 5 possible questions
 		private String[] answerArray(String q0, String q1, String q2, String q3, String q4)
 		{
-			int rand; //random int placehold
+			int rand;
 			String[] choices = new String[5]; //temporary storage for questions
 			
-			String hold; //for swap algo
+			String hold;
 			
-			//load questions into array
+			//make array
 			choices[0] = q0;
 			choices[1] = q1;
 			choices[2] = q2;
 			choices[3] = q3;
 			choices[4] = q4;
 			
-			//randomly swap the Strings 
+			//swap the Strings 
 			for(int i = 0; i < 4; i++)
 			{
 				hold = choices[i];
