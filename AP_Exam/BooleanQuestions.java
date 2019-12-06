@@ -179,7 +179,7 @@ public class BooleanQuestions extends Question
 			}
 			break;
 		default:
-			System.out.println("ERROR at createQuestion class");
+			System.out.println("ERROR at BooleanQuestion.createQuestion");
 		}
 			
 		if(answer)//determines letter that corresponds to answer and adds it at index 3
