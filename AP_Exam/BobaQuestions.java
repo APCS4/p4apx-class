@@ -24,8 +24,8 @@ public class BobaQuestions extends Question{
     }
 	
 	public void setupQuestion() {
-		//String array of questions
-		String[] choices = new String[9];
+		//String array of answers
+		String[] choices = new String[5];
 		
 		//Randomizes questions
 		int random = (int) Math.floor(Math.random()*9);
@@ -280,5 +280,3 @@ public class BobaQuestions extends Question{
 	}
 	
 }
-
-//"A cool substitute for tapioca pearls are popping boba pearls"};
