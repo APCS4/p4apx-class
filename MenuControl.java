@@ -44,9 +44,9 @@ public class MenuControl extends JFrame {
 		
 		// JLabel with image 
 		JLabel pic = new JLabel("");        
-        java.awt.Image image = new ImageIcon("APCompSci.jpeg").getImage();
+        java.awt.Image image = new ImageIcon("Untitled drawing-3.png").getImage();
         pic.setIcon(new ImageIcon(image));
-        pic.setBounds(377, 111, 128, 128);
+        pic.setBounds(300, 100, 10, 10);
         
         // Content Panel to add Label and Image
         //https://docs.oracle.com/javase/tutorial/uiswing/components/rootpane.html
