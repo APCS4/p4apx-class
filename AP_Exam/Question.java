@@ -1,12 +1,12 @@
 package AP_Exam;
 
-import Util.ConsoleMethods;
+import Util.ConsoleMethods;	// Console support
 
 /**
- * Question object is intended to ask operator questions and randomize order
+ * Question class is intended to support asking question on test
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (John Mortensen)
+ * @version (1.0)
  */
 public class Question extends Scoring
 {
@@ -18,51 +18,70 @@ public class Question extends Scoring
     char answerKey;
     
     /**
-     * setupQuestion arg1, operator, arg2
+     * Intended for two args and an operator
+     *
+     * @param  arg1      1st argument in math expression
+     * @param  operator  operator in math expression (/ or % only)
+     * @param  arg2      2st argument in math expression
+     * @return void
      */
     public void setupQuestion(int arg1, char operator, int arg2) {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub	
 	}
     
     /**
-     * setupQuestion boba
+     * Intended for String and Double question setup
+     *
+     * @param  string     datatype of reference
+     * @param  number       number in conversion
+     * @return void
      */
-    public void setupQuestion(int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10) {
-		// TODO Auto-generated method stub
-
-   	}
-
-    /**
-     * setupQuestion dataType and number
-     */
-	public void setupQuestion(String dataTypeName, double number) {
+	public void setupQuestion(String string, double number) {
 		// TODO Auto-generated method stub
 		
 	}
 	
+	/**
+     * Question getter
+     *
+     * @param  void
+     * @return String	contents of question
+     */
 	public String getQuestion() {
 		return question;
 	}
 	
+	/**
+     * Choices getter for Multiple Choice
+     *
+     * @param  void
+     * @return String 	content of choices with ABCDEF formatting
+     */
 	public String getChoices() {
 		return String.format(
-	            "A. "+ "%s" + "%n"  + 
-	    	    "B. "+ "%s" + "%n"  + 
-	    	    "C. "+ "%s" + "%n"  + 
-	    	    "D. "+ "%s" + "%n"  + 
-	    	    "E. "+ "%s", choiceA, choiceB, choiceC, choiceD, choiceE
-	    	    );     
+	            "A. "+ choiceA + "\n"  + 
+	    	    "B. "+ choiceB + "\n"  + 
+	    	    "C. "+ choiceC + "\n"  + 
+	    	    "D. "+ choiceD + "\n"  + 
+	    	    "E. "+ choiceE + "\n" 
+	            );     
 	}
 	
-	
+	/**
+     * Answer getter with formatting to correspond to getChoices
+     *
+     * @param  void
+     * @return String 	correct answer with letter prefex of right answer (A or B or C...)
+     */
 	public String getAnswer() {
 		return answerKey + ": " + answer;
 	}
     
 	/**
-     * Console Display methods
+     * Console support wrapper for asking question, getting result, and calculating results
      *
+     * @param  void
+     * @return void
      */
     public void  askQuestionConsole()
     {
@@ -71,10 +90,10 @@ public class Question extends Scoring
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * Console support for asking question and getting result
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param  void
+     * @return void
      */
     private boolean getAnswerConsole()
     {
