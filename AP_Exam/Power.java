@@ -62,11 +62,11 @@ public class Power extends Question{
 			
 			this.choiceA = pick[0];//loaded in answers
 			this.choiceB = pick[1];
-			this.choiceC = pick[2];
+			this.choiceC = pick[2]; 
 			this.choiceD = pick[3];
 			this.choiceE = pick[4];
 			
-			this.answerKey = Ans(pick,"for(int z=12; z<=103; z--);");//correct answer
+			this.answerKey = Ans(pick,"for(int z=12; z<=103; z--);");//correct answer choice check
 			this.answer = "U got it homes";
 			break;
 		
