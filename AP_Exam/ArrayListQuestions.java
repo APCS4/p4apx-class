@@ -7,7 +7,7 @@ import java.util.Arrays;
  * 
  * 
  * 
- * @author Edgar and Andrei
+ * @author Edgar and Andrei.
  * 
  * @Version 1.0
  * 

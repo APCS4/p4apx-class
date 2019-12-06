@@ -5,7 +5,7 @@ import java.util.Random;
 import Util.showCode;
 import Util.OutputCode;
 
-//The class for all questions pertaining to MVC
+//The class for all questions pertaining to MVC.
 public class MVCQuestion extends Question{
 	public MVCQuestion()
     {
