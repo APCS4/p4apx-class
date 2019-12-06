@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
+import Util.ConsoleMethods;
+
 /**
  * This class presents the series of questions based on boolean operators and logic
  * 
@@ -215,6 +217,16 @@ public class BooleanQuestions extends Question
 		}
 		
 		qArray.add(explanation);//adds explanation at index 4
+		
+		//displays question and answer in console for debugging purposes
+		displayConsole(qArray.get(0), qArray.get(3));
+		
 		return qArray;
+	}
+	
+	private void displayConsole(String quest, String ans)
+	{
+		ConsoleMethods.println(quest);
+		ConsoleMethods.println(ans);
 	}
 }

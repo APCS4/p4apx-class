@@ -1,10 +1,14 @@
 package AP_Exam;
 
 import java.util.Random;
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 import Util.showCode;
 import Util.OutputCode;
 
-//The class for all questions pertaining to MVC
+//The class for all questions pertaining to MVC.
 public class MVCQuestion extends Question{
 	public MVCQuestion()
     {

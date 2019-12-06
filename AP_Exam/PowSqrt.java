@@ -1,7 +1,9 @@
 package AP_Exam;
 
+import java.util.Arrays;
 import java.util.Random;
-import java.lang.*;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Power and Square Root Question Setup. 
@@ -24,6 +26,8 @@ public class PowSqrt extends Question
     	
     	Integer base = rand.nextInt(30) + 1;
     	Integer rooted = rand.nextInt(25) + 1;
+
+    	
     
     	//Integer choose = rand.nextInt(2);
     	
@@ -55,6 +59,11 @@ public class PowSqrt extends Question
 	@Override
     public void setupQuestion(int square, char which, int root)
     {   
+		
+    	Float[] array = new Float[4]; // allows for randomization of questions
+    	List<Float> randArr = Arrays.asList(array); // randomization of questions
+    	
+    	
 		//question option for pow or sqrt (formats the question)
 		if(which == '1')
 		{
@@ -64,13 +73,22 @@ public class PowSqrt extends Question
 		{
 			this.question = String.format("What is sqrt(" + root + ")?");
 		}
-
+		
+		array[0] = (float)square * (float)root;
+		array[1] = (float)Math.pow((float)square, 2);
+		array[2] = (float)square / (float)root;
+		array[3] = (float)Math.sqrt((float)root);
+		
+		Collections.shuffle(randArr);
+		
         // format question choices (randomized)
-        this.choiceA = String.format("%f",(float)square * (float)root);
-        this.choiceB = String.format("%f",Math.pow((float)square, 2));
-        this.choiceC = String.format("%f",(float)square / (float)root);
-        this.choiceD = String.format("%f",Math.sqrt((float)root));
+		
+        this.choiceA = String.format("%f",randArr.get(0));
+        this.choiceB = String.format("%f",randArr.get(1));
+        this.choiceC = String.format("%f",randArr.get(2));
+        this.choiceD = String.format("%f",randArr.get(3));
         this.choiceE = "None of the above";
+        
         
         // real time calc answer based off args AND operator
         double answerCalc;
