@@ -1,6 +1,7 @@
 package AP_Exam;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -19,6 +20,7 @@ public class BooleanQuestions extends Question
 	}
 	/**
 	 * setupQuestion is the method that sets up questions, choices, and answers
+	 * https://jaroslawpawlak.wordpress.com/2014/10/11/random-number-generator-using-modulo/
 	 */
 	private void setupQuestion()
 	{
@@ -29,11 +31,9 @@ public class BooleanQuestions extends Question
 		switch(random)
 		{
 		case 0:
-			questArray.add("^");
-			questArray.add("||");
-			questArray.add("!=");
-			questArray.add("%");
+			questArray.addAll(Arrays.asList("^", "||", "!=", "%")); //add answer choices to questArray
 			questArray = randomizeQuest(questArray);
+			
 			this.question = "Which of the following is NOT a boolean operator?\n"
 						  + "^, ||, !=, %";
 			this.choiceA = questArray.get(0);
@@ -45,9 +45,8 @@ public class BooleanQuestions extends Question
 			this.answer = "Choice " + answerKey + " is correct. % is not a boolean operator";
 			break;
 		case 1:
-			questArray.add("true");
-			questArray.add("false");
-			questArray.add("The code will not run");
+			questArray.addAll(Arrays.asList("true", "false", "The code will not run"));
+			
 			this.question = "What is the output of the following code?\n"
 						  + "if(3 < 5)\n"
 						  + "{\n"
