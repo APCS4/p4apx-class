@@ -21,6 +21,7 @@ public class CA extends Question{
 	public void setupQuestion() {
 		int random = (int) Math.floor(Math.random()*9);
 		switch(random){
+		
 		// first question
 		case 0:
 			this.question = "Refer to the following code:\nswitch(ans)\n{\n     case 1:\n          ans = 11;\n          break;\n     case 2:\n          ans = 78;\n          break;\n}\n\nIf ans is 1, what is it after the switch case?";
@@ -32,7 +33,9 @@ public class CA extends Question{
 			this.answerKey = this.answerB;
 			this.answer = "11";
 			break;
-		case 1:
+		
+		// second question
+			case 1:
 			this.question = "Refer to the following code:\ndouble x = 10 * Math.random() + 3;\nSystem.out.println(x);\n\nWhat is the range of possible outputs?";
 			this.choiceA = "(0,1)";
 			this.choiceB = "[0,1)";
