@@ -129,6 +129,101 @@ public class BobaQuestions extends Question{
 			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
 			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". Too bad the good places are all the way in Mira Mesa though rip ";
 			break;
+			
+		case 4:
+			
+			sentence = "Boba is a drink with origins in Taiwan";
+			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
+					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
+			
+			this.question = "Using String \"Boba is a drink with origins in Taiwan\","
+					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?";
+			
+			this.choiceA = choices[0];
+			this.choiceB = choices[1];
+			this.choiceC = choices[2];
+			this.choiceD = choices[3];
+			this.choiceE = choices[4];
+
+			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
+			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". The name \"boba\" has Chinese origins too. ";
+			break;
+			
+		case 5:
+			
+			sentence = "Each boba pearl is around 10-15 calories";
+			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
+					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
+			
+			this.question = "Using String \"Each boba pearl is around 10-15 calories\","
+					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?";
+			
+			this.choiceA = choices[0];
+			this.choiceB = choices[1];
+			this.choiceC = choices[2];
+			this.choiceD = choices[3];
+			this.choiceE = choices[4];
+
+			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
+			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". Not a very healthy drink rip ";
+			break;
+			
+		case 6:
+			
+			sentence = "Boba can also be called pearl tea, tapioca tea, and bubble tea";
+			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
+					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
+			
+			this.question = "Using String \"Boba can also be called pearl tea, tapioca tea, and bubble tea\","
+					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?";
+			
+			this.choiceA = choices[0];
+			this.choiceB = choices[1];
+			this.choiceC = choices[2];
+			this.choiceD = choices[3];
+			this.choiceE = choices[4];
+
+			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
+			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". If you don't use the og name boba tho shame on you :) jkjk";
+			break;
+			
+		case 7:
+			
+			sentence = "The average cup of boba milk tea contains 299 calories and 38 grams of sugar";
+			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
+					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
+			
+			this.question = "Using String \"The average cup of boba milk tea contains 299 calories and 38 grams of sugar\","
+					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?";
+			
+			this.choiceA = choices[0];
+			this.choiceB = choices[1];
+			this.choiceC = choices[2];
+			this.choiceD = choices[3];
+			this.choiceE = choices[4];
+
+			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
+			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". It's unhealthy but so GODLY FJFHGFUDJ";
+			break;
+			
+		case 8:
+			
+			sentence = "A cool substitute for tapioca pearls are popping boba pearls";
+			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
+					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
+			
+			this.question = "Using String \"A cool substitute for tapioca pearls are popping boba pearls\","
+					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?";
+			
+			this.choiceA = choices[0];
+			this.choiceB = choices[1];
+			this.choiceC = choices[2];
+			this.choiceD = choices[3];
+			this.choiceE = choices[4];
+
+			this.answerKey = getAns(choices, sentence.substring(arg1, arg2));
+			this.answer = "\"" + sentence.substring(arg1, arg2) + "\". Mini water balloons filled with juice.";
+			break;
 
 		default: 
 			System.out.print("ERROR");
@@ -186,6 +281,4 @@ public class BobaQuestions extends Question{
 	
 }
 
-//"Cool boba places include ICMonster, Sharetea and MeetFresh", "Boba is a drink with origins in Taiwan", "Each boba pearl is around 10-15 calories",
-//"Boba can also be called pearl tea, tapioca tea, and bubble tea", "Boba isn't the healthiest but it's G O D L Y",
 //"A cool substitute for tapioca pearls are popping boba pearls"};
