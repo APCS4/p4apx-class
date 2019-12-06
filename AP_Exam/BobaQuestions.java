@@ -42,6 +42,7 @@ public class BobaQuestions extends Question{
 		Integer arg9 = rand.nextInt(1);
 		Integer arg10 = rand.nextInt(20);
 		
+		
 		//Create sentence and choices.
 		String sentence;
 		
@@ -52,6 +53,7 @@ public class BobaQuestions extends Question{
 			//set up random limits for substringing later
 			
 			sentence = "The most common black boba pearls are made of tapioca";
+			
 			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
 					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 			
@@ -76,6 +78,8 @@ public class BobaQuestions extends Question{
 		case 1:
 			
 			sentence = "Classic boba drinks are made from milk tea";
+			
+			
 			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
 					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 			
@@ -233,10 +237,10 @@ public class BobaQuestions extends Question{
 	}
 	
 	//loadQuestArray loads an array with the 5 possible questions
-		private String[] answerArray (String q0, String q1, String q2, String q3, String q4, String q5, String q6, String q7, String q8)
+		private String[] answerArray(String q0, String q1, String q2, String q3, String q4)
 		{
 			int rand; //random int placehold
-			String[] choices = new String[9]; //temporary storage for questions
+			String[] choices = new String[5]; //temporary storage for questions
 			
 			String hold; //for swap algo
 			
@@ -245,11 +249,7 @@ public class BobaQuestions extends Question{
 			choices[1] = q1;
 			choices[2] = q2;
 			choices[3] = q3;
-			choices[4] = q4; 
-			choices[5] = q5;
-			choices[6] = q6;
-			choices[7] = q7;
-			choices[8] = q8;
+			choices[4] = q4;
 			
 			//randomly swap the Strings 
 			for(int i = 0; i <8; i++)
@@ -265,22 +265,22 @@ public class BobaQuestions extends Question{
 		
 		//Determines which choice the answer string is in
 		private char getAns(String quests[], String ans) {
-			char retVal;
+			char returnVal;
 			
 			//Compares each question in array to the correct answer string
 			if(quests[0].equals(ans) == true)
-				retVal = 'A';
+				returnVal = 'A';
 			else if(quests[1].equals(ans) == true)
-				retVal = 'B';
+				returnVal = 'B';
 			else if(quests[2].equals(ans) == true)
-				retVal = 'C';
+				returnVal = 'C';
 			else if(quests[3].equals(ans) == true)
-				retVal = 'D';
+				returnVal = 'D';
 			else if(quests[4].equals(ans) == true)
-				retVal = 'E';
-			else retVal = 'X'; //default case for if there is an error
+				returnVal = 'E';
+			else returnVal = 'X'; //default case for if there is an error
 			
-			return retVal;
+			return returnVal;
 		}
 		
 	}
