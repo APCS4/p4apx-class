@@ -172,7 +172,7 @@ public class Power extends Question{
 			ret = 'D';
 		else if(ques[4].equals(an) == true)
 			ret = 'E';
-		else ret = 'X'; 
+		else ret = 'Z'; 
 		
 		return ret;
 	}
