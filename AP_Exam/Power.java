@@ -2,18 +2,40 @@ package AP_Exam;
 import java.util.Random;
 
 public class Power extends Question{
+	/**
+	 *  Author: Alex Clanton, Mithil Pujar
+	 *	Power Button, rando questions and answers
+	 *
+	 *
+	 *	Ver 1.0
+	 */
+	
+	
 	public Power()
     {
     	setupQuestion();
     }
 	
 	public void setupQuestion() {
+		/**
+		 * setup the question 
+		 */
+		
+		
 		int rando = (int) Math.floor(Math.random()*4);
 		String[] pick = new String[5];
-
+		
 		int zero =2;
 
 		switch(rando){
+		/**
+		 * every case is a question, with the order of questions and answers randomized
+		 * done via arrays and a 2 method calls
+		 *
+		 *
+		 */
+		
+		
 		case 0:
 			
 			
@@ -58,7 +80,7 @@ public class Power extends Question{
 			this.choiceC = pick[2];
 			this.choiceD = pick[3];
 			this.choiceE = pick[4];
-			this.answerKey = 'A';
+			this.answerKey = Ans(pick,"loops such as for loops");
 			this.answer = "U got it homes";
 			break;
 		case 3:
@@ -96,6 +118,10 @@ public class Power extends Question{
 
 	private String[] loadArray (String ques1, String ques2, String ques3, String ques4, String ques5)
 	{
+		/**
+		 * 
+		 */
+		
 		int rando; //random int placehold
 		String[] pick = new String[5]; //temporary storage for questions
 		
