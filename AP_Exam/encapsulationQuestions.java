@@ -18,14 +18,7 @@ public class encapsulationQuestions extends Question {
 		
 		switch(r) { 
 		case 0: 
-			this.question = question1[0];
-			this.choiceA = question1[1];
-			this.choiceB = question1[2];
-			this.choiceC = question1[3];
-			this.choiceD = question1[4];
-			char a = question1[5].charAt(0);
-			this.answerKey = a;
-			break;
+			
 		case 1: 
 			this.question = question2[0];
 			this.choiceA = question2[1];
