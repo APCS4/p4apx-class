@@ -56,7 +56,7 @@ public class AP_UI extends MenuControl {
 			public void actionPerformed(ActionEvent e) {
 				AP_Exam.Question q = new AP_Exam.MathQuestions();
 				testQuestion.setText(q.getQuestion());
-				testChoices.setText(q.getChoices());
+				testChoices.setText(q.getChoices()); 
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});

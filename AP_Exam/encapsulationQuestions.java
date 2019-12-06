@@ -7,7 +7,7 @@ public class encapsulationQuestions extends Question {
 	String[] question2 = new String[7];
 	String[] question3 = new String[7];
 	
-	
+	  
 	
 	public encapsulationQuestions() {
 		
