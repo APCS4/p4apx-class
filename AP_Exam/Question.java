@@ -31,8 +31,8 @@ public class Question extends Scoring
     public void setupQuestion(int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10) {
 		// TODO Auto-generated method stub
 
-}
-    
+   	}
+
     /**
      * setupQuestion dataType and number
      */
@@ -47,13 +47,14 @@ public class Question extends Scoring
 	
 	public String getChoices() {
 		return String.format(
-	            "A. "+ choiceA + "\n"  + 
-	    	    "B. "+ choiceB + "\n"  + 
-	    	    "C. "+ choiceC + "\n"  + 
-	    	    "D. "+ choiceD + "\n"  + 
-	    	    "E. "+ choiceE + "\n" 
-	            );     
+	            "A. "+ "%s" + "%n"  + 
+	    	    "B. "+ "%s" + "%n"  + 
+	    	    "C. "+ "%s" + "%n"  + 
+	    	    "D. "+ "%s" + "%n"  + 
+	    	    "E. "+ "%s", choiceA, choiceB, choiceC, choiceD, choiceE
+	    	    );     
 	}
+	
 	
 	public String getAnswer() {
 		return answerKey + ": " + answer;

@@ -2,7 +2,11 @@ package AP_Exam;
 
 import java.util.Random;
 
+<<<<<<< HEAD
 import Util.showCode;
+=======
+import Util.OutputCode;
+>>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 //The class for all questions pertaining to MVC
 public class MVCQuestion extends Question{
 	public MVCQuestion()
@@ -99,6 +103,7 @@ public class MVCQuestion extends Question{
 					+ "that code is purposeful, effective, and easy to modify in the long term.";
 			break;
 		case 5:
+<<<<<<< HEAD
 			this.question = "What part of the MVC framework would this code fit into?";
 			choices = loadQuestArray("Model", "View", "Control", "Mode", "Volume");
 			this.choiceA = choices[0];
@@ -108,6 +113,19 @@ public class MVCQuestion extends Question{
 			this.choiceE = choices[4];
 			this.answerKey = getAns(choices, "View");
 			showCode.codeShow();
+=======
+			this.question = "What part of MVC would this code fit into?";
+			choices = loadQuestArray("Model", "Vision", "Control", "Version", "View");
+			this.choiceA = choices[0];
+			this.choiceB = choices[1];
+			this.choiceC = choices[2];
+			this.choiceD = choices[3];
+			this.choiceE = choices[4];
+			this.answerKey = getAns(choices, "Control");
+			this.answer = "This code receives input fron the View and manipulates the data, returning whether or not it is a palindrome. Logic code";
+			WeavetheRing(); //using threads here
+			break;
+>>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 		default:
 			System.out.print("ERROR");
 		}
@@ -140,6 +158,26 @@ public class MVCQuestion extends Question{
 		return choices;	
 	}
 	
+	//class the thread uses and runs
+	class CodeOutputter extends Thread
+	{
+		public void run()//run is special to thread classes
+		{
+			OutputCode.codeOutput();//getting code and putting it another pane for user to see
+		}
+	}
+	
+	public void WeavetheRing()
+	{
+		CodeOutputter coder = new CodeOutputter();
+		coder.start();//tells computer we're running a new thread
+		/* A thread is basically a way for the computer to run two things at once. Without this the JOptionPane displayed by the thread would 
+		 * be displayed  before the question is loaded into the AP_UI class and sent to the user so the code popping up in a new pane
+		 * would make no sense. By using threads we can have the computer update the question in the main JFrame and display the code in the 
+		 * new JOption Pane popping up at the same time so the question makes the most sense
+		 */
+	}
+	
 	//Determines which choice the answer string is in
 	private char getAns(String quests[], String ans) {
 		char retVal;
@@ -161,3 +199,5 @@ public class MVCQuestion extends Question{
 	}
 	
 }
+
+
