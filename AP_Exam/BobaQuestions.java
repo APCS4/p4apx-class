@@ -28,7 +28,7 @@ public class BobaQuestions extends Question{
 		String[] choices = new String[5];
 		
 		//Randomizes questions
-		int random = (int) Math.floor(Math.random()*9);
+		int random = (int) Math.floor(Math.random()*8);
 		
 		Random rand = new Random();
 		Integer arg1 = rand.nextInt(1);
