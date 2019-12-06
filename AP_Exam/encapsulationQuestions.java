@@ -46,7 +46,7 @@ public class encapsulationQuestions extends Question {
 		
 		}
 		
-	}
+	} 
 	
 	
 	
@@ -58,7 +58,7 @@ public class encapsulationQuestions extends Question {
 		question1[3] = "It is a way of combining various data members and member functions into a single unit which can oaperate on any data";
 		question1[4] = "It is a way of combining various data members and member functions that operate on those16 data members into a single unit";
 		question1[5] = "C";
-		question1[6] = "explanation";
+	
 		
 		question2[0] = "If data members are private, what can we do to access them from the class object? ";
 		question2[1] = "Create public methods to access those data members";
@@ -66,15 +66,15 @@ public class encapsulationQuestions extends Question {
 		question2[3] = "Create protected member methods to access those data members";
 		question2[4] = " Private data members can never be accessed from outside the class";
 		question2[5] = "A";
-		question2[6] = "explanation";
 		
-		question3[0] = "Question";
-		question3[1] = "ChoiceA";
-		question3[2] = "null";
-		question3[3] = "null";
-		question3[4] = "null";
-		question3[5] = "null";
-		question3[6] = "explanation";
+		
+		question3[0] = "Which feature can be implemented using encapsulation?";
+		question3[1] = "Inheritance";
+		question3[2] = "Abstraction";
+		question3[3] = "Polymorphism";
+		question3[4] = "Overloading";
+		question3[5] = "B";
+
 		 
 	}
 
