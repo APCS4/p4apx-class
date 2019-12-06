@@ -66,7 +66,7 @@ public class Power extends Question{
 			this.choiceD = pick[3];
 			this.choiceE = pick[4];
 			
-			this.answerKey = Ans(pick, "for(int z=12; z<=103; z--);");
+			this.answerKey = Ans(pick,"for(int z=12; z<=103; z--);");
 			this.answer = "U got it homes";
 			break;
 		
@@ -119,7 +119,10 @@ public class Power extends Question{
 	private String[] loadArray (String ques1, String ques2, String ques3, String ques4, String ques5)
 	{
 		/**
-		 * 
+		 *  loadarray is used to take the 4 answer choices and randomize them in an array, then return the choice
+		 *
+		 *
+		 *
 		 */
 		
 		int rando; //random int placehold
@@ -146,7 +149,13 @@ public class Power extends Question{
 		return pick;	
 	}
 	
-	
+	/**
+	 *  answer choice check to find if they are true then return that value as an char
+	 * 
+	 * @param ques
+	 * @param an
+	 * @return
+	 */
 	private char Ans(String ques[], String an) {
 		char ret;
 		
