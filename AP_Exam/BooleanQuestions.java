@@ -1,8 +1,16 @@
 package AP_Exam;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
+import Util.ConsoleMethods;
+
+/**
+ * This class presents the series of questions based on boolean operators and logic
+ * 
+ * @author Anthony Tseng & Jude Giolitto
+ */
 public class BooleanQuestions extends Question
 {		
 	private String[] boolOp1 = {"^", "||", "&&", "==", "!="};
@@ -12,7 +20,10 @@ public class BooleanQuestions extends Question
 	{
 		setupQuestion();
 	}
-	
+	/**
+	 * setupQuestion is the method that sets up questions, choices, and answers
+	 * https://jaroslawpawlak.wordpress.com/2014/10/11/random-number-generator-using-modulo/
+	 */
 	private void setupQuestion()
 	{
 		Random rand = new Random();
@@ -22,11 +33,9 @@ public class BooleanQuestions extends Question
 		switch(random)
 		{
 		case 0:
-			questArray.add("^");
-			questArray.add("||");
-			questArray.add("!=");
-			questArray.add("%");
+			questArray.addAll(Arrays.asList("^", "||", "!=", "%")); //add answer choices to questArray
 			questArray = randomizeQuest(questArray);
+			
 			this.question = "Which of the following is NOT a boolean operator?\n"
 						  + "^, ||, !=, %";
 			this.choiceA = questArray.get(0);
@@ -38,9 +47,8 @@ public class BooleanQuestions extends Question
 			this.answer = "Choice " + answerKey + " is correct. % is not a boolean operator";
 			break;
 		case 1:
-			questArray.add("true");
-			questArray.add("false");
-			questArray.add("The code will not run");
+			questArray.addAll(Arrays.asList("true", "false", "The code will not run"));
+			
 			this.question = "What is the output of the following code?\n"
 						  + "if(3 < 5)\n"
 						  + "{\n"
@@ -70,6 +78,12 @@ public class BooleanQuestions extends Question
 		}
 	}
 	
+	/**
+	 * method that randomizes an ArrayList based on its size
+	 * 
+	 * @param quest the ArrayList to randomize
+	 * @return the randomized ArrayList
+	 */
 	private ArrayList<String> randomizeQuest(ArrayList<String> quest) //randomizes order of answer choices using ArrayList
 	{
 		ArrayList<String> randomized = quest;
@@ -85,6 +99,12 @@ public class BooleanQuestions extends Question
 		return randomized;
 	}
 	
+	/**
+	 * 
+	 * @param quest the ArrayList containing answer choices
+	 * @param ans the answer of datatype String
+	 * @return the character pertaining to the answer
+	 */
 	private char getAns(ArrayList<String> quest, String ans) //determines correct answer by comparing strings
 	{
 		char answer = 'X';
@@ -101,6 +121,11 @@ public class BooleanQuestions extends Question
 		return answer;
 	}
 	
+	/**
+	 * creates question 3(case 2) in the setupQuestion class
+	 * 
+	 * @return an ArrayList containing the question, answer choices, answer, and explanation
+	 */
 	private ArrayList<String> createQuestion() //creates randomized question based on boolean operators
 	{
 		Random rand = new Random();
@@ -192,6 +217,16 @@ public class BooleanQuestions extends Question
 		}
 		
 		qArray.add(explanation);//adds explanation at index 4
+		
+		//displays question and answer in console for debugging purposes
+		displayConsole(qArray.get(0), qArray.get(3));
+		
 		return qArray;
+	}
+	
+	private void displayConsole(String quest, String ans)
+	{
+		ConsoleMethods.println(quest);
+		ConsoleMethods.println(ans);
 	}
 }

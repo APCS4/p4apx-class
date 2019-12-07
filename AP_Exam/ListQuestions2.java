@@ -3,8 +3,20 @@ package AP_Exam;
 import java.util.ArrayList; 
 import java.util.Random;
 
-//Anika & Aashi's ArrayListQuestions
+/**
+ * 
+ * This class generates random MC arraylist questions 
+ * 
+ * @author Anika Sood and Aashi Mittal (period 4)
+ * 
+ * @version name: ListQuestions2 (Dec. 6th) 
+ * 
+ * 
+ * 
+ * 
+ */
 public class ListQuestions2 extends Question
+
 {
 	public ListQuestions2()
 	{

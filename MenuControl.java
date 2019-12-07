@@ -39,19 +39,20 @@ public class MenuControl extends JFrame {
 	 * Create the frame.
 	 */
 	public MenuControl() {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		
 		// JLabel with image 
 		JLabel pic = new JLabel("");        
-        java.awt.Image image = new ImageIcon("APCompSci.jpeg").getImage();
+        java.awt.Image image = new ImageIcon("Untitled drawing-3.png").getImage();
         pic.setIcon(new ImageIcon(image));
-        pic.setBounds(377, 111, 128, 128);
+        pic.setBounds(300, 100, 10, 10);
         
         // Content Panel to add Label and Image
         //https://docs.oracle.com/javase/tutorial/uiswing/components/rootpane.html
         Container content = getContentPane();
-        content.setBackground(new Color(100,100,255));
+        content.setBackground(new Color(181, 224, 255));
         content.add(pic);
         
         // Menu Objects 

@@ -2,9 +2,26 @@ package AP_Exam;
 
 import java.util.Random;
 
+
 import Util.OutputCode;
-//The class for all questions pertaining to MVC
+/**
+ * The class for all question pertaining to MVC
+ *
+ * @author Ethan Davies and Jared Jose
+ * @version 12/6
+ */
+
+
+
+
+import Util.OutputCode;
+
 public class MVCQuestion extends Question{
+	/**
+	 * MVCQuestion contructor
+	 * sets up question
+	 *
+	 */
 	public MVCQuestion()
     {
 		//This sets up all the questions to be used by the question class so when called a 
@@ -12,6 +29,12 @@ public class MVCQuestion extends Question{
     	setupQuestion();
     }
 	
+	/**
+	 * setupQuestion: creates and loads question into Question class
+	 * @param void 
+	 * @return void
+	 *
+	 */
 	public void setupQuestion() {
 		//string array that will contain the five options for each question
 		String[] choices = new String[5];
@@ -99,6 +122,16 @@ public class MVCQuestion extends Question{
 					+ "that code is purposeful, effective, and easy to modify in the long term.";
 			break;
 		case 5:
+			this.question = "What part of the MVC framework would this code fit into?";
+			choices = loadQuestArray("Model", "View", "Control", "Mode", "Volume");
+			this.choiceA = choices[0];
+			this.choiceB = choices[1];
+			this.choiceC = choices[2];
+			this.choiceD = choices[3];
+			this.choiceE = choices[4];
+			this.answerKey = getAns(choices, "View");
+			OutputCode.codeOutput();
+		case 6:
 			this.question = "What part of MVC would this code fit into?";
 			choices = loadQuestArray("Model", "Vision", "Control", "Version", "View");
 			this.choiceA = choices[0];
@@ -114,8 +147,12 @@ public class MVCQuestion extends Question{
 			System.out.print("ERROR");
 		}
 	}
-	
-	//loadQuestArray loads an array with the 5 possible questions
+	/**
+	 * loadQuestArray loads an array with the 5 possible questions
+	 * @param 
+	 * @return String[]
+	 *
+	 */
 	private String[] loadQuestArray (String q0, String q1, String q2, String q3, String q4)
 	{
 		int rand; //random int placehold
@@ -142,7 +179,12 @@ public class MVCQuestion extends Question{
 		return choices;	
 	}
 	
-	//class the thread uses and runs
+	/**
+	 * The class for all question pertaining to MVC
+	 *
+	 * @author Ethan Davies and Jared Jose
+	 * @version 12/6
+	 */
 	class CodeOutputter extends Thread
 	{
 		public void run()//run is special to thread classes
@@ -151,6 +193,12 @@ public class MVCQuestion extends Question{
 		}
 	}
 	
+	/**
+	 * WeavetheRing: creates a thread to run another class siumltaneously
+	 * @param void 
+	 * @return void
+	 *
+	 */
 	public void WeavetheRing()
 	{
 		CodeOutputter coder = new CodeOutputter();
@@ -162,7 +210,12 @@ public class MVCQuestion extends Question{
 		 */
 	}
 	
-	//Determines which choice the answer string is in
+	/**
+	 * getAns: reads randomized the newly randomized question order and finds the answer
+	 * @param  
+	 * @return char
+	 *
+	 */
 	private char getAns(String quests[], String ans) {
 		char retVal;
 		

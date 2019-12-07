@@ -2,24 +2,34 @@ package AP_Exam;
 
 import java.util.*;
 import java.util.Random;
-
+/**
+ * PolymorphismQuestions class extends Question class; it contains a constructor (in which calls setupQuestion method) and a method body for setupQuestion method (in which it assigns inherited fields and formats them).
+ *
+ * @author (Cory Tran, Jose Corella)
+ * @version (12/05/19)
+ */
 public class PolymorphismQuestions extends Question{
+    /**
+     * Constructor for method call of class PolymorphismQuestions
+     */
 	public PolymorphismQuestions()
     {
 		//calls setupQuestion() method
     	setupQuestion();
     }
 	
+    /**
+     * askPolymorphism 
+     * 
+     * @return    void
+     */
 	public void setupQuestion() {
 		AnswerChoiceIndex indexClass = new AnswerChoiceIndex();
 		//creating object rand of class Random
 		Random rand = new Random();
-		//loading string arrays with choices
-		String[] arr1 = new String[]{"a feature that allows a class to have more than one method having the same name, if their argument lists are different", "a feature that allows a class to have more than one constructor having different argument lists", "a set of code which is referred to by name and can be called (invoked) at any point in a program", "a feature used to refer method of functional interface", "none of the choices"};
-		String[] arr2 = new String[]{"same method name is overloaded with different type or number of parameters in same class (different signature)", "same method is overridden with same signature in different classes", " the process where one class acquires the properties (methods and fields) of another class", "a mechanism of wrapping the data (variables) and code acting on the data (methods) together as a single unit", "none of the choices"};
-		//loading arraylist with elements of arrays
-		List<String> listArr1 = Arrays.asList(arr1);
-		List<String> listArr2 = Arrays.asList(arr2);
+		//loading arraylists with elements of arrays
+		List<String> listArr1 = Arrays.asList("a feature that allows a class to have more than one method having the same name, if their argument lists are different", "a feature that allows a class to have more than one constructor having different argument lists", "a set of code which is referred to by name and can be called (invoked) at any point in a program", "a feature used to refer method of functional interface", "none of the choices");
+		List<String> listArr2 = Arrays.asList("same method name is overloaded with different type or number of parameters in same class (different signature)", "same method is overridden with same signature in different classes", " the process where one class acquires the properties (methods and fields) of another class", "a mechanism of wrapping the data (variables) and code acting on the data (methods) together as a single unit", "none of the choices");
 	
 		//assigning random number 0-4 into variable for switch argument
 		int randQuestion = rand.nextInt(4);
