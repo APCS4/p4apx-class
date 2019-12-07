@@ -32,7 +32,7 @@ public class GetCodeV2//V2 cause it my second attempt
     	
         Scanner sc = null;
         try {
-            sc = new Scanner(new File());
+            sc = new Scanner(new File(st[1]));
         }
         catch (FileNotFoundException e){}
         
@@ -80,7 +80,7 @@ public class GetCodeV2//V2 cause it my second attempt
         return output.toString();
     }
     
-    public void getFileNames()
+    public static String[] getFileNames()
     {
     	String ret [] =
     		{
@@ -114,9 +114,8 @@ public class GetCodeV2//V2 cause it my second attempt
     				"",
     				"",
     				""
-    		}
-    			;
-    	
+    		};
+    	return ret;
     	
     }
 }

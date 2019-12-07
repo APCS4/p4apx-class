@@ -11,6 +11,8 @@ import java.util.Random;
 
 
 public class BobaQuestions extends Question{
+	private Integer arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10;
+	
 	public BobaQuestions()
     {
 		System.out.print("Boba");
@@ -18,18 +20,18 @@ public class BobaQuestions extends Question{
 		//Sets up all the questions to be used by the question class so when called a 
 		//question and answer is displayed and not null
 		Random rand = new Random();
-		 	Integer arg1 = rand.nextInt(1);
-		 	Integer arg2 = rand.nextInt(20);
-	 	    Integer arg3 = rand.nextInt(1);
-			Integer arg4 = rand.nextInt(20);
-		 	Integer arg5 = rand.nextInt(1);
-		 	Integer arg6 = rand.nextInt(20);
-			Integer arg7 = rand.nextInt(1);
-		 	Integer arg8 = rand.nextInt(20);
-			Integer arg9 = rand.nextInt(1);
-			Integer arg10 = rand.nextInt(20);
+		 	arg1 = rand.nextInt(1);
+		 	arg2 = rand.nextInt(20);
+	 	    arg3 = rand.nextInt(1);
+			arg4 = rand.nextInt(20);
+		 	arg5 = rand.nextInt(1);
+		 	arg6 = rand.nextInt(20);
+			arg7 = rand.nextInt(1);
+		 	arg8 = rand.nextInt(20);
+			arg9 = rand.nextInt(1);
+			arg10 = rand.nextInt(20);
 		//Integer opIndex = rand.nextInt(operators.length);
-			setupQuestion(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10);
+			setupQuestion();
  
     }
 	
@@ -40,7 +42,8 @@ public class BobaQuestions extends Question{
 		//Randomizes questions
 		Random rand = new Random();
 		int random = rand.nextInt(8);;
-
+		
+		/*
 		Integer arg1 = rand.nextInt(1);
     	Integer arg2 = rand.nextInt(20);
     	Integer arg3 = rand.nextInt(1);
@@ -51,6 +54,7 @@ public class BobaQuestions extends Question{
 		Integer arg8 = rand.nextInt(20);
 		Integer arg9 = rand.nextInt(1);
 		Integer arg10 = rand.nextInt(20);
+		*/
 		
 		System.out.print(arg1 + " " + arg2);
 
