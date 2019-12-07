@@ -51,7 +51,7 @@ public class MenuControl extends JFrame {
         // Content Panel to add Label and Image
         //https://docs.oracle.com/javase/tutorial/uiswing/components/rootpane.html
         Container content = getContentPane();
-        content.setBackground(new Color(100,100,255));
+        content.setBackground(new Color(181, 224, 255));
         content.add(pic);
         
         // Menu Objects 
