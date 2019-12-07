@@ -15,6 +15,7 @@ public class MathQuestions extends Question
 	
     /**
      * Constructor for objects of class MathQuestions
+     * 
      * @param  void
      */
     public MathQuestions()
@@ -28,6 +29,7 @@ public class MathQuestions extends Question
 
     /**
      * Main test method to support console execution
+     * 
      * @param  void
      * @return void
      */

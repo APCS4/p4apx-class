@@ -14,7 +14,9 @@ public class DataTypeQuestions extends Question
 	private int[] multiplier = {10, 100, 1000};
 
 	/**
-     * Constructor for objects of class MathQuestions
+     * Constructor for objects of class DataTypeQuestions
+     * 
+     * @param  void
      */
     public DataTypeQuestions()
     {
@@ -23,6 +25,7 @@ public class DataTypeQuestions extends Question
     	Integer index = rand.nextInt(datatype.length);
     	setupQuestion(datatype[index], value);
     }
+    
     
     public static String mainTest ()
     {
