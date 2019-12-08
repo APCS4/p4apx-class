@@ -247,7 +247,7 @@ public class AP_UI extends MenuControl {
 		});
 
 
-		JButton btnNewButton_1 = new JButton("Declarations");
+		JButton btnNewButton_1 = new JButton("Recursion");
 		btnNewButton_1.setBounds(604, 116, 137, 28);
 		contentPane.add(btnNewButton_1);
 		
