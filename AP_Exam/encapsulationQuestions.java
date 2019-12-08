@@ -3,50 +3,40 @@ package AP_Exam;
 import java.util.Random;
 
 public class encapsulationQuestions extends Question {
-	String[] question1 = new String[7]; 
-	String[] question2 = new String[7];
-	String[] question3 = new String[7];
-	
-	  
+
+	int lineN = 0; 
+
 	
 	public encapsulationQuestions() {
 		
-		this.setQuestions();
 		
 		Random rand = new Random();
 		int r = rand.nextInt(3);
 		
 		switch(r) { 
-		case 0: 
+		
+		case 0: //This is question 1 
+		lineN = this.lineNumber("@question1");
+			
 			
 		case 1: 
-			this.question = question2[0];
-			this.choiceA = question2[1];
-			this.choiceB = question2[2];
-			this.choiceC = question2[3];
-			this.choiceD = question2[4];
-			char a = question2[5].charAt(0);
-			this.answerKey = a;
-			break;
+		lineN = this.lineNumber("@question1");
+			
 		case 2: 
-			this.question = question3[0];
-			this.choiceA = question3[1];
-			this.choiceB = question3[2]; 
-			this.choiceC = question3[3];
-			this.choiceD = question3[4];
-			 a = question3[5].charAt(0);
-			this.answerKey = a;
-			break;
+		lineN = this.lineNumber("@question1");	
+		
 		
 		}
 		
 	} 
 	
-	
-	
-	private void setQuestions() {
-				 
+	private String restofLine(String a) {
+		
+		return null; 
 	}
-
+	
+	private int lineNumber(String b) {
+		return 0; 
+	}
 	
 }
