@@ -14,16 +14,17 @@ public class Question extends Scoring
 {
 	// question setup values
 	protected String question, choiceA, choiceB, choiceC, choiceD, choiceE, answer;
-    protected char answerA, answerB, answerC, answerD, answerE, answerKey;
-
-    // question internal control values
-	private char[] answers = {'A', 'B', 'C', 'D', 'E'};
+    protected char answerA, answerB, answerC, answerD, answerE, answerKey;  // used for setting answerKey by subs
     
-    // defaults for randomization 
-   	int randOffset = 0;
-    private boolean scrambled;
+    // internal control values, these are never change
+    private final char charA = 'A', charB = 'B', charC = 'C', charD = 'D', charE = 'E'; 	// Multiple choice default letters
+	private final char[] answers = {charA, charB, charC, charD, charE};						// Multiple choice default order
+    
+    // defaults for randomization
+    private boolean scrambled = false;			// scrambled is control variable to tell if randomization is ON/OFF
+   	private int randOffset = 0;					// randOffset is used when scrambled to move answers around
+    protected boolean choiceEfixed = true;		// used to keep choice E fixed versus randomization
 	private String[] choices = {"", "", "", "", ""};
-    char offsetAnswerKey;
 
     
     /**
@@ -34,81 +35,96 @@ public class Question extends Scoring
     public Question()
     {
     	// This outputs constructor being run
-        ConsoleMethods.println("Question Constructor, Randomizing choices");
+        ConsoleMethods.println("Question Constructor");
+        
+        // turn scrambled off for backward compatibility
+        scrambled = false;
+        randOffset = 0;
+        choiceEfixed = true;
+        
+        // used by Sub Classes to set answerKey defaults more easily (ABCDE)
         answerA=answers[0];
         answerB=answers[1];
         answerC=answers[2]; 
         answerD=answers[3];
         answerE=answers[4];
-        
-        scrambled = false;
     }
     
+    /**
+     * Randomize choices and answers, potentially change order from definition
+     * 
+     * @param  void
+     */
     public void scramble()
     {
     	// This outputs constructor being run
         ConsoleMethods.println("Scramble method");
         
+        // tell class we are in scrambled orientation
+		scrambled = true;
+        
+		// length of items to be scrambled
+		int length = (choiceEfixed ? answers.length -1 : answers.length);
+		
+		// random number for scramble
     	Random rand = new Random();
+    	randOffset = rand.nextInt(length);
     	
-    	randOffset = rand.nextInt(answers.length);
+    	// scramble logic modulo math
     	int aOffset = randOffset;
-    	int bOffset = (randOffset+1) % answers.length;
-    	int cOffset = (randOffset+2) % answers.length;
-    	int dOffset = (randOffset+3) % answers.length;
-    	int eOffset = (randOffset+4) % answers.length;
-
-    	answerA = answers[aOffset];
-    	answerB = answers[bOffset];
-    	answerC = answers[cOffset];
-    	answerD = answers[dOffset];
-    	answerE = answers[eOffset];
-    	
+    	int bOffset = (randOffset+1) % length;
+    	int cOffset = (randOffset+2) % length;
+    	int dOffset = (randOffset+3) % length;
+    	int eOffset = choiceEfixed ? length : (randOffset+4) % length;
+  
+    	// choice scrambling
     	choices[aOffset] = choiceA;
     	choices[bOffset] = choiceB;
     	choices[cOffset] = choiceC;
     	choices[dOffset] = choiceD;
     	choices[eOffset] = choiceE;
     	    	
-		switch (answerKey) {
-		case 'A':
-			offsetAnswerKey = answerA;
+		// answer key reset to match scrambled choice
+        char offsetAnswerKey='\0';
+    	switch (answerKey) {
+		case charA:
+			offsetAnswerKey = answers[aOffset];
 			break;
-		case 'B':
-			offsetAnswerKey = answerB;
+		case charB:
+			offsetAnswerKey = answers[bOffset];
 			break;
-		case 'C':
-			offsetAnswerKey = answerC;
+		case charC:
+			offsetAnswerKey = answers[cOffset];
 			break;
-		case 'D':
-			offsetAnswerKey = answerD;
+		case charD:
+			offsetAnswerKey = answers[dOffset];
 			break;
-		case 'E':
-			offsetAnswerKey = answerE;
+		case charE:
+			offsetAnswerKey = answers[eOffset];
 			break;
 
 		}
+    	// before and after answerKey
 		ConsoleMethods.println("AnswerKey:" +answerKey);
 		ConsoleMethods.println("offsetAnswerKey:" +offsetAnswerKey);
-
+		// answerKey reset to match scrambled choice
 		answerKey = offsetAnswerKey;
-		scrambled = true;
-		
-    	// This outputs randomization of letters
+
+    	// Outputs showing randomization of letters
     	ConsoleMethods.printChar(answers[0]);
-    	ConsoleMethods.printChar(answerA);
+    	ConsoleMethods.printChar(answers[aOffset]);
     	ConsoleMethods.printChar('-');
     	ConsoleMethods.printChar(answers[1]);
-    	ConsoleMethods.printChar(answerB);
+    	ConsoleMethods.printChar(answers[bOffset]);
     	ConsoleMethods.printChar('-');
     	ConsoleMethods.printChar(answers[2]);
-    	ConsoleMethods.printChar(answerC);
+    	ConsoleMethods.printChar(answers[cOffset]);
     	ConsoleMethods.printChar('-');
     	ConsoleMethods.printChar(answers[3]);
-    	ConsoleMethods.printChar(answerD);
+    	ConsoleMethods.printChar(answers[dOffset]);
     	ConsoleMethods.printChar('-');
     	ConsoleMethods.printChar(answers[4]);
-    	ConsoleMethods.printChar(answerE);
+    	ConsoleMethods.printChar(answers[eOffset]);
     	ConsoleMethods.println();
     }
     

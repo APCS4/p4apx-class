@@ -24,6 +24,7 @@ public class BinaryMathQuestions extends Question
     	Integer arg2 = rand.nextInt(8)+1;
     	Integer opIndex = rand.nextInt(operators.length);
     	setupQuestion(arg1, operators[opIndex], arg2);
+    	scramble();
     }
     
     /**

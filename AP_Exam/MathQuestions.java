@@ -25,6 +25,7 @@ public class MathQuestions extends Question
     	Integer arg2 = (int)Math.sqrt((double)arg1);
     	Integer opIndex = rand.nextInt(operators.length);
     	setupQuestion(arg1, operators[opIndex], arg2);
+    	scramble();
     }
 
     /**
