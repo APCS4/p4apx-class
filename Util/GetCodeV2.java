@@ -1,14 +1,17 @@
 package Util;
 
-/**
- * returns the code pertaining to clicked method
- *
- * @author Sydney Hsieh
- * @version 10/28
- */
+
 import java.util.ArrayList;
 import java.util.*;
 import java.io.*;
+
+/**
+ * returns the code of a class the scanner reads
+ *
+ * @author Ethan Davies (major inspiration from Sydney Hsieh)
+ * @version 12/6
+ */
+
 public class GetCodeV2//V2 cause it my second attempt
 {
 	/*So we totally stole all the same code from the methodSearch class from out 1st tri portfolios sry.
@@ -16,11 +19,20 @@ public class GetCodeV2//V2 cause it my second attempt
 	 * word public which should include the 1st line with public class thing and then go all the way until
 	 * the end of the class, which is what we want. Other ways were hard
 	 */
+	
+	/**
+	 * codeGetV2: gets the code of specified class
+	 * @param void 
+	 * @return String
+	 *
+	 */
     public static String codeGetV2()
     {
+    	String [] st = getFileNames();
+    	
         Scanner sc = null;
         try {
-            sc = new Scanner(new File("Util/Palindrome.java"));
+            sc = new Scanner(new File(st[1]));
         }
         catch (FileNotFoundException e){}
         
@@ -67,5 +79,63 @@ public class GetCodeV2//V2 cause it my second attempt
         }
         return output.toString();
     }
+    
+    public static String[] getFileNames()
+    {
+    	String ret [] =
+    		{
+    				"AP_UI.java",
+    				"Calculator.java",
+    				"MenuControl.java",
+    				"MethodSearchUI.java",
+    				"PalindromeUI.java",
+    				"AP_Exam/AnswerChoiceIndex.java",
+    				"AP_Exam/Ap_Console.java",
+    				"AP_Exam/BackgroundInforQuestions.java",
+    				"AP_Exam/BinaryMathQuestions.java",
+    				"AP_Exam/BobaQuestions.java",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				""
+    		};
+    	return ret;
+    	
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

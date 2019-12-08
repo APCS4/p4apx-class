@@ -3,17 +3,19 @@ package AP_Exam;
 import java.util.Random;
 
 /**
- * Write a description of class MathOps here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * Generates Binary Math questions
+ * 
+ * @author (John Mortensen)
+ * @version (1.0)
  */
 public class BinaryMathQuestions extends Question
 {
 	private char[] operators = {'&', '|', '+', '-'};
 
-    /**
-     * Constructor for objects of class MathQuestions
+	/**
+     * Constructor for objects of class BinaryMathQuestions
+     * 
+     * @param  void
      */
     public BinaryMathQuestions()
     {
@@ -22,8 +24,15 @@ public class BinaryMathQuestions extends Question
     	Integer arg2 = rand.nextInt(8)+1;
     	Integer opIndex = rand.nextInt(operators.length);
     	setupQuestion(arg1, operators[opIndex], arg2);
+    	scramble();
     }
     
+    /**
+     * Main test method to support console execution
+     * 
+     * @param  void
+     * @return void
+     */
     public static String mainTest ()
     {
     	Question q = new BinaryMathQuestions();
@@ -32,12 +41,12 @@ public class BinaryMathQuestions extends Question
     }
     
     /**
-     * askBinaryMath 
+     * setup Binary Math questions
      *
      * @param  arg1      1st argument in math expression (6 bits)
      * @param  operator  operator in math expression (&, |, +, or - only)
      * @param  arg2      2st argument in math expression (5 bits)
-     * @return    error code
+     * @return    void
      */
 	@Override
     public void setupQuestion(int arg1, char operator, int arg2)
@@ -99,7 +108,7 @@ public class BinaryMathQuestions extends Question
     }
     
     /**
-     * zeroPadInt2BinaryString 
+     * Zero pad binary number to supplied binary length 
      *
      * @param  arg1             number to convert to binary
      * @param  binaryLength     number of bits for number (ie 4 bits)

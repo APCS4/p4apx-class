@@ -3,20 +3,30 @@ package AP_Exam;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-
+/**
+ * 
+ * 
+ * 
+ * @author Edgar and Andrei.
+ * 
+ * @Version 1.0
+ * 
+ **/
 public class ArrayListQuestions extends Question
 {
+	//This creates a list of methods that hold the methods we will be asking about
 	private ArrayList<String> methods = new ArrayList<String>(Arrays.asList(new String[] {"list.add(\"Ethan\")","list.remove(2)","list.contains(\"Ethan\")","list.set(2,\"Ethan\")","list.get(1)"}));
+	//This creates a list of names to be randomized for the questions
 	private ArrayList<String> names = new ArrayList<String>(Arrays.asList(list(new String[] {"Andrei","Edgar","Jared","Ethan"})));
 	char[] letterAnswers = {'A','B','C','D','E'};
 	private int questionType;
-	private String[] tempAnswers = new String[5];
-	private String[] shuffledAnswers;
-	private int answerLoc;
+	private String[] tempAnswers = new String[5]; //Temporary answers so we can maintain original answer
+	private String[] shuffledAnswers; //list of randomized answers
+	private int answerLoc; //Position of the correct answer
 
 	public ArrayListQuestions()
 	{
-		questionType = (int) Math.floor(Math.random()*methods.size());
+		questionType = (int) Math.floor(Math.random()*methods.size()); //Choose a random method from Arraylist
 		setupQuestion();
 	}
 
@@ -24,12 +34,13 @@ public class ArrayListQuestions extends Question
 	public void setupQuestion()
 	{
 		this.question = "What does " + methods.get(questionType) + " do to list " + names.toString();
-		console("ArrayList: " + names.toString() + "\n");
+		console("ArrayList: " + names.toString() + "\n"); //Console stuffs
 		generateAnswers();
 	}
 	
 	private void generateAnswers()
 	{
+		//generate an ArrayList as answer for methods that need it
 		ArrayList<String> answer1 = new ArrayList<String>(names);
 		ArrayList<String> answer2 = new ArrayList<String>(names);
 		ArrayList<String> answer4 = new ArrayList<String>(names);
@@ -49,19 +60,22 @@ public class ArrayListQuestions extends Question
 		answer4.set(2,"Ethan");
 		tempAnswers[3] = answer4.toString();
 		
-		//Get what is in the second box
+		//Get what is in the second box 
 		tempAnswers[4] = names.get(1);
 		
+		//Once the temporary answers have been randomized we assign it to shuffledAnswers
 		shuffledAnswers = list(tempAnswers);
 		
+		//console stuffs
 		for(int i=0; i<tempAnswers.length; i++)
 		{
-			console(methods.get(i)+"\n	Answer: "+tempAnswers[i]+"\n	"+letterAnswers[order[i]]);
+			console(methods.get(i)+"\n	Answer: "+tempAnswers[i]+"\n");
 		}
-		
+		//Find where the correct answer is and set AnswerLoc to that index
 		for(int i = 0; i < shuffledAnswers.length;i++)
 		{
-			if (questionType == order[i]) answerLoc = i;
+			if (questionType == order[i]) 
+				answerLoc = i;
 		}
 
 		setAnswers();
@@ -69,6 +83,7 @@ public class ArrayListQuestions extends Question
 	
 	private void setAnswers()
 	{
+		//Set the answers
 		this.choiceA = shuffledAnswers[0];
 		this.choiceB = shuffledAnswers[1];
 		this.choiceC = shuffledAnswers[2];
