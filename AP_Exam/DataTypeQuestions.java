@@ -2,6 +2,8 @@ package AP_Exam;
 
 import java.util.Random;
 
+import Util.ConsoleMethods;
+
 /**
  * Write a description of class MathOps here.
  *
@@ -20,10 +22,14 @@ public class DataTypeQuestions extends Question
      */
     public DataTypeQuestions()
     {
+    	// This outputs constructor being run
+        ConsoleMethods.println("DataTypeQuestions Constructor");
+
     	Random rand = new Random();
     	double value = rand.nextDouble() * multiplier[rand.nextInt(multiplier.length)];
     	Integer index = rand.nextInt(datatype.length);
     	setupQuestion(datatype[index], value);
+    	scramble();
     }
     
     
@@ -44,10 +50,6 @@ public class DataTypeQuestions extends Question
 	@Override
     public void setupQuestion(String dataTypeName, double number)
     {        
-        float test1 = (float)number;
-        int test2 =  (int)number;
-        char test3 =  Double.toString(number).charAt(0);
-        double test4 = (double)number;
         
         // format question
         this.question = String.format(
@@ -74,6 +76,7 @@ public class DataTypeQuestions extends Question
             number, number);
         this.choiceE = "All of the above";
         
+        // find answer key
         if (dataTypeName == "float")
         {
             answer = this.choiceA;
