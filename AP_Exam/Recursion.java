@@ -2,5 +2,5 @@ package AP_Exam;
 
 public class Recursion 
 {
-	//king burger is somebodyfs foot fungus
+	//burger king burger is somebodyfs foot fungus
 }
