@@ -111,7 +111,6 @@ public class ArrayListQuestions extends Question
 	        order[randomPosition] = temp;
 	    }
 		
-	    
 	    String[] newList = new String[answers.length];
 	       
 	    for (int i=0; i<newList.length; i++)
