@@ -5,25 +5,25 @@ import java.util.Random;
 public class Recursion extends Question
 {
 
-	private String[] ansq = new String[5];
-	private char[] ansc = {'A', 'B', 'C', 'D', 'E'};
-	private int correct;
-	private String ans;
+	private String[] ansq = new String[5]; //string array that holds all of the answers
+	private char[] ansc = {'A', 'B', 'C', 'D', 'E'}; //character array to hold a, b, c, d, and e
+	private int correct; //number of the correct substring of the answer array
+	private String ans; //String that contains the correct answer
 	
 	public Recursion()
 	{
-		QuestionSetUp();
+		QuestionSetUp(); //bring to question method
 	}
 	
-	public void QuestionSetUp()
+	public void QuestionSetUp() //question method
 	{
-		int bruh = (int)(Math.random() * 4 + 1);
-		switch (bruh)
+		int bruh = (int)(Math.random() * 4 + 1); //	randomize this number to choose a question
+		switch (bruh) //switch case for questions
 		{
-			case 1:
-				ans = "248832";
+			case 1: //question #1
+				ans = "248832"; //correct answer
 				
-				this.question = "Consider the following code:\r\n" + 
+				this.question = "Consider the following code:\r\n" + //display the question
 				                "\r\n" + 
 				                "\r\n" + 
 				                "public static void main(String[] args)\r\n" + 
@@ -41,17 +41,17 @@ public class Recursion extends Question
 				                "\r\n" + 
 				                "What is the output for the code above?";
 				
-				ansq[0] = "144";
+				ansq[0] = "144"; //answer choices
 				ansq[1] = "48";
 				ansq[2] = "1728";
 				ansq[3] = "248832";
 				ansq[4] = "104";
 				
-				shuffle();
-				answers();
+				shuffle(); //shuffle the array
+				answers(); //display the answers
 				break;
-			case 2:
-				ans = "public long factorial(long a)\r\n" + 
+			case 2: //question #2
+				ans = "public long factorial(long a)\r\n" + //correct answer 
 					  "{\r\n" + 
 					  "     if(a <= 1)\r\n" + 
 					  "         return 1;\r\n" + 
@@ -59,13 +59,13 @@ public class Recursion extends Question
 					  "     return a * factorial(a-1);\r\n" + 
 					  "}";
 				
-				this.question = "Which of the following is a recursive factorial function?  \r\n" + 
+				this.question = "Which of the following is a recursive factorial function?  \r\n" + //display the question
 						        "\r\n" + 
 						        "Recall that an example of a factorial is: \r\n" + 
 						        "\r\n" + 
 						        "5!=5*4*3*2*1";
 				
-				ansq[0] = "public long factorial(long a)\r\n" + 
+				ansq[0] = "public long factorial(long a)\r\n" + //answer choices
 						  "{\r\n" + 
 						  "    return a * factorial(a-1) * factorial(a-2);\r\n" + 
 						  "}";
@@ -91,13 +91,13 @@ public class Recursion extends Question
 						  "}";
 				ansq[4] = "None of these";
 				
-				shuffle();
-				answers();
+				shuffle(); //shuffle the answers
+				answers(); //display the answers
 				break;
-			case 3:
-				ans = "tHISISMYFAVORITEyAYFORPROGRAMMING";
+			case 3: //question #3
+				ans = "tHISISMYFAVORITEyAYFORPROGRAMMING"; //correct answer
 				
-				this.question = "Consider the following code:\r\n" + 
+				this.question = "Consider the following code:\r\n" + //display the question
 						        "\r\n" + 
 						        " \r\n" + 
 						        "\r\n" + 
@@ -126,19 +126,19 @@ public class Recursion extends Question
 						        "\r\n" + 
 						        "What is the output for the main function above?";
 				
-				ansq[0] = "ThIs iS mY fAvOriTe: YaY fOr PrOgRaMmIng!!!";
+				ansq[0] = "ThIs iS mY fAvOriTe: YaY fOr PrOgRaMmIng!!!"; //answer choices
 				ansq[1] = "tHIS IS MY FAVORITE: yAY FOR PROGRAMMING!!!";
 				ansq[2] = "tHIS IS MYFAVORITE";
 				ansq[3] = "tHISISMYFAVORITEyAYFORPROGRAMMING";
 				ansq[4] = "ThIs iS mY fAvOriTe";
 				
-				shuffle();
-				answers();
+				shuffle(); //shuffle the answers
+				answers(); //display the answers
 				break;
 			case 4:
-				ans = "24";
+				ans = "24"; //correct answer
 				
-				this.question = "public static int foo(int a, int b)\r\n" + 
+				this.question = "public static int foo(int a, int b)\r\n" + //display the question
 								"{\r\n" + 
 								"    if(b <= 1 || b <= a)\r\n" + 
 								"        return 1;\r\n" + 
@@ -150,19 +150,19 @@ public class Recursion extends Question
 								"Based on the code above, what is the value of the following function call:\r\n" +
 								"foo(5,9);";
 				
-				ansq[0] = "36";
+				ansq[0] = "36"; //answer choices
 				ansq[1] = "24";
 				ansq[2] = "32";
 				ansq[3] = "18";
 				ansq[4] = "16";
 				
-				shuffle();
-				answers();
+				shuffle(); //shuffle the answers
+				answers(); //display the answers
 				break;
 			case 5:
-				ans = "Error, infinite loop";
+				ans = "Error, infinite loop"; //correct answer
 				
-				this.question = "public void draw()\r\n" +
+				this.question = "public void draw()\r\n" + //display the question
 								"{\r\n" + 
 								"  recurs(11);\r\n" + 
 								"}\r\n" + 
@@ -179,39 +179,39 @@ public class Recursion extends Question
 								"    }\r\n" + 
 								"}";
 				
-				ansq[0] = "11 9 7 5 3 1 -1";
+				ansq[0] = "11 9 7 5 3 1 -1"; //answer choices
 				ansq[1] = "9 7 5 3 1";
 				ansq[2] = "9 7 5 3 1 -1";
 				ansq[3] = "11 9 7 5 3 1";
 				ansq[4] = "Error, infinite loop";
 				
-				shuffle();
-				answers();
+				shuffle(); //shuffle the answers
+				answers(); //display the answers
 				break;
 		}
 		
 		
 	}
-	public int shuffle()
+	public int shuffle() //shuffle function
 	{
-		int num = ansq.length;
+		int num = ansq.length; //get the length of the string array
 		
-		for(int i = 0; i < num; i++)
+		for(int i = 0; i < num; i++) //repeat until end of array is reached
 		{
 			int s = i + (int)(Math.random() * num);
 			
-			String temp = ansq[s];
+			String temp = ansq[s]; 
 			ansq[s] = ansq[i];
 			ansq[i] = temp;
 			
-			if (ans == ansq[i]) 
+			if (ans == ansq[i]) //if the strings are equal, correct gets that substring number
 				correct = i;
 		}
 		
-		return correct;
+		return correct; //return the correct answer
 	}
 	
-	private void answers()
+	private void answers() //display answers
 	{
 		this.choiceA = ansq[0];
 		this.choiceB = ansq[1];
