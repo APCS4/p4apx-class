@@ -34,7 +34,8 @@ public class ArrayListQuestions extends Question
 	
 	public void setupQuestionData()
 	{
-		this.question = "What does " + methods.get(questionType) + " do to list " + names.toString();
+		//this.question = "What does " + methods.get(questionType) + " do to list " + names.toString();
+		this.question = String.format("What does %s do to list %s", methods.get(questionType), names.toString());
 		console("ArrayList: " + names.toString() + "\n"); //Console stuffs
 		generateAnswers();
 	}
@@ -134,4 +135,5 @@ public class ArrayListQuestions extends Question
 		System.out.println(output);
 	}
 }
+
 
