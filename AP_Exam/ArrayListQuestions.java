@@ -26,15 +26,14 @@ public class ArrayListQuestions extends Question
 
 	public ArrayListQuestions()
 	{
-		questionType = (int) Math.floor(Math.random()*methods.size()); //Choose a random method from Arraylist
-		setupQuestionData();
 		setupQuestion();
 	}
 
 	
 	public void setupQuestionData()
 	{
-		this.question = "What does " + methods.get(questionType) + " do to list " + names.toString();
+		questionType = (int) Math.floor(Math.random()*methods.size()); //Choose a random method from Arraylist
+		this.question = "What does " + methods.get(questionType) + " do to the list \n" + names.toString();
 		console("ArrayList: " + names.toString() + "\n"); //Console stuffs
 		generateAnswers();
 	}
