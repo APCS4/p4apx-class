@@ -17,12 +17,13 @@ public class ArrayListQuestions extends Question
 	//This creates a list of methods that hold the methods we will be asking about
 	private ArrayList<String> methods = new ArrayList<String>(Arrays.asList(new String[] {"list.add(\"Ethan\")","list.remove(2)","list.contains(\"Ethan\")","list.set(2,\"Ethan\")","list.get(1)"}));
 	//This creates a list of names to be randomized for the questions
-	private ArrayList<String> names = new ArrayList<String>(Arrays.asList(list(new String[] {"Andrei","Edgar","Jared","Ethan"})));
+	private ArrayList<String> names = new ArrayList<String>(Arrays.asList(randomizeAnswers(new String[] {"Andrei","Edgar","Jared","Ethan"})));
 	char[] letterAnswers = {'A','B','C','D','E'};
 	private int questionType;
 	private String[] tempAnswers = new String[5]; //Temporary answers so we can maintain original answer
 	private String[] shuffledAnswers; //list of randomized answers
 	private int answerLoc; //Position of the correct answer
+	private int[] order; //Used to keep track of randomized answers' locations
 
 	public ArrayListQuestions()
 	{
@@ -64,7 +65,7 @@ public class ArrayListQuestions extends Question
 		tempAnswers[4] = names.get(1);
 		
 		//Once the temporary answers have been randomized we assign it to shuffledAnswers
-		shuffledAnswers = list(tempAnswers);
+		shuffledAnswers = randomizeAnswers(tempAnswers);
 		
 		//console stuffs
 		for(int i=0; i<tempAnswers.length; i++)
@@ -93,32 +94,25 @@ public class ArrayListQuestions extends Question
 		this.answerKey = letterAnswers[answerLoc];
 	}
 	
-	//Shuffling Methods
-	private int[] shuffleNumbers(int amount)
+	//Shuffles string array
+	private String[] randomizeAnswers(String[] answers) 
 	{
-	    int[] cards = new int[amount];
+		int[] cards = new int[answers.length];
 	    
 	    for (int i=0; i<cards.length; i++) 
 	    {
-	        cards[i] = i;
+	    	order[i] = i;
 	    }
 	    for (int i=0; i<cards.length; i++) 
 	    {
 	        int randomPosition = (int) Math.floor(Math.random()*cards.length);
-	        int temp = cards[i];             
-	        cards[i] = cards[randomPosition];
-	        cards[randomPosition] = temp;
+	        int temp = order[i];             
+	        order[i] = order[randomPosition];
+	        order[randomPosition] = temp;
 	    }
-	    return cards;
-	}
-	
-	int[] order;
-	
-	//Shuffles string array
-	private String[] list(String[] answers) 
-	{
+		
+	    
 	    String[] newList = new String[answers.length];
-	    order = shuffleNumbers(answers.length);
 	       
 	    for (int i=0; i<newList.length; i++)
 	    {
