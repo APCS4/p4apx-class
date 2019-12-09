@@ -80,7 +80,7 @@ public class PowSqrt extends QuestionRandom
         this.choiceB = String.format("%f",array[1]);
         this.choiceC = String.format("%f",array[2]);
         this.choiceD = String.format("%f",array[3]);
-        this.choiceE = "None of the above (make sure you scroll up)";
+        this.choiceE = "None of the above";
         
         
         // real time calc answer based off args AND operator
