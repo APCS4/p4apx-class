@@ -61,7 +61,7 @@ public class BobaQuestions extends Question{
 			 {
 				int temp = arg5;
 		        arg5 = arg6;
-		        arg5 = temp;
+		        arg6 = temp;
 			 }
 			
 		//set 4
