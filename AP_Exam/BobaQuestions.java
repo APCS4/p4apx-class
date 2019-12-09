@@ -85,7 +85,7 @@ public class BobaQuestions extends Question{
 		if (arg9 < arg10)
 			 {
 				arg9 = arg9; 
-				arg10 = arg10;
+				arg10 = arg10; 
 			 }
 		else
 			 {
