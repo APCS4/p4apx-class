@@ -199,6 +199,8 @@ public class AP_UI extends MenuControl
 		contentPane.add(Power);
 	
 		JButton btnArraylist = new JButton("ArrayList");
+		btnArraylist.setBorder(null);
+		btnArraylist.setIcon(new ImageIcon("Ethan.jpg"));
 		btnArraylist.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AP_Exam.Question a = new AP_Exam.ArrayListQuestions();
@@ -207,7 +209,7 @@ public class AP_UI extends MenuControl
 				testQuestionAnswer.setText(a.getAnswer());
 			}
 		});
-		btnArraylist.setBounds(453, 115, 138, 29);
+		btnArraylist.setBounds(456, 99, 270, 56);
 		contentPane.add(btnArraylist);
 		
 		JButton btnTeamboba = new JButton("\u2727\uFF65\uFF9F: *\u2727\uFF65\uFF9F:* Team Boba *:\uFF65\uFF9F\u2727*:\uFF65\uFF9F\u2727");
@@ -252,9 +254,9 @@ public class AP_UI extends MenuControl
 		});
 
 
-		JButton btnNewButton_1 = new JButton("");
+		JButton btnNewButton_1 = new JButton(""); //the button
 		btnNewButton_1.setBorder(null);
-		btnNewButton_1.setIcon(new ImageIcon("C:\\Users\\Mateo\\git\\p4apx-class\\recursion-button.jpg"));
+		btnNewButton_1.setIcon(new ImageIcon("recursion-button.jpg"));
 		btnNewButton_1.setBounds(453, 351, 175, 61);
 		btnNewButton_1.addActionListener(new ActionListener() 
 		{
