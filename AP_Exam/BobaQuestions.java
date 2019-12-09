@@ -76,7 +76,7 @@ public class BobaQuestions extends Question{
 					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 
 			this.question = String.format("Using String \"The most common black boba pearls are made of tapioca\", "
-					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?");
+					+ " what would String.substring(" + arg1 + ", " + arg2 + ") return?");
 			
 			//Question Choices
 			
@@ -100,7 +100,7 @@ public class BobaQuestions extends Question{
 					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 			
 			this.question = String.format("Using String \"Classic boba drinks are made from milk tea\", "
-					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?");
+					+ " what would String.substring(" + arg1 + ", " + arg2 + ") return?");
 			
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
@@ -120,7 +120,7 @@ public class BobaQuestions extends Question{
 					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 			
 			this.question = String.format("Using String \"Boba tea can come in many flavors such as taro or mango\","
-					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?");
+					+ " what would String.substring(" + arg1 + ", " + arg2 + ") return?");
 			
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
@@ -140,7 +140,7 @@ public class BobaQuestions extends Question{
 					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 			
 			this.question = String.format("Using String \"Cool boba places include ICMonster, Sharetea and MeetFresh\","
-					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?");
+					+ " what would String.substring(" + arg1 + ", " + arg2 + ") return?");
 			
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
@@ -160,7 +160,7 @@ public class BobaQuestions extends Question{
 					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 			
 			this.question = String.format("Using String \"Boba is a drink with origins in Taiwan\","
-					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?");
+					+ " what would String.substring(" + arg1 + ", " + arg2 + ") return?");
 			
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
@@ -180,7 +180,7 @@ public class BobaQuestions extends Question{
 					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 			
 			this.question = String.format("Using String \"Each boba pearl is around 10-15 calories\","
-					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?");
+					+ " what would String.substring(" + arg1 + ", " + arg2 + ") return?");
 			
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
@@ -200,7 +200,7 @@ public class BobaQuestions extends Question{
 					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 			
 			this.question = String.format("Using String \"Boba can also be called pearl tea, tapioca tea, and bubble tea\","
-					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?");
+					+ " what would String.substring(" + arg1 + ", " + arg2 + ") return?");
 			
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
@@ -220,7 +220,7 @@ public class BobaQuestions extends Question{
 					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 			
 			this.question = String.format("Using String \"The average cup of boba milk tea contains 299 calories and 38 grams of sugar\","
-					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?");
+					+ " what would String.substring(" + arg1 + ", " + arg2 + ") return?");
 			
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
@@ -240,7 +240,7 @@ public class BobaQuestions extends Question{
 					sentence.substring(arg5, arg6), sentence.substring(arg7, arg8), sentence.substring(arg9, arg10));
 			
 			this.question = String.format("Using String \"A cool substitute for tapioca pearls are popping boba pearls\","
-					+ "what would String.substring(" + arg1 + ", " + arg2 + ") return?");
+					+ " what would String.substring(" + arg1 + ", " + arg2 + ") return?");
 			
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
