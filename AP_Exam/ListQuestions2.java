@@ -5,7 +5,8 @@ import java.util.Random;
 
 /**
  * 
- * This class generates random MC arraylist questions 
+ * This class generates random MC arraylist questions <br>
+ * 
  * 
  * @author Anika Sood and Aashi Mittal (period 4)
  * 
@@ -15,6 +16,7 @@ import java.util.Random;
  * 
  * 
  */
+//html tags : <br> = line break, <li> = bullet list <ol> = tab for each subsequent line 
 public class ListQuestions2 extends Question
 
 {
