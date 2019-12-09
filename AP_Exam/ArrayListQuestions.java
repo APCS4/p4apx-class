@@ -28,8 +28,6 @@ public class ArrayListQuestions extends Question
 	{
 		setupQuestion();
 	}
-
-	
 	
 	public void setupQuestionData()
 	{
