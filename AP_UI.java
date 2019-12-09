@@ -186,6 +186,18 @@ public class AP_UI extends MenuControl
 		btnAnthonyjude.setBounds(604, 226, 117, 29);
 		contentPane.add(btnAnthonyjude);
 
+		JButton btnForLoop = new JButton("For Loop Question");
+		btnForLoop.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AP_Exam.Question q = new ForLoopBackend();
+				testQuestion.setText(q.getQuestion());
+				testChoices.setText(q.getChoices("k"));
+				testQuestionAnswer.setText(q.getAnswer());
+			}
+		});
+		btnForLoop.setBounds(453, 240, 100, 29);
+		contentPane.add(btnForLoop);
+
 		JButton Power = new JButton("Power");
 		Power.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
