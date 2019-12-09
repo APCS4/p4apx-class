@@ -102,7 +102,6 @@ public class ArrayListQuestions extends Question
 	    {
 	        cards[i] = i;
 	    }
-
 	    for (int i=0; i<cards.length; i++) 
 	    {
 	        int randomPosition = (int) Math.floor(Math.random()*cards.length);
