@@ -5,12 +5,26 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.nio.file.*;
 
+/**
+ * encapsulation multiple choice
+ *
+ * @author (Ishita and Leah)
+ * 
+ */
+
 public class encapsulationQuestions extends Question {
 
 	int lineN = 0; 
 	
 	File qFile;
 	
+	
+     /**
+     * Constructor for objects of class encapsulationQuestions
+     * 
+     * @param  void
+     * @return void
+     */
 	public encapsulationQuestions() {
 		
 		this.choiceE = "Does not exist right now";
@@ -39,7 +53,12 @@ public class encapsulationQuestions extends Question {
 	} 
 	
 
-	
+		 /**
+     * method to populate the question and answer variables for the specific question passed in
+     * 
+     * @param  string
+     * @return void
+     */
 	private void setupQuestion(String c) {
 		
 		
@@ -120,6 +139,12 @@ public class encapsulationQuestions extends Question {
 		return null; 
 	}
 	
+	 /**
+     * method for reading text file in order to determine whether line is question or answer choice. If it is an answer choice, 
+     * the choice letter is indicated.
+     * @param  string
+     * @return void
+     */
 	private int checkType(String i) {
 		//System.out.println("Checking type");
 		ArrayList<Character> al = new ArrayList<Character>();
