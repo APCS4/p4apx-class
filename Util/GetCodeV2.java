@@ -117,6 +117,7 @@ public class GetCodeV2//V2 cause it my second attempt
     			;
     	
     	return ret[(int) Math.floor(Math.random()*28)];
+    }
 }
 
 
