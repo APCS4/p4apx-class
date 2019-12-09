@@ -330,7 +330,6 @@ public class BobaQuestions extends Question{
 			this.choiceE = "ERROR";
 			System.out.print("ERROR");
 			
-			
 		}
 	}
 	
