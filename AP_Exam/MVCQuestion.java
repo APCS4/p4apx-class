@@ -71,7 +71,7 @@ public class MVCQuestion extends Question{
 			this.question = "What does the View part of MVC contain";
 			
 			choices = loadQuestArray("The GUI and Console IO code","The Logic for the program", "A mix of all part of program", 
-					"Data pulled from an outside source", "View is not part of MVC");
+					"Data pulled from an outside source", "A,B,C,D, but not E");
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
 			this.choiceC = choices[2];
@@ -85,7 +85,7 @@ public class MVCQuestion extends Question{
 		case 2:
 			this.question = "What does the Control part of MVC contain";
 			
-			choices = loadQuestArray("Control is not part of MVC.","There is no control is MVC", "How the program looks but not the data", 
+			choices = loadQuestArray("All of the above","There is no control is MVC", "How the program looks but not the data", 
 					"How the program looks and the data it uses", "The brains of the program; logic code is here");
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
@@ -100,7 +100,7 @@ public class MVCQuestion extends Question{
 			this.question = "What does the Model part of MVC control.";
 			choices = loadQuestArray("The \"brain\" of the program, uses data + user input to complete purpose.",
 					"The long-term stored information of a program. (Database)", "The GUI; how the user interacts with the program.",
-					"The efficiency that the program runs at.", "Model is not part of MVC.");
+					"The efficiency that the program runs at.", "All of the above.");
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
 			this.choiceC = choices[2];

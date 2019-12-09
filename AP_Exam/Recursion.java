@@ -5,7 +5,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * 
- * @author Mateo, Rhea
+ * @author Mateo
  * @version version 1.0
  */
 public class Recursion extends Question

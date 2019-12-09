@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * 
- * 
- * 
+ *  
  * @author Edgar and Andrei.
  * 
  * @Version 1.0
@@ -23,7 +21,7 @@ public class ArrayListQuestions extends Question
 	private String[] tempAnswers = new String[5]; //Temporary answers so we can maintain original answer
 	private String[] shuffledAnswers; //list of randomized answers
 	private int answerLoc; //Position of the correct answer
-	private int[] order; //Used to keep track of randomized answers' locations
+	private int[] order = new int[methods.size()]; //Used to keep track of randomized answers' locations
 
 	public ArrayListQuestions()
 	{
@@ -33,8 +31,13 @@ public class ArrayListQuestions extends Question
 	
 	public void setupQuestionData()
 	{
+<<<<<<< HEAD
+		//this.question = "What does " + methods.get(questionType) + " do to list " + names.toString();
+		this.question = String.format("What does %s do to list %s", methods.get(questionType), names.toString());
+=======
 		questionType = (int) Math.floor(Math.random()*methods.size()); //Choose a random method from Arraylist
 		this.question = "What does " + methods.get(questionType) + " do to the list \n" + names.toString();
+>>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 		console("ArrayList: " + names.toString() + "\n"); //Console stuffs
 		generateAnswers();
 	}
@@ -94,18 +97,18 @@ public class ArrayListQuestions extends Question
 		this.answerKey = letterAnswers[answerLoc];
 	}
 	
+	
 	//Shuffles string array
 	private String[] randomizeAnswers(String[] answers) 
 	{
-		int[] cards = new int[answers.length];
-	    
-	    for (int i=0; i<cards.length; i++) 
+	    order = new int[answers.length];
+		for (int i=0; i<order.length; i++) 
 	    {
 	    	order[i] = i;
 	    }
-	    for (int i=0; i<cards.length; i++) 
+	    for (int i=0; i<order.length; i++) 
 	    {
-	        int randomPosition = (int) Math.floor(Math.random()*cards.length);
+	        int randomPosition = (int) Math.floor(Math.random()*order.length);
 	        int temp = order[i];             
 	        order[i] = order[randomPosition];
 	        order[randomPosition] = temp;
@@ -125,4 +128,5 @@ public class ArrayListQuestions extends Question
 		System.out.println(output);
 	}
 }
+
 

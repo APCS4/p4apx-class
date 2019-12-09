@@ -101,7 +101,7 @@ public class Question extends Scoring
     	    charB + ": " + choices[1] + "\n"  + 
     	    charC + ": " + choices[2] + "\n"  + 
     	    charD + ": " + choices[3] + "\n"  + 
-    	    charE + ": " + choices[4] + ""
+    	    charE + ": " + choices[4] + "\n"
             );    
 	}
 	

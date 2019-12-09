@@ -28,11 +28,11 @@ public class GetCodeV2//V2 cause it my second attempt
 	 */
     public static String codeGetV2()
     {
-    	String file= getFileNames();
+    	String [] st = getFileNames();
     	
         Scanner sc = null;
         try {
-            sc = new Scanner(new File(file));
+            sc = new Scanner(new File(st[1]));
         }
         catch (FileNotFoundException e){}
         
@@ -80,8 +80,7 @@ public class GetCodeV2//V2 cause it my second attempt
         return output.toString();
     }
     
-
-    public static String getFileNames() 
+    public static String[] getFileNames()
     {
     	String ret [] =
     		{
@@ -95,28 +94,30 @@ public class GetCodeV2//V2 cause it my second attempt
     				"AP_Exam/BackgroundInforQuestions.java",
     				"AP_Exam/BinaryMathQuestions.java",
     				"AP_Exam/BobaQuestions.java",
-    				"AP_Exam/BooleanQuestions.java",
-    				"AP_Exam/CA.java",
-    				"AP_Exam/DataTypeQuestions.java",
-    				"AP_Exam/encapsulationQuestion.java",
-    				"AP_Exam/ListQuestions2.java",
-    				"AP_Exam/MathQuestions.java",
-    				"AP_Exam/MVCQuestion.java",
-    				"AP_Exam/OperatorQuestions.java",
-    				"AP_Exam/PolymorphismQuestions.java",
-    				"AP_Exam/Power.java",
-    				"AP_Exam/PowSqrt.java",
-    				"AP_Exam/Question.java",
-    				"AP_Exam/Scoring.java",
-    				"Util/ConsoleMethods.java",
-    				"Util/GetCodeV2.java",
-    				"Util/MethodSearch.java",
-    				"Util/OutputCode.java",
-    				"Util/Palindrome.java"
-    		}
-    			;
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				""
+    		};
+    	return ret;
     	
-    	return ret[(int) Math.floor(Math.random()*28)];
+    }
 }
 
 
