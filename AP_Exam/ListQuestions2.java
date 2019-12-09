@@ -49,7 +49,7 @@ public class ListQuestions2 extends Question
 		
 		//correct answer
 		this.answer =  String.format("[%d, %d, %d, %d, %d]", num1, num6, num4, num5, num6);
-		
+		//%d is the format() format for an integer to print
 		
 		
 	    //Random numbers generating
