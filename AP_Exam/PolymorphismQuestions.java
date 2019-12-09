@@ -31,7 +31,7 @@ public class PolymorphismQuestions extends Question{
 		//loading arraylists with elements of arrays
 		List<String> listArr1 = Arrays.asList("a feature that allows a class to have more than one method having the same name, if their argument lists are different", "a feature that allows a class to have more than one constructor having different argument lists", "a set of code which is referred to by name and can be called (invoked) at any point in a program", "a feature used to refer method of functional interface", "none of the choices");
 		List<String> listArr2 = Arrays.asList("same method name is overloaded with different type or number of parameters in same class (different signature)", "same method is overridden with same signature in different classes", " the process where one class acquires the properties (methods and fields) of another class", "a mechanism of wrapping the data (variables) and code acting on the data (methods) together as a single unit", "none of the choices");
-	
+		List<String> listArray3 = Arrays.asList("fly","fly chirp","fly chirp waddle","fly chirp waddle coo","fly chirp coo waddle");
 		//assigning random number 0-4 into variable for switch argument
 		int randQuestion = rand.nextInt(4);
 
@@ -110,6 +110,50 @@ public class PolymorphismQuestions extends Question{
 			this.answer = "same method is overridden with same signature in different classes";
 		
 			break;
+			
+		case 4:
+			//question
+			this.question = "Consider the following two classes:\r\n" + //display the question
+	                "\r\n" + 
+	                "\r\n" + 
+	                "public class Bird\r\n" + 
+	                "{\r\n" + 
+	                "   public void act()\r\n" + 
+	                "{\r\n" + "System.out.print(''fly'');" + "makeNoise();" +
+	                "}\r\n" + 
+	                "\r\n" + 
+	                "public void makeNoise()\r\n" + 
+	                "{\r\n" + 
+	                "   System.out.print(''chirp'');\r\n" + 
+	                "}\r\n" + "}\r\n" +
+	                "\r\n public class Dove extends Bird\n" +
+	                "{\r\n" + 
+	                "   public void act()\r\n" + 
+	                "{\r\n" + 
+	                "super.act();\n" + "System.out.print(''coo '');\n" +
+	                "}\r\n" + 
+	                "}\n" +
+	                "Suppose the following declaration appears in a class other than Bird or Dove:\n" +
+	                "\n Bird pigeon = new Dove();" +
+	                "\nWhat is printed as a result of the call pigeon.act()?";
+	
+			//shuffling array list of choices 
+			Collections.shuffle(listArray3);
+			this.choiceA = listArray3.get(0);
+			this.choiceB = listArray3.get(1);
+			this.choiceC = listArray3.get(2);
+			this.choiceD = listArray3.get(3);
+			this.choiceE = listArray3.get(4);
+			
+			//checks for and assigns answer
+			int Index4 = indexClass.returnIndex(listArr2, "fly chirp coo waddle");
+			char Ans4 = indexClass.returnAns(Index4);
+			
+			this.answerKey = Ans4;
+			this.answer = "fly chirp coo waddle";
+		
+			break;
+			
 		}
 	}
 }
