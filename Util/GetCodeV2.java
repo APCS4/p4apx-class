@@ -26,13 +26,13 @@ public class GetCodeV2//V2 cause it my second attempt
 	 * @return String
 	 *
 	 */
-    public static String codeGetV2(int Type)
+    public static String codeGetV2()
     {
-    	String file= getFileNames(Type);
+    	String [] st = getFileNames();
     	
         Scanner sc = null;
         try {
-            sc = new Scanner(new File(file));
+            sc = new Scanner(new File(st[1]));
         }
         catch (FileNotFoundException e){}
         
@@ -80,59 +80,43 @@ public class GetCodeV2//V2 cause it my second attempt
         return output.toString();
     }
     
-
-    public static String getFileNames(int Type) 
+    public static String[] getFileNames()
     {
-    	String ret = "";
-    	switch(Type)
-    	{
-    	case 0:
-    		String Control [] = 
-    	{
-    			"AP_Exam/AnswerChoiceIndex.java",
-				"AP_Exam/Ap_Console.java",
-				"AP_Exam/BackgroundInforQuestions.java",
-				"AP_Exam/BinaryMathQuestions.java",
-				"AP_Exam/BobaQuestions.java",
-				"AP_Exam/BooleanQuestions.java",
-				"AP_Exam/CA.java",
-				"AP_Exam/DataTypeQuestions.java",
-				"AP_Exam/encapsulationQuestion.java",
-				"AP_Exam/ListQuestions2.java",
-				"AP_Exam/MathQuestions.java",
-				"AP_Exam/MVCQuestion.java",
-				"AP_Exam/OperatorQuestions.java",
-				"AP_Exam/PolymorphismQuestions.java",
-				"AP_Exam/Power.java",
-				"AP_Exam/PowSqrt.java",
-				"AP_Exam/Question.java",
-				"AP_Exam/Scoring.java",
-				"Util/ConsoleMethods.java",
-				"Util/GetCodeV2.java",
-				"Util/MethodSearch.java",
-				"Util/Palindrome.java"
-    	};
-    		ret = Control [(int) Math.floor(Math.random()*22)];
-    		break;
-    	case 1:
-    		String View [] =
-		{
-				"AP_UI.java",
-				"MenuControl.java",
-				"MethodSearchUI.java",
-				"PalindromeUI.java",
-				"Util/ConsoleMethods.java",
-				"Util/OutputCode.java"
-		};
-    		ret = View [(int) Math.floor(Math.random()*6)];
-    		break;
-
-    	default:
-    		break;
-    	}
-    	
-    	
+    	String ret [] =
+    		{
+    				"AP_UI.java",
+    				"Calculator.java",
+    				"MenuControl.java",
+    				"MethodSearchUI.java",
+    				"PalindromeUI.java",
+    				"AP_Exam/AnswerChoiceIndex.java",
+    				"AP_Exam/Ap_Console.java",
+    				"AP_Exam/BackgroundInforQuestions.java",
+    				"AP_Exam/BinaryMathQuestions.java",
+    				"AP_Exam/BobaQuestions.java",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				"",
+    				""
+    		};
     	return ret;
+    	
     }
 }
 
