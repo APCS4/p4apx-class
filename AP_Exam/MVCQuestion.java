@@ -124,6 +124,10 @@ public class MVCQuestion extends Question{
 					+ "that code is purposeful, effective, and easy to modify in the long term.";
 			break;
 		case 5:
+			int type = (int) Math.floor(Math.random()*2);
+			String ANS = "";
+			String reason = "";
+			
 			this.question = "What part of MVC would this code fit into?";
 			choices = loadQuestArray("Model", "Vision", "Control", "Version", "View");
 			this.choiceA = choices[0];
@@ -131,9 +135,22 @@ public class MVCQuestion extends Question{
 			this.choiceC = choices[2];
 			this.choiceD = choices[3];
 			this.choiceE = choices[4];
-			this.answerKey = getAns(choices, "Control");
-			this.answer = "This code receives input fron the View and manipulates the data, returning whether or not it is a palindrome. Logic code";
-			WeavetheRing(); //using threads here
+			
+			if(type == 0)
+			{
+				
+				ANS = "Control";
+				reason = "This code receives input fron the View and manipulates the data, returning whether or not it is a palindrome. Logic code";
+			}
+			else
+			{
+				ANS = "View";
+				reason = "This code simply gets input and gives output, only dealing with what the user sees, not manipulating variables";
+			}
+			
+			this.answerKey = getAns(choices, ANS);
+			this.answer = reason;
+			WeavetheRing(type); //using threads here
 			break;
 		default:
 			System.out.print("ERROR");
@@ -179,9 +196,14 @@ public class MVCQuestion extends Question{
 	 */
 	class CodeOutputter extends Thread
 	{
+		int Type;
+		public CodeOutputter(int type)
+		{
+			Type = type;
+		}
 		public void run()//run is special to thread classes
 		{
-			OutputCode.codeOutput();//getting code and putting it another pane for user to see
+			OutputCode.codeOutput(Type);//getting code and putting it another pane for user to see
 		}
 	}
 	
@@ -191,9 +213,9 @@ public class MVCQuestion extends Question{
 	 * @return void
 	 *
 	 */
-	public void WeavetheRing()
+	public void WeavetheRing(int type)
 	{
-		CodeOutputter coder = new CodeOutputter();
+		CodeOutputter coder = new CodeOutputter(type);
 		coder.start();//tells computer we're running a new thread
 		/* A thread is basically a way for the computer to run two things at once. Without this the JOptionPane displayed by the thread would 
 		 * be displayed  before the question is loaded into the AP_UI class and sent to the user so the code popping up in a new pane

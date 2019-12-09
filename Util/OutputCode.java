@@ -17,9 +17,9 @@ public class OutputCode {
 	 * @return void
 	 *
 	 */
-    public static void codeOutput() {
+    public static void codeOutput(int Type) {
     	JFrame frame = new JFrame();//new JFrame to show all the code we need to
-        String code = GetCodeV2.codeGetV2();
+        String code = GetCodeV2.codeGetV2(Type);
         //JOptionPane.showMessageDialog(null, code, "Code", JOptionPane.INFORMATION_MESSAGE);    
         JTextArea textArea = new JTextArea(50, 50); //textarea to put code into
         textArea.setText(code);
