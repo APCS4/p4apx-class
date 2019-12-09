@@ -1,7 +1,13 @@
 package AP_Exam;
 
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
+/**
+ * 
+ * @author Mateo
+ * @version version 1.0
+ */
 public class Recursion extends Question
 {
 
@@ -38,7 +44,6 @@ public class Recursion extends Question
 				                "   return equation(a-2) * equation(a-1);\r\n" + 
 				                "}\r\n" + 
 				                "\r\n" + 
-				                "\r\n" + 
 				                "What is the output for the code above?";
 				
 				ansq[0] = "144"; //answer choices
@@ -60,7 +65,6 @@ public class Recursion extends Question
 					  "}";
 				
 				this.question = "Which of the following is a recursive factorial function?  \r\n" + //display the question
-						        "\r\n" + 
 						        "Recall that an example of a factorial is: \r\n" + 
 						        "\r\n" + 
 						        "5!=5*4*3*2*1";
@@ -113,15 +117,14 @@ public class Recursion extends Question
 						        "\r\n" + 
 						        "        if(c >= 'A' && c <= 'Z')\r\n" + 
 						        "            return Character.toLowerCase(c) + foo(s.substring(1));\r\n" + 
-						        "    	 else\r\n" +
-						        " 	     	 if (c >= 'a' && c <= 'z')\r\n" + 
+						        "        else\r\n" +
+						        "            if (c >= 'a' && c <= 'z')\r\n" + 
 						        "                return Character.toUpperCase(c) + foo(s.substring(1));\r\n" + 
 						        "\r\n" + 
 						        "        return foo(s.substring(1));\r\n" +
 						        "    }\r\n" + 
 						        "\r\n" + 
 						        "    return \"\";\r\n" + 
-						        "\r\n" + 
 						        "}\r\n" + 
 						        "\r\n" + 
 						        "What is the output for the main function above?";
@@ -143,8 +146,7 @@ public class Recursion extends Question
 								"    if(b <= 1 || b <= a)\r\n" + 
 								"        return 1;\r\n" + 
 								"\r\n" + 
-								"    return (b - a) * foo(a,b-1);\r\n" + 
-								"\r\n" + 
+								"    return (b - a) * foo(a,b-1);\r\n" +
 								"}\r\n" + 
 								"\r\n" + 
 								"Based on the code above, what is the value of the following function call:\r\n" +
@@ -192,15 +194,16 @@ public class Recursion extends Question
 		
 		
 	}
-	public int shuffle() //shuffle function
+	private int shuffle() //shuffle function
 	{
 		int num = ansq.length; //get the length of the string array
 		
 		for(int i = 0; i < num; i++) //repeat until end of array is reached
 		{
-			int s = i + (int)(Math.random() * num);
+			Random rnd = ThreadLocalRandom.current(); 
+			int s = rnd.nextInt(i + 1); //get a random integer
 			
-			String temp = ansq[s]; 
+			String temp = ansq[s]; //sorting process
 			ansq[s] = ansq[i];
 			ansq[i] = temp;
 			
@@ -211,9 +214,9 @@ public class Recursion extends Question
 		return correct; //return the correct answer
 	}
 	
-	private void answers() //display answers
+	private void answers() //displaying answer method
 	{
-		this.choiceA = ansq[0];
+		this.choiceA = ansq[0]; //display answers
 		this.choiceB = ansq[1];
 		this.choiceC = ansq[2];
 		this.choiceD = ansq[3];

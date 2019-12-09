@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import com.sun.prism.Image;
+
 import AP_Exam.AP_Console;
 
 
@@ -24,8 +26,11 @@ import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
+import javax.swing.ImageIcon;
+import java.awt.Dimension;
 
-public class AP_UI extends MenuControl {
+public class AP_UI extends MenuControl 
+{
 
 	/**
 	 * 
@@ -247,8 +252,10 @@ public class AP_UI extends MenuControl {
 		});
 
 
-		JButton btnNewButton_1 = new JButton("Recursion");
-		btnNewButton_1.setBounds(604, 116, 137, 28);
+		JButton btnNewButton_1 = new JButton("");
+		btnNewButton_1.setBorder(null);
+		btnNewButton_1.setIcon(new ImageIcon("C:\\Users\\Mateo\\git\\p4apx-class\\recursion-button.jpg"));
+		btnNewButton_1.setBounds(453, 351, 175, 61);
 		btnNewButton_1.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
