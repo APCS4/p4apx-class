@@ -13,10 +13,11 @@ public class Power extends Question{
 	
 	public Power()
     {
+    	setupQuestionData();
     	setupQuestion();
     }
 	
-	public void setupQuestion() {
+	public void setupQuestionData() {
 		/**
 		 * setup the question 
 		 */

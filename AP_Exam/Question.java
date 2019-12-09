@@ -14,17 +14,17 @@ public class Question extends Scoring
 {
 	// question setup values
 	protected String question, choiceA, choiceB, choiceC, choiceD, choiceE, answer;
-    protected char answerA, answerB, answerC, answerD, answerE, answerKey;  // used for setting answerKey by subs
+	protected char answerKey;
     
     // internal control values, these are never change
-    private final char charA = 'A', charB = 'B', charC = 'C', charD = 'D', charE = 'E'; 	// Multiple choice default letters
-	private final char[] answers = {charA, charB, charC, charD, charE};						// Multiple choice default order
+    protected final char charA = 'A', charB = 'B', charC = 'C', charD = 'D', charE = 'E'; 	// Multiple choice default letters
+	protected final char[] answers = {charA, charB, charC, charD, charE};					// Multiple choice default order
+   	protected int aOffset = 0, bOffset = 1, cOffset = 2, dOffset = 3, eOffset = 4;			// Multiple choice index value
     
-    // defaults for randomization
-    private boolean scrambled = false;			// scrambled is control variable to tell if randomization is ON/OFF
-   	private int randOffset = 0;					// randOffset is used when scrambled to move answers around
-    protected boolean choiceEfixed = true;		// used to keep choice E fixed versus randomization
-	private String[] choices = {"", "", "", "", ""};
+    // defaults for choice
+   	protected int choiceOffset = 0;						// choiceOffset is used when scrambled to move answers around
+    protected boolean choiceEfixed = true;				// used to keep choice E fixed versus randomization
+	protected String[] choices = {"", "", "", "", ""};
 
     
     /**
@@ -35,123 +35,29 @@ public class Question extends Scoring
     public Question()
     {
     	// This outputs constructor being run
-        ConsoleMethods.println("Question Constructor");
+        ConsoleMethods.println("Question class constructor");
         
         // turn scrambled off for backward compatibility
-        scrambled = false;
-        randOffset = 0;
-        choiceEfixed = true;
-        
-        // used by Sub Classes to set answerKey defaults more easily (ABCDE)
-        answerA=answers[0];
-        answerB=answers[1];
-        answerC=answers[2]; 
-        answerD=answers[3];
-        answerE=answers[4];
+        choiceOffset = 0;
+        choiceEfixed = true;  
     }
     
+      
     /**
-     * Randomize choices and answers, potentially change order from definition
-     * 
-     * @param  void
+     * setup question choices and answer
+     *
      */
-    public void scramble()
-    {
+     protected void setupQuestion() {
     	// This outputs constructor being run
-        ConsoleMethods.println("Scramble method");
+        ConsoleMethods.println("Question class setupQuestion method");
         
-        // tell class we are in scrambled orientation
-		scrambled = true;
-        
-		// length of items to be scrambled
-		int length = (choiceEfixed ? answers.length -1 : answers.length);
-		
-		// random number for scramble
-    	Random rand = new Random();
-    	randOffset = rand.nextInt(length);
-    	
-    	// scramble logic modulo math
-    	int aOffset = randOffset;
-    	int bOffset = (randOffset+1) % length;
-    	int cOffset = (randOffset+2) % length;
-    	int dOffset = (randOffset+3) % length;
-    	int eOffset = choiceEfixed ? length : (randOffset+4) % length;
-  
-    	// choice scrambling
+    	// choice assignment
     	choices[aOffset] = choiceA;
     	choices[bOffset] = choiceB;
     	choices[cOffset] = choiceC;
     	choices[dOffset] = choiceD;
     	choices[eOffset] = choiceE;
-    	    	
-		// answer key reset to match scrambled choice
-        char offsetAnswerKey='\0';
-    	switch (answerKey) {
-		case charA:
-			offsetAnswerKey = answers[aOffset];
-			break;
-		case charB:
-			offsetAnswerKey = answers[bOffset];
-			break;
-		case charC:
-			offsetAnswerKey = answers[cOffset];
-			break;
-		case charD:
-			offsetAnswerKey = answers[dOffset];
-			break;
-		case charE:
-			offsetAnswerKey = answers[eOffset];
-			break;
-
-		}
-    	// before and after answerKey
-		ConsoleMethods.println("AnswerKey:" +answerKey);
-		ConsoleMethods.println("offsetAnswerKey:" +offsetAnswerKey);
-		// answerKey reset to match scrambled choice
-		answerKey = offsetAnswerKey;
-
-    	// Outputs showing randomization of letters
-    	ConsoleMethods.printChar(answers[0]);
-    	ConsoleMethods.printChar(answers[aOffset]);
-    	ConsoleMethods.printChar('-');
-    	ConsoleMethods.printChar(answers[1]);
-    	ConsoleMethods.printChar(answers[bOffset]);
-    	ConsoleMethods.printChar('-');
-    	ConsoleMethods.printChar(answers[2]);
-    	ConsoleMethods.printChar(answers[cOffset]);
-    	ConsoleMethods.printChar('-');
-    	ConsoleMethods.printChar(answers[3]);
-    	ConsoleMethods.printChar(answers[dOffset]);
-    	ConsoleMethods.printChar('-');
-    	ConsoleMethods.printChar(answers[4]);
-    	ConsoleMethods.printChar(answers[eOffset]);
-    	ConsoleMethods.println();
     }
-    
-    
-    /**
-     * Intended for two args and an operator
-     *
-     * @param  arg1      1st argument in math expression
-     * @param  operator  operator in math expression (/ or % only)
-     * @param  arg2      2st argument in math expression
-     * @return void
-     */
-    public void setupQuestion(int arg1, char operator, int arg2) {
-		// TODO Auto-generated method stub	
-	}
-    
-    /**
-     * Intended for String and Double question setup
-     *
-     * @param  string     datatype of reference
-     * @param  number       number in conversion
-     * @return void
-     */
-	public void setupQuestion(String string, double number) {
-		// TODO Auto-generated method stub
-		
-	}
 	
 	/**
      * Question getter
@@ -170,24 +76,13 @@ public class Question extends Scoring
      * @return String 	content of choices with ABCDEF formatting
      */
 	public String getChoices() {
-		if (scrambled)
-		{
-			return String.format(
-	            answers[0] + ": " + choices[0] + "\n"  + 
-	    	    answers[1] + ": " + choices[1] + "\n"  + 
-	    	    answers[2] + ": " + choices[2] + "\n"  + 
-	    	    answers[3] + ": " + choices[3] + "\n"  + 
-	    	    answers[4] + ": " + choices[4] + "\n"
-	            );    
-		} else {
-			return String.format(
-	            answers[0] + ": " + choiceA + "\n"  + 
-	    	    answers[1] + ": " + choiceB + "\n"  + 
-	    	    answers[2] + ": " + choiceC + "\n"  + 
-	    	    answers[3] + ": " + choiceD + "\n"  + 
-	    	    answers[4] + ": " + choiceE + "\n"
-	    	    );
-		}
+		return String.format(
+            charA + ": " + choices[0] + "\n"  + 
+    	    charB + ": " + choices[1] + "\n"  + 
+    	    charC + ": " + choices[2] + "\n"  + 
+    	    charD + ": " + choices[3] + "\n"  + 
+    	    charE + ": " + choices[4] + "\n"
+            );    
 	}
 	
 	/**
@@ -210,7 +105,7 @@ public class Question extends Scoring
      * @param  void
      * @return void
      */
-    public void  askQuestionConsole()
+    protected void  askQuestionConsole()
     {
         // getAnswer return true if question is correct
         updateCounters ( getAnswerConsole() );
@@ -234,7 +129,7 @@ public class Question extends Scoring
         do {
             choice = ConsoleMethods.inputChar("Enter selection (A-E) --> ");
             choice = Character.toUpperCase(choice); // Convert to upper case
-            if (choice >= 'A' && choice <= 'E') break;
+            if (choice >= charA && choice <= charE) break;
             ConsoleMethods.println(" (invalid) ");
         } while ( true );                                               // until valid input
         

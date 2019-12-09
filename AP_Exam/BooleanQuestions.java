@@ -18,13 +18,14 @@ public class BooleanQuestions extends Question
 	
 	public BooleanQuestions()
 	{
+		setupQuestionData();
 		setupQuestion();
 	}
 	/**
 	 * setupQuestion is the method that sets up questions, choices, and answers
 	 * https://jaroslawpawlak.wordpress.com/2014/10/11/random-number-generator-using-modulo/
 	 */
-	private void setupQuestion()
+	private void setupQuestionData()
 	{
 		Random rand = new Random();
 		int random = rand.nextInt(3);

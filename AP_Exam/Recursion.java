@@ -18,10 +18,11 @@ public class Recursion extends Question
 	
 	public Recursion()
 	{
-		QuestionSetUp(); //bring to question method
+		QuestionSetUpData(); //bring to question method
+		super.setupQuestion();
 	}
 	
-	public void QuestionSetUp() //question method
+	public void QuestionSetUpData() //question method
 	{
 		int bruh = (int)(Math.random() * 4 + 1); //	randomize this number to choose a question
 		switch (bruh) //switch case for questions

@@ -29,10 +29,10 @@ public class PowSqrt extends Question
 
     	
     
-    	//Integer choose = rand.nextInt(2);
-    	
+    	//Integer choose = rand.nextInt(2);   	
     	Integer opIndex = rand.nextInt(operators.length);
-    	setupQuestion(base, operators[opIndex], rooted);
+    	setupQuestionData(base, operators[opIndex], rooted);
+    	setupQuestion();
     	
     	//Integer arg1 = rand.nextInt(50);
     	//Integer arg2 = (int)Math.sqrt((double)arg1);
@@ -56,8 +56,8 @@ public class PowSqrt extends Question
      * @param  root      argument for square roots
      * @return    error code
      */
-	@Override
-    public void setupQuestion(int square, char which, int root)
+	
+    private void setupQuestionData(int square, char which, int root)
     {   
 		
     	Float[] array = new Float[4]; // allows for randomization of questions
@@ -96,11 +96,11 @@ public class PowSqrt extends Question
         {
             case '1': // exponents
             	answerCalc = Math.pow(square, 2);
-                this.answerKey = this.answerB;
+                this.answerKey = this.charB;
                 break;
             case '2': //square roots
             	answerCalc = Math.sqrt((float)root);
-                this.answerKey = this.answerD;
+                this.answerKey = this.charD;
                 break;
             default: // not supported
             

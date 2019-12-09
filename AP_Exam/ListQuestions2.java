@@ -20,6 +20,7 @@ public class ListQuestions2 extends Question
 {
 	public ListQuestions2()
 	{
+		setupQuestionData();
 		setupQuestion();
 	}
 	
@@ -30,7 +31,7 @@ public class ListQuestions2 extends Question
 		return(rand.nextInt(10));
 	}
 	
-	public void setupQuestion()
+	public void setupQuestionData()
 	{
 		Random rand = new Random(); 
 

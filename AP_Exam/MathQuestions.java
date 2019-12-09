@@ -9,9 +9,9 @@ import java.util.Random;
  * @author (John Mortensen)
  * @version (1.0)
  */
-public class MathQuestions extends Question
+public class MathQuestions extends QuestionRandom
 { 
-	private char[] operators = {'/', '%'};
+	private char[] operators = {'/', '%'};	// operators supported
 	
     /**
      * Constructor for objects of class MathQuestions
@@ -20,12 +20,15 @@ public class MathQuestions extends Question
      */
     public MathQuestions()
     {
+    	// Logic to setup data for Math questions
     	Random rand = new Random();
     	Integer arg1 = rand.nextInt(50);
     	Integer arg2 = (int)Math.sqrt((double)arg1);
     	Integer opIndex = rand.nextInt(operators.length);
-    	setupQuestion(arg1, operators[opIndex], arg2);
-    	scramble();
+    	setupQuestionData(arg1, operators[opIndex], arg2);
+    	
+    	// Required to organize dynamic structures for Choices after data is defined
+        super.setupQuestion();
     }
 
     /**
@@ -42,15 +45,14 @@ public class MathQuestions extends Question
     }
     
     /**
-     * MathDivOps question setup
+     * Sets up a Math question according to instance variables (this...) in Question class
      *
      * @param  arg1      1st argument in math expression
      * @param  operator  operator in math expression (/ or % only)
      * @param  arg2      2st argument in math expression
      * @return void
      */
-	@Override
-    public void setupQuestion(int arg1, char operator, int arg2)
+    private void setupQuestionData(int arg1, char operator, int arg2)
     {        
         // format question
         this.question = String.format("What is (int)" + arg1 + " " + "%s" + " (int)" + arg2, operator );
@@ -68,11 +70,11 @@ public class MathQuestions extends Question
         {
             case '/':
                 answerCalc = arg1 / arg2;
-                this.answerKey = this.answerB;
+                this.answerKey = this.charB;
                 break;
             case '%':
                 answerCalc = arg1 % arg2;
-                this.answerKey = this.answerD;
+                this.answerKey = this.charD;
                 break;
             default: // not supported
                 return;

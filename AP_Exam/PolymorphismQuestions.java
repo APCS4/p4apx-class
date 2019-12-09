@@ -14,7 +14,8 @@ public class PolymorphismQuestions extends Question{
      */
 	public PolymorphismQuestions()
     {
-		//calls setupQuestion() method
+		//calls setupQuestionData() method
+    	setupQuestionData();
     	setupQuestion();
     }
 	
@@ -23,7 +24,7 @@ public class PolymorphismQuestions extends Question{
      * 
      * @return    void
      */
-	public void setupQuestion() {
+	public void setupQuestionData() {
 		AnswerChoiceIndex indexClass = new AnswerChoiceIndex();
 		//creating object rand of class Random
 		Random rand = new Random();

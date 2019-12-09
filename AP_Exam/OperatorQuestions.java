@@ -8,10 +8,11 @@ import java.util.Random;
 public class OperatorQuestions extends Question{
 	public OperatorQuestions()
     {
+    	setupQuestionData();
     	setupQuestion();
     }
 	
-	public void setupQuestion() {
+	public void setupQuestionData() {
 		AnswerChoiceIndex indexClass = new AnswerChoiceIndex();
 		Random rand = new Random();
 		String[] array = new String[]{"logical AND short circuit", "logical OR short circuit", "boolean logical AND", "boolean logical OR", "None of them"};

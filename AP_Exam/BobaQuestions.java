@@ -31,11 +31,12 @@ public class BobaQuestions extends Question{
 			arg9 = rand.nextInt(1);
 			arg10 = rand.nextInt(20);
 		//Integer opIndex = rand.nextInt(operators.length);
+			setupQuestionData();
 			setupQuestion();
  
     }
 	
-	public void setupQuestion() {
+	public void setupQuestionData() {
 		//String array of answers
 		String[] choices = new String[5];
 		

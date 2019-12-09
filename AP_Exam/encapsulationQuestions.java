@@ -36,20 +36,20 @@ public class encapsulationQuestions extends Question {
 		switch(r) { 
 		
 		case 0: //This is question 1 
-		this.setupQuestion("@question1");
-		//System.out.println("In Question 1");
+			this.setupQuestionData("@question1");
+			//System.out.println("In Question 1");
 			break; 
 		case 1: 
-			this.setupQuestion("@question2");
+			this.setupQuestionData("@question2");
 			//System.out.println("In Question 2");
 			break; 
 		case 2: 
-			this.setupQuestion("@question3");
+			this.setupQuestionData("@question3");
 			//System.out.println("In Question 3");
 		break; 
 		
 		}
-		
+		setupQuestion();
 	} 
 	
 
@@ -59,7 +59,7 @@ public class encapsulationQuestions extends Question {
      * @param  string
      * @return void
      */
-	private void setupQuestion(String c) {
+	private void setupQuestionData(String c) {
 		
 		
 		Path p5 = Paths.get(System.getProperty("user.dir"),"AP_Exam", "Encapsulation.txt");

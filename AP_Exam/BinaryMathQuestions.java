@@ -3,12 +3,12 @@ package AP_Exam;
 import java.util.Random;
 
 /**
- * Generates Binary Math questions
+ * Class to support Binary Math operations
  * 
  * @author (John Mortensen)
  * @version (1.0)
  */
-public class BinaryMathQuestions extends Question
+public class BinaryMathQuestions extends QuestionRandom
 {
 	private char[] operators = {'&', '|', '+', '-'};
 
@@ -18,13 +18,16 @@ public class BinaryMathQuestions extends Question
      * @param  void
      */
     public BinaryMathQuestions()
-    {
+    {   	
+    	// Logic to setup data for Binary Math questions
     	Random rand = new Random();
     	Integer arg1 = rand.nextInt(16)+1;
     	Integer arg2 = rand.nextInt(8)+1;
     	Integer opIndex = rand.nextInt(operators.length);
-    	setupQuestion(arg1, operators[opIndex], arg2);
-    	scramble();
+    	setupQuestionData(arg1, operators[opIndex], arg2);
+    	
+    	// Required to organize dynamic structures for Choices after data is defined
+    	super.setupQuestion();
     }
     
     /**
@@ -41,15 +44,14 @@ public class BinaryMathQuestions extends Question
     }
     
     /**
-     * setup Binary Math questions
+     * Sets up a Binary Math questions according to instance variables (this...) in Question class
      *
      * @param  arg1      1st argument in math expression (6 bits)
      * @param  operator  operator in math expression (&, |, +, or - only)
      * @param  arg2      2st argument in math expression (5 bits)
      * @return    void
      */
-	@Override
-    public void setupQuestion(int arg1, char operator, int arg2)
+    private void setupQuestionData(int arg1, char operator, int arg2)
     {
         // maximum binary number for testing is 15, we need to be reasonable
         int binaryLength = 7;       
@@ -75,20 +77,20 @@ public class BinaryMathQuestions extends Question
         {
             case '&':
                 answerCalc = arg1 & arg2;
-                this.answerKey = this.answerA;
+                this.answerKey = this.charA;
                 break;
             case '|':
                 answerCalc = arg1 | arg2;
-                this.answerKey = this.answerB;
+                this.answerKey = this.charB;
                 break;
              case '+':
                 answerCalc = arg1 + arg2;
                 if (answerCalc > 15) binaryLength++;
-                this.answerKey = this.answerC;
+                this.answerKey = this.charC;
                 break; 
              case '-':
                 answerCalc = arg1 - arg2;
-                this.answerKey = this.answerD;
+                this.answerKey = this.charD;
                 break;
             default:
                 return;
@@ -114,7 +116,7 @@ public class BinaryMathQuestions extends Question
      * @param  binaryLength     number of bits for number (ie 4 bits)
      * @return    the binary String with leading 0s
      */
-    String zeroPadInt2BinaryString(int arg, int binaryLength)
+    private String zeroPadInt2BinaryString(int arg, int binaryLength)
     {
         return Integer.toBinaryString( (1 << binaryLength) | arg ).substring(1);
     }
