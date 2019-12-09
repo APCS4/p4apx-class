@@ -252,7 +252,7 @@ public class AP_UI extends MenuControl
 		});
 
 
-		JButton btnNewButton_1 = new JButton("");
+		JButton btnNewButton_1 = new JButton(""); //the button
 		btnNewButton_1.setBorder(null);
 		btnNewButton_1.setIcon(new ImageIcon("p4apx-class\\recursion-button.jpg"));
 		btnNewButton_1.setBounds(453, 351, 175, 61);
