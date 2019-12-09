@@ -23,6 +23,9 @@ public class BobaQuestions extends Question{
 		 //answer set	
 		    arg1 = rand.nextInt(20);
 		 	arg2 = rand.nextInt(20);
+<<<<<<< HEAD
+	 	    arg3 = rand.nextInt(1);
+=======
 		if (arg1 < arg2)
 		 {
 			arg1 = arg1;
@@ -36,6 +39,7 @@ public class BobaQuestions extends Question{
 		 }
 		//set 2
 	 	    arg3 = rand.nextInt(20);
+>>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 			arg4 = rand.nextInt(20);
 	    if (arg3 < arg4)
 			 {
@@ -98,7 +102,6 @@ public class BobaQuestions extends Question{
 		//Integer opIndex = rand.nextInt(operators.length);
 			setupQuestionData();
 			setupQuestion();
- 
     }
 	
 	public void setupQuestionData() {
