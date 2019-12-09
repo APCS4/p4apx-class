@@ -22,25 +22,9 @@ public class PowSqrt extends Question
      */
     public PowSqrt()
     {
-    	Random rand = new Random();
-    	
-    	Integer base = rand.nextInt(30) + 1;
-    	Integer rooted = rand.nextInt(25) + 1;
-
-    	
-    
-    	//Integer choose = rand.nextInt(2);   	
-    	Integer opIndex = rand.nextInt(operators.length);
-    	setupQuestionData(base, operators[opIndex], rooted);
-    	setupQuestion();
-    	
-    	//Integer arg1 = rand.nextInt(50);
-    	//Integer arg2 = (int)Math.sqrt((double)arg1);
-    	//Integer opIndex = rand.nextInt(operators.length);
-    	//setupQuestion(arg1, operators[opIndex], arg2);
+    	super.setupQuestion();	// this depends on setupQuestionData override
     }
-
-    
+ 
     public static String mainTest ()
     {
     	Question q = new MathQuestions();
@@ -56,9 +40,17 @@ public class PowSqrt extends Question
      * @param  root      argument for square roots
      * @return    error code
      */
-	
-    private void setupQuestionData(int square, char which, int root)
-    {   
+	@Override
+    protected void setupQuestionData()
+    {
+		Random rand = new Random();
+    	
+    	Integer square = rand.nextInt(30) + 1;
+    	Integer root = rand.nextInt(25) + 1;
+
+    	//Integer choose = rand.nextInt(2);   	
+    	Integer opIndex = rand.nextInt(operators.length);
+    	char which = operators[opIndex];
 		
     	Float[] array = new Float[4]; // allows for randomization of questions
     	List<Float> randArr = Arrays.asList(array); // randomization of questions

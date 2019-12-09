@@ -25,11 +25,7 @@ public class DataTypeQuestions extends QuestionRandom
     	// This outputs constructor being run
         ConsoleMethods.println("DataTypeQuestions Constructor");
 
-    	// Logic to setup data for Data Conversion questions
-    	Random rand = new Random();
-    	double value = rand.nextDouble() * multiplier[rand.nextInt(multiplier.length)];
-    	Integer index = rand.nextInt(datatype.length);
-    	setupQuestionData(datatype[index], value);
+    	
     	
     	// Required to organize dynamic structures for Choices after data is defined
     	super.setupQuestion();
@@ -49,9 +45,15 @@ public class DataTypeQuestions extends QuestionRandom
      * @param  number       number in conversion
      * @return void
      */
-    private void setupQuestionData(String dataTypeName, double number)
+    @Override
+    protected void setupQuestionData()
     {        
-        
+    	// Logic to setup data for Data Conversion questions
+    	Random rand = new Random();
+    	double number = rand.nextDouble() * multiplier[rand.nextInt(multiplier.length)];
+    	Integer index = rand.nextInt(datatype.length);
+    	String dataTypeName = datatype[index];
+    	
         // format question base off of dataTypeName and number from arguments
         this.question = String.format(
             "Which represents double " +
@@ -82,13 +84,13 @@ public class DataTypeQuestions extends QuestionRandom
         {
             this.answer = this.choiceA;
             this.answerKey = this.charA;
-        } else if ( dataTypeName == "int" ) {
+        } else if (dataTypeName.contentEquals("int")) {
             this.answer = this.choiceB;
             this.answerKey = this.charB;
-        } else if ( dataTypeName == "char" ) {
+        } else if (dataTypeName.contentEquals("char")) {
             this.answer = this.choiceC;
             this.answerKey = this.charC;
-        } else if ( dataTypeName == "double" ) {
+        } else if (dataTypeName.contentEquals("double")) {
             this.answer = this.choiceD;
             this.answerKey = this.charD;
         } else {

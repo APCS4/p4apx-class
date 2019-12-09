@@ -45,18 +45,38 @@ public class Question extends Scoring
       
     /**
      * setup question choices and answer
-     *
+     * 
+     * @param  void
      */
      protected void setupQuestion() {
     	// This outputs constructor being run
         ConsoleMethods.println("Question class setupQuestion method");
+    	setupQuestionData();
         
     	// choice assignment
     	choices[aOffset] = choiceA;
     	choices[bOffset] = choiceB;
     	choices[cOffset] = choiceC;
     	choices[dOffset] = choiceD;
-    	choices[eOffset] = choiceE;
+    	choices[eOffset] = choiceE;   	
+    }
+ 
+     /**
+      * setup question data default, expectation is this will changed through polymorphism
+      *
+      * @param  void
+      */
+    protected void setupQuestionData() {
+    	// This outputs constructor being run
+        ConsoleMethods.println("Question class setupQuestionData method");
+        
+    	question = "What type of programming language is Java?";
+		choiceA = "Data-oriented";
+		choiceB = "Iterative";
+		choiceC = "Object-oriented";
+		choiceD = "Imperative";
+		answer = choiceC;
+		answerKey = charC;
     }
 	
 	/**

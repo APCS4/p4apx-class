@@ -15,17 +15,27 @@ import java.nio.file.*;
 public class encapsulationQuestions extends Question {
 
 	int lineN = 0; 
-	
 	File qFile;
 	
-	
-     /**
+	/**
      * Constructor for objects of class encapsulationQuestions
      * 
      * @param  void
      * @return void
      */
 	public encapsulationQuestions() {
+		setupQuestion();
+	} 
+	
+
+	/**
+     * method to populate the question and answer variables for the specific question passed in
+     * 
+     * @param  string
+     * @return void
+     */
+	@Override
+	protected void setupQuestionData() {
 		
 		this.choiceE = "Does not exist right now";
 		this.answer = "Look above for answer";
@@ -33,33 +43,23 @@ public class encapsulationQuestions extends Question {
 		Random rand = new Random();
 		int r = rand.nextInt(3);
 		
+		String c = "";
 		switch(r) { 
 		
 		case 0: //This is question 1 
-			this.setupQuestionData("@question1");
+			c = "@question1";
 			//System.out.println("In Question 1");
 			break; 
 		case 1: 
-			this.setupQuestionData("@question2");
+			c = "@question2";
 			//System.out.println("In Question 2");
 			break; 
 		case 2: 
-			this.setupQuestionData("@question3");
+			c = "@question3";
 			//System.out.println("In Question 3");
-		break; 
+			break; 
 		
 		}
-		setupQuestion();
-	} 
-	
-
-		 /**
-     * method to populate the question and answer variables for the specific question passed in
-     * 
-     * @param  string
-     * @return void
-     */
-	private void setupQuestionData(String c) {
 		
 		
 		Path p5 = Paths.get(System.getProperty("user.dir"),"AP_Exam", "Encapsulation.txt");

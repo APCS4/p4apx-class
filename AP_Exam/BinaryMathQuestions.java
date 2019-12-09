@@ -18,15 +18,7 @@ public class BinaryMathQuestions extends QuestionRandom
      * @param  void
      */
     public BinaryMathQuestions()
-    {   	
-    	// Logic to setup data for Binary Math questions
-    	Random rand = new Random();
-    	Integer arg1 = rand.nextInt(16)+1;
-    	Integer arg2 = rand.nextInt(8)+1;
-    	Integer opIndex = rand.nextInt(operators.length);
-    	setupQuestionData(arg1, operators[opIndex], arg2);
-    	
-    	// Required to organize dynamic structures for Choices after data is defined
+    {   	  	
     	super.setupQuestion();
     }
     
@@ -46,13 +38,18 @@ public class BinaryMathQuestions extends QuestionRandom
     /**
      * Sets up a Binary Math questions according to instance variables (this...) in Question class
      *
-     * @param  arg1      1st argument in math expression (6 bits)
-     * @param  operator  operator in math expression (&, |, +, or - only)
-     * @param  arg2      2st argument in math expression (5 bits)
      * @return    void
      */
-    private void setupQuestionData(int arg1, char operator, int arg2)
+    @Override
+    protected void setupQuestionData()
     {
+    	// Logic to setup data for Binary Math questions
+    	Random rand = new Random();
+    	Integer arg1 = rand.nextInt(16)+1;
+    	Integer arg2 = rand.nextInt(8)+1;
+    	Integer opIndex = rand.nextInt(operators.length);
+    	char operator = operators[opIndex];
+    	
         // maximum binary number for testing is 15, we need to be reasonable
         int binaryLength = 7;       
         //if (arg1 > 15 || arg2 > 15) return;       // exit if number above 15

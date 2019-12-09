@@ -3,6 +3,8 @@ package AP_Exam;
 
 import java.util.Random;
 
+import Util.ConsoleMethods;
+
 /**
  * Class to support divide and modulo Math questions.
  *
@@ -19,14 +21,7 @@ public class MathQuestions extends QuestionRandom
      * @param  void
      */
     public MathQuestions()
-    {
-    	// Logic to setup data for Math questions
-    	Random rand = new Random();
-    	Integer arg1 = rand.nextInt(50);
-    	Integer arg2 = (int)Math.sqrt((double)arg1);
-    	Integer opIndex = rand.nextInt(operators.length);
-    	setupQuestionData(arg1, operators[opIndex], arg2);
-    	
+    {	    	
     	// Required to organize dynamic structures for Choices after data is defined
         super.setupQuestion();
     }
@@ -47,13 +42,20 @@ public class MathQuestions extends QuestionRandom
     /**
      * Sets up a Math question according to instance variables (this...) in Question class
      *
-     * @param  arg1      1st argument in math expression
-     * @param  operator  operator in math expression (/ or % only)
-     * @param  arg2      2st argument in math expression
      * @return void
      */
-    private void setupQuestionData(int arg1, char operator, int arg2)
-    {        
+    @Override
+    protected void setupQuestionData()
+    {
+    	// This outputs constructor being run
+        ConsoleMethods.println("MathQuestion class setupQuestionData method");
+        
+    	// Logic to setup data for Math questions
+    	Random rand = new Random();
+    	Integer arg1 = rand.nextInt(50);
+    	Integer arg2 = (int)Math.sqrt((double)arg1);
+    	Integer opIndex = rand.nextInt(operators.length);
+    	char operator = operators[opIndex];
         // format question
         this.question = String.format("What is (int)" + arg1 + " " + "%s" + " (int)" + arg2, operator );
         
