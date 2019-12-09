@@ -11,10 +11,11 @@ import java.util.Random;
  * <li> the correct answer <br>
  * <br>
  * 
- * @author Anika Sood and Aashi Mittal (period 4)
+ * @author Anika Sood and Aashi Mittal <br>
+ * (Period: 4)
+ * 
  * 
  * @version name: ListQuestions2 (Dec. 6th) 
- * 
  * 
  * 
  * 
