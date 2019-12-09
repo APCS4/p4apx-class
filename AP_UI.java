@@ -249,6 +249,16 @@ public class AP_UI extends MenuControl {
 
 		JButton btnNewButton_1 = new JButton("Recursion");
 		btnNewButton_1.setBounds(604, 116, 137, 28);
+		btnNewButton_1.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				AP_Exam.Question q = new AP_Exam.Recursion();
+				testQuestion.setText(q.getQuestion());
+				testChoices.setText(q.getChoices());
+				testQuestionAnswer.setText(q.getAnswer());
+			}
+		});
 		contentPane.add(btnNewButton_1);
 		
 		//Anika and Aashi's arraylist questions
