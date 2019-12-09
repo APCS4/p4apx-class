@@ -13,7 +13,7 @@ import java.util.List;
  * @version 12/6/2019
  * 
  */
-public class PowSqrt extends Question
+public class PowSqrt extends QuestionRandom
 { 
 	private char[] operators = {'1', '2'};
 	
@@ -22,25 +22,9 @@ public class PowSqrt extends Question
      */
     public PowSqrt()
     {
-    	Random rand = new Random();
-    	
-    	Integer base = rand.nextInt(30) + 1;
-    	Integer rooted = rand.nextInt(25) + 1;
-
-    	
-    
-    	//Integer choose = rand.nextInt(2);
-    	
-    	Integer opIndex = rand.nextInt(operators.length);
-    	setupQuestion(base, operators[opIndex], rooted);
-    	
-    	//Integer arg1 = rand.nextInt(50);
-    	//Integer arg2 = (int)Math.sqrt((double)arg1);
-    	//Integer opIndex = rand.nextInt(operators.length);
-    	//setupQuestion(arg1, operators[opIndex], arg2);
+    	super.setupQuestion();	// this depends on setupQuestionData override
     }
-
-    
+ 
     public static String mainTest ()
     {
     	Question q = new MathQuestions();
@@ -57,8 +41,16 @@ public class PowSqrt extends Question
      * @return    error code
      */
 	@Override
-    public void setupQuestion(int square, char which, int root)
-    {   
+    protected void setupQuestionData()
+    {
+		Random rand = new Random();
+    	
+    	Integer square = rand.nextInt(30) + 1;
+    	Integer root = rand.nextInt(25) + 1;
+
+    	//Integer choose = rand.nextInt(2);   	
+    	Integer opIndex = rand.nextInt(operators.length);
+    	char which = operators[opIndex];
 		
     	Float[] array = new Float[4]; // allows for randomization of questions
     	List<Float> randArr = Arrays.asList(array); // randomization of questions
@@ -74,19 +66,20 @@ public class PowSqrt extends Question
 			this.question = String.format("What is sqrt(" + root + ")?");
 		}
 		
+
 		array[0] = (float)square * (float)root;
 		array[1] = (float)Math.pow((float)square, 2);
 		array[2] = (float)square / (float)root;
 		array[3] = (float)Math.sqrt((float)root);
 		
-		Collections.shuffle(randArr);
+		//Collections.shuffle(randArr);
 		
         // format question choices (randomized)
 		
-        this.choiceA = String.format("%f",randArr.get(0));
-        this.choiceB = String.format("%f",randArr.get(1));
-        this.choiceC = String.format("%f",randArr.get(2));
-        this.choiceD = String.format("%f",randArr.get(3));
+        this.choiceA = String.format("%f",array[0]);
+        this.choiceB = String.format("%f",array[1]);
+        this.choiceC = String.format("%f",array[2]);
+        this.choiceD = String.format("%f",array[3]);
         this.choiceE = "None of the above";
         
         
@@ -96,11 +89,11 @@ public class PowSqrt extends Question
         {
             case '1': // exponents
             	answerCalc = Math.pow(square, 2);
-                this.answerKey = this.answerB;
+                this.answerKey = this.charB;
                 break;
             case '2': //square roots
             	answerCalc = Math.sqrt((float)root);
-                this.answerKey = this.answerD;
+                this.answerKey = this.charD;
                 break;
             default: // not supported
             

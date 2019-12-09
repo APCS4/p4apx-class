@@ -26,16 +26,18 @@ public class MVCQuestion extends Question{
     {
 		//This sets up all the questions to be used by the question class so when called a 
 		//question and answer is displayed and not null
+    	setupQuestionData();
     	setupQuestion();
+
     }
 	
 	/**
-	 * setupQuestion: creates and loads question into Question class
+	 * setupQuestionData: creates and loads question into Question class
 	 * @param void 
 	 * @return void
 	 *
 	 */
-	public void setupQuestion() {
+	public void setupQuestionData() {
 		//string array that will contain the five options for each question
 		String[] choices = new String[5];
 		

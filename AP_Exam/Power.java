@@ -13,10 +13,11 @@ public class Power extends Question{
 	
 	public Power()
     {
+    	setupQuestionData();
     	setupQuestion();
     }
 	
-	public void setupQuestion() {
+	public void setupQuestionData() {
 		/**
 		 * setup the question 
 		 */
@@ -58,7 +59,7 @@ public class Power extends Question{
 		
 		case 1://q2
 			this.question = "What is the correct format for writing a for loop?";
-			pick=loadArray("For:", "for(int z=12; z<=103; z--);" ,"for{in i=1: i<6:}", "for {int i = 1: i<=6:} ()", "for: a=1, b=2, i++" );
+			pick=loadArray("For:", "for(int z=12; z<=103; z++);" ,"for{in i=1: i<6:}", "for {int i = 1: i<=6:} ()", "for: a=1, b=2, i++" );
 			
 			this.choiceA = pick[0];//loaded in answers
 			this.choiceB = pick[1];

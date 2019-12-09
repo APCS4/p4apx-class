@@ -80,7 +80,8 @@ public class GetCodeV2//V2 cause it my second attempt
         return output.toString();
     }
     
-    public static String getFileNames()
+
+    public static String getFileNames() 
     {
     	String ret [] =
     		{
@@ -116,7 +117,6 @@ public class GetCodeV2//V2 cause it my second attempt
     			;
     	
     	return ret[(int) Math.floor(Math.random()*28)];
-    }
 }
 
 

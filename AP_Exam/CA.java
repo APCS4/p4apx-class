@@ -15,6 +15,7 @@ public class CA extends Question{
      */
 	public CA()
     {
+    	setupQuestionData();
     	setupQuestion();
     }
 	
@@ -25,7 +26,7 @@ public class CA extends Question{
      * @param none
      * @return none
      */
-	public void setupQuestion() {
+	public void setupQuestionData() {
 		// random - generates a random number between 0 and 8 inclusive
 		// previous randomization way: int random = (int) Math.floor(Math.random()*9);
 		// new randomization - using modulo, borrowed idea from other class
@@ -42,7 +43,7 @@ public class CA extends Question{
 			this.choiceC = "78";
 			this.choiceD = "67";
 			this.choiceE = "89";
-			this.answerKey = this.answerB;
+			this.answerKey = this.charB;
 			this.answer = "11";
 			break;
 		
@@ -54,7 +55,7 @@ public class CA extends Question{
 			this.choiceC = "[3,10)";
 			this.choiceD = "(3,13)";
 			this.choiceE = "[3,13)";
-			this.answerKey = this.answerE;
+			this.answerKey = this.charE;
 			this.answer = "[3,13)";
 			break;
 		
@@ -66,7 +67,7 @@ public class CA extends Question{
 			this.choiceC = "-3";
 			this.choiceD = "7";
 			this.choiceE = "325";
-			this.answerKey = this.answerA;
+			this.answerKey = this.charA;
 			this.answer = "6";
 			break;
 			
@@ -78,7 +79,7 @@ public class CA extends Question{
 			this.choiceC = "3";
 			this.choiceD = "6";
 			this.choiceE = "0";
-			this.answerKey = this.answerB;
+			this.answerKey = this.charB;
 			this.answer = "2";
 			break;
 			
@@ -90,7 +91,7 @@ public class CA extends Question{
 			this.choiceC = "int[][]  C  =  {{6,-1,4,10},{3,4,8,9}};";
 			this.choiceD = "int[][]  D  =  {{3,4,8,9\\n6,-1,4,10}};";
 			this.choiceE = "None of the above";
-			this.answerKey = this.answerA;
+			this.answerKey = this.charA;
 			this.answer = "int[][]  A  =  {{3,4,8,9},{6,-1,4,10}};";
 			break;
 			
@@ -102,7 +103,7 @@ public class CA extends Question{
 			this.choiceC = "4";
 			this.choiceD = "The code will result in an error";
 			this.choiceE = "None of the above";
-			this.answerKey = this.answerD;
+			this.answerKey = this.charD;
 			this.answer = "The code will result in an error";
 			break;
 			
@@ -114,7 +115,7 @@ public class CA extends Question{
 			this.choiceC = "-11.9";
 			this.choiceD = "-11.96";
 			this.choiceE = "-12.0";
-			this.answerKey = this.answerB;
+			this.answerKey = this.charB;
 			this.answer = "-12";
 			break;
 			
@@ -137,7 +138,7 @@ public class CA extends Question{
 			this.choiceC = "24";
 			this.choiceD = "12";
 			this.choiceE = "120";
-			this.answerKey = this.answerC;
+			this.answerKey = this.charC;
 			this.answer = "24";
 			break;
 			
@@ -157,7 +158,7 @@ public class CA extends Question{
 			this.choiceC = "1 0 12\n    7 -3 2";
 			this.choiceD = "0 2 11 8 6 7";
 			this.choiceE = "None of the above";
-			this.answerKey = this.answerA;
+			this.answerKey = this.charA;
 			this.answer = "1 7\n    0 3\n    12 2";
 			break;
 		
