@@ -23,6 +23,8 @@ public class BobaQuestions extends Question{
 		 //answer set	
 		    arg1 = rand.nextInt(20);
 		 	arg2 = rand.nextInt(20);
+	 	    arg3 = rand.nextInt(1);
+
 		if (arg1 < arg2)
 		 {
 			arg1 = arg1;
@@ -98,7 +100,6 @@ public class BobaQuestions extends Question{
 		//Integer opIndex = rand.nextInt(operators.length);
 			setupQuestionData();
 			setupQuestion();
- 
     }
 	
 	public void setupQuestionData() {
@@ -138,7 +139,7 @@ public class BobaQuestions extends Question{
 		case 0:
 			//Question
 			//set up random limits for substringing later
-			System.out.println("Here 0");
+			System.out.println("Boba 0");
 
 			sentence = "The most common black boba pearls are made of tapioca";
 			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
@@ -162,7 +163,7 @@ public class BobaQuestions extends Question{
 
 			
 		case 1:
-			System.out.println("Here 1");
+			System.out.println("Boba 1");
 
 			sentence = "Classic boba drinks are made from milk tea";			
 			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
@@ -182,7 +183,7 @@ public class BobaQuestions extends Question{
 			break;
 			
 		case 2: 
-			System.out.println("Here 2");
+			System.out.println("Boba 2");
 
 			sentence = "Boba tea can come in many flavors such as taro or mango";
 			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
@@ -202,7 +203,7 @@ public class BobaQuestions extends Question{
 			break;
 			
 		case 3:
-			System.out.println("Here 3");
+			System.out.println("Boba 3");
 
 			sentence = "Cool boba places include ICMonster, Sharetea and MeetFresh";
 			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
@@ -222,7 +223,7 @@ public class BobaQuestions extends Question{
 			break;
 			
 		case 4:
-			System.out.println("Here 4");
+			System.out.println("Boba 4");
 
 			sentence = "Boba is a drink with origins in Taiwan";
 			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
@@ -242,7 +243,7 @@ public class BobaQuestions extends Question{
 			break;
 			
 		case 5:
-			System.out.println("Here 5");
+			System.out.println("Boba 5");
 
 			sentence = "Each boba pearl is around 10-15 calories";
 			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
@@ -262,7 +263,7 @@ public class BobaQuestions extends Question{
 			break;
 			
 		case 6:
-			System.out.println("Here 6");
+			System.out.println("Boba 6");
 
 			sentence = "Boba can also be called pearl tea, tapioca tea, and bubble tea";
 			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
@@ -282,7 +283,7 @@ public class BobaQuestions extends Question{
 			break;
 			
 		case 7:
-			System.out.println("Here 7");
+			System.out.println("Boba 7");
 
 			sentence = "The average cup of boba milk tea contains 299 calories and 38 grams of sugar";
 			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
@@ -302,7 +303,7 @@ public class BobaQuestions extends Question{
 			break;
 			
 		case 8:
-			System.out.println("Here 8");
+			System.out.println("Boba 8");
 
 			sentence = "A cool substitute for tapioca pearls are popping boba pearls";
 			choices = answerArray(sentence.substring(arg1, arg2), sentence.substring(arg3, arg4), 
@@ -328,7 +329,6 @@ public class BobaQuestions extends Question{
 			this.choiceD = "ERROR";
 			this.choiceE = "ERROR";
 			System.out.print("ERROR");
-			
 			
 		}
 	}

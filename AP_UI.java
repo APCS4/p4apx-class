@@ -162,7 +162,10 @@ public class AP_UI extends MenuControl
 		contentPane.add(btnMVC);
 		
 
-		JButton btnNewButton = new JButton("DanielAndFox");
+		JButton btnNewButton = new JButton("ʕ•ᴥ•ʔDanielAndFox");
+		btnNewButton.setBackground(Color.WHITE);
+		btnNewButton.setForeground(Color.CYAN);
+		btnNewButton.setFont(new Font("Comic Sans MS", Font.PLAIN, 13));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AP_Exam.Question q = new AP_Exam.OperatorQuestions();
@@ -171,7 +174,7 @@ public class AP_UI extends MenuControl
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnNewButton.setBounds(453, 157, 120, 39);
+		btnNewButton.setBounds(453, 157, 138, 39);
 		contentPane.add(btnNewButton);
 	
 		JButton btnAnthonyjude = new JButton("BooleanQuestions");
