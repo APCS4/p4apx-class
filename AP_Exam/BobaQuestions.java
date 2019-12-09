@@ -22,7 +22,7 @@ public class BobaQuestions extends Question{
 		Random rand = new Random();
 		 	arg1 = rand.nextInt(1);
 		 	arg2 = rand.nextInt(20);
-	 	        arg3 = rand.nextInt(1);
+	 	    arg3 = rand.nextInt(1);
 			arg4 = rand.nextInt(20);
 		 	arg5 = rand.nextInt(1);
 		 	arg6 = rand.nextInt(20);
@@ -33,7 +33,6 @@ public class BobaQuestions extends Question{
 		//Integer opIndex = rand.nextInt(operators.length);
 			setupQuestionData();
 			setupQuestion();
- 
     }
 	
 	public void setupQuestionData() {
