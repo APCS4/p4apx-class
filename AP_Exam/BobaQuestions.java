@@ -84,7 +84,7 @@ public class BobaQuestions extends Question{
 			arg10 = rand.nextInt(20);
 		if (arg9 < arg10)
 			 {
-				arg9 = arg9;
+				arg9 = arg9; 
 				arg10 = arg10;
 			 }
 		else
@@ -93,6 +93,8 @@ public class BobaQuestions extends Question{
 		        arg9 = arg10;
 		        arg10 = temp;
 			 }
+		
+		
 		//Integer opIndex = rand.nextInt(operators.length);
 			setupQuestionData();
 			setupQuestion();
@@ -121,6 +123,10 @@ public class BobaQuestions extends Question{
 		*/
 		
 		System.out.println(arg1 + " " + arg2);
+		System.out.println(arg3 + " " + arg4);
+		System.out.println(arg5 + " " + arg6);
+		System.out.println(arg7 + " " + arg8);
+		System.out.println(arg9 + " " + arg10);
 
 		
 		
