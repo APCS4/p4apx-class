@@ -1,9 +1,7 @@
 package AP_Exam;
 import java.util.Random; 
-
 /*
- * 
- * 
+ * author Rhea, Mateo
  */
 
 public class ArrayList extends Question {
