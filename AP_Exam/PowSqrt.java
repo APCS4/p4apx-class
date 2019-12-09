@@ -1,40 +1,30 @@
 package AP_Exam;
 
+import java.util.Arrays;
 import java.util.Random;
-import java.lang.*;
+import java.util.Collections;
+import java.util.List;
 
 /**
- * Write a description of class MathOps here.
+ * Power and Square Root Question Setup. 
+ * Questioning the user based on the two functions from the math package, sqrt and pow
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Evan Knaggs, Neo Argatides
+ * @version 12/6/2019
+ * 
  */
 public class PowSqrt extends Question
 { 
 	private char[] operators = {'1', '2'};
 	
     /**
-     * Constructor for objects of class MathQuestions
+     * Constructor for objects of class PowSqrt
      */
     public PowSqrt()
     {
-    	Random rand = new Random();
-    	
-    	Integer base = rand.nextInt(30) + 1;
-    	Integer rooted = rand.nextInt(25) + 1;
-    
-    	//Integer choose = rand.nextInt(2);
-    	
-    	Integer opIndex = rand.nextInt(operators.length);
-    	setupQuestion(base, operators[opIndex], rooted);
-    	
-    	//Integer arg1 = rand.nextInt(50);
-    	//Integer arg2 = (int)Math.sqrt((double)arg1);
-    	//Integer opIndex = rand.nextInt(operators.length);
-    	//setupQuestion(arg1, operators[opIndex], arg2);
+    	super.setupQuestion();	// this depends on setupQuestionData override
     }
-
-    
+ 
     public static String mainTest ()
     {
     	Question q = new MathQuestions();
@@ -43,79 +33,81 @@ public class PowSqrt extends Question
     }
     
     /**
-     * MathDivOps 
+     * PowSqrt
      *
-     * @param  arg1      1st argument in math expression
-     * @param  operator  operator in math expression (/ or % only)
-     * @param  arg2      2st argument in math expression
+     * @param  square      argument for exponents
+     * @param  which  operator in math expression (pow / sqrt)
+     * @param  root      argument for square roots
      * @return    error code
      */
 	@Override
-    public void setupQuestion(int square, char which, int root)
-    {   
-		double convert;
-		//int randoom;
-        // format question
+    protected void setupQuestionData()
+    {
+		Random rand = new Random();
+    	
+    	Integer square = rand.nextInt(30) + 1;
+    	Integer root = rand.nextInt(25) + 1;
+
+    	//Integer choose = rand.nextInt(2);   	
+    	Integer opIndex = rand.nextInt(operators.length);
+    	char which = operators[opIndex];
+		
+    	Float[] array = new Float[4]; // allows for randomization of questions
+    	List<Float> randArr = Arrays.asList(array); // randomization of questions
+    	
+    	
+		//question option for pow or sqrt (formats the question)
 		if(which == '1')
 		{
-			//this.question = String.format("What is " + square + " squared?");
 			this.question = String.format("What is pow(" + square + ", 2)?");
 		}
 		else
 		{
-			//this.question = String.format("What is the square root of " + root + "?");
 			this.question = String.format("What is sqrt(" + root + ")?");
 		}
 		
-        //this.question = String.format("What is (int)" + arg1 + " " + "%s" + " (int)" + arg2, operator );
-        
-        // format question choices
-        this.choiceA = String.format("%f",(float)square * (float)root);
-        this.choiceB = String.format("%f",Math.pow((float)square, 2));
-        this.choiceC = String.format("%f",(float)square / (float)root);
-        this.choiceD = String.format("%f",Math.sqrt((float)root));
+		array[0] = (float)square * (float)root;
+		array[1] = (float)Math.pow((float)square, 2);
+		array[2] = (float)square / (float)root;
+		array[3] = (float)Math.sqrt((float)root);
+		
+		Collections.shuffle(randArr);
+		
+        // format question choices (randomized)
+		
+        this.choiceA = String.format("%f",randArr.get(0));
+        this.choiceB = String.format("%f",randArr.get(1));
+        this.choiceC = String.format("%f",randArr.get(2));
+        this.choiceD = String.format("%f",randArr.get(3));
         this.choiceE = "None of the above";
         
+        
         // real time calc answer based off args AND operator
-        double answerCalc;//hello hello hello again again
+        double answerCalc;
         switch(which)
         {
-            case '1':
+            case '1': // exponents
             	answerCalc = Math.pow(square, 2);
-                //answerCalc = (int) Math.round((double)convert);
-                this.answerKey = this.answerB;
+                this.answerKey = this.charB;
                 break;
-            case '2':
+            case '2': //square roots
             	answerCalc = Math.sqrt((float)root);
-                //answerCalc = (int) Math.round((double)convert);
-                this.answerKey = this.answerD;
+                this.answerKey = this.charD;
                 break;
             default: // not supported
             
                 return;
         }
         
+        //formats answer into string from above switch case
         if(which == '1')
         {
-        	//this.answer = String.format(square + " squared = " + answerCalc);
         	this.answer = String.format("pow(" + square + ", 2) = " + answerCalc);
         }
         else
         {
-        	//this.answer = String.format("The square root of " + root + " = " + answerCalc);
         	this.answer = String.format("sqrt(" + root + ") = " + answerCalc);
         }
-        /* format question answer based off of operation calculation
-        this.answer =  String.format(
-            "(int)"+arg1 +          // arg1
-            " "+
-            "%s"+                   // operator
-            " " +        
-            "(int)"+ arg2 +         // arg2
-            " = " + 
-            answerCalc              // answer
-            ,operator);             // operator parameter % 
-                                    // requires var (may be hidden feature :) */
         
         
     }

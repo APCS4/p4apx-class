@@ -2,11 +2,13 @@ package AP_Exam;
 
 import java.util.Random;
 
-public class BackgroundInfoQuestions extends Question {
+public class BackgroundInfoQuestions extends QuestionRandom {
 	public BackgroundInfoQuestions() {
-		setUpQuestion();
+		setupQuestionData();
+		setupQuestion();
 	}
-	public void setUpQuestion() {
+	
+	public void setupQuestionData() {
 		Random rand = new Random();
 		int randQ = rand.nextInt(3);
 		switch(randQ) {

@@ -6,7 +6,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+//import com.sun.prism.Image;
+
 import AP_Exam.AP_Console;
+
+
 import AP_Exam.encapsulationQuestions;
 
 import javax.swing.JButton;
@@ -22,8 +26,11 @@ import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
+import javax.swing.ImageIcon;
+import java.awt.Dimension;
 
-public class AP_UI extends MenuControl {
+public class AP_UI extends MenuControl 
+{
 
 	/**
 	 * 
@@ -56,7 +63,7 @@ public class AP_UI extends MenuControl {
 			public void actionPerformed(ActionEvent e) {
 				AP_Exam.Question q = new AP_Exam.MathQuestions();
 				testQuestion.setText(q.getQuestion());
-				testChoices.setText(q.getChoices());
+				testChoices.setText(q.getChoices()); 
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
@@ -64,15 +71,15 @@ public class AP_UI extends MenuControl {
 		contentPane.add(btnMath);
 		
 		JButton btnEncapsulation = new JButton("Encapsulation");
-		
-		btnMath.addActionListener(new ActionListener() {
+		btnEncapsulation.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				encapsulationQuestions q = new AP_Exam.encapsulationQuestions();
+				AP_Exam.encapsulationQuestions q = new AP_Exam.encapsulationQuestions();
 				testQuestion.setText(q.getQuestion());
 				testChoices.setText(q.getChoices());
 				testQuestionAnswer.setText(q.getAnswer());
 			} 
 		}); 
+		
 		btnEncapsulation.setBounds(609, 320, 110, 20);
 		contentPane.add(btnEncapsulation);
 		
@@ -148,6 +155,7 @@ public class AP_UI extends MenuControl {
 				testQuestion.setText(q.getQuestion());
 				testChoices.setText(q.getChoices());
 				testQuestionAnswer.setText(q.getAnswer());
+				
 			}
 		});
 		btnMVC.setBounds(453, 73, 138, 29);
@@ -244,8 +252,20 @@ public class AP_UI extends MenuControl {
 		});
 
 
-		JButton btnNewButton_1 = new JButton("Declarations");
-		btnNewButton_1.setBounds(604, 116, 137, 28);
+		JButton btnNewButton_1 = new JButton(""); //the button
+		btnNewButton_1.setBorder(null);
+		btnNewButton_1.setIcon(new ImageIcon("p4apx-class\\recursion-button.jpg"));
+		btnNewButton_1.setBounds(453, 351, 175, 61);
+		btnNewButton_1.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				AP_Exam.Question q = new AP_Exam.Recursion();
+				testQuestion.setText(q.getQuestion());
+				testChoices.setText(q.getChoices());
+				testQuestionAnswer.setText(q.getAnswer());
+			}
+		});
 		contentPane.add(btnNewButton_1);
 		
 		//Anika and Aashi's arraylist questions

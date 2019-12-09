@@ -3,11 +3,30 @@ package AP_Exam;
 import java.util.ArrayList; 
 import java.util.Random;
 
-//Anika & Aashi's ArrayListQuestions
+/**
+ * 
+ * This class generates random MC arraylist questions <br>
+ * It also creates the following: 
+ * <li> one question 
+ * <li> the correct answer <br>
+ * <br>
+ * 
+ * @author Anika Sood and Aashi Mittal <br>
+ * (Period: 4)
+ * 
+ * 
+ * @version name: ListQuestions2 (Dec. 6th) 
+ * 
+ * 
+ * 
+ */
+//html tags : <br> = line break, <li> = bullet list <ol> = tab for each subsequent line 
 public class ListQuestions2 extends Question
+
 {
 	public ListQuestions2()
 	{
+		setupQuestionData();
 		setupQuestion();
 	}
 	
@@ -18,7 +37,7 @@ public class ListQuestions2 extends Question
 		return(rand.nextInt(10));
 	}
 	
-	public void setupQuestion()
+	public void setupQuestionData()
 	{
 		Random rand = new Random(); 
 
