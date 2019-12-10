@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 	/**
+	 * 
 	 * A random integer is chosen from 0 to 4 and based on the number, 
 	 * a different question is asked. The answer choices are all stored 
 	 * in an a String array, which is then converted to a List. 
@@ -15,6 +16,7 @@ import java.util.Random;
 	 * in the randomized array. The returned index is then input into the AnswerChoiceIndex.returnAns() 
 	 * method to find the char of the correct answer choice. this.answerKey 
 	 * is then set to the output of returnAns() and the correct letter is displayed as the answer.
+	 * @author Daniel and Fox
 	 * @see AnswerChoiceIndex
 	 */
 public class OperatorQuestions extends Question{
