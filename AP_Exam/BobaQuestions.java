@@ -2,6 +2,8 @@ package AP_Exam;
 
 import java.util.Random;
 
+import Util.ConsoleMethods;	// Console support
+
 /**
  * Boba questions with substrings
  *
@@ -20,23 +22,110 @@ public class BobaQuestions extends Question{
 		//Sets up all the questions to be used by the question class so when called a 
 		//question and answer is displayed and not null
 		Random rand = new Random();
-		 	arg1 = rand.nextInt(1);
+		 //answer set	
+		    arg1 = rand.nextInt(20);
 		 	arg2 = rand.nextInt(20);
-	 	        arg3 = rand.nextInt(1);
+		if (arg1 < arg2)
+		 {
+			arg1 = arg1;
+			arg2 = arg2;
+		 }
+		else
+		 {
+			int temp = arg1;
+	        arg1 = arg2;
+	        arg2 = temp;
+		 }
+		//set 2
+	 	    arg3 = rand.nextInt(20);
 			arg4 = rand.nextInt(20);
-		 	arg5 = rand.nextInt(1);
+	    if (arg3 < arg4)
+			 {
+				arg3 = arg3;
+				arg4 = arg4;
+			 }
+		else
+			 {
+				int temp = arg3;
+		        arg3 = arg4;
+		        arg4 = temp;
+			 }
+		
+	    //set 3
+		 	arg5 = rand.nextInt(20);
 		 	arg6 = rand.nextInt(20);
-			arg7 = rand.nextInt(1);
+		if (arg5 < arg6)
+			 {
+				arg5 = arg5;
+				arg6 = arg6;
+			 }
+		else
+			 {
+				int temp = arg5;
+		        arg5 = arg6;
+		        arg6 = temp;
+			 }
+			
+		//set 4
+		   arg7 = rand.nextInt(20);
 		 	arg8 = rand.nextInt(20);
-			arg9 = rand.nextInt(1);
+		if (arg7 < arg8)
+			 {
+				arg7 = arg7;
+				arg8 = arg8;
+			 }
+		else
+			 {
+				int temp = arg7;
+		        arg7 = arg8;
+		        arg8 = temp;
+			 }
+			
+		//set 5
+		    arg9 = rand.nextInt(20);
 			arg10 = rand.nextInt(20);
+		if (arg9 < arg10)
+			 {
+				arg9 = arg9;
+				arg10 = arg10;
+			 }
+		else
+			 {
+				int temp = arg9;
+		        arg9 = arg10;
+		        arg10 = temp;
+			 }
+		
+
+
 		//Integer opIndex = rand.nextInt(operators.length);
 			setupQuestionData();
 			setupQuestion();
  
     }
 	
-	public void setupQuestionData() {
+	
+<<<<<<< HEAD
+	 /**
+     * Sets up a Binary Math questions according to instance variables (this...) in Question class
+     *
+     * @return    void
+     * @Override
+     */
+    
+	ConsoleMethods.println("BobaQuestion class setupQuestionData method");
+	
+    protected void setupQuestionData() {
+=======
+	/**
+     * Sets up a Binary Math questions according to instance variables (this...) in Question class
+     *
+     * @return    void
+     */
+    //@Override
+	
+	protected void setupQuestionData() {
+>>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 		//String array of answers
 		String[] choices = new String[5];
 		

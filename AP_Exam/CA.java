@@ -1,6 +1,8 @@
 package AP_Exam;
 import java.util.Random;
 
+import Util.ConsoleMethods;
+
 /**
  * CA class
  * loads code analysis questions, extends Question class
@@ -26,7 +28,9 @@ public class CA extends Question{
      * @param none
      * @return none
      */
-	public void setupQuestionData() {
+	@Override 
+	protected void setupQuestionData() {
+        ConsoleMethods.println("what does this code do");
 		// random - generates a random number between 0 and 8 inclusive
 		// previous randomization way: int random = (int) Math.floor(Math.random()*9);
 		// new randomization - using modulo, borrowed idea from other class

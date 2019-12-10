@@ -3,6 +3,8 @@ package AP_Exam;
 import java.util.ArrayList; 
 import java.util.Random;
 
+import Util.ConsoleMethods;
+
 /**
  * 
  * This class generates random MC arraylist questions <br>
@@ -48,9 +50,11 @@ public class ListQuestions2 extends Question
 	 * main method to set up question and answer choices in the string format defined in the Question class
 	 */
 	 
-	
-	public void setupQuestionData()
+	@Override 
+	protected void setupQuestionData()
 	{
+        ConsoleMethods.println("ListQuestions2 class setupQuestion method");
+
 		Random rand = new Random(); 
 
 		//getting random numbers to fill array
