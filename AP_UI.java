@@ -177,7 +177,7 @@ public class AP_UI extends MenuControl
 		JButton btnAnthonyjude = new JButton("BooleanQuestions");
 		btnAnthonyjude.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				AP_Exam.Question q = new AP_Exam.BooleanQuestionsTest();
+				AP_Exam.Question q = new AP_Exam.BooleanQuestions();
 				testQuestion.setText(q.getQuestion());
 				testChoices.setText(q.getChoices("k"));
 				testQuestionAnswer.setText(q.getAnswer());

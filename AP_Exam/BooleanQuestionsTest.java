@@ -40,9 +40,12 @@ public class BooleanQuestionsTest extends Question
 			
 			this.question = "Which of the following is NOT a boolean operator?\n"
 						  + "^, ||, !=, %";
-			choices[0] = questArray.get(aOffset);
-			this.choiceE = "";
-			this.answerKey = getAns(questArray, "%");
+			choiceA = questArray.get(offset[0]);
+			choiceB = questArray.get(offset[1]);
+			choiceC = questArray.get(offset[2]);
+			choiceD = questArray.get(offset[3]);
+			choiceE = "";
+			this.answerKey = answers[3-offset[0]];
 			this.answer = "Choice " + answerKey + " is correct. % is not a boolean operator";
 			break;
 		case 1:
@@ -85,7 +88,7 @@ public class BooleanQuestionsTest extends Question
 	 */
 	private void randomizeQuest(ArrayList<String> quest) //randomizes order of answer choices using ArrayList
 	{		
-		ConsoleMethods.print("running BooleanQuestionsTest.randomizeQuest");
+		ConsoleMethods.print("BooleanQuestionsTest class randomizeQuest method");
 		Random rand = new Random();
 		choiceOffset = rand.nextInt(quest.size());
 		

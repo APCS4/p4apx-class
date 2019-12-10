@@ -15,26 +15,30 @@ public class BooleanQuestions extends Question
 {		
 	private String[] boolOp1 = {"^", "||", "&&", "==", "!="};
 	private String[] boolOp2 = {"!", ""};
-
+	private Random rand = new Random();
+	private boolean choiceDfixed = true;
+	
 	public BooleanQuestions()
 	{
-		setupQuestion();
+		setupQuestion(); //calls setupQuestion method in Question class
 	}
+	
 	/**
-	 * setupQuestion is the method that sets up questions, choices, and answers
+	 * setupQuestionData is the method that sets up questions, choices, and answers
 	 * 
 	 */
 	@Override
 	protected void setupQuestionData()
 	{
-		Random rand = new Random();
 		int random = rand.nextInt(3);
 		ArrayList<String> questArray = new ArrayList<>(); //Creates ArrayList to hold answers
 		
 		switch(random)
 		{
 		case 0:
-			questArray.addAll(Arrays.asList("^", "||", "!=", "%")); //add answer choices to questArray
+			choiceDfixed = false;
+			
+			questArray.addAll(Arrays.asList("^", "||", "!=", "%", "")); //add answer choices to questArray
 			questArray = randomizeQuest(questArray);
 			
 			this.question = "Which of the following is NOT a boolean operator?\n"
@@ -43,12 +47,14 @@ public class BooleanQuestions extends Question
 			this.choiceB = questArray.get(1);
 			this.choiceC = questArray.get(2);
 			this.choiceD = questArray.get(3);
-			this.choiceE = "Don't pick this one";
+			this.choiceE = questArray.get(4);
 			this.answerKey = getAns(questArray, "%");
 			this.answer = "Choice " + answerKey + " is correct. % is not a boolean operator";
 			break;
 		case 1:
-			questArray.addAll(Arrays.asList("true", "false", "The code will not run"));
+			choiceDfixed = true;
+			
+			questArray.addAll(Arrays.asList("true", "false", "The code will not run", "", ""));
 			
 			this.question = "What is the output of the following code?\n"
 						  + "if(3 < 5)\n"
@@ -58,19 +64,21 @@ public class BooleanQuestions extends Question
 			this.choiceA = questArray.get(0);
 			this.choiceB = questArray.get(1);
 			this.choiceC = questArray.get(2);
-			this.choiceD = "Don't pick this one";
-			this.choiceE = "Or this one";
+			this.choiceD = questArray.get(3);
+			this.choiceE = questArray.get(4);
 			this.answerKey = getAns(questArray, "false");
 			this.answer = "Choice " + answerKey + " is correct. The boolean operator && only returns true if both arguments are true.";
 			break;
 		case 2:
-			ArrayList<String> qArray = createQuestion();
+			choiceDfixed = true;
+			
+			ArrayList<String> qArray = createCase2();
 			this.question = qArray.get(0);
 			this.choiceA = qArray.get(1);
 			this.choiceB = qArray.get(2);
-			this.choiceC = "Don't";
-			this.choiceD = "Choose";
-			this.choiceE = "These";
+			this.choiceC = "";
+			this.choiceD = "";
+			this.choiceE = "";
 			this.answerKey = qArray.get(3).charAt(0);
 			this.answer = "Choice " + answerKey + " is correct. " + qArray.get(4);
 			break;
@@ -90,7 +98,8 @@ public class BooleanQuestions extends Question
 		ArrayList<String> randomized = quest;
 		String temp = "";
 		int rand;
-		for( int i = 0; i < quest.size(); i++)
+		int arrayLimit = choiceDfixed ? 3: 4;
+		for( int i = 0; i < arrayLimit; i++)
 		{
 			rand = (int)Math.floor(Math.random()*quest.size());
 			temp = randomized.get(i);
@@ -127,7 +136,7 @@ public class BooleanQuestions extends Question
 	 * 
 	 * @return an ArrayList containing the question, answer choices, answer, and explanation
 	 */
-	private ArrayList<String> createQuestion() //creates randomized question based on boolean operators
+	private ArrayList<String> createCase2() //creates randomized question based on boolean operators
 	{
 		Random rand = new Random();
 		ArrayList<String> qArray = new ArrayList<>();
