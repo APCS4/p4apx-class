@@ -10,6 +10,7 @@ import java.util.Arrays;
  * @Version 1.0
  * 
  **/
+
 public class ArrayListQuestions extends Question
 {
 	//This creates a list of methods that hold the methods we will be asking about
@@ -27,17 +28,12 @@ public class ArrayListQuestions extends Question
 	{
 		setupQuestion();
 	}
-
 	
 	public void setupQuestionData()
 	{
-<<<<<<< HEAD
 		//this.question = "What does " + methods.get(questionType) + " do to list " + names.toString();
 		this.question = String.format("What does %s do to list %s", methods.get(questionType), names.toString());
-=======
 		questionType = (int) Math.floor(Math.random()*methods.size()); //Choose a random method from Arraylist
-		this.question = "What does " + methods.get(questionType) + " do to the list \n" + names.toString();
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 		console("ArrayList: " + names.toString() + "\n"); //Console stuffs
 		generateAnswers();
 	}

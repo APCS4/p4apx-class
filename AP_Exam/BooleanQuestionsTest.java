@@ -11,12 +11,13 @@ import Util.ConsoleMethods;
  * 
  * @author Anthony Tseng & Jude Giolitto
  */
-public class BooleanQuestions extends Question
+public class BooleanQuestionsTest extends Question
 {		
 	private String[] boolOp1 = {"^", "||", "&&", "==", "!="};
 	private String[] boolOp2 = {"!", ""};
-
-	public BooleanQuestions()
+	private int[] offset = { aOffset, bOffset, cOffset, dOffset, eOffset };
+	
+	public BooleanQuestionsTest()
 	{
 		setupQuestion();
 	}
@@ -35,15 +36,12 @@ public class BooleanQuestions extends Question
 		{
 		case 0:
 			questArray.addAll(Arrays.asList("^", "||", "!=", "%")); //add answer choices to questArray
-			questArray = randomizeQuest(questArray);
+			randomizeQuest(questArray);
 			
 			this.question = "Which of the following is NOT a boolean operator?\n"
 						  + "^, ||, !=, %";
-			this.choiceA = questArray.get(0);
-			this.choiceB = questArray.get(1);
-			this.choiceC = questArray.get(2);
-			this.choiceD = questArray.get(3);
-			this.choiceE = "Don't pick this one";
+			choices[0] = questArray.get(aOffset);
+			this.choiceE = "";
 			this.answerKey = getAns(questArray, "%");
 			this.answer = "Choice " + answerKey + " is correct. % is not a boolean operator";
 			break;
@@ -85,19 +83,18 @@ public class BooleanQuestions extends Question
 	 * @param quest the ArrayList to randomize
 	 * @return the randomized ArrayList
 	 */
-	private ArrayList<String> randomizeQuest(ArrayList<String> quest) //randomizes order of answer choices using ArrayList
-	{
-		ArrayList<String> randomized = quest;
-		String temp = "";
-		int rand;
-		for( int i = 0; i < quest.size(); i++)
+	private void randomizeQuest(ArrayList<String> quest) //randomizes order of answer choices using ArrayList
+	{		
+		ConsoleMethods.print("running BooleanQuestionsTest.randomizeQuest");
+		Random rand = new Random();
+		choiceOffset = rand.nextInt(quest.size());
+		
+		int modBase = quest.size();
+		
+		for(int i = 0; i < quest.size(); i++)
 		{
-			rand = (int)Math.floor(Math.random()*quest.size());
-			temp = randomized.get(i);
-			randomized.set(i, randomized.get(rand));
-			randomized.set(rand, temp);
+			offset[i] = (choiceOffset + i) % modBase;
 		}
-		return randomized;
 	}
 	
 	/**
