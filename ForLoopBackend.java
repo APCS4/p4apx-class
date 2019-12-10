@@ -33,9 +33,10 @@ public class ForLoopBackend extends Question
 
 	public void test()
 	{
-		this.buildQuestion();
-		System.out.println(questionPrompt);
-		this.generateOptions();
+		//this.buildQuestion();
+		//System.out.println(questionPrompt);
+		//this.generateOptions();
+		this.polySetupQuestion();
 		this.recieveAnswer();
 		this.checkAnswer();
 		
@@ -60,6 +61,11 @@ public class ForLoopBackend extends Question
 		this.choiceE = String.format("%d", this.m.get("E"));
 		this.answerKey = 'E';
 		this.answer = String.format("You are Correct, %d is the answer", this.answer);
+	}
+
+	public void polySetupQuestion()
+	{
+		super.setupQuestion();
 	}
 
 	public void generateOptions()
@@ -131,4 +137,12 @@ public class ForLoopBackend extends Question
 		ForLoopBackend test = new ForLoopBackend();
 	}
 	*/
+
+	@Override
+	protected void setupQuestionData()
+	{
+		this.buildQuestion();
+		System.out.println(questionPrompt);
+		this.generateOptions();
+	}
 }

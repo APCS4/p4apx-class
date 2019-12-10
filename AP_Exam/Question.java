@@ -65,10 +65,12 @@ public class Question extends Scoring
       * setup question data default, expectation is this will changed through polymorphism
       *
       * @param  void
+      * @Override
       */
+     
     protected void setupQuestionData() {
     	// This outputs constructor being run
-        ConsoleMethods.println("Question class setupQuestionData method");
+        ConsoleMethods.println("BobaQuestions class setupQuestionData method");
         
     	question = "What type of programming language is Java?";
 		choiceA = "Data-oriented";
@@ -135,6 +137,7 @@ public class Question extends Scoring
      * @param  void
      * @return void
      */
+	
     protected void  askQuestionConsole()
     {
         // getAnswer return true if question is correct
