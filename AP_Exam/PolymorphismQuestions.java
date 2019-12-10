@@ -31,7 +31,7 @@ public class PolymorphismQuestions extends Question{
 		//loading arraylists with elements of arrays
 		List<String> listArr1 = Arrays.asList("a feature that allows a class to have more than one method having the same name, if their argument lists are different", "a feature that allows a class to have more than one constructor having different argument lists", "a set of code which is referred to by name and can be called (invoked) at any point in a program", "a feature used to refer method of functional interface", "none of the choices");
 		List<String> listArr2 = Arrays.asList("same method name is overloaded with different type or number of parameters in same class (different signature)", "same method is overridden with same signature in different classes", " the process where one class acquires the properties (methods and fields) of another class", "a mechanism of wrapping the data (variables) and code acting on the data (methods) together as a single unit", "none of the choices");
-		List<String> listArray3 = Arrays.asList("fly","fly chirp","fly chirp waddle","fly chirp waddle coo","fly chirp coo waddle");
+		List<String> listArr3 = Arrays.asList("fly","fly chirp","fly chirp waddle","fly chirp waddle coo","fly chirp coo waddle");
 		//assigning random number 0-4 into variable for switch argument
 		int randQuestion = rand.nextInt(4);
 
@@ -138,15 +138,16 @@ public class PolymorphismQuestions extends Question{
 	                "\nWhat is printed as a result of the call pigeon.act()?";
 	
 			//shuffling array list of choices 
-			Collections.shuffle(listArray3);
-			this.choiceA = listArray3.get(0);
-			this.choiceB = listArray3.get(1);
-			this.choiceC = listArray3.get(2);
-			this.choiceD = listArray3.get(3);
-			this.choiceE = listArray3.get(4);
+			Collections.shuffle(listArr3);
+			this.choiceA = listArr3.get(0);
+			this.choiceB = listArr3.get(1);
+			this.choiceC = listArr3.get(2);
+			this.choiceD = listArr3.get(3);
+			this.choiceE = listArr3.get(4);
 			
 			//checks for and assigns answer
-			int Index4 = indexClass.returnIndex(listArr2, "fly chirp coo waddle");
+			//initialize Index4and Ans4 as answer
+			int Index4 = indexClass.returnIndex(listArr3, "fly chirp coo waddle");
 			char Ans4 = indexClass.returnAns(Index4);
 			
 			this.answerKey = Ans4;
