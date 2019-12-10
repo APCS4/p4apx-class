@@ -24,16 +24,9 @@ public class Power extends Question{
 		/**
 		 * setup the question 
 		 */
-		 ConsoleMethods.println("Question class setupQuestionData method");
+		 ConsoleMethods.println("Power class setup QuestionData method");
         //fix
-    	question = "What type of programming language is Java?";
-		choiceA = "Data-oriented";
-		choiceB = "Iterative";
-		choiceC = "Object-oriented";
-		choiceD = "Imperative";
-		answer = choiceC;
-		answerKey = charC;
-    
+    	    
 
 		
 		int rando = (int) Math.floor(Math.random()*4);
