@@ -26,7 +26,8 @@ public class CA extends Question{
      * @param none
      * @return none
      */
-	public void setupQuestionData() {
+	@Override
+	protected void setupQuestionData() {
 		// random - generates a random number between 0 and 8 inclusive
 		// previous randomization way: int random = (int) Math.floor(Math.random()*9);
 		// new randomization - using modulo, borrowed idea from other class
