@@ -2,6 +2,8 @@ package AP_Exam;
 
 import java.util.Random;
 
+import Util.ConsoleMethods;	// Console support
+
 /**
  * Boba questions with substrings
  *
@@ -36,7 +38,17 @@ public class BobaQuestions extends Question{
  
     }
 	
-	public void setupQuestionData() {
+	
+	 /**
+     * Sets up a Binary Math questions according to instance variables (this...) in Question class
+     *
+     * @return    void
+     * @Override
+     */
+    
+	ConsoleMethods.println("BobaQuestion class setupQuestionData method");
+	
+    protected void setupQuestionData() {
 		//String array of answers
 		String[] choices = new String[5];
 		
