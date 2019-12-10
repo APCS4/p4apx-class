@@ -2,6 +2,9 @@ package AP_Exam;
 
 import java.util.Arrays;
 import java.util.Random;
+
+import Util.ConsoleMethods;
+
 import java.util.Collections;
 import java.util.List;
 
@@ -74,7 +77,7 @@ public class PowSqrt extends QuestionRandom
 		//Collections.shuffle(randArr);
 		
         // format question choices (randomized)
-		
+		ConsoleMethods.println("PowSqrt class setupQuestionData method");
         this.choiceA = String.format("%f",array[0]);
         this.choiceB = String.format("%f",array[1]);
         this.choiceC = String.format("%f",array[2]);
