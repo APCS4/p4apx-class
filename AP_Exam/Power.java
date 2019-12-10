@@ -180,7 +180,7 @@ public class Power extends Question{
 		else if(ques[4].equals(an) == true)
 			ret = 'E';
 		else ret = 'Z'; //error problem problem
-		
+		//alex mithil
 		return ret;
 	}
 	
