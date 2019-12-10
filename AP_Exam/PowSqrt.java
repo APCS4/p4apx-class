@@ -66,7 +66,6 @@ public class PowSqrt extends QuestionRandom
 			this.question = String.format("What is sqrt(" + root + ")?");
 		}
 		
-
 		array[0] = (float)square * (float)root;
 		array[1] = (float)Math.pow((float)square, 2);
 		array[2] = (float)square / (float)root;
