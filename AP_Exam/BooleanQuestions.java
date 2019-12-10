@@ -27,9 +27,11 @@ public class BooleanQuestions extends Question
 	 * setupQuestionData is the method that sets up questions, choices, and answers
 	 * 
 	 */
-	@Override
+	//@Override
 	protected void setupQuestionData()
 	{
+		ConsoleMethods.println("BooleanQuestions class setupQuestionData method");
+		
 		int random = rand.nextInt(3);
 		ArrayList<String> questArray = new ArrayList<>(); //Creates ArrayList to hold answers
 		
@@ -37,6 +39,7 @@ public class BooleanQuestions extends Question
 		{
 		case 0:
 			choiceDfixed = false;
+			choiceEfixed = true;
 			
 			questArray.addAll(Arrays.asList("^", "||", "!=", "%", "")); //add answer choices to questArray
 			questArray = randomizeQuest(questArray);
@@ -53,6 +56,7 @@ public class BooleanQuestions extends Question
 			break;
 		case 1:
 			choiceDfixed = true;
+			choiceEfixed = true;
 			
 			questArray.addAll(Arrays.asList("true", "false", "The code will not run", "", ""));
 			
@@ -71,6 +75,7 @@ public class BooleanQuestions extends Question
 			break;
 		case 2:
 			choiceDfixed = true;
+			choiceEfixed = true;
 			
 			ArrayList<String> qArray = createCase2();
 			this.question = qArray.get(0);
@@ -98,10 +103,11 @@ public class BooleanQuestions extends Question
 		ArrayList<String> randomized = quest;
 		String temp = "";
 		int rand;
-		int arrayLimit = choiceDfixed ? 3: 4;
+		int arrayLimit = choiceEfixed ? choiceDfixed ? 3: 4: 5;
+		arrayLimit = choiceDfixed ? arrayLimit - 1: arrayLimit;
 		for( int i = 0; i < arrayLimit; i++)
 		{
-			rand = (int)Math.floor(Math.random()*quest.size());
+			rand = (int)Math.floor(Math.random()*arrayLimit);
 			temp = randomized.get(i);
 			randomized.set(i, randomized.get(rand));
 			randomized.set(rand, temp);
