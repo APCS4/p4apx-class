@@ -3,6 +3,8 @@ package AP_Exam;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
+import Util.ConsoleMethods;
+
 /**
  * 
  * @author Mateo
@@ -24,6 +26,7 @@ public class Recursion extends Question
 	@Override
 	public void setupQuestionData() //question method
 	{
+		ConsoleMethods.println("Recursion class setupQuestionData method");
 		int bruh = (int)(Math.random() * 4 + 1); //	randomize this number to choose a question
 		switch (bruh) //switch case for questions
 		{
@@ -159,7 +162,7 @@ public class Recursion extends Question
 				ansq[3] = "18";
 				ansq[4] = "16";
 				
-				shuffle(); //shuffle the answers
+ 				shuffle(); //shuffle the answers
 				answers(); //display the answers
 				break;
 			case 5:
@@ -208,7 +211,7 @@ public class Recursion extends Question
 			ansq[s] = ansq[i];
 			ansq[i] = temp;
 			
-			if (ans == ansq[i]) //if the strings are equal, correct gets that substring number
+			if (ans.equals(ansq[i])) //if the strings are equal, correct gets that substring number
 				correct = i;
 		}
 		
