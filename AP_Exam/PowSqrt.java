@@ -13,7 +13,7 @@ import java.util.List;
  * @version 12/6/2019
  * 
  */
-public class PowSqrt extends Question
+public class PowSqrt extends QuestionRandom
 { 
 	private char[] operators = {'1', '2'};
 	
@@ -71,14 +71,14 @@ public class PowSqrt extends Question
 		array[2] = (float)square / (float)root;
 		array[3] = (float)Math.sqrt((float)root);
 		
-		Collections.shuffle(randArr);
+		//Collections.shuffle(randArr);
 		
         // format question choices (randomized)
 		
-        this.choiceA = String.format("%f",randArr.get(0));
-        this.choiceB = String.format("%f",randArr.get(1));
-        this.choiceC = String.format("%f",randArr.get(2));
-        this.choiceD = String.format("%f",randArr.get(3));
+        this.choiceA = String.format("%f",array[0]);
+        this.choiceB = String.format("%f",array[1]);
+        this.choiceC = String.format("%f",array[2]);
+        this.choiceD = String.format("%f",array[3]);
         this.choiceE = "None of the above";
         
         

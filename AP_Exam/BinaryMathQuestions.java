@@ -2,6 +2,8 @@ package AP_Exam;
 
 import java.util.Random;
 
+import Util.ConsoleMethods;
+
 /**
  * Class to support Binary Math operations
  * 

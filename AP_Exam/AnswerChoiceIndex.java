@@ -10,7 +10,7 @@ public class AnswerChoiceIndex {
 				return i;
 			}
 		}
-		return 0;
+		return -1;
 	}
 	
 	public char returnAns(int Index) {

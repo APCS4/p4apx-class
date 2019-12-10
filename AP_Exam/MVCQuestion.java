@@ -2,7 +2,7 @@ package AP_Exam;
 
 import java.util.Random;
 
-
+import Util.ConsoleMethods;
 import Util.OutputCode;
 /**
  * The class for all question pertaining to MVC
@@ -38,7 +38,9 @@ public class MVCQuestion extends Question{
 	 * @return void
 	 *
 	 */
-	public void setupQuestionData() {
+	@Override
+	protected void setupQuestionData() {
+		ConsoleMethods.println("MVC class setupQuestionData method");
 		//string array that will contain the five options for each question
 		String[] choices = new String[5];
 		

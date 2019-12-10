@@ -2,6 +2,13 @@ import java.util.*;
 import java.lang.*;
 import AP_Exam.*;
 
+/*
+* @author Abhinav Palacharla
+* @param not applicable
+* @version 1.0.0
+* @return not applicable
+*/
+
 public class ForLoopBackend extends Question
 {
 	private int iterations1;
@@ -44,8 +51,9 @@ public class ForLoopBackend extends Question
 	
 	public void poly()
 	{
+		//method to do all poly work
 		this.question = this.questionPrompt;
-		this.choiceA = String.format("%d", this.m.get("A"));
+		this.choiceA = String.format("%d", this.m.get("A")); //get values from hashmap, input as string format
 		this.choiceB = String.format("%d", this.m.get("B"));
 		this.choiceC = String.format("%d", this.m.get("C"));
 		this.choiceD = String.format("%d", this.m.get("D"));
@@ -56,19 +64,19 @@ public class ForLoopBackend extends Question
 
 	public void generateOptions()
 	{
-		this.m.put("A", r.nextInt(this.correctAnswer)); //use key to store letter option, 
+		this.m.put("A", r.nextInt(this.correctAnswer)); //use key to store letter option, input values into hashmap
 		this.m.put("B", r.nextInt(this.correctAnswer));
 		this.m.put("C", r.nextInt(this.correctAnswer));
 		this.m.put("D", r.nextInt(this.correctAnswer));
 		this.m.put("E", this.correctAnswer);
 
-		System.out.println(m); //testing
+		//System.out.println(m); //testing hashmap
 	}
 
 
 	public void buildQuestion()
 	{
-		String questionExp = "How many Times will this program print out the word" + this.word + "\n";
+		String questionExp = "How many Times will this program print out: " + this.word + "\n";
 
 		//this.iterations1 = (int) (10 * Math.random());
 		//this.iterations2 = (int) (10 * Math.random());
@@ -80,7 +88,7 @@ public class ForLoopBackend extends Question
 		this.iterations3 = (int) r.nextInt(9) + 1;
 
 		int correctAns = this.iterations1 * this.iterations2 * this.iterations3;
-
+		//generate strings to concatanate later
 		String loop1 = String.format("for(int i = 0; i < %d; i++) \n{\n", this.iterations1);
 		String printWord1 = String.format("System.out.println(\"%s\");\n", this.word);
 		String loop2 = String.format("	for(int i = 0; i < %d; i++ \n{\n", this.iterations2);
@@ -91,6 +99,7 @@ public class ForLoopBackend extends Question
 		String endBrace2 = String.format("	}");
 		String endBrace3 = String.format("}");
 
+		//form question by concatinating strings
 		String questionBody = String.format(loop1 + printWord1 + loop2 + printWord2 + loop3 + printWord3 + "\n" + endBrace1 + "\n" + endBrace2 + "\n" + endBrace3);
 
 		this.questionPrompt = questionExp + questionBody;
@@ -99,12 +108,14 @@ public class ForLoopBackend extends Question
 
 	public void recieveAnswer()
 	{
+		//read answer from user
 		System.out.println("enter you answer: ");
 		this.userAnswer = this.s.nextInt();
 	}
 
 	public void checkAnswer()
 	{
+		//verify if answer is correct
 		if(this.userAnswer == this.correctAnswer)
 		{
 			isCorrect = true;
@@ -114,9 +125,10 @@ public class ForLoopBackend extends Question
 			isCorrect = false;
 		}
 	}
-
+	/*
 	public static void main(String[] args) 
 	{
 		ForLoopBackend test = new ForLoopBackend();
 	}
+	*/
 }

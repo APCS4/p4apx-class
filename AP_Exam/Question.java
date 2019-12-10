@@ -101,8 +101,18 @@ public class Question extends Scoring
     	    charB + ": " + choices[1] + "\n"  + 
     	    charC + ": " + choices[2] + "\n"  + 
     	    charD + ": " + choices[3] + "\n"  + 
-    	    charE + ": " + choices[4] + "\n"
+    	    charE + ": " + choices[4] + ""
             );    
+	}
+	
+	public String getChoices(String group) {
+		return String.format(
+				charA + ": %s%n" +
+				charB + ": %s%n" +
+				charC + ": %s%n" +
+				charD + ": %s%n" +
+				charE + ": %s%n", choices[0], choices[1], choices[2], choices[3], choices[4]);
+				
 	}
 	
 	/**
