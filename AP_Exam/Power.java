@@ -1,6 +1,8 @@
 package AP_Exam;
 import java.util.Random;
 
+import Util.ConsoleMethods;
+
 public class Power extends Question{
 	/**
 	 *  Author: Alex Clanton, Mithil Pujar
@@ -17,13 +19,24 @@ public class Power extends Question{
     	setupQuestion();
     }
 	
-	public void setupQuestionData() {
+	 @Override
+	protected void setupQuestionData() {
 		/**
 		 * setup the question 
 		 */
+		 ConsoleMethods.println("Question class setupQuestionData method");
+        
+    	question = "What type of programming language is Java?";
+		choiceA = "Data-oriented";
+		choiceB = "Iterative";
+		choiceC = "Object-oriented";
+		choiceD = "Imperative";
+		answer = choiceC;
+		answerKey = charC;
+    
+
 		
-		
-		int rando = (int) Math.floor(Math.random()*5);
+		int rando = (int) Math.floor(Math.random()*4);
 		String[] pick = new String[5];
 		
 		int zero =2;
@@ -67,7 +80,7 @@ public class Power extends Question{
 			this.choiceD = pick[3];
 			this.choiceE = pick[4];
 			
-			this.answerKey = Ans(pick,"for(int z=12; z<=103; z--);");//correct answer choice check
+			this.answerKey = Ans(pick,"for(int z=12; z<=103; z++);");//correct answer choice check
 			this.answer = "U got it homes";
 			break;
 		
@@ -97,20 +110,20 @@ public class Power extends Question{
 			this.answerKey = Ans(pick,"Executing a block of code at least once and then repeatedly executing it based on a boolean condition");
 			this.answer = "U got it homes";
 			break;
-		
+		/*
 		case 4://q5
 		
-			this.question = "Consider the following code segment:\n for (int p = 1; p <= 100; k++)\n + if ((p % 4) == 0)\n + System.out.println(p);";
-			pick=loadArray("for(intp=1;p<=25;p++)\n + System.out.println(p);", "for(intp=1;p<=100;p=p+4)\n System.out.println(p);", "for(intp=1;p<=100;p--)\n System.out.println(p % 9);", "for(intp=4;p<=25;p=19*p)\n System.out.println(p);", "for(intp=4;p<=100;p=p+4)\n System.out.println(p);");
+			this.question = "Consider the following code segment:\n for (int p = 1; p <= 100; k++)\n  if ((p % 4) == 0)\n  System.out.println(p);\n";
+			pick=loadArray("for(intp=1;p<=25;p++)\n  System.out.println(p);", "\nfor(intp=1;p<=100;p=p+4)\n System.out.println(p);", "\nfor(intp=1;p<=100;p--)\n System.out.println(p % 9);", "\nfor(intp=4;p<=25;p=19*p)\n System.out.println(p);", "\nfor(intp=4;p<=100;p=p+4)\n System.out.println(p);");
 			this.choiceA = pick[0];
 			this.choiceB = pick[1];
 			this.choiceC = pick[2];
 			this.choiceD = pick[3];
 			this.choiceE = pick[4];
-			this.answerKey = Ans(pick, "for(intp=4;p<=100;p=p+4)\n System.out.println(p);");
+			this.answerKey = Ans(pick, "\nfor(intp=4;p<=100;p=p+4)\n System.out.println(p);");
 			this.answer = "U got it homes";
 			break;
-		
+		*/
 		
 		default:
 			System.out.print("elproblem");//default case issue
