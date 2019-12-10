@@ -13,7 +13,7 @@ import java.util.List;
  * @version 12/6/2019
  * 
  */
-public class PowSqrt extends Question
+public class PowSqrt extends QuestionRandom
 { 
 	private char[] operators = {'1', '2'};
 	
