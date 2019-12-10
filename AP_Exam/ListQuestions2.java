@@ -3,27 +3,36 @@ package AP_Exam;
 import java.util.ArrayList; 
 import java.util.Random;
 
+import Util.ConsoleMethods;
+
 /**
  * 
  * This class generates random MC arraylist questions <br>
- * It also creates the following: 
- * <li> one question 
- * <li> the correct answer <br>
+ * It also does the following: 
+ * <li> randomizes the numbers in the list in question 
+ * <li> randomizes the order of the answers 
+ * <li> returns the correct answer <br>
  * <br>
  * 
  * @author Anika Sood and Aashi Mittal <br>
  * (Period: 4)
  * 
  * 
- * @version name: ListQuestions2 (Dec. 6th) 
+ * @version (3.0)<br>
+ * name: ListQuestions2 (Dec. 9th) 
  * 
  * 
  * 
  */
-//html tags : <br> = line break, <li> = bullet list <ol> = tab for each subsequent line 
+
 public class ListQuestions2 extends Question
 
 {
+	/**
+	 * Constructor for objects of class ListQuestions2
+	 * no parameters needed 
+	 * 
+	 */
 	public ListQuestions2()
 	{
 		setupQuestionData();
@@ -37,8 +46,15 @@ public class ListQuestions2 extends Question
 		return(rand.nextInt(10));
 	}
 	
-	public void setupQuestionData()
+	/**
+	 * main method to set up question and answer choices in the string format defined in the Question class
+	 */
+	 
+	@Override 
+	protected void setupQuestionData()
 	{
+        ConsoleMethods.println("ListQuestions2 class setupQuestion method");
+
 		Random rand = new Random(); 
 
 		//getting random numbers to fill array
@@ -49,7 +65,7 @@ public class ListQuestions2 extends Question
 		
 		//correct answer
 		this.answer =  String.format("[%d, %d, %d, %d, %d]", num1, num6, num4, num5, num6);
-		
+		//%d is the format() format for an integer to print
 		
 		
 	    //Random numbers generating

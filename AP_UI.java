@@ -163,9 +163,8 @@ public class AP_UI extends MenuControl
 		
 
 		JButton btnNewButton = new JButton("ʕ•ᴥ•ʔDanielAndFox");
-		btnNewButton.setBackground(Color.WHITE);
-		btnNewButton.setForeground(Color.CYAN);
-		btnNewButton.setFont(new Font("Comic Sans MS", Font.PLAIN, 13));
+		btnNewButton.setForeground(Color.MAGENTA);
+		btnNewButton.setFont(new Font("Comic Sans MS", Font.PLAIN, 14));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AP_Exam.Question q = new AP_Exam.OperatorQuestions();
@@ -174,7 +173,7 @@ public class AP_UI extends MenuControl
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnNewButton.setBounds(453, 157, 138, 39);
+		btnNewButton.setBounds(453, 157, 150, 39);
 		contentPane.add(btnNewButton);
 	
 		JButton btnAnthonyjude = new JButton("BooleanQuestions");
@@ -182,12 +181,24 @@ public class AP_UI extends MenuControl
 			public void actionPerformed(ActionEvent e) {
 				AP_Exam.Question q = new AP_Exam.BooleanQuestions();
 				testQuestion.setText(q.getQuestion());
-				testChoices.setText(q.getChoices());
+				testChoices.setText(q.getChoices("k"));
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
 		btnAnthonyjude.setBounds(604, 226, 117, 29);
 		contentPane.add(btnAnthonyjude);
+
+		JButton btnForLoop = new JButton("For Loop Question");
+		btnForLoop.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AP_Exam.Question q = new ForLoopBackend();
+				testQuestion.setText(q.getQuestion());
+				testChoices.setText(q.getChoices("k"));
+				testQuestionAnswer.setText(q.getAnswer());
+			}
+		});
+		btnForLoop.setBounds(453, 240, 100, 29);
+		contentPane.add(btnForLoop);
 
 		JButton Power = new JButton("Power");
 		Power.addActionListener(new ActionListener() {
@@ -202,6 +213,8 @@ public class AP_UI extends MenuControl
 		contentPane.add(Power);
 	
 		JButton btnArraylist = new JButton("ArrayList");
+		btnArraylist.setBorder(null);
+		btnArraylist.setIcon(new ImageIcon("Ethan.jpg"));
 		btnArraylist.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AP_Exam.Question a = new AP_Exam.ArrayListQuestions();
@@ -210,7 +223,7 @@ public class AP_UI extends MenuControl
 				testQuestionAnswer.setText(a.getAnswer());
 			}
 		});
-		btnArraylist.setBounds(453, 115, 138, 29);
+		btnArraylist.setBounds(456, 99, 270, 56);
 		contentPane.add(btnArraylist);
 		
 		JButton btnTeamboba = new JButton("\u2727\uFF65\uFF9F: *\u2727\uFF65\uFF9F:* Team Boba *:\uFF65\uFF9F\u2727*:\uFF65\uFF9F\u2727");

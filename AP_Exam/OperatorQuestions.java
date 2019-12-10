@@ -4,22 +4,28 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-/**
- * This class returns randomized Questions and Answer choices for operator questions.
- * All the possible answer choices are stored in a String array called "array," which 
- * is then converted into a String List called "randArr" so that the Collections.shuffle()
- * method can randomize the answer choices.
- * The AnswerChoiceIndex class is used to loop through the randomized answer choices
- * and return the integer index of the correct answer choice.
- * @author Daniel and Fox
- * @see AnswerChoiceIndex
- */
+	/**
+	 * 
+	 * A random integer is chosen from 0 to 4 and based on the number, 
+	 * a different question is asked. The answer choices are all stored 
+	 * in an a String array, which is then converted to a List. 
+	 * For each case, the list containing the answer choices are randomized 
+	 * with the Collections.shuffle() method and assigned to a char (A,B,C,D,E). 
+	 * The randomized array is then input into the AnswerChoiceIndex.returnIndex() 
+	 * method along with the correct answer to find the index of the correct answer 
+	 * in the randomized array. The returned index is then input into the AnswerChoiceIndex.returnAns() 
+	 * method to find the char of the correct answer choice. this.answerKey 
+	 * is then set to the output of returnAns() and the correct letter is displayed as the answer.
+	 * @author Daniel and Fox
+	 * @see AnswerChoiceIndex
+	 */
 public class OperatorQuestions extends Question{
 	public OperatorQuestions()
     {
     	setupQuestionData();
     	setupQuestion();
     }
+	
 	
 	public void setupQuestionData() {
 		AnswerChoiceIndex indexClass = new AnswerChoiceIndex();

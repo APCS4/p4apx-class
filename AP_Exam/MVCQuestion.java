@@ -17,6 +17,7 @@ import Util.OutputCode;
 import Util.OutputCode;
 
 public class MVCQuestion extends Question{
+	
 	/**
 	 * MVCQuestion contructor
 	 * sets up question
@@ -71,7 +72,7 @@ public class MVCQuestion extends Question{
 			this.question = "What does the View part of MVC contain";
 			
 			choices = loadQuestArray("The GUI and Console IO code","The Logic for the program", "A mix of all part of program", 
-					"Data pulled from an outside source", "View is not part of MVC");
+					"Data pulled from an outside source", "A,B,C,D, but not E");
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
 			this.choiceC = choices[2];
@@ -85,7 +86,7 @@ public class MVCQuestion extends Question{
 		case 2:
 			this.question = "What does the Control part of MVC contain";
 			
-			choices = loadQuestArray("Control is not part of MVC.","There is no control is MVC", "How the program looks but not the data", 
+			choices = loadQuestArray("All of the above","There is no control is MVC", "How the program looks but not the data", 
 					"How the program looks and the data it uses", "The brains of the program; logic code is here");
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
@@ -100,7 +101,7 @@ public class MVCQuestion extends Question{
 			this.question = "What does the Model part of MVC control.";
 			choices = loadQuestArray("The \"brain\" of the program, uses data + user input to complete purpose.",
 					"The long-term stored information of a program. (Database)", "The GUI; how the user interacts with the program.",
-					"The efficiency that the program runs at.", "Model is not part of MVC.");
+					"The efficiency that the program runs at.", "All of the above.");
 			this.choiceA = choices[0];
 			this.choiceB = choices[1];
 			this.choiceC = choices[2];
@@ -124,10 +125,16 @@ public class MVCQuestion extends Question{
 					+ "that code is purposeful, effective, and easy to modify in the long term.";
 			break;
 		case 5:
-			int type = (int) Math.floor(Math.random()*2);
-			String ANS = "";
-			String reason = "";
-			
+			this.question = "What part of the MVC framework would this code fit into?";
+			choices = loadQuestArray("Model", "View", "Control", "Mode", "Volume");
+			this.choiceA = choices[0];
+			this.choiceB = choices[1];
+			this.choiceC = choices[2];
+			this.choiceD = choices[3];
+			this.choiceE = choices[4];
+			this.answerKey = getAns(choices, "View");
+			OutputCode.codeOutput();
+		case 6:
 			this.question = "What part of MVC would this code fit into?";
 			choices = loadQuestArray("Model", "Vision", "Control", "Version", "View");
 			this.choiceA = choices[0];
@@ -135,22 +142,9 @@ public class MVCQuestion extends Question{
 			this.choiceC = choices[2];
 			this.choiceD = choices[3];
 			this.choiceE = choices[4];
-			
-			if(type == 0)
-			{
-				
-				ANS = "Control";
-				reason = "This code receives input fron the View and manipulates the data, returning whether or not it is a palindrome. Logic code";
-			}
-			else
-			{
-				ANS = "View";
-				reason = "This code simply gets input and gives output, only dealing with what the user sees, not manipulating variables";
-			}
-			
-			this.answerKey = getAns(choices, ANS);
-			this.answer = reason;
-			WeavetheRing(type); //using threads here
+			this.answerKey = getAns(choices, "Control");
+			this.answer = "This code receives input fron the View and manipulates the data, returning whether or not it is a palindrome. Logic code";
+			WeavetheRing(); //using threads here
 			break;
 		default:
 			System.out.print("ERROR");
@@ -196,14 +190,9 @@ public class MVCQuestion extends Question{
 	 */
 	class CodeOutputter extends Thread
 	{
-		int Type;
-		public CodeOutputter(int type)
-		{
-			Type = type;
-		}
 		public void run()//run is special to thread classes
 		{
-			OutputCode.codeOutput(Type);//getting code and putting it another pane for user to see
+			OutputCode.codeOutput();//getting code and putting it another pane for user to see
 		}
 	}
 	
@@ -213,9 +202,9 @@ public class MVCQuestion extends Question{
 	 * @return void
 	 *
 	 */
-	public void WeavetheRing(int type)
+	public void WeavetheRing()
 	{
-		CodeOutputter coder = new CodeOutputter(type);
+		CodeOutputter coder = new CodeOutputter();
 		coder.start();//tells computer we're running a new thread
 		/* A thread is basically a way for the computer to run two things at once. Without this the JOptionPane displayed by the thread would 
 		 * be displayed  before the question is loaded into the AP_UI class and sent to the user so the code popping up in a new pane

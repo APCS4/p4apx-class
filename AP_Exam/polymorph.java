@@ -4,10 +4,10 @@ import java.util.Random;
  * author Rhea, Mateo
  */
 
-public class ArrayList extends Question {
+public class polymorph extends Question {
 	private String[] datatype = {"int", "float", "char"};
 	private int[] multiplier = {10, 100, 1000};
-        public ArrayList()
+        public polymorph()
         {
         	Random rand = new Random();
         	double value = rand.nextDouble() * multiplier[rand.nextInt(multiplier.length)];
@@ -16,7 +16,7 @@ public class ArrayList extends Question {
         }
         public static String mainTest ()
         {
-    	Question q = new ArrayList();
+    	Question q = new polymorph();
         q.askQuestionConsole();
         return q.getCounterMsg();
     }
@@ -74,7 +74,7 @@ public class ArrayList extends Question {
             answer = this.choiceD;
         }
         
-        else if (test ==5 || test == 6) {
+        else if (test == 5 || test == 6) {
         	this.question = "Which of the following is the correct way to remove the value " + test + " from the list below? \n nums = [5,6,7,8,9,10]";
             this.choiceA = "nums.remove(5);";
             this.choiceB = "nums.remove(0);";
