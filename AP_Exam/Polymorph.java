@@ -1,40 +1,39 @@
 package AP_Exam;
-import java.util.Random; 
+import java.util.Random;
+
 /*
  * author Rhea, Mateo
  */
 
-public class polymorph extends Question {
-	private String[] datatype = {"int", "float", "char"};
-	private int[] multiplier = {10, 100, 1000};
-        public polymorph()
+public class Polymorph extends Question {
+        public Polymorph()
         {
-        	Random rand = new Random();
-        	double value = rand.nextDouble() * multiplier[rand.nextInt(multiplier.length)];
-        	Integer index = rand.nextInt(datatype.length);
-        	setupQuestion(datatype[index], value);
+        	super.setupQuestion();
         }
+        
         public static String mainTest ()
         {
-    	Question q = new polymorph();
-        q.askQuestionConsole();
-        return q.getCounterMsg();
-    }
+	    	Question q = new Polymorph();
+	        q.askQuestionConsole();
+	        return q.getCounterMsg();
+        }
 
-    public void setupQuestion(String dataTypeName, double number)
+    @Override
+    protected void setupQuestionData()
     {  
     	Random rand = new Random();
-        int test = rand.nextInt(10); 
+        int test = rand.nextInt(5); 
         // format question
         if (test == 0) {
-        this.question = "Which method implies calling a method within itself?";
-                    
-        this.choiceA = "for loop";
-        this.choiceB = "polymorphism";
-        this.choiceC = "type casting"; 
-        this.choiceD = "recursion";
-        this.choiceE = "None of the above";
-        answer = this.choiceD; 
+        this.question = "Which method implies calling a method within itself?";        
+	        this.choiceA = "for loop";
+	        this.choiceB = "polymorphism";
+	        this.choiceC = "type casting"; 
+	        this.choiceD = "recursion";
+	        this.choiceE = "None of the above";
+	        answer = this.choiceD;
+	        answerKey = this.charD;
+
         }
         else if (test ==1) {
         	this.question = "Which datatype is the best to use when you want to incorporate decimals?";
@@ -44,6 +43,8 @@ public class polymorph extends Question {
             this.choiceD = "All of the above";
             this.choiceE = "None of the above";
             answer = this.choiceC; 
+	        answerKey = this.charC;
+
         }
         else if (test ==2) {
         	this.question = "When you want the first value of an array called Pets, how do you write that?";
@@ -52,7 +53,9 @@ public class polymorph extends Question {
             this.choiceC = "Pets.first[]"; 
             this.choiceD = "All of the above";
             this.choiceE = "None of the above";
-            answer = this.choiceA; 
+            answer = this.choiceA;
+	        answerKey = this.charA;
+
         }
         else if (test ==3) {
         	this.question = "What is true about method overloading?";
@@ -62,6 +65,8 @@ public class polymorph extends Question {
             this.choiceD = "Same method names, different parameters";
             this.choiceE = "None of the above";
             answer = this.choiceD;
+	        answerKey = this.charD;
+
             
         }
         else if (test ==4) {
@@ -72,6 +77,8 @@ public class polymorph extends Question {
             this.choiceD = "uter Science";
             this.choiceE = "Computer";
             answer = this.choiceD;
+            answerKey = this.charD;
+
         }
         
         else if (test == 5 || test == 6) {
@@ -81,7 +88,10 @@ public class polymorph extends Question {
             this.choiceC = "nums.remove(1);"; 
             this.choiceD = "nums.remove(2);";
             this.choiceE = "None of the above";
-            if (test == 5) {answer = this.choiceB;}
-            if (test == 6) {answer = this.choiceC;}
+            answer = this.choiceE;
+	        answerKey = this.charE;
+
        
         }
+    }
+}

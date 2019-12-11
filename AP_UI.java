@@ -325,6 +325,18 @@ public class AP_UI extends MenuControl
 		});
 		btnPolymorphism.setBounds(604, 157, 137, 28);
 		contentPane.add(btnPolymorphism);
+		
+		JButton btnNewButton_2 = new JButton("Polymorph");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AP_Exam.Question q = new AP_Exam.Polymorph();
+				testQuestion.setText(q.getQuestion());
+				testChoices.setText(q.getChoices());
+				testQuestionAnswer.setText(q.getAnswer());
+			}
+		});
+		btnNewButton_2.setBounds(635, 21, 91, 29);
+		contentPane.add(btnNewButton_2);
 
 	}
 }
