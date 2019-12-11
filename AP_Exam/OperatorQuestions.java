@@ -4,18 +4,12 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
+
+import Util.ConsoleMethods;
 	/**
 	 * 
-	 * A random integer is chosen from 0 to 4 and based on the number, 
-	 * a different question is asked. The answer choices are all stored 
-	 * in an a String array, which is then converted to a List. 
-	 * For each case, the list containing the answer choices are randomized 
-	 * with the Collections.shuffle() method and assigned to a char (A,B,C,D,E). 
-	 * The randomized array is then input into the AnswerChoiceIndex.returnIndex() 
-	 * method along with the correct answer to find the index of the correct answer 
-	 * in the randomized array. The returned index is then input into the AnswerChoiceIndex.returnAns() 
-	 * method to find the char of the correct answer choice. this.answerKey 
-	 * is then set to the output of returnAns() and the correct letter is displayed as the answer.
+	 * This class asks a set of 5 questions about operators (&&, ||, &, |, ^) 
+	 * in a randomized question order and randomized answer choice order.
 	 * @author Daniel and Fox
 	 * @see AnswerChoiceIndex
 	 */
@@ -27,7 +21,8 @@ public class OperatorQuestions extends Question{
     }
 	
 	
-	public void setupQuestionData() {
+	protected void setupQuestionData() {
+		ConsoleMethods.println("Operator Question setup Question Data Method");
 		AnswerChoiceIndex indexClass = new AnswerChoiceIndex();
 		Random rand = new Random();
 		String[] array = new String[]{"logical AND short circuit", "logical OR short circuit", "boolean logical AND", "boolean logical OR", "None of them"};

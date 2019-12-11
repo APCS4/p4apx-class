@@ -3,6 +3,12 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
+/**
+ * 
+ * This class returns the Array index and the char of the correct answer choice for OperatorQuestions.
+ * @author Daniel and Fox
+ * @see AnswerChoiceIndex
+ */
 public class AnswerChoiceIndex {
 	public int returnIndex(List<String> arr, String correctAns) {
 		for (int i = 0; i < arr.size(); i++) {
