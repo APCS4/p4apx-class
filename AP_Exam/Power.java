@@ -25,8 +25,9 @@ public class Power extends Question{
 		 * setup the question 
 		 */
 		 ConsoleMethods.println("Power class setup QuestionData method");
-        //fix
-    	    
+        /*Polymorphism is showacased in "protected void" allowing for the program to be run
+		on both console as well as on the GUI
+    	    */
 
 		
 		int rando = (int) Math.floor(Math.random()*4);
