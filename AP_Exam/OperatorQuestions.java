@@ -9,7 +9,9 @@ import Util.ConsoleMethods;
 	/**
 	 * 
 	 * This class asks a set of 5 questions about operators (&&, ||, &, |, ^) 
-	 * in a randomized question order and randomized answer choice order.
+	 * in a randomized question order and randomized answer choice order. 
+	 * Short circuit meaning: minimal evaluation. If an AND statement has two conditions. If the first is false,
+	 * then the second condition will not be checked.
 	 * @author Daniel and Fox
 	 * @see AnswerChoiceIndex
 	 */
@@ -27,7 +29,7 @@ public class OperatorQuestions extends Question{
 		Random rand = new Random();
 		String[] array = new String[]{"logical AND short circuit", "logical OR short circuit", "boolean logical AND", "boolean logical OR", "None of them"};
 		List<String> randArr = Arrays.asList(array);
-		int randomQuestion = rand.nextInt(5);
+		int randomQuestion = rand.nextInt(6);
 		switch(randomQuestion){
 		case 0:
 			this.question = "What does && stand for?";
@@ -109,6 +111,18 @@ public class OperatorQuestions extends Question{
 			this.answerKey = Ans4;
 			this.answer = "boolean logical OR";
 			break;
+		case 5:
+			int i = rand.nextInt(6) + 1;
+			int lower = i - 1; 
+			int higher = i + 3;
+			this.question = "if ( -1 < j < " + i + "|| j >= " + higher + ") { \n code \n } \n what is the range of values of j which this code runs";
+			this.choiceA = "[" + rand.nextInt(5) + ", " + rand.nextInt(14) + "]U" + "[" + rand.nextInt(5) + ", " + rand.nextInt(14) + "]";
+			this.choiceB = "[" + rand.nextInt(13) + ", " + rand.nextInt(18) + "]U" + "[" + rand.nextInt(5) + ", " + rand.nextInt(14) + "]";
+			this.choiceC = "[0" + ", " + lower + "]" + "U" + "[" + higher + ", infinity)";
+			this.choiceD = "[" + rand.nextInt(6) + ", " + rand.nextInt(10) + "]U" + "[" + rand.nextInt(5) + ", " + rand.nextInt(14) + "]";
+			this.choiceE = "[" + rand.nextInt(2) + ", " + rand.nextInt(30) + "]U"+ "[" + rand.nextInt(5) + ", " + rand.nextInt(14) + "]";
+			this.answerKey = 'C';
+			this.answer = this.choiceC;
 		}
 	}
 }
