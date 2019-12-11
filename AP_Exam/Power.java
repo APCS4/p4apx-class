@@ -25,12 +25,15 @@ public class Power extends Question{
 		 * setup the question 
 		 */
 		 ConsoleMethods.println("Power class setup QuestionData method");
-        /*Polymorphism is showacased in "protected void" allowing for the program to be run
-		on both console as well as on the GUI
-    	    */
+        //fix
+    	    
 
 		
-		int rando = (int) Math.floor(Math.random()*4);
+		int rando = (int) Math.floor(Math.random()*5);
+		int arg2= (int) Math.floor(Math.random()*10);
+		int arg3 = (int) Math.floor(Math.random()*30);
+		int hold=0;
+		
 		String[] pick = new String[5];
 		
 		int zero =2;
@@ -104,20 +107,23 @@ public class Power extends Question{
 			this.answerKey = Ans(pick,"Executing a block of code at least once and then repeatedly executing it based on a boolean condition");
 			this.answer = "U got it homes";
 			break;
-		/*
-		case 4://q5
 		
-			this.question = "Consider the following code segment:\n for (int p = 1; p <= 100; k++)\n  if ((p % 4) == 0)\n  System.out.println(p);\n";
-			pick=loadArray("for(intp=1;p<=25;p++)\n  System.out.println(p);", "\nfor(intp=1;p<=100;p=p+4)\n System.out.println(p);", "\nfor(intp=1;p<=100;p--)\n System.out.println(p % 9);", "\nfor(intp=4;p<=25;p=19*p)\n System.out.println(p);", "\nfor(intp=4;p<=100;p=p+4)\n System.out.println(p);");
+			
+		
+		case 4://q5 //rando question
+		
+			this.question = String.format("What is " + arg2 + "%" + arg3);
+			hold= arg2%arg3;
+			pick=loadArray("hold","8","15","40","3");
 			this.choiceA = pick[0];
 			this.choiceB = pick[1];
 			this.choiceC = pick[2];
 			this.choiceD = pick[3];
 			this.choiceE = pick[4];
-			this.answerKey = Ans(pick, "\nfor(intp=4;p<=100;p=p+4)\n System.out.println(p);");
+			this.answerKey = Ans(pick,"hold");
 			this.answer = "U got it homes";
 			break;
-		*/
+		
 		
 		default:
 			System.out.print("elproblem");//default case issue
