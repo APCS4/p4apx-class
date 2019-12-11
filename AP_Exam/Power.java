@@ -26,7 +26,7 @@ public class Power extends Question{
 		 */
 		 ConsoleMethods.println("Power class setup QuestionData method");
         /*Polymorphism is showacased in "protected void" allowing for the program to be run
-		on both console as well as on the GUI
+		  on both console and GUI
     	    */
 
 		
@@ -181,7 +181,7 @@ public class Power extends Question{
 		else if(ques[4].equals(an) == true)
 			ret = 'E';
 		else ret = 'Z'; //error problem problem
-		//alex mithil
+	
 		return ret;
 	}
 	
