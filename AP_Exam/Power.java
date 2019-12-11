@@ -1,5 +1,6 @@
 package AP_Exam;
 import java.util.Random;
+import java.util.Formatter;
 
 import Util.ConsoleMethods;
 
@@ -28,11 +29,11 @@ public class Power extends Question{
         //fix
     	    
 
-		
-		int rando = (int) Math.floor(Math.random()*5);
-		int arg2= (int) Math.floor(Math.random()*10);
-		int arg3 = (int) Math.floor(Math.random()*30);
-		int hold=0;
+		Random rand = new Random();
+		int rando = (int) Math.floor(Math.random()*4);
+		Integer num1 = rand.nextInt(50);
+    	Integer num2 = rand.nextInt(20);
+		int hold;
 		
 		String[] pick = new String[5];
 		
@@ -109,20 +110,40 @@ public class Power extends Question{
 			break;
 		
 			
-		
+		/*
 		case 4://q5 //rando question
+			System.out.println("Q5");
+			this.question = "Whats" + num1 + "% " + " (int)" + num1;
+			
+			//this.question = String.format("What is " + arg2 + "%"  + arg3);
+	        
+	        // format question choices
+	        this.choiceA = String.format("%f",(float)num1/(float)num2);
+	        this.choiceB = String.format("%i",num1+num2);
+	        this.choiceC = String.format("%f",(float)num1*(float)num2);
+	        this.choiceD = String.format("%x",num1%num2);
+	        this.choiceE = "None of the above";
 		
-			this.question = String.format("What is " + arg2 + "%" + arg3);
-			hold= arg2%arg3;
-			pick=loadArray("hold","8","15","40","3");
-			this.choiceA = pick[0];
-			this.choiceB = pick[1];
-			this.choiceC = pick[2];
-			this.choiceD = pick[3];
-			this.choiceE = pick[4];
-			this.answerKey = Ans(pick,"hold");
-			this.answer = "U got it homes";
-			break;
+			//hold=arg2%arg3;
+			//System.out.println(hold);
+			
+			//pick=loadArray("hold","8","15","40","3");
+			
+			
+			
+			
+			/*
+			this.choiceA = String.format("%i",hold);
+			this.choiceB = String.format("%i", 6);
+			this.choiceC = String.format("%i", 12);
+			this.choiceD = String.format("%i", 3);
+			this.choiceE = String.format("%i", 19);
+			*/
+			
+			//this.answerKey = (char) (num1%num2);
+			//this.answer = "U got it homes";
+			
+			//break;
 		
 		
 		default:
