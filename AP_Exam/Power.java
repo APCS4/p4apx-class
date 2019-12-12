@@ -1,6 +1,7 @@
 package AP_Exam;
 
 import java.util.Random;
+import java.util.Formatter;
 
 import Util.ConsoleMethods;
 
@@ -22,13 +23,28 @@ public class Power extends Question {
 		/**
 		 * setup the question
 		 */
+<<<<<<< HEAD
 		ConsoleMethods.println("Power class setup QuestionData method");
 		/*
 		 * Polymorphism is showacased in "protected void" allowing for the program to be
 		 * run on both console and GUI
 		 */
+=======
+		 ConsoleMethods.println("Power class setup QuestionData method");
+        //fix
+    	    
+>>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 
+<<<<<<< HEAD
 		int rando = (int) Math.floor(Math.random() * 4);
+=======
+		Random rand = new Random();
+		int rando = (int) Math.floor(Math.random()*4);
+		Integer num1 = rand.nextInt(50);
+    	Integer num2 = rand.nextInt(20);
+		int hold;
+		
+>>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 		String[] pick = new String[5];
 
 		int zero = 2;
@@ -105,6 +121,7 @@ public class Power extends Question {
 					"Executing a block of code at least once and then repeatedly executing it based on a boolean condition");
 			this.answer = "U got it homes";
 			break;
+<<<<<<< HEAD
 		/*
 		 * case 4://q5
 		 * 
@@ -121,6 +138,46 @@ public class Power extends Question {
 		 * "U got it homes"; break;
 		 */
 
+=======
+		
+			
+		/*
+		case 4://q5 //rando question
+			System.out.println("Q5");
+			this.question = "Whats" + num1 + "% " + " (int)" + num1;
+			
+			//this.question = String.format("What is " + arg2 + "%"  + arg3);
+	        
+	        // format question choices
+	        this.choiceA = String.format("%f",(float)num1/(float)num2);
+	        this.choiceB = String.format("%i",num1+num2);
+	        this.choiceC = String.format("%f",(float)num1*(float)num2);
+	        this.choiceD = String.format("%x",num1%num2);
+	        this.choiceE = "None of the above";
+		
+			//hold=arg2%arg3;
+			//System.out.println(hold);
+			
+			//pick=loadArray("hold","8","15","40","3");
+			
+			
+			
+			
+			/*
+			this.choiceA = String.format("%i",hold);
+			this.choiceB = String.format("%i", 6);
+			this.choiceC = String.format("%i", 12);
+			this.choiceD = String.format("%i", 3);
+			this.choiceE = String.format("%i", 19);
+			*/
+			
+			//this.answerKey = (char) (num1%num2);
+			//this.answer = "U got it homes";
+			
+			//break;
+		
+		
+>>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 		default:
 			System.out.print("elproblem");// default case issue
 
