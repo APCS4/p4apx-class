@@ -337,6 +337,10 @@ public class AP_UI extends MenuControl
 		});
 		btnNewButton_2.setBounds(635, 21, 91, 29);
 		contentPane.add(btnNewButton_2);
+		
+		JButton MAIN = new JButton("MAIN");
+		MAIN.setBounds(640, 371, 117, 29);
+		contentPane.add(MAIN);
 
 	}
 }
