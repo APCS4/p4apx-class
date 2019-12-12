@@ -15,6 +15,7 @@ import AP_Exam.encapsulationQuestions;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.Random;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import java.awt.Color;
@@ -81,7 +82,7 @@ public class AP_UI extends MenuControl
 		}); 
 		
 		btnEncapsulation.setBounds(609, 320, 110, 20);
-		contentPane.add(btnEncapsulation);
+		contentPane.add(btnEncapsulation); 
 		
 		JButton btnDataTypes = new JButton("Data Types");
 		btnDataTypes.setFont(new Font("Lucida Grande", Font.PLAIN, 12));
@@ -339,6 +340,134 @@ public class AP_UI extends MenuControl
 		contentPane.add(btnNewButton_2);
 		
 		JButton MAIN = new JButton("MAIN");
+		MAIN.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Random rand = new Random();
+				int question = rand.nextInt(16); 
+				
+				switch(question)
+				{
+				case 0: 
+				AP_Exam.Question a = new AP_Exam.MathQuestions();
+				testQuestion.setText(a.getQuestion());
+				testChoices.setText(a.getChoices()); 
+				testQuestionAnswer.setText(a.getAnswer());
+				break; 
+				
+				case 1: 
+					AP_Exam.encapsulationQuestions b = new AP_Exam.encapsulationQuestions();
+					testQuestion.setText(b.getQuestion());
+					testChoices.setText(b.getChoices());
+					testQuestionAnswer.setText(b.getAnswer());
+					break;
+					
+				case 2: 
+					AP_Exam.Question c = new AP_Exam.DataTypeQuestions();
+					testQuestion.setText(c.getQuestion());
+					testChoices.setText(c.getChoices());
+					testQuestionAnswer.setText(c.getAnswer());
+					break; 
+					
+			 
+				case 3: 
+					AP_Exam.Question d = new AP_Exam.BinaryMathQuestions();
+					testQuestion.setText(d.getQuestion());
+					testChoices.setText(d.getChoices());
+					testQuestionAnswer.setText(d.getAnswer());
+					break;
+					
+				case 4: 
+					AP_Exam.Question x = new AP_Exam.CA();
+					testQuestion.setText(x.getQuestion());
+					testChoices.setText(x.getChoices());
+					testQuestionAnswer.setText(x.getAnswer());
+					break; 
+					
+				case 5: 
+					AP_Exam.Question f = new AP_Exam.MVCQuestion();
+					testQuestion.setText(f.getQuestion());
+					testChoices.setText(f.getChoices());
+					testQuestionAnswer.setText(f.getAnswer());
+					break; 
+					
+				case 6: 
+					AP_Exam.Question g = new AP_Exam.OperatorQuestions();
+					testQuestion.setText(g.getQuestion());
+					testChoices.setText(g.getChoices());
+					testQuestionAnswer.setText(g.getAnswer());
+					break;
+					
+					
+					
+				case 7: 
+					/*AP_Exam.Question j = new AP_Exam.Power();
+					testQuestion.setText(j.getQuestion());
+					testChoices.setText(j.getChoices());
+					testQuestionAnswer.setText(j.getAnswer());*/
+					break; 
+				
+					
+			case 8:
+				AP_Exam.Question k = new AP_Exam.ArrayListQuestions();
+				testQuestion.setText(k.getQuestion());
+				testChoices.setText(k.getChoices());
+				testQuestionAnswer.setText(k.getAnswer());
+				break; 
+				
+			case 9: 
+				AP_Exam.Question l = new AP_Exam.BobaQuestions();
+				testQuestion.setText(l.getQuestion());
+				testChoices.setText(l.getChoices());
+				testQuestionAnswer.setText(l.getAnswer());
+				break; 
+				
+			case 10: 
+				AP_Exam.Question m = new AP_Exam.BackgroundInfoQuestions();
+				testQuestion.setText(m.getQuestion());
+				testChoices.setText(m.getChoices());
+				testQuestionAnswer.setText(m.getAnswer());
+				break; 
+				
+			case 11: 
+				AP_Exam.Question n = new AP_Exam.PowSqrt();
+				testQuestion.setText(n.getQuestion());
+				testChoices.setText(n.getChoices());
+				testQuestionAnswer.setText(n.getAnswer());
+				break; 
+				
+			case 12: 
+				AP_Exam.Question o = new AP_Exam.Recursion();
+				testQuestion.setText(o.getQuestion());
+				testChoices.setText(o.getChoices());
+				testQuestionAnswer.setText(o.getAnswer());
+				break; 
+				
+			case 13: 
+				AP_Exam.Question p = new AP_Exam.ListQuestions2();
+				testQuestion.setText(p.getQuestion());
+				testChoices.setText(p.getChoices());
+				testQuestionAnswer.setText(p.getAnswer());
+				break; 
+				
+			case 14: 
+				AP_Exam.Question q = new AP_Exam.PolymorphismQuestions();
+				testQuestion.setText(q.getQuestion());
+				testChoices.setText(q.getChoices());
+				testQuestionAnswer.setText(q.getAnswer());
+				break; 
+				
+			case 15: 
+				AP_Exam.Question r = new AP_Exam.Polymorph();
+				testQuestion.setText(r.getQuestion());
+				testChoices.setText(r.getChoices());
+				testQuestionAnswer.setText(r.getAnswer());
+				break; 
+			}
+				
+				
+			}
+			
+		});
 		MAIN.setBounds(640, 371, 117, 29);
 		contentPane.add(MAIN);
 
