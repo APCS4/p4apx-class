@@ -105,7 +105,6 @@ public class BobaQuestions extends Question{
     }
 	
 	
-<<<<<<< HEAD
 	 /**
      * Sets up a Binary Math questions according to instance variables (this...) in Question class
      *
@@ -113,19 +112,10 @@ public class BobaQuestions extends Question{
      * @Override
      */
     
-	ConsoleMethods.println("BobaQuestion class setupQuestionData method");
 	
-    protected void setupQuestionData() {
-=======
-	/**
-     * Sets up a Binary Math questions according to instance variables (this...) in Question class
-     *
-     * @return    void
-     */
-    //@Override
+
 	
 	protected void setupQuestionData() {
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 		//String array of answers
 		String[] choices = new String[5];
 		
