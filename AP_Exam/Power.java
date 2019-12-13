@@ -89,7 +89,7 @@ public class Power extends Question {
 			break;
 
 		case 2:// q3
-
+			//head fix
 			this.question = "Which of the following is most closely associated with iterations?";
 			pick = loadArray("loops such as for loops", "Recursion", "Instance Initialization", "Public Static Void",
 					"if else statements");
