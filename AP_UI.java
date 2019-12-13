@@ -339,11 +339,11 @@ public class AP_UI extends MenuControl
 		btnNewButton_2.setBounds(635, 21, 91, 29);
 		contentPane.add(btnNewButton_2);
 		
-		JButton MAIN = new JButton("MAIN");
+		JButton MAIN = new JButton("Review Questions");
 		MAIN.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Random rand = new Random();
-				int question = rand.nextInt(16); 
+				int question = rand.nextInt(14); 
 				
 				switch(question)
 				{
@@ -396,79 +396,65 @@ public class AP_UI extends MenuControl
 					testChoices.setText(g.getChoices());
 					testQuestionAnswer.setText(g.getAnswer());
 					break;
+				
 					
-					
-					
-				case 7: 
-					/*AP_Exam.Question j = new AP_Exam.Power();
-					testQuestion.setText(j.getQuestion());
-					testChoices.setText(j.getChoices());
-					testQuestionAnswer.setText(j.getAnswer());*/
+				case 7:
+					AP_Exam.Question k = new AP_Exam.ArrayListQuestions();
+					testQuestion.setText(k.getQuestion());
+					testChoices.setText(k.getChoices());
+					testQuestionAnswer.setText(k.getAnswer());
 					break; 
 				
+			
+				
+				case 8: 
+					AP_Exam.Question m = new AP_Exam.BackgroundInfoQuestions();
+					testQuestion.setText(m.getQuestion());
+					testChoices.setText(m.getChoices());
+					testQuestionAnswer.setText(m.getAnswer());
+					break; 
+				
+				case 9: 
+					AP_Exam.Question n = new AP_Exam.PowSqrt();
+					testQuestion.setText(n.getQuestion());
+					testChoices.setText(n.getChoices());
+					testQuestionAnswer.setText(n.getAnswer());
+					break; 
+				
+				case 10: 
+					AP_Exam.Question o = new AP_Exam.Recursion();
+					testQuestion.setText(o.getQuestion());
+					testChoices.setText(o.getChoices());
+					testQuestionAnswer.setText(o.getAnswer());
+					break; 
+				
+				case 11: 
+					AP_Exam.Question p = new AP_Exam.ListQuestions2();
+					testQuestion.setText(p.getQuestion());
+					testChoices.setText(p.getChoices());
+					testQuestionAnswer.setText(p.getAnswer());
+					break; 
+				
+				case 12: 
+					AP_Exam.Question q = new AP_Exam.PolymorphismQuestions();
+					testQuestion.setText(q.getQuestion());
+					testChoices.setText(q.getChoices());
+					testQuestionAnswer.setText(q.getAnswer());
+					break; 
 					
-			case 8:
-				AP_Exam.Question k = new AP_Exam.ArrayListQuestions();
-				testQuestion.setText(k.getQuestion());
-				testChoices.setText(k.getChoices());
-				testQuestionAnswer.setText(k.getAnswer());
-				break; 
-				
-			case 9: 
-				AP_Exam.Question l = new AP_Exam.BobaQuestions();
-				testQuestion.setText(l.getQuestion());
-				testChoices.setText(l.getChoices());
-				testQuestionAnswer.setText(l.getAnswer());
-				break; 
-				
-			case 10: 
-				AP_Exam.Question m = new AP_Exam.BackgroundInfoQuestions();
-				testQuestion.setText(m.getQuestion());
-				testChoices.setText(m.getChoices());
-				testQuestionAnswer.setText(m.getAnswer());
-				break; 
-				
-			case 11: 
-				AP_Exam.Question n = new AP_Exam.PowSqrt();
-				testQuestion.setText(n.getQuestion());
-				testChoices.setText(n.getChoices());
-				testQuestionAnswer.setText(n.getAnswer());
-				break; 
-				
-			case 12: 
-				AP_Exam.Question o = new AP_Exam.Recursion();
-				testQuestion.setText(o.getQuestion());
-				testChoices.setText(o.getChoices());
-				testQuestionAnswer.setText(o.getAnswer());
-				break; 
-				
-			case 13: 
-				AP_Exam.Question p = new AP_Exam.ListQuestions2();
-				testQuestion.setText(p.getQuestion());
-				testChoices.setText(p.getChoices());
-				testQuestionAnswer.setText(p.getAnswer());
-				break; 
-				
-			case 14: 
-				AP_Exam.Question q = new AP_Exam.PolymorphismQuestions();
-				testQuestion.setText(q.getQuestion());
-				testChoices.setText(q.getChoices());
-				testQuestionAnswer.setText(q.getAnswer());
-				break; 
-				
-			case 15: 
-				AP_Exam.Question r = new AP_Exam.Polymorph();
-				testQuestion.setText(r.getQuestion());
-				testChoices.setText(r.getChoices());
-				testQuestionAnswer.setText(r.getAnswer());
-				break; 
+				case 13: 
+					AP_Exam.Question r = new AP_Exam.Polymorph();
+					testQuestion.setText(r.getQuestion());
+					testChoices.setText(r.getChoices());
+					testQuestionAnswer.setText(r.getAnswer());
+					break; 
 			}
 				
 				
 			}
 			
 		});
-		MAIN.setBounds(640, 371, 117, 29);
+		MAIN.setBounds(640, 371, 138, 29);
 		contentPane.add(MAIN);
 
 	}
