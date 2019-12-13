@@ -23,28 +23,26 @@ public class Power extends Question {
 		/**
 		 * setup the question
 		 */
-<<<<<<< HEAD
+
 		ConsoleMethods.println("Power class setup QuestionData method");
 		/*
 		 * Polymorphism is showacased in "protected void" allowing for the program to be
 		 * run on both console and GUI
 		 */
-=======
+
 		 ConsoleMethods.println("Power class setup QuestionData method");
         //fix
     	    
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 
-<<<<<<< HEAD
 		int rando = (int) Math.floor(Math.random() * 4);
-=======
+
 		Random rand = new Random();
-		int rando = (int) Math.floor(Math.random()*4);
+		//int rando = (int) Math.floor(Math.random()*4);
 		Integer num1 = rand.nextInt(50);
     	Integer num2 = rand.nextInt(20);
 		int hold;
 		
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
+
 		String[] pick = new String[5];
 
 		int zero = 2;
@@ -121,7 +119,7 @@ public class Power extends Question {
 					"Executing a block of code at least once and then repeatedly executing it based on a boolean condition");
 			this.answer = "U got it homes";
 			break;
-<<<<<<< HEAD
+
 		/*
 		 * case 4://q5
 		 * 
@@ -138,7 +136,7 @@ public class Power extends Question {
 		 * "U got it homes"; break;
 		 */
 
-=======
+
 		
 			
 		/*
@@ -177,7 +175,7 @@ public class Power extends Question {
 			//break;
 		
 		
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
+
 		default:
 			System.out.print("elproblem");// default case issue
 
