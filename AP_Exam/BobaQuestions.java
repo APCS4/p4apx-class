@@ -12,6 +12,15 @@ import Util.ConsoleMethods;	// Console support
  */
 
 
+
+//hello I am here to tell you that 
+//the name of your team is very inappropriate 
+//and you should change it before china finds this code
+
+//also your formatting is bad, Mr. L would give you a 0/50 
+//or in his words "Formatting Horrible, Pseudocode missing, Doesn't even work 0/50"
+
+
 public class BobaQuestions extends Question{
 	private Integer arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10;
 	
