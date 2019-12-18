@@ -99,18 +99,18 @@ public class testModeCaller extends MenuControl{
 					
 					Random rand = new Random();
 					
-					int equal3=0;
+					int numberFull=0;
 					
 					//check if its full
 					for (int i= 0; i<13; i++)
 					{
 						if (calls[i]==3)
-							equal3 ++;
+							numberFull ++;
 								
 					}
 					int question; 
 					
-					if (equal3!=13)
+					if (numberFull!=13)
 					{
 						question = rand.nextInt(14); 
 						
