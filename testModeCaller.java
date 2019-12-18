@@ -28,9 +28,8 @@ import javax.swing.JScrollPane;
 import javax.swing.ImageIcon;
 import java.awt.Dimension;
 import javax.swing.JRadioButton;
-
+import java.util.Random;
 public class testModeCaller extends MenuControl{
-	
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
     private JTextArea testQuestion = new JTextArea();
@@ -85,7 +84,165 @@ public class testModeCaller extends MenuControl{
 			lblQuestion.setBounds(18, 34, 61, 16);
 			contentPane.add(lblQuestion);
 			
+			//Calls array
+			int calls[]= new int[13];
+			
+			//Fills array with 0, represents 0 calls to each type of question
+			for (int i= 0; i<13; i++)
+			{
+				calls[i]=0;
+			}
+			
 			JButton btnNextQuestion = new JButton("Next Question");
+			btnNextQuestion.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					Random rand = new Random();
+					
+					
+					
+					
+					int x=0;
+					
+					//check if its full
+					for (int i= 0; i<13; i++)
+					{
+						if (calls[i]==3)
+							x ++;
+								
+					}
+					while (x!=13)
+					{
+						
+					}
+					
+					int question = rand.nextInt(14); 
+					
+					//increment value in calls and call methods
+					switch(question)
+					{
+					case 0: 
+						calls[0]+=1;
+						AP_Exam.Question a = new AP_Exam.MathQuestions();
+						testQuestion.setText(a.getQuestion());
+						testChoices.setText(a.getChoices()); 
+						testQuestionAnswer.setText(a.getAnswer());
+						break; 
+					
+					case 1: 
+						calls[1]+=1;
+						AP_Exam.encapsulationQuestions b = new AP_Exam.encapsulationQuestions();
+						testQuestion.setText(b.getQuestion());
+						testChoices.setText(b.getChoices());
+						testQuestionAnswer.setText(b.getAnswer());
+						break;
+						
+					case 2:
+						calls[2]+=1;
+						AP_Exam.Question c = new AP_Exam.DataTypeQuestions();
+						testQuestion.setText(c.getQuestion());
+						testChoices.setText(c.getChoices());
+						testQuestionAnswer.setText(c.getAnswer());
+						break; 
+						
+				 
+					case 3: 
+						calls[3]+=1;
+						AP_Exam.Question d = new AP_Exam.BinaryMathQuestions();
+						testQuestion.setText(d.getQuestion());
+						testChoices.setText(d.getChoices());
+						testQuestionAnswer.setText(d.getAnswer());
+						break;
+						
+					case 4: 
+						calls[question]+=1;
+						AP_Exam.Question x = new AP_Exam.CA();
+						testQuestion.setText(x.getQuestion());
+						testChoices.setText(x.getChoices());
+						testQuestionAnswer.setText(x.getAnswer());
+						break; 
+						
+					case 5: 
+						calls[question]+=1;
+						AP_Exam.Question f = new AP_Exam.MVCQuestion();
+						testQuestion.setText(f.getQuestion());
+						testChoices.setText(f.getChoices());
+						testQuestionAnswer.setText(f.getAnswer());
+						break; 
+						
+					case 6: 
+						calls[question]+=1;
+						AP_Exam.Question g = new AP_Exam.OperatorQuestions();
+						testQuestion.setText(g.getQuestion());
+						testChoices.setText(g.getChoices());
+						testQuestionAnswer.setText(g.getAnswer());
+						break;
+					
+						
+					case 7:
+						calls[question]+=1;
+						int listPicker = rand.nextInt(2);
+						
+						if(listPicker==0)
+						{
+							AP_Exam.Question k = new AP_Exam.ArrayListQuestions();
+							testQuestion.setText(k.getQuestion());
+							testChoices.setText(k.getChoices());
+							testQuestionAnswer.setText(k.getAnswer());
+						}
+						else
+						{
+
+							AP_Exam.Question p = new AP_Exam.ListQuestions2();
+							testQuestion.setText(p.getQuestion());
+							testChoices.setText(p.getChoices());
+							testQuestionAnswer.setText(p.getAnswer());
+						}						
+						break; 
+					case 8: 
+						calls[question]+=1;
+						AP_Exam.Question m = new AP_Exam.BackgroundInfoQuestions();
+						testQuestion.setText(m.getQuestion());
+						testChoices.setText(m.getChoices());
+						testQuestionAnswer.setText(m.getAnswer());
+						break; 
+					
+					case 9: 
+						calls[question]+=1;
+						AP_Exam.Question n = new AP_Exam.PowSqrt();
+						testQuestion.setText(n.getQuestion());
+						testChoices.setText(n.getChoices());
+						testQuestionAnswer.setText(n.getAnswer());
+						break; 
+					
+					case 10: 
+						calls[question]+= 1;
+						AP_Exam.Question o = new AP_Exam.Recursion();
+						testQuestion.setText(o.getQuestion());
+						testChoices.setText(o.getChoices());
+						testQuestionAnswer.setText(o.getAnswer());
+						break; 
+					
+					case 11: 
+						calls[question]+= 1;
+						AP_Exam.Question q = new AP_Exam.PolymorphismQuestions();
+						testQuestion.setText(q.getQuestion());
+						testChoices.setText(q.getChoices());
+						testQuestionAnswer.setText(q.getAnswer());
+						break; 
+						
+					case 12: 
+						calls[question]+= 1;
+						AP_Exam.Question r = new AP_Exam.Polymorph();
+						testQuestion.setText(r.getQuestion());
+						testChoices.setText(r.getChoices());
+						testQuestionAnswer.setText(r.getAnswer());
+						break; 
+			
+					
+				}
+				}
+			});
 			btnNextQuestion.setBounds(265, 21, 175, 29);
 			contentPane.add(btnNextQuestion);
 			
