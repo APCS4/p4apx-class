@@ -122,6 +122,12 @@ public class MenuControl extends JFrame {
 		});
 		mnJig.add(mntmMethodSearch);
 		
+		JMenu mnTestMode = new JMenu("Test Mode");
+		menuBar.add(mnTestMode);
+		
+		JMenuItem mntmTakeTest = new JMenuItem("Take Test ");
+		mnTestMode.add(mntmTakeTest);
+		
 		
 	}
 	
