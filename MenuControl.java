@@ -126,6 +126,10 @@ public class MenuControl extends JFrame {
 		menuBar.add(mnTestMode);
 		
 		JMenuItem mntmTakeTest = new JMenuItem("Take Test ");
+		mntmTakeTest.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		mnTestMode.add(mntmTakeTest);
 		
 		

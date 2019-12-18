@@ -6,8 +6,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-//import com.sun.prism.Image;
-
 import AP_Exam.AP_Console;
 
 
