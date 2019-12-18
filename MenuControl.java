@@ -22,10 +22,14 @@ public class MenuControl extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
+	public static void main(String[] args) 
+	{
+		EventQueue.invokeLater(new Runnable() 
+		{
+			public void run() 
+			{
+				try 
+				{
 					MenuControl frame = new MenuControl();
 					frame.setVisible(true);
 				} catch (Exception e) {
@@ -38,7 +42,8 @@ public class MenuControl extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public MenuControl() {
+	public MenuControl() 
+	{
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -69,8 +74,10 @@ public class MenuControl extends JFrame {
 		menuBar.add(mnApTest);
 		
 		JMenuItem mntmApReview = new JMenuItem("Review");
-		mntmApReview.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		mntmApReview.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
 				AP_UI frame = new AP_UI();
 				frame.setVisible(true);
 			}
@@ -93,8 +100,10 @@ public class MenuControl extends JFrame {
 		mnLabs.add(mntmShorthand);
 		
 		JMenuItem mntmPalindrom = new JMenuItem("Palindrom 3");
-		mntmPalindrom.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		mntmPalindrom.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
 				PalindromeUI frame = new PalindromeUI();
 				frame.setVisible(true);			
 			}
@@ -105,8 +114,10 @@ public class MenuControl extends JFrame {
 		menuBar.add(mnJig);
 		
 		JMenuItem mntmCalculator = new JMenuItem("Calculator");
-		mntmCalculator.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		mntmCalculator.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
 				Calculator frame = new Calculator();
 				frame.setVisible(true);		
 			}
@@ -114,8 +125,10 @@ public class MenuControl extends JFrame {
 		mnJig.add(mntmCalculator);
 		
 		JMenuItem mntmMethodSearch = new JMenuItem("Method Search");
-		mntmMethodSearch.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		mntmMethodSearch.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
 				MethodSearchUI frame = new MethodSearchUI();
 				frame.setVisible(true);
 			}
