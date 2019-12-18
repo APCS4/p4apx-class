@@ -27,6 +27,7 @@ import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.ImageIcon;
 import java.awt.Dimension;
+import javax.swing.JRadioButton;
 
 public class testModeCaller extends MenuControl{
 	public testModeCaller() {
@@ -62,23 +63,6 @@ public class testModeCaller extends MenuControl{
 			
 			testQuestionAnswer.setEditable(false);
 			testQuestionAnswer.setLineWrap(true);
-
-
-			JButton btnNewButton_1 = new JButton(""); //the button
-			btnNewButton_1.setBorder(null);
-			btnNewButton_1.setIcon(new ImageIcon("recursion-button.jpg"));
-			btnNewButton_1.setBounds(453, 351, 175, 61);
-			btnNewButton_1.addActionListener(new ActionListener() 
-			{
-				public void actionPerformed(ActionEvent e) 
-				{
-					AP_Exam.Question q = new AP_Exam.Recursion();
-					testQuestion.setText(q.getQuestion());
-					testChoices.setText(q.getChoices());
-					testQuestionAnswer.setText(q.getAnswer());
-				}
-			});
-			contentPane.add(btnNewButton_1);
 			
 			JScrollPane scrollPane = new JScrollPane();
 			scrollPane.setBounds(16, 62, 418, 204);
@@ -96,6 +80,14 @@ public class testModeCaller extends MenuControl{
 			testChoices.setEditable(false);
 			testChoices.setLineWrap(true);
 			
+			JLabel lblQuestion = new JLabel("Question");
+			lblQuestion.setBounds(18, 34, 61, 16);
+			contentPane.add(lblQuestion);
+			
+			JButton btnNextQuestion = new JButton("Next Question");
+			btnNextQuestion.setBounds(265, 21, 175, 29);
+			contentPane.add(btnNextQuestion);
+			
 			JButton btnNewButton_2 = new JButton("Polymorph");
 			btnNewButton_2.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -106,9 +98,4 @@ public class testModeCaller extends MenuControl{
 				}
 			});
 	}
-	
-	
-	
-	
-
 }
