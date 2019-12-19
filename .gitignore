@@ -128,6 +128,29 @@
 /Boba_UI$3.class
 /MenuControl$6.class
 /testModeCaller.class
+<<<<<<< HEAD
+/AP_UIv2$1.class
+/AP_UIv2.class
+/AP_UIv2$10.class
+/AP_UIv2$11.class
+/AP_UIv2$12.class
+/AP_UIv2$13.class
+/AP_UIv2$14.class
+/AP_UIv2$15.class
+/AP_UIv2$16.class
+/AP_UIv2$17.class
+/AP_UIv2$18.class
+/AP_UIv2$19.class
+/AP_UIv2$2.class
+/AP_UIv2$20.class
+/AP_UIv2$3.class
+/AP_UIv2$4.class
+/AP_UIv2$5.class
+/AP_UIv2$6.class
+/AP_UIv2$7.class
+/AP_UIv2$8.class
+/AP_UIv2$9.class
+=======
 /testModeCaller$1.class
 /testModeCaller$2.class
 /MenuControl$7.class
@@ -155,3 +178,5 @@
 /AP_UIv2$17.class
 /AP_UIv2$18.class
 /AP_UIv2$19.class
+>>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class
+/ScoreReport.class
