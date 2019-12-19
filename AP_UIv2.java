@@ -2,7 +2,6 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
@@ -53,6 +52,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 	 */
 	public AP_UIv2() 
 	{
+		setResizable(false);
 		initialize();
 	}
 
@@ -71,14 +71,8 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 		
-		//background picture
-		background = new JLabel("");
-		background.setIcon(image2);
-		background.setBounds(0, 0, 1264, 681);
-		getContentPane().add(background);
-		
-		JButton btnNewButton = new JButton("");
-		btnNewButton.addActionListener(new ActionListener() 
+		JButton recursion = new JButton("");
+		recursion.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
@@ -86,22 +80,236 @@ public class AP_UIv2 extends JFrame implements ActionListener
 				PlaySound(audios);
 			}
 		});
-		btnNewButton.addMouseListener(new MouseAdapter() 
+		recursion.addMouseListener(new MouseAdapter() 
 		{
 			@Override
 			public void mouseEntered(MouseEvent e) 
 			{
-				btnNewButton.setIcon(new ImageIcon("review UI/buttonhover.png"));
+				recursion.setIcon(new ImageIcon("review UI/recursion2.jpg"));
 			}
 			public void mouseExited(MouseEvent e) 
 			{
-				btnNewButton.setIcon(new ImageIcon("review UI/button.png"));
+				recursion.setIcon(new ImageIcon("review UI/recursion1.jpg"));
 			}
 		});
-		btnNewButton.setBorder(null);
-		btnNewButton.setIcon(new ImageIcon("review UI/button.png"));
-		btnNewButton.setBounds(116, 89, 400, 50);
-		getContentPane().add(btnNewButton);
+		recursion.setBorder(null);
+		recursion.setIcon(new ImageIcon("review UI/recursion1.jpg"));
+		recursion.setBounds(70, 40, 400, 50);
+		getContentPane().add(recursion);
+		
+		JButton math = new JButton("");
+		math.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				File audios = new File("review UI/click.wav");
+				PlaySound(audios);
+			}
+		});
+		math.addMouseListener(new MouseAdapter() 
+		{
+			@Override
+			public void mouseEntered(MouseEvent e) 
+			{
+				math.setIcon(new ImageIcon("review UI/math2.jpg"));
+			}
+			public void mouseExited(MouseEvent e) 
+			{
+				math.setIcon(new ImageIcon("review UI/math1.jpg"));
+			}
+		});
+		math.setBorder(null);
+		math.setIcon(new ImageIcon("review UI/math1.jpg"));
+		math.setBounds(70, 100, 400, 50);
+		getContentPane().add(math);
+		
+		JButton binary = new JButton("");
+		binary.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				File audios = new File("review UI/click.wav");
+				PlaySound(audios);
+			}
+		});
+		binary.addMouseListener(new MouseAdapter() 
+		{
+			@Override
+			public void mouseEntered(MouseEvent e) 
+			{
+				binary.setIcon(new ImageIcon("review UI/binary2.jpg"));
+			}
+			public void mouseExited(MouseEvent e) 
+			{
+				binary.setIcon(new ImageIcon("review UI/binary1.jpg"));
+			}
+		});
+		binary.setBorder(null);
+		binary.setIcon(new ImageIcon("review UI/binary1.jpg"));
+		binary.setBounds(70, 160, 400, 50);
+		getContentPane().add(binary);
+		
+		JButton d_type = new JButton("");
+		d_type.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				File audios = new File("review UI/click.wav");
+				PlaySound(audios);
+			}
+		});
+		d_type.addMouseListener(new MouseAdapter() 
+		{
+			@Override
+			public void mouseEntered(MouseEvent e) 
+			{
+				d_type.setIcon(new ImageIcon("review UI/data2.jpg"));
+			}
+			public void mouseExited(MouseEvent e) 
+			{
+				d_type.setIcon(new ImageIcon("review UI/data1.jpg"));
+			}
+		});
+		d_type.setBorder(null);
+		d_type.setIcon(new ImageIcon("review UI/data1.jpg"));
+		d_type.setBounds(70, 220, 400, 50);
+		getContentPane().add(d_type);
+		
+		JButton code_anal = new JButton("");
+		code_anal.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				File audios = new File("review UI/click.wav");
+				PlaySound(audios);
+			}
+		});
+		code_anal.addMouseListener(new MouseAdapter() 
+		{
+			@Override
+			public void mouseEntered(MouseEvent e) 
+			{
+				code_anal.setIcon(new ImageIcon("review UI/code2.jpg"));
+			}
+			public void mouseExited(MouseEvent e) 
+			{
+				code_anal.setIcon(new ImageIcon("review UI/code1.jpg"));
+			}
+		});
+		code_anal.setBorder(null);
+		code_anal.setIcon(new ImageIcon("review UI/code1.jpg"));
+		code_anal.setBounds(70, 280, 400, 50);
+		getContentPane().add(code_anal);
+		
+		JButton polymorph = new JButton("");
+		polymorph.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				File audios = new File("review UI/click.wav");
+				PlaySound(audios);
+			}
+		});
+		polymorph.addMouseListener(new MouseAdapter() 
+		{
+			@Override
+			public void mouseEntered(MouseEvent e) 
+			{
+				polymorph.setIcon(new ImageIcon("review UI/poly2.jpg"));
+			}
+			public void mouseExited(MouseEvent e) 
+			{
+				polymorph.setIcon(new ImageIcon("review UI/poly1.jpg"));
+			}
+		});
+		polymorph.setBorder(null);
+		polymorph.setIcon(new ImageIcon("review UI/poly1.jpg"));
+		polymorph.setBounds(70, 340, 400, 50);
+		getContentPane().add(polymorph);
+		
+		JButton mvc = new JButton("");
+		mvc.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				File audios = new File("review UI/click.wav");
+				PlaySound(audios);
+			}
+		});
+		mvc.addMouseListener(new MouseAdapter() 
+		{
+			@Override
+			public void mouseEntered(MouseEvent e) 
+			{
+				mvc.setIcon(new ImageIcon("review UI/mvc2.jpg"));
+			}
+			public void mouseExited(MouseEvent e) 
+			{
+				mvc.setIcon(new ImageIcon("review UI/mvc1.jpg"));
+			}
+		});
+		mvc.setBorder(null);
+		mvc.setIcon(new ImageIcon("review UI/mvc1.jpg"));
+		mvc.setBounds(70, 400, 400, 50);
+		getContentPane().add(mvc);
+		
+		JButton array1 = new JButton("");
+		array1.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				File audios = new File("review UI/click.wav");
+				PlaySound(audios);
+			}
+		});
+		array1.addMouseListener(new MouseAdapter() 
+		{
+			@Override
+			public void mouseEntered(MouseEvent e) 
+			{
+				array1.setIcon(new ImageIcon("review UI/arra2.jpg"));
+			}
+			public void mouseExited(MouseEvent e) 
+			{
+				array1.setIcon(new ImageIcon("review UI/arra1.jpg"));
+			}
+		});
+		array1.setBorder(null);
+		array1.setIcon(new ImageIcon("review UI/arra1.jpg"));
+		array1.setBounds(70, 460, 400, 50);
+		getContentPane().add(array1);
+		
+		JButton backgroun = new JButton("");
+		backgroun.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				File audios = new File("review UI/click.wav");
+				PlaySound(audios);
+			}
+		});
+		backgroun.addMouseListener(new MouseAdapter() 
+		{
+			@Override
+			public void mouseEntered(MouseEvent e) 
+			{
+				backgroun.setIcon(new ImageIcon("review UI/back2.jpg"));
+			}
+			public void mouseExited(MouseEvent e) 
+			{
+				backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
+			}
+		});
+		backgroun.setBorder(null);
+		backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
+		backgroun.setBounds(70, 520, 400, 50);
+		getContentPane().add(backgroun);
+		
+		//background picture
+		background = new JLabel("");
+		background.setIcon(image2);
+		background.setBounds(0, 0, 1264, 681);
+		getContentPane().add(background);
 	}
 
 	static void PlaySound(File audio) 
