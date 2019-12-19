@@ -252,6 +252,10 @@ public class testModeCaller extends MenuControl{
 			btnNextQuestion.setBounds(265, 21, 175, 29);
 			contentPane.add(btnNextQuestion);
 			
+			JLabel lblYourScore = new JLabel("Your Score: ");
+			lblYourScore.setBounds(484, 34, 96, 16);
+			contentPane.add(lblYourScore);
+			
 			JButton btnNewButton_2 = new JButton("Polymorph");
 			btnNewButton_2.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -261,5 +265,9 @@ public class testModeCaller extends MenuControl{
 					testQuestionAnswer.setText(q.getAnswer());
 				}
 			});
+			
+			ScoreReport score = new ScoreReport(); 
+			
+			score.setVisible(true);
 	}
 }
