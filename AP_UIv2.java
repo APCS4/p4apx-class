@@ -10,9 +10,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.*;
-import javax.swing.AbstractAction;
-import javax.swing.Action;
+//import java.io.*;
+//import javax.swing.AbstractAction;
+//import javax.swing.Action;
 
 public class AP_UIv2 extends JFrame implements ActionListener
 {
@@ -71,7 +71,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		getContentPane().setLayout(null);
 		
 		JButton recursion = new JButton("");
-		recursion.setAction(action);
+		//recursion.setAction(action);
 		recursion.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
@@ -97,7 +97,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		getContentPane().add(recursion);
 		
 		JButton math = new JButton("");
-		math.setAction(action_1);
+		//math.setAction(action_1);
 		math.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
