@@ -208,7 +208,7 @@ public class AP_UI extends MenuControl
 				testQuestion.setText(a.getQuestion());
 				testChoices.setText(a.getChoices());
 				testQuestionAnswer.setText(a.getAnswer());
-			}
+			}//dsgiudgd
 		});
 		btnArraylist.setBounds(456, 99, 138, 29);
 		contentPane.add(btnArraylist);
