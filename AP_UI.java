@@ -6,8 +6,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-//import com.sun.prism.Image;
-
 import AP_Exam.AP_Console;
 
 
@@ -110,18 +108,6 @@ public class AP_UI extends MenuControl
 		btnBinaryMath.setBounds(144, 21, 101, 29);
 		contentPane.add(btnBinaryMath);
 		
-		JButton btnConsole = new JButton("C");
-		btnConsole.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				AP_Console.main();
-			}
-		});
-		btnConsole.setForeground(Color.RED);
-		btnConsole.setFont(new Font("Lucida Grande", Font.PLAIN, 8));
-		btnConsole.setBackground(Color.LIGHT_GRAY);
-		btnConsole.setBounds(406, 21, 21, 18);
-		contentPane.add(btnConsole);
-		
 		JLabel lblAnswer = new JLabel("Answer");
 		lblAnswer.setBounds(18, 376, 61, 16);
 		contentPane.add(lblAnswer);
@@ -146,7 +132,7 @@ public class AP_UI extends MenuControl
 			}
 		});
 		btnLucyandcynthia.setFont(new Font("Comic Sans MS", Font.BOLD | Font.ITALIC, 22));
-		btnLucyandcynthia.setBounds(453, 21, 188, 39);
+		btnLucyandcynthia.setBounds(453, 21, 138, 29);
 		contentPane.add(btnLucyandcynthia);
 
 		JButton btnMVC = new JButton("MVC");
@@ -174,7 +160,7 @@ public class AP_UI extends MenuControl
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnNewButton.setBounds(453, 157, 150, 39);
+		btnNewButton.setBounds(453, 157, 138, 29);
 		contentPane.add(btnNewButton);
 	
 		JButton btnAnthonyjude = new JButton("BooleanQuestions");
@@ -186,7 +172,7 @@ public class AP_UI extends MenuControl
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnAnthonyjude.setBounds(604, 226, 117, 29);
+		btnAnthonyjude.setBounds(604, 226, 138, 29);
 		contentPane.add(btnAnthonyjude);
 
 		JButton btnForLoop = new JButton("For Loop Question");
@@ -198,7 +184,7 @@ public class AP_UI extends MenuControl
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnForLoop.setBounds(453, 240, 100, 29);
+		btnForLoop.setBounds(453, 240, 138, 29);
 		contentPane.add(btnForLoop);
 
 		JButton Power = new JButton("Power");
@@ -224,14 +210,14 @@ public class AP_UI extends MenuControl
 				testQuestionAnswer.setText(a.getAnswer());
 			}
 		});
-		btnArraylist.setBounds(456, 99, 270, 56);
+		btnArraylist.setBounds(456, 99, 138, 29);
 		contentPane.add(btnArraylist);
 		
 		JButton btnTeamboba = new JButton("\u2727\uFF65\uFF9F: *\u2727\uFF65\uFF9F:* Team Boba *:\uFF65\uFF9F\u2727*:\uFF65\uFF9F\u2727");
 		btnTeamboba.setForeground(Color.RED);
 		btnTeamboba.setBackground(new Color(255, 255, 0));
 		btnTeamboba.setFont(new Font("Papyrus", Font.BOLD, 16));
-		btnTeamboba.setBounds(453, 264, 279, 39);
+		btnTeamboba.setBounds(453, 264, 138, 29);
 		contentPane.add(btnTeamboba);
 		btnTeamboba.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -336,7 +322,7 @@ public class AP_UI extends MenuControl
 				testQuestionAnswer.setText(q.getAnswer());
 			}
 		});
-		btnNewButton_2.setBounds(635, 21, 91, 29);
+		btnNewButton_2.setBounds(635, 21, 139, 29);
 		contentPane.add(btnNewButton_2);
 		
 		JButton MAIN = new JButton("Review Questions");
