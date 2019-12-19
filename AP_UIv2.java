@@ -23,8 +23,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 	private JLabel background;
 	private ImageIcon image2;
     private Timer timer;
-    private final Action action = new SwingAction();
-    private final Action action_1 = new SwingAction_1();
+
 
 	/**
 	 * Launch the application.
