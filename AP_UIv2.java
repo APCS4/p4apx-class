@@ -76,8 +76,8 @@ public class AP_UIv2 extends JFrame implements ActionListener
 				{
 		            File file = new File("review UI/click.mp3");
 		            FileInputStream in = new FileInputStream(file);
-		            AdvancedPlayer player = new AdvancedPlayer(in);
-		            player.play();
+		            //AdvancedPlayer player = new AdvancedPlayer(in);
+		            //player.play();
 		        } 
 		        catch (Exception ex) 
 				{
@@ -111,8 +111,8 @@ public class AP_UIv2 extends JFrame implements ActionListener
 				{
 		            File file = new File("review UI/click.mp3");
 		            FileInputStream in = new FileInputStream(file);
-		            AdvancedPlayer player = new AdvancedPlayer(in);
-		            player.play();
+		            //AdvancedPlayer player = new AdvancedPlayer(in);
+		            //player.play();
 		        } 
 		        catch (Exception ex) 
 				{
@@ -146,8 +146,8 @@ public class AP_UIv2 extends JFrame implements ActionListener
 				{
 		            File file = new File("review UI/click.mp3");
 		            FileInputStream in = new FileInputStream(file);
-		            AdvancedPlayer player = new AdvancedPlayer(in);
-		            player.play();
+		            //AdvancedPlayer player = new AdvancedPlayer(in);
+		            //player.play();
 		        } 
 		        catch (Exception ex) 
 				{
@@ -181,8 +181,8 @@ public class AP_UIv2 extends JFrame implements ActionListener
 				{
 		            File file = new File("review UI/click.mp3");
 		            FileInputStream in = new FileInputStream(file);
-		            AdvancedPlayer player = new AdvancedPlayer(in);
-		            player.play();
+		            //AdvancedPlayer player = new AdvancedPlayer(in);
+		            //player.play();
 		        } 
 		        catch (Exception ex) 
 				{
@@ -216,8 +216,8 @@ public class AP_UIv2 extends JFrame implements ActionListener
 				{
 		            File file = new File("review UI/click.mp3");
 		            FileInputStream in = new FileInputStream(file);
-		            AdvancedPlayer player = new AdvancedPlayer(in);
-		            player.play();
+		            //AdvancedPlayer player = new AdvancedPlayer(in);
+		            //player.play();
 		        } 
 		        catch (Exception ex) 
 				{
@@ -251,8 +251,8 @@ public class AP_UIv2 extends JFrame implements ActionListener
 				{
 		            File file = new File("review UI/click.mp3");
 		            FileInputStream in = new FileInputStream(file);
-		            AdvancedPlayer player = new AdvancedPlayer(in);
-		            player.play();
+		            //AdvancedPlayer player = new AdvancedPlayer(in);
+		            //player.play();
 		        } 
 		        catch (Exception ex) 
 				{
@@ -286,8 +286,8 @@ public class AP_UIv2 extends JFrame implements ActionListener
 				{
 		            File file = new File("review UI/click.mp3");
 		            FileInputStream in = new FileInputStream(file);
-		            AdvancedPlayer player = new AdvancedPlayer(in);
-		            player.play();
+		            //AdvancedPlayer player = new AdvancedPlayer(in);
+		            //player.play();
 		        } 
 		        catch (Exception ex) 
 				{
@@ -321,8 +321,8 @@ public class AP_UIv2 extends JFrame implements ActionListener
 				{
 		            File file = new File("review UI/click.mp3");
 		            FileInputStream in = new FileInputStream(file);
-		            AdvancedPlayer player = new AdvancedPlayer(in);
-		            player.play();
+		            //AdvancedPlayer player = new AdvancedPlayer(in);
+		            //player.play();
 		        } 
 		        catch (Exception ex) 
 				{
@@ -356,8 +356,8 @@ public class AP_UIv2 extends JFrame implements ActionListener
 				{
 		            File file = new File("review UI/click.mp3");
 		            FileInputStream in = new FileInputStream(file);
-		            AdvancedPlayer player = new AdvancedPlayer(in);
-		            player.play();
+		            //AdvancedPlayer player = new AdvancedPlayer(in);
+		            //player.play();
 		        } 
 		        catch (Exception ex) 
 				{
