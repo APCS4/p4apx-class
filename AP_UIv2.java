@@ -76,7 +76,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-
+				
 			}
 		});
 		recursion.addMouseListener(new MouseAdapter() 
@@ -302,6 +302,8 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		background.setIcon(image2);
 		background.setBounds(0, 0, 1280, 700);
 		getContentPane().add(background);
+		
+		
 	}
 
 	@Override
@@ -309,6 +311,8 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		// TODO Auto-generated method stub
 		
 	}
+
+	
 }
 
 
