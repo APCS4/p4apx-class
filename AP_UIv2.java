@@ -1,463 +1,399 @@
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-
-import AP_Exam.AP_Console;
-
-
-import AP_Exam.encapsulationQuestions;
-
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.util.Random;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JLabel;
-import java.awt.Color;
-import java.awt.Font;
-import javax.swing.JSeparator;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
-import javax.swing.AbstractAction;
-import javax.swing.Action;
-import javax.swing.JScrollBar;
-import javax.swing.JScrollPane;
+import javax.swing.Timer;
+import javazoom.jl.player.advanced.AdvancedPlayer;
 import javax.swing.ImageIcon;
-import java.awt.Dimension;
+import javax.swing.JButton;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.*;
 
-public class AP_UIv2 extends MenuControl 
+public class AP_UIv2 extends JFrame implements ActionListener
 {
-
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JPanel contentPane;
-    private JTextArea testQuestion = new JTextArea();
-    private JTextArea testChoices = new JTextArea();
-    private JTextArea testQuestionAnswer = new JTextArea();
-	
+	private JLabel background;
+	private ImageIcon image2;
+    private Timer timer;
+
 	/**
-	 * Create the frame.
+	 * Launch the application.
+	 */
+	public static void main(String[] args) 
+	{
+		EventQueue.invokeLater(new Runnable()
+		{
+			public void run()
+			{
+				try 
+				{
+					AP_UIv2 frame = new AP_UIv2();
+					frame.setVisible(true);
+				} 
+				catch (Exception e)
+				{
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
 	 */
 	public AP_UIv2() 
 	{
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 784, 488);
-		contentPane = new JPanel();
-		contentPane.setBackground(new Color(220, 220, 220));
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
+		setResizable(false);
+		initialize();
+	}
 
-		JLabel lblExamSections = new JLabel("Exam Sections");
-		lblExamSections.setBounds(18, 6, 91, 16);
-		contentPane.add(lblExamSections);
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() 
+	{
+		timer = new Timer(20, this);
+        timer.start();
+        
+        image2 = new ImageIcon(getClass().getResource("review UI/background.png"));
+        
+		setBounds(100, 100, 1280, 720);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		getContentPane().setLayout(null);
 		
-		JButton btnMath = new JButton("Math");
-		btnMath.setFont(new Font("Lucida Grande", Font.PLAIN, 12));
-		btnMath.addActionListener(new ActionListener() 
+		JButton recursion = new JButton("");
+		recursion.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				AP_Exam.Question q = new AP_Exam.MathQuestions();
-				testQuestion.setText(q.getQuestion());
-				testChoices.setText(q.getChoices()); 
-				testQuestionAnswer.setText(q.getAnswer());
-			}
-		});
-		btnMath.setBounds(18, 21, 91, 29);
-		contentPane.add(btnMath);
-		
-		JButton btnEncapsulation = new JButton("Encapsulation");
-		btnEncapsulation.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				AP_Exam.encapsulationQuestions q = new AP_Exam.encapsulationQuestions();
-				testQuestion.setText(q.getQuestion());
-				testChoices.setText(q.getChoices());
-				testQuestionAnswer.setText(q.getAnswer());
-			} 
-		}); 
-		
-		btnEncapsulation.setBounds(609, 320, 110, 20);
-		contentPane.add(btnEncapsulation); 
-		
-		JButton btnDataTypes = new JButton("Data Types");
-		btnDataTypes.setFont(new Font("Lucida Grande", Font.PLAIN, 12));
-		btnDataTypes.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				AP_Exam.Question q = new AP_Exam.DataTypeQuestions();
-				testQuestion.setText(q.getQuestion());
-				testChoices.setText(q.getChoices());
-				testQuestionAnswer.setText(q.getAnswer());
-			}
-		});
-		btnDataTypes.setBounds(264, 21, 101, 29);
-		contentPane.add(btnDataTypes);
-		
-		JButton btnBinaryMath = new JButton("Binary Math");
-		btnBinaryMath.setFont(new Font("Lucida Grande", Font.PLAIN, 12));
-		btnBinaryMath.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				AP_Exam.Question q = new AP_Exam.BinaryMathQuestions();
-				testQuestion.setText(q.getQuestion());
-				testChoices.setText(q.getChoices());
-				testQuestionAnswer.setText(q.getAnswer());
-			}
-		});
-		btnBinaryMath.setBounds(144, 21, 101, 29);
-		contentPane.add(btnBinaryMath);
-		
-		JButton btnConsole = new JButton("C");
-		btnConsole.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				AP_Console.main();
-			}
-		});
-		btnConsole.setForeground(Color.RED);
-		btnConsole.setFont(new Font("Lucida Grande", Font.PLAIN, 8));
-		btnConsole.setBackground(Color.LIGHT_GRAY);
-		btnConsole.setBounds(406, 21, 21, 18);
-		contentPane.add(btnConsole);
-		
-		JLabel lblAnswer = new JLabel("Answer");
-		lblAnswer.setBounds(18, 376, 61, 16);
-		contentPane.add(lblAnswer);
-		
-		JScrollPane scrollPane_2 = new JScrollPane();
-		scrollPane_2.setBounds(74, 376, 363, 39);
-		contentPane.add(scrollPane_2);
-		scrollPane_2.setViewportView(testQuestionAnswer);
-		
-		testQuestionAnswer.setEditable(false);
-		testQuestionAnswer.setLineWrap(true);
-		
-		JButton btnLucyandcynthia = new JButton("Code Analysis");
-		btnLucyandcynthia.setForeground(new Color(0, 255, 0));
-		btnLucyandcynthia.setBackground(new Color(255, 20, 147));
-		btnLucyandcynthia.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				AP_Exam.Question q = new AP_Exam.CA();
-				testQuestion.setText(q.getQuestion());
-				testChoices.setText(q.getChoices());
-				testQuestionAnswer.setText(q.getAnswer());
-			}
-		});
-		btnLucyandcynthia.setFont(new Font("Comic Sans MS", Font.BOLD | Font.ITALIC, 22));
-		btnLucyandcynthia.setBounds(453, 21, 188, 39);
-		contentPane.add(btnLucyandcynthia);
-
-		JButton btnMVC = new JButton("MVC");
-		btnMVC.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				AP_Exam.Question q = new AP_Exam.MVCQuestion();
-				testQuestion.setText(q.getQuestion());
-				testChoices.setText(q.getChoices());
-				testQuestionAnswer.setText(q.getAnswer());
-				
-			}
-		});
-		btnMVC.setBounds(453, 73, 138, 29);
-		contentPane.add(btnMVC);
-		
-
-		JButton btnNewButton = new JButton("ʕ•ᴥ•ʔDanielAndFox");
-		btnNewButton.setForeground(Color.MAGENTA);
-		btnNewButton.setFont(new Font("Comic Sans MS", Font.PLAIN, 14));
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				AP_Exam.Question q = new AP_Exam.OperatorQuestions();
-				testQuestion.setText(q.getQuestion());
-				testChoices.setText(q.getChoices());
-				testQuestionAnswer.setText(q.getAnswer());
-			}
-		});
-		btnNewButton.setBounds(453, 157, 150, 39);
-		contentPane.add(btnNewButton);
-	
-		JButton btnAnthonyjude = new JButton("BooleanQuestions");
-		btnAnthonyjude.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				AP_Exam.Question q = new AP_Exam.BooleanQuestions();
-				testQuestion.setText(q.getQuestion());
-				testChoices.setText(q.getChoices("k"));
-				testQuestionAnswer.setText(q.getAnswer());
-			}
-		});
-		btnAnthonyjude.setBounds(604, 226, 117, 29);
-		contentPane.add(btnAnthonyjude);
-
-		JButton btnForLoop = new JButton("For Loop Question");
-		btnForLoop.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				AP_Exam.Question q = new ForLoopBackend();
-				testQuestion.setText(q.getQuestion());
-				testChoices.setText(q.getChoices("k"));
-				testQuestionAnswer.setText(q.getAnswer());
-			}
-		});
-		btnForLoop.setBounds(453, 240, 100, 29);
-		contentPane.add(btnForLoop);
-
-		JButton Power = new JButton("Power");
-		Power.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				AP_Exam.Question q = new AP_Exam.Power();
-				testQuestion.setText(q.getQuestion());
-				testChoices.setText(q.getChoices());
-				testQuestionAnswer.setText(q.getAnswer());
-			}
-		});
-		Power.setBounds(453, 209, 138, 29);
-		contentPane.add(Power);
-	
-		JButton btnArraylist = new JButton("ArrayList");
-		btnArraylist.setBorder(null);
-		btnArraylist.setIcon(new ImageIcon("Ethan.jpg"));
-		btnArraylist.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				AP_Exam.Question a = new AP_Exam.ArrayListQuestions();
-				testQuestion.setText(a.getQuestion());
-				testChoices.setText(a.getChoices());
-				testQuestionAnswer.setText(a.getAnswer());
-			}
-		});
-		btnArraylist.setBounds(456, 99, 270, 56);
-		contentPane.add(btnArraylist);
-		
-		JButton btnTeamboba = new JButton("\u2727\uFF65\uFF9F: *\u2727\uFF65\uFF9F:* Team Boba *:\uFF65\uFF9F\u2727*:\uFF65\uFF9F\u2727");
-		btnTeamboba.setForeground(Color.RED);
-		btnTeamboba.setBackground(new Color(255, 255, 0));
-		btnTeamboba.setFont(new Font("Papyrus", Font.BOLD, 16));
-		btnTeamboba.setBounds(453, 264, 279, 39);
-		contentPane.add(btnTeamboba);
-		btnTeamboba.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				AP_Exam.Question q = new AP_Exam.BobaQuestions();
-				testQuestion.setText(q.getQuestion());
-				testChoices.setText(q.getChoices());
-				testQuestionAnswer.setText(q.getAnswer());
-			}
-		});
-		
-		
-		JButton btnBackground = new JButton("Background Info");
-		btnBackground.setFont(new Font("Lucida Grande", Font.BOLD, 12));
-		btnBackground.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				AP_Exam.Question q = new AP_Exam.BackgroundInfoQuestions();
-				testQuestion.setText(q.getQuestion());
-				testChoices.setText(q.getChoices());
-				testQuestionAnswer.setText(q.getAnswer());
-			}
-		});
-		btnBackground.setBounds(603, 73, 138, 29);
-		contentPane.add(btnBackground);
-		
-		JButton btnPowandsqrt = new JButton("PowAndSqrt");
-		btnPowandsqrt.setBounds(603, 191, 138, 29);
-		contentPane.add(btnPowandsqrt);
-		btnPowandsqrt.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				AP_Exam.Question q = new AP_Exam.PowSqrt();
-				testQuestion.setText(q.getQuestion());
-				testChoices.setText(q.getChoices());
-				testQuestionAnswer.setText(q.getAnswer());
-			}
-		});
-
-
-		JButton btnNewButton_1 = new JButton(""); //the button
-		btnNewButton_1.setBorder(null);
-		btnNewButton_1.setIcon(new ImageIcon("recursion-button.jpg"));
-		btnNewButton_1.setBounds(453, 351, 175, 61);
-		btnNewButton_1.addActionListener(new ActionListener() 
-		{
-			public void actionPerformed(ActionEvent e) 
-			{
-				AP_Exam.Question q = new AP_Exam.Recursion();
-				testQuestion.setText(q.getQuestion());
-				testChoices.setText(q.getChoices());
-				testQuestionAnswer.setText(q.getAnswer());
-			}
-		});
-		contentPane.add(btnNewButton_1);
-		
-		//Anika and Aashi's arraylist questions
-		JButton btnArraylist_2 = new JButton(" ArrayList 2");
-		btnArraylist_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) 
-			{
-				AP_Exam.Question q = new AP_Exam.ListQuestions2();
-				testQuestion.setText(q.getQuestion());
-				testChoices.setText(q.getChoices());
-				testQuestionAnswer.setText(q.getAnswer());
-			}
-		});
-		btnArraylist_2.setBounds(453, 316, 138, 29);
-		contentPane.add(btnArraylist_2);
-		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(16, 62, 418, 204);
-		contentPane.add(scrollPane);
-		scrollPane.setViewportView(testQuestion);
-		
-		testQuestion.setEditable(false);
-		testQuestion.setLineWrap(true);
-		
-		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(16, 278, 418, 86);
-		contentPane.add(scrollPane_1);
-		scrollPane_1.setViewportView(testChoices);
-		
-		testChoices.setEditable(false);
-		testChoices.setLineWrap(true);
-		
-		JButton btnPolymorphism = new JButton("Polymorphism");
-		btnPolymorphism.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				AP_Exam.Question q = new AP_Exam.PolymorphismQuestions();
-				testQuestion.setText(q.getQuestion());
-				testChoices.setText(q.getChoices());
-				testQuestionAnswer.setText(q.getAnswer());
-			}
-		});
-		btnPolymorphism.setBounds(604, 157, 137, 28);
-		contentPane.add(btnPolymorphism);
-		
-		JButton btnNewButton_2 = new JButton("Polymorph");
-		btnNewButton_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				AP_Exam.Question q = new AP_Exam.Polymorph();
-				testQuestion.setText(q.getQuestion());
-				testChoices.setText(q.getChoices());
-				testQuestionAnswer.setText(q.getAnswer());
-			}
-		});
-		btnNewButton_2.setBounds(635, 21, 91, 29);
-		contentPane.add(btnNewButton_2);
-		
-		JButton MAIN = new JButton("Review Questions");
-		MAIN.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Random rand = new Random();
-				int question = rand.nextInt(14); 
-				
-				switch(question)
+				try
 				{
-				case 0: 
-				AP_Exam.Question a = new AP_Exam.MathQuestions();
-				testQuestion.setText(a.getQuestion());
-				testChoices.setText(a.getChoices()); 
-				testQuestionAnswer.setText(a.getAnswer());
-				break; 
-				
-				case 1: 
-					AP_Exam.encapsulationQuestions b = new AP_Exam.encapsulationQuestions();
-					testQuestion.setText(b.getQuestion());
-					testChoices.setText(b.getChoices());
-					testQuestionAnswer.setText(b.getAnswer());
-					break;
-					
-				case 2: 
-					AP_Exam.Question c = new AP_Exam.DataTypeQuestions();
-					testQuestion.setText(c.getQuestion());
-					testChoices.setText(c.getChoices());
-					testQuestionAnswer.setText(c.getAnswer());
-					break; 
-					
-			 
-				case 3: 
-					AP_Exam.Question d = new AP_Exam.BinaryMathQuestions();
-					testQuestion.setText(d.getQuestion());
-					testChoices.setText(d.getChoices());
-					testQuestionAnswer.setText(d.getAnswer());
-					break;
-					
-				case 4: 
-					AP_Exam.Question x = new AP_Exam.CA();
-					testQuestion.setText(x.getQuestion());
-					testChoices.setText(x.getChoices());
-					testQuestionAnswer.setText(x.getAnswer());
-					break; 
-					
-				case 5: 
-					AP_Exam.Question f = new AP_Exam.MVCQuestion();
-					testQuestion.setText(f.getQuestion());
-					testChoices.setText(f.getChoices());
-					testQuestionAnswer.setText(f.getAnswer());
-					break; 
-					
-				case 6: 
-					AP_Exam.Question g = new AP_Exam.OperatorQuestions();
-					testQuestion.setText(g.getQuestion());
-					testChoices.setText(g.getChoices());
-					testQuestionAnswer.setText(g.getAnswer());
-					break;
-				
-					
-				case 7:
-					AP_Exam.Question k = new AP_Exam.ArrayListQuestions();
-					testQuestion.setText(k.getQuestion());
-					testChoices.setText(k.getChoices());
-					testQuestionAnswer.setText(k.getAnswer());
-					break; 
-				
-			
-				
-				case 8: 
-					AP_Exam.Question m = new AP_Exam.BackgroundInfoQuestions();
-					testQuestion.setText(m.getQuestion());
-					testChoices.setText(m.getChoices());
-					testQuestionAnswer.setText(m.getAnswer());
-					break; 
-				
-				case 9: 
-					AP_Exam.Question n = new AP_Exam.PowSqrt();
-					testQuestion.setText(n.getQuestion());
-					testChoices.setText(n.getChoices());
-					testQuestionAnswer.setText(n.getAnswer());
-					break; 
-				
-				case 10: 
-					AP_Exam.Question o = new AP_Exam.Recursion();
-					testQuestion.setText(o.getQuestion());
-					testChoices.setText(o.getChoices());
-					testQuestionAnswer.setText(o.getAnswer());
-					break; 
-				
-				case 11: 
-					AP_Exam.Question p = new AP_Exam.ListQuestions2();
-					testQuestion.setText(p.getQuestion());
-					testChoices.setText(p.getChoices());
-					testQuestionAnswer.setText(p.getAnswer());
-					break; 
-				
-				case 12: 
-					AP_Exam.Question q = new AP_Exam.PolymorphismQuestions();
-					testQuestion.setText(q.getQuestion());
-					testChoices.setText(q.getChoices());
-					testQuestionAnswer.setText(q.getAnswer());
-					break; 
-					
-				case 13: 
-					AP_Exam.Question r = new AP_Exam.Polymorph();
-					testQuestion.setText(r.getQuestion());
-					testChoices.setText(r.getChoices());
-					testQuestionAnswer.setText(r.getAnswer());
-					break; 
+		            File file = new File("review UI/click.mp3");
+		            FileInputStream in = new FileInputStream(file);
+		            AdvancedPlayer player = new AdvancedPlayer(in);
+		            player.play();
+		        } 
+		        catch (Exception ex) 
+				{
+		            ex.printStackTrace();
+		        }
 			}
-				
-				
-			}
-			
 		});
-		MAIN.setBounds(640, 371, 138, 29);
-		contentPane.add(MAIN);
+		recursion.addMouseListener(new MouseAdapter() 
+		{
+			@Override
+			public void mouseEntered(MouseEvent e) 
+			{
+				recursion.setIcon(new ImageIcon("review UI/recursion2.jpg"));
+			}
+			public void mouseExited(MouseEvent e) 
+			{
+				recursion.setIcon(new ImageIcon("review UI/recursion1.jpg"));
+			}
+		});
+		recursion.setBorder(null);
+		recursion.setIcon(new ImageIcon("review UI/recursion1.jpg"));
+		recursion.setBounds(70, 40, 400, 50);
+		getContentPane().add(recursion);
+		
+		JButton math = new JButton("");
+		math.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				try
+				{
+		            File file = new File("review UI/click.mp3");
+		            FileInputStream in = new FileInputStream(file);
+		            AdvancedPlayer player = new AdvancedPlayer(in);
+		            player.play();
+		        } 
+		        catch (Exception ex) 
+				{
+		            ex.printStackTrace();
+		        }
+			}
+		});
+		math.addMouseListener(new MouseAdapter() 
+		{
+			@Override
+			public void mouseEntered(MouseEvent e) 
+			{
+				math.setIcon(new ImageIcon("review UI/math2.jpg"));
+			}
+			public void mouseExited(MouseEvent e) 
+			{
+				math.setIcon(new ImageIcon("review UI/math1.jpg"));
+			}
+		});
+		math.setBorder(null);
+		math.setIcon(new ImageIcon("review UI/math1.jpg"));
+		math.setBounds(70, 100, 400, 50);
+		getContentPane().add(math);
+		
+		JButton binary = new JButton("");
+		binary.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				try
+				{
+		            File file = new File("review UI/click.mp3");
+		            FileInputStream in = new FileInputStream(file);
+		            AdvancedPlayer player = new AdvancedPlayer(in);
+		            player.play();
+		        } 
+		        catch (Exception ex) 
+				{
+		            ex.printStackTrace();
+		        }
+			}
+		});
+		binary.addMouseListener(new MouseAdapter() 
+		{
+			@Override
+			public void mouseEntered(MouseEvent e) 
+			{
+				binary.setIcon(new ImageIcon("review UI/binary2.jpg"));
+			}
+			public void mouseExited(MouseEvent e) 
+			{
+				binary.setIcon(new ImageIcon("review UI/binary1.jpg"));
+			}
+		});
+		binary.setBorder(null);
+		binary.setIcon(new ImageIcon("review UI/binary1.jpg"));
+		binary.setBounds(70, 160, 400, 50);
+		getContentPane().add(binary);
+		
+		JButton d_type = new JButton("");
+		d_type.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				try
+				{
+		            File file = new File("review UI/click.mp3");
+		            FileInputStream in = new FileInputStream(file);
+		            AdvancedPlayer player = new AdvancedPlayer(in);
+		            player.play();
+		        } 
+		        catch (Exception ex) 
+				{
+		            ex.printStackTrace();
+		        }
+			}
+		});
+		d_type.addMouseListener(new MouseAdapter() 
+		{
+			@Override
+			public void mouseEntered(MouseEvent e) 
+			{
+				d_type.setIcon(new ImageIcon("review UI/data2.jpg"));
+			}
+			public void mouseExited(MouseEvent e) 
+			{
+				d_type.setIcon(new ImageIcon("review UI/data1.jpg"));
+			}
+		});
+		d_type.setBorder(null);
+		d_type.setIcon(new ImageIcon("review UI/data1.jpg"));
+		d_type.setBounds(70, 220, 400, 50);
+		getContentPane().add(d_type);
+		
+		JButton code_anal = new JButton("");
+		code_anal.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				try
+				{
+		            File file = new File("review UI/click.mp3");
+		            FileInputStream in = new FileInputStream(file);
+		            AdvancedPlayer player = new AdvancedPlayer(in);
+		            player.play();
+		        } 
+		        catch (Exception ex) 
+				{
+		            ex.printStackTrace();
+		        }
+			}
+		});
+		code_anal.addMouseListener(new MouseAdapter() 
+		{
+			@Override
+			public void mouseEntered(MouseEvent e) 
+			{
+				code_anal.setIcon(new ImageIcon("review UI/code2.jpg"));
+			}
+			public void mouseExited(MouseEvent e) 
+			{
+				code_anal.setIcon(new ImageIcon("review UI/code1.jpg"));
+			}
+		});
+		code_anal.setBorder(null);
+		code_anal.setIcon(new ImageIcon("review UI/code1.jpg"));
+		code_anal.setBounds(70, 280, 400, 50);
+		getContentPane().add(code_anal);
+		
+		JButton polymorph = new JButton("");
+		polymorph.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				try
+				{
+		            File file = new File("review UI/click.mp3");
+		            FileInputStream in = new FileInputStream(file);
+		            AdvancedPlayer player = new AdvancedPlayer(in);
+		            player.play();
+		        } 
+		        catch (Exception ex) 
+				{
+		            ex.printStackTrace();
+		        }
+			}
+		});
+		polymorph.addMouseListener(new MouseAdapter() 
+		{
+			@Override
+			public void mouseEntered(MouseEvent e) 
+			{
+				polymorph.setIcon(new ImageIcon("review UI/poly2.jpg"));
+			}
+			public void mouseExited(MouseEvent e) 
+			{
+				polymorph.setIcon(new ImageIcon("review UI/poly1.jpg"));
+			}
+		});
+		polymorph.setBorder(null);
+		polymorph.setIcon(new ImageIcon("review UI/poly1.jpg"));
+		polymorph.setBounds(70, 340, 400, 50);
+		getContentPane().add(polymorph);
+		
+		JButton mvc = new JButton("");
+		mvc.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				try
+				{
+		            File file = new File("review UI/click.mp3");
+		            FileInputStream in = new FileInputStream(file);
+		            AdvancedPlayer player = new AdvancedPlayer(in);
+		            player.play();
+		        } 
+		        catch (Exception ex) 
+				{
+		            ex.printStackTrace();
+		        }
+			}
+		});
+		mvc.addMouseListener(new MouseAdapter() 
+		{
+			@Override
+			public void mouseEntered(MouseEvent e) 
+			{
+				mvc.setIcon(new ImageIcon("review UI/mvc2.jpg"));
+			}
+			public void mouseExited(MouseEvent e) 
+			{
+				mvc.setIcon(new ImageIcon("review UI/mvc1.jpg"));
+			}
+		});
+		mvc.setBorder(null);
+		mvc.setIcon(new ImageIcon("review UI/mvc1.jpg"));
+		mvc.setBounds(70, 400, 400, 50);
+		getContentPane().add(mvc);
+		
+		JButton array1 = new JButton("");
+		array1.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				try
+				{
+		            File file = new File("review UI/click.mp3");
+		            FileInputStream in = new FileInputStream(file);
+		            AdvancedPlayer player = new AdvancedPlayer(in);
+		            player.play();
+		        } 
+		        catch (Exception ex) 
+				{
+		            ex.printStackTrace();
+		        }
+			}
+		});
+		array1.addMouseListener(new MouseAdapter() 
+		{
+			@Override
+			public void mouseEntered(MouseEvent e) 
+			{
+				array1.setIcon(new ImageIcon("review UI/arra2.jpg"));
+			}
+			public void mouseExited(MouseEvent e) 
+			{
+				array1.setIcon(new ImageIcon("review UI/arra1.jpg"));
+			}
+		});
+		array1.setBorder(null);
+		array1.setIcon(new ImageIcon("review UI/arra1.jpg"));
+		array1.setBounds(70, 460, 400, 50);
+		getContentPane().add(array1);
+		
+		JButton backgroun = new JButton("");
+		backgroun.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				try
+				{
+		            File file = new File("review UI/click.mp3");
+		            FileInputStream in = new FileInputStream(file);
+		            AdvancedPlayer player = new AdvancedPlayer(in);
+		            player.play();
+		        } 
+		        catch (Exception ex) 
+				{
+		            ex.printStackTrace();
+		        }
+			}
+		});
+		backgroun.addMouseListener(new MouseAdapter() 
+		{
+			@Override
+			public void mouseEntered(MouseEvent e) 
+			{
+				backgroun.setIcon(new ImageIcon("review UI/back2.jpg"));
+			}
+			public void mouseExited(MouseEvent e) 
+			{
+				backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
+			}
+		});
+		backgroun.setBorder(null);
+		backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
+		backgroun.setBounds(70, 520, 400, 50);
+		getContentPane().add(backgroun);
+		
+		//background picture
+		background = new JLabel("");
+		background.setIcon(image2);
+		background.setBounds(0, 0, 1280, 700);
+		getContentPane().add(background);
+	}
 
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }
+
 

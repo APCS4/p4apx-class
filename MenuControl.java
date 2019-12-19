@@ -86,6 +86,16 @@ public class MenuControl extends JFrame {
 		
 		JMenuItem mntmReviv2 = new JMenuItem("Review v2");
 		mnApTest.add(mntmReviv2);
+		JMenuItem mntmApRev2 = new JMenuItem("Review v2");
+		mntmApRev2.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				AP_UIv2 frame = new AP_UIv2();
+				frame.setVisible(true);
+			}
+		});
+		mnApTest.add(mntmApRev2);
 		
 		JMenu mnIntro = new JMenu("Intro");
 		menuBar.add(mnIntro);
@@ -144,6 +154,9 @@ public class MenuControl extends JFrame {
 		JMenuItem mntmTakeTest = new JMenuItem("Take Test ");
 		mntmTakeTest.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				testModeCaller frame = new testModeCaller();
+				frame.setVisible(true);
 			}
 		});
 		mnTestMode.add(mntmTakeTest);
