@@ -78,14 +78,11 @@ public class MenuControl extends JFrame {
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				AP_UIv2 frame = new AP_UIv2();
+				AP_UI frame = new AP_UI();
 				frame.setVisible(true);
 			}
 		});
 		mnApTest.add(mntmApReview);
-		
-		JMenuItem mntmReviv2 = new JMenuItem("Review v2");
-		mnApTest.add(mntmReviv2);
 		JMenuItem mntmApRev2 = new JMenuItem("Review v2");
 		mntmApRev2.addActionListener(new ActionListener() 
 		{
