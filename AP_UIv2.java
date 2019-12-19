@@ -308,7 +308,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		//background picture
 		background = new JLabel("");
 		background.setIcon(image2);
-		background.setBounds(0, 0, 1264, 681);
+		background.setBounds(0, 0, 1280, 700);
 		getContentPane().add(background);
 	}
 
