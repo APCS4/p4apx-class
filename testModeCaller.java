@@ -101,7 +101,7 @@ public class testModeCaller extends MenuControl{
 					
 					int numberFull=0;
 					
-					//check if its full
+					//check how many indexes are full (at 3)
 					for (int i= 0; i<13; i++)
 					{
 						if (calls[i]==3)
@@ -112,11 +112,11 @@ public class testModeCaller extends MenuControl{
 					
 					if (numberFull!=13)
 					{
-						question = rand.nextInt(14); 
+						question = rand.nextInt(13); 
 						
 						while(calls[question]==3)
 						{
-							question = rand.nextInt(14); 
+							question = rand.nextInt(13); 
 						}
 
 						
