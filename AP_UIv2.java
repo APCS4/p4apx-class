@@ -5,12 +5,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JLabel;
 import javax.swing.Timer;
-import javazoom.jl.player.advanced.AdvancedPlayer;
+//import javazoom.jl.player.advanced.AdvancedPlayer;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.*;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 
 public class AP_UIv2 extends JFrame implements ActionListener
 {
@@ -21,6 +23,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 	private JLabel background;
 	private ImageIcon image2;
     private Timer timer;
+    private final Action action = new SwingAction();
 
 	/**
 	 * Launch the application.
@@ -68,21 +71,12 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		getContentPane().setLayout(null);
 		
 		JButton recursion = new JButton("");
+		recursion.setAction(action);
 		recursion.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				try
-				{
-		            File file = new File("review UI/click.mp3");
-		            FileInputStream in = new FileInputStream(file);
-		            //AdvancedPlayer player = new AdvancedPlayer(in);
-		            //player.play();
-		        } 
-		        catch (Exception ex) 
-				{
-		            ex.printStackTrace();
-		        }
+
 			}
 		});
 		recursion.addMouseListener(new MouseAdapter() 
@@ -107,17 +101,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				try
-				{
-		            File file = new File("review UI/click.mp3");
-		            FileInputStream in = new FileInputStream(file);
-		            //AdvancedPlayer player = new AdvancedPlayer(in);
-		            //player.play();
-		        } 
-		        catch (Exception ex) 
-				{
-		            ex.printStackTrace();
-		        }
+
 			}
 		});
 		math.addMouseListener(new MouseAdapter() 
@@ -142,17 +126,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				try
-				{
-		            File file = new File("review UI/click.mp3");
-		            FileInputStream in = new FileInputStream(file);
-		            //AdvancedPlayer player = new AdvancedPlayer(in);
-		            //player.play();
-		        } 
-		        catch (Exception ex) 
-				{
-		            ex.printStackTrace();
-		        }
+
 			}
 		});
 		binary.addMouseListener(new MouseAdapter() 
@@ -177,17 +151,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				try
-				{
-		            File file = new File("review UI/click.mp3");
-		            FileInputStream in = new FileInputStream(file);
-		            //AdvancedPlayer player = new AdvancedPlayer(in);
-		            //player.play();
-		        } 
-		        catch (Exception ex) 
-				{
-		            ex.printStackTrace();
-		        }
+
 			}
 		});
 		d_type.addMouseListener(new MouseAdapter() 
@@ -212,17 +176,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				try
-				{
-		            File file = new File("review UI/click.mp3");
-		            FileInputStream in = new FileInputStream(file);
-		            //AdvancedPlayer player = new AdvancedPlayer(in);
-		            //player.play();
-		        } 
-		        catch (Exception ex) 
-				{
-		            ex.printStackTrace();
-		        }
+
 			}
 		});
 		code_anal.addMouseListener(new MouseAdapter() 
@@ -247,17 +201,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				try
-				{
-		            File file = new File("review UI/click.mp3");
-		            FileInputStream in = new FileInputStream(file);
-		            //AdvancedPlayer player = new AdvancedPlayer(in);
-		            //player.play();
-		        } 
-		        catch (Exception ex) 
-				{
-		            ex.printStackTrace();
-		        }
+
 			}
 		});
 		polymorph.addMouseListener(new MouseAdapter() 
@@ -282,17 +226,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				try
-				{
-		            File file = new File("review UI/click.mp3");
-		            FileInputStream in = new FileInputStream(file);
-		            //AdvancedPlayer player = new AdvancedPlayer(in);
-		            //player.play();
-		        } 
-		        catch (Exception ex) 
-				{
-		            ex.printStackTrace();
-		        }
+
 			}
 		});
 		mvc.addMouseListener(new MouseAdapter() 
@@ -317,17 +251,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				try
-				{
-		            File file = new File("review UI/click.mp3");
-		            FileInputStream in = new FileInputStream(file);
-		            //AdvancedPlayer player = new AdvancedPlayer(in);
-		            //player.play();
-		        } 
-		        catch (Exception ex) 
-				{
-		            ex.printStackTrace();
-		        }
+
 			}
 		});
 		array1.addMouseListener(new MouseAdapter() 
@@ -352,17 +276,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				try
-				{
-		            File file = new File("review UI/click.mp3");
-		            FileInputStream in = new FileInputStream(file);
-		            //AdvancedPlayer player = new AdvancedPlayer(in);
-		            //player.play();
-		        } 
-		        catch (Exception ex) 
-				{
-		            ex.printStackTrace();
-		        }
+
 			}
 		});
 		backgroun.addMouseListener(new MouseAdapter() 
@@ -393,6 +307,14 @@ public class AP_UIv2 extends JFrame implements ActionListener
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		
+	}
+	private class SwingAction extends AbstractAction {
+		public SwingAction() {
+			putValue(NAME, "SwingAction");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+		}
 	}
 }
 
