@@ -35,6 +35,8 @@ public class testModeCaller extends MenuControl{
     private JTextArea testQuestion = new JTextArea();
     private JTextArea testChoices = new JTextArea();
     private JTextArea testQuestionAnswer = new JTextArea();
+    private JTextField textField;
+    private JTextField textField_1;
 	
     public testModeCaller() {
 			
@@ -240,10 +242,18 @@ public class testModeCaller extends MenuControl{
 							testChoices.setText(r.getChoices());
 							testQuestionAnswer.setText(r.getAnswer());
 							break; 
-				
+							
+							
+						
 						
 					}
+						if (numberFull==13)
+						{
 						
+							ScoreReport score = new ScoreReport(); 
+						
+						score.setVisible(true);
+						}
 					}
 					//add else option later to display message that says "test finished"
 					
@@ -256,6 +266,20 @@ public class testModeCaller extends MenuControl{
 			lblYourScore.setBounds(484, 34, 96, 16);
 			contentPane.add(lblYourScore);
 			
+			textField = new JTextField();
+			textField.setBounds(562, 29, 130, 26);
+			contentPane.add(textField);
+			textField.setColumns(10);
+			
+			JLabel lblPercentage = new JLabel("Percentage: ");
+			lblPercentage.setBounds(484, 92, 82, 16);
+			contentPane.add(lblPercentage);
+			
+			textField_1 = new JTextField();
+			textField_1.setBounds(562, 87, 130, 26);
+			contentPane.add(textField_1);
+			textField_1.setColumns(10);
+			
 			JButton btnNewButton_2 = new JButton("Polymorph");
 			btnNewButton_2.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -263,11 +287,12 @@ public class testModeCaller extends MenuControl{
 					testQuestion.setText(q.getQuestion());
 					testChoices.setText(q.getChoices());
 					testQuestionAnswer.setText(q.getAnswer());
-				}
-			});
+				}});
 			
-			ScoreReport score = new ScoreReport(); 
+				
+				
+    
 			
-			score.setVisible(true);
+			
 	}
 }
