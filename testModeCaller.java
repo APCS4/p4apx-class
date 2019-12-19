@@ -75,9 +75,9 @@ public class testModeCaller extends MenuControl{
 			testQuestion.setLineWrap(true);
 			
 			JScrollPane scrollPane_1 = new JScrollPane();
-			scrollPane_1.setBounds(16, 278, 418, 86);
+			scrollPane_1.setBounds(76, 278, 355, 86);
 			contentPane.add(scrollPane_1);
-			scrollPane_1.setViewportView(testChoices);
+			scrollPane_1.setRowHeaderView(testChoices);
 			
 			testChoices.setEditable(false);
 			testChoices.setLineWrap(true);
@@ -279,6 +279,11 @@ public class testModeCaller extends MenuControl{
 			textField_1.setBounds(562, 87, 130, 26);
 			contentPane.add(textField_1);
 			textField_1.setColumns(10);
+			
+			JRadioButton chA = new JRadioButton("New radio button");
+			chA.setBounds(6, 278, 141, 23);
+			contentPane.add(chA);
+			chA.setText("hello");
 			
 			JButton btnNewButton_2 = new JButton("Polymorph");
 			btnNewButton_2.addActionListener(new ActionListener() {

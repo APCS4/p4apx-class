@@ -107,6 +107,36 @@ public class Question extends Scoring
             );    
 	}
 	
+	public String getChoiceA() {
+		
+		return String.format(charA + ": " + choices[0]); 
+	}
+	
+	public String getChoiceB() 
+	{
+		
+		return String.format(charB + ": " + choices[1]);
+	}
+
+	public String getChoiceC()
+	{
+		
+		return String.format( charC + ": " + choices[2]);
+	}
+	
+	
+	public String ChoiceD()
+	{
+		return String.format(charD + ": " + choices[3]);
+	
+	}
+	
+	public String ChoiceE()
+	{
+		
+		return String.format(charE + ": " + choices[4]);
+	
+	}
 	public String getChoices(String group) {
 		return String.format(
 				charA + ": %s%n" +
