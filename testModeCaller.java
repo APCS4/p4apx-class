@@ -29,6 +29,10 @@ import javax.swing.ImageIcon;
 import java.awt.Dimension;
 import javax.swing.JRadioButton;
 import java.util.Random;
+import javax.swing.JList;
+import java.awt.List;
+import java.awt.Component;
+import javax.swing.Box;
 public class testModeCaller extends MenuControl{
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -42,31 +46,31 @@ public class testModeCaller extends MenuControl{
 		/**
 		 * Create the frame.
 		 */			setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-			setBounds(100, 100, 784, 488);
+			setBounds(100, 100, 784, 566);
 			contentPane = new JPanel();
 			contentPane.setBackground(new Color(220, 220, 220));
 			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 			setContentPane(contentPane);
 			contentPane.setLayout(null);
-
-			JLabel lblExamSections = new JLabel("AP Exam Test Mode");
-			lblExamSections.setBounds(18, 6, 264, 16);
-			contentPane.add(lblExamSections);
-			
-			JLabel lblAnswer = new JLabel("Answer");
-			lblAnswer.setBounds(18, 376, 61, 16);
-			contentPane.add(lblAnswer);
 			
 			JScrollPane scrollPane_2 = new JScrollPane();
-			scrollPane_2.setBounds(74, 376, 363, 39);
+			scrollPane_2.setBounds(18, 424, 750, 23);
 			contentPane.add(scrollPane_2);
 			scrollPane_2.setViewportView(testQuestionAnswer);
 			
 			testQuestionAnswer.setEditable(false);
 			testQuestionAnswer.setLineWrap(true);
+
+			JLabel lblExamSections = new JLabel("AP EXAM: Test Mode");
+			lblExamSections.setBounds(6, 6, 161, 16);
+			contentPane.add(lblExamSections);
+			
+			JLabel lblAnswer = new JLabel("Correct Answer:");
+			lblAnswer.setBounds(18, 406, 760, 16);
+			contentPane.add(lblAnswer);
 			
 			JScrollPane scrollPane = new JScrollPane();
-			scrollPane.setBounds(16, 62, 418, 204);
+			scrollPane.setBounds(18, 55, 750, 192);
 			contentPane.add(scrollPane);
 			scrollPane.setViewportView(testQuestion);
 			
@@ -74,29 +78,29 @@ public class testModeCaller extends MenuControl{
 			testQuestion.setLineWrap(true);
 			
 			JLabel lblQuestion = new JLabel("Question");
-			lblQuestion.setBounds(18, 34, 61, 16);
+			lblQuestion.setBounds(18, 34, 129, 16);
 			contentPane.add(lblQuestion);
 			
 			JRadioButton chA = new JRadioButton("");
-			chA.setBounds(6, 278, 219, 23);
+			chA.setBounds(18, 255, 219, 23);
 			contentPane.add(chA);
 			JRadioButton chB = new JRadioButton("");
-			chB.setBounds(6, 303, 219, 23);
+			chB.setBounds(18, 303, 219, 23);
 			contentPane.add(chB);
 			
 			JRadioButton chC = new JRadioButton("");
-			chC.setBounds(6, 325, 219, 23);
+			chC.setBounds(18, 278, 219, 23);
 			contentPane.add(chC);
 			
 			JRadioButton chD = new JRadioButton("");
-			chD.setBounds(232, 278, 219, 23);
+			chD.setBounds(18, 325, 219, 23);
 			contentPane.add(chD);
 			
 			JRadioButton chE = new JRadioButton("");
-			chE.setBounds(232, 303, 219, 23);
+			chE.setBounds(18, 349, 219, 23);
 			contentPane.add(chE);
 			
-			JButton Submit = new JButton("submit ");
+			JButton Submit = new JButton("Submit Answer ");
 			
 			//Calls array
 			int calls[]= new int[13];
@@ -347,32 +351,44 @@ public class testModeCaller extends MenuControl{
 					
 				}
 			});
-			btnNextQuestion.setBounds(265, 21, 175, 29);
+			btnNextQuestion.setBounds(6, 475, 780, 29);
 			contentPane.add(btnNextQuestion);
 			
 			JLabel lblYourScore = new JLabel("Your Score: ");
-			lblYourScore.setBounds(484, 34, 96, 16);
+			lblYourScore.setBounds(613, 6, 96, 16);
 			contentPane.add(lblYourScore);
 			
 			textField = new JTextField();
-			textField.setBounds(562, 29, 130, 26);
+			textField.setBounds(698, 1, 69, 26);
 			contentPane.add(textField);
 			textField.setColumns(10);
 			
 			JLabel lblPercentage = new JLabel("Percentage: ");
-			lblPercentage.setBounds(484, 92, 82, 16);
+			lblPercentage.setBounds(440, 6, 81, 16);
 			contentPane.add(lblPercentage);
 			
 			textField_1 = new JTextField();
-			textField_1.setBounds(562, 87, 130, 26);
+			textField_1.setBounds(533, 1, 70, 26);
 			contentPane.add(textField_1);
 			textField_1.setColumns(10);
 			
 			
 			
 			
-			Submit.setBounds(230, 338, 117, 29);
+			Submit.setBounds(514, 383, 264, 29);
 			contentPane.add(Submit);
+			
+			JLabel lblNewLabel = new JLabel("");
+			lblNewLabel.setBackground(Color.WHITE);
+			lblNewLabel.setOpaque(true);
+			lblNewLabel.setBounds(18, 255, 750, 117);
+			contentPane.add(lblNewLabel);
+			
+			JLabel label = new JLabel("");
+			label.setOpaque(true);
+			label.setBackground(Color.LIGHT_GRAY);
+			label.setBounds(0, 29, 794, 432);
+			contentPane.add(label);
 			
 			
 			
