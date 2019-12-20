@@ -1,18 +1,10 @@
 
-import java.awt.EventQueue;
-import javax.swing.JFrame;
+import java.awt.*;
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JLabel;
-import javax.swing.Timer;
-//import javazoom.jl.player.advanced.AdvancedPlayer;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-//import java.io.*;
-//import javax.swing.AbstractAction;
-//import javax.swing.Action;
 
 public class AP_UIv2 extends JFrame implements ActionListener
 {
@@ -297,6 +289,181 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		backgroun.setBounds(70, 520, 400, 50);
 		getContentPane().add(backgroun);
 		
+		JButton backgroun = new JButton("");
+		backgroun.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+
+			}
+		});
+		backgroun.addMouseListener(new MouseAdapter() 
+		{
+			@Override
+			public void mouseEntered(MouseEvent e) 
+			{
+				backgroun.setIcon(new ImageIcon("review UI/back2.jpg"));
+			}
+			public void mouseExited(MouseEvent e) 
+			{
+				backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
+			}
+		});
+		backgroun.setBorder(null);
+		backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
+		backgroun.setBounds(70, 520, 400, 50);
+		getContentPane().add(backgroun);
+		
+		JButton backgroun = new JButton("");
+		backgroun.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+
+			}
+		});
+		backgroun.addMouseListener(new MouseAdapter() 
+		{
+			@Override
+			public void mouseEntered(MouseEvent e) 
+			{
+				backgroun.setIcon(new ImageIcon("review UI/back2.jpg"));
+			}
+			public void mouseExited(MouseEvent e) 
+			{
+				backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
+			}
+		});
+		backgroun.setBorder(null);
+		backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
+		backgroun.setBounds(70, 520, 400, 50);
+		getContentPane().add(backgroun);
+		
+		JButton backgroun = new JButton("");
+		backgroun.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+
+			}
+		});
+		backgroun.addMouseListener(new MouseAdapter() 
+		{
+			@Override
+			public void mouseEntered(MouseEvent e) 
+			{
+				backgroun.setIcon(new ImageIcon("review UI/back2.jpg"));
+			}
+			public void mouseExited(MouseEvent e) 
+			{
+				backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
+			}
+		});
+		backgroun.setBorder(null);
+		backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
+		backgroun.setBounds(70, 520, 400, 50);
+		getContentPane().add(backgroun);
+		
+		JButton backgroun = new JButton("");
+		backgroun.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+
+			}
+		});
+		backgroun.addMouseListener(new MouseAdapter() 
+		{
+			@Override
+			public void mouseEntered(MouseEvent e) 
+			{
+				backgroun.setIcon(new ImageIcon("review UI/back2.jpg"));
+			}
+			public void mouseExited(MouseEvent e) 
+			{
+				backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
+			}
+		});
+		backgroun.setBorder(null);
+		backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
+		backgroun.setBounds(70, 520, 400, 50);
+		getContentPane().add(backgroun);
+		
+		JButton backgroun = new JButton("");
+		backgroun.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+
+			}
+		});
+		backgroun.addMouseListener(new MouseAdapter() 
+		{
+			@Override
+			public void mouseEntered(MouseEvent e) 
+			{
+				backgroun.setIcon(new ImageIcon("review UI/back2.jpg"));
+			}
+			public void mouseExited(MouseEvent e) 
+			{
+				backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
+			}
+		});
+		backgroun.setBorder(null);
+		backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
+		backgroun.setBounds(70, 520, 400, 50);
+		getContentPane().add(backgroun);
+		
+		JButton backgroun = new JButton("");
+		backgroun.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+
+			}
+		});
+		backgroun.addMouseListener(new MouseAdapter() 
+		{
+			@Override
+			public void mouseEntered(MouseEvent e) 
+			{
+				backgroun.setIcon(new ImageIcon("review UI/back2.jpg"));
+			}
+			public void mouseExited(MouseEvent e) 
+			{
+				backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
+			}
+		});
+		backgroun.setBorder(null);
+		backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
+		backgroun.setBounds(70, 520, 400, 50);
+		getContentPane().add(backgroun);
+		
+		JButton backgroun = new JButton("");
+		backgroun.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+
+			}
+		});
+		backgroun.addMouseListener(new MouseAdapter() 
+		{
+			@Override
+			public void mouseEntered(MouseEvent e) 
+			{
+				backgroun.setIcon(new ImageIcon("review UI/back2.jpg"));
+			}
+			public void mouseExited(MouseEvent e) 
+			{
+				backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
+			}
+		});
+		backgroun.setBorder(null);
+		backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
+		backgroun.setBounds(70, 520, 400, 50);
+		getContentPane().add(backgroun);
+		
 		//background picture
 		background = new JLabel("");
 		background.setIcon(image2);
@@ -307,12 +474,10 @@ public class AP_UIv2 extends JFrame implements ActionListener
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
 		
 	}
-
-	
 }
 
 
