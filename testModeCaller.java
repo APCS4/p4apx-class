@@ -104,7 +104,7 @@ public class testModeCaller extends MenuControl{
 					selected=3;	//the user selected choice "C"
 				}
 			});
-			choiceC.setBounds(18, 303, 750, 23);
+			choiceC.setBounds(18, 279, 750, 23);
 			contentPane.add(choiceC);
 			
 			
@@ -114,7 +114,7 @@ public class testModeCaller extends MenuControl{
 					selected=2;	//the user selected choice "B"
 				}
 			});
-			choiceB.setBounds(18, 278, 750, 23);
+			choiceB.setBounds(18, 302, 750, 23);
 			contentPane.add(choiceB);
 			
 			JRadioButton choiceD = new JRadioButton("");
@@ -153,7 +153,7 @@ public class testModeCaller extends MenuControl{
 			JButton btnNextQuestion = new JButton("Next Question");
 			btnNextQuestion.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					
+					testQuestionAnswer.setText("");
 					choiceA.setSelected(false);
 					choiceB.setSelected(false);
 					choiceC.setSelected(false);
@@ -184,7 +184,7 @@ public class testModeCaller extends MenuControl{
 
 						
 				//increment value in calls and call methods
-						testQuestionAnswer.setText("");
+					
 				switch(question)
 				{
 				case 0: 
@@ -223,7 +223,7 @@ public class testModeCaller extends MenuControl{
 					choiceB.setText(b.getChoiceC());
 					choiceD.setText(b.getChoiceD());
 					choiceE.setText(b.getChoiceE());
-					testQuestionAnswer.setText(b.getAnswer());
+
 					
 					Submit.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
@@ -231,35 +231,6 @@ public class testModeCaller extends MenuControl{
 							testQuestionAnswer.setText(b.getAnswer());
 						}
 					});
-
-					//Finds which option holds the correct answer & adds point if user submitted it!
-					if (b.getAnswer()==choiceA.getText())
-					{
-						correct=1;
-					}
-					else
-						if (b.getAnswer()==choiceB.getText())
-						{
-							correct=2;
-						}
-					else
-						if (b.getAnswer()==choiceC.getText())
-						{
-							correct=1;
-							
-						}
-						else
-							if (b.getAnswer()==choiceD.getText())
-							{
-								correct=4;
-							}
-							else
-								if (b.getAnswer()==choiceE.getText())
-								{
-									correct=5;
-								}
-					
-
 					
 					break;
 					
@@ -272,34 +243,8 @@ public class testModeCaller extends MenuControl{
 					choiceB.setText(c.getChoiceC());
 					choiceD.setText(c.getChoiceD());
 					choiceE.setText(c.getChoiceE());
-					testQuestionAnswer.setText(c.getAnswer());
+
 					
-					//Finds which option holds the correct answer & adds point if user submitted it!
-					if (c.getAnswer()==choiceA.getText())
-					{
-						correct=1;
-					}
-					else
-						if (c.getAnswer()==choiceB.getText())
-						{
-							correct=2;
-						}
-					else
-						if (c.getAnswer()==choiceC.getText())
-						{
-							correct=1;
-							
-						}
-						else
-							if (c.getAnswer()==choiceD.getText())
-							{
-								correct=4;
-							}
-							else
-								if (c.getAnswer()==choiceE.getText())
-								{
-									correct=5;
-								}
 					Submit.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
 							
@@ -307,8 +252,6 @@ public class testModeCaller extends MenuControl{
 						}
 					});
 
-
-					
 					break; 
 					
 			 
@@ -321,34 +264,7 @@ public class testModeCaller extends MenuControl{
 					choiceB.setText(d.getChoiceC());
 					choiceD.setText(d.getChoiceD());
 					choiceE.setText(d.getChoiceE());
-					testQuestionAnswer.setText(d.getAnswer());
-					
-					//Finds which option holds the correct answer & adds point if user submitted it!
-					if (d.getAnswer()==choiceA.getText())
-					{
-						correct=1;
-					}
-					else
-						if (d.getAnswer()==choiceB.getText())
-						{
-							correct=2;
-						}
-					else
-						if (d.getAnswer()==choiceC.getText())
-						{
-							correct=1;
-							
-						}
-						else
-							if (d.getAnswer()==choiceD.getText())
-							{
-								correct=4;
-							}
-							else
-								if (d.getAnswer()==choiceE.getText())
-								{
-									correct=5;
-								}
+	
 					
 					Submit.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
@@ -369,34 +285,7 @@ public class testModeCaller extends MenuControl{
 					choiceB.setText(x.getChoiceC());
 					choiceD.setText(x.getChoiceD());
 					choiceE.setText(x.getChoiceE());
-					testQuestionAnswer.setText(x.getAnswer());
-					
-					//Finds which option holds the correct answer & adds point if user submitted it!
-					if (x.getAnswer()==choiceA.getText())
-					{
-						correct=1;
-					}
-					else
-						if (x.getAnswer()==choiceB.getText())
-						{
-							correct=2;
-						}
-					else
-						if (x.getAnswer()==choiceC.getText())
-						{
-							correct=1;
-							
-						}
-						else
-							if (x.getAnswer()==choiceD.getText())
-							{
-								correct=4;
-							}
-							else
-								if (x.getAnswer()==choiceE.getText())
-								{
-									correct=5;
-								}
+				
 					
 					Submit.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
@@ -417,34 +306,7 @@ public class testModeCaller extends MenuControl{
 					choiceB.setText(f.getChoiceC());
 					choiceD.setText(f.getChoiceD());
 					choiceE.setText(f.getChoiceE());							
-					testQuestionAnswer.setText(f.getAnswer());
-					
-					//Finds which option holds the correct answer & adds point if user submitted it!
-					if (f.getAnswer()==choiceA.getText())
-					{
-						correct=1;
-					}
-					else
-						if (f.getAnswer()==choiceB.getText())
-						{
-							correct=2;
-						}
-					else
-						if (f.getAnswer()==choiceC.getText())
-						{
-							correct=1;
-							
-						}
-						else
-							if (f.getAnswer()==choiceD.getText())
-							{
-								correct=4;
-							}
-							else
-								if (f.getAnswer()==choiceE.getText())
-								{
-									correct=5;
-								}
+			
 					
 					Submit.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
@@ -465,7 +327,7 @@ public class testModeCaller extends MenuControl{
 					choiceB.setText(g.getChoiceC());
 					choiceD.setText(g.getChoiceD());
 					choiceE.setText(g.getChoiceE());
-					testQuestionAnswer.setText(g.getAnswer());
+			
 					
 					Submit.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
@@ -492,7 +354,7 @@ public class testModeCaller extends MenuControl{
 						choiceB.setText(k.getChoiceC());
 						choiceD.setText(k.getChoiceD());
 						choiceE.setText(k.getChoiceE());
-						testQuestionAnswer.setText(k.getAnswer());
+				
 						
 						
 						Submit.addActionListener(new ActionListener() {
@@ -513,7 +375,7 @@ public class testModeCaller extends MenuControl{
 						choiceB.setText(p.getChoiceC());
 						choiceD.setText(p.getChoiceD());
 						choiceE.setText(p.getChoiceE());
-						testQuestionAnswer.setText(p.getAnswer());
+				
 						
 						//Finds which option holds the correct answer & adds point if user submitted it!
 						Submit.addActionListener(new ActionListener() {
@@ -523,9 +385,6 @@ public class testModeCaller extends MenuControl{
 							}
 						});
 
-						
-
-						
 					}						
 					break; 
 				case 8: 
@@ -537,6 +396,7 @@ public class testModeCaller extends MenuControl{
 					choiceB.setText(m.getChoiceC());
 					choiceD.setText(m.getChoiceD());
 					choiceE.setText(m.getChoiceE());
+					
 					Submit.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
 							
@@ -573,6 +433,7 @@ public class testModeCaller extends MenuControl{
 					choiceB.setText(o.getChoiceC());
 					choiceD.setText(o.getChoiceD());
 					choiceE.setText(o.getChoiceE());
+					
 					Submit.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
 							
@@ -591,6 +452,7 @@ public class testModeCaller extends MenuControl{
 					choiceB.setText(q.getChoiceC());
 					choiceD.setText(q.getChoiceD());
 					choiceE.setText(q.getChoiceE());
+					
 					Submit.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
 							
@@ -609,6 +471,7 @@ public class testModeCaller extends MenuControl{
 					choiceB.setText(r.getChoiceC());
 					choiceD.setText(r.getChoiceD());
 					choiceE.setText(r.getChoiceE());
+					
 					Submit.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
 							
@@ -622,7 +485,7 @@ public class testModeCaller extends MenuControl{
 				
 				
 			}
-				Submit.addActionListener(new ActionListener() {
+				/* Submit.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 
 						if (correct==selected)
@@ -633,7 +496,7 @@ public class testModeCaller extends MenuControl{
 				});
 				
 				
-				/*if (numberFull==13)
+				if (numberFull==13)
 				{
 				
 					ScoreReport score = new ScoreReport(); 
@@ -641,6 +504,7 @@ public class testModeCaller extends MenuControl{
 				score.setVisible(true);
 				}*/
 			}
+					
 					score+=1;
 		dispScore.setText(String.valueOf(score));
 					
