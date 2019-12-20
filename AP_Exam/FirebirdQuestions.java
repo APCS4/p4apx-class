@@ -1,28 +1,22 @@
 package AP_Exam;
 import java.util.*;
-
 import Util.ConsoleMethods;
 
-/**
- * @author Phoenix Dimagiba
- * @version 12/19/19
- */
-
-//this is an ecletic collection, no specific topic
+//by Phoenix Dimagiba, 12/19/19
+//this is an ecletic collection of questions, no specific topic
 public class FirebirdQuestions extends Question{
-	/**
-     * calls setupQuestion -> load values and set up things
-     */
+	
+	//calls setupQuestion -> load values and set up things
 	public FirebirdQuestions()
     {
     	setupQuestionData();
     	setupQuestion();
     }
 	
-	//setupQuestion methods sets up questions
-	@Override 
+	//setupQuestion methods sets up questions with parts: question, answer, correct answer, etc
 	protected void setupQuestionData() {
         ConsoleMethods.println("mr. mort notice me please");
+        
 		// finds random number to determine next question
 		Random rand = new Random();
 		int random = rand.nextInt(4);
@@ -43,7 +37,7 @@ public class FirebirdQuestions extends Question{
 			this.question = "Methods have what general syntax?";
 			this.choiceA = "return_type method_name modifiers (arguments)";
 			this.choiceB = "arguments method_name modifiers (return_type)";
-			this.choiceC = "modifiers return_type method_name (argumdnts)";
+			this.choiceC = "modifiers return_type method_name (arguments)";
 			this.choiceD = "modifiers method_name arguments (return_type) ";
 			this.choiceE = "None of the above";
 			this.answerKey = this.charC;
@@ -76,17 +70,17 @@ public class FirebirdQuestions extends Question{
 			this.question = "For loops have what general syntax?";
 			this.choiceA = "for (expression1; expression2; statement3)\n	statement";
 			this.choiceB = "for (statement1; expression2; expression3)\n	statement";
-			this.choiceC = "for (statement1; expression2; statement3)\n		expression";
-			this.choiceD = "for (expression1; statement2; statement3)\n		statement";
-			this.choiceE = "for (statement1; expression2; statement3)\n		statement";
+			this.choiceC = "for (statement1; expression2; statement3)\n	expression";
+			this.choiceD = "for (expression1; statement2; statement3)\n	statement";
+			this.choiceE = "for (statement1; expression2; statement3)\n	statement";
 			this.answerKey = this.charE;
 			this.answer = "for (statement1; expression2; statement3)\n	statement";
 			break;
 			
 		
-		// give feedback to user if they screw up
+		// give feedback to user if something screws up along the way
 		default:
-			System.out.print("It seems you've done something wrong.");
+			System.out.print("It seems you've done something wrong. Please try again.");
 		}
 	}
 }
