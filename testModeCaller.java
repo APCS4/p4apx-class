@@ -138,6 +138,7 @@ public class testModeCaller extends MenuControl{
 			JButton Submit = new JButton("Submit Answer ");
 			
 			
+			
 			//Calls array
 			int calls[]= new int[13];
 			
@@ -183,9 +184,12 @@ public class testModeCaller extends MenuControl{
 
 						
 				//increment value in calls and call methods
+						testQuestionAnswer.setText("");
 				switch(question)
 				{
 				case 0: 
+					
+					
 					calls[0]+=1;
 					AP_Exam.Question a = new AP_Exam.MathQuestions();
 					testQuestion.setText(a.getQuestion());
@@ -197,37 +201,20 @@ public class testModeCaller extends MenuControl{
 					//testQuestionAnswer.setText(a.getAnswer());
 					
 					//Finds which option holds the correct answer & adds point if user submitted it!
-					if (a.getAnswer()==choiceA.getText())
-					{
-						correct=1;
-					}
-					else
-						if (a.getAnswer()==choiceB.getText())
-						{
-							correct=2;
-						}
-					else
-						if (a.getAnswer()==choiceC.getText())
-						{
-							correct=1;
+				
+					Submit.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
 							
+							testQuestionAnswer.setText(a.getAnswer());
 						}
-						else
-							if (a.getAnswer()==choiceD.getText())
-							{
-								correct=4;
-							}
-							else
-								if (a.getAnswer()==choiceE.getText())
-								{
-									correct=5;
-								}
-					
+					});
 
 					
 					break; 
 				
 				case 1: 
+					
+					
 					calls[1]+=1;
 					AP_Exam.encapsulationQuestions b = new AP_Exam.encapsulationQuestions();
 					testQuestion.setText(b.getQuestion());
@@ -238,6 +225,13 @@ public class testModeCaller extends MenuControl{
 					choiceE.setText(b.getChoiceE());
 					testQuestionAnswer.setText(b.getAnswer());
 					
+					Submit.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							
+							testQuestionAnswer.setText(b.getAnswer());
+						}
+					});
+
 					//Finds which option holds the correct answer & adds point if user submitted it!
 					if (b.getAnswer()==choiceA.getText())
 					{
@@ -306,7 +300,13 @@ public class testModeCaller extends MenuControl{
 								{
 									correct=5;
 								}
-					
+					Submit.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							
+							testQuestionAnswer.setText(c.getAnswer());
+						}
+					});
+
 
 					
 					break; 
@@ -350,6 +350,12 @@ public class testModeCaller extends MenuControl{
 									correct=5;
 								}
 					
+					Submit.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							
+							testQuestionAnswer.setText(d.getAnswer());
+						}
+					});
 
 					
 					break;
@@ -392,6 +398,12 @@ public class testModeCaller extends MenuControl{
 									correct=5;
 								}
 					
+					Submit.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							
+							testQuestionAnswer.setText(x.getAnswer());
+						}
+					});
 
 					
 					break; 
@@ -434,6 +446,12 @@ public class testModeCaller extends MenuControl{
 									correct=5;
 								}
 					
+					Submit.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							
+							testQuestionAnswer.setText(f.getAnswer());
+						}
+					});
 
 					
 					break; 
@@ -449,33 +467,13 @@ public class testModeCaller extends MenuControl{
 					choiceE.setText(g.getChoiceE());
 					testQuestionAnswer.setText(g.getAnswer());
 					
-					//Finds which option holds the correct answer & adds point if user submitted it!
-					if (g.getAnswer()==choiceA.getText())
-					{
-						correct=1;
-					}
-					else
-						if (g.getAnswer()==choiceB.getText())
-						{
-							correct=2;
-						}
-					else
-						if (String.equals(g.getAnswer(), choiceC.getText())==true)
-						{
-							correct=1;
+					Submit.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
 							
+							testQuestionAnswer.setText(g.getAnswer());
 						}
-						else
-							if (g.getAnswer()==choiceD.getText())
-							{
-								correct=4;
-							}
-							else
-								if (g.getAnswer()==choiceE.getText())
-								{
-									correct=5;
-								}
-					
+					});
+
 
 					
 					break;
@@ -497,36 +495,14 @@ public class testModeCaller extends MenuControl{
 						testQuestionAnswer.setText(k.getAnswer());
 						
 						
-						//Finds which option holds the correct answer & adds point if user submitted it!
-						if (k.getAnswer()==choiceA.getText())
-						{
-							correct=1;
-						}
-						else
-							if (k.getAnswer()==choiceB.getText())
-							{
-								correct=2;
-							}
-						else
-							if (k.getAnswer()==choiceC.getText())
-							{
-								correct=1;
+						Submit.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent e) {
 								
+								testQuestionAnswer.setText(k.getAnswer());
 							}
-							else
-								if (k.getAnswer()==choiceD.getText())
-								{
-									correct=4;
-								}
-								else
-									if (k.getAnswer()==choiceE.getText())
-									{
-										correct=5;
-									}
-						
-
-						
+						});
 					}
+
 					else
 					{
 
@@ -540,31 +516,13 @@ public class testModeCaller extends MenuControl{
 						testQuestionAnswer.setText(p.getAnswer());
 						
 						//Finds which option holds the correct answer & adds point if user submitted it!
-						if (p.getAnswer()==choiceA.getText())
-						{
-							correct=1;
-						}
-						else
-							if (p.getAnswer()==choiceB.getText())
-							{
-								correct=2;
-							}
-						else
-							if (p.getAnswer()==choiceC.getText())
-							{
-								correct=1;
+						Submit.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent e) {
 								
+								testQuestionAnswer.setText(p.getAnswer());
 							}
-							else
-								if (p.getAnswer()==choiceD.getText())
-								{
-									correct=4;
-								}
-								else
-									if (p.getAnswer()==choiceE.getText())
-									{
-										correct=5;
-									}
+						});
+
 						
 
 						
@@ -579,7 +537,13 @@ public class testModeCaller extends MenuControl{
 					choiceB.setText(m.getChoiceC());
 					choiceD.setText(m.getChoiceD());
 					choiceE.setText(m.getChoiceE());
-					testQuestionAnswer.setText(m.getAnswer());
+					Submit.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							
+							testQuestionAnswer.setText(m.getAnswer());
+						}
+					});
+
 					break; 
 				
 				case 9: 
@@ -591,7 +555,13 @@ public class testModeCaller extends MenuControl{
 					choiceB.setText(n.getChoiceC());
 					choiceD.setText(n.getChoiceD());
 					choiceE.setText(n.getChoiceE());
-					testQuestionAnswer.setText(n.getAnswer());
+					Submit.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							
+							testQuestionAnswer.setText(n.getAnswer());
+						}
+					});
+
 					break; 
 				
 				case 10: 
@@ -603,7 +573,13 @@ public class testModeCaller extends MenuControl{
 					choiceB.setText(o.getChoiceC());
 					choiceD.setText(o.getChoiceD());
 					choiceE.setText(o.getChoiceE());
-					testQuestionAnswer.setText(o.getAnswer());
+					Submit.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							
+							testQuestionAnswer.setText(o.getAnswer());
+						}
+					});
+
 					break; 
 				
 				case 11: 
@@ -615,7 +591,13 @@ public class testModeCaller extends MenuControl{
 					choiceB.setText(q.getChoiceC());
 					choiceD.setText(q.getChoiceD());
 					choiceE.setText(q.getChoiceE());
-					testQuestionAnswer.setText(q.getAnswer());
+					Submit.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							
+							testQuestionAnswer.setText(q.getAnswer());
+						}
+					});
+
 					break; 
 					
 				case 12: 
@@ -627,7 +609,13 @@ public class testModeCaller extends MenuControl{
 					choiceB.setText(r.getChoiceC());
 					choiceD.setText(r.getChoiceD());
 					choiceE.setText(r.getChoiceE());
-					testQuestionAnswer.setText(r.getAnswer());
+					Submit.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							
+							testQuestionAnswer.setText(r.getAnswer());
+						}
+					});
+
 					break; 
 					
 					
