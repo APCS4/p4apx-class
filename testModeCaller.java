@@ -38,11 +38,18 @@ public class testModeCaller extends MenuControl{
 	private JPanel contentPane;
     private JTextArea testQuestion = new JTextArea();
     private JTextArea testQuestionAnswer = new JTextArea();
-    private JTextField textField;
-    private JTextField textField_1;
+    private JTextField dispScore;
+    private JTextField dispPercent;
+    
+    //used in this class
+    public static int selected=0;
+    public static int correct=9;
+    public static int score=0;
 	
     public testModeCaller() {
 			
+    	
+		
 		/**
 		 * Create the frame.
 		 */			setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -81,7 +88,6 @@ public class testModeCaller extends MenuControl{
 			lblQuestion.setBounds(18, 34, 129, 16);
 			contentPane.add(lblQuestion);
 			
-			int selected=0;//if the user doesn't choose anything before selecting, selected will remain==0
 			
 			JRadioButton choiceA = new JRadioButton("");
 			choiceA.addActionListener(new ActionListener() {
@@ -131,6 +137,7 @@ public class testModeCaller extends MenuControl{
 			
 			JButton Submit = new JButton("Submit Answer ");
 			
+			
 			//Calls array
 			int calls[]= new int[13];
 			
@@ -140,12 +147,17 @@ public class testModeCaller extends MenuControl{
 				calls[i]=0;
 			}
 			
-			int correct=9;
-			int score=0;
+
 			
 			JButton btnNextQuestion = new JButton("Next Question");
 			btnNextQuestion.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
+					
+					choiceA.setSelected(false);
+					choiceB.setSelected(false);
+					choiceC.setSelected(false);
+					choiceD.setSelected(false);
+					choiceE.setSelected(false);
 					
 					Random rand = new Random();
 					
@@ -212,11 +224,7 @@ public class testModeCaller extends MenuControl{
 								}
 					
 
-					if (correct==selected)
-					{
-						score+=1;
-					}
-				
+					
 					break; 
 				
 				case 1: 
@@ -229,6 +237,36 @@ public class testModeCaller extends MenuControl{
 					choiceD.setText(b.getChoiceD());
 					choiceE.setText(b.getChoiceE());
 					testQuestionAnswer.setText(b.getAnswer());
+					
+					//Finds which option holds the correct answer & adds point if user submitted it!
+					if (b.getAnswer()==choiceA.getText())
+					{
+						correct=1;
+					}
+					else
+						if (b.getAnswer()==choiceB.getText())
+						{
+							correct=2;
+						}
+					else
+						if (b.getAnswer()==choiceC.getText())
+						{
+							correct=1;
+							
+						}
+						else
+							if (b.getAnswer()==choiceD.getText())
+							{
+								correct=4;
+							}
+							else
+								if (b.getAnswer()==choiceE.getText())
+								{
+									correct=5;
+								}
+					
+
+					
 					break;
 					
 				case 2:
@@ -241,6 +279,36 @@ public class testModeCaller extends MenuControl{
 					choiceD.setText(c.getChoiceD());
 					choiceE.setText(c.getChoiceE());
 					testQuestionAnswer.setText(c.getAnswer());
+					
+					//Finds which option holds the correct answer & adds point if user submitted it!
+					if (c.getAnswer()==choiceA.getText())
+					{
+						correct=1;
+					}
+					else
+						if (c.getAnswer()==choiceB.getText())
+						{
+							correct=2;
+						}
+					else
+						if (c.getAnswer()==choiceC.getText())
+						{
+							correct=1;
+							
+						}
+						else
+							if (c.getAnswer()==choiceD.getText())
+							{
+								correct=4;
+							}
+							else
+								if (c.getAnswer()==choiceE.getText())
+								{
+									correct=5;
+								}
+					
+
+					
 					break; 
 					
 			 
@@ -254,6 +322,36 @@ public class testModeCaller extends MenuControl{
 					choiceD.setText(d.getChoiceD());
 					choiceE.setText(d.getChoiceE());
 					testQuestionAnswer.setText(d.getAnswer());
+					
+					//Finds which option holds the correct answer & adds point if user submitted it!
+					if (d.getAnswer()==choiceA.getText())
+					{
+						correct=1;
+					}
+					else
+						if (d.getAnswer()==choiceB.getText())
+						{
+							correct=2;
+						}
+					else
+						if (d.getAnswer()==choiceC.getText())
+						{
+							correct=1;
+							
+						}
+						else
+							if (d.getAnswer()==choiceD.getText())
+							{
+								correct=4;
+							}
+							else
+								if (d.getAnswer()==choiceE.getText())
+								{
+									correct=5;
+								}
+					
+
+					
 					break;
 					
 				case 4: 
@@ -266,6 +364,36 @@ public class testModeCaller extends MenuControl{
 					choiceD.setText(x.getChoiceD());
 					choiceE.setText(x.getChoiceE());
 					testQuestionAnswer.setText(x.getAnswer());
+					
+					//Finds which option holds the correct answer & adds point if user submitted it!
+					if (x.getAnswer()==choiceA.getText())
+					{
+						correct=1;
+					}
+					else
+						if (x.getAnswer()==choiceB.getText())
+						{
+							correct=2;
+						}
+					else
+						if (x.getAnswer()==choiceC.getText())
+						{
+							correct=1;
+							
+						}
+						else
+							if (x.getAnswer()==choiceD.getText())
+							{
+								correct=4;
+							}
+							else
+								if (x.getAnswer()==choiceE.getText())
+								{
+									correct=5;
+								}
+					
+
+					
 					break; 
 					
 				case 5: 
@@ -278,6 +406,36 @@ public class testModeCaller extends MenuControl{
 					choiceD.setText(f.getChoiceD());
 					choiceE.setText(f.getChoiceE());							
 					testQuestionAnswer.setText(f.getAnswer());
+					
+					//Finds which option holds the correct answer & adds point if user submitted it!
+					if (f.getAnswer()==choiceA.getText())
+					{
+						correct=1;
+					}
+					else
+						if (f.getAnswer()==choiceB.getText())
+						{
+							correct=2;
+						}
+					else
+						if (f.getAnswer()==choiceC.getText())
+						{
+							correct=1;
+							
+						}
+						else
+							if (f.getAnswer()==choiceD.getText())
+							{
+								correct=4;
+							}
+							else
+								if (f.getAnswer()==choiceE.getText())
+								{
+									correct=5;
+								}
+					
+
+					
 					break; 
 					
 				case 6: 
@@ -290,6 +448,36 @@ public class testModeCaller extends MenuControl{
 					choiceD.setText(g.getChoiceD());
 					choiceE.setText(g.getChoiceE());
 					testQuestionAnswer.setText(g.getAnswer());
+					
+					//Finds which option holds the correct answer & adds point if user submitted it!
+					if (g.getAnswer()==choiceA.getText())
+					{
+						correct=1;
+					}
+					else
+						if (g.getAnswer()==choiceB.getText())
+						{
+							correct=2;
+						}
+					else
+						if (String.equals(g.getAnswer(), choiceC.getText())==true)
+						{
+							correct=1;
+							
+						}
+						else
+							if (g.getAnswer()==choiceD.getText())
+							{
+								correct=4;
+							}
+							else
+								if (g.getAnswer()==choiceE.getText())
+								{
+									correct=5;
+								}
+					
+
+					
 					break;
 				
 					
@@ -307,6 +495,37 @@ public class testModeCaller extends MenuControl{
 						choiceD.setText(k.getChoiceD());
 						choiceE.setText(k.getChoiceE());
 						testQuestionAnswer.setText(k.getAnswer());
+						
+						
+						//Finds which option holds the correct answer & adds point if user submitted it!
+						if (k.getAnswer()==choiceA.getText())
+						{
+							correct=1;
+						}
+						else
+							if (k.getAnswer()==choiceB.getText())
+							{
+								correct=2;
+							}
+						else
+							if (k.getAnswer()==choiceC.getText())
+							{
+								correct=1;
+								
+							}
+							else
+								if (k.getAnswer()==choiceD.getText())
+								{
+									correct=4;
+								}
+								else
+									if (k.getAnswer()==choiceE.getText())
+									{
+										correct=5;
+									}
+						
+
+						
 					}
 					else
 					{
@@ -319,6 +538,36 @@ public class testModeCaller extends MenuControl{
 						choiceD.setText(p.getChoiceD());
 						choiceE.setText(p.getChoiceE());
 						testQuestionAnswer.setText(p.getAnswer());
+						
+						//Finds which option holds the correct answer & adds point if user submitted it!
+						if (p.getAnswer()==choiceA.getText())
+						{
+							correct=1;
+						}
+						else
+							if (p.getAnswer()==choiceB.getText())
+							{
+								correct=2;
+							}
+						else
+							if (p.getAnswer()==choiceC.getText())
+							{
+								correct=1;
+								
+							}
+							else
+								if (p.getAnswer()==choiceD.getText())
+								{
+									correct=4;
+								}
+								else
+									if (p.getAnswer()==choiceE.getText())
+									{
+										correct=5;
+									}
+						
+
+						
 					}						
 					break; 
 				case 8: 
@@ -385,16 +634,28 @@ public class testModeCaller extends MenuControl{
 				
 				
 			}
-				if (numberFull==13)
+				Submit.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+
+						if (correct==selected)
+						{
+							score+=1;
+						}
+					}
+				});
+				
+				
+				/*if (numberFull==13)
 				{
 				
 					ScoreReport score = new ScoreReport(); 
 				
 				score.setVisible(true);
-				}
+				}*/
 			}
-			//add else option later to display message that says "test finished"
-			
+					score+=1;
+		dispScore.setText(String.valueOf(score));
+					
 		}
 	});
 			btnNextQuestion.setBounds(6, 475, 780, 29);
@@ -404,19 +665,20 @@ public class testModeCaller extends MenuControl{
 			lblYourScore.setBounds(613, 6, 96, 16);
 			contentPane.add(lblYourScore);
 			
-			textField = new JTextField();
-			textField.setBounds(698, 1, 69, 26);
-			contentPane.add(textField);
-			textField.setColumns(10);
+			dispScore = new JTextField();
+			dispScore.setEditable(false);
+			dispScore.setBounds(698, 1, 69, 26);
+			contentPane.add(dispScore);
+			dispScore.setColumns(10);
 			
 			JLabel lblPercentage = new JLabel("Percentage: ");
 			lblPercentage.setBounds(440, 6, 81, 16);
 			contentPane.add(lblPercentage);
 			
-			textField_1 = new JTextField();
-			textField_1.setBounds(533, 1, 70, 26);
-			contentPane.add(textField_1);
-			textField_1.setColumns(10);
+			dispPercent = new JTextField();
+			dispPercent.setBounds(533, 1, 70, 26);
+			contentPane.add(dispPercent);
+			dispPercent.setColumns(10);
 			
 			
 			
@@ -453,12 +715,4 @@ public class testModeCaller extends MenuControl{
     }	
 			
 	
-}
-
-
-protected void checkAnswer(String selected)
-{
-	
-	if (this.answer==)
-		this.correct+=1;
 }
