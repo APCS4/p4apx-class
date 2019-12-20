@@ -1,6 +1,8 @@
 package AP_Exam;
 import java.util.*;
 
+import Util.ConsoleMethods;
+
 /**
  * @author Phoenix Dimagiba
  * @version 12/19/19
