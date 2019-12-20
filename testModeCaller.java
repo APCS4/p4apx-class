@@ -81,24 +81,53 @@ public class testModeCaller extends MenuControl{
 			lblQuestion.setBounds(18, 34, 129, 16);
 			contentPane.add(lblQuestion);
 			
-			JRadioButton chA = new JRadioButton("");
-			chA.setBounds(18, 255, 219, 23);
-			contentPane.add(chA);
-			JRadioButton chB = new JRadioButton("");
-			chB.setBounds(18, 303, 219, 23);
-			contentPane.add(chB);
+			int selected=0;//if the user doesn't choose anything before selecting, selected will remain==0
 			
-			JRadioButton chC = new JRadioButton("");
-			chC.setBounds(18, 278, 219, 23);
-			contentPane.add(chC);
+			JRadioButton choiceA = new JRadioButton("");
+			choiceA.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					selected=1;	//the user selected choice "A"
+				}
+			});
+			choiceA.setBounds(18, 255, 750, 23);
+			contentPane.add(choiceA);
 			
-			JRadioButton chD = new JRadioButton("");
-			chD.setBounds(18, 325, 219, 23);
-			contentPane.add(chD);
+			JRadioButton choiceC = new JRadioButton("");
+			choiceC.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					selected=3;	//the user selected choice "C"
+				}
+			});
+			choiceC.setBounds(18, 303, 750, 23);
+			contentPane.add(choiceC);
 			
-			JRadioButton chE = new JRadioButton("");
-			chE.setBounds(18, 349, 219, 23);
-			contentPane.add(chE);
+			
+			JRadioButton choiceB = new JRadioButton("");
+			choiceB.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					selected=2;	//the user selected choice "B"
+				}
+			});
+			choiceB.setBounds(18, 278, 750, 23);
+			contentPane.add(choiceB);
+			
+			JRadioButton choiceD = new JRadioButton("");
+			choiceD.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					selected=4;	//the user selected choice "D"
+				}
+			});
+			choiceD.setBounds(18, 325, 750, 23);
+			contentPane.add(choiceD);
+			
+			JRadioButton choiceE = new JRadioButton("");
+			choiceE.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					selected=5;	//the user selected choice "e"
+				}
+			});
+			choiceE.setBounds(18, 349, 750, 23);
+			contentPane.add(choiceE);
 			
 			JButton Submit = new JButton("Submit Answer ");
 			
@@ -110,6 +139,9 @@ public class testModeCaller extends MenuControl{
 			{
 				calls[i]=0;
 			}
+			
+			int correct=9;
+			int score=0;
 			
 			JButton btnNextQuestion = new JButton("Next Question");
 			btnNextQuestion.addActionListener(new ActionListener() {
@@ -138,219 +170,233 @@ public class testModeCaller extends MenuControl{
 						}
 
 						
-						//increment value in calls and call methods
-						switch(question)
+				//increment value in calls and call methods
+				switch(question)
+				{
+				case 0: 
+					calls[0]+=1;
+					AP_Exam.Question a = new AP_Exam.MathQuestions();
+					testQuestion.setText(a.getQuestion());
+					choiceA.setText(a.getChoiceA()); 
+					choiceC.setText(a.getChoiceB());
+					choiceB.setText(a.getChoiceC());
+					choiceD.setText(a.getChoiceD());
+					choiceE.setText(a.getChoiceE());
+					//testQuestionAnswer.setText(a.getAnswer());
+					
+					//Finds which option holds the correct answer & adds point if user submitted it!
+					if (a.getAnswer()==choiceA.getText())
+					{
+						correct=1;
+					}
+					else
+						if (a.getAnswer()==choiceB.getText())
 						{
-						case 0: 
-							calls[0]+=1;
-							AP_Exam.Question a = new AP_Exam.MathQuestions();
-							testQuestion.setText(a.getQuestion());
-							chA.setText(a.getChoiceA()); 
-							chB.setText(a.getChoiceB());
-							chC.setText(a.getChoiceC());
-							chD.setText(a.getChoiceD());
-							chE.setText(a.getChoiceE());
-							//testQuestionAnswer.setText(a.getAnswer());
+							correct=2;
+						}
+					else
+						if (a.getAnswer()==choiceC.getText())
+						{
+							correct=1;
 							
-
-							Submit.addActionListener(new ActionListener() {
-								public void actionPerformed(ActionEvent e) {
-
-									
-									if (chA.isSelected()) {//this if statement is wrong!! Needs to be if the radioButton with the correct answer is selected, then show corect
-										testQuestionAnswer.setText("Correct");
-									
-								}
-									else 
-									{
-										testQuestionAnswer.setText("wrong\n answer: " + a.getAnswer());
-
-										
-									}
-								
-							}});
-							
-						
-							break; 
-						
-						case 1: 
-							calls[1]+=1;
-							AP_Exam.encapsulationQuestions b = new AP_Exam.encapsulationQuestions();
-							testQuestion.setText(b.getQuestion());
-							chA.setText(b.getChoiceA()); 
-							chB.setText(b.getChoiceB());
-							chC.setText(b.getChoiceC());
-							chD.setText(b.getChoiceD());
-							chE.setText(b.getChoiceE());
-							testQuestionAnswer.setText(b.getAnswer());
-							break;
-							
-						case 2:
-							calls[2]+=1;
-							AP_Exam.Question c = new AP_Exam.DataTypeQuestions();
-							testQuestion.setText(c.getQuestion());
-							chA.setText(c.getChoiceA()); 
-							chB.setText(c.getChoiceB());
-							chC.setText(c.getChoiceC());
-							chD.setText(c.getChoiceD());
-							chE.setText(c.getChoiceE());
-							testQuestionAnswer.setText(c.getAnswer());
-							break; 
-							
-					 
-						case 3: 
-							calls[3]+=1;
-							AP_Exam.Question d = new AP_Exam.BinaryMathQuestions();
-							testQuestion.setText(d.getQuestion());
-							chA.setText(d.getChoiceA()); 
-							chB.setText(d.getChoiceB());
-							chC.setText(d.getChoiceC());
-							chD.setText(d.getChoiceD());
-							chE.setText(d.getChoiceE());
-							testQuestionAnswer.setText(d.getAnswer());
-							break;
-							
-						case 4: 
-							calls[question]+=1;
-							AP_Exam.Question x = new AP_Exam.CA();
-							testQuestion.setText(x.getQuestion());
-							chA.setText(x.getChoiceA()); 
-							chB.setText(x.getChoiceB());
-							chC.setText(x.getChoiceC());
-							chD.setText(x.getChoiceD());
-							chE.setText(x.getChoiceE());
-							testQuestionAnswer.setText(x.getAnswer());
-							break; 
-							
-						case 5: 
-							calls[question]+=1;
-							AP_Exam.Question f = new AP_Exam.MVCQuestion();
-							testQuestion.setText(f.getQuestion());
-							chA.setText(f.getChoiceA()); 
-							chB.setText(f.getChoiceB());
-							chC.setText(f.getChoiceC());
-							chD.setText(f.getChoiceD());
-							chE.setText(f.getChoiceE());							
-							testQuestionAnswer.setText(f.getAnswer());
-							break; 
-							
-						case 6: 
-							calls[question]+=1;
-							AP_Exam.Question g = new AP_Exam.OperatorQuestions();
-							testQuestion.setText(g.getQuestion());
-							chA.setText(g.getChoiceA()); 
-							chB.setText(g.getChoiceB());
-							chC.setText(g.getChoiceC());
-							chD.setText(g.getChoiceD());
-							chE.setText(g.getChoiceE());
-							testQuestionAnswer.setText(g.getAnswer());
-							break;
-						
-							
-						case 7:
-							calls[question]+=1;
-							int listPicker = rand.nextInt(2);
-							
-							if(listPicker==0)
+						}
+						else
+							if (a.getAnswer()==choiceD.getText())
 							{
-								AP_Exam.Question k = new AP_Exam.ArrayListQuestions();
-								testQuestion.setText(k.getQuestion());
-								chA.setText(k.getChoiceA()); 
-								chB.setText(k.getChoiceB());
-								chC.setText(k.getChoiceC());
-								chD.setText(k.getChoiceD());
-								chE.setText(k.getChoiceE());
-								testQuestionAnswer.setText(k.getAnswer());
+								correct=4;
 							}
 							else
-							{
-
-								AP_Exam.Question p = new AP_Exam.ListQuestions2();
-								testQuestion.setText(p.getQuestion());
-								chA.setText(p.getChoiceA()); 
-								chB.setText(p.getChoiceB());
-								chC.setText(p.getChoiceC());
-								chD.setText(p.getChoiceD());
-								chE.setText(p.getChoiceE());
-								testQuestionAnswer.setText(p.getAnswer());
-							}						
-							break; 
-						case 8: 
-							calls[question]+=1;
-							AP_Exam.Question m = new AP_Exam.BackgroundInfoQuestions();
-							testQuestion.setText(m.getQuestion());
-							chA.setText(m.getChoiceA()); 
-							chB.setText(m.getChoiceB());
-							chC.setText(m.getChoiceC());
-							chD.setText(m.getChoiceD());
-							chE.setText(m.getChoiceE());
-							testQuestionAnswer.setText(m.getAnswer());
-							break; 
-						
-						case 9: 
-							calls[question]+=1;
-							AP_Exam.Question n = new AP_Exam.PowSqrt();
-							testQuestion.setText(n.getQuestion());
-							chA.setText(n.getChoiceA()); 
-							chB.setText(n.getChoiceB());
-							chC.setText(n.getChoiceC());
-							chD.setText(n.getChoiceD());
-							chE.setText(n.getChoiceE());
-							testQuestionAnswer.setText(n.getAnswer());
-							break; 
-						
-						case 10: 
-							calls[question]+= 1;
-							AP_Exam.Question o = new AP_Exam.Recursion();
-							testQuestion.setText(o.getQuestion());
-							chA.setText(o.getChoiceA()); 
-							chB.setText(o.getChoiceB());
-							chC.setText(o.getChoiceC());
-							chD.setText(o.getChoiceD());
-							chE.setText(o.getChoiceE());
-							testQuestionAnswer.setText(o.getAnswer());
-							break; 
-						
-						case 11: 
-							calls[question]+= 1;
-							AP_Exam.Question q = new AP_Exam.PolymorphismQuestions();
-							testQuestion.setText(q.getQuestion());
-							chA.setText(q.getChoiceA()); 
-							chB.setText(q.getChoiceB());
-							chC.setText(q.getChoiceC());
-							chD.setText(q.getChoiceD());
-							chE.setText(q.getChoiceE());
-							testQuestionAnswer.setText(q.getAnswer());
-							break; 
-							
-						case 12: 
-							calls[question]+= 1;
-							AP_Exam.Question r = new AP_Exam.Polymorph();
-							testQuestion.setText(r.getQuestion());
-							chA.setText(r.getChoiceA()); 
-							chB.setText(r.getChoiceB());
-							chC.setText(r.getChoiceC());
-							chD.setText(r.getChoiceD());
-							chE.setText(r.getChoiceE());
-							testQuestionAnswer.setText(r.getAnswer());
-							break; 
-							
-							
-						
-						
-					}
-						if (numberFull==13)
-						{
-						
-							ScoreReport score = new ScoreReport(); 
-						
-						score.setVisible(true);
-						}
-					}
-					//add else option later to display message that says "test finished"
+								if (a.getAnswer()==choiceE.getText())
+								{
+									correct=5;
+								}
 					
+
+					if (correct==selected)
+					{
+						score+=1;
+					}
+				
+					break; 
+				
+				case 1: 
+					calls[1]+=1;
+					AP_Exam.encapsulationQuestions b = new AP_Exam.encapsulationQuestions();
+					testQuestion.setText(b.getQuestion());
+					choiceA.setText(b.getChoiceA()); 
+					choiceC.setText(b.getChoiceB());
+					choiceB.setText(b.getChoiceC());
+					choiceD.setText(b.getChoiceD());
+					choiceE.setText(b.getChoiceE());
+					testQuestionAnswer.setText(b.getAnswer());
+					break;
+					
+				case 2:
+					calls[2]+=1;
+					AP_Exam.Question c = new AP_Exam.DataTypeQuestions();
+					testQuestion.setText(c.getQuestion());
+					choiceA.setText(c.getChoiceA()); 
+					choiceC.setText(c.getChoiceB());
+					choiceB.setText(c.getChoiceC());
+					choiceD.setText(c.getChoiceD());
+					choiceE.setText(c.getChoiceE());
+					testQuestionAnswer.setText(c.getAnswer());
+					break; 
+					
+			 
+				case 3: 
+					calls[3]+=1;
+					AP_Exam.Question d = new AP_Exam.BinaryMathQuestions();
+					testQuestion.setText(d.getQuestion());
+					choiceA.setText(d.getChoiceA()); 
+					choiceC.setText(d.getChoiceB());
+					choiceB.setText(d.getChoiceC());
+					choiceD.setText(d.getChoiceD());
+					choiceE.setText(d.getChoiceE());
+					testQuestionAnswer.setText(d.getAnswer());
+					break;
+					
+				case 4: 
+					calls[question]+=1;
+					AP_Exam.Question x = new AP_Exam.CA();
+					testQuestion.setText(x.getQuestion());
+					choiceA.setText(x.getChoiceA()); 
+					choiceC.setText(x.getChoiceB());
+					choiceB.setText(x.getChoiceC());
+					choiceD.setText(x.getChoiceD());
+					choiceE.setText(x.getChoiceE());
+					testQuestionAnswer.setText(x.getAnswer());
+					break; 
+					
+				case 5: 
+					calls[question]+=1;
+					AP_Exam.Question f = new AP_Exam.MVCQuestion();
+					testQuestion.setText(f.getQuestion());
+					choiceA.setText(f.getChoiceA()); 
+					choiceC.setText(f.getChoiceB());
+					choiceB.setText(f.getChoiceC());
+					choiceD.setText(f.getChoiceD());
+					choiceE.setText(f.getChoiceE());							
+					testQuestionAnswer.setText(f.getAnswer());
+					break; 
+					
+				case 6: 
+					calls[question]+=1;
+					AP_Exam.Question g = new AP_Exam.OperatorQuestions();
+					testQuestion.setText(g.getQuestion());
+					choiceA.setText(g.getChoiceA()); 
+					choiceC.setText(g.getChoiceB());
+					choiceB.setText(g.getChoiceC());
+					choiceD.setText(g.getChoiceD());
+					choiceE.setText(g.getChoiceE());
+					testQuestionAnswer.setText(g.getAnswer());
+					break;
+				
+					
+				case 7:
+					calls[question]+=1;
+					int listPicker = rand.nextInt(2);
+					
+					if(listPicker==0)
+					{
+						AP_Exam.Question k = new AP_Exam.ArrayListQuestions();
+						testQuestion.setText(k.getQuestion());
+						choiceA.setText(k.getChoiceA()); 
+						choiceC.setText(k.getChoiceB());
+						choiceB.setText(k.getChoiceC());
+						choiceD.setText(k.getChoiceD());
+						choiceE.setText(k.getChoiceE());
+						testQuestionAnswer.setText(k.getAnswer());
+					}
+					else
+					{
+
+						AP_Exam.Question p = new AP_Exam.ListQuestions2();
+						testQuestion.setText(p.getQuestion());
+						choiceA.setText(p.getChoiceA()); 
+						choiceC.setText(p.getChoiceB());
+						choiceB.setText(p.getChoiceC());
+						choiceD.setText(p.getChoiceD());
+						choiceE.setText(p.getChoiceE());
+						testQuestionAnswer.setText(p.getAnswer());
+					}						
+					break; 
+				case 8: 
+					calls[question]+=1;
+					AP_Exam.Question m = new AP_Exam.BackgroundInfoQuestions();
+					testQuestion.setText(m.getQuestion());
+					choiceA.setText(m.getChoiceA()); 
+					choiceC.setText(m.getChoiceB());
+					choiceB.setText(m.getChoiceC());
+					choiceD.setText(m.getChoiceD());
+					choiceE.setText(m.getChoiceE());
+					testQuestionAnswer.setText(m.getAnswer());
+					break; 
+				
+				case 9: 
+					calls[question]+=1;
+					AP_Exam.Question n = new AP_Exam.PowSqrt();
+					testQuestion.setText(n.getQuestion());
+					choiceA.setText(n.getChoiceA()); 
+					choiceC.setText(n.getChoiceB());
+					choiceB.setText(n.getChoiceC());
+					choiceD.setText(n.getChoiceD());
+					choiceE.setText(n.getChoiceE());
+					testQuestionAnswer.setText(n.getAnswer());
+					break; 
+				
+				case 10: 
+					calls[question]+= 1;
+					AP_Exam.Question o = new AP_Exam.Recursion();
+					testQuestion.setText(o.getQuestion());
+					choiceA.setText(o.getChoiceA()); 
+					choiceC.setText(o.getChoiceB());
+					choiceB.setText(o.getChoiceC());
+					choiceD.setText(o.getChoiceD());
+					choiceE.setText(o.getChoiceE());
+					testQuestionAnswer.setText(o.getAnswer());
+					break; 
+				
+				case 11: 
+					calls[question]+= 1;
+					AP_Exam.Question q = new AP_Exam.PolymorphismQuestions();
+					testQuestion.setText(q.getQuestion());
+					choiceA.setText(q.getChoiceA()); 
+					choiceC.setText(q.getChoiceB());
+					choiceB.setText(q.getChoiceC());
+					choiceD.setText(q.getChoiceD());
+					choiceE.setText(q.getChoiceE());
+					testQuestionAnswer.setText(q.getAnswer());
+					break; 
+					
+				case 12: 
+					calls[question]+= 1;
+					AP_Exam.Question r = new AP_Exam.Polymorph();
+					testQuestion.setText(r.getQuestion());
+					choiceA.setText(r.getChoiceA()); 
+					choiceC.setText(r.getChoiceB());
+					choiceB.setText(r.getChoiceC());
+					choiceD.setText(r.getChoiceD());
+					choiceE.setText(r.getChoiceE());
+					testQuestionAnswer.setText(r.getAnswer());
+					break; 
+					
+					
+				
+				
+			}
+				if (numberFull==13)
+				{
+				
+					ScoreReport score = new ScoreReport(); 
+				
+				score.setVisible(true);
 				}
-			});
+			}
+			//add else option later to display message that says "test finished"
+			
+		}
+	});
 			btnNextQuestion.setBounds(6, 475, 780, 29);
 			contentPane.add(btnNextQuestion);
 			
@@ -404,7 +450,15 @@ public class testModeCaller extends MenuControl{
 				
 				
     
+    }	
 			
-			
-	}
+	
+}
+
+
+protected void checkAnswer(String selected)
+{
+	
+	if (this.answer==)
+		this.correct+=1;
 }

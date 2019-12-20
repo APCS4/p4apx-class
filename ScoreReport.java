@@ -23,7 +23,7 @@ public class ScoreReport extends testModeCaller {
     	getContentPane().add(lblYourScore);
     	
     	textField = new JTextField();
-    	textField.setBounds(542, 22, 130, 32);
+    	textField.setBounds(287, 17, 130, 32);
     	getContentPane().add(textField);
     	textField.setColumns(10);
     	
