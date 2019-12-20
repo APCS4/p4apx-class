@@ -33,7 +33,6 @@ public class testModeCaller extends MenuControl{
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
     private JTextArea testQuestion = new JTextArea();
-    private JTextArea testChoices = new JTextArea();
     private JTextArea testQuestionAnswer = new JTextArea();
     private JTextField textField;
     private JTextField textField_1;
@@ -74,17 +73,30 @@ public class testModeCaller extends MenuControl{
 			testQuestion.setEditable(false);
 			testQuestion.setLineWrap(true);
 			
-			JScrollPane scrollPane_1 = new JScrollPane();
-			scrollPane_1.setBounds(76, 278, 355, 86);
-			contentPane.add(scrollPane_1);
-			scrollPane_1.setRowHeaderView(testChoices);
-			
-			testChoices.setEditable(false);
-			testChoices.setLineWrap(true);
-			
 			JLabel lblQuestion = new JLabel("Question");
 			lblQuestion.setBounds(18, 34, 61, 16);
 			contentPane.add(lblQuestion);
+			
+			JRadioButton chA = new JRadioButton("");
+			chA.setBounds(6, 278, 219, 23);
+			contentPane.add(chA);
+			JRadioButton chB = new JRadioButton("");
+			chB.setBounds(6, 303, 219, 23);
+			contentPane.add(chB);
+			
+			JRadioButton chC = new JRadioButton("");
+			chC.setBounds(6, 325, 219, 23);
+			contentPane.add(chC);
+			
+			JRadioButton chD = new JRadioButton("");
+			chD.setBounds(232, 278, 219, 23);
+			contentPane.add(chD);
+			
+			JRadioButton chE = new JRadioButton("");
+			chE.setBounds(232, 303, 219, 23);
+			contentPane.add(chE);
+			
+			JButton Submit = new JButton("submit ");
 			
 			//Calls array
 			int calls[]= new int[13];
@@ -129,15 +141,43 @@ public class testModeCaller extends MenuControl{
 							calls[0]+=1;
 							AP_Exam.Question a = new AP_Exam.MathQuestions();
 							testQuestion.setText(a.getQuestion());
-							testChoices.setText(a.getChoices()); 
-							testQuestionAnswer.setText(a.getAnswer());
+							chA.setText(a.getChoiceA()); 
+							chB.setText(a.getChoiceB());
+							chC.setText(a.getChoiceC());
+							chD.setText(a.getChoiceD());
+							chE.setText(a.getChoiceE());
+							//testQuestionAnswer.setText(a.getAnswer());
+							
+
+							Submit.addActionListener(new ActionListener() {
+								public void actionPerformed(ActionEvent e) {
+
+									
+									if (chA.isSelected()) {//this if statement is wrong!! Needs to be if the radioButton with the correct answer is selected, then show corect
+										testQuestionAnswer.setText("Correct");
+									
+								}
+									else 
+									{
+										testQuestionAnswer.setText("wrong\n answer: " + a.getAnswer());
+
+										
+									}
+								
+							}});
+							
+						
 							break; 
 						
 						case 1: 
 							calls[1]+=1;
 							AP_Exam.encapsulationQuestions b = new AP_Exam.encapsulationQuestions();
 							testQuestion.setText(b.getQuestion());
-							testChoices.setText(b.getChoices());
+							chA.setText(b.getChoiceA()); 
+							chB.setText(b.getChoiceB());
+							chC.setText(b.getChoiceC());
+							chD.setText(b.getChoiceD());
+							chE.setText(b.getChoiceE());
 							testQuestionAnswer.setText(b.getAnswer());
 							break;
 							
@@ -145,7 +185,11 @@ public class testModeCaller extends MenuControl{
 							calls[2]+=1;
 							AP_Exam.Question c = new AP_Exam.DataTypeQuestions();
 							testQuestion.setText(c.getQuestion());
-							testChoices.setText(c.getChoices());
+							chA.setText(c.getChoiceA()); 
+							chB.setText(c.getChoiceB());
+							chC.setText(c.getChoiceC());
+							chD.setText(c.getChoiceD());
+							chE.setText(c.getChoiceE());
 							testQuestionAnswer.setText(c.getAnswer());
 							break; 
 							
@@ -154,7 +198,11 @@ public class testModeCaller extends MenuControl{
 							calls[3]+=1;
 							AP_Exam.Question d = new AP_Exam.BinaryMathQuestions();
 							testQuestion.setText(d.getQuestion());
-							testChoices.setText(d.getChoices());
+							chA.setText(d.getChoiceA()); 
+							chB.setText(d.getChoiceB());
+							chC.setText(d.getChoiceC());
+							chD.setText(d.getChoiceD());
+							chE.setText(d.getChoiceE());
 							testQuestionAnswer.setText(d.getAnswer());
 							break;
 							
@@ -162,7 +210,11 @@ public class testModeCaller extends MenuControl{
 							calls[question]+=1;
 							AP_Exam.Question x = new AP_Exam.CA();
 							testQuestion.setText(x.getQuestion());
-							testChoices.setText(x.getChoices());
+							chA.setText(x.getChoiceA()); 
+							chB.setText(x.getChoiceB());
+							chC.setText(x.getChoiceC());
+							chD.setText(x.getChoiceD());
+							chE.setText(x.getChoiceE());
 							testQuestionAnswer.setText(x.getAnswer());
 							break; 
 							
@@ -170,7 +222,11 @@ public class testModeCaller extends MenuControl{
 							calls[question]+=1;
 							AP_Exam.Question f = new AP_Exam.MVCQuestion();
 							testQuestion.setText(f.getQuestion());
-							testChoices.setText(f.getChoices());
+							chA.setText(f.getChoiceA()); 
+							chB.setText(f.getChoiceB());
+							chC.setText(f.getChoiceC());
+							chD.setText(f.getChoiceD());
+							chE.setText(f.getChoiceE());							
 							testQuestionAnswer.setText(f.getAnswer());
 							break; 
 							
@@ -178,7 +234,11 @@ public class testModeCaller extends MenuControl{
 							calls[question]+=1;
 							AP_Exam.Question g = new AP_Exam.OperatorQuestions();
 							testQuestion.setText(g.getQuestion());
-							testChoices.setText(g.getChoices());
+							chA.setText(g.getChoiceA()); 
+							chB.setText(g.getChoiceB());
+							chC.setText(g.getChoiceC());
+							chD.setText(g.getChoiceD());
+							chE.setText(g.getChoiceE());
 							testQuestionAnswer.setText(g.getAnswer());
 							break;
 						
@@ -191,7 +251,11 @@ public class testModeCaller extends MenuControl{
 							{
 								AP_Exam.Question k = new AP_Exam.ArrayListQuestions();
 								testQuestion.setText(k.getQuestion());
-								testChoices.setText(k.getChoices());
+								chA.setText(k.getChoiceA()); 
+								chB.setText(k.getChoiceB());
+								chC.setText(k.getChoiceC());
+								chD.setText(k.getChoiceD());
+								chE.setText(k.getChoiceE());
 								testQuestionAnswer.setText(k.getAnswer());
 							}
 							else
@@ -199,7 +263,11 @@ public class testModeCaller extends MenuControl{
 
 								AP_Exam.Question p = new AP_Exam.ListQuestions2();
 								testQuestion.setText(p.getQuestion());
-								testChoices.setText(p.getChoices());
+								chA.setText(p.getChoiceA()); 
+								chB.setText(p.getChoiceB());
+								chC.setText(p.getChoiceC());
+								chD.setText(p.getChoiceD());
+								chE.setText(p.getChoiceE());
 								testQuestionAnswer.setText(p.getAnswer());
 							}						
 							break; 
@@ -207,7 +275,11 @@ public class testModeCaller extends MenuControl{
 							calls[question]+=1;
 							AP_Exam.Question m = new AP_Exam.BackgroundInfoQuestions();
 							testQuestion.setText(m.getQuestion());
-							testChoices.setText(m.getChoices());
+							chA.setText(m.getChoiceA()); 
+							chB.setText(m.getChoiceB());
+							chC.setText(m.getChoiceC());
+							chD.setText(m.getChoiceD());
+							chE.setText(m.getChoiceE());
 							testQuestionAnswer.setText(m.getAnswer());
 							break; 
 						
@@ -215,7 +287,11 @@ public class testModeCaller extends MenuControl{
 							calls[question]+=1;
 							AP_Exam.Question n = new AP_Exam.PowSqrt();
 							testQuestion.setText(n.getQuestion());
-							testChoices.setText(n.getChoices());
+							chA.setText(n.getChoiceA()); 
+							chB.setText(n.getChoiceB());
+							chC.setText(n.getChoiceC());
+							chD.setText(n.getChoiceD());
+							chE.setText(n.getChoiceE());
 							testQuestionAnswer.setText(n.getAnswer());
 							break; 
 						
@@ -223,7 +299,11 @@ public class testModeCaller extends MenuControl{
 							calls[question]+= 1;
 							AP_Exam.Question o = new AP_Exam.Recursion();
 							testQuestion.setText(o.getQuestion());
-							testChoices.setText(o.getChoices());
+							chA.setText(o.getChoiceA()); 
+							chB.setText(o.getChoiceB());
+							chC.setText(o.getChoiceC());
+							chD.setText(o.getChoiceD());
+							chE.setText(o.getChoiceE());
 							testQuestionAnswer.setText(o.getAnswer());
 							break; 
 						
@@ -231,7 +311,11 @@ public class testModeCaller extends MenuControl{
 							calls[question]+= 1;
 							AP_Exam.Question q = new AP_Exam.PolymorphismQuestions();
 							testQuestion.setText(q.getQuestion());
-							testChoices.setText(q.getChoices());
+							chA.setText(q.getChoiceA()); 
+							chB.setText(q.getChoiceB());
+							chC.setText(q.getChoiceC());
+							chD.setText(q.getChoiceD());
+							chE.setText(q.getChoiceE());
 							testQuestionAnswer.setText(q.getAnswer());
 							break; 
 							
@@ -239,7 +323,11 @@ public class testModeCaller extends MenuControl{
 							calls[question]+= 1;
 							AP_Exam.Question r = new AP_Exam.Polymorph();
 							testQuestion.setText(r.getQuestion());
-							testChoices.setText(r.getChoices());
+							chA.setText(r.getChoiceA()); 
+							chB.setText(r.getChoiceB());
+							chC.setText(r.getChoiceC());
+							chD.setText(r.getChoiceD());
+							chE.setText(r.getChoiceE());
 							testQuestionAnswer.setText(r.getAnswer());
 							break; 
 							
@@ -280,19 +368,22 @@ public class testModeCaller extends MenuControl{
 			contentPane.add(textField_1);
 			textField_1.setColumns(10);
 			
-			JRadioButton chA = new JRadioButton("New radio button");
-			chA.setBounds(6, 278, 141, 23);
-			contentPane.add(chA);
-			chA.setText("hello");
 			
-			JButton btnNewButton_2 = new JButton("Polymorph");
+			
+			
+			Submit.setBounds(230, 338, 117, 29);
+			contentPane.add(Submit);
+			
+			
+			
+			/*JButton btnNewButton_2 = new JButton("Polymorph");
 			btnNewButton_2.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					AP_Exam.Question q = new AP_Exam.Polymorph();
 					testQuestion.setText(q.getQuestion());
 					testChoices.setText(q.getChoices());
 					testQuestionAnswer.setText(q.getAnswer());
-				}});
+				}});*/
 			
 				
 				
