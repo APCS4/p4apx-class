@@ -289,6 +289,35 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		backgroun.setBounds(70, 520, 400, 50);
 		getContentPane().add(backgroun);
 		
+		//
+		//
+		//
+		//
+		/*JButton daniel = new JButton("daniel");
+		daniel.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+
+			}
+		});
+		daniel.addMouseListener(new MouseAdapter() 
+		{
+			@Override
+			public void mouseEntered(MouseEvent e) 
+			{
+				daniel.setIcon(new ImageIcon("review UI/back2.jpg"));
+			}
+			public void mouseExited(MouseEvent e) 
+			{
+				backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
+			}
+		});
+		backgroun.setBorder(null);
+		backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
+		backgroun.setBounds(680, 520, 400, 50);
+		getContentPane().add(backgroun);
+		
 		JButton backgroun = new JButton("");
 		backgroun.addActionListener(new ActionListener() 
 		{
@@ -311,7 +340,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		});
 		backgroun.setBorder(null);
 		backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
-		backgroun.setBounds(70, 520, 400, 50);
+		backgroun.setBounds(270, 520, 400, 50);
 		getContentPane().add(backgroun);
 		
 		JButton backgroun = new JButton("");
@@ -438,32 +467,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
 		backgroun.setBounds(70, 520, 400, 50);
 		getContentPane().add(backgroun);
-		
-		JButton backgroun = new JButton("");
-		backgroun.addActionListener(new ActionListener() 
-		{
-			public void actionPerformed(ActionEvent e) 
-			{
-
-			}
-		});
-		backgroun.addMouseListener(new MouseAdapter() 
-		{
-			@Override
-			public void mouseEntered(MouseEvent e) 
-			{
-				backgroun.setIcon(new ImageIcon("review UI/back2.jpg"));
-			}
-			public void mouseExited(MouseEvent e) 
-			{
-				backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
-			}
-		});
-		backgroun.setBorder(null);
-		backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
-		backgroun.setBounds(70, 520, 400, 50);
-		getContentPane().add(backgroun);
-		
+		*/
 		//background picture
 		background = new JLabel("");
 		background.setIcon(image2);
