@@ -48,13 +48,13 @@ public class testModeCaller extends MenuControl{
     public static int score=0;
 
 
-    public testModeCaller() {
+    public testModeCaller() 
+    {
 			
-    	
-		
 		/**
 		 * Create the frame.
-		 */			setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		 */			
+    		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			setBounds(100, 100, 784, 566);
 			contentPane = new JPanel();
 			contentPane.setBackground(new Color(220, 220, 220));
@@ -101,48 +101,63 @@ public class testModeCaller extends MenuControl{
 
 			
 			JRadioButton choiceA = new JRadioButton("");
-			choiceA.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
+			choiceA.addActionListener(new ActionListener() 
+			{
+				public void actionPerformed(ActionEvent e) 
+				{
 					selected=1;	//the user selected choice "A"
 				}
 			});
+			
 			choiceA.setBounds(18, 255, 750, 23);
 			contentPane.add(choiceA);
 			
 			JRadioButton choiceC = new JRadioButton("");
-			choiceC.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
+			choiceC.addActionListener(new ActionListener() 
+			{
+				public void actionPerformed(ActionEvent e) 
+				{
 					selected=3;	//the user selected choice "C"
 				}
 			});
+			
 			choiceC.setBounds(18, 279, 750, 23);
 			contentPane.add(choiceC);
 			
 			
 			JRadioButton choiceB = new JRadioButton("");
-			choiceB.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
+			choiceB.addActionListener(new ActionListener() 
+			{
+				public void actionPerformed(ActionEvent e) 
+				{
 					selected=2;	//the user selected choice "B"
 				}
 			});
+			
 			choiceB.setBounds(18, 302, 750, 23);
 			contentPane.add(choiceB);
 			
 			JRadioButton choiceD = new JRadioButton("");
-			choiceD.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
+			choiceD.addActionListener(new ActionListener() 
+			{
+				public void actionPerformed(ActionEvent e) 
+				{
 					selected=4;	//the user selected choice "D"
 				}
 			});
+			
 			choiceD.setBounds(18, 325, 750, 23);
 			contentPane.add(choiceD);
 			
 			JRadioButton choiceE = new JRadioButton("");
-			choiceE.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
+			choiceE.addActionListener(new ActionListener() 
+			{
+				public void actionPerformed(ActionEvent e) 
+				{
 					selected=5;	//the user selected choice "e"
 				}
 			});
+			
 			choiceE.setBounds(18, 349, 750, 23);
 			contentPane.add(choiceE);
 			
@@ -162,8 +177,10 @@ public class testModeCaller extends MenuControl{
 
 			
 			JButton btnNextQuestion = new JButton("Next Question");
-			btnNextQuestion.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
+			btnNextQuestion.addActionListener(new ActionListener() 
+			{
+				public void actionPerformed(ActionEvent e) 
+				{
 					testQuestionAnswer.setText("");
 					choiceA.setSelected(false);
 					choiceB.setSelected(false);
@@ -198,26 +215,23 @@ public class testModeCaller extends MenuControl{
 						switch(question)
 						{
 									
-				case 1: 
+							case 1: 
+								calls[1]+=1;
+								AP_Exam.encapsulationQuestions b = new AP_Exam.encapsulationQuestions();
+								testQuestion.setText(b.getQuestion());
+								choiceA.setText(b.getChoiceA()); 
+								choiceC.setText(b.getChoiceB());
+								choiceB.setText(b.getChoiceC());
+								choiceD.setText(b.getChoiceD());
+								choiceE.setText(b.getChoiceE());
 					
-					
-					calls[1]+=1;
-					AP_Exam.encapsulationQuestions b = new AP_Exam.encapsulationQuestions();
-					testQuestion.setText(b.getQuestion());
-					choiceA.setText(b.getChoiceA()); 
-					choiceC.setText(b.getChoiceB());
-					choiceB.setText(b.getChoiceC());
-					choiceD.setText(b.getChoiceD());
-					choiceE.setText(b.getChoiceE());
-
-					
-					Submit.addActionListener(new ActionListener() {
-						public void actionPerformed(ActionEvent e) {
-							
-							testQuestionAnswer.setText(b.getAnswer());
-						}
-					});
-					
+								Submit.addActionListener(new ActionListener() 
+								{
+									public void actionPerformed(ActionEvent e) 
+									{
+										testQuestionAnswer.setText(b.getAnswer());
+									}
+								});
 					break;
 					
 				case 2:
@@ -229,16 +243,14 @@ public class testModeCaller extends MenuControl{
 					choiceB.setText(c.getChoiceC());
 					choiceD.setText(c.getChoiceD());
 					choiceE.setText(c.getChoiceE());
-
 					
-					Submit.addActionListener(new ActionListener() {
-						public void actionPerformed(ActionEvent e) {
-							
-						
+					Submit.addActionListener(new ActionListener() 
+					{
+						public void actionPerformed(ActionEvent e) 
+						{
 							testQuestionAnswer.setText(c.getAnswer());
 						}
 					});
-
 					break; 
 					
 			 
@@ -252,17 +264,16 @@ public class testModeCaller extends MenuControl{
 					choiceD.setText(d.getChoiceD());
 					choiceE.setText(d.getChoiceE());
 	
-					
-					Submit.addActionListener(new ActionListener() {
-						public void actionPerformed(ActionEvent e) {
+					Submit.addActionListener(new ActionListener() 
+					{
+						public void actionPerformed(ActionEvent e) 
+						{
 							
 					 
 						
 							testQuestionAnswer.setText(d.getAnswer());
 						}
 					});
-
-					
 					break;
 					
 				case 4: 
@@ -279,7 +290,8 @@ public class testModeCaller extends MenuControl{
 					Submit.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
 							
-							testChoices.setText(x.getChoices());							testQuestionAnswer.setText(x.getAnswer());
+							testChoices.setText(x.getChoices());
+							testQuestionAnswer.setText(x.getAnswer());
 						}
 					});
 
@@ -297,10 +309,10 @@ public class testModeCaller extends MenuControl{
 					choiceE.setText(f.getChoiceE());							
 			
 					
-					Submit.addActionListener(new ActionListener() {
-						public void actionPerformed(ActionEvent e) {
-							
-						
+					Submit.addActionListener(new ActionListener() 
+					{
+						public void actionPerformed(ActionEvent e) 
+						{
 							testQuestionAnswer.setText(f.getAnswer());
 						}
 					});
@@ -319,10 +331,10 @@ public class testModeCaller extends MenuControl{
 					choiceE.setText(g.getChoiceE());
 			
 					
-					Submit.addActionListener(new ActionListener() {
-						public void actionPerformed(ActionEvent e) {
-							
-						
+					Submit.addActionListener(new ActionListener() 
+					{
+						public void actionPerformed(ActionEvent e) 
+						{
 							testQuestionAnswer.setText(g.getAnswer());
 						}
 					});
@@ -346,38 +358,35 @@ public class testModeCaller extends MenuControl{
 						choiceD.setText(k.getChoiceD());
 						choiceE.setText(k.getChoiceE());
 				
-						Submit.addActionListener(new ActionListener() {
-							public void actionPerformed(ActionEvent e) {
-								
+						Submit.addActionListener(new ActionListener() 
+						{
+							public void actionPerformed(ActionEvent e) 
+							{
 								testQuestionAnswer.setText(k.getAnswer());
 							}
 						
 						});
 					}
-							else
-							{
-
-								AP_Exam.Question p = new AP_Exam.ListQuestions2();
-								testQuestion.setText(p.getQuestion());
-								choiceA.setText(p.getChoiceA()); 
-								choiceC.setText(p.getChoiceB());
-								choiceB.setText(p.getChoiceC());
-								choiceD.setText(p.getChoiceD());
-								choiceE.setText(p.getChoiceE());
+					else
+					{
+						AP_Exam.Question p = new AP_Exam.ListQuestions2();
+						testQuestion.setText(p.getQuestion());
+						choiceA.setText(p.getChoiceA()); 
+						choiceC.setText(p.getChoiceB());
+						choiceB.setText(p.getChoiceC());
+						choiceD.setText(p.getChoiceD());
+						choiceE.setText(p.getChoiceE());
 							
-								Submit.addActionListener(new ActionListener() {
-									public void actionPerformed(ActionEvent e) {
-										
-										testQuestionAnswer.setText(k.getAnswer());
-									}
-								
-								});
-							}			
-				
-					
-						
-						
-							break; 
+						Submit.addActionListener(new ActionListener() 
+						{
+							public void actionPerformed(ActionEvent e) 
+							{
+								testQuestionAnswer.setText(k.getAnswer());
+							}	
+						});
+					}			
+
+				break; 
 						
 				
 					
@@ -409,14 +418,14 @@ public class testModeCaller extends MenuControl{
 					choiceB.setText(n.getChoiceC());
 					choiceD.setText(n.getChoiceD());
 					choiceE.setText(n.getChoiceE());
-					Submit.addActionListener(new ActionListener() {
-						public void actionPerformed(ActionEvent e) {
-							
+					Submit.addActionListener(new ActionListener() 
+					{
+						public void actionPerformed(ActionEvent e) 
+						{
 							testQuestionAnswer.setText(n.getAnswer());
 						}
 					});
-
-					break; 
+				break; 
 				
 				case 10: 
 					calls[question]+= 1;
@@ -428,14 +437,15 @@ public class testModeCaller extends MenuControl{
 					choiceD.setText(o.getChoiceD());
 					choiceE.setText(o.getChoiceE());
 					
-					Submit.addActionListener(new ActionListener() {
-						public void actionPerformed(ActionEvent e) {
-							
+					Submit.addActionListener(new ActionListener() 
+					{
+						public void actionPerformed(ActionEvent e) 
+						{
 							testQuestionAnswer.setText(o.getAnswer());
 						}
 					});
 
-					break; 
+				break; 
 				
 				case 11: 
 					calls[question]+= 1;
@@ -447,14 +457,15 @@ public class testModeCaller extends MenuControl{
 					choiceD.setText(q.getChoiceD());
 					choiceE.setText(q.getChoiceE());
 					
-					Submit.addActionListener(new ActionListener() {
-						public void actionPerformed(ActionEvent e) {
-							
+					Submit.addActionListener(new ActionListener() 
+					{
+						public void actionPerformed(ActionEvent e) 
+						{
 							testQuestionAnswer.setText(q.getAnswer());
 						}
 					});
 
-					break; 
+				break; 
 					
 				case 12: 
 					calls[question]+= 1;
@@ -466,21 +477,20 @@ public class testModeCaller extends MenuControl{
 					choiceD.setText(r.getChoiceD());
 					choiceE.setText(r.getChoiceE());
 					
-					Submit.addActionListener(new ActionListener() {
-						public void actionPerformed(ActionEvent e) {
+					Submit.addActionListener(new ActionListener() 
+					{
+						public void actionPerformed(ActionEvent e) 
+						{
 							
 							testQuestionAnswer.setText(r.getAnswer());
 						}
 					});
+				break; 
 
-					break; 
-					
-					
-				
-				
-			
-				Submit.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
+				Submit.addActionListener(new ActionListener() 
+				{
+					public void actionPerformed(ActionEvent e) 
+					{
 
 						if (correct==selected)
 						{
@@ -492,67 +502,65 @@ public class testModeCaller extends MenuControl{
 				
 				if (numberFull==13)
 				{
-				
 					ScoreReport score = new ScoreReport(); 
-				
-				score.setVisible(true);
+					score.setVisible(true);
 				}
 			
 					
-					score+=1;
-		dispScore.setText(String.valueOf(score));
+				score+=1;
+				dispScore.setText(String.valueOf(score));
 					
 		
 					
 					}
-						
+					
 				
 					});
 				
-			btnNextQuestion.setBounds(6, 475, 780, 29);
-			contentPane.add(btnNextQuestion);
-			
-			JLabel lblYourScore = new JLabel("Your Score: ");
-			lblYourScore.setBounds(613, 6, 96, 16);
-			contentPane.add(lblYourScore);
-			
-			dispScore = new JTextField();
-			dispScore.setEditable(false);
-			dispScore.setBounds(698, 1, 69, 26);
-			contentPane.add(dispScore);
-			dispScore.setColumns(10);
-			
-			JLabel lblPercentage = new JLabel("Percentage: ");
-			lblPercentage.setBounds(440, 6, 81, 16);
-			contentPane.add(lblPercentage);
-			
-			dispPercent = new JTextField();
-			dispPercent.setBounds(533, 1, 70, 26);
-			contentPane.add(dispPercent);
-			dispPercent.setColumns(10);
-			
-			JRadioButton chA = new JRadioButton("New radio button");
-			chA.setBounds(6, 278, 141, 23);
-			contentPane.add(chA);
-			chA.setText("hello");
-			
-			JButton btnNewButton_2 = new JButton("Polymorph");
-			
-			
-			Submit.setBounds(514, 383, 264, 29);
-			contentPane.add(Submit);
-			
-			JLabel lblNewLabel = new JLabel("");
-			lblNewLabel.setBackground(Color.WHITE);
-			lblNewLabel.setOpaque(true);
-			lblNewLabel.setBounds(18, 255, 750, 117);
-			contentPane.add(lblNewLabel);
-			
-			JLabel label = new JLabel("");
-			label.setOpaque(true);
-			label.setBackground(Color.LIGHT_GRAY);
-			label.setBounds(0, 29, 794, 432);
-			contentPane.add(label);
+				btnNextQuestion.setBounds(6, 475, 780, 29);
+				contentPane.add(btnNextQuestion);
+				
+				JLabel lblYourScore = new JLabel("Your Score: ");
+				lblYourScore.setBounds(613, 6, 96, 16);
+				contentPane.add(lblYourScore);
+				
+				dispScore = new JTextField();
+				dispScore.setEditable(false);
+				dispScore.setBounds(698, 1, 69, 26);
+				contentPane.add(dispScore);
+				dispScore.setColumns(10);
+				
+				JLabel lblPercentage = new JLabel("Percentage: ");
+				lblPercentage.setBounds(440, 6, 81, 16);
+				contentPane.add(lblPercentage);
+				
+				dispPercent = new JTextField();
+				dispPercent.setBounds(533, 1, 70, 26);
+				contentPane.add(dispPercent);
+				dispPercent.setColumns(10);
+				
+				JRadioButton chA = new JRadioButton("New radio button");
+				chA.setBounds(6, 278, 141, 23);
+				contentPane.add(chA);
+				chA.setText("hello");
+				
+				JButton btnNewButton_2 = new JButton("Polymorph");
+				
+				
+				Submit.setBounds(514, 383, 264, 29);
+				contentPane.add(Submit);
+				
+				JLabel lblNewLabel = new JLabel("");
+				lblNewLabel.setBackground(Color.WHITE);
+				lblNewLabel.setOpaque(true);
+				lblNewLabel.setBounds(18, 255, 750, 117);
+				contentPane.add(lblNewLabel);
+				
+				JLabel label = new JLabel("");
+				label.setOpaque(true);
+				label.setBackground(Color.LIGHT_GRAY);
+				label.setBounds(0, 29, 794, 432);
+				contentPane.add(label);
 			
 				}
 			}
