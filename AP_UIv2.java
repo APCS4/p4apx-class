@@ -289,82 +289,82 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		backgroun.setBounds(70, 520, 400, 50);
 		getContentPane().add(backgroun);
 		
-		JButton backgroun = new JButton("");
-		backgroun.addActionListener(new ActionListener() 
+		JButton background = new JButton("");
+		background.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
 
 			}
 		});
-		backgroun.addMouseListener(new MouseAdapter() 
+		background.addMouseListener(new MouseAdapter() 
 		{
 			@Override
 			public void mouseEntered(MouseEvent e) 
 			{
-				backgroun.setIcon(new ImageIcon("review UI/back2.jpg"));
+				background.setIcon(new ImageIcon("review UI/back2.jpg"));
 			}
 			public void mouseExited(MouseEvent e) 
 			{
-				backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
+				background.setIcon(new ImageIcon("review UI/back1.jpg"));
 			}
 		});
-		backgroun.setBorder(null);
-		backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
-		backgroun.setBounds(70, 520, 400, 50);
-		getContentPane().add(backgroun);
+		background.setBorder(null);
+		background.setIcon(new ImageIcon("review UI/back1.jpg"));
+		background.setBounds(70, 520, 400, 50);
+		getContentPane().add(background);
 		
-		JButton backgroun = new JButton("");
-		backgroun.addActionListener(new ActionListener() 
+		JButton background2 = new JButton("");
+		background2.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
 
 			}
 		});
-		backgroun.addMouseListener(new MouseAdapter() 
+		background2.addMouseListener(new MouseAdapter() 
 		{
 			@Override
 			public void mouseEntered(MouseEvent e) 
 			{
-				backgroun.setIcon(new ImageIcon("review UI/back2.jpg"));
+				background2.setIcon(new ImageIcon("review UI/back2.jpg"));
 			}
 			public void mouseExited(MouseEvent e) 
 			{
-				backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
+				background2.setIcon(new ImageIcon("review UI/back1.jpg"));
 			}
 		});
-		backgroun.setBorder(null);
-		backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
-		backgroun.setBounds(70, 520, 400, 50);
-		getContentPane().add(backgroun);
+		background2.setBorder(null);
+		background2.setIcon(new ImageIcon("review UI/back1.jpg"));
+		background2.setBounds(70, 520, 400, 50);
+		getContentPane().add(background2);
 		
-		JButton backgroun = new JButton("");
-		backgroun.addActionListener(new ActionListener() 
+		JButton background3 = new JButton("");
+		background3.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
 
 			}
 		});
-		backgroun.addMouseListener(new MouseAdapter() 
+		background3.addMouseListener(new MouseAdapter() 
 		{
 			@Override
 			public void mouseEntered(MouseEvent e) 
 			{
-				backgroun.setIcon(new ImageIcon("review UI/back2.jpg"));
+				background3.setIcon(new ImageIcon("review UI/back2.jpg"));
 			}
 			public void mouseExited(MouseEvent e) 
 			{
-				backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
+				background3.setIcon(new ImageIcon("review UI/back1.jpg"));
 			}
 		});
-		backgroun.setBorder(null);
-		backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
-		backgroun.setBounds(70, 520, 400, 50);
-		getContentPane().add(backgroun);
+		background3.setBorder(null);
+		background3.setIcon(new ImageIcon("review UI/back1.jpg"));
+		background3.setBounds(70, 520, 400, 50);
+		getContentPane().add(background3);
 		
-		JButton backgroun = new JButton("");
+		JButton background4 = new JButton("");
 		backgroun.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
@@ -372,74 +372,74 @@ public class AP_UIv2 extends JFrame implements ActionListener
 
 			}
 		});
-		backgroun.addMouseListener(new MouseAdapter() 
+		background4.addMouseListener(new MouseAdapter() 
 		{
 			@Override
 			public void mouseEntered(MouseEvent e) 
 			{
-				backgroun.setIcon(new ImageIcon("review UI/back2.jpg"));
+				background4.setIcon(new ImageIcon("review UI/back2.jpg"));
 			}
 			public void mouseExited(MouseEvent e) 
 			{
-				backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
+				background4.setIcon(new ImageIcon("review UI/back1.jpg"));
 			}
 		});
-		backgroun.setBorder(null);
-		backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
-		backgroun.setBounds(70, 520, 400, 50);
-		getContentPane().add(backgroun);
+		background4.setBorder(null);
+		background4.setIcon(new ImageIcon("review UI/back1.jpg"));
+		background4.setBounds(70, 520, 400, 50);
+		getContentPane().add(background4);
 		
-		JButton backgroun = new JButton("");
-		backgroun.addActionListener(new ActionListener() 
+		JButton background5 = new JButton("");
+		background5.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
 
 			}
 		});
-		backgroun.addMouseListener(new MouseAdapter() 
+		background5.addMouseListener(new MouseAdapter() 
 		{
 			@Override
 			public void mouseEntered(MouseEvent e) 
 			{
-				backgroun.setIcon(new ImageIcon("review UI/back2.jpg"));
+				background5.setIcon(new ImageIcon("review UI/back2.jpg"));
 			}
 			public void mouseExited(MouseEvent e) 
 			{
-				backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
+				background5.setIcon(new ImageIcon("review UI/back1.jpg"));
 			}
 		});
-		backgroun.setBorder(null);
-		backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
-		backgroun.setBounds(70, 520, 400, 50);
-		getContentPane().add(backgroun);
+		background5.setBorder(null);
+		background5.setIcon(new ImageIcon("review UI/back1.jpg"));
+		background5.setBounds(70, 520, 400, 50);
+		getContentPane().add(background5);
 		
-		JButton backgroun = new JButton("");
-		backgroun.addActionListener(new ActionListener() 
+		JButton background6 = new JButton("");
+		background6.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
 
 			}
 		});
-		backgroun.addMouseListener(new MouseAdapter() 
+		background6.addMouseListener(new MouseAdapter() 
 		{
 			@Override
 			public void mouseEntered(MouseEvent e) 
 			{
-				backgroun.setIcon(new ImageIcon("review UI/back2.jpg"));
+				background6.setIcon(new ImageIcon("review UI/back2.jpg"));
 			}
 			public void mouseExited(MouseEvent e) 
 			{
-				backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
+				background6.setIcon(new ImageIcon("review UI/back1.jpg"));
 			}
 		});
-		backgroun.setBorder(null);
-		backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
-		backgroun.setBounds(70, 520, 400, 50);
-		getContentPane().add(backgroun);
+		background6.setBorder(null);
+		background6.setIcon(new ImageIcon("review UI/back1.jpg"));
+		background6.setBounds(70, 520, 400, 50);
+		getContentPane().add(background6);
 		
-		JButton backgroun = new JButton("");
+		JButton background7 = new JButton("");
 		backgroun.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
@@ -447,28 +447,28 @@ public class AP_UIv2 extends JFrame implements ActionListener
 
 			}
 		});
-		backgroun.addMouseListener(new MouseAdapter() 
+		background7.addMouseListener(new MouseAdapter() 
 		{
 			@Override
 			public void mouseEntered(MouseEvent e) 
 			{
-				backgroun.setIcon(new ImageIcon("review UI/back2.jpg"));
+				background7.setIcon(new ImageIcon("review UI/back2.jpg"));
 			}
 			public void mouseExited(MouseEvent e) 
 			{
-				backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
+				background7.setIcon(new ImageIcon("review UI/back1.jpg"));
 			}
 		});
-		backgroun.setBorder(null);
-		backgroun.setIcon(new ImageIcon("review UI/back1.jpg"));
-		backgroun.setBounds(70, 520, 400, 50);
-		getContentPane().add(backgroun);
+		background7.setBorder(null);
+		background7.setIcon(new ImageIcon("review UI/back1.jpg"));
+		background7.setBounds(70, 520, 400, 50);
+		getContentPane().add(background7);
 		
 		//background picture
-		background = new JLabel("");
+		/*background = new JLabel("");
 		background.setIcon(image2);
 		background.setBounds(0, 0, 1280, 700);
-		getContentPane().add(background);
+		getContentPane().add(background);*/
 		
 		
 	}
