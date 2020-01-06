@@ -41,12 +41,13 @@ public class testModeCaller extends MenuControl{
     private JTextArea testQuestionAnswer = new JTextArea();
     private JTextField dispScore;
     private JTextField dispPercent;
-    
+
     //used in this class
-    public static int selected=0;
+   public static int selected=0;
     public static int correct=9;
     public static int score=0;
-	
+
+
     public testModeCaller() {
 			
     	
@@ -97,8 +98,7 @@ public class testModeCaller extends MenuControl{
 			lblQuestion.setBounds(18, 34, 129, 16);
 			contentPane.add(lblQuestion);
 			
-<<<<<<< HEAD
-=======
+
 			
 			JRadioButton choiceA = new JRadioButton("");
 			choiceA.addActionListener(new ActionListener() {
@@ -150,7 +150,6 @@ public class testModeCaller extends MenuControl{
 			
 			
 			
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 			//Calls array
 			int calls[]= new int[13];
 			
@@ -195,53 +194,10 @@ public class testModeCaller extends MenuControl{
 						}
 
 						
-<<<<<<< HEAD
 						//increment value in calls and call methods
 						switch(question)
 						{
-						case 0: 
-							calls[0]+=1;
-							AP_Exam.Question a = new AP_Exam.MathQuestions();
-							testQuestion.setText(a.getQuestion());
-							testChoices.setText(a.getChoices()); 
-							testQuestionAnswer.setText(a.getAnswer());
-							break; 
-						
-						case 1: 
-							calls[1]+=1;
-							AP_Exam.encapsulationQuestions b = new AP_Exam.encapsulationQuestions();
-							testQuestion.setText(b.getQuestion());
-							testChoices.setText(b.getChoices());
-=======
-				//increment value in calls and call methods
-					
-				switch(question)
-				{
-				case 0: 
-					
-					
-					calls[0]+=1;
-					AP_Exam.Question a = new AP_Exam.MathQuestions();
-					testQuestion.setText(a.getQuestion());
-					choiceA.setText(a.getChoiceA()); 
-					choiceC.setText(a.getChoiceB());
-					choiceB.setText(a.getChoiceC());
-					choiceD.setText(a.getChoiceD());
-					choiceE.setText(a.getChoiceE());
-					//testQuestionAnswer.setText(a.getAnswer());
-					
-					//Finds which option holds the correct answer & adds point if user submitted it!
-				
-					Submit.addActionListener(new ActionListener() {
-						public void actionPerformed(ActionEvent e) {
-							
-							testQuestionAnswer.setText(a.getAnswer());
-						}
-					});
-
-					
-					break; 
-				
+									
 				case 1: 
 					
 					
@@ -258,7 +214,6 @@ public class testModeCaller extends MenuControl{
 					Submit.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
 							
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 							testQuestionAnswer.setText(b.getAnswer());
 						}
 					});
@@ -279,14 +234,7 @@ public class testModeCaller extends MenuControl{
 					Submit.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
 							
-<<<<<<< HEAD
-						case 2:
-							calls[2]+=1;
-							AP_Exam.Question c = new AP_Exam.DataTypeQuestions();
-							testQuestion.setText(c.getQuestion());
-							testChoices.setText(c.getChoices());
-=======
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
+						
 							testQuestionAnswer.setText(c.getAnswer());
 						}
 					});
@@ -308,15 +256,8 @@ public class testModeCaller extends MenuControl{
 					Submit.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
 							
-<<<<<<< HEAD
 					 
-						case 3: 
-							calls[3]+=1;
-							AP_Exam.Question d = new AP_Exam.BinaryMathQuestions();
-							testQuestion.setText(d.getQuestion());
-							testChoices.setText(d.getChoices());
-=======
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
+						
 							testQuestionAnswer.setText(d.getAnswer());
 						}
 					});
@@ -338,15 +279,7 @@ public class testModeCaller extends MenuControl{
 					Submit.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
 							
-<<<<<<< HEAD
-						case 4: 
-							calls[question]+=1;
-							AP_Exam.Question x = new AP_Exam.CA();
-							testQuestion.setText(x.getQuestion());
-							testChoices.setText(x.getChoices());
-=======
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
-							testQuestionAnswer.setText(x.getAnswer());
+							testChoices.setText(x.getChoices());							testQuestionAnswer.setText(x.getAnswer());
 						}
 					});
 
@@ -367,14 +300,7 @@ public class testModeCaller extends MenuControl{
 					Submit.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
 							
-<<<<<<< HEAD
-						case 5: 
-							calls[question]+=1;
-							AP_Exam.Question f = new AP_Exam.MVCQuestion();
-							testQuestion.setText(f.getQuestion());
-							testChoices.setText(f.getChoices());
-=======
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
+						
 							testQuestionAnswer.setText(f.getAnswer());
 						}
 					});
@@ -396,14 +322,7 @@ public class testModeCaller extends MenuControl{
 					Submit.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
 							
-<<<<<<< HEAD
-						case 6: 
-							calls[question]+=1;
-							AP_Exam.Question g = new AP_Exam.OperatorQuestions();
-							testQuestion.setText(g.getQuestion());
-							testChoices.setText(g.getChoices());
-=======
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
+						
 							testQuestionAnswer.setText(g.getAnswer());
 						}
 					});
@@ -427,106 +346,41 @@ public class testModeCaller extends MenuControl{
 						choiceD.setText(k.getChoiceD());
 						choiceE.setText(k.getChoiceE());
 				
-						
-<<<<<<< HEAD
-							
-						case 7:
-							calls[question]+=1;
-							int listPicker = rand.nextInt(2);
-							
-							if(listPicker==0)
-							{
-								AP_Exam.Question k = new AP_Exam.ArrayListQuestions();
-								testQuestion.setText(k.getQuestion());
-								testChoices.setText(k.getChoices());
-=======
-						
 						Submit.addActionListener(new ActionListener() {
 							public void actionPerformed(ActionEvent e) {
 								
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
 								testQuestionAnswer.setText(k.getAnswer());
 							}
-<<<<<<< HEAD
+						
+						});
+					}
 							else
 							{
 
 								AP_Exam.Question p = new AP_Exam.ListQuestions2();
 								testQuestion.setText(p.getQuestion());
-								testChoices.setText(p.getChoices());
-								testQuestionAnswer.setText(p.getAnswer());
-							}						
-							break; 
-						case 8: 
-							calls[question]+=1;
-							AP_Exam.Question m = new AP_Exam.BackgroundInfoQuestions();
-							testQuestion.setText(m.getQuestion());
-							testChoices.setText(m.getChoices());
-							testQuestionAnswer.setText(m.getAnswer());
-							break; 
-						
-						case 9: 
-							calls[question]+=1;
-							AP_Exam.Question n = new AP_Exam.PowSqrt();
-							testQuestion.setText(n.getQuestion());
-							testChoices.setText(n.getChoices());
-							testQuestionAnswer.setText(n.getAnswer());
-							break; 
-						
-						case 10: 
-							calls[question]+= 1;
-							AP_Exam.Question o = new AP_Exam.Recursion();
-							testQuestion.setText(o.getQuestion());
-							testChoices.setText(o.getChoices());
-							testQuestionAnswer.setText(o.getAnswer());
-							break; 
-						
-						case 11: 
-							calls[question]+= 1;
-							AP_Exam.Question q = new AP_Exam.PolymorphismQuestions();
-							testQuestion.setText(q.getQuestion());
-							testChoices.setText(q.getChoices());
-							testQuestionAnswer.setText(q.getAnswer());
-							break; 
+								choiceA.setText(p.getChoiceA()); 
+								choiceC.setText(p.getChoiceB());
+								choiceB.setText(p.getChoiceC());
+								choiceD.setText(p.getChoiceD());
+								choiceE.setText(p.getChoiceE());
 							
-						case 12: 
-							calls[question]+= 1;
-							AP_Exam.Question r = new AP_Exam.Polymorph();
-							testQuestion.setText(r.getQuestion());
-							testChoices.setText(r.getChoices());
-							testQuestionAnswer.setText(r.getAnswer());
-							break; 
-							
-							
-						
-						
-=======
-						});
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
-					}
-
-					else
-					{
-
-						AP_Exam.Question p = new AP_Exam.ListQuestions2();
-						testQuestion.setText(p.getQuestion());
-						choiceA.setText(p.getChoiceA()); 
-						choiceC.setText(p.getChoiceB());
-						choiceB.setText(p.getChoiceC());
-						choiceD.setText(p.getChoiceD());
-						choiceE.setText(p.getChoiceE());
-				
-						
-						//Finds which option holds the correct answer & adds point if user submitted it!
-						Submit.addActionListener(new ActionListener() {
-							public void actionPerformed(ActionEvent e) {
+								Submit.addActionListener(new ActionListener() {
+									public void actionPerformed(ActionEvent e) {
+										
+										testQuestionAnswer.setText(k.getAnswer());
+									}
 								
-								testQuestionAnswer.setText(p.getAnswer());
-							}
-						});
-
-					}						
-					break; 
+								});
+							}			
+				
+					
+						
+						
+							break; 
+						
+				
+					
 				case 8: 
 					calls[question]+=1;
 					AP_Exam.Question m = new AP_Exam.BackgroundInfoQuestions();
@@ -624,8 +478,8 @@ public class testModeCaller extends MenuControl{
 					
 				
 				
-			}
-				/* Submit.addActionListener(new ActionListener() {
+			
+				Submit.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 
 						if (correct==selected)
@@ -642,14 +496,19 @@ public class testModeCaller extends MenuControl{
 					ScoreReport score = new ScoreReport(); 
 				
 				score.setVisible(true);
-				}*/
-			}
+				}
+			
 					
 					score+=1;
 		dispScore.setText(String.valueOf(score));
 					
-		}
-	});
+		
+					
+					}
+						
+				
+					});
+				
 			btnNextQuestion.setBounds(6, 475, 780, 29);
 			contentPane.add(btnNextQuestion);
 			
@@ -677,9 +536,7 @@ public class testModeCaller extends MenuControl{
 			contentPane.add(chA);
 			chA.setText("hello");
 			
-<<<<<<< HEAD
 			JButton btnNewButton_2 = new JButton("Polymorph");
-=======
 			
 			
 			Submit.setBounds(514, 383, 264, 29);
@@ -697,22 +554,10 @@ public class testModeCaller extends MenuControl{
 			label.setBounds(0, 29, 794, 432);
 			contentPane.add(label);
 			
+				}
+			}
+    });
 			
 			
-			/*JButton btnNewButton_2 = new JButton("Polymorph");
->>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
-			btnNewButton_2.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					AP_Exam.Question q = new AP_Exam.Polymorph();
-					testQuestion.setText(q.getQuestion());
-					testChoices.setText(q.getChoices());
-					testQuestionAnswer.setText(q.getAnswer());
-				}});
 			
-				
-				
-    
-    }	
-			
-	
-}
+
