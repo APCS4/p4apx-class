@@ -387,6 +387,8 @@ public class testModeCaller extends MenuControl{
 					}			
 
 				break; 
+						
+				
 					
 				case 8: 
 					calls[question]+=1;
