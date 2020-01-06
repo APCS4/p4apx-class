@@ -429,18 +429,6 @@ public class AP_UI extends MenuControl
 		});
 		MAIN.setBounds(640, 371, 138, 29);
 		contentPane.add(MAIN);
-		
-		JButton FirebirdButton = new JButton("Firebird Inc.");
-		FirebirdButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				AP_Exam.Question q = new AP_Exam.FirebirdQuestions();
-				testQuestion.setText(q.getQuestion());
-				testChoices.setText(q.getChoices());
-				testQuestionAnswer.setText(q.getAnswer());
-			}
-		});
-		FirebirdButton.setBounds(630, 113, 89, 23);
-		contentPane.add(FirebirdButton);
 
 	}
 }
