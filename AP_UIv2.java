@@ -13,6 +13,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 	 */
 	private static final long serialVersionUID = 1L;
 	private JLabel background;
+	private Image imagem;
 	private ImageIcon image2;
     private Timer timer;
 
@@ -530,8 +531,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent e) 
-	{
+	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
 		
 	}
