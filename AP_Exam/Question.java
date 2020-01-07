@@ -125,13 +125,13 @@ public class Question extends Scoring
 	}
 	
 	
-	public String ChoiceD()
+	public String getChoiceD()
 	{
 		return String.format(charD + ": " + choices[3]);
 	
 	}
 	
-	public String ChoiceE()
+	public String getChoiceE()
 	{
 		
 		return String.format(charE + ": " + choices[4]);
