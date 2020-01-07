@@ -36,7 +36,7 @@ import javax.swing.Box;
 public class testModeCaller extends MenuControl{
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-    private JTextArea testQuestion = new JTextArea();
+    private JTextArea TestQ = new JTextArea();
     private JTextArea testQuestionAnswer = new JTextArea();
     private JTextField dispScore;
     private JTextField dispPercent;
@@ -79,585 +79,382 @@ public class testModeCaller extends MenuControl{
 			JScrollPane scrollPane = new JScrollPane();
 			scrollPane.setBounds(18, 55, 750, 192);
 			contentPane.add(scrollPane);
-			scrollPane.setViewportView(testQuestion);
+			scrollPane.setViewportView(TestQ);
 			
-			testQuestion.setEditable(false);
-			testQuestion.setLineWrap(true);
+			TestQ.setEditable(false);
+			TestQ.setLineWrap(true);
 			
 			JLabel lblQuestion = new JLabel("Question");
 			lblQuestion.setBounds(18, 34, 129, 16);
 			contentPane.add(lblQuestion);
 			
 			
-			JRadioButton choiceA = new JRadioButton("");
-			choiceA.addActionListener(new ActionListener() {
+			JRadioButton chA = new JRadioButton("");
+			chA.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					selected=1;	//the user selected choice "A"
 				}
 			});
-			choiceA.setBounds(18, 255, 750, 23);
-			contentPane.add(choiceA);
+			chA.setBounds(18, 255, 750, 23);
+			contentPane.add(chA);
 			
-			JRadioButton choiceC = new JRadioButton("");
-			choiceC.addActionListener(new ActionListener() {
+			JRadioButton chC = new JRadioButton("");
+			chC.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					selected=3;	//the user selected choice "C"
 				}
 			});
-			choiceC.setBounds(18, 303, 750, 23);
-			contentPane.add(choiceC);
+			chC.setBounds(18, 303, 750, 23);
+			contentPane.add(chC);
 			
 			
-			JRadioButton choiceB = new JRadioButton("");
-			choiceB.addActionListener(new ActionListener() {
+			JRadioButton chB = new JRadioButton("");
+			chB.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					selected=2;	//the user selected choice "B"
 				}
 			});
-			choiceB.setBounds(18, 278, 750, 23);
-			contentPane.add(choiceB);
+			chB.setBounds(18, 278, 750, 23);
+			contentPane.add(chB);
 			
-			JRadioButton choiceD = new JRadioButton("");
-			choiceD.addActionListener(new ActionListener() {
+			JRadioButton chD = new JRadioButton("");
+			chD.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					selected=4;	//the user selected choice "D"
 				}
 			});
-			choiceD.setBounds(18, 325, 750, 23);
-			contentPane.add(choiceD);
+			chD.setBounds(18, 325, 750, 23);
+			contentPane.add(chD);
 			
-			JRadioButton choiceE = new JRadioButton("");
-			choiceE.addActionListener(new ActionListener() {
+			JRadioButton chE = new JRadioButton("");
+			chE.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					selected=5;	//the user selected choice "e"
 				}
 			});
-			choiceE.setBounds(18, 349, 750, 23);
-			contentPane.add(choiceE);
+			chE.setBounds(18, 349, 750, 23);
+			contentPane.add(chE);
 			
 			JButton Submit = new JButton("Submit Answer ");
 			
-			
 			//Calls array
 			int calls[]= new int[13];
-			
 			//Fills array with 0, represents 0 calls to each type of question
 			for (int i= 0; i<13; i++)
 			{
-				calls[i]=0;
+			calls[i]=0;
 			}
-			
-
-			
 			JButton btnNextQuestion = new JButton("Next Question");
 			btnNextQuestion.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					
-					choiceA.setSelected(false);
-					choiceB.setSelected(false);
-					choiceC.setSelected(false);
-					choiceD.setSelected(false);
-					choiceE.setSelected(false);
-					
-					Random rand = new Random();
-					
-					int numberFull=0;
-					
-					//check how many indexes are full (at 3)
-					for (int i= 0; i<13; i++)
-					{
-						if (calls[i]==3)
-							numberFull ++;
-								
-					}
-					int question; 
-					
-					if (numberFull!=13)
-					{
-						question = rand.nextInt(13); 
-						
-						while(calls[question]==3)
-						{
-							question = rand.nextInt(13); 
-						}
-
-						
-				//increment value in calls and call methods
-				switch(question)
-				{
-				case 0: 
-					calls[0]+=1;
-					AP_Exam.Question a = new AP_Exam.MathQuestions();
-					testQuestion.setText(a.getQuestion());
-					choiceA.setText(a.getChoiceA()); 
-					choiceC.setText(a.getChoiceB());
-					choiceB.setText(a.getChoiceC());
-					choiceD.setText(a.getChoiceD());
-					choiceE.setText(a.getChoiceE());
-					//testQuestionAnswer.setText(a.getAnswer());
-					
-					//Finds which option holds the correct answer & adds point if user submitted it!
-					if (a.getAnswer()==choiceA.getText())
-					{
-						correct=1;
-					}
-					else
-						if (a.getAnswer()==choiceB.getText())
-						{
-							correct=2;
-						}
-					else
-						if (a.getAnswer()==choiceC.getText())
-						{
-							correct=1;
-							
-						}
-						else
-							if (a.getAnswer()==choiceD.getText())
-							{
-								correct=4;
-							}
-							else
-								if (a.getAnswer()==choiceE.getText())
-								{
-									correct=5;
-								}
-					
-
-					
-					break; 
+			public void actionPerformed(ActionEvent e) {
+			Random rand = new Random();
+			int numberFull=0;
+			//check how many indexes are full (at 3)
+			for (int i= 0; i<13; i++)
 				
-				case 1: 
-					calls[1]+=1;
-					AP_Exam.encapsulationQuestions b = new AP_Exam.encapsulationQuestions();
-					testQuestion.setText(b.getQuestion());
-					choiceA.setText(b.getChoiceA()); 
-					choiceC.setText(b.getChoiceB());
-					choiceB.setText(b.getChoiceC());
-					choiceD.setText(b.getChoiceD());
-					choiceE.setText(b.getChoiceE());
-					testQuestionAnswer.setText(b.getAnswer());
-					
-					//Finds which option holds the correct answer & adds point if user submitted it!
-					if (b.getAnswer()==choiceA.getText())
-					{
-						correct=1;
-					}
-					else
-						if (b.getAnswer()==choiceB.getText())
-						{
-							correct=2;
-						}
-					else
-						if (b.getAnswer()==choiceC.getText())
-						{
-							correct=1;
-							
-						}
-						else
-							if (b.getAnswer()==choiceD.getText())
-							{
-								correct=4;
-							}
-							else
-								if (b.getAnswer()==choiceE.getText())
-								{
-									correct=5;
-								}
-					
+			{
+			if (calls[i]==3)
+			numberFull ++;
+			}
 
-					
-					break;
-					
-				case 2:
-					calls[2]+=1;
-					AP_Exam.Question c = new AP_Exam.DataTypeQuestions();
-					testQuestion.setText(c.getQuestion());
-					choiceA.setText(c.getChoiceA()); 
-					choiceC.setText(c.getChoiceB());
-					choiceB.setText(c.getChoiceC());
-					choiceD.setText(c.getChoiceD());
-					choiceE.setText(c.getChoiceE());
-					testQuestionAnswer.setText(c.getAnswer());
-					
-					//Finds which option holds the correct answer & adds point if user submitted it!
-					if (c.getAnswer()==choiceA.getText())
-					{
-						correct=1;
-					}
-					else
-						if (c.getAnswer()==choiceB.getText())
-						{
-							correct=2;
-						}
-					else
-						if (c.getAnswer()==choiceC.getText())
-						{
-							correct=1;
-							
-						}
-						else
-							if (c.getAnswer()==choiceD.getText())
-							{
-								correct=4;
-							}
-							else
-								if (c.getAnswer()==choiceE.getText())
-								{
-									correct=5;
-								}
-					
+			int question; 
+			if (numberFull!=13)
+			{
+				
+				testQuestionAnswer.setText("");
 
-					
-					break; 
-					
+	        chA.setSelected(false);
+			chB.setSelected(false);
+			chC.setSelected(false); 
+			chD.setSelected(false);
+			chE.setSelected(false); 
+			
+			
+			question = rand.nextInt(13); 
+			while(calls[question]==3)
+			{
+			question = rand.nextInt(13); 
+			}
+			//increment value in calls and call methods
+			switch(question)
+			{
+			case 0: 
+			calls[0]+=1;
+			AP_Exam.Question a = new AP_Exam.MathQuestions();
+			   TestQ.setText(a.getQuestion());
+			chA.setText(a.getChoiceA());
+			chB.setText(a.getChoiceB());
+			chC.setText(a.getChoiceC());
+			chD.setText(a.getChoiceD());
+			chE.setText(a.getChoiceE());
+			Submit.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+			testQuestionAnswer.setText(a.getAnswer());
+			}
+			});
+			
+			break; 
+			case 1: 
+			calls[1]+=1;
+			AP_Exam.encapsulationQuestions b = new AP_Exam.encapsulationQuestions();
+			  TestQ.setText(b.getQuestion());
+			chA.setText(b.getChoiceA());
+			chB.setText(b.getChoiceB());
+			chC.setText(b.getChoiceC());
+			chD.setText(b.getChoiceD());
+			chE.setText(b.getChoiceE());
+
+			Submit.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+			testQuestionAnswer.setText(b.getAnswer());
+
+			}
+			});
+		
+			break;
+			case 2:
+			calls[2]+=1;
+			AP_Exam.Question c = new AP_Exam.DataTypeQuestions();
+			   TestQ.setText(c.getQuestion());
+			chA.setText(c.getChoiceA());
+			chB.setText(c.getChoiceB());
+			chC.setText(c.getChoiceC());
+			chD.setText(c.getChoiceD());
+			chE.setText(c.getChoiceE());
+
+			Submit.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+			testQuestionAnswer.setText(c.getAnswer());
+			}
+			});
+		
+			break; 
 			 
-				case 3: 
-					calls[3]+=1;
-					AP_Exam.Question d = new AP_Exam.BinaryMathQuestions();
-					testQuestion.setText(d.getQuestion());
-					choiceA.setText(d.getChoiceA()); 
-					choiceC.setText(d.getChoiceB());
-					choiceB.setText(d.getChoiceC());
-					choiceD.setText(d.getChoiceD());
-					choiceE.setText(d.getChoiceE());
-					testQuestionAnswer.setText(d.getAnswer());
-					
-					//Finds which option holds the correct answer & adds point if user submitted it!
-					if (d.getAnswer()==choiceA.getText())
-					{
-						correct=1;
-					}
-					else
-						if (d.getAnswer()==choiceB.getText())
-						{
-							correct=2;
-						}
-					else
-						if (d.getAnswer()==choiceC.getText())
-						{
-							correct=1;
-							
-						}
-						else
-							if (d.getAnswer()==choiceD.getText())
-							{
-								correct=4;
-							}
-							else
-								if (d.getAnswer()==choiceE.getText())
-								{
-									correct=5;
-								}
-					
+			case 3: 
+			calls[3]+=1;
+			AP_Exam.Question d = new AP_Exam.BinaryMathQuestions();
+			   TestQ.setText(d.getQuestion());
+			chA.setText(d.getChoiceA());
+			chB.setText(d.getChoiceB());
+			chC.setText(d.getChoiceC());
+			chD.setText(d.getChoiceD());
+			chE.setText(d.getChoiceE());
 
-					
-					break;
-					
-				case 4: 
-					calls[question]+=1;
-					AP_Exam.Question x = new AP_Exam.CA();
-					testQuestion.setText(x.getQuestion());
-					choiceA.setText(x.getChoiceA()); 
-					choiceC.setText(x.getChoiceB());
-					choiceB.setText(x.getChoiceC());
-					choiceD.setText(x.getChoiceD());
-					choiceE.setText(x.getChoiceE());
-					testQuestionAnswer.setText(x.getAnswer());
-					
-					//Finds which option holds the correct answer & adds point if user submitted it!
-					if (x.getAnswer()==choiceA.getText())
-					{
-						correct=1;
-					}
-					else
-						if (x.getAnswer()==choiceB.getText())
-						{
-							correct=2;
-						}
-					else
-						if (x.getAnswer()==choiceC.getText())
-						{
-							correct=1;
-							
-						}
-						else
-							if (x.getAnswer()==choiceD.getText())
-							{
-								correct=4;
-							}
-							else
-								if (x.getAnswer()==choiceE.getText())
-								{
-									correct=5;
-								}
-					
+			Submit.addActionListener(new ActionListener() {
 
-					
-					break; 
-					
-				case 5: 
-					calls[question]+=1;
-					AP_Exam.Question f = new AP_Exam.MVCQuestion();
-					testQuestion.setText(f.getQuestion());
-					choiceA.setText(f.getChoiceA()); 
-					choiceC.setText(f.getChoiceB());
-					choiceB.setText(f.getChoiceC());
-					choiceD.setText(f.getChoiceD());
-					choiceE.setText(f.getChoiceE());							
-					testQuestionAnswer.setText(f.getAnswer());
-					
-					//Finds which option holds the correct answer & adds point if user submitted it!
-					if (f.getAnswer()==choiceA.getText())
-					{
-						correct=1;
-					}
-					else
-						if (f.getAnswer()==choiceB.getText())
-						{
-							correct=2;
-						}
-					else
-						if (f.getAnswer()==choiceC.getText())
-						{
-							correct=1;
-							
-						}
-						else
-							if (f.getAnswer()==choiceD.getText())
-							{
-								correct=4;
-							}
-							else
-								if (f.getAnswer()==choiceE.getText())
-								{
-									correct=5;
-								}
-					
+			public void actionPerformed(ActionEvent e) {
 
-					
-					break; 
-					
-				case 6: 
-					calls[question]+=1;
-					AP_Exam.Question g = new AP_Exam.OperatorQuestions();
-					testQuestion.setText(g.getQuestion());
-					choiceA.setText(g.getChoiceA()); 
-					choiceC.setText(g.getChoiceB());
-					choiceB.setText(g.getChoiceC());
-					choiceD.setText(g.getChoiceD());
-					choiceE.setText(g.getChoiceE());
-					testQuestionAnswer.setText(g.getAnswer());
-					
-					//Finds which option holds the correct answer & adds point if user submitted it!
-					/*if (g.getAnswer()==choiceA.getText())
-					{
-						correct=1;
-					}
-					else
-						if (g.getAnswer()==choiceB.getText())
-						{
-							correct=2;
-						}
-					else
-						if (String.equals(g.getAnswer(), choiceC.getText())==true)
-						{
-							correct=1;
-							
-						}
-						else
-							if (g.getAnswer()==choiceD.getText())
-							{
-								correct=4;
-							}
-							else
-								if (g.getAnswer()==choiceE.getText())
-								{
-									correct=5;
-								}
-					*/
-
-					
-					break;
-				
-					
-				case 7:
-					calls[question]+=1;
-					int listPicker = rand.nextInt(2);
-					
-					if(listPicker==0)
-					{
-						AP_Exam.Question k = new AP_Exam.ArrayListQuestions();
-						testQuestion.setText(k.getQuestion());
-						choiceA.setText(k.getChoiceA()); 
-						choiceC.setText(k.getChoiceB());
-						choiceB.setText(k.getChoiceC());
-						choiceD.setText(k.getChoiceD());
-						choiceE.setText(k.getChoiceE());
-						testQuestionAnswer.setText(k.getAnswer());
-						
-						
-						//Finds which option holds the correct answer & adds point if user submitted it!
-						if (k.getAnswer()==choiceA.getText())
-						{
-							correct=1;
-						}
-						else
-							if (k.getAnswer()==choiceB.getText())
-							{
-								correct=2;
-							}
-						else
-							if (k.getAnswer()==choiceC.getText())
-							{
-								correct=1;
-								
-							}
-							else
-								if (k.getAnswer()==choiceD.getText())
-								{
-									correct=4;
-								}
-								else
-									if (k.getAnswer()==choiceE.getText())
-									{
-										correct=5;
-									}
-						
-
-						
-					}
-					else
-					{
-
-						AP_Exam.Question p = new AP_Exam.ListQuestions2();
-						testQuestion.setText(p.getQuestion());
-						choiceA.setText(p.getChoiceA()); 
-						choiceC.setText(p.getChoiceB());
-						choiceB.setText(p.getChoiceC());
-						choiceD.setText(p.getChoiceD());
-						choiceE.setText(p.getChoiceE());
-						testQuestionAnswer.setText(p.getAnswer());
-						
-						//Finds which option holds the correct answer & adds point if user submitted it!
-						if (p.getAnswer()==choiceA.getText())
-						{
-							correct=1;
-						}
-						else
-							if (p.getAnswer()==choiceB.getText())
-							{
-								correct=2;
-							}
-						else
-							if (p.getAnswer()==choiceC.getText())
-							{
-								correct=1;
-								
-							}
-							else
-								if (p.getAnswer()==choiceD.getText())
-								{
-									correct=4;
-								}
-								else
-									if (p.getAnswer()==choiceE.getText())
-									{
-										correct=5;
-									}
-						
-
-						
-					}						
-					break; 
-				case 8: 
-					calls[question]+=1;
-					AP_Exam.Question m = new AP_Exam.BackgroundInfoQuestions();
-					testQuestion.setText(m.getQuestion());
-					choiceA.setText(m.getChoiceA()); 
-					choiceC.setText(m.getChoiceB());
-					choiceB.setText(m.getChoiceC());
-					choiceD.setText(m.getChoiceD());
-					choiceE.setText(m.getChoiceE());
-					testQuestionAnswer.setText(m.getAnswer());
-					break; 
-				
-				case 9: 
-					calls[question]+=1;
-					AP_Exam.Question n = new AP_Exam.PowSqrt();
-					testQuestion.setText(n.getQuestion());
-					choiceA.setText(n.getChoiceA()); 
-					choiceC.setText(n.getChoiceB());
-					choiceB.setText(n.getChoiceC());
-					choiceD.setText(n.getChoiceD());
-					choiceE.setText(n.getChoiceE());
-					testQuestionAnswer.setText(n.getAnswer());
-					break; 
-				
-				case 10: 
-					calls[question]+= 1;
-					AP_Exam.Question o = new AP_Exam.Recursion();
-					testQuestion.setText(o.getQuestion());
-					choiceA.setText(o.getChoiceA()); 
-					choiceC.setText(o.getChoiceB());
-					choiceB.setText(o.getChoiceC());
-					choiceD.setText(o.getChoiceD());
-					choiceE.setText(o.getChoiceE());
-					testQuestionAnswer.setText(o.getAnswer());
-					break; 
-				
-				case 11: 
-					calls[question]+= 1;
-					AP_Exam.Question q = new AP_Exam.PolymorphismQuestions();
-					testQuestion.setText(q.getQuestion());
-					choiceA.setText(q.getChoiceA()); 
-					choiceC.setText(q.getChoiceB());
-					choiceB.setText(q.getChoiceC());
-					choiceD.setText(q.getChoiceD());
-					choiceE.setText(q.getChoiceE());
-					testQuestionAnswer.setText(q.getAnswer());
-					break; 
-					
-				case 12: 
-					calls[question]+= 1;
-					AP_Exam.Question r = new AP_Exam.Polymorph();
-					testQuestion.setText(r.getQuestion());
-					choiceA.setText(r.getChoiceA()); 
-					choiceC.setText(r.getChoiceB());
-					choiceB.setText(r.getChoiceC());
-					choiceD.setText(r.getChoiceD());
-					choiceE.setText(r.getChoiceE());
-					testQuestionAnswer.setText(r.getAnswer());
-					break; 
-					
-					
-				
-				
+			testQuestionAnswer.setText(d.getAnswer());
 			}
-				Submit.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
+			});
+		
+			break;
+			case 4: 
+			calls[question]+=1;
+			AP_Exam.Question x = new AP_Exam.CA();
+			TestQ.setText(x.getQuestion());
+			chA.setText(x.getChoiceA());
+			chB.setText(x.getChoiceB());
+			chC.setText(x.getChoiceC());
+			chD.setText(x.getChoiceD());
+			chE.setText(x.getChoiceE());
 
-						if (correct==selected)
-						{
-							score+=1;
-						}
-					}
-				});
-				
-				
-				/*if (numberFull==13)
-				{
-				
-					ScoreReport score = new ScoreReport(); 
-				
-				score.setVisible(true);
-				}*/
+			Submit.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+			testQuestionAnswer.setText(x.getAnswer());
 			}
-					score+=1;
-		dispScore.setText(String.valueOf(score));
-					
-		}
-	});
+			});
+		
+			break; 
+			case 5: 
+			calls[question]+=1;
+			AP_Exam.Question f = new AP_Exam.MVCQuestion();
+			TestQ.setText(f.getQuestion());
+			chA.setText(f.getChoiceA());
+			chB.setText(f.getChoiceB());
+			chC.setText(f.getChoiceC());
+			chD.setText(f.getChoiceD());
+			chE.setText(f.getChoiceE());
+
+			Submit.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+			testQuestionAnswer.setText(f.getAnswer());
+			}
+			});
+			
+			break; 
+			case 6: 
+			calls[question]+=1;
+			AP_Exam.Question g = new AP_Exam.OperatorQuestions();
+			TestQ.setText(g.getQuestion());
+			chA.setText(g.getChoiceA());
+			chB.setText(g.getChoiceB());
+			chC.setText(g.getChoiceC());
+			chD.setText(g.getChoiceD());
+			chE.setText(g.getChoiceE());
+
+			Submit.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+			testQuestionAnswer.setText(g.getAnswer());
+			}
+			});
+			
+			break;
+			case 7:
+			calls[question]+=1;
+			int listPicker = rand.nextInt(2);
+			if(listPicker==0)
+			{
+			AP_Exam.Question k = new AP_Exam.ArrayListQuestions();
+			   TestQ.setText(k.getQuestion());
+			chA.setText(k.getChoiceA());
+			chB.setText(k.getChoiceB());
+			chC.setText(k.getChoiceC());
+			chD.setText(k.getChoiceD());
+			chE.setText(k.getChoiceE());
+
+			Submit.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+			testQuestionAnswer.setText(k.getAnswer());
+			}
+			});
+			}
+			else
+			{
+
+			AP_Exam.Question p = new AP_Exam.ListQuestions2();
+			TestQ.setText(p.getQuestion());
+			chA.setText(p.getChoiceA());
+			chB.setText(p.getChoiceB());
+			chC.setText(p.getChoiceC());
+			chD.setText(p.getChoiceD());
+			chE.setText(p.getChoiceE());
+
+			Submit.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+			testQuestionAnswer.setText(p.getAnswer());
+			}
+			});
+			}
+			 
+			break; 
+			case 8: 
+			calls[question]+=1;
+			AP_Exam.Question m = new AP_Exam.BackgroundInfoQuestions();
+			TestQ.setText(m.getQuestion());
+			chA.setText(m.getChoiceA());
+			chB.setText(m.getChoiceB());
+			chC.setText(m.getChoiceC());
+			chD.setText(m.getChoiceD());
+			chE.setText(m.getChoiceE());
+
+			Submit.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+			testQuestionAnswer.setText(m.getAnswer());
+			}
+			});
+		
+			break; 
+			case 9: 
+			calls[question]+=1;
+			AP_Exam.Question n = new AP_Exam.PowSqrt();
+			TestQ.setText(n.getQuestion());
+			chA.setText(n.getChoiceA());
+			chB.setText(n.getChoiceB());
+			chC.setText(n.getChoiceC());
+			chD.setText(n.getChoiceD());
+			chE.setText(n.getChoiceE());
+
+			Submit.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+			testQuestionAnswer.setText(n.getAnswer());
+			}
+			});
+			
+			break; 
+			case 10: 
+			calls[question]+= 1;
+			AP_Exam.Question o = new AP_Exam.Recursion();
+			TestQ.setText(o.getQuestion());
+			chA.setText(o.getChoiceA());
+			chB.setText(o.getChoiceB());
+			chC.setText(o.getChoiceC());
+			chD.setText(o.getChoiceD());
+			chE.setText(o.getChoiceE());
+
+			Submit.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+			testQuestionAnswer.setText(o.getAnswer());
+			}
+			});
+		
+			break; 
+			case 11: 
+			calls[question]+= 1;
+			AP_Exam.Question q = new AP_Exam.PolymorphismQuestions();
+			TestQ.setText(q.getQuestion());
+			chA.setText(q.getChoiceA());
+			chB.setText(q.getChoiceB());
+			chC.setText(q.getChoiceC());
+			chD.setText(q.getChoiceD());
+			chE.setText(q.getChoiceE());
+
+			Submit.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+			testQuestionAnswer.setText(q.getAnswer());
+			}
+			});
+			
+			break; 
+			case 12: 
+			calls[question]+= 1;
+			AP_Exam.Question r = new AP_Exam.Polymorph();
+			TestQ.setText(r.getQuestion());
+			chA.setText(r.getChoiceA());
+			chB.setText(r.getChoiceB());
+			chC.setText(r.getChoiceC());
+			chD.setText(r.getChoiceD());
+			chE.setText(r.getChoiceE());
+
+			Submit.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+			testQuestionAnswer.setText(r.getAnswer());
+			}
+			});
+			
+			break; 
+			}
+			}
+			//add else option later to display message that says "test finished"
+			}
+			});
+				
 			btnNextQuestion.setBounds(6, 475, 780, 29);
 			contentPane.add(btnNextQuestion);
 			
@@ -676,6 +473,8 @@ public class testModeCaller extends MenuControl{
 			contentPane.add(lblPercentage);
 			
 			dispPercent = new JTextField();
+			dispPercent.setEditable(false);
+
 			dispPercent.setBounds(533, 1, 70, 26);
 			contentPane.add(dispPercent);
 			dispPercent.setColumns(10);
@@ -712,7 +511,8 @@ public class testModeCaller extends MenuControl{
 				
 				
     
-    }	
+   	
+    }
 			
 	
 }
