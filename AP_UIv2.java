@@ -1,9 +1,16 @@
 import java.awt.*;
 import javax.swing.*;
+
+import javazoom.jl.player.Player;
+import javazoom.jl.player.advanced.AdvancedPlayer;
+import javazoom.jl.player.advanced.PlaybackEvent;
+import javazoom.jl.player.advanced.PlaybackListener;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.FileInputStream;
 
 public class AP_UIv2 extends JFrame implements ActionListener
 {
@@ -14,13 +21,16 @@ public class AP_UIv2 extends JFrame implements ActionListener
 	private JLabel background;
 	private ImageIcon image2;
     private Timer timer;
+    private int pausedOnFrame = 0;
 
+    
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) 
 	{
+		
 		EventQueue.invokeLater(new Runnable()
 		{
 			public void run()
@@ -43,6 +53,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 	 */
 	public AP_UIv2() 
 	{
+		playsong("review UI/sweden.mp3");
 		setResizable(false);
 		initialize();
 		setBounds(100, 100, 1280, 720);
@@ -55,8 +66,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		background.setIcon(image2);
 		background.setBounds(0, 0, 1280, 700);
 		getContentPane().add(background);
-		
-		
+	    
 	}
 
 	/**
@@ -64,6 +74,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 	 */
 	private void initialize() 
 	{
+		
 		timer = new Timer(20, this);
         timer.start();
         
@@ -84,6 +95,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 			public void actionPerformed(ActionEvent e) 
 			{
 				main_panel.setVisible(false);
+				playsong("review UI/click.mp3");
 			}
 		});
 		recursion.addMouseListener(new MouseAdapter() 
@@ -109,7 +121,9 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
+				
 				main_panel.setVisible(false);
+				playsong("review UI/click.mp3");
 			}
 		});
 		math.addMouseListener(new MouseAdapter() 
@@ -135,6 +149,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 			public void actionPerformed(ActionEvent e) 
 			{
 				main_panel.setVisible(false);
+				playsong("review UI/click.mp3");			
 			}
 		});
 		binary.addMouseListener(new MouseAdapter() 
@@ -160,6 +175,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 			public void actionPerformed(ActionEvent e) 
 			{
 				main_panel.setVisible(false);
+				playsong("review UI/click.mp3");
 			}
 		});
 		d_type.addMouseListener(new MouseAdapter() 
@@ -185,6 +201,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 			public void actionPerformed(ActionEvent e) 
 			{
 				main_panel.setVisible(false);
+				playsong("review UI/click.mp3");
 			}
 		});
 		code_anal.addMouseListener(new MouseAdapter() 
@@ -210,6 +227,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 			public void actionPerformed(ActionEvent e) 
 			{
 				main_panel.setVisible(false);
+				playsong("review UI/click.mp3");
 			}
 		});
 		polymorph.addMouseListener(new MouseAdapter() 
@@ -235,6 +253,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 			public void actionPerformed(ActionEvent e) 
 			{
 				main_panel.setVisible(false);
+				playsong("review UI/click.mp3");
 			}
 		});
 		mvc.addMouseListener(new MouseAdapter() 
@@ -260,6 +279,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 			public void actionPerformed(ActionEvent e) 
 			{
 				main_panel.setVisible(false);
+				playsong("review UI/click.mp3");
 			}
 		});
 		array1.addMouseListener(new MouseAdapter() 
@@ -285,6 +305,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 			public void actionPerformed(ActionEvent e) 
 			{
 				main_panel.setVisible(false);
+				playsong("review UI/click.mp3");
 			}
 		});
 		backgroun.addMouseListener(new MouseAdapter() 
@@ -310,6 +331,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 			public void actionPerformed(ActionEvent e) 
 			{
 				main_panel.setVisible(false);
+				playsong("review UI/click.mp3");
 			}
 		});
 		daniel.addMouseListener(new MouseAdapter() 
@@ -335,6 +357,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 			public void actionPerformed(ActionEvent e) 
 			{
 				main_panel.setVisible(false);
+				playsong("review UI/click.mp3");
 			}
 		});
 		polymorphism.addMouseListener(new MouseAdapter() 
@@ -360,6 +383,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 			public void actionPerformed(ActionEvent e) 
 			{
 				main_panel.setVisible(false);
+				playsong("review UI/click.mp3");
 			}
 		});
 		powandsqrt.addMouseListener(new MouseAdapter() 
@@ -385,6 +409,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 			public void actionPerformed(ActionEvent e) 
 			{
 				main_panel.setVisible(false);
+				playsong("review UI/click.mp3");
 			}
 		});
 		power.addMouseListener(new MouseAdapter() 
@@ -410,6 +435,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 			public void actionPerformed(ActionEvent e) 
 			{
 				main_panel.setVisible(false);
+				playsong("review UI/click.mp3");
 			}
 		});
 		forquest.addMouseListener(new MouseAdapter() 
@@ -435,6 +461,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 			public void actionPerformed(ActionEvent e) 
 			{
 				main_panel.setVisible(false);
+				playsong("review UI/click.mp3");
 			}
 		});
 		boolquest.addMouseListener(new MouseAdapter() 
@@ -460,6 +487,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 			public void actionPerformed(ActionEvent e) 
 			{
 				main_panel.setVisible(false);
+				playsong("review UI/click.mp3");
 			}
 		});
 		arrayl2.addMouseListener(new MouseAdapter() 
@@ -485,6 +513,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 			public void actionPerformed(ActionEvent e) 
 			{
 				main_panel.setVisible(false);
+				playsong("review UI/click.mp3");
 			}
 		});
 		encapsu.addMouseListener(new MouseAdapter() 
@@ -510,6 +539,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 			public void actionPerformed(ActionEvent e) 
 			{
 				main_panel.setVisible(false);
+				playsong("review UI/click.mp3");
 			}
 		});
 		review.addMouseListener(new MouseAdapter() 
@@ -526,6 +556,8 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		});
 		review.setBorder(null);
 		review.setIcon(new ImageIcon("review UI/revqu1.jpg"));
+		
+		
 	}
 
 	@Override
@@ -534,4 +566,35 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		// TODO Auto-generated method stub
 		
 	}
+	
+	
+	public void playsong(final String url)
+	{
+		new Thread(new Runnable() 
+		{
+			public void run()
+			{
+				try
+				{
+					FileInputStream fis = new FileInputStream(url);
+					AdvancedPlayer player = new AdvancedPlayer(fis);
+					player.setPlayBackListener(new PlaybackListener() 
+				    {
+				        @Override
+				        public void playbackFinished(PlaybackEvent event)
+				        {
+				            pausedOnFrame = event.getFrame();
+				        }
+				    });
+					player.play(pausedOnFrame, Integer.MAX_VALUE);
+				}
+				catch(Exception exc)
+				{
+					 exc.printStackTrace();
+					 System.out.println("Failed to play the file.");
+				}
+			}
+		}).start();
+	}
+	
 }
