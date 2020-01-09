@@ -2,7 +2,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 
-public class testModeSwitch extends testModeCaller{
+public class testModeSwitch extends testModeCaller
+{
 	
 	public testModeSwitch()
 	{
@@ -14,29 +15,20 @@ public class testModeSwitch extends testModeCaller{
 		int numberFull=0;
 		
 		Random rand = new Random();
-		
-		
 	}
 	
 	public void questionsPicker()
 	{
-		
 		for (int i= 0; i<13; i++)
 		{
-		calls[i]=0;
+			calls[i]=0;
 		}
 		
 		
-		
-		
-		
-		
-		
 		for (int i= 0; i<13; i++)
-			
 		{
-		if (calls[i]==3)
-		numberFull ++;
+			if (calls[i]==3)
+				numberFull ++;
 		}
 
 		int question; 
