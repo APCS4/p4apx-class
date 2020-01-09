@@ -23,7 +23,6 @@ public class AP_UIv2 extends JFrame implements ActionListener
     private Timer timer;
     private int pausedOnFrame = 0;
 
-    
 
 	/**
 	 * Launch the application.
