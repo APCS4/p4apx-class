@@ -34,10 +34,11 @@ import java.awt.List;
 import java.awt.Component;
 import javax.swing.Box;
 public class testModeCaller extends MenuControl{
+	
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-    private JTextArea TestQ = new JTextArea();
-    private JTextArea testQuestionAnswer = new JTextArea();
+     JTextArea TestQ = new JTextArea();
+     JTextArea testQuestionAnswer = new JTextArea();
     private JTextField dispScore;
     private JTextField dispPercent;
     
@@ -46,6 +47,22 @@ public class testModeCaller extends MenuControl{
     public static int correct=9;
     public static int score=0;
 	
+    JScrollPane scrollPane_2; 
+    JLabel lblExamSections;
+    JLabel lblAnswer;
+    JScrollPane scrollPane;
+    JLabel lblQuestion;
+    JRadioButton chA;
+    JRadioButton chB;
+    JRadioButton chC;
+    JRadioButton chD;
+    JRadioButton chE;
+    JButton Submit;
+    int calls[];
+    JButton btnNextQuestion;
+    Random rand;
+    int numberFull;
+    
     public testModeCaller() {
 			
     	
@@ -60,7 +77,7 @@ public class testModeCaller extends MenuControl{
 			setContentPane(contentPane);
 			contentPane.setLayout(null);
 			
-			JScrollPane scrollPane_2 = new JScrollPane();
+			scrollPane_2 = new JScrollPane();
 			scrollPane_2.setBounds(18, 424, 750, 23);
 			contentPane.add(scrollPane_2);
 			scrollPane_2.setViewportView(testQuestionAnswer);
@@ -68,15 +85,15 @@ public class testModeCaller extends MenuControl{
 			testQuestionAnswer.setEditable(false);
 			testQuestionAnswer.setLineWrap(true);
 
-			JLabel lblExamSections = new JLabel("AP EXAM: Test Mode");
+			lblExamSections = new JLabel("AP EXAM: Test Mode");
 			lblExamSections.setBounds(6, 6, 161, 16);
 			contentPane.add(lblExamSections);
 			
-			JLabel lblAnswer = new JLabel("Correct Answer:");
+			lblAnswer = new JLabel("Correct Answer:");
 			lblAnswer.setBounds(18, 406, 760, 16);
 			contentPane.add(lblAnswer);
 			
-			JScrollPane scrollPane = new JScrollPane();
+			scrollPane = new JScrollPane();
 			scrollPane.setBounds(18, 55, 750, 192);
 			contentPane.add(scrollPane);
 			scrollPane.setViewportView(TestQ);
@@ -84,12 +101,12 @@ public class testModeCaller extends MenuControl{
 			TestQ.setEditable(false);
 			TestQ.setLineWrap(true);
 			
-			JLabel lblQuestion = new JLabel("Question");
+			lblQuestion = new JLabel("Question");
 			lblQuestion.setBounds(18, 34, 129, 16);
 			contentPane.add(lblQuestion);
 			
 			
-			JRadioButton chA = new JRadioButton("");
+			chA = new JRadioButton("");
 			chA.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					selected=1;	//the user selected choice "A"
@@ -98,7 +115,7 @@ public class testModeCaller extends MenuControl{
 			chA.setBounds(18, 255, 750, 23);
 			contentPane.add(chA);
 			
-			JRadioButton chC = new JRadioButton("");
+			chC = new JRadioButton("");
 			chC.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					selected=3;	//the user selected choice "C"
@@ -108,7 +125,7 @@ public class testModeCaller extends MenuControl{
 			contentPane.add(chC);
 			
 			
-			JRadioButton chB = new JRadioButton("");
+			chB = new JRadioButton("");
 			chB.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					selected=2;	//the user selected choice "B"
@@ -117,7 +134,7 @@ public class testModeCaller extends MenuControl{
 			chB.setBounds(18, 278, 750, 23);
 			contentPane.add(chB);
 			
-			JRadioButton chD = new JRadioButton("");
+			chD = new JRadioButton("");
 			chD.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					selected=4;	//the user selected choice "D"
@@ -126,7 +143,7 @@ public class testModeCaller extends MenuControl{
 			chD.setBounds(18, 325, 750, 23);
 			contentPane.add(chD);
 			
-			JRadioButton chE = new JRadioButton("");
+			chE = new JRadioButton("");
 			chE.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					selected=5;	//the user selected choice "e"
@@ -135,20 +152,20 @@ public class testModeCaller extends MenuControl{
 			chE.setBounds(18, 349, 750, 23);
 			contentPane.add(chE);
 			
-			JButton Submit = new JButton("Submit Answer ");
+			Submit = new JButton("Submit Answer ");
 			
 			//Calls array
-			int calls[]= new int[13];
+			calls = new int[13];
 			//Fills array with 0, represents 0 calls to each type of question
 			for (int i= 0; i<13; i++)
 			{
 			calls[i]=0;
 			}
-			JButton btnNextQuestion = new JButton("Next Question");
+			btnNextQuestion = new JButton("Next Question");
 			btnNextQuestion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			Random rand = new Random();
-			int numberFull=0;
+			rand = new Random();
+			numberFull=0;
 			//check how many indexes are full (at 3)
 			for (int i= 0; i<13; i++)
 				

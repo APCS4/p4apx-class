@@ -4,15 +4,17 @@ import java.util.Random;
 
 public class testModeSwitch extends testModeCaller
 {
+	//int calls[];
+	int numberFull;
 	
 	public testModeSwitch()
 	{
 		//Calls array
-		int calls[]= new int[13];
+		 calls = new int[13];
 		//Fills array with 0, represents 0 calls to each type of question
 		
 		
-		int numberFull=0;
+		numberFull=0;
 		
 		Random rand = new Random();
 	}
@@ -36,7 +38,7 @@ public class testModeSwitch extends testModeCaller
 		{
 			
 			testQuestionAnswer.setText("");
-
+ 
         chA.setSelected(false);
 		chB.setSelected(false);
 		chC.setSelected(false); 
@@ -327,8 +329,8 @@ public class testModeSwitch extends testModeCaller
 		}
 		//add else option later to display message that says "test finished"
 		}
-		});
+
 	}
 	
 
-}
+
