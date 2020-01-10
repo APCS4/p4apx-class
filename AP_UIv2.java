@@ -38,7 +38,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 				try 
 				{
 					AP_UIv2 frame = new AP_UIv2();
-					frame.setVisible(true);//o
+					frame.setVisible(true);
 				} 
 				catch (Exception e)
 				{
