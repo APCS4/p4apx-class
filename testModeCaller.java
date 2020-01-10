@@ -443,6 +443,7 @@ public class testModeCaller extends MenuControl{
 					public void actionPerformed(ActionEvent e) {
 				
 					testQuestionAnswer.setText(q.getAnswer());
+<<<<<<< HEAD
 					}
 					});
 					
@@ -519,7 +520,8 @@ public class testModeCaller extends MenuControl{
 			
 
    	
+=======
+				}});*/
+>>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
     }
-			
-	
 }
