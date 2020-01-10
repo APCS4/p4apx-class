@@ -91,7 +91,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				main_panel.setVisible(false);
+				 
 				
 				playsong("review UI/click.mp3");
 				quest();
@@ -120,7 +120,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				main_panel.setVisible(false);
+				 
 				quest();
 				playsong("review UI/click.mp3");
 			}
@@ -147,7 +147,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				main_panel.setVisible(false);
+				 
 				playsong("review UI/click.mp3");			
 			}
 		});
@@ -173,7 +173,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				main_panel.setVisible(false);
+				 
 				playsong("review UI/click.mp3");
 			}
 		});
@@ -199,7 +199,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				main_panel.setVisible(false);
+				 
 				playsong("review UI/click.mp3");
 			}
 		});
@@ -225,7 +225,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				main_panel.setVisible(false);
+				 
 				playsong("review UI/click.mp3");
 			}
 		});
@@ -251,7 +251,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				main_panel.setVisible(false);
+				 
 				playsong("review UI/click.mp3");
 			}
 		});
@@ -277,7 +277,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				main_panel.setVisible(false);
+				 
 				playsong("review UI/click.mp3");
 			}
 		});
@@ -303,7 +303,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				main_panel.setVisible(false);
+				 
 				playsong("review UI/click.mp3");
 			}
 		});
@@ -329,7 +329,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				main_panel.setVisible(false);
+				 
 				playsong("review UI/click.mp3");
 			}
 		});
@@ -355,7 +355,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				main_panel.setVisible(false);
+				 
 				playsong("review UI/click.mp3");
 			}
 		});
@@ -381,7 +381,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				main_panel.setVisible(false);
+				 
 				playsong("review UI/click.mp3");
 			}
 		});
@@ -407,7 +407,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				main_panel.setVisible(false);
+				 
 				playsong("review UI/click.mp3");
 			}
 		});
@@ -433,7 +433,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				main_panel.setVisible(false);
+				 
 				playsong("review UI/click.mp3");
 			}
 		});
@@ -459,7 +459,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				main_panel.setVisible(false);
+				 
 				playsong("review UI/click.mp3");
 			}
 		});
@@ -485,7 +485,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				main_panel.setVisible(false);
+				 
 				playsong("review UI/click.mp3");
 			}
 		});
@@ -511,7 +511,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				main_panel.setVisible(false);
+				 
 				playsong("review UI/click.mp3");
 			}
 		});
@@ -537,8 +537,9 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				main_panel.setVisible(false);
 				playsong("review UI/click.mp3");
+				AP_UIv2_2 frame = new AP_UIv2_2();
+				frame.setVisible(true);
 			}
 		});
 		review.addMouseListener(new MouseAdapter() 
