@@ -23,6 +23,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
     private Timer timer;
     private int pausedOnFrame = 0;
 
+    
 
 	/**
 	 * Launch the application.
@@ -54,7 +55,7 @@ public class AP_UIv2 extends JFrame implements ActionListener
 	{
 		playsong("review UI/sweden.mp3");
 		setResizable(false);
-		initialize();
+		menu();
 		setBounds(100, 100, 1280, 720);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
@@ -71,17 +72,14 @@ public class AP_UIv2 extends JFrame implements ActionListener
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() 
+	private void menu() 
 	{
-		
-		timer = new Timer(20, this);
-        timer.start();
         
         image2 = new ImageIcon(getClass().getResource("review UI/background.png"));
 		
 		JPanel main_panel = new JPanel();
 		main_panel.setOpaque(false);
-		main_panel.setBounds(150, 76, 950, 530);
+		main_panel.setBounds(150, 76, 1280, 720);
 		getContentPane().add(main_panel);
 		main_panel.setLayout(null);
 		
@@ -94,7 +92,9 @@ public class AP_UIv2 extends JFrame implements ActionListener
 			public void actionPerformed(ActionEvent e) 
 			{
 				main_panel.setVisible(false);
+				
 				playsong("review UI/click.mp3");
+				quest();
 			}
 		});
 		recursion.addMouseListener(new MouseAdapter() 
@@ -120,8 +120,8 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				
 				main_panel.setVisible(false);
+				quest();
 				playsong("review UI/click.mp3");
 			}
 		});
@@ -555,17 +555,61 @@ public class AP_UIv2 extends JFrame implements ActionListener
 		});
 		review.setBorder(null);
 		review.setIcon(new ImageIcon("review UI/revqu1.jpg"));
-		
+        
 		
 	}
 
+	public void quest()
+	{
+		JPanel quest_panel = new JPanel();
+		quest_panel.setVisible(true);
+        quest_panel.setOpaque(false);
+        quest_panel.setBounds(0, 0, 1280, 720);
+		getContentPane().add(quest_panel);
+		quest_panel.setLayout(null);
+		
+		JTextArea question = new JTextArea();
+		question.setOpaque(true);
+		question.setBounds(75, 75, 550, 425);
+		quest_panel.add(question);
+		
+		JTextArea answers = new JTextArea();
+		answers.setOpaque(true);
+		answers.setBounds(650, 75, 550, 425);
+		quest_panel.add(answers);
+		
+		JButton back = new JButton("");
+		back.setBounds(550, 480, 400, 50);
+		quest_panel.add(back);
+		back.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				quest_panel.setVisible(false);
+				playsong("review UI/click.mp3");
+			}
+		});
+		back.addMouseListener(new MouseAdapter() 
+		{
+			@Override
+			public void mouseEntered(MouseEvent e) 
+			{
+				back.setIcon(new ImageIcon("review UI/button2.jpg"));
+			}
+			public void mouseExited(MouseEvent e) 
+			{
+				back.setIcon(new ImageIcon("review UI/button1.jpg"));
+			}
+		});
+		back.setBorder(null);
+		back.setIcon(new ImageIcon("review UI/button1.jpg"));
+	}
 	@Override
 	public void actionPerformed(ActionEvent e) 
 	{
 		// TODO Auto-generated method stub
 		
 	}
-	
 	
 	public void playsong(final String url)
 	{
@@ -595,5 +639,4 @@ public class AP_UIv2 extends JFrame implements ActionListener
 			}
 		}).start();
 	}
-	
 }
