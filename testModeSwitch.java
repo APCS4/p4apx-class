@@ -67,7 +67,6 @@ public class testModeSwitch extends testModeCaller
 							testQuestionAnswer.setText(a.getAnswer());
 						}
 					});
-					
 					break; 
 					
 				case 1: 
