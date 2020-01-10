@@ -528,12 +528,5 @@ public class testModeCaller extends MenuControl{
 					testChoices.setText(q.getChoices());
 					testQuestionAnswer.setText(q.getAnswer());
 				}});*/
-			
-				
-				
-    
-   	
     }
-			
-	
 }
