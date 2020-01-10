@@ -4,11 +4,13 @@ import java.util.Random;
 
 public class testModeSwitch extends testModeCaller
 {
-	//int calls[];
 	int numberFull;
-	
+
+	//int calls[];
+
 	public testModeSwitch()
 	{
+
 		//Calls array
 		 calls = new int[13];
 		//Fills array with 0, represents 0 calls to each type of question
@@ -17,15 +19,11 @@ public class testModeSwitch extends testModeCaller
 		numberFull=0;
 		
 		Random rand = new Random();
-	}
 	
-	public void questionsPicker()
-	{
 		for (int i= 0; i<13; i++)
 		{
 			calls[i]=0;
 		}
-		
 		
 		for (int i= 0; i<13; i++)
 		{
@@ -326,11 +324,11 @@ public class testModeSwitch extends testModeCaller
 		
 		break; 
 		}
-		}
+		
 		//add else option later to display message that says "test finished"
 		}
 
 	}
-	
+}
 
 

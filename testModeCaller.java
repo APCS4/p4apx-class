@@ -154,7 +154,11 @@ public class testModeCaller extends MenuControl{
 			
 			Submit = new JButton("Submit Answer ");
 			
-			//Calls array
+			
+			testModeSwitch doStuff = new testModeSwitch(); 
+			
+			
+	/*		//Calls array
 			calls = new int[13];
 			//Fills array with 0, represents 0 calls to each type of question
 			for (int i= 0; i<13; i++)
