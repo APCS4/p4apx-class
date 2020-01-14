@@ -6,11 +6,11 @@ public class TestModeLogic /*extends MenuControl */{
 	
 	public TestModeLogic()
 	{
+		
 	}
 	
 	
-	
-	public void makeQuestions()
+	public String [][] makeQuestions()
 	{
 
 		AP_Exam.Question math = new AP_Exam.MathQuestions(); 
@@ -28,21 +28,33 @@ public class TestModeLogic /*extends MenuControl */{
 		AP_Exam.Question polymorph2= new AP_Exam.Polymorph();
 
 		AP_Exam.Question [] questionList = {math, encaps, dataType, binaryMath, CA, MVC, operators, aList, backgroundInfo, powSqrt, recur, polymorph1, polymorph2};
-	
-		String [] questionText = new String[36];
-		String [] answerText = new String [36];
+
+		String [][] test = new String[36][8]; 
 
 		int randNum;
+		int QUESTION=0, CHOICEA=1, CHOICEB=2, CHOICEC=3, CHOICED=4, CHOICEE=5, ANS=6, ANSLETTER=7;
 		
-		for (int p = 0; p < 36; p++)
+		for (int questNum = 0; questNum < 36; questNum++)
 		{
 			randNum= getRandNum();
-			questionText[p] = questionList[randNum].getQuestion(); 
-			answerText[p] = questionList[randNum].getAnswer();
+			test[questNum][QUESTION]=questionList[randNum].getQuestion();
+			test[questNum][CHOICEA]=questionList[randNum].getChoiceA();
+			test[questNum][CHOICEB]=questionList[randNum].getChoiceB();
+			test[questNum][CHOICEC]=questionList[randNum].getChoiceC();
+			test[questNum][CHOICED]=questionList[randNum].getChoiceD();
+			test[questNum][CHOICEE]=questionList[randNum].getChoiceE();
+			test[questNum][ANS]=questionList[randNum].getAnswer();
+			
 		}
-		  
+		
+		return(test);
 
 	}
+	
+	/**
+	 * generate the random numbers
+	 * @return random number
+	 */
 	public int getRandNum()
 	{
 		Random rand = new Random();
@@ -52,6 +64,7 @@ public class TestModeLogic /*extends MenuControl */{
 		do 
 		{
 			num = rand.nextInt(13);
+			
 			if (trackQCalls[num]==3)
 			{
 				full=true;
