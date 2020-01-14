@@ -2,6 +2,7 @@ import java.util.Random;
 
 public class TestModeLogic /*extends MenuControl */{
 	
+	int trackQCalls[] = {0,0,0,0,0,0,0,0,0,0,0,0,0}; //tracks # of times each class was called, starts at 0 (array has 13 spots, ranges from 0-12)
 	
 	public TestModeLogic()
 	{
@@ -10,39 +11,60 @@ public class TestModeLogic /*extends MenuControl */{
 	
 	
 	public void makeQuestions()
-	
 	{
-		Random rand; 
 
-		AP_Exam.Question type1 = new AP_Exam.MathQuestions(); 
-		AP_Exam.Question type2 = new AP_Exam.encapsulationQuestions(); 
-		AP_Exam.Question type3 = new AP_Exam.DataTypeQuestions();
-		AP_Exam.Question type4 = new AP_Exam.BinaryMathQuestions();
-		AP_Exam.Question type5 = new AP_Exam.CA();
-		AP_Exam.Question type6 = new AP_Exam.MVCQuestion();
-		AP_Exam.Question type7 = new AP_Exam.OperatorQuestions();
-		AP_Exam.Question type8 = new AP_Exam.ArrayListQuestions();
-		AP_Exam.Question type9 = new AP_Exam.BackgroundInfoQuestions();
-		AP_Exam.Question type10 = new  AP_Exam.PowSqrt();
-		AP_Exam.Question type11 = new AP_Exam.Recursion();
-		AP_Exam.Question type12= new AP_Exam.PolymorphismQuestions();
-		AP_Exam.Question type13= new AP_Exam.Polymorph();
+		AP_Exam.Question math = new AP_Exam.MathQuestions(); 
+		AP_Exam.Question encaps = new AP_Exam.encapsulationQuestions(); 
+		AP_Exam.Question dataType = new AP_Exam.DataTypeQuestions();
+		AP_Exam.Question binaryMath = new AP_Exam.BinaryMathQuestions();
+		AP_Exam.Question CA = new AP_Exam.CA();
+		AP_Exam.Question MVC = new AP_Exam.MVCQuestion();
+		AP_Exam.Question operators = new AP_Exam.OperatorQuestions();
+		AP_Exam.Question aList = new AP_Exam.ArrayListQuestions();
+		AP_Exam.Question backgroundInfo = new AP_Exam.BackgroundInfoQuestions();
+		AP_Exam.Question powSqrt = new  AP_Exam.PowSqrt();
+		AP_Exam.Question recur = new AP_Exam.Recursion();
+		AP_Exam.Question polymorph1= new AP_Exam.PolymorphismQuestions();
+		AP_Exam.Question polymorph2= new AP_Exam.Polymorph();
 
-		AP_Exam.Question [] questionList = {type1, type2, type3, type4, type5, type6, type7, type8, type9, type10, type11, type12, type13};
+		AP_Exam.Question [] questionList = {math, encaps, dataType, binaryMath, CA, MVC, operators, aList, backgroundInfo, powSqrt, recur, polymorph1, polymorph2};
 	
 		String [] questionText = new String[36];
 		String [] answerText = new String [36];
-		rand = new Random(); 
+
+		int randNum;
+		
 		for (int p = 0; p < 36; p++)
-		   { 
-		int i = rand.nextInt(13);
-		 		
-		questionText[p] = questionList[i].getQuestion(); 
+		{
+			randNum= getRandNum();
+			questionText[p] = questionList[randNum].getQuestion(); 
+			answerText[p] = questionList[randNum].getAnswer();
+		}
+		  
 
-		answerText[p] = questionList[i].getAnswer();
-
-		    }
-//missing logic for stopping at three of each question, and for combining the question types that had more than one class (like ArrayList)
+	}
+	public int getRandNum()
+	{
+		Random rand = new Random();
+		int num;
+		
+		boolean full=false;
+		do 
+		{
+			num = rand.nextInt(13);
+			if (trackQCalls[num]==3)
+			{
+				full=true;
+			}
+			else
+				trackQCalls[num]+=1;
+		}
+		while(full==true);
+		
+		return(num);
 	}
 
 }
+/*
+ * 
+ */
