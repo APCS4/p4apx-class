@@ -137,6 +137,13 @@ public class Question extends Scoring
 		return String.format(charE + ": " + choices[4]);
 	
 	}
+	
+	public String getAnswerLetter()
+	{
+		ConsoleMethods.println("What is stored in answerkey" + answerKey);
+		return String.valueOf(answerKey);
+	}
+	
 	public String getChoices(String group) {
 		return String.format(
 				charA + ": %s%n" +
