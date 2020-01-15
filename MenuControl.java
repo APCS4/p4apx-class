@@ -94,6 +94,29 @@ public class MenuControl extends JFrame {
 		});
 		mnApTest.add(mntmApRev2);
 		
+		JMenu mnTestMode = new JMenu("Test Mode");
+		mnApTest.add(mnTestMode);
+		
+		JMenuItem mntmTakeTest = new JMenuItem("Take Test ");
+		mntmTakeTest.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				testModeCaller frame = new testModeCaller();
+				frame.setVisible(true);
+			}
+		});
+		mnTestMode.add(mntmTakeTest);
+		
+		JMenuItem mntmTakeTestVersion = new JMenuItem("Take Test Version 2");
+		mntmTakeTestVersion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TestModeUI frame = new TestModeUI();
+				frame.setVisible(true);
+				
+			}
+		});
+		mnTestMode.add(mntmTakeTestVersion);
+		
 		JMenu mnIntro = new JMenu("Intro");
 		menuBar.add(mnIntro);
 		
@@ -144,19 +167,6 @@ public class MenuControl extends JFrame {
 			}
 		});
 		mnJig.add(mntmMethodSearch);
-		
-		JMenu mnTestMode = new JMenu("Test Mode");
-		menuBar.add(mnTestMode);
-		
-		JMenuItem mntmTakeTest = new JMenuItem("Take Test ");
-		mntmTakeTest.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				testModeCaller frame = new testModeCaller();
-				frame.setVisible(true);
-			}
-		});
-		mnTestMode.add(mntmTakeTest);
 		
 		
 	}
