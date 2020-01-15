@@ -66,128 +66,157 @@ public class ListQuestions2 extends Question
 		
 		this.answer = ourAnswer; 
 		//correct answer
-		//this.answer =  String.format("[%d, %d, %d, %d, %d]", num1, num6, num4, num5, num6);
 		//%d is the format() format for an integer to print
 		
 		
 	    //Random numbers generating
-	    int option = rand.nextInt(5); 
-	    int option2 = rand.nextInt(5);
-	    while(option2 == option)
-	    {
-	    	option2 = rand.nextInt(5); 
-	    } 
+	    	int option = rand.nextInt(5); 
+	    	
+	    	int option2 = rand.nextInt(5);
+	    	
+	    		while(option2 == option)
+	    			{
+	    				option2 = rand.nextInt(5); 
+	    			} 
 	    
-	    int option3 = rand.nextInt(5);
+	    	int option3 = rand.nextInt(5);
 	    
-	    while(option3==option || option3 ==option2)
-	    {
-	    	option3 = rand.nextInt(5);
-	    }
+	    		while(option3==option || option3 ==option2)
+	    			{
+	    				option3 = rand.nextInt(5);
+	    			}
 	    
 	    int option4= rand.nextInt(4);
-	    while(option4==option3 || option4 ==option2 || option4 == option)
-	    {
-	    	option4 = rand.nextInt(5);
-	    }
+	    
+	    	while(option4==option3 || option4 ==option2 || option4 == option)
+	    			{
+	    				option4 = rand.nextInt(5);
+	    			}
 		int option5 = rand.nextInt(4); 
-		while (option5==option4 || option5 ==option3 || option5 ==option2 ||option5 ==option) 
-		{
-			option5= rand.nextInt(5);
-		}
+		
+			while (option5==option4 || option5 ==option3 || option5 ==option2 ||option5 ==option) 
+		
+					{
+						option5= rand.nextInt(5);
+					}
 		
 		//putting each answer choice into the random places that were generated
 		switch(option)
 		{
 			case 0:
 				this.choiceA= ourAnswer;
+				this.answerKey = 'A';
 				break;
 			case 1:
 				this.choiceB= ourAnswer;
+				this.answerKey = 'B';
 				break;
 			case 2:
 				this.choiceC= ourAnswer;
+				this.answerKey = 'C';
 				break;
 			case 3:
 				this.choiceD= ourAnswer;
+				this.answerKey = 'D';
 				break;
 			case 4:
 				this.choiceE= ourAnswer;
+				this.answerKey = 'E';
 				break;
 		}
 		switch(option2)
 		{
 			case 0:
-				this.choiceA= String.format("[%d, %d, %d, %d, %d]", num2, num4, num4, num5, num6);
+				this.choiceA= ourAnswer;
+				this.answerKey = 'A';
 				break;
 			case 1:
-				this.choiceB= String.format("[%d, %d, %d, %d, %d]", num2, num4, num4, num5, num6);
+				this.choiceB= ourAnswer;
+				this.answerKey = 'B';
 				break;
 			case 2:
-				this.choiceC= String.format("[%d, %d, %d, %d, %d]", num2, num4, num4, num5, num6);
+				this.choiceC= ourAnswer;
+				this.answerKey = 'C';
 				break;
 			case 3:
-				this.choiceD= String.format("[%d, %d, %d, %d, %d]", num2, num4, num4, num5, num6);
+				this.choiceD= ourAnswer;
+				this.answerKey = 'D';
 				break;
 			case 4:
-				this.choiceE= String.format("[%d, %d, %d, %d, %d]", num2, num4, num4, num5, num6);
+				this.choiceE= ourAnswer;
+				this.answerKey = 'E';
 				break;
 		}
 		switch(option3)
 		{
 			case 0:
-				this.choiceA= String.format("[%d, %d, %d, %d, %d]", num1, num3, num4, num2, num3);
+				this.choiceA= ourAnswer;
+				this.answerKey = 'A';
 				break;
 			case 1:
-				this.choiceB= String.format("[%d, %d, %d, %d, %d]", num1, num3, num4, num2, num3);
+				this.choiceB= ourAnswer;
+				this.answerKey = 'B';
 				break;
 			case 2:
-				this.choiceC= String.format("[%d, %d, %d, %d, %d]", num1, num3, num4, num2, num3);
+				this.choiceC= ourAnswer;
+				this.answerKey = 'C';
 				break;
 			case 3:
-				this.choiceD= String.format("[%d, %d, %d, %d, %d]", num1, num3, num4, num2, num3);
+				this.choiceD= ourAnswer;
+				this.answerKey = 'D';
 				break;
 			case 4:
-				this.choiceE= String.format("[%d, %d, %d, %d, %d]", num1, num3, num4, num2, num3);
+				this.choiceE= ourAnswer;
+				this.answerKey = 'E';
 				break;
 		}
 		
 		switch(option4)
 		{
-		    case 0: 
-		    	this.choiceA = String.format("[%d, %d, %d, %d, %d]", num2, num6, num4, num1, num6);
-		    	break; 
-		    case 1:
-		    	this.choiceB = String.format("[%d, %d, %d, %d, %d]", num2, num6, num4, num1, num6);
-		    	break; 
-		    case 2:
-		    	this.choiceC = String.format("[%d, %d, %d, %d, %d]", num2, num6, num4, num1, num6);
-		    	break;
-		    case 3:
-		    	this.choiceD = String.format("[%d, %d, %d, %d, %d]", num2, num6, num4, num1, num6);
-		    	break;
-		    case 4:
-		    	this.choiceE= String.format("[%d, %d, %d, %d, %d]", num2, num6, num4, num1, num6);
-		    	break;
+			case 0:
+				this.choiceA= ourAnswer;
+				this.answerKey = 'A';
+				break;
+			case 1:
+				this.choiceB= ourAnswer;
+				this.answerKey = 'B';
+				break;
+			case 2:
+				this.choiceC= ourAnswer;
+				this.answerKey = 'C';
+				break;
+			case 3:
+				this.choiceD= ourAnswer;
+				this.answerKey = 'D';
+				break;
+			case 4:
+				this.choiceE= ourAnswer;
+				this.answerKey = 'E';
+				break;
 		}
 		
 		switch(option5) 
 		{
-		    case 0: 
-		    	this.choiceA = String.format("[%d, %d, %d, %d, %d]", num3, num6, num4, num5, num6);
-		    	break; 
-		    case 1:
-		    	this.choiceB = String.format("[%d, %d, %d, %d, %d]", num3, num6, num4, num5, num6);
-		    	break; 
-		    case 2: 
-		    	this.choiceC = String.format("[%d, %d, %d, %d, %d]", num3, num6, num4, num5, num6);
-		    	break; 
-		    case 3:
-		    	this.choiceD = String.format("[%d, %d, %d, %d, %d]", num3, num6, num4, num5, num6);
-		    	break; 
-		    case 4: 
-		    	this.choiceE = String.format("[%d, %d, %d, %d, %d]", num3, num6, num4, num5, num6);
-		        break;                
+			case 0:
+				this.choiceA= ourAnswer;
+				this.answerKey = 'A';
+				break;
+			case 1:
+				this.choiceB= ourAnswer;
+				this.answerKey = 'B';
+				break;
+			case 2:
+				this.choiceC= ourAnswer;
+				this.answerKey = 'C';
+				break;
+			case 3:
+				this.choiceD= ourAnswer;
+				this.answerKey = 'D';
+				break;
+			case 4:
+				this.choiceE= ourAnswer;
+				this.answerKey = 'E';
+				break;              
 		}
 }
 	        
