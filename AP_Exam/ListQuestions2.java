@@ -60,11 +60,13 @@ public class ListQuestions2 extends Question
 		//getting random numbers to fill array
 		int num1=getRandNum(), num2=getRandNum(), num3=getRandNum(), num4=getRandNum(), num5 = getRandNum(), num6 = getRandNum();
 		
+		String ourAnswer = num1 + ", " + num2 + ", " + num3 + ", " + num4 + ", "+ num5 + ", " + num6;
 
 		this.question = String.format("What is the value stored in list when:\nArrayList<Integer> list = new ArrayList<Integer>();\nlist.add(%d); \nlist.add(%d); \nlist.add(%d); \nlist.add(%d); \nlist.remove(2); \nlist.add(%d); \nlist.add(%d); \nlist.remove(1); \nlist.set(1, %d);", num1, num2, num3, num4, num5, num6, num6);
 		
+		this.answer = ourAnswer; 
 		//correct answer
-		this.answer =  String.format("[%d, %d, %d, %d, %d]", num1, num6, num4, num5, num6);
+		//this.answer =  String.format("[%d, %d, %d, %d, %d]", num1, num6, num4, num5, num6);
 		//%d is the format() format for an integer to print
 		
 		
@@ -98,19 +100,19 @@ public class ListQuestions2 extends Question
 		switch(option)
 		{
 			case 0:
-				this.choiceA= String.format("[%d, %d, %d, %d, %d]", num1, num6, num4, num5, num6);
+				this.choiceA= ourAnswer;
 				break;
 			case 1:
-				this.choiceB= String.format("[%d, %d, %d, %d, %d]", num1, num6, num4, num5, num6);
+				this.choiceB= ourAnswer;
 				break;
 			case 2:
-				this.choiceC= String.format("[%d, %d, %d, %d, %d]", num1, num6, num4, num5, num6);
+				this.choiceC= ourAnswer;
 				break;
 			case 3:
-				this.choiceD= String.format("[%d, %d, %d, %d, %d]", num1, num6, num4, num5, num6);
+				this.choiceD= ourAnswer;
 				break;
 			case 4:
-				this.choiceE= String.format("[%d, %d, %d, %d, %d]", num1, num6, num4, num5, num6);
+				this.choiceE= ourAnswer;
 				break;
 		}
 		switch(option2)

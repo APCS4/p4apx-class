@@ -25,29 +25,35 @@ public class TestModeLogic /*extends MenuControl */{
 		AP_Exam.Question powSqrt = new  AP_Exam.PowSqrt();
 		AP_Exam.Question recur = new AP_Exam.Recursion();
 		AP_Exam.Question polymorph1= new AP_Exam.PolymorphismQuestions();
-		AP_Exam.Question polymorph2= new AP_Exam.Polymorph();
+		AP_Exam.Question polymorph2= new AP_Exam.Polymorph(); //making an object of each type of question
 
 		AP_Exam.Question [] questionList = {math, encaps, dataType, binaryMath, CA, MVC, operators, aList, backgroundInfo, powSqrt, recur, polymorph1, polymorph2};
-
-		String [][] test = new String[36][8]; 
-
-		int randNum;
-		int QUESTION=0, CHOICEA=1, CHOICEB=2, CHOICEC=3, CHOICED=4, CHOICEE=5, ANS=6, ANSLETTER=7;
+		//populating an array of type Question with each of the different types of question objects
 		
-		for (int questNum = 0; questNum < 36; questNum++)
+		String [][] test = new String[36][8]; //creating a new 2-D String array that will hold in each column: a question type object, and its corresponding 
+											  //actual question text, answer options A-E, and the answer text, see below:
+
+		int randNum; //defining variable, random integer
+		
+		int QUEST=0, A=1, B=2, C=3, D=4, E=5, ANS=6, ANSLETTER=7; //defining integers for the INDEX on the test Array 
+		
+		//this variable instantiation declares that question will always be in the 0 position of the column, choice A will be in the 1 position, etc.
+		
+		for (int questNum = 0; questNum < 36; questNum++) //for each increasing index of the test array
 		{
-			randNum= getRandNum();
-			test[questNum][QUESTION]=questionList[randNum].getQuestion();
-			test[questNum][CHOICEA]=questionList[randNum].getChoiceA();
-			test[questNum][CHOICEB]=questionList[randNum].getChoiceB();
-			test[questNum][CHOICEC]=questionList[randNum].getChoiceC();
-			test[questNum][CHOICED]=questionList[randNum].getChoiceD();
-			test[questNum][CHOICEE]=questionList[randNum].getChoiceE();
+			randNum= getRandNum(); //assignments of Strings to each object of the array 
+			test[questNum][QUEST]=questionList[randNum].getQuestion();
+			test[questNum][A]=questionList[randNum].getChoiceA();
+			test[questNum][B]=questionList[randNum].getChoiceB();
+			test[questNum][C]=questionList[randNum].getChoiceC();
+			test[questNum][D]=questionList[randNum].getChoiceD();
+			test[questNum][E]=questionList[randNum].getChoiceE();
 			test[questNum][ANS]=questionList[randNum].getAnswer();
+			test[questNum][ANSLETTER] = questionList[randNum].getAnswerLetter(); 
 			
 		}
 		
-		return(test);
+		return(test); //returns entire test array
 
 	}
 	
@@ -55,7 +61,7 @@ public class TestModeLogic /*extends MenuControl */{
 	 * generate the random numbers
 	 * @return random number
 	 */
-	public int getRandNum()
+	public int getRandNum() //logic for when calling a random number 
 	{
 		Random rand = new Random();
 		int num;
@@ -63,14 +69,14 @@ public class TestModeLogic /*extends MenuControl */{
 		boolean full=false;
 		do 
 		{
-			num = rand.nextInt(13);
+			num = rand.nextInt(13); //call random number from 0-12
 			
 			if (trackQCalls[num]==3)
 			{
-				full=true;
+				full=true;	//if that same number has already been
 			}
 			else
-				trackQCalls[num]+=1;
+				trackQCalls[num]+=1; //if number 3 is called 3 times, the integer at index 3 on this array will become 1, then 2, then 3
 		}
 		while(full==true);
 		
