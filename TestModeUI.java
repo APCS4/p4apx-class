@@ -12,6 +12,8 @@ import javax.swing.JRadioButton;
 import javax.swing.JPanel;
 import javax.swing.JScrollBar;
 import javax.swing.JButton;
+import javax.swing.JFrame;
+
 import java.awt.SystemColor;
 import javax.swing.UIManager;
 
@@ -19,6 +21,7 @@ public class TestModeUI extends MenuControl {
 	private JTable table;
 	public TestModeUI()
 	{
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		getContentPane().setBackground(Color.WHITE);
 		setBounds(0, 0, 1440, 825);
 		getContentPane().setLayout(null);
