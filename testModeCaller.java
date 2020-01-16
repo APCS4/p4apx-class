@@ -9,7 +9,7 @@ import javax.swing.border.EmptyBorder;
 import AP_Exam.AP_Console;
 
 
-import AP_Exam.encapsulationQuestions;
+//import AP_Exam.encapsulationQuestions;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
