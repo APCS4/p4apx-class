@@ -6,7 +6,7 @@ import model_questions.Question;
 
 
 
-public class finalInfoQuestions extends Question
+public class finalInfoQuestions extends AP_Exam.Question
 {
  public finalInfoQuestions() 
  {

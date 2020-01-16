@@ -16,7 +16,7 @@ import model_questions.Question;
  * @version Modeling P4
  */
 
-public class FinalMath extends Question {
+public class FinalMath extends AP_Exam.Question {
 	
 	private char[] operators = {'&', '|', '+', '-'};
 	private char[] operators1 = {'1', '2'};

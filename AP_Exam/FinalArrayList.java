@@ -15,7 +15,7 @@ import model_linkedlists.CircleQueue;
  * 
  * @author P4 Modeling
  */
-public class FinalArrayList extends Question {
+public class FinalArrayList extends AP_Exam.Question {
 	public static boolean TextBased = true;
 	public static boolean RandomBased = true;
 	
