@@ -2,7 +2,7 @@ package AP_Exam;
 
 import java.util.Random;
 
-import AP_Exam.Util.ConsoleMethods;
+import Util.ConsoleMethods;
 import model_questions.Question;
 
 public class FinalLoopQuestion extends Question

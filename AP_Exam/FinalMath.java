@@ -43,6 +43,8 @@ public class FinalMath extends Question {
      * @param  void
      * @return void 
      */
+    
+    /*
     public static String mainTest ()
     {
     	Question a = new BinaryMathQuestions();
@@ -85,7 +87,7 @@ public class FinalMath extends Question {
         q.askQuestionConsole();
         return q.getCounterMsg();
     }
-    
+    */
     /**
      * Sets up a Binary Math questions according to instance variables (this...) in Question class
      *

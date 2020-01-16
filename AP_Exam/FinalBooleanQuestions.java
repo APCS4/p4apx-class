@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Random;
 import Util.ConsoleMethods;
 import model_questions.Question;
-import AP_Exam.Util.*;
+import Util.*;
 
 /**
  * This class presents the series of questions based on boolean operators and logic

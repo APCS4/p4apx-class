@@ -26,7 +26,7 @@ public class FinalArrayList extends Question {
 	public FinalArrayList(boolean Text, boolean Random) {
 		TextBased = Text;
 		RandomBased = Random;
-		createTest();
+		//createTest();
 	}
 
 	@Override

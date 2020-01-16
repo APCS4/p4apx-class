@@ -71,15 +71,15 @@ public class AP_Console
         switch (swValue) 
         {
             case 1:
-              menuMsg[1] = MathQuestions.mainTest();
+              //menuMsg[1] = MathQuestions.mainTest();
               menuTotalMsg = Scoring.getCounterTotalMsg();
               break;
             case 2:
-              menuMsg[2] = BinaryMathQuestions.mainTest();
+              //menuMsg[2] = BinaryMathQuestions.mainTest();
               menuTotalMsg = Scoring.getCounterTotalMsg();
               break;
             case 3:
-              menuMsg[3] = DataTypeQuestions.mainTest();
+              //menuMsg[3] = DataTypeQuestions.mainTest();
               menuTotalMsg = Scoring.getCounterTotalMsg();
               break;
             case 0:

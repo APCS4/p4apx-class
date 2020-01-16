@@ -115,7 +115,16 @@ public class AP_UI extends MenuControl
 		JButton btnCodeAnalysisQuestions = new JButton("Code Analysis Questions");
 		btnCodeAnalysisQuestions.setBounds(594, 124, 184, 29);
 		contentPane.add(btnCodeAnalysisQuestions);
+		btnCodeAnalysisQuestions.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				model_questions.Question q = new AP_Exam.FinalCodeAnalysis();
+				testQuestion.setText(q.getQuestion());
+				testChoices.setText(q.getChoices());
+				testQuestionAnswer.setText(q.getAnswer());
+			}
+		});
 		
+	
 		JButton btnLoopQuestions = new JButton("Loop Questions");
 		btnLoopQuestions.setBounds(594, 154, 184, 29);
 		contentPane.add(btnLoopQuestions);
