@@ -88,7 +88,7 @@ public class MenuControl extends JFrame {
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				AP_UIv2 frame = new AP_UIv2();
+				AP_UIv2_2 frame = new AP_UIv2_2();
 				frame.setVisible(true);
 			}
 		});
