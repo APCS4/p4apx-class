@@ -16,7 +16,7 @@ import Util.*;
  * @author Anthony Tseng & Jude Giolitto 
  */
 
-public class FinalBooleanQuestions extends AP_Exam.Question
+public class FinalBooleanQuestions extends model_questions.Question
 {	
 	private String[] boolOp1 = {"^", "||", "&&", "==", "!="};
 	private String[] boolOp2 = {"!", ""};
