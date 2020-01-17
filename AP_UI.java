@@ -103,14 +103,37 @@ public class AP_UI extends MenuControl
 		JButton btnArrayListQuestions = new JButton("Array List Questions");
 		btnArrayListQuestions.setBounds(594, 34, 184, 29);
 		contentPane.add(btnArrayListQuestions);
-		
+		btnArrayListQuestions.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			AP_Exam.FinalArrayList q = new AP_Exam.FinalArrayList();
+			testQuestion.setText(q.getQuestion());
+			testChoices.setText(q.getChoices());
+			testQuestionAnswer.setText(q.getAnswer());
+			} 
+		}); 
 		JButton btnGeneralJavaInfo = new JButton("General Java Info");
 		btnGeneralJavaInfo.setBounds(594, 64, 184, 29);
 		contentPane.add(btnGeneralJavaInfo);
+		btnGeneralJavaInfo.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			AP_Exam.finalInfoQuestions q = new AP_Exam.finalInfoQuestions();
+			testQuestion.setText(q.getQuestion());
+			testChoices.setText(q.getChoices());
+			testQuestionAnswer.setText(q.getAnswer());
+			} 
+		}); 
 		
 		JButton btnBooleanMathQuestions = new JButton("Boolean Math Questions");
 		btnBooleanMathQuestions.setBounds(594, 94, 184, 29);
 		contentPane.add(btnBooleanMathQuestions);
+		btnBooleanMathQuestions.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			AP_Exam.FinalBooleanQuestions q = new AP_Exam.FinalBooleanQuestions();
+			testQuestion.setText(q.getQuestion());
+			testChoices.setText(q.getChoices());
+			testQuestionAnswer.setText(q.getAnswer());
+			} 
+		});
 		
 		JButton btnCodeAnalysisQuestions = new JButton("Code Analysis Questions");
 		btnCodeAnalysisQuestions.setBounds(594, 124, 184, 29);
@@ -128,22 +151,62 @@ public class AP_UI extends MenuControl
 		JButton btnLoopQuestions = new JButton("Loop Questions");
 		btnLoopQuestions.setBounds(594, 154, 184, 29);
 		contentPane.add(btnLoopQuestions);
+		btnLoopQuestions.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			AP_Exam.FinalLoopQuestion q = new AP_Exam.FinalLoopQuestion();
+			testQuestion.setText(q.getQuestion());
+			testChoices.setText(q.getChoices());
+			testQuestionAnswer.setText(q.getAnswer());
+			} 
+		});
 		
 		JButton btnMathQuestions = new JButton("Math Questions");
 		btnMathQuestions.setBounds(594, 184, 184, 29);
 		contentPane.add(btnMathQuestions);
+		btnMathQuestions.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			AP_Exam.FinalMath q = new AP_Exam.FinalMath();
+			testQuestion.setText(q.getQuestion());
+			testChoices.setText(q.getChoices());
+			testQuestionAnswer.setText(q.getAnswer());
+			} 
+		});
 		
 		JButton btnPolymorphismQuestions = new JButton("Polymorphism Questions");
 		btnPolymorphismQuestions.setBounds(594, 214, 184, 29);
 		contentPane.add(btnPolymorphismQuestions);
+		btnPolymorphismQuestions.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			AP_Exam.FinalPolymorphQuestions q = new AP_Exam.FinalPolymorphQuestions();
+			testQuestion.setText(q.getQuestion());
+			testChoices.setText(q.getChoices());
+			testQuestionAnswer.setText(q.getAnswer());
+			} 
+		});
 		
 		JButton btnRecursiveCodeAnalysis = new JButton("Recursive Code Analysis");
 		btnRecursiveCodeAnalysis.setBounds(594, 244, 184, 29);
 		contentPane.add(btnRecursiveCodeAnalysis);
+		btnRecursiveCodeAnalysis.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			AP_Exam.FinalRecursion q = new AP_Exam.FinalRecursion();
+			testQuestion.setText(q.getQuestion());
+			testChoices.setText(q.getChoices());
+			testQuestionAnswer.setText(q.getAnswer());
+			} 
+		});
 		
 		JButton btnStringQuestions = new JButton("String Questions");
 		btnStringQuestions.setBounds(594, 274, 184, 29);
 		contentPane.add(btnStringQuestions);
+		btnStringQuestions.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			AP_Exam.finalStrings q = new AP_Exam.finalStrings();
+			testQuestion.setText(q.getQuestion());
+			testChoices.setText(q.getChoices());
+			testQuestionAnswer.setText(q.getAnswer());
+			} 
+		});
 
 	}
 }

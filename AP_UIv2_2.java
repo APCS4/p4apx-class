@@ -57,7 +57,7 @@ public class AP_UIv2_2 extends JFrame implements ActionListener
 		setResizable(false);
 		menu();
 		setBounds(100, 100, 1280, 720);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		getContentPane().setLayout(null);
 		
 		//background picture
