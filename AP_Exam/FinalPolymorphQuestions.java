@@ -5,7 +5,7 @@ import java.util.Random;
 import Util.ConsoleMethods;
 import model_questions.Question;
 
-public class FinalPolymorphQuestions extends Question {
+public class FinalPolymorphQuestions extends AP_Exam.Question {
 	private String[] loadQuestArray(String q0, String q1, String q2, String q3, String q4) {
 		int rand;
 		String[] choices = new String[5];

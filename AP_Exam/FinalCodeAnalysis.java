@@ -32,7 +32,7 @@ public class FinalCodeAnalysis extends AP_Exam.Question{
     
     public static String mainTest ()
     {
-    	Question q = new FinalCodeAnalysis();
+    	AP_Exam.Question q = new FinalCodeAnalysis();
         q.askQuestionConsole();
         return q.getCounterMsg();
     }

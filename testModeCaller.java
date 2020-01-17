@@ -155,9 +155,9 @@ public class testModeCaller extends MenuControl{
 		
 		
 		//Calls array
-		calls = new int[13];
+		calls = new int[9];
 		//Fills array with 0, represents 0 calls to each type of question
-		for (int i= 0; i<13; i++)
+		for (int i= 0; i<9; i++)
 		{
 		calls[i]=0;
 		}
@@ -169,7 +169,7 @@ public class testModeCaller extends MenuControl{
 			numberFull=0;
 			
 			//check how many indexes are full (at 3)
-			for (int i= 0; i<13; i++)	
+			for (int i= 0; i<9; i++)	
 			{
 				if (calls[i]==3)
 					numberFull ++;
@@ -177,7 +177,7 @@ public class testModeCaller extends MenuControl{
 		
 			int question; 
 			
-			if (numberFull!=13)
+			if (numberFull!=9)
 			{
 				testQuestionAnswer.setText("");
 					
@@ -188,17 +188,17 @@ public class testModeCaller extends MenuControl{
 				chE.setSelected(false); 
 				
 				
-				question = rand.nextInt(13); 
-				while(calls[question]==3)
+				question = rand.nextInt(9); 
+				while(calls[question]==4)
 				{
-					question = rand.nextInt(13); 
+					question = rand.nextInt(9); 
 				}
 				//increment value in calls and call methods
 				switch(question)
 				{
 				case 0: 
 					calls[0]+=1;
-					AP_Exam.Question a = new AP_Exam.MathQuestions();
+					AP_Exam.Question a = new AP_Exam.FinalArrayList();
 					   TestQ.setText(a.getQuestion());
 					chA.setText(a.getChoiceA());
 					chB.setText(a.getChoiceB());
@@ -216,7 +216,7 @@ public class testModeCaller extends MenuControl{
 					break; 
 				case 1: 
 					calls[1]+=1;
-					AP_Exam.encapsulationQuestions b = new AP_Exam.encapsulationQuestions();
+					AP_Exam.Question b = new AP_Exam.FinalBooleanQuestions();
 					  TestQ.setText(b.getQuestion());
 					chA.setText(b.getChoiceA());
 					chB.setText(b.getChoiceB());
@@ -236,7 +236,7 @@ public class testModeCaller extends MenuControl{
 					break;
 				case 2:
 					calls[2]+=1;
-					AP_Exam.Question c = new AP_Exam.DataTypeQuestions();
+					AP_Exam.Question c = new AP_Exam.FinalCodeAnalysis();
 					   TestQ.setText(c.getQuestion());
 					chA.setText(c.getChoiceA());
 					chB.setText(c.getChoiceB());
@@ -256,7 +256,7 @@ public class testModeCaller extends MenuControl{
 					 
 				case 3: 
 					calls[3]+=1;
-					AP_Exam.Question d = new AP_Exam.BinaryMathQuestions();
+					AP_Exam.Question d = new AP_Exam.finalInfoQuestions();
 					   TestQ.setText(d.getQuestion());
 					chA.setText(d.getChoiceA());
 					chB.setText(d.getChoiceB());
@@ -275,7 +275,7 @@ public class testModeCaller extends MenuControl{
 					break;
 				case 4: 
 					calls[question]+=1;
-					AP_Exam.Question x = new AP_Exam.CA();
+					AP_Exam.Question x = new AP_Exam.FinalLoopQuestion();
 					TestQ.setText(x.getQuestion());
 					chA.setText(x.getChoiceA());
 					chB.setText(x.getChoiceB());
@@ -294,7 +294,7 @@ public class testModeCaller extends MenuControl{
 					break; 
 				case 5: 
 					calls[question]+=1;
-					AP_Exam.Question f = new AP_Exam.MVCQuestion();
+					AP_Exam.Question f = new AP_Exam.FinalMath();
 					TestQ.setText(f.getQuestion());
 					chA.setText(f.getChoiceA());
 					chB.setText(f.getChoiceB());
@@ -313,7 +313,7 @@ public class testModeCaller extends MenuControl{
 					break; 
 				case 6: 
 					calls[question]+=1;
-					AP_Exam.Question g = new AP_Exam.OperatorQuestions();
+					AP_Exam.Question g = new AP_Exam.FinalPolymorphQuestions();
 					TestQ.setText(g.getQuestion());
 					chA.setText(g.getChoiceA());
 					chB.setText(g.getChoiceB());
@@ -332,11 +332,8 @@ public class testModeCaller extends MenuControl{
 					break;
 				case 7:
 					calls[question]+=1;
-					int listPicker = rand.nextInt(2);
 					
-					if(listPicker==0)
-					{
-						AP_Exam.Question k = new AP_Exam.ArrayListQuestions();
+						AP_Exam.Question k = new AP_Exam.FinalRecursion();
 						   TestQ.setText(k.getQuestion());
 						chA.setText(k.getChoiceA());
 						chB.setText(k.getChoiceB());
@@ -348,32 +345,16 @@ public class testModeCaller extends MenuControl{
 						{
 							public void actionPerformed(ActionEvent e) {
 								testQuestionAnswer.setText(k.getAnswer());
-						}
+						};
 						});
 					
-					}
-					else
-					{
 				
-						AP_Exam.Question p = new AP_Exam.ListQuestions2();
-						TestQ.setText(p.getQuestion());
-						chA.setText(p.getChoiceA());
-						chB.setText(p.getChoiceB());
-						chC.setText(p.getChoiceC());
-						chD.setText(p.getChoiceD());
-						chE.setText(p.getChoiceE());
 					
-						Submit.addActionListener(new ActionListener() {
-						public void actionPerformed(ActionEvent e) {
-						testQuestionAnswer.setText(p.getAnswer());
-						}
-						});
-					}
 					 
 					break; 
 				case 8: 
 					calls[question]+=1;
-					AP_Exam.Question m = new AP_Exam.BackgroundInfoQuestions();
+					AP_Exam.Question m = new AP_Exam.finalStrings();
 					TestQ.setText(m.getQuestion());
 					chA.setText(m.getChoiceA());
 					chB.setText(m.getChoiceB());
@@ -389,88 +370,7 @@ public class testModeCaller extends MenuControl{
 					}
 					});
 				
-					break; 
-				case 9: 
-					calls[question]+=1;
-					AP_Exam.Question n = new AP_Exam.PowSqrt();
-					TestQ.setText(n.getQuestion());
-					chA.setText(n.getChoiceA());
-					chB.setText(n.getChoiceB());
-					chC.setText(n.getChoiceC());
-					chD.setText(n.getChoiceD());
-					chE.setText(n.getChoiceE());
-				
-					Submit.addActionListener(new ActionListener() {
-				
-					public void actionPerformed(ActionEvent e) {
-				
-					testQuestionAnswer.setText(n.getAnswer());
-					}
-					});
-					
-					break; 
-				case 10: 
-					calls[question]+= 1;
-					AP_Exam.Question o = new AP_Exam.Recursion();
-					TestQ.setText(o.getQuestion());
-					chA.setText(o.getChoiceA());
-					chB.setText(o.getChoiceB());
-					chC.setText(o.getChoiceC());
-					chD.setText(o.getChoiceD());
-					chE.setText(o.getChoiceE());
-				
-					Submit.addActionListener(new ActionListener() {
-				
-					public void actionPerformed(ActionEvent e) {
-				
-					testQuestionAnswer.setText(o.getAnswer());
-					}
-					});
-				
-					break; 
-				case 11: 
-					calls[question]+= 1;
-					AP_Exam.Question q = new AP_Exam.PolymorphismQuestions();
-					TestQ.setText(q.getQuestion());
-					chA.setText(q.getChoiceA());
-					chB.setText(q.getChoiceB());
-					chC.setText(q.getChoiceC());
-					chD.setText(q.getChoiceD());
-					chE.setText(q.getChoiceE());
-				
-					Submit.addActionListener(new ActionListener() {
-				
-					public void actionPerformed(ActionEvent e) {
-				
-					testQuestionAnswer.setText(q.getAnswer());
-					}
-					});
-					
-					break; 
-				case 12: 
-					calls[question]+= 1;
-					AP_Exam.Question r = new AP_Exam.Polymorph();
-					TestQ.setText(r.getQuestion());
-					chA.setText(r.getChoiceA());
-					chB.setText(r.getChoiceB());
-					chC.setText(r.getChoiceC());
-					chD.setText(r.getChoiceD());
-					chE.setText(r.getChoiceE());
-				
-					Submit.addActionListener(new ActionListener() {
-				
-					public void actionPerformed(ActionEvent e) {
-				
-					testQuestionAnswer.setText(r.getAnswer());
-					}
-					});
-					
-					break; 
-				}
-			}
-			
-			}
-			});
+				}	
 					
 		btnNextQuestion.setBounds(6, 475, 780, 29);
 		contentPane.add(btnNextQuestion);

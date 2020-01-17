@@ -16,7 +16,7 @@ import java.io.*;
  * @author 
  * @version 
  */
-public class FinalRecursion extends Question
+public class FinalRecursion extends AP_Exam.Question
 {
 	private Random rand;
 	private String code;
