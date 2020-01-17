@@ -61,7 +61,9 @@ public class testModeCaller extends MenuControl{
 	int calls[];
 	JButton btnNextQuestion;
 	Random rand;
-	int numberFull;
+	int numberFull; 
+	
+
     
     public testModeCaller() 
     {
@@ -371,6 +373,8 @@ public class testModeCaller extends MenuControl{
 					});
 				
 				}	
+				
+			}
 					
 		btnNextQuestion.setBounds(6, 475, 780, 29);
 		contentPane.add(btnNextQuestion);
@@ -414,6 +418,8 @@ public class testModeCaller extends MenuControl{
 		label.setBounds(0, 29, 794, 432);
 		contentPane.add(label);
 		
-
+		}
+		});
     }
 }
+    
