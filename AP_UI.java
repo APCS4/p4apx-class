@@ -140,7 +140,7 @@ public class AP_UI extends MenuControl
 		contentPane.add(btnCodeAnalysisQuestions);
 		btnCodeAnalysisQuestions.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				model_questions.Question q = new AP_Exam.FinalCodeAnalysis();
+				AP_Exam.FinalCodeAnalysis q = new AP_Exam.FinalCodeAnalysis();
 				testQuestion.setText(q.getQuestion());
 				testChoices.setText(q.getChoices());
 				testQuestionAnswer.setText(q.getAnswer());
