@@ -150,8 +150,47 @@ public class testModeCaller extends MenuControl{
 		chE.setBounds(18, 349, 750, 23);
 		contentPane.add(chE);
 		
-		Submit = new JButton("Submit Answer ");
+		JLabel lblYourScore = new JLabel("Your Score: ");
+		lblYourScore.setBounds(613, 6, 96, 16);
+		contentPane.add(lblYourScore);
 		
+		dispScore = new JTextField();
+		dispScore.setEditable(false);
+		dispScore.setBounds(698, 1, 69, 26);
+		contentPane.add(dispScore);
+		dispScore.setColumns(10);
+		
+		JLabel lblPercentage = new JLabel("Percentage: ");
+		lblPercentage.setBounds(440, 6, 81, 16);
+		contentPane.add(lblPercentage);
+		
+		dispPercent = new JTextField();
+		dispPercent.setEditable(false);
+	
+		dispPercent.setBounds(533, 1, 70, 26);
+		contentPane.add(dispPercent);
+		dispPercent.setColumns(10);
+		
+		
+		
+		
+		
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setBackground(Color.WHITE);
+		lblNewLabel.setOpaque(true);
+		lblNewLabel.setBounds(18, 255, 750, 117);
+		contentPane.add(lblNewLabel);
+		
+		JLabel label = new JLabel("");
+		label.setBackground(Color.LIGHT_GRAY);
+		label.setBounds(0, 29, 794, 432);
+		contentPane.add(label);
+		
+		
+		Submit = new JButton("Submit Answer ");
+		Submit.setBounds(514, 383, 264, 29);
+		contentPane.add(Submit);
 		
 		//testModeSwitch doStuff = new testModeSwitch(); 
 		
@@ -164,6 +203,9 @@ public class testModeCaller extends MenuControl{
 		calls[i]=0;
 		}
 		btnNextQuestion = new JButton("Next Question");
+		btnNextQuestion.setBounds(6, 475, 780, 29);
+		contentPane.add(btnNextQuestion);
+		
 		btnNextQuestion.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) 
 		{
@@ -376,47 +418,9 @@ public class testModeCaller extends MenuControl{
 				
 			}
 					
-		btnNextQuestion.setBounds(6, 475, 780, 29);
-		contentPane.add(btnNextQuestion);
 		
-		JLabel lblYourScore = new JLabel("Your Score: ");
-		lblYourScore.setBounds(613, 6, 96, 16);
-		contentPane.add(lblYourScore);
 		
-		dispScore = new JTextField();
-		dispScore.setEditable(false);
-		dispScore.setBounds(698, 1, 69, 26);
-		contentPane.add(dispScore);
-		dispScore.setColumns(10);
-		
-		JLabel lblPercentage = new JLabel("Percentage: ");
-		lblPercentage.setBounds(440, 6, 81, 16);
-		contentPane.add(lblPercentage);
-		
-		dispPercent = new JTextField();
-		dispPercent.setEditable(false);
 	
-		dispPercent.setBounds(533, 1, 70, 26);
-		contentPane.add(dispPercent);
-		dispPercent.setColumns(10);
-		
-		
-		
-		
-		Submit.setBounds(514, 383, 264, 29);
-		contentPane.add(Submit);
-		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setBackground(Color.WHITE);
-		lblNewLabel.setOpaque(true);
-		lblNewLabel.setBounds(18, 255, 750, 117);
-		contentPane.add(lblNewLabel);
-		
-		JLabel label = new JLabel("");
-		label.setOpaque(true);
-		label.setBackground(Color.LIGHT_GRAY);
-		label.setBounds(0, 29, 794, 432);
-		contentPane.add(label);
 		
 		}
 		});
