@@ -4,6 +4,8 @@ import java.awt.event.ActionListener;
 import java.util.Random;
 
 import javax.swing.JButton;
+
+import model_questions.Question;
 import model_questions.QuestionMC;
 
 
@@ -50,189 +52,61 @@ public class testModeSwitch extends testModeCaller
 					chD.setSelected(false);
 					chE.setSelected(false); 
 					
-					
 					question = rand.nextInt(9); 
 					while(calls[question]==4)
 					{
 						question = rand.nextInt(9); 
 					}
 					//increment value in calls and call methods
+					
+					Question q;
 					switch(question)
 					{
-					case 0: 
-						/*
-						calls[0]+=1;
-						AP_Exam.Question a = new AP_Exam.FinalArrayList();
-						   TestQ.setText(a.getQuestion());
-						chA.setText(a.getChoiceA());
-						chB.setText(a.getChoiceB());
-						chC.setText(a.getChoiceC());
-						chD.setText(a.getChoiceD());
-						chE.setText(a.getChoiceE());
-						Submit.addActionListener(new ActionListener() {
-					
-						public void actionPerformed(ActionEvent e)
-						{
-							testQuestionAnswer.setText(a.getAnswer());
-						}
-						});
-					*/
-						break; 
+					case 0: 	
+						q = new AP_Exam.FinalArrayList();
+						break;
 					case 1: 
-						/*
-						calls[1]+=1;
-						AP_Exam.Question b = new AP_Exam.FinalBooleanQuestions();
-						  TestQ.setText(b.getQuestion());
-						chA.setText(b.getChoiceA());
-						chB.setText(b.getChoiceB());
-						chC.setText(b.getChoiceC());
-						chD.setText(b.getChoiceD());
-						chE.setText(b.getChoiceE());
-					
-						Submit.addActionListener(new ActionListener() {
-					
-						public void actionPerformed(ActionEvent e) {
-					
-						testQuestionAnswer.setText(b.getAnswer());
-					
-						}
-						});
-					*/
+						q = new AP_Exam.FinalBooleanQuestions();
 						break;
 					case 2:
-						calls[2]+=1;
-						QuestionMC c = new AP_Exam.FinalCodeAnalysis();
-						   TestQ.setText(c.getQuestion());
-						chA.setText(c.getChoiceA());
-						chB.setText(c.getChoiceB());
-						chC.setText(c.getChoiceC());
-						chD.setText(c.getChoiceD());
-						chE.setText(c.getChoiceE());
-					
-						Submit.addActionListener(new ActionListener() {
-					
-							public void actionPerformed(ActionEvent e) {
-					
-								testQuestionAnswer.setText(c.getAnswer());
-							}
-						});
-					
-						break; 
-						 
+						q = new AP_Exam.FinalCodeAnalysis();
+						break; 						 
 					case 3: 
-						calls[3]+=1;
-						QuestionMC d = new AP_Exam.finalInfoQuestions();
-						   TestQ.setText(d.getQuestion());
-						chA.setText(d.getChoiceA());
-						chB.setText(d.getChoiceB());
-						chC.setText(d.getChoiceC());
-						chD.setText(d.getChoiceD());
-						chE.setText(d.getChoiceE());
-					
-						Submit.addActionListener(new ActionListener() {
-					
-							public void actionPerformed(ActionEvent e) {
-					
-								testQuestionAnswer.setText(d.getAnswer());
-							}
-						});
-					
+						q = new AP_Exam.finalInfoQuestions();
 						break;
 					case 4: 
-						calls[question]+=1;
-						QuestionMC x = new AP_Exam.FinalLoopQuestion();
-						TestQ.setText(x.getQuestion());
-						chA.setText(x.getChoiceA());
-						chB.setText(x.getChoiceB());
-						chC.setText(x.getChoiceC());
-						chD.setText(x.getChoiceD());
-						chE.setText(x.getChoiceE());
-					
-						Submit.addActionListener(new ActionListener() {
-					
-							public void actionPerformed(ActionEvent e) {
-					
-								testQuestionAnswer.setText(x.getAnswer());
-							}
-						});
-					
+						q = new AP_Exam.FinalLoopQuestion();					
 						break; 
 					case 5: 
-						calls[question]+=1;
-						QuestionMC f = new AP_Exam.FinalMath();
-						TestQ.setText(f.getQuestion());
-						chA.setText(f.getChoiceA());
-						chB.setText(f.getChoiceB());
-						chC.setText(f.getChoiceC());
-						chD.setText(f.getChoiceD());
-						chE.setText(f.getChoiceE());
-					
-						Submit.addActionListener(new ActionListener() {
-					
-							public void actionPerformed(ActionEvent e) {
-								
-								testQuestionAnswer.setText(f.getAnswer());
-							}
-						});
-						
+						q = new AP_Exam.FinalMath();
 						break; 
 					case 6: 
-						calls[question]+=1;
-						QuestionMC g = new AP_Exam.FinalPolymorphQuestions();
-						TestQ.setText(g.getQuestion());
-						chA.setText(g.getChoiceA());
-						chB.setText(g.getChoiceB());
-						chC.setText(g.getChoiceC());
-						chD.setText(g.getChoiceD());
-						chE.setText(g.getChoiceE());
-					
-						Submit.addActionListener(new ActionListener() {
-					
-							public void actionPerformed(ActionEvent e) {
-						
-								testQuestionAnswer.setText(g.getAnswer());
-							}
-						});
-						
+						q = new AP_Exam.FinalPolymorphQuestions();
 						break;
 					case 7:
-						calls[question]+=1;
-						
-						QuestionMC k = new AP_Exam.FinalRecursion();
-					    TestQ.setText(k.getQuestion());
-						chA.setText(k.getChoiceA());
-						chB.setText(k.getChoiceB());
-						chC.setText(k.getChoiceC());
-						chD.setText(k.getChoiceD());
-						chE.setText(k.getChoiceE());
-				
-						Submit.addActionListener(new ActionListener() 
-						{
-							public void actionPerformed(ActionEvent e) {
-								testQuestionAnswer.setText(k.getAnswer());
-							}
-						});
-					
+						q = new AP_Exam.FinalRecursion();
 						break; 
-					case 8: 
-						calls[question]+=1;
-						QuestionMC m = new AP_Exam.finalStrings();
-						TestQ.setText(m.getQuestion());
-						chA.setText(m.getChoiceA());
-						chB.setText(m.getChoiceB());
-						chC.setText(m.getChoiceC());
-						chD.setText(m.getChoiceD());
-						chE.setText(m.getChoiceE());
-					
-						Submit.addActionListener(new ActionListener() {
-					
-							public void actionPerformed(ActionEvent e) {
-					
-								testQuestionAnswer.setText(m.getAnswer());
-							}
-						});
+					case 8:
+					default:
+						q = new AP_Exam.finalStrings();	
 						break;
 					}
+					
+					// set text for questions
+					QuestionMC mcq = (QuestionMC)q;
+					calls[question]+=1;
+					TestQ.setText(q.getQuestion());
+					chA.setText(mcq.getChoiceA());
+					chB.setText(mcq.getChoiceB());
+					chC.setText(mcq.getChoiceC());
+					chD.setText(mcq.getChoiceD());
+					chE.setText(mcq.getChoiceE());
+					Submit.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							testQuestionAnswer.setText(q.getAnswer());
+						}
+					});
+					
 				}
 			}
 		});
