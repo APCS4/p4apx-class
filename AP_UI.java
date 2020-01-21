@@ -78,7 +78,7 @@ public class AP_UI extends MenuControl
 		lblQuestion.setBounds(6, 6, 91, 16);
 		contentPane.add(lblQuestion);
 		
-		JLabel lblChoices = new JLabel("Choices");
+		JLabel lblChoices = new JLabel("Choices"); 
 		lblChoices.setBounds(6, 261, 61, 16);
 		contentPane.add(lblChoices);
 		
