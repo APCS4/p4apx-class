@@ -33,7 +33,7 @@ public class AP_UI extends MenuControl
 	 */
 	public AP_UI() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 784, 488);
+		setBounds(100, 100, 884, 588);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(220, 220, 220));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -41,15 +41,15 @@ public class AP_UI extends MenuControl
 		contentPane.setLayout(null);
 
 		JLabel lblExamSections = new JLabel("Review Sections");
-		lblExamSections.setBounds(637, 6, 104, 16);
+		lblExamSections.setBounds(737, 6, 104, 16);
 		contentPane.add(lblExamSections);
 		
 		JLabel lblAnswer = new JLabel("Answer");
-		lblAnswer.setBounds(6, 369, 61, 16);
+		lblAnswer.setBounds(6, 419, 61, 16);
 		contentPane.add(lblAnswer);
 		
 		JScrollPane scrollPane_2 = new JScrollPane();
-		scrollPane_2.setBounds(6, 387, 576, 39);
+		scrollPane_2.setBounds(6, 437, 676, 101);
 		contentPane.add(scrollPane_2);
 		scrollPane_2.setRowHeaderView(testQuestionAnswer);
 		
@@ -57,7 +57,7 @@ public class AP_UI extends MenuControl
 		testQuestionAnswer.setLineWrap(false);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(6, 23, 576, 237);
+		scrollPane.setBounds(6, 23, 676, 237);
 		contentPane.add(scrollPane);
 		scrollPane.setColumnHeaderView(testQuestion);
 		
@@ -65,7 +65,7 @@ public class AP_UI extends MenuControl
 		testQuestion.setLineWrap(true);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(6, 278, 576, 86);
+		scrollPane_1.setBounds(6, 278, 676, 140);
 		contentPane.add(scrollPane_1);
 		scrollPane_1.setRowHeaderView(testChoices);
 		
@@ -81,27 +81,27 @@ public class AP_UI extends MenuControl
 		contentPane.add(lblChoices);
 		
 		JRadioButton rdbtnA = new JRadioButton("A");
-		rdbtnA.setBounds(606, 278, 41, 23);
+		rdbtnA.setBounds(700, 281, 41, 23);
 		contentPane.add(rdbtnA);
 		
 		JRadioButton rdbtnB = new JRadioButton("B");
-		rdbtnB.setBounds(646, 278, 41, 23);
+		rdbtnB.setBounds(740, 281, 41, 23);
 		contentPane.add(rdbtnB);
 		
 		JRadioButton rdbtnC = new JRadioButton("C");
-		rdbtnC.setBounds(686, 278, 41, 23);
+		rdbtnC.setBounds(780, 281, 41, 23);
 		contentPane.add(rdbtnC);
 		
 		JRadioButton rdbtnD = new JRadioButton("D");
-		rdbtnD.setBounds(726, 278, 52, 23);
+		rdbtnD.setBounds(820, 281, 52, 23);
 		contentPane.add(rdbtnD);
 		
 		JLabel lblAnswerChoices = new JLabel("Answer Choices");
-		lblAnswerChoices.setBounds(637, 261, 130, 16);
+		lblAnswerChoices.setBounds(737, 261, 130, 16);
 		contentPane.add(lblAnswerChoices);
 		
 		JButton btnArrayListQuestions = new JButton("Array List Questions");
-		btnArrayListQuestions.setBounds(594, 22, 184, 29);
+		btnArrayListQuestions.setBounds(694, 22, 184, 29);
 		contentPane.add(btnArrayListQuestions);
 		btnArrayListQuestions.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
@@ -112,7 +112,7 @@ public class AP_UI extends MenuControl
 			} 
 		}); 
 		JButton btnGeneralJavaInfo = new JButton("General Java Info");
-		btnGeneralJavaInfo.setBounds(594, 47, 184, 29);
+		btnGeneralJavaInfo.setBounds(694, 47, 184, 29);
 		contentPane.add(btnGeneralJavaInfo);
 		btnGeneralJavaInfo.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
@@ -124,7 +124,7 @@ public class AP_UI extends MenuControl
 		}); 
 		
 		JButton btnBooleanMathQuestions = new JButton("Boolean Math Questions");
-		btnBooleanMathQuestions.setBounds(594, 72, 184, 29);
+		btnBooleanMathQuestions.setBounds(694, 72, 184, 29);
 		contentPane.add(btnBooleanMathQuestions);
 		btnBooleanMathQuestions.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
@@ -136,7 +136,7 @@ public class AP_UI extends MenuControl
 		});
 		
 		JButton btnCodeAnalysisQuestions = new JButton("Code Analysis Questions");
-		btnCodeAnalysisQuestions.setBounds(594, 97, 184, 29);
+		btnCodeAnalysisQuestions.setBounds(694, 97, 184, 29);
 		contentPane.add(btnCodeAnalysisQuestions);
 		btnCodeAnalysisQuestions.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -149,7 +149,7 @@ public class AP_UI extends MenuControl
 		
 	
 		JButton btnLoopQuestions = new JButton("Loop Questions");
-		btnLoopQuestions.setBounds(594, 122, 184, 29);
+		btnLoopQuestions.setBounds(694, 122, 184, 29);
 		contentPane.add(btnLoopQuestions);
 		btnLoopQuestions.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
@@ -161,7 +161,7 @@ public class AP_UI extends MenuControl
 		});
 		
 		JButton btnMathQuestions = new JButton("Math Questions");
-		btnMathQuestions.setBounds(594, 147, 184, 29);
+		btnMathQuestions.setBounds(694, 147, 184, 29);
 		contentPane.add(btnMathQuestions);
 		btnMathQuestions.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
@@ -173,7 +173,7 @@ public class AP_UI extends MenuControl
 		});
 		
 		JButton btnPolymorphismQuestions = new JButton("Polymorphism Questions");
-		btnPolymorphismQuestions.setBounds(594, 172, 184, 29);
+		btnPolymorphismQuestions.setBounds(694, 172, 184, 29);
 		contentPane.add(btnPolymorphismQuestions);
 		btnPolymorphismQuestions.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
@@ -185,7 +185,7 @@ public class AP_UI extends MenuControl
 		});
 		
 		JButton btnRecursiveCodeAnalysis = new JButton("Recursive Code Analysis");
-		btnRecursiveCodeAnalysis.setBounds(594, 197, 184, 29);
+		btnRecursiveCodeAnalysis.setBounds(694, 197, 184, 29);
 		contentPane.add(btnRecursiveCodeAnalysis);
 		btnRecursiveCodeAnalysis.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
@@ -197,7 +197,7 @@ public class AP_UI extends MenuControl
 		});
 		
 		JButton btnStringQuestions = new JButton("String Questions");
-		btnStringQuestions.setBounds(594, 222, 184, 29);
+		btnStringQuestions.setBounds(694, 222, 184, 29);
 		contentPane.add(btnStringQuestions);
 		btnStringQuestions.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
