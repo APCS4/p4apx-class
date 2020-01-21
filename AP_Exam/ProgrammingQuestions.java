@@ -51,7 +51,7 @@ public class ProgrammingQuestions extends QuestionTF
   				break;
 			default:
 				this.question = String.format("An email viewer resembles a stack implementation?" );
-  				this.answer = "Latest item on top of viewer is resembles pushing on top of the stack.";
+  				this.answer = "The latest item on top of and email viewer resembles pushing an item on top of a stack.";
   				this.answerKey = charTrue;	
   		}
     }
