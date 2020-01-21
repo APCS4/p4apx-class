@@ -57,7 +57,7 @@ public class AP_UI extends MenuControl
 		testQuestionAnswer.setLineWrap(false);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(6, 22, 576, 237);
+		scrollPane.setBounds(6, 23, 576, 237);
 		contentPane.add(scrollPane);
 		scrollPane.setColumnHeaderView(testQuestion);
 		
@@ -81,23 +81,23 @@ public class AP_UI extends MenuControl
 		contentPane.add(lblChoices);
 		
 		JRadioButton rdbtnA = new JRadioButton("A");
-		rdbtnA.setBounds(600, 311, 141, 23);
+		rdbtnA.setBounds(609, 272, 141, 23);
 		contentPane.add(rdbtnA);
 		
 		JRadioButton rdbtnB = new JRadioButton("B");
-		rdbtnB.setBounds(600, 335, 141, 23);
+		rdbtnB.setBounds(609, 296, 141, 23);
 		contentPane.add(rdbtnB);
 		
 		JRadioButton rdbtnC = new JRadioButton("C");
-		rdbtnC.setBounds(600, 360, 141, 23);
+		rdbtnC.setBounds(609, 321, 141, 23);
 		contentPane.add(rdbtnC);
 		
-		JRadioButton radioButton = new JRadioButton("B");
-		radioButton.setBounds(600, 384, 141, 23);
-		contentPane.add(radioButton);
+		JRadioButton rdbtnD = new JRadioButton("D");
+		rdbtnD.setBounds(609, 345, 141, 23);
+		contentPane.add(rdbtnD);
 		
 		JLabel lblAnswerChoices = new JLabel("Answer Choices");
-		lblAnswerChoices.setBounds(600, 294, 130, 16);
+		lblAnswerChoices.setBounds(600, 255, 130, 16);
 		contentPane.add(lblAnswerChoices);
 		
 		JButton btnArrayListQuestions = new JButton("Array List Questions");
@@ -112,7 +112,7 @@ public class AP_UI extends MenuControl
 			} 
 		}); 
 		JButton btnGeneralJavaInfo = new JButton("General Java Info");
-		btnGeneralJavaInfo.setBounds(594, 52, 184, 29);
+		btnGeneralJavaInfo.setBounds(594, 47, 184, 29);
 		contentPane.add(btnGeneralJavaInfo);
 		btnGeneralJavaInfo.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
@@ -124,7 +124,7 @@ public class AP_UI extends MenuControl
 		}); 
 		
 		JButton btnBooleanMathQuestions = new JButton("Boolean Math Questions");
-		btnBooleanMathQuestions.setBounds(594, 82, 184, 29);
+		btnBooleanMathQuestions.setBounds(594, 72, 184, 29);
 		contentPane.add(btnBooleanMathQuestions);
 		btnBooleanMathQuestions.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
@@ -136,7 +136,7 @@ public class AP_UI extends MenuControl
 		});
 		
 		JButton btnCodeAnalysisQuestions = new JButton("Code Analysis Questions");
-		btnCodeAnalysisQuestions.setBounds(594, 112, 184, 29);
+		btnCodeAnalysisQuestions.setBounds(594, 97, 184, 29);
 		contentPane.add(btnCodeAnalysisQuestions);
 		btnCodeAnalysisQuestions.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -149,7 +149,7 @@ public class AP_UI extends MenuControl
 		
 	
 		JButton btnLoopQuestions = new JButton("Loop Questions");
-		btnLoopQuestions.setBounds(594, 142, 184, 29);
+		btnLoopQuestions.setBounds(594, 122, 184, 29);
 		contentPane.add(btnLoopQuestions);
 		btnLoopQuestions.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
@@ -161,7 +161,7 @@ public class AP_UI extends MenuControl
 		});
 		
 		JButton btnMathQuestions = new JButton("Math Questions");
-		btnMathQuestions.setBounds(594, 172, 184, 29);
+		btnMathQuestions.setBounds(594, 147, 184, 29);
 		contentPane.add(btnMathQuestions);
 		btnMathQuestions.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
@@ -173,7 +173,7 @@ public class AP_UI extends MenuControl
 		});
 		
 		JButton btnPolymorphismQuestions = new JButton("Polymorphism Questions");
-		btnPolymorphismQuestions.setBounds(594, 202, 184, 29);
+		btnPolymorphismQuestions.setBounds(594, 172, 184, 29);
 		contentPane.add(btnPolymorphismQuestions);
 		btnPolymorphismQuestions.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
@@ -185,7 +185,7 @@ public class AP_UI extends MenuControl
 		});
 		
 		JButton btnRecursiveCodeAnalysis = new JButton("Recursive Code Analysis");
-		btnRecursiveCodeAnalysis.setBounds(594, 232, 184, 29);
+		btnRecursiveCodeAnalysis.setBounds(594, 197, 184, 29);
 		contentPane.add(btnRecursiveCodeAnalysis);
 		btnRecursiveCodeAnalysis.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
@@ -197,7 +197,7 @@ public class AP_UI extends MenuControl
 		});
 		
 		JButton btnStringQuestions = new JButton("String Questions");
-		btnStringQuestions.setBounds(594, 262, 184, 29);
+		btnStringQuestions.setBounds(594, 222, 184, 29);
 		contentPane.add(btnStringQuestions);
 		btnStringQuestions.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
