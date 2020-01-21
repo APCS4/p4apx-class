@@ -130,7 +130,7 @@ public class QuestionMC extends Question {
     	    charB + ": " + choices[1] + "\n"  + 
     	    charC + ": " + choices[2] + "\n"  + 
     	    charD + ": " + choices[3] + "\n"  + 
-    	    charE + ": " + choices[4] + "\n"
+    	    charE + ": " + choices[4]
             );    
 	}
     
