@@ -46,8 +46,8 @@ public class FinalCodeAnalysis extends QuestionMC {
 	protected void setupQuestionData() {
 		System.out.println("start");
 		Random rand = new Random();
-    	int arg1 = rand.nextInt(4);
-    	int arg2 = rand.nextInt(16)+1;
+    	int arg1 = rand.nextInt(4); //0-3
+    	int arg2 = rand.nextInt(16)+1; //1-16
     	int q = rand.nextInt(3)+1;
     	
 		Integer intAnswer = questionBank(arg1, arg2, q);
