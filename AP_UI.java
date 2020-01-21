@@ -53,7 +53,7 @@ public class AP_UI extends MenuControl
 		JScrollPane scrollPane_2 = new JScrollPane();
 		scrollPane_2.setBounds(6, 437, 676, 101);
 		contentPane.add(scrollPane_2);
-		scrollPane_2.setRowHeaderView(testQuestionAnswer);
+		scrollPane_2.setViewportView(testQuestionAnswer);
 		
 		testQuestionAnswer.setEditable(false);
 		testQuestionAnswer.setLineWrap(false);
@@ -61,7 +61,7 @@ public class AP_UI extends MenuControl
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(6, 23, 676, 237);
 		contentPane.add(scrollPane);
-		scrollPane.setColumnHeaderView(testQuestion);
+		scrollPane.setViewportView(testQuestion);
 		
 		testQuestion.setEditable(false);
 		testQuestion.setLineWrap(true);
@@ -69,7 +69,7 @@ public class AP_UI extends MenuControl
 		JScrollPane scrollPane_1 = new JScrollPane();
 		scrollPane_1.setBounds(6, 278, 676, 140);
 		contentPane.add(scrollPane_1);
-		scrollPane_1.setRowHeaderView(testChoices);
+		scrollPane_1.setViewportView(testChoices);
 		
 		testChoices.setEditable(false);
 		testChoices.setLineWrap(false);
