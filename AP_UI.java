@@ -81,23 +81,23 @@ public class AP_UI extends MenuControl
 		contentPane.add(lblChoices);
 		
 		JRadioButton rdbtnA = new JRadioButton("A");
-		rdbtnA.setBounds(609, 272, 141, 23);
+		rdbtnA.setBounds(606, 278, 41, 23);
 		contentPane.add(rdbtnA);
 		
 		JRadioButton rdbtnB = new JRadioButton("B");
-		rdbtnB.setBounds(609, 296, 141, 23);
+		rdbtnB.setBounds(646, 278, 41, 23);
 		contentPane.add(rdbtnB);
 		
 		JRadioButton rdbtnC = new JRadioButton("C");
-		rdbtnC.setBounds(609, 321, 141, 23);
+		rdbtnC.setBounds(686, 278, 41, 23);
 		contentPane.add(rdbtnC);
 		
 		JRadioButton rdbtnD = new JRadioButton("D");
-		rdbtnD.setBounds(609, 345, 141, 23);
+		rdbtnD.setBounds(726, 278, 52, 23);
 		contentPane.add(rdbtnD);
 		
 		JLabel lblAnswerChoices = new JLabel("Answer Choices");
-		lblAnswerChoices.setBounds(600, 255, 130, 16);
+		lblAnswerChoices.setBounds(637, 261, 130, 16);
 		contentPane.add(lblAnswerChoices);
 		
 		JButton btnArrayListQuestions = new JButton("Array List Questions");
