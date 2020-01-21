@@ -72,7 +72,7 @@ public class AP_UI extends MenuControl
 		scrollPane_1.setViewportView(testChoices);
 		
 		testChoices.setEditable(false);
-		testChoices.setLineWrap(false);
+		testChoices.setLineWrap(false); 
 		
 		JLabel lblQuestion = new JLabel("Question");
 		lblQuestion.setBounds(6, 6, 91, 16);
