@@ -15,6 +15,8 @@ import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 import javax.swing.ImageIcon;
 import javax.swing.JRadioButton;
+import javax.swing.ScrollPaneConstants;
+import javax.swing.JCheckBox;
 
 public class AP_UI extends MenuControl 
 {
