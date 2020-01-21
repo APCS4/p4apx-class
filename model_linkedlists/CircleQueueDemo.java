@@ -30,7 +30,7 @@ public class CircleQueueDemo
 	  	for (int i = 0; i <= size; i++)
 		{
 			myqueue.add(
-					new String( Character.toString('a' + i)) // push stack (characters, numbers, etc)
+					new String( Character.toString((char) ('a' + i))) // push stack (characters, numbers, etc)
 					);  
 			ConsoleMethods.println("Add:" + myqueue.getObject() + " " + myqueue);
 		}
