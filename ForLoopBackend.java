@@ -1,6 +1,7 @@
 import java.util.*;
 import java.lang.*;
 import AP_Exam.*;
+import model_questions.QuestionMC;
 
 /*
 * @author Abhinav Palacharla
@@ -9,7 +10,7 @@ import AP_Exam.*;
 * @return not applicable
 */
 
-public class ForLoopBackend extends Question
+public class ForLoopBackend extends QuestionMC
 {
 	private int iterations1;
 	private int iterations2;

@@ -1,6 +1,7 @@
 package AP_Exam;
 
 import Util.ConsoleMethods;
+import model_questions.Question;
 
 /**
  * MidTermTest is intended to teach Object Oriented Methodology, the JAVA language,
@@ -72,15 +73,15 @@ public class AP_Console
         {
             case 1:
               //menuMsg[1] = MathQuestions.mainTest();
-              menuTotalMsg = Scoring.getCounterTotalMsg();
+              menuTotalMsg = Question.getCounterTotalMsg();
               break;
             case 2:
               //menuMsg[2] = BinaryMathQuestions.mainTest();
-              menuTotalMsg = Scoring.getCounterTotalMsg();
+              menuTotalMsg = Question.getCounterTotalMsg();
               break;
             case 3:
               //menuMsg[3] = DataTypeQuestions.mainTest();
-              menuTotalMsg = Scoring.getCounterTotalMsg();
+              menuTotalMsg = Question.getCounterTotalMsg();
               break;
             case 0:
               ConsoleMethods.println("Exit selected");

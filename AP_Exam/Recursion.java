@@ -4,13 +4,14 @@ import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 import Util.ConsoleMethods;
+import model_questions.QuestionMC;
 
 /**
  * 
  * @author Mateo
  * @version version 1.0
  */
-public class Recursion extends Question
+public class Recursion extends QuestionMC
 {
 
 	private String[] ansq = new String[5]; //string array that holds all of the answers

@@ -7,6 +7,8 @@ import javax.swing.JOptionPane;
 
 import Util.ConsoleMethods;
 import model_questions.Question;
+import model_questions.QuestionMC;
+
 import java.util.ArrayList;
 import java.util.*;
 import java.io.*;
@@ -16,7 +18,7 @@ import java.io.*;
  * @author 
  * @version 
  */
-public class FinalRecursion extends AP_Exam.Question
+public class FinalRecursion extends QuestionMC
 {
 	private Random rand;
 	private String code;

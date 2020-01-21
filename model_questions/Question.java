@@ -1,8 +1,6 @@
 package model_questions;
 
-import java.util.Random;
-import java.util.ArrayList;
-import Util.ConsoleMethods;	// Console support
+import Util.ConsoleMethods;
 
 /**
  * Question class is intended to support asking question on test
@@ -10,29 +8,19 @@ import Util.ConsoleMethods;	// Console support
  * @author (John Mortensen)
  * @version (1.0)
  */
-public class Question extends Scoring
+public abstract class Question
 {
-	private int ID; //question number
-	protected boolean TextBased;
-	protected boolean RandomBased;
+	private int ID;		// Used to store question number (unique ID)
 	
-	// question setup values
-	protected String question, choiceA, choiceB, choiceC, choiceD, choiceE, answer;
-	protected char answerKey;
-    
-    // internal control values, these are never change
-    protected final char charA = 'A', charB = 'B', charC = 'C', charD = 'D', charE = 'E'; 	// Multiple choice default letters
-	protected final char[] answers = {charA, charB, charC, charD, charE};					// Multiple choice default order
-   	protected int aOffset = 0, bOffset = 1, cOffset = 2, dOffset = 3, eOffset = 4;			// Multiple choice index value
-    
-    // defaults for choice
-   	protected int choiceOffset = 0;						// choiceOffset is used when scrambled to move answers around
-    protected static boolean choiceEfixed = true, choiceDfixed = false;				// used to keep choice E fixed versus randomization
-	protected String[] choices = {"", "", "", "", ""};
-	protected ArrayList<String> choiceArray = new ArrayList<>();
-
-	//misc.
-	protected Random rand = new Random();
+	// ever question should have these elements
+	protected String question, answer;	// Question and Answer
+	protected char answerKey;			// Answer to question
+	
+	// scoring for questions
+	private static int totalCorrect = 0;  	// class variable for total correct answers
+    private static int totalQuestions = 0;	// class variable for toal questions attempted
+    private int correct;        // correct answers
+    private int questions;      // questions attempted
     
     /**
      * Constructor for objects of class Question
@@ -43,52 +31,14 @@ public class Question extends Scoring
     {
     	// This outputs constructor being run
         ConsoleMethods.println("Question class constructor");
-        
-        // turn scrambled off for backward compatibility
-        choiceOffset = 0;
-        choiceEfixed = true;  
+
+        // Initialize instance variables
+        this.correct = 0;
+        this.questions = 0;
     }
-    
-      
-    /**
-     * setup question choices and answer
-     * 
-     * @param  void
-     */
-     protected void setupQuestion() {
-    	// This outputs constructor being run
-        ConsoleMethods.println("Question class setupQuestion method");
-    	setupQuestionData();
-        
-    	// choice assignment
-    	choices[aOffset] = choiceA;
-    	choices[bOffset] = choiceB;
-    	choices[cOffset] = choiceC;
-    	choices[dOffset] = choiceD;
-    	choices[eOffset] = choiceE;   	
-    }
- 
-     /**
-      * setup question data default, expectation is this will changed through polymorphism
-      *
-      * @param  void
-      * @Override
-      */
      
-    protected void setupQuestionData() {
-    	// This outputs constructor being run
-        ConsoleMethods.println("BobaQuestions class setupQuestionData method");
-        
-    	question = "What type of programming language is Java?";
-		choiceA = "Data-oriented";
-		choiceB = "Iterative";
-		choiceC = "Object-oriented";
-		choiceD = "Imperative";
-		answer = choiceC;
-		answerKey = charC;
-    }
     /**
-     * Question ID setter
+     * Question ID setter, used for question number on and exam
      *
      * @param  id
      * @return void
@@ -96,6 +46,7 @@ public class Question extends Scoring
 	public void setID(int id) {
 		this.ID = id;
 	}
+
 	
 	/**
      * Question ID getter
@@ -106,48 +57,34 @@ public class Question extends Scoring
 	public int getID() {
 		return ID;
 	}
-    protected void randomizeChoiceArray(ArrayList<String> choiceArray) {
-    	String hold = "";
-		int rand;
-		int arrayLimit = choiceEfixed ? choiceDfixed ? 3: 4: 5;
-		arrayLimit = choiceDfixed ? arrayLimit - 1: arrayLimit;
-		for( int i = 0; i < arrayLimit; i++)
-		{
-			rand = (int)Math.floor(Math.random()*arrayLimit);
-			hold = choiceArray.get(i);
-			choiceArray.set(i, choiceArray.get(rand));
-			choiceArray.set(rand, hold);
-		}
-    }
-    
+
+	
+    /**
+     * setup question requirement (should be generalized for MC or TF)
+     * 
+     * @param  void
+     */
+     protected abstract void setupQuestion();
+
+ 
+     /**
+      * setup question data requirement (specific to question type: Math, DataTypes, etc)
+      *
+      * @param  void
+      */
+    protected abstract void setupQuestionData();
+        
+	
 	/**
      * Question getter
      *
      * @param  void
      * @return String	contents of question
      */
-    protected void loadChoices() {
-    	choiceA = choiceArray.get(0);
-    	choiceB = choiceArray.get(1);
-    	choiceC = choiceArray.get(2);
-    	choiceD = choiceArray.get(3);
-    	choiceE = choiceArray.get(4);
-    }
-    
-    protected char getAns(ArrayList<String> choiceArray, String ans) {
-    	char retCh = 'X';
-    	for(int i = 0; i < choiceArray.size(); i++) {
-    		if( choiceArray.get(i).contentEquals(ans)) {
-    			retCh = (char)(i + 65);
-    			System.out.println(retCh);
-    			break;
-    		}
-    	}
-    	return retCh;
-    }
 	public String getQuestion() {
 		return question;
 	}
+
 	
 	/**
      * Choices getter for Multiple Choice
@@ -155,28 +92,11 @@ public class Question extends Scoring
      * @param  void
      * @return String 	content of choices with ABCDEF formatting
      */
-	public String getChoices() {
-		return String.format(
-            charA + ": " + choices[0] + "\n"  + 
-    	    charB + ": " + choices[1] + "\n"  + 
-    	    charC + ": " + choices[2] + "\n"  + 
-    	    charD + ": " + choices[3] + "\n"  + 
-    	    charE + ": " + choices[4] + ""
-            );    
-	}
-	
-	public String getChoices(String group) {
-		return String.format(
-				charA + ": %s%n" +
-				charB + ": %s%n" +
-				charC + ": %s%n" +
-				charD + ": %s%n" +
-				charE + ": %s%n", choices[0], choices[1], choices[2], choices[3], choices[4]);
-				
-	}
+	public abstract String getChoices();
+
 	
 	/**
-     * Answer getter with formatting to correspond to getChoices
+     * Answer getter with formatting to provide answerKey
      *
      * @param  void
      * @return String 	correct answer with letter prefex of right answer (A or B or C...)
@@ -188,51 +108,79 @@ public class Question extends Scoring
 		
 		return answerKey + ": " + answer;
 	}
-    
-	/**
-     * Console support wrapper for asking question, getting result, and calculating results
-     *
-     * @param  void
-     * @return void
-     */
+  
 	
-    public void  askQuestionConsole()
-    {
-        // getAnswer return true if question is correct
-        updateCounters ( getAnswerConsole() );
-    }
+	/**
+     * Console support for asking question, getting result, and calculating results
+     *     
+     * @param  void
+     */
+    public abstract void askQuestionConsole();
+    
     
     /**
-     * Console support for asking question and getting result
+     * Sensible output
      *
      * @param  void
-     * @return void
      */
-    private boolean getAnswerConsole()
+    public abstract String toString();
+    
+    
+    /**
+     * An example of a method - replace this comment with your own
+     *
+      * @param  void
+     */
+    public void updateCounters(Boolean isCorrect)
     {
-        char choice;
-        
-        // Implement this to randomize order
-        ConsoleMethods.println(getQuestion());
-        ConsoleMethods.println(getChoices());
-        
-        // IO logic of getting answer from console
-        do {
-            choice = ConsoleMethods.inputChar("Enter selection (A-E) --> ");
-            choice = Character.toUpperCase(choice); // Convert to upper case
-            if (choice >= charA && choice <= charE) break;
-            ConsoleMethods.println(" (invalid) ");
-        } while ( true );                                               // until valid input
-        
-        if (choice == answerKey) ConsoleMethods.print("(correct) ");
-        else ConsoleMethods.print("(missed it!) ");
-        ConsoleMethods.println(answer);
-        ConsoleMethods.println();
-        
-        /*Boolean ansStatus = (choice == answerKey);
-        calcResult(ansStatus)
-        return ansStatus;*/
-        return (choice == answerKey);
+        if (isCorrect)
+        {
+            this.correct++;
+            Question.totalCorrect++;
+        }
+        questions++;
+        totalQuestions++;
     }
-  
+ 
+    
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  void
+     */
+    public void printCounters()
+    {
+        System.out.println(this.getCounterMsg());
+    }
+ 
+    /**
+     * Answer Key
+     *
+     * @param  void
+     */
+    public String getAnswerKey() {
+    	return new String("" + answerKey);
+    }
+
+	/**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  void
+     */
+    public String getCounterMsg()
+    {
+        return new String("Results: " + this.correct + " of " + this.questions);
+    }
+
+    
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  void
+     */
+    public static String getCounterTotalMsg()
+    {
+        return new String("Totals:  " + Question.totalCorrect + " of " + Question.totalQuestions);
+    }
+
 }

@@ -2,11 +2,12 @@ package AP_Exam;
 import java.util.Random;
 
 import model_questions.Question;
+import model_questions.QuestionMC;
 
 
 
 
-public class finalInfoQuestions extends AP_Exam.Question
+public class finalInfoQuestions extends QuestionMC
 {
  public finalInfoQuestions() 
  {

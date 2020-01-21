@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import AP_Exam.AP_Console;
-
+import model_questions.QuestionMC;
 
 //import AP_Exam.encapsulationQuestions;
 
@@ -200,7 +200,7 @@ public class testModeCaller extends MenuControl{
 				{
 				case 0: 
 					calls[0]+=1;
-					AP_Exam.Question a = new AP_Exam.FinalArrayList();
+					QuestionMC a = new AP_Exam.FinalArrayList();
 					   TestQ.setText(a.getQuestion());
 					chA.setText(a.getChoiceA());
 					chB.setText(a.getChoiceB());
@@ -218,7 +218,7 @@ public class testModeCaller extends MenuControl{
 					break; 
 				case 1: 
 					calls[1]+=1;
-					AP_Exam.Question b = new AP_Exam.FinalBooleanQuestions();
+					QuestionMC b = new AP_Exam.FinalBooleanQuestions();
 					  TestQ.setText(b.getQuestion());
 					chA.setText(b.getChoiceA());
 					chB.setText(b.getChoiceB());
@@ -238,7 +238,7 @@ public class testModeCaller extends MenuControl{
 					break;
 				case 2:
 					calls[2]+=1;
-					AP_Exam.Question c = new AP_Exam.FinalCodeAnalysis();
+					QuestionMC c = new AP_Exam.FinalCodeAnalysis();
 					   TestQ.setText(c.getQuestion());
 					chA.setText(c.getChoiceA());
 					chB.setText(c.getChoiceB());
@@ -258,7 +258,7 @@ public class testModeCaller extends MenuControl{
 					 
 				case 3: 
 					calls[3]+=1;
-					AP_Exam.Question d = new AP_Exam.finalInfoQuestions();
+					QuestionMC d = new AP_Exam.finalInfoQuestions();
 					   TestQ.setText(d.getQuestion());
 					chA.setText(d.getChoiceA());
 					chB.setText(d.getChoiceB());
@@ -277,7 +277,7 @@ public class testModeCaller extends MenuControl{
 					break;
 				case 4: 
 					calls[question]+=1;
-					AP_Exam.Question x = new AP_Exam.FinalLoopQuestion();
+					QuestionMC x = new AP_Exam.FinalLoopQuestion();
 					TestQ.setText(x.getQuestion());
 					chA.setText(x.getChoiceA());
 					chB.setText(x.getChoiceB());
@@ -296,7 +296,7 @@ public class testModeCaller extends MenuControl{
 					break; 
 				case 5: 
 					calls[question]+=1;
-					AP_Exam.Question f = new AP_Exam.FinalMath();
+					QuestionMC f = new AP_Exam.FinalMath();
 					TestQ.setText(f.getQuestion());
 					chA.setText(f.getChoiceA());
 					chB.setText(f.getChoiceB());
@@ -315,7 +315,7 @@ public class testModeCaller extends MenuControl{
 					break; 
 				case 6: 
 					calls[question]+=1;
-					AP_Exam.Question g = new AP_Exam.FinalPolymorphQuestions();
+					QuestionMC g = new AP_Exam.FinalPolymorphQuestions();
 					TestQ.setText(g.getQuestion());
 					chA.setText(g.getChoiceA());
 					chB.setText(g.getChoiceB());
@@ -335,7 +335,7 @@ public class testModeCaller extends MenuControl{
 				case 7:
 					calls[question]+=1;
 					
-						AP_Exam.Question k = new AP_Exam.FinalRecursion();
+						QuestionMC k = new AP_Exam.FinalRecursion();
 						   TestQ.setText(k.getQuestion());
 						chA.setText(k.getChoiceA());
 						chB.setText(k.getChoiceB());
@@ -356,7 +356,7 @@ public class testModeCaller extends MenuControl{
 					break; 
 				case 8: 
 					calls[question]+=1;
-					AP_Exam.Question m = new AP_Exam.finalStrings();
+					QuestionMC m = new AP_Exam.finalStrings();
 					TestQ.setText(m.getQuestion());
 					chA.setText(m.getChoiceA());
 					chB.setText(m.getChoiceB());

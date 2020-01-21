@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Random;
 
 import model_questions.Question;
+import model_questions.QuestionMC;
 
 /**
  * 
@@ -15,7 +16,7 @@ import model_questions.Question;
  *
  */
 
-public class FinalCodeAnalysis extends AP_Exam.Question{
+public class FinalCodeAnalysis extends QuestionMC {
    
 	public FinalCodeAnalysis()
     {
@@ -32,7 +33,7 @@ public class FinalCodeAnalysis extends AP_Exam.Question{
     
     public static String mainTest ()
     {
-    	AP_Exam.Question q = new FinalCodeAnalysis();
+    	Question q = new FinalCodeAnalysis();
         q.askQuestionConsole();
         return q.getCounterMsg();
     }

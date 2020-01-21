@@ -1,5 +1,7 @@
 import java.util.Random;
 
+import model_questions.QuestionMC;
+
 public class TestModeLogic /*extends MenuControl */{
 	
 	int trackQCalls[] = {0,0,0,0,0,0,0,0,0}; //tracks # of times each class was called, starts at 0 (array has 13 spots, ranges from 0-12)
@@ -13,39 +15,45 @@ public class TestModeLogic /*extends MenuControl */{
 	public String [][] makeQuestions()
 	{
 
-		AP_Exam.Question math = new AP_Exam.FinalMath(); 
-		AP_Exam.Question encaps = new AP_Exam.FinalCodeAnalysis(); //which one's this 
-		AP_Exam.Question dataType = new AP_Exam.FinalBooleanQuestions();
-		AP_Exam.Question binaryMath = new AP_Exam.finalInfoQuestions();
-		AP_Exam.Question CA = new AP_Exam.FinalLoopQuestion();
-		AP_Exam.Question MVC = new AP_Exam.FinalPolymorphQuestions();
-		AP_Exam.Question operators = new AP_Exam.FinalRecursion();
-		AP_Exam.Question aList = new AP_Exam.FinalArrayList();
-		AP_Exam.Question backgroundInfo = new AP_Exam.finalStrings(); //making an object of each type of question
-
-		AP_Exam.Question [] questionList = {math, encaps, dataType, binaryMath, CA, MVC, operators, aList, backgroundInfo};
-		//populating an array of type Question with each of the different types of question objects
+		// array of exam questions
+		QuestionMC [] questionList = {
+				new AP_Exam.FinalMath(),
+				new AP_Exam.FinalCodeAnalysis(),
+				new AP_Exam.FinalBooleanQuestions(),
+				new AP_Exam.finalInfoQuestions(),
+				new AP_Exam.FinalLoopQuestion(),
+				new AP_Exam.FinalPolymorphQuestions(),
+				new AP_Exam.FinalRecursion(),
+				new AP_Exam.FinalArrayList(),
+				new AP_Exam.finalStrings()
+		};
 		
-		String [][] test = new String[36][8]; //creating a new 2-D String array that will hold in each column: a question type object, and its corresponding 
+		// 2D array management values
+		// 1st dimension of 2D array defining number of questions
+		int testQs = 36;
+		// 2nd dimension of 2D array, defining constants to reference data parts (fields) of Question
+		int QUEST=0, 						// question
+				A=1, B=2, C=3, D=4, E=5, 	// choices
+				ANS=6, 						// answer
+				ANSLETTER=7; 				// correct choice
+		int testQsFields = 8;				// number of fields in question
+		String [][] test = new String[testQs][testQsFields]; //creating a new 2-D String array that will hold in each column: a question type object, and its corresponding 
 											  //actual question text, answer options A-E, and the answer text, see below:
-
+		
+		// this variable instantiation declares that question will always be in the 0 position of the column, choice A will be in the 1 position, etc.	
 		int randNum; //defining variable, random integer
-		
-		int QUEST=0, A=1, B=2, C=3, D=4, E=5, ANS=6, ANSLETTER=7; //defining integers for the INDEX on the test Array 
-		
-		//this variable instantiation declares that question will always be in the 0 position of the column, choice A will be in the 1 position, etc.
-		
-		for (int questNum = 0; questNum < 36; questNum++) //for each increasing index of the test array
+		int randMax = questionList.length;
+		for (int testQsIndex = 0; testQsIndex < testQs; testQsIndex++) //for each increasing index of the test array
 		{
-			randNum= getRandNum(); //assignments of Strings to each object of the array 
-			test[questNum][QUEST]=questionList[randNum].getQuestion();
-			test[questNum][A]=questionList[randNum].getChoiceA();
-			test[questNum][B]=questionList[randNum].getChoiceB();
-			test[questNum][C]=questionList[randNum].getChoiceC();
-			test[questNum][D]=questionList[randNum].getChoiceD();
-			test[questNum][E]=questionList[randNum].getChoiceE();
-			test[questNum][ANS]=questionList[randNum].getAnswer();
-			test[questNum][ANSLETTER] = questionList[randNum].getAnswerLetter(); 
+			randNum= getRandNum(randMax); //assignments of Strings to each object of the array 
+			test[testQsIndex][QUEST]=questionList[randNum].getQuestion();
+			test[testQsIndex][A]=questionList[randNum].getChoiceA();
+			test[testQsIndex][B]=questionList[randNum].getChoiceB();
+			test[testQsIndex][C]=questionList[randNum].getChoiceC();
+			test[testQsIndex][D]=questionList[randNum].getChoiceD();
+			test[testQsIndex][E]=questionList[randNum].getChoiceE();
+			test[testQsIndex][ANS]=questionList[randNum].getAnswer();
+			test[testQsIndex][ANSLETTER] = questionList[randNum].getAnswerKey(); 
 			
 		}
 		
@@ -57,7 +65,7 @@ public class TestModeLogic /*extends MenuControl */{
 	 * generate the random numbers
 	 * @return random number
 	 */
-	public int getRandNum() //logic for when calling a random number 
+	public int getRandNum(int randMax) //logic for when calling a random number 
 	{
 		Random rand = new Random();
 		int num;
@@ -65,7 +73,7 @@ public class TestModeLogic /*extends MenuControl */{
 		boolean full=false;
 		do 
 		{
-			num = rand.nextInt(9); //call random number from 0-12
+			num = rand.nextInt(randMax); //call random number from 0-12
 			
 			if (trackQCalls[num]==4)
 			{

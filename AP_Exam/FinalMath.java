@@ -6,6 +6,7 @@ import java.util.Random;
 
 import Util.ConsoleMethods;
 import model_questions.Question;
+import model_questions.QuestionMC;
 
 /**
  * Math Classes: BinaryMathQuestions, DataTypeMathQuestion,
@@ -16,7 +17,7 @@ import model_questions.Question;
  * @version Modeling P4
  */
 
-public class FinalMath extends AP_Exam.Question {
+public class FinalMath extends QuestionMC {
 	
 	private char[] operators = {'&', '|', '+', '-'};
 	private char[] operators1 = {'1', '2'};

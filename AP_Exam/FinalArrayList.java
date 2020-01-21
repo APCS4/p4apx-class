@@ -7,6 +7,7 @@ import java.util.Random;
 import java.util.Set;
 import java.util.stream.IntStream;
 import model_questions.Question;
+import model_questions.QuestionMC;
 import Util.ConsoleMethods;
 import model_linkedlists.CircleQueue;
 
@@ -15,7 +16,7 @@ import model_linkedlists.CircleQueue;
  * 
  * @author P4 Modeling
  */
-public class FinalArrayList extends model_questions.Question {
+public class FinalArrayList extends QuestionMC {
 	public static boolean TextBased = true;
 	public static boolean RandomBased = true;
 	
