@@ -13,6 +13,7 @@ import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JRadioButton;
 import javax.swing.ScrollPaneConstants;
@@ -54,6 +55,9 @@ public class AP_UI extends MenuControl
 		scrollPane_2.setBounds(6, 437, 676, 101);
 		contentPane.add(scrollPane_2);
 		scrollPane_2.setViewportView(testQuestionAnswer);
+		testQuestionAnswer.setForeground(testQuestionAnswer.getBackground());
+		testQuestionAnswer.setHighlighter(null);
+		
 		
 		testQuestionAnswer.setEditable(false);
 		testQuestionAnswer.setLineWrap(false);
@@ -83,21 +87,33 @@ public class AP_UI extends MenuControl
 		contentPane.add(lblChoices);
 		
 		JRadioButton rdbtnA = new JRadioButton("A");
-		rdbtnA.setBounds(700, 281, 41, 23);
+		rdbtnA.setBounds(685, 281, 41, 23);
 		contentPane.add(rdbtnA);
 		
 		JRadioButton rdbtnB = new JRadioButton("B");
-		rdbtnB.setBounds(740, 281, 41, 23);
+		rdbtnB.setBounds(725, 281, 41, 23);
 		contentPane.add(rdbtnB);
 		
 		JRadioButton rdbtnC = new JRadioButton("C");
-		rdbtnC.setBounds(780, 281, 41, 23);
+		rdbtnC.setBounds(765, 281, 41, 23);
 		contentPane.add(rdbtnC);
 		
 		JRadioButton rdbtnD = new JRadioButton("D");
-		rdbtnD.setBounds(820, 281, 52, 23);
+		rdbtnD.setBounds(805, 281, 42, 23);
 		contentPane.add(rdbtnD);
 		
+		JRadioButton rdbtnE = new JRadioButton("E");
+		rdbtnE.setBounds(845, 281, 41, 23);
+		contentPane.add(rdbtnE);
+		
+		ButtonGroup abcd = new ButtonGroup();
+		abcd.add(rdbtnA);
+		abcd.add(rdbtnB);
+		abcd.add(rdbtnC);
+		abcd.add(rdbtnD);
+		abcd.add(rdbtnE);
+		
+
 		JLabel lblAnswerChoices = new JLabel("Answer Choices");
 		lblAnswerChoices.setBounds(737, 261, 130, 16);
 		contentPane.add(lblAnswerChoices);
@@ -110,7 +126,9 @@ public class AP_UI extends MenuControl
 			AP_Exam.FinalArrayList q = new AP_Exam.FinalArrayList();
 			testQuestion.setText(q.getQuestion());
 			testChoices.setText(q.getChoices());
+			testQuestionAnswer.setForeground(testQuestionAnswer.getBackground());
 			testQuestionAnswer.setText(q.getAnswer());
+			abcd.clearSelection();
 			} 
 		}); 
 		JButton btnGeneralJavaInfo = new JButton("General Java Info");
@@ -121,7 +139,9 @@ public class AP_UI extends MenuControl
 			AP_Exam.finalInfoQuestions q = new AP_Exam.finalInfoQuestions();
 			testQuestion.setText(q.getQuestion());
 			testChoices.setText(q.getChoices());
+			testQuestionAnswer.setForeground(testQuestionAnswer.getBackground());
 			testQuestionAnswer.setText(q.getAnswer());
+			abcd.clearSelection();
 			} 
 		}); 
 		
@@ -133,7 +153,9 @@ public class AP_UI extends MenuControl
 			AP_Exam.FinalBooleanQuestions q = new AP_Exam.FinalBooleanQuestions();
 			testQuestion.setText(q.getQuestion());
 			testChoices.setText(q.getChoices());
+			testQuestionAnswer.setForeground(testQuestionAnswer.getBackground());
 			testQuestionAnswer.setText(q.getAnswer());
+			abcd.clearSelection();
 			} 
 		});
 		
@@ -145,7 +167,9 @@ public class AP_UI extends MenuControl
 				AP_Exam.FinalCodeAnalysis q = new AP_Exam.FinalCodeAnalysis();
 				testQuestion.setText(q.getQuestion());
 				testChoices.setText(q.getChoices());
+				testQuestionAnswer.setForeground(testQuestionAnswer.getBackground());
 				testQuestionAnswer.setText(q.getAnswer());
+				abcd.clearSelection();
 			}
 		});
 		
@@ -158,7 +182,9 @@ public class AP_UI extends MenuControl
 			AP_Exam.FinalLoopQuestion q = new AP_Exam.FinalLoopQuestion();
 			testQuestion.setText(q.getQuestion());
 			testChoices.setText(q.getChoices());
+			testQuestionAnswer.setForeground(testQuestionAnswer.getBackground());
 			testQuestionAnswer.setText(q.getAnswer());
+			abcd.clearSelection();
 			} 
 		});
 		
@@ -170,7 +196,9 @@ public class AP_UI extends MenuControl
 			AP_Exam.FinalMath q = new AP_Exam.FinalMath();
 			testQuestion.setText(q.getQuestion());
 			testChoices.setText(q.getChoices());
+			testQuestionAnswer.setForeground(testQuestionAnswer.getBackground());
 			testQuestionAnswer.setText(q.getAnswer());
+			abcd.clearSelection();
 			} 
 		});
 		
@@ -182,7 +210,9 @@ public class AP_UI extends MenuControl
 			AP_Exam.FinalPolymorphQuestions q = new AP_Exam.FinalPolymorphQuestions();
 			testQuestion.setText(q.getQuestion());
 			testChoices.setText(q.getChoices());
+			testQuestionAnswer.setForeground(testQuestionAnswer.getBackground());
 			testQuestionAnswer.setText(q.getAnswer());
+			abcd.clearSelection();
 			} 
 		});
 		
@@ -194,7 +224,9 @@ public class AP_UI extends MenuControl
 			AP_Exam.FinalRecursion q = new AP_Exam.FinalRecursion();
 			testQuestion.setText(q.getQuestion());
 			testChoices.setText(q.getChoices());
+			testQuestionAnswer.setForeground(testQuestionAnswer.getBackground());
 			testQuestionAnswer.setText(q.getAnswer());
+			abcd.clearSelection();
 			} 
 		});
 		
@@ -202,11 +234,36 @@ public class AP_UI extends MenuControl
 		btnStringQuestions.setBounds(694, 222, 184, 29);
 		contentPane.add(btnStringQuestions);
 		btnStringQuestions.addActionListener(new ActionListener() {
-		public void actionPerformed(ActionEvent e) {
-			AP_Exam.finalStrings q = new AP_Exam.finalStrings();
-			testQuestion.setText(q.getQuestion());
-			testChoices.setText(q.getChoices());
-			testQuestionAnswer.setText(q.getAnswer());
+			public void actionPerformed(ActionEvent e) {
+				AP_Exam.finalStrings q = new AP_Exam.finalStrings();
+				testQuestion.setText(q.getQuestion());
+				testChoices.setText(q.getChoices());
+				testQuestionAnswer.setForeground(testQuestionAnswer.getBackground());
+				testQuestionAnswer.setText(q.getAnswer());
+				abcd.clearSelection();
+				} 
+			});
+		
+		JButton btnSubmitAnswer = new JButton("Submit Answer");
+		btnSubmitAnswer.setBounds(694, 303, 184, 29);
+		contentPane.add(btnSubmitAnswer);
+
+		btnSubmitAnswer.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				boolean chA, chB, chC, chD, chE; 
+				chA = rdbtnA.isSelected();
+				chB = rdbtnB.isSelected();
+				chC = rdbtnC.isSelected();
+				chD = rdbtnD.isSelected();
+				chE = rdbtnE.isSelected();
+				
+				if(chA || chB || chC || chD || chE)
+				{
+					testQuestionAnswer.setForeground(new Color(0, 0, 0));
+					//abcd.clearSelection();
+				}
 			} 
 		});
 
