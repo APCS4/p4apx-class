@@ -27,6 +27,7 @@ public class TestModeUI extends MenuControl {
 		getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("AP EXAM: Test Mode");
+		lblNewLabel.setOpaque(true);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(6, 6, 1428, 16);
 		getContentPane().add(lblNewLabel);
@@ -35,12 +36,13 @@ public class TestModeUI extends MenuControl {
 		scrollPane.setBounds(6, 34, 878, 747);
 		getContentPane().add(scrollPane);
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setText("  ");
-		textArea.setEditable(false);
-		scrollPane.setViewportView(textArea);
+		JTextArea txtrAsdfghaasdfghaasdfghaasdfghaasdfghaasdfghaasdfghaasdfgha = new JTextArea();
+		txtrAsdfghaasdfghaasdfghaasdfghaasdfghaasdfghaasdfghaasdfgha.setEditable(false);
+		scrollPane.setViewportView(txtrAsdfghaasdfghaasdfghaasdfghaasdfghaasdfghaasdfghaasdfgha);
 		
 		JLabel questLabel = new JLabel("Questions");
+		questLabel.setOpaque(true);
+		questLabel.setBackground(SystemColor.window);
 		questLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
 		questLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		scrollPane.setColumnHeaderView(questLabel);
