@@ -35,8 +35,6 @@ public class AP_UI extends MenuControl
 	 * Create the frame.
 	 */
 	public AP_UI() {
-		int which = 0;
-		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 884, 588);
 		contentPane = new JPanel();
@@ -89,26 +87,31 @@ public class AP_UI extends MenuControl
 		contentPane.add(lblChoices);
 		
 		JRadioButton rdbtnA = new JRadioButton("A");
-		rdbtnA.setBounds(700, 281, 41, 23);
+		rdbtnA.setBounds(685, 281, 41, 23);
 		contentPane.add(rdbtnA);
 		
 		JRadioButton rdbtnB = new JRadioButton("B");
-		rdbtnB.setBounds(740, 281, 41, 23);
+		rdbtnB.setBounds(725, 281, 41, 23);
 		contentPane.add(rdbtnB);
 		
 		JRadioButton rdbtnC = new JRadioButton("C");
-		rdbtnC.setBounds(780, 281, 41, 23);
+		rdbtnC.setBounds(765, 281, 41, 23);
 		contentPane.add(rdbtnC);
 		
 		JRadioButton rdbtnD = new JRadioButton("D");
-		rdbtnD.setBounds(820, 281, 52, 23);
+		rdbtnD.setBounds(805, 281, 42, 23);
 		contentPane.add(rdbtnD);
+		
+		JRadioButton rdbtnE = new JRadioButton("E");
+		rdbtnE.setBounds(845, 281, 41, 23);
+		contentPane.add(rdbtnE);
 		
 		ButtonGroup abcd = new ButtonGroup();
 		abcd.add(rdbtnA);
 		abcd.add(rdbtnB);
 		abcd.add(rdbtnC);
 		abcd.add(rdbtnD);
+		abcd.add(rdbtnE);
 		
 
 		JLabel lblAnswerChoices = new JLabel("Answer Choices");
@@ -230,21 +233,33 @@ public class AP_UI extends MenuControl
 		JButton btnStringQuestions = new JButton("String Questions");
 		btnStringQuestions.setBounds(694, 222, 184, 29);
 		contentPane.add(btnStringQuestions);
+		btnStringQuestions.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AP_Exam.finalStrings q = new AP_Exam.finalStrings();
+				testQuestion.setText(q.getQuestion());
+				testChoices.setText(q.getChoices());
+				testQuestionAnswer.setForeground(testQuestionAnswer.getBackground());
+				testQuestionAnswer.setText(q.getAnswer());
+				abcd.clearSelection();
+				} 
+			});
 		
 		JButton btnSubmitAnswer = new JButton("Submit Answer");
 		btnSubmitAnswer.setBounds(694, 303, 184, 29);
 		contentPane.add(btnSubmitAnswer);
+
 		btnSubmitAnswer.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				boolean chA, chB, chC, chD; 
+				boolean chA, chB, chC, chD, chE; 
 				chA = rdbtnA.isSelected();
 				chB = rdbtnB.isSelected();
 				chC = rdbtnC.isSelected();
 				chD = rdbtnD.isSelected();
+				chE = rdbtnE.isSelected();
 				
-				if(chA || chB || chC || chD)
+				if(chA || chB || chC || chD || chE)
 				{
 					testQuestionAnswer.setForeground(new Color(0, 0, 0));
 					//abcd.clearSelection();
