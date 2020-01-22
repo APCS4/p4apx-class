@@ -13,6 +13,7 @@ import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JRadioButton;
 import javax.swing.ScrollPaneConstants;
@@ -34,6 +35,8 @@ public class AP_UI extends MenuControl
 	 * Create the frame.
 	 */
 	public AP_UI() {
+		int which = 0;
+		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 884, 588);
 		contentPane = new JPanel();
@@ -54,6 +57,9 @@ public class AP_UI extends MenuControl
 		scrollPane_2.setBounds(6, 437, 676, 101);
 		contentPane.add(scrollPane_2);
 		scrollPane_2.setViewportView(testQuestionAnswer);
+		testQuestionAnswer.setForeground(testQuestionAnswer.getBackground());
+		testQuestionAnswer.setHighlighter(null);
+		
 		
 		testQuestionAnswer.setEditable(false);
 		testQuestionAnswer.setLineWrap(false);
@@ -98,6 +104,13 @@ public class AP_UI extends MenuControl
 		rdbtnD.setBounds(820, 281, 52, 23);
 		contentPane.add(rdbtnD);
 		
+		ButtonGroup abcd = new ButtonGroup();
+		abcd.add(rdbtnA);
+		abcd.add(rdbtnB);
+		abcd.add(rdbtnC);
+		abcd.add(rdbtnD);
+		
+
 		JLabel lblAnswerChoices = new JLabel("Answer Choices");
 		lblAnswerChoices.setBounds(737, 261, 130, 16);
 		contentPane.add(lblAnswerChoices);
@@ -110,7 +123,9 @@ public class AP_UI extends MenuControl
 			AP_Exam.FinalArrayList q = new AP_Exam.FinalArrayList();
 			testQuestion.setText(q.getQuestion());
 			testChoices.setText(q.getChoices());
+			testQuestionAnswer.setForeground(testQuestionAnswer.getBackground());
 			testQuestionAnswer.setText(q.getAnswer());
+			abcd.clearSelection();
 			} 
 		}); 
 		JButton btnGeneralJavaInfo = new JButton("General Java Info");
@@ -121,7 +136,9 @@ public class AP_UI extends MenuControl
 			AP_Exam.finalInfoQuestions q = new AP_Exam.finalInfoQuestions();
 			testQuestion.setText(q.getQuestion());
 			testChoices.setText(q.getChoices());
+			testQuestionAnswer.setForeground(testQuestionAnswer.getBackground());
 			testQuestionAnswer.setText(q.getAnswer());
+			abcd.clearSelection();
 			} 
 		}); 
 		
@@ -133,7 +150,9 @@ public class AP_UI extends MenuControl
 			AP_Exam.FinalBooleanQuestions q = new AP_Exam.FinalBooleanQuestions();
 			testQuestion.setText(q.getQuestion());
 			testChoices.setText(q.getChoices());
+			testQuestionAnswer.setForeground(testQuestionAnswer.getBackground());
 			testQuestionAnswer.setText(q.getAnswer());
+			abcd.clearSelection();
 			} 
 		});
 		
@@ -145,7 +164,9 @@ public class AP_UI extends MenuControl
 				AP_Exam.FinalCodeAnalysis q = new AP_Exam.FinalCodeAnalysis();
 				testQuestion.setText(q.getQuestion());
 				testChoices.setText(q.getChoices());
+				testQuestionAnswer.setForeground(testQuestionAnswer.getBackground());
 				testQuestionAnswer.setText(q.getAnswer());
+				abcd.clearSelection();
 			}
 		});
 		
@@ -158,7 +179,9 @@ public class AP_UI extends MenuControl
 			AP_Exam.FinalLoopQuestion q = new AP_Exam.FinalLoopQuestion();
 			testQuestion.setText(q.getQuestion());
 			testChoices.setText(q.getChoices());
+			testQuestionAnswer.setForeground(testQuestionAnswer.getBackground());
 			testQuestionAnswer.setText(q.getAnswer());
+			abcd.clearSelection();
 			} 
 		});
 		
@@ -170,7 +193,9 @@ public class AP_UI extends MenuControl
 			AP_Exam.FinalMath q = new AP_Exam.FinalMath();
 			testQuestion.setText(q.getQuestion());
 			testChoices.setText(q.getChoices());
+			testQuestionAnswer.setForeground(testQuestionAnswer.getBackground());
 			testQuestionAnswer.setText(q.getAnswer());
+			abcd.clearSelection();
 			} 
 		});
 		
@@ -182,7 +207,9 @@ public class AP_UI extends MenuControl
 			AP_Exam.FinalPolymorphQuestions q = new AP_Exam.FinalPolymorphQuestions();
 			testQuestion.setText(q.getQuestion());
 			testChoices.setText(q.getChoices());
+			testQuestionAnswer.setForeground(testQuestionAnswer.getBackground());
 			testQuestionAnswer.setText(q.getAnswer());
+			abcd.clearSelection();
 			} 
 		});
 		
@@ -194,19 +221,34 @@ public class AP_UI extends MenuControl
 			AP_Exam.FinalRecursion q = new AP_Exam.FinalRecursion();
 			testQuestion.setText(q.getQuestion());
 			testChoices.setText(q.getChoices());
+			testQuestionAnswer.setForeground(testQuestionAnswer.getBackground());
 			testQuestionAnswer.setText(q.getAnswer());
+			abcd.clearSelection();
 			} 
 		});
 		
 		JButton btnStringQuestions = new JButton("String Questions");
 		btnStringQuestions.setBounds(694, 222, 184, 29);
 		contentPane.add(btnStringQuestions);
-		btnStringQuestions.addActionListener(new ActionListener() {
-		public void actionPerformed(ActionEvent e) {
-			AP_Exam.finalStrings q = new AP_Exam.finalStrings();
-			testQuestion.setText(q.getQuestion());
-			testChoices.setText(q.getChoices());
-			testQuestionAnswer.setText(q.getAnswer());
+		
+		JButton btnSubmitAnswer = new JButton("Submit Answer");
+		btnSubmitAnswer.setBounds(694, 303, 184, 29);
+		contentPane.add(btnSubmitAnswer);
+		btnSubmitAnswer.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				boolean chA, chB, chC, chD; 
+				chA = rdbtnA.isSelected();
+				chB = rdbtnB.isSelected();
+				chC = rdbtnC.isSelected();
+				chD = rdbtnD.isSelected();
+				
+				if(chA || chB || chC || chD)
+				{
+					testQuestionAnswer.setForeground(new Color(0, 0, 0));
+					//abcd.clearSelection();
+				}
 			} 
 		});
 
