@@ -46,7 +46,7 @@ public class Randomization {
 		return oper[a];
 	}
 	
-	public static randoArray(n)
+	public static randoArray(n)  
 	{
 		ArrayList list = new ArrayList();
 	}
