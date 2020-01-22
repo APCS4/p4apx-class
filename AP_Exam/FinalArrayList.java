@@ -29,6 +29,11 @@ public class FinalArrayList extends QuestionMC {
 		RandomBased = Random;
 		//createTest();
 	}
+	
+	public FinalArrayList(int qNumber) {
+		choiceArray.clear();
+		setupQuestionData(qNumber);
+	}
 
 	@Override
 	protected void setupQuestionData() {
@@ -244,12 +249,12 @@ public class FinalArrayList extends QuestionMC {
 		switch (ID) {
 		case 0:
 			choiceEfixed = true;
-			
 			choiceArray.addAll(Arrays.asList("nums.length", "nums.length - 1", "nums.size()", "nums.size() - 1", "None of the above"));
+			System.out.println(choiceArray);
 			randomizeChoiceArray(choiceArray);
 			loadChoices();
 			
-			this.question = "Which index is the last element in a list called nums at?";
+			question = "Which index is the last element in a list called nums at?";
 			
 			answerKey = getAns(choiceArray, "nums.size() - 1");
 			answer = choiceArray.get(answerKey - 65);
