@@ -5,10 +5,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 import AP_Exam.FinalArrayList;
-import AP_Exam.FinalArrayListDBtest;
-
+/**
+ * 
+ * @author 1849871
+ * Contains methods for creating database which holds text-based questions
+ * Includes addQuestion, getQuestion, and displayQuestion methods
+ */
 public class questionDB {
 	public static Connection con;
 	public static boolean hasData = false;
@@ -16,11 +19,12 @@ public class questionDB {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 			System.out.println("questionDB main method");
 			try {
-				fillDB.fillArrayList();
+				fillDB.addArrayList();
+				fillDB.addBoolean();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-			displayQuestion();
+			displayQuestions();
 			/*try {
 				ResultSet res = displayQuestion();
 				System.out.println(res.next());
@@ -38,7 +42,13 @@ public class questionDB {
 		
 	}
 	
-	private static void displayQuestion() throws SQLException, ClassNotFoundException {
+	/**
+	 * displays questions in console
+	 * 
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
+	private static void displayQuestions() throws SQLException, ClassNotFoundException {
 		if(con == null) {
 			connect();
 		}
@@ -87,5 +97,15 @@ public class questionDB {
 		pstmt.setString(6, choice5);
 		pstmt.setString(7, answer);
 		pstmt.execute();
+	}
+	
+	public ResultSet getQuestion() throws ClassNotFoundException, SQLException {
+		if(con == null) {
+			connect();
+		}
+		
+		Statement stmt = con.createStatement();
+		ResultSet rs = stmt.executeQuery("SELECT question, choice1, choice2, choice3, choice4, choice5, answer FROM questionDB");
+		return rs;
 	}
 }
