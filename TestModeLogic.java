@@ -38,7 +38,7 @@ public class TestModeLogic /*extends MenuControl */{
 				ANS=6, 						// answer
 				ANSKEY=7; 				// correct choice
 		int testQsFields = 8;				// number of fields in question
-		String [][] test = new String[testQs][testQsFields]; //creating a new 2-D String array that will hold in each column: a question type object, and its corresponding 
+		String [][] test = new String[36][8]; //creating a new 2-D String array that will hold in each column: a question type object, and its corresponding 
 											  //actual question text, answer options A-E, and the answer text, see below:
 		
 		// this variable instantiation declares that question will always be in the 0 position of the column, choice A will be in the 1 position, etc.	
@@ -63,6 +63,9 @@ public class TestModeLogic /*extends MenuControl */{
 		return(test); //returns entire test array
 
 	}
+	
+
+	
 	
 	/**
 	 * generate the random numbers
