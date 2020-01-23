@@ -19,6 +19,8 @@ import javax.swing.UIManager;
 
 public class TestModeUI extends MenuControl {
 	private JTable table;
+	TestModeLogic obj = new TestModeLogic();
+
 	public TestModeUI()
 	{
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -37,21 +39,8 @@ public class TestModeUI extends MenuControl {
 		getContentPane().add(scrollPane);
 		
 		JTextArea QDisplay = new JTextArea();
-		//String [][] test = new String[10][8];
 		
-		TestModeLogic obj = new TestModeLogic();
-	//	StringBuilder trial = new StringBuilder(); 
-	//	for (int x=0; x<36; x++)
-	//	{
-	//		for(int y = 0; y<9; y++)
-			
-	//			{
-	//				QDisplay.append("\n" + test[x][y]);
-	//			}
-			
-		//	QDisplay.setText(trial.toString()); 
-			QDisplay.append(String.valueOf(obj.makeQuestions()));
-
+		QDisplay.setText(obj.printAll());
 			
 		QDisplay.setEditable(false);
 		scrollPane.setRowHeaderView(QDisplay);
