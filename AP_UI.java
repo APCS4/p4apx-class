@@ -26,7 +26,9 @@ public class AP_UI extends MenuControl
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JPanel contentPane;
+	private JLabel contentPane;
+	private ImageIcon image2;
+	private JLabel background;
     private JTextArea testQuestion = new JTextArea();
     private JTextArea testChoices = new JTextArea();
     private JTextArea testQuestionAnswer = new JTextArea();
@@ -37,10 +39,14 @@ public class AP_UI extends MenuControl
 	public AP_UI() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 884, 588);
-		contentPane = new JPanel();
-		contentPane.setBackground(new Color(220, 220, 220));
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
+		contentPane = new JLabel();
+		//contentPane.setBackground(new Color(220, 220, 220));
+		image2 = new ImageIcon(getClass().getResource("review UI/background.png"));
+		contentPane.setBorder(null);
+		contentPane.setIcon(image2);
+		getContentPane().add(contentPane);
+		//contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		//setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		JLabel lblExamSections = new JLabel("Review Sections");
@@ -87,22 +93,27 @@ public class AP_UI extends MenuControl
 		contentPane.add(lblChoices);
 		
 		JRadioButton rdbtnA = new JRadioButton("A");
+		rdbtnA.setForeground(Color.WHITE);
 		rdbtnA.setBounds(685, 281, 41, 23);
 		contentPane.add(rdbtnA);
 		
 		JRadioButton rdbtnB = new JRadioButton("B");
+		rdbtnB.setForeground(Color.WHITE);
 		rdbtnB.setBounds(725, 281, 41, 23);
 		contentPane.add(rdbtnB);
 		
 		JRadioButton rdbtnC = new JRadioButton("C");
+		rdbtnC.setForeground(Color.WHITE);
 		rdbtnC.setBounds(765, 281, 41, 23);
 		contentPane.add(rdbtnC);
 		
 		JRadioButton rdbtnD = new JRadioButton("D");
+		rdbtnD.setForeground(Color.WHITE);
 		rdbtnD.setBounds(805, 281, 42, 23);
 		contentPane.add(rdbtnD);
 		
 		JRadioButton rdbtnE = new JRadioButton("E");
+		rdbtnE.setForeground(Color.WHITE);
 		rdbtnE.setBounds(845, 281, 41, 23);
 		contentPane.add(rdbtnE);
 		
