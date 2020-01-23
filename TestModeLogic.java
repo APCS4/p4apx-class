@@ -7,8 +7,8 @@ public class TestModeLogic /*extends MenuControl */{
 	
 	int trackQCalls[] = {0,0,0,0,0,0,0,0,0}; //tracks # of times each class was called, starts at 0 (array has 13 spots, ranges from 0-12)
 	public String [][] test = new String[36][8]; //creating a new 2-D String array that will hold in each column: a question type object, and its corresponding 
-	public int testQs = 36;
-	public int testQsFields = 8;				// number of fields in question
+	public int testQs = 4;
+	public int testQsFields = 1;				// number of fields in question
 
 	
 	public TestModeLogic()
@@ -22,15 +22,15 @@ public class TestModeLogic /*extends MenuControl */{
 
 		// array of exam questions
 		Question [] questionList = {
-				//new AP_Exam.FinalMath(),
+				/*new AP_Exam.FinalMath(),
 				new AP_Exam.FinalCodeAnalysis(),
 				new AP_Exam.FinalBooleanQuestions(),
 				new AP_Exam.finalInfoQuestions(),
-				new AP_Exam.FinalLoopQuestion(),
-				new AP_Exam.FinalPolymorphQuestions(),
-				new AP_Exam.FinalRecursion(),
-				new AP_Exam.FinalArrayList(),
-				new AP_Exam.finalStrings()
+				new AP_Exam.FinalLoopQuestion(), */
+				//new AP_Exam.FinalPolymorphQuestions(), 
+				//new AP_Exam.FinalRecursion(), //has error 
+				new AP_Exam.FinalArrayList(), //perfect 
+				//new AP_Exam.finalStrings() 
 		};
 		
 		// 2D array management values
@@ -73,11 +73,11 @@ public class TestModeLogic /*extends MenuControl */{
 	}
 	
 public String getTestElement(int x, int y)
-{
-	return test[x][y]; 
-}
+	{
+		return test[x][y]; 
+	}
 
-	public String printAll()
+public String printAll()
 	{
 		
 		String fullTest = ""; 
@@ -86,7 +86,7 @@ public String getTestElement(int x, int y)
 			for(int y = 0; y< testQsFields; y++)
 			
 				
-				fullTest += getTestElement(x, y);
+				fullTest += getTestElement(x, y) + "\n\n";
 				
 		} 
 		
