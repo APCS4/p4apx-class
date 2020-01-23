@@ -19,6 +19,8 @@ import javax.swing.UIManager;
 
 public class TestModeUI extends MenuControl {
 	private JTable table;
+	TestModeLogic obj = new TestModeLogic();
+
 	public TestModeUI()
 	{
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -36,9 +38,12 @@ public class TestModeUI extends MenuControl {
 		scrollPane.setBounds(6, 34, 878, 747);
 		getContentPane().add(scrollPane);
 		
-		JTextArea txtrAsdfghaasdfghaasdfghaasdfghaasdfghaasdfghaasdfghaasdfgha = new JTextArea();
-		txtrAsdfghaasdfghaasdfghaasdfghaasdfghaasdfghaasdfghaasdfgha.setEditable(false);
-		scrollPane.setViewportView(txtrAsdfghaasdfghaasdfghaasdfghaasdfghaasdfghaasdfghaasdfgha);
+		JTextArea QDisplay = new JTextArea();
+		
+		QDisplay.setText(obj.printAll());
+			
+		QDisplay.setEditable(false);
+		scrollPane.setRowHeaderView(QDisplay);
 		
 		JLabel questLabel = new JLabel("Questions");
 		questLabel.setOpaque(true);
@@ -836,18 +841,15 @@ public class TestModeUI extends MenuControl {
 		label_37.setBackground(SystemColor.window);
 		label_37.setBounds(1171, 715, 263, 60);
 		getContentPane().add(label_37);
+
+
 		
-		/*String [][] test = new String[36][8];
-		TestModeLogic obj = new TestModeLogic();
-		test = obj.makeQuestions();
-		textArea.setText(" ");
+	
 		
-		for (int x=0; x<36; x++)
-		{
-			textArea.append("\n"+test[x][0]);
-		}
+
+		} 
 		
-	*/
 		
 	}
-}
+	
+

@@ -6,19 +6,23 @@ import model_questions.QuestionMC;
 public class TestModeLogic /*extends MenuControl */{
 	
 	int trackQCalls[] = {0,0,0,0,0,0,0,0,0}; //tracks # of times each class was called, starts at 0 (array has 13 spots, ranges from 0-12)
+	public String [][] test = new String[36][8]; //creating a new 2-D String array that will hold in each column: a question type object, and its corresponding 
+	public int testQs = 36;
+	public int testQsFields = 8;				// number of fields in question
+
 	
 	public TestModeLogic()
 	{
-		
+		makeQuestions();
 	}
 	
 	
-	public String [][] makeQuestions()
+	public void makeQuestions()
 	{
 
 		// array of exam questions
 		Question [] questionList = {
-				new AP_Exam.FinalMath(),
+				//new AP_Exam.FinalMath(),
 				new AP_Exam.FinalCodeAnalysis(),
 				new AP_Exam.FinalBooleanQuestions(),
 				new AP_Exam.finalInfoQuestions(),
@@ -31,14 +35,11 @@ public class TestModeLogic /*extends MenuControl */{
 		
 		// 2D array management values
 		// 1st dimension of 2D array defining number of questions
-		int testQs = 36;
 		// 2nd dimension of 2D array, defining constants to reference data parts (fields) of Question
 		int QUEST=0, 						// question
 				A=1, B=2, C=3, D=4, E=5, 	// choices
 				ANS=6, 						// answer
 				ANSKEY=7; 				// correct choice
-		int testQsFields = 8;				// number of fields in question
-		String [][] test = new String[testQs][testQsFields]; //creating a new 2-D String array that will hold in each column: a question type object, and its corresponding 
 											  //actual question text, answer options A-E, and the answer text, see below:
 		
 		// this variable instantiation declares that question will always be in the 0 position of the column, choice A will be in the 1 position, etc.	
@@ -59,10 +60,39 @@ public class TestModeLogic /*extends MenuControl */{
 			test[testQsIndex][ANS] = q.getAnswer();
 			test[testQsIndex][ANSKEY] = q.getAnswerKey(); 
 		}
+	}
+	
+
 		
-		return(test); //returns entire test array
+		
+		public String [][] getTest()
+		{
+		
+		return (test); //returns entire test array
 
 	}
+	
+public String getTestElement(int x, int y)
+{
+	return test[x][y]; 
+}
+
+	public String printAll()
+	{
+		
+		String fullTest = ""; 
+		for (int x=0; x< testQs; x++)
+		{
+			for(int y = 0; y< testQsFields; y++)
+			
+				
+				fullTest += getTestElement(x, y);
+				
+		} 
+		
+		return fullTest;
+	}
+	
 	
 	/**
 	 * generate the random numbers
