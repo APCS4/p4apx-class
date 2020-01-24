@@ -21,6 +21,9 @@ public class questionDB {
 			try {
 				fillDB.addArrayList();
 				fillDB.addBoolean();
+				fillDB.addCodeAnalysis();
+				fillDB.addInfoQuestion();
+				fillDB.addLoop();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}

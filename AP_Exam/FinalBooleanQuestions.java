@@ -27,6 +27,7 @@ public class FinalBooleanQuestions extends model_questions.QuestionMC
 	}
 	
 	public FinalBooleanQuestions(int qNumber) {
+		choiceArray.clear();
 		setupQuestionData(qNumber);
 	}
 	
@@ -72,7 +73,8 @@ public class FinalBooleanQuestions extends model_questions.QuestionMC
 			this.answerKey = getAns(choiceArray, "false");
 			this.answer = "Choice " + answerKey + " is correct. The boolean operator && only returns true if both arguments are true.";
 			break;
-		/*case 2:
+		/* true false question - may add later
+		 * case 2:  
 			choiceDfixed = true;
 			choiceEfixed = true;
 			
