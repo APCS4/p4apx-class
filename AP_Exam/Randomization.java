@@ -45,7 +45,6 @@ public class Randomization {
 		
 		return oper[a];
 	}
-<<<<<<< HEAD
 	/*
 	public static randoArray(n)  
 =======
