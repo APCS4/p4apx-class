@@ -32,7 +32,7 @@ public class Randomization {
 	
 	public static Object randoOp()
 	{
-		Object[] oper;
+		Object[] oper = null;
 		
 		oper[0] = "+";
 		oper[1] = "-";
@@ -45,10 +45,11 @@ public class Randomization {
 		
 		return oper[a];
 	}
-	
+	/*
 	public static randoArray(n)  
 	{
 		ArrayList list = new ArrayList();
 	}
+	*/
 }
 
