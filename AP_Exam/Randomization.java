@@ -1,7 +1,7 @@
 package AP_Exam;
 
-import java.lang.reflect.Array;
 import java.util.Random;
+import java.util.ArrayList;
 
 public class Randomization {
 
@@ -32,7 +32,7 @@ public class Randomization {
 	
 	public static Object randoOp()
 	{
-		Object[] oper;
+		Object[] oper = null;
 		
 		oper[0] = "+";
 		oper[1] = "-";
@@ -46,9 +46,10 @@ public class Randomization {
 		return oper[a];
 	}
 	
-	public static randoArray(n)  
+	public static ArrayList<Integer> randoArray(ArrayList<Integer> n)  
 	{
-		ArrayList list = new ArrayList();
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		return list;
 	}
 }
 
