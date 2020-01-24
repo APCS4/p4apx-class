@@ -536,7 +536,7 @@ public class AP_UIv2_2 extends JFrame implements ActionListener
 			public void actionPerformed(ActionEvent e) 
 			{
 				playsong("review UI/click.mp3");
-				AP_UIv2_2 frame = new AP_UIv2_2();
+				AP_UIv2_2 frame = new AP_UIv2_2(); //penis bruh
 				frame.setVisible(true);
 			}
 		});
