@@ -79,7 +79,7 @@ public class AP_UIv2_2 extends JFrame implements ActionListener
 		
 		JPanel main_panel = new JPanel();
 		main_panel.setOpaque(false);
-		main_panel.setBounds(150, 76, 1280, 720);
+		main_panel.setBounds(150, 76, 1280, 720);//f
 		getContentPane().add(main_panel);
 		main_panel.setLayout(null);
 		
