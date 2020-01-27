@@ -6,12 +6,12 @@ import model_questions.QuestionMC;
 public class TestModeLogic /*extends MenuControl */{
 	
 	
-
-	public int testQs = 24; //THIS CAN CHANGE
+	public int numQTypes = 2; 
+	public int testQs = 8; //THIS CAN CHANGE
 	public int testQsFields = 8;				// number of fields in question, THIS CAN'T CHANGE 
 	public String [][] test = new String[testQs][testQsFields]; //creating a new 2-D String array that will hold in each column: a question type object, and its corresponding 
 
-	int trackQCalls[] = new int [6];//tracks # of times each class was called, starts at 0 (array has 13 spots, ranges from 0-12)
+	int trackQCalls[] = new int [numQTypes];//tracks # of times each class was called, starts at 0 (array has 13 spots, ranges from 0-12)
 	
 
 	
@@ -25,20 +25,20 @@ public class TestModeLogic /*extends MenuControl */{
 	public void makeQuestions()
 	{
 		
-		for(int i = 0; i <6; i++)
+		for(int i = 0; i <numQTypes; i++)
 		{
 			trackQCalls[i]=0; 
 		}
 		
 		Question [] questionList = {
 				//new AP_Exam.FinalMath(),
-				new AP_Exam.FinalCodeAnalysis(), 
+				/*new AP_Exam.FinalCodeAnalysis(), 
 				new AP_Exam.FinalBooleanQuestions(),
-				new AP_Exam.FinalInfoQuestions(),
+				new AP_Exam.FinalInfoQuestions(),*/
 				new AP_Exam.FinalLoopQuestion(), 
 				new AP_Exam.FinalPolymorphQuestions(), 
 				//new AP_Exam.FinalRecursion(), //has error 
-				new AP_Exam.FinalArrayList(), //perfect 
+				//new AP_Exam.FinalArrayList(), //perfect 
 				//new AP_Exam.finalStrings() 
 		};
 
@@ -97,9 +97,26 @@ public String printAll()
 		{
 			for(int y = 0; y< testQsFields-2; y++)
 			
+				if(y == 0)
+				{
+					fullTest += x+1 + " " + getTestElement(x, y) + "\n\n";
+
+				}
 				
-				fullTest += getTestElement(x, y) + "\n\n";
+				else if (y == 1)
+				fullTest += "\ta. " +  getTestElement(x, y) + "\n\n";
 				
+				else if(y ==2 )
+				fullTest += "\tb. " + getTestElement(x, y) + "\n\n";
+			
+				else if(y ==3)
+				fullTest += "\tc. " + getTestElement(x, y) + "\n\n";
+			
+				else if(y ==4)
+				fullTest += "\td. " + getTestElement(x, y) + "\n\n";
+			
+				else
+				fullTest += "\te. " + getTestElement(x, y) + "\n\n";
 		} 
 		
 		return fullTest;
