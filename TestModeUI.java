@@ -16,6 +16,7 @@ import javax.swing.JFrame;
 
 import java.awt.SystemColor;
 import javax.swing.UIManager;
+import javax.swing.ScrollPaneConstants;
 
 public class TestModeUI extends MenuControl {
 	private JTable table;
@@ -25,17 +26,18 @@ public class TestModeUI extends MenuControl {
 	{
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		getContentPane().setBackground(Color.WHITE);
-		setBounds(0, 0, 1440, 825);
+		setBounds(0, 0, 1160, 790);
 		getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("AP EXAM: Test Mode");
 		lblNewLabel.setOpaque(true);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(6, 6, 1428, 16);
+		lblNewLabel.setBounds(6, 6, 1148, 16);
 		getContentPane().add(lblNewLabel);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(6, 34, 878, 747);
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+		scrollPane.setBounds(6, 34, 598, 706);
 		getContentPane().add(scrollPane);
 		
 		JTextArea QDisplay = new JTextArea();
@@ -43,7 +45,7 @@ public class TestModeUI extends MenuControl {
 		QDisplay.setText(obj.printAll());
 			
 		QDisplay.setEditable(false);
-		scrollPane.setRowHeaderView(QDisplay);
+		scrollPane.setViewportView(QDisplay);
 		
 		JLabel questLabel = new JLabel("Questions");
 		questLabel.setOpaque(true);
@@ -58,7 +60,7 @@ public class TestModeUI extends MenuControl {
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setAutoscrolls(true);
-		panel_2.setBounds(896, 57, 263, 724);
+		panel_2.setBounds(616, 57, 263, 683);
 		getContentPane().add(panel_2);
 		
 		JPanel q1 = new JPanel();
@@ -439,8 +441,13 @@ public class TestModeUI extends MenuControl {
 		JRadioButton radioButton_174 = new JRadioButton("E");
 		q18.add(radioButton_174);
 		
+		JPanel panel = new JPanel();
+		panel.setAutoscrolls(true);
+		panel.setBounds(891, 57, 263, 650);
+		getContentPane().add(panel);
+		
 		JPanel q19 = new JPanel();
-		panel_2.add(q19);
+		panel.add(q19);
 		
 		JLabel label_15 = new JLabel("19.");
 		q19.add(label_15);
@@ -459,11 +466,6 @@ public class TestModeUI extends MenuControl {
 		
 		JRadioButton radioButton_74 = new JRadioButton("E");
 		q19.add(radioButton_74);
-		
-		JPanel panel = new JPanel();
-		panel.setAutoscrolls(true);
-		panel.setBounds(1171, 57, 263, 650);
-		getContentPane().add(panel);
 		
 		JPanel q20 = new JPanel();
 		panel.add(q20);
@@ -823,7 +825,7 @@ public class TestModeUI extends MenuControl {
 		q36.add(radioButton_179);
 		
 		JButton btnSubmitAnswers = new JButton("Submit Answers");
-		btnSubmitAnswers.setBounds(1171, 734, 263, 29);
+		btnSubmitAnswers.setBounds(891, 711, 263, 29);
 		getContentPane().add(btnSubmitAnswers);
 		
 		JLabel lblAnswers = new JLabel("Answers");
@@ -831,16 +833,8 @@ public class TestModeUI extends MenuControl {
 		lblAnswers.setBackground(UIManager.getColor("Button.background"));
 		lblAnswers.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAnswers.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
-		lblAnswers.setBounds(896, 34, 538, 19);
+		lblAnswers.setBounds(616, 34, 538, 19);
 		getContentPane().add(lblAnswers);
-		
-		JLabel label_37 = new JLabel(" ");
-		label_37.setOpaque(true);
-		label_37.setHorizontalAlignment(SwingConstants.CENTER);
-		label_37.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
-		label_37.setBackground(SystemColor.window);
-		label_37.setBounds(1171, 715, 263, 60);
-		getContentPane().add(label_37);
 
 
 		
@@ -848,8 +842,6 @@ public class TestModeUI extends MenuControl {
 		
 
 		} 
-		
-		
 	}
 	
 
