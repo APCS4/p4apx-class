@@ -36,12 +36,16 @@ public class AP_UI extends MenuControl
 	/**
 	 * Create the frame.
 	 */
-	public AP_UI() {
+	public AP_UI() 
+	{
+		int section = 0;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 884, 588);
 		contentPane = new JLabel();
+		contentPane.setBounds(0, 0, 884, 544);
 		//contentPane.setBackground(new Color(220, 220, 220));
 		image2 = new ImageIcon(getClass().getResource("review UI/background.png"));
+		getContentPane().setLayout(null);
 		contentPane.setBorder(null);
 		contentPane.setIcon(image2);
 		getContentPane().add(contentPane);
@@ -137,14 +141,16 @@ public class AP_UI extends MenuControl
 		JButton btnArrayListQuestions = new JButton("Array List Questions");
 		btnArrayListQuestions.setBounds(694, 22, 184, 29);
 		contentPane.add(btnArrayListQuestions);
-		btnArrayListQuestions.addActionListener(new ActionListener() {
-		public void actionPerformed(ActionEvent e) {
-			AP_Exam.FinalArrayList q = new AP_Exam.FinalArrayList();
-			testQuestion.setText(q.getQuestion());
-			testChoices.setText(q.getChoices());
-			testQuestionAnswer.setForeground(testQuestionAnswer.getBackground());
-			testQuestionAnswer.setText(q.getAnswer());
-			abcd.clearSelection();
+		btnArrayListQuestions.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				AP_Exam.FinalArrayList q = new AP_Exam.FinalArrayList();
+				testQuestion.setText(q.getQuestion());
+				testChoices.setText(q.getChoices());
+				testQuestionAnswer.setForeground(testQuestionAnswer.getBackground());
+				testQuestionAnswer.setText(q.getAnswer());
+				abcd.clearSelection();
 			} 
 		}); 
 		JButton btnGeneralJavaInfo = new JButton("General Java Info");
@@ -282,6 +288,46 @@ public class AP_UI extends MenuControl
 				}
 			} 
 		});
+		
+		JButton btnNextQuestion = new JButton("Next Question");
+		btnNextQuestion.setBounds(694, 303, 184, 29);
+		contentPane.add(btnNextQuestion);
 
+		btnNextQuestion.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				switch(section)
+				{
+					case 1:
+						
+						break;
+					case 2:
+						
+						break;
+					case 3:
+						
+						break;
+					case 4:
+						
+						break;
+					case 5:
+						
+						break;
+					case 6:
+						
+						break;
+					case 7:
+						
+						break;
+					case 8:
+						
+						break;
+					case 9:
+						
+						break;
+				}
+			} 
+		});
 	}
 }
