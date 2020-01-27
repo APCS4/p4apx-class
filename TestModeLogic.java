@@ -6,8 +6,8 @@ import model_questions.QuestionMC;
 public class TestModeLogic /*extends MenuControl */{
 	
 	int trackQCalls[] = {0,0,0,0,0,0,0,0,0}; //tracks # of times each class was called, starts at 0 (array has 13 spots, ranges from 0-12)
-	public int testQs = 4;
-	public int testQsFields = 24;				// number of fields in question
+	public int testQs = 5;
+	public int testQsFields = 20;				// number of fields in question
 	public String [][] test = new String[testQs][testQsFields]; //creating a new 2-D String array that will hold in each column: a question type object, and its corresponding 
 
 
@@ -20,8 +20,6 @@ public class TestModeLogic /*extends MenuControl */{
 	
 	public void makeQuestions()
 	{
-
-		// array of exam questions
 		Question [] questionList = {
 				/*new AP_Exam.FinalMath(),
 				new AP_Exam.FinalCodeAnalysis(), */
@@ -31,8 +29,11 @@ public class TestModeLogic /*extends MenuControl */{
 				new AP_Exam.FinalPolymorphQuestions(), 
 				//new AP_Exam.FinalRecursion(), //has error 
 				new AP_Exam.FinalArrayList(), //perfect */
-				new AP_Exam.finalStrings() 
+				//new AP_Exam.finalStrings() 
 		};
+
+		// array of exam questions
+		
 		
 		// 2D array management values
 		// 1st dimension of 2D array defining number of questions
