@@ -300,7 +300,7 @@ public class testModeCaller extends MenuControl{
 					 
 				case 3: 
 					calls[3]+=1;
-					QuestionMC d = new AP_Exam.finalInfoQuestions();
+					QuestionMC d = new AP_Exam.FinalInfoQuestions();
 					   TestQ.setText(d.getQuestion());
 					chA.setText(d.getChoiceA());
 					chB.setText(d.getChoiceB());

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
+import Util.ConsoleMethods;
 import model_questions.Question;
 import model_questions.QuestionMC;
 
@@ -20,9 +21,6 @@ public class FinalCodeAnalysis extends QuestionMC {
    
 	public FinalCodeAnalysis()
     {
-    	
-        super.setupQuestion();
-
     }
 	
 	public FinalCodeAnalysis(int qNumber) {
@@ -32,19 +30,6 @@ public class FinalCodeAnalysis extends QuestionMC {
     	questionText(qNumber, arg1, arg2, q);
 	}
 	
-	/**
-	 * Runs the code in console with console io
-	 * 
-	 * @return score
-	 */
-    
-    public static String mainTest ()
-    {
-    	Question q = new FinalCodeAnalysis();
-        q.askQuestionConsole();
-        return q.getCounterMsg();
-    }
-    
     /**
      * sets up question by passing question and answer choices to superclass
      */
@@ -477,5 +462,23 @@ public class FinalCodeAnalysis extends QuestionMC {
 				break;	
 		}
 		return text;
-	}	
+	}
+	
+	/**
+	 * Runs the question in console asking for response
+	 * 
+	 * @return score
+	 */
+    
+    public static String mainTest ()
+    {
+    	Question q = new FinalCodeAnalysis();
+        q.askQuestionConsole();
+        return q.getCounterMsg();
+    }
+    
+	public static void main (String[] args) {
+		Question q = new FinalCodeAnalysis();
+		ConsoleMethods.println( "" + q );
+	}
 }

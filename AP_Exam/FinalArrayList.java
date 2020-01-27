@@ -21,7 +21,6 @@ public class FinalArrayList extends QuestionMC {
 	public static boolean RandomBased = true;
 	
 	public FinalArrayList() {
-		setupQuestion();
 	}
 	
 	public FinalArrayList(boolean Text, boolean Random) {
@@ -635,5 +634,11 @@ public class FinalArrayList extends QuestionMC {
 		}
 		return exam;
 	}
+	
+	public static void main (String[] args) {
+		Question q = new FinalArrayList();
+		ConsoleMethods.println( "" + q );
+	}
+	
 }
 

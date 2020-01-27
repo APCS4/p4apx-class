@@ -147,7 +147,7 @@ public class AP_UI extends MenuControl
 		contentPane.add(btnGeneralJavaInfo);
 		btnGeneralJavaInfo.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
-			AP_Exam.finalInfoQuestions q = new AP_Exam.finalInfoQuestions();
+			AP_Exam.FinalInfoQuestions q = new AP_Exam.FinalInfoQuestions();
 			testQuestion.setText(q.getQuestion());
 			testChoices.setText(q.getChoices());
 			testQuestionAnswer.setForeground(testQuestionAnswer.getBackground());

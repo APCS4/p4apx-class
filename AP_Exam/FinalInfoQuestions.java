@@ -1,15 +1,15 @@
 package AP_Exam;
 import java.util.Random;
 
+import Util.ConsoleMethods;
 import model_questions.Question;
 import model_questions.QuestionMC;
 
 
 
-
-public class finalInfoQuestions extends QuestionMC
+public class FinalInfoQuestions extends QuestionMC
 {	
- public finalInfoQuestions() 
+ public FinalInfoQuestions() 
  {
 	setupQuestionData();
 	setupQuestion();
@@ -299,7 +299,7 @@ public class finalInfoQuestions extends QuestionMC
   
   }
  
- public finalInfoQuestions(int qNumber) 
+ public FinalInfoQuestions(int qNumber) 
  {
 	setupQuestionData();
 	setupQuestion();
@@ -627,5 +627,10 @@ public class finalInfoQuestions extends QuestionMC
 					
 				}
 				return choices;	
+			}
+		 
+			public static void main (String[] args) {
+				Question q = new FinalInfoQuestions();
+				ConsoleMethods.println( "" + q );
 			}
 }

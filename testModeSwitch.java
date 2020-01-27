@@ -72,7 +72,7 @@ public class testModeSwitch extends testModeCaller
 						q = new AP_Exam.FinalCodeAnalysis();
 						break; 						 
 					case 3: 
-						q = new AP_Exam.finalInfoQuestions();
+						q = new AP_Exam.FinalInfoQuestions();
 						break;
 					case 4: 
 						q = new AP_Exam.FinalLoopQuestion();					
