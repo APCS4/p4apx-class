@@ -36,12 +36,16 @@ public class AP_UI extends MenuControl
 	/**
 	 * Create the frame.
 	 */
-	public AP_UI() {
+	public AP_UI() 
+	{
+		int section = 0;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 884, 588);
 		contentPane = new JLabel();
+		contentPane.setBounds(0, 0, 884, 544);
 		//contentPane.setBackground(new Color(220, 220, 220));
 		image2 = new ImageIcon(getClass().getResource("review UI/background.png"));
+		getContentPane().setLayout(null);
 		contentPane.setBorder(null);
 		contentPane.setIcon(image2);
 		getContentPane().add(contentPane);
@@ -50,10 +54,12 @@ public class AP_UI extends MenuControl
 		contentPane.setLayout(null);
 
 		JLabel lblExamSections = new JLabel("Review Sections");
+		lblExamSections.setForeground(Color.WHITE);
 		lblExamSections.setBounds(737, 6, 104, 16);
 		contentPane.add(lblExamSections);
 		
 		JLabel lblAnswer = new JLabel("Answer");
+		lblAnswer.setForeground(Color.WHITE);
 		lblAnswer.setBounds(6, 419, 61, 16);
 		contentPane.add(lblAnswer);
 		
@@ -85,10 +91,12 @@ public class AP_UI extends MenuControl
 		testChoices.setLineWrap(false); 
 		
 		JLabel lblQuestion = new JLabel("Question");
+		lblQuestion.setForeground(Color.WHITE);
 		lblQuestion.setBounds(6, 6, 91, 16);
 		contentPane.add(lblQuestion);
 		
 		JLabel lblChoices = new JLabel("Choices"); 
+		lblChoices.setForeground(Color.WHITE);
 		lblChoices.setBounds(6, 261, 61, 16);
 		contentPane.add(lblChoices);
 		
@@ -126,20 +134,23 @@ public class AP_UI extends MenuControl
 		
 
 		JLabel lblAnswerChoices = new JLabel("Answer Choices");
+		lblAnswerChoices.setForeground(Color.WHITE);
 		lblAnswerChoices.setBounds(737, 261, 130, 16);
 		contentPane.add(lblAnswerChoices);
 		
 		JButton btnArrayListQuestions = new JButton("Array List Questions");
 		btnArrayListQuestions.setBounds(694, 22, 184, 29);
 		contentPane.add(btnArrayListQuestions);
-		btnArrayListQuestions.addActionListener(new ActionListener() {
-		public void actionPerformed(ActionEvent e) {
-			AP_Exam.FinalArrayList q = new AP_Exam.FinalArrayList();
-			testQuestion.setText(q.getQuestion());
-			testChoices.setText(q.getChoices());
-			testQuestionAnswer.setForeground(testQuestionAnswer.getBackground());
-			testQuestionAnswer.setText(q.getAnswer());
-			abcd.clearSelection();
+		btnArrayListQuestions.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				AP_Exam.FinalArrayList q = new AP_Exam.FinalArrayList();
+				testQuestion.setText(q.getQuestion());
+				testChoices.setText(q.getChoices());
+				testQuestionAnswer.setForeground(testQuestionAnswer.getBackground());
+				testQuestionAnswer.setText(q.getAnswer());
+				abcd.clearSelection();
 			} 
 		}); 
 		JButton btnGeneralJavaInfo = new JButton("General Java Info");
@@ -277,6 +288,46 @@ public class AP_UI extends MenuControl
 				}
 			} 
 		});
+		
+		JButton btnNextQuestion = new JButton("Next Question");
+		btnNextQuestion.setBounds(694, 303, 184, 29);
+		contentPane.add(btnNextQuestion);
 
+		btnNextQuestion.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				switch(section)
+				{
+					case 1:
+						
+						break;
+					case 2:
+						
+						break;
+					case 3:
+						
+						break;
+					case 4:
+						
+						break;
+					case 5:
+						
+						break;
+					case 6:
+						
+						break;
+					case 7:
+						
+						break;
+					case 8:
+						
+						break;
+					case 9:
+						
+						break;
+				}
+			} 
+		});
 	}
 }
