@@ -50,10 +50,12 @@ public class AP_UI extends MenuControl
 		contentPane.setLayout(null);
 
 		JLabel lblExamSections = new JLabel("Review Sections");
+		lblExamSections.setForeground(Color.WHITE);
 		lblExamSections.setBounds(737, 6, 104, 16);
 		contentPane.add(lblExamSections);
 		
 		JLabel lblAnswer = new JLabel("Answer");
+		lblAnswer.setForeground(Color.WHITE);
 		lblAnswer.setBounds(6, 419, 61, 16);
 		contentPane.add(lblAnswer);
 		
@@ -85,10 +87,12 @@ public class AP_UI extends MenuControl
 		testChoices.setLineWrap(false); 
 		
 		JLabel lblQuestion = new JLabel("Question");
+		lblQuestion.setForeground(Color.WHITE);
 		lblQuestion.setBounds(6, 6, 91, 16);
 		contentPane.add(lblQuestion);
 		
 		JLabel lblChoices = new JLabel("Choices"); 
+		lblChoices.setForeground(Color.WHITE);
 		lblChoices.setBounds(6, 261, 61, 16);
 		contentPane.add(lblChoices);
 		
@@ -126,6 +130,7 @@ public class AP_UI extends MenuControl
 		
 
 		JLabel lblAnswerChoices = new JLabel("Answer Choices");
+		lblAnswerChoices.setForeground(Color.WHITE);
 		lblAnswerChoices.setBounds(737, 261, 130, 16);
 		contentPane.add(lblAnswerChoices);
 		
