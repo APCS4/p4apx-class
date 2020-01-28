@@ -32,13 +32,14 @@ public class AP_UI extends MenuControl
     private JTextArea testQuestion = new JTextArea();
     private JTextArea testChoices = new JTextArea();
     private JTextArea testQuestionAnswer = new JTextArea();
+    private int section = 0;
 	
 	/**
 	 * Create the frame.
 	 */
 	public AP_UI() 
 	{
-		int section = 0;
+		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 884, 588);
 		contentPane = new JLabel();
@@ -46,6 +47,8 @@ public class AP_UI extends MenuControl
 		//contentPane.setBackground(new Color(220, 220, 220));
 		image2 = new ImageIcon(getClass().getResource("review UI/background.png"));
 		getContentPane().setLayout(null);
+		
+
 		contentPane.setBorder(null);
 		contentPane.setIcon(image2);
 		getContentPane().add(contentPane);
@@ -145,6 +148,7 @@ public class AP_UI extends MenuControl
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
+				section = 1;
 				AP_Exam.FinalArrayList q = new AP_Exam.FinalArrayList();
 				testQuestion.setText(q.getQuestion());
 				testChoices.setText(q.getChoices());
@@ -158,6 +162,7 @@ public class AP_UI extends MenuControl
 		contentPane.add(btnGeneralJavaInfo);
 		btnGeneralJavaInfo.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
+			section = 2;
 			AP_Exam.FinalInfoQuestions q = new AP_Exam.FinalInfoQuestions();
 			testQuestion.setText(q.getQuestion());
 			testChoices.setText(q.getChoices());
@@ -172,6 +177,7 @@ public class AP_UI extends MenuControl
 		contentPane.add(btnBooleanMathQuestions);
 		btnBooleanMathQuestions.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
+			section = 3;
 			AP_Exam.FinalBooleanQuestions q = new AP_Exam.FinalBooleanQuestions();
 			testQuestion.setText(q.getQuestion());
 			testChoices.setText(q.getChoices());
@@ -186,6 +192,7 @@ public class AP_UI extends MenuControl
 		contentPane.add(btnCodeAnalysisQuestions);
 		btnCodeAnalysisQuestions.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				section = 4;
 				AP_Exam.FinalCodeAnalysis q = new AP_Exam.FinalCodeAnalysis();
 				testQuestion.setText(q.getQuestion());
 				testChoices.setText(q.getChoices());
@@ -201,6 +208,7 @@ public class AP_UI extends MenuControl
 		contentPane.add(btnLoopQuestions);
 		btnLoopQuestions.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
+			section = 5;
 			AP_Exam.FinalLoopQuestion q = new AP_Exam.FinalLoopQuestion();
 			testQuestion.setText(q.getQuestion());
 			testChoices.setText(q.getChoices());
@@ -215,6 +223,7 @@ public class AP_UI extends MenuControl
 		contentPane.add(btnMathQuestions);
 		btnMathQuestions.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
+			section = 6;
 			AP_Exam.FinalMath q = new AP_Exam.FinalMath();
 			testQuestion.setText(q.getQuestion());
 			testChoices.setText(q.getChoices());
@@ -229,6 +238,7 @@ public class AP_UI extends MenuControl
 		contentPane.add(btnPolymorphismQuestions);
 		btnPolymorphismQuestions.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
+			section = 7;
 			AP_Exam.FinalPolymorphQuestions q = new AP_Exam.FinalPolymorphQuestions();
 			testQuestion.setText(q.getQuestion());
 			testChoices.setText(q.getChoices());
@@ -243,6 +253,7 @@ public class AP_UI extends MenuControl
 		contentPane.add(btnRecursiveCodeAnalysis);
 		btnRecursiveCodeAnalysis.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
+			section = 8;
 			AP_Exam.FinalRecursion q = new AP_Exam.FinalRecursion();
 			testQuestion.setText(q.getQuestion());
 			testChoices.setText(q.getChoices());
@@ -257,6 +268,7 @@ public class AP_UI extends MenuControl
 		contentPane.add(btnStringQuestions);
 		btnStringQuestions.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				section = 9;
 				AP_Exam.finalStrings q = new AP_Exam.finalStrings();
 				testQuestion.setText(q.getQuestion());
 				testChoices.setText(q.getChoices());
@@ -267,32 +279,33 @@ public class AP_UI extends MenuControl
 			});
 		
 		JButton btnSubmitAnswer = new JButton("Submit Answer");
-		btnSubmitAnswer.setBounds(694, 303, 184, 29);
+		//getContentPane().add(btnSubmitAnswer);
 		contentPane.add(btnSubmitAnswer);
-
-		btnSubmitAnswer.addActionListener(new ActionListener() 
-		{
-			public void actionPerformed(ActionEvent e) 
-			{
-				boolean chA, chB, chC, chD, chE; 
-				chA = rdbtnA.isSelected();
-				chB = rdbtnB.isSelected();
-				chC = rdbtnC.isSelected();
-				chD = rdbtnD.isSelected();
-				chE = rdbtnE.isSelected();
-				
-				if(chA || chB || chC || chD || chE)
+		btnSubmitAnswer.setBounds(694, 303, 184, 29);
+		
+				btnSubmitAnswer.addActionListener(new ActionListener() 
 				{
-					testQuestionAnswer.setForeground(new Color(0, 0, 0));
-					//abcd.clearSelection();
-				}
-			} 
-		});
+					public void actionPerformed(ActionEvent e) 
+					{
+						boolean chA, chB, chC, chD, chE; 
+						chA = rdbtnA.isSelected();
+						chB = rdbtnB.isSelected();
+						chC = rdbtnC.isSelected();
+						chD = rdbtnD.isSelected();
+						chE = rdbtnE.isSelected();
+						
+						if(chA || chB || chC || chD || chE)
+						{
+							testQuestionAnswer.setForeground(new Color(0, 0, 0));
+							//abcd.clearSelection();
+						}
+					} 
+				});
 		
 		JButton btnNextQuestion = new JButton("Next Question");
-		btnNextQuestion.setBounds(694, 303, 184, 29);
+		//getContentPane().add(btnNextQuestion);
+		btnNextQuestion.setBounds(694, 509, 184, 29);
 		contentPane.add(btnNextQuestion);
-
 		btnNextQuestion.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
@@ -300,31 +313,31 @@ public class AP_UI extends MenuControl
 				switch(section)
 				{
 					case 1:
-						
+						btnArrayListQuestions.doClick();
 						break;
 					case 2:
-						
+						btnGeneralJavaInfo.doClick();
 						break;
 					case 3:
-						
+						btnBooleanMathQuestions.doClick();
 						break;
 					case 4:
-						
+						btnCodeAnalysisQuestions.doClick();
 						break;
 					case 5:
-						
+						btnLoopQuestions.doClick();
 						break;
 					case 6:
-						
+						btnMathQuestions.doClick();
 						break;
 					case 7:
-						
+						btnPolymorphismQuestions.doClick();
 						break;
 					case 8:
-						
+						btnRecursiveCodeAnalysis.doClick();
 						break;
 					case 9:
-						
+						btnStringQuestions.doClick();
 						break;
 				}
 			} 
