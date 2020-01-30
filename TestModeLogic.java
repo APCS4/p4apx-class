@@ -19,6 +19,8 @@ public class TestModeLogic /*extends MenuControl */{
 	{
 		
 		makeQuestions();
+		
+		
 	}
 	
 	
@@ -30,17 +32,7 @@ public class TestModeLogic /*extends MenuControl */{
 			trackQCalls[i]=0; 
 		}
 		
-		Question [] questionList = {
-				//new AP_Exam.FinalMath(),
-				/*new AP_Exam.FinalCodeAnalysis(), 
-				new AP_Exam.FinalBooleanQuestions(),
-				new AP_Exam.FinalInfoQuestions(),*/
-				new AP_Exam.FinalLoopQuestion(), 
-				new AP_Exam.FinalPolymorphQuestions(), 
-				//new AP_Exam.FinalRecursion(), //has error 
-				//new AP_Exam.FinalArrayList(), //perfect 
-				//new AP_Exam.finalStrings() 
-		};
+		
 
 		// array of exam questions
 		
@@ -54,11 +46,27 @@ public class TestModeLogic /*extends MenuControl */{
 				ANSKEY=7; 				// correct choice
 											  //actual question text, answer options A-E, and the answer text, see below:
 		
-		// this variable instantiation declares that question will always be in the 0 position of the column, choice A will be in the 1 position, etc.	
-		int randNum; //defining variable, random integer
-		int randMax = questionList.length;
+	
 		for (int testQsIndex = 0; testQsIndex < testQs; testQsIndex++) //for each increasing index of the test array
 		{
+			
+			Question [] questionList = {
+					//new AP_Exam.FinalMath(),
+					//new AP_Exam.FinalCodeAnalysis(), 
+					//new AP_Exam.FinalBooleanQuestions(),
+					//new AP_Exam.FinalInfoQuestions(),
+					//new AP_Exam.FinalLoopQuestion(), 
+					new AP_Exam.FinalPolymorphQuestions(), 
+					//new AP_Exam.FinalRecursion(), //has error 
+					new AP_Exam.FinalArrayList(), //perfect 
+					//new AP_Exam.finalStrings() 
+			};
+			
+			// this variable instantiation declares that question will always be in the 0 position of the column, choice A will be in the 1 position, etc.	
+
+			int randNum; //defining variable, random integer
+			int randMax = questionList.length;
+			
 			randNum= getRandNum(randMax); //assignments of Strings to each object of the array
 			Question q = questionList[randNum];		// simplify object reference for assignment
 			QuestionMC mcq = (QuestionMC)q;			// same object cast to MC to access -- Choices	
