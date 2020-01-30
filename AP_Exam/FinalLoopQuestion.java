@@ -237,7 +237,7 @@ public class FinalLoopQuestion extends QuestionMC
 					+ "for (int i = 0; i <= 10; i = i + 1)\n" +
 					"	{\n" +
 					"	System.out.print(i)\n" +
-					"	};\"";
+					"	}";
 			choices = loadQuestArray("0123456789", "012345678910",
 					"123456789", "12345678910", "Error in code");
 			this.choiceA = choices[0];

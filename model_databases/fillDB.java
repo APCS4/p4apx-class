@@ -51,4 +51,12 @@ public class fillDB {
 			db.addQuestion(q.getQuestion(), q.getChoiceA(), q.getChoiceB(), q.getChoiceC(), q.getChoiceD(), q.getChoiceE(), q.getAnswer());
 		}
 	}
+	
+	public static void addMath() throws ClassNotFoundException, SQLException {
+		QuestionMC q;
+		for(int a = 0; a < 4; a++) {
+			q = new FinalMath(a);
+			db.addQuestion(q.getQuestion(), q.getChoiceA(), q.getChoiceB(), q.getChoiceC(), q.getChoiceD(), q.getChoiceE(), q.getAnswer());
+		}
+	}
 }
