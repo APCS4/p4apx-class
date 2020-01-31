@@ -299,6 +299,11 @@ public class FinalInfoQuestions extends QuestionMC
   
   }
  
+ public static void main (String[] args) {
+		Question q = new FinalInfoQuestions();
+		ConsoleMethods.println( "" + q );
+	}
+ 
  public FinalInfoQuestions(int qNumber) 
  {
 	setupQuestionData();
@@ -629,8 +634,5 @@ public class FinalInfoQuestions extends QuestionMC
 				return choices;	
 			}
 		 
-			public static void main (String[] args) {
-				Question q = new FinalInfoQuestions();
-				ConsoleMethods.println( "" + q );
-			}
+			
 }

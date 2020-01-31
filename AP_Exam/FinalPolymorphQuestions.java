@@ -176,4 +176,9 @@ public class FinalPolymorphQuestions extends QuestionMC {
 			break;
 		}
 	}
+	
+	public static void main (String[] args) {
+		Question q = new FinalPolymorphQuestions();
+		ConsoleMethods.println( "" + q );
+	}
 }

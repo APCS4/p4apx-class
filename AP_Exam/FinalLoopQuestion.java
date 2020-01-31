@@ -28,7 +28,8 @@ public class FinalLoopQuestion extends QuestionMC
 			}
 			return choices;	
 		}
-	public FinalLoopQuestion()
+	 
+	 public FinalLoopQuestion()
 	{
 		setupQuestionData();
 		setupQuestion();
@@ -283,5 +284,10 @@ public class FinalLoopQuestion extends QuestionMC
 			answerKey = this.charC;
 			break;
 		}
+	}
+	
+	public static void main (String[] args) {
+		Question q = new FinalLoopQuestion();
+		ConsoleMethods.println( "" + q );
 	}
 }

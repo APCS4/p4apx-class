@@ -281,7 +281,7 @@ public class AP_UI extends MenuControl
 				public void actionPerformed(ActionEvent e) 
 				{
 					section = 9;
-					AP_Exam.finalStrings q = new AP_Exam.finalStrings();
+					AP_Exam.FinalStrings q = new AP_Exam.FinalStrings();
 					testQuestion.setText(q.getQuestion());
 					testChoices.setText(q.getChoices());
 					testQuestionAnswer.setForeground(testQuestionAnswer.getBackground());

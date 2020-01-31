@@ -37,6 +37,13 @@ public class FinalRecursion extends QuestionMC
 		super.setupQuestion();
 	}
 	
+	// broken?
+	/*public static void main (String[] args) {
+		Question q = new FinalRecursion();
+		ConsoleMethods.println( "" + q );
+	}
+	*/
+	
 	@Override
 	public void setupQuestionData() //question method
 	{

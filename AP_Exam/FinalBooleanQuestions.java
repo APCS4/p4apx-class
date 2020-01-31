@@ -36,6 +36,11 @@ public class FinalBooleanQuestions extends model_questions.QuestionMC
 	 * 
 	 */
 	
+	public static void main (String[] args) {
+		Question q = new FinalBooleanQuestions();
+		ConsoleMethods.println( "" + q );
+	}
+	
 	//@Override
 	protected void setupQuestionData()
 	{

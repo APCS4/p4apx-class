@@ -33,6 +33,11 @@ public class FinalArrayList extends QuestionMC {
 		choiceArray.clear();
 		setupQuestionData(qNumber);
 	}
+	
+	public static void main (String[] args) {
+		Question q = new FinalArrayList();
+		ConsoleMethods.println( "" + q );
+	}
 
 	@Override
 	protected void setupQuestionData() {
@@ -635,10 +640,7 @@ public class FinalArrayList extends QuestionMC {
 		return exam;
 	}
 	
-	public static void main (String[] args) {
-		Question q = new FinalArrayList();
-		ConsoleMethods.println( "" + q );
-	}
+
 	
 }
 

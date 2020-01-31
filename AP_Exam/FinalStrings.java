@@ -1,5 +1,6 @@
 package AP_Exam;
 import AP_Exam.Randomization;
+import Util.ConsoleMethods;
 
 import java.util.Random;
 
@@ -15,11 +16,11 @@ import model_questions.QuestionMC;
  */
 
 
-public class finalStrings extends QuestionMC {
+public class FinalStrings extends QuestionMC {
 	
 	private Integer arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10;
 	
-	public finalStrings()
+	public FinalStrings()
     {
 
 		Random rand = new Random();
@@ -87,6 +88,10 @@ public class finalStrings extends QuestionMC {
  
     }
 
+	public static void main (String[] args) {
+		Question q = new FinalStrings();
+		ConsoleMethods.println( "" + q );
+	}
 	
 	protected void setupQuestionData() {
 		
