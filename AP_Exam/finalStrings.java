@@ -21,10 +21,7 @@ public class finalStrings extends QuestionMC {
 	
 	public finalStrings()
     {
-
-		Random rand = new Random();
-		
-		 //answer set	
+		 //answer set
 		arg1 = rand.nextInt(20);
 		arg2 = rand.nextInt(20);
 		if (arg1 > arg2)
@@ -90,7 +87,6 @@ public class finalStrings extends QuestionMC {
 	
 	protected void setupQuestionData() {
 		
-		Random rand = new Random();
 		int random = rand.nextInt(4);
 		
 		

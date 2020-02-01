@@ -73,8 +73,7 @@ public abstract class Question
       * @param  void
       */
     protected abstract void setupQuestionData();
-        
-	
+    
 	/**
      * Question getter
      *

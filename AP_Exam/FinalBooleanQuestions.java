@@ -21,14 +21,13 @@ public class FinalBooleanQuestions extends model_questions.QuestionMC
 	private String[] boolOp1 = {"^", "||", "&&", "==", "!="};
 	private String[] boolOp2 = {"!", ""};
 	
-	public FinalBooleanQuestions()
-	{
-		setupQuestion(); //calls setupQuestion method in Question class
+	public FinalBooleanQuestions() {
+		setupQuestion(qNumber);
 	}
 	
 	public FinalBooleanQuestions(int qNumber) {
 		choiceArray.clear();
-		setupQuestionData(qNumber);
+		setupQuestion(qNumber);
 	}
 	
 	/**
@@ -37,84 +36,15 @@ public class FinalBooleanQuestions extends model_questions.QuestionMC
 	 */
 	
 	//@Override
-	protected void setupQuestionData()
-	{
-		ConsoleMethods.println("BooleanQuestions class setupQuestionData method");
-		
-		int random = rand.nextInt(4);
-		
-		switch(random)
-		{
-		case 0:
-			choiceDfixed = false;
-			choiceEfixed = true;
-			
-			choiceArray.addAll(Arrays.asList("^", "||", "!=", "%", "")); //add answer choiceArray to choiceArray
-			randomizeChoiceArray(choiceArray);
-			loadChoices();
-			
-			this.question = "Which of the following is NOT a boolean operator?\n"
-						  + "^, ||, !=, %";
-			this.answerKey = getAns(choiceArray, "%");
-			this.answer = "Choice " + answerKey + " is correct. % is not a boolean operator";
-			break;
-		case 1:
-			choiceDfixed = true;
-			choiceEfixed = true;
-			
-			choiceArray.addAll(Arrays.asList("true", "false", "The code will not run", "", ""));
-			
-			this.question = "What is the output of the following code?\n"
-						  + "if(3 < 5)\n"
-						  + "{\n"
-						  + "    System.out.println( false && false );\n"
-						  + "}";
-			loadChoices();
-			this.answerKey = getAns(choiceArray, "false");
-			this.answer = "Choice " + answerKey + " is correct. The boolean operator && only returns true if both arguments are true.";
-			break;
-		/* true false question - may add later
-		 * case 2:  
-			choiceDfixed = true;
-			choiceEfixed = true;
-			
-			RandomBased1();
-			
-			this.question = choiceArray.get(0);
-			this.choiceA = choiceArray.get(1);
-			this.choiceB = choiceArray.get(2);
-			this.choiceC = "";
-			this.choiceD = "";
-			this.choiceE = "";
-			this.answerKey = choiceArray.get(3).charAt(0);
-			this.answer = "Choice " + answerKey + " is correct. " + choiceArray.get(4);
-			break;*/
-		case 2:
-			setupQuestionData1(0);
-			break;
-		case 3:
-			setupQuestionData1(1);
-			break;
-		case 4:
-			setupQuestionData1(2);
-			break;
-		case 5: 
-			setupQuestionData1(3);
-			break;
-		case 6:
-			setupQuestionData1(4);
-			break;
-		case 7:
-			setupQuestionData1(5);
-			break;
-		default:
-			ConsoleMethods.println("ERROR in FinalBooleanQuestions setupQuestionData method");
-		}
-	}
+	
 	
 	protected void setupQuestionData(int qNumber)
 	{
 		ConsoleMethods.println("BooleanQuestions class setupQuestionData method");
+		
+		if(qNumber == -1) {
+			qNumber = rand.nextInt(8);
+		}
 		
 		switch(qNumber)
 		{
@@ -289,6 +219,8 @@ public class FinalBooleanQuestions extends model_questions.QuestionMC
 	}
 
 	protected void setupQuestionData1(int caseNum) {
+		choiceEfixed = true;
+		
 		ConsoleMethods.println("Operator Question setup Question Data Method");
 		AnswerChoiceIndex indexClass = new AnswerChoiceIndex();
 		Random rand = new Random();

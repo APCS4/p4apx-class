@@ -17,8 +17,7 @@ import model_questions.QuestionMC;
  * @version Modeling P4
  */
 
-public class FinalMath extends QuestionMC {
-	
+public class FinalMath extends QuestionMC {	
 	private char[] operators = {'&', '|', '+', '-'};
 	private char[] operators1 = {'1', '2'};
 	private String[] datatype = {"float", "double"};
@@ -30,12 +29,13 @@ public class FinalMath extends QuestionMC {
      * Constructor for objects of class BinaryMathQuestions
      * 
      * @param  void
-     */
-    public FinalMath()
-    {   	  	
-    	setupQuestionData();
-    	
-    	super.setupQuestion();
+     */   
+	public FinalMath() {
+		setupQuestion(qNumber);
+	}
+	
+    public FinalMath(int qNumber) {
+    	setupQuestion(qNumber);
     }
     
     /**
@@ -94,8 +94,7 @@ public class FinalMath extends QuestionMC {
      *
      * @return    void
      */
-    //@Override
-    
+       
     private String zeroPadInt2BinaryString(int arg, int binaryLength)
     {
         return Integer.toBinaryString( (1 << binaryLength) | arg ).substring(1);
@@ -119,20 +118,28 @@ public class FinalMath extends QuestionMC {
 			System.out.println("f1 and f2 are not equal");	
 	}
 	
-    protected void setupQuestionData()
-    {
-    	Random rand = new Random();
-		int random = rand.nextInt(3);
-		
-		switch(random) {
+	
+    //@Override
+    protected void setupQuestionData(int qNumber)
+    {   
+    	char[] operators = {'&', '|', '+', '-'};
+    	char[] operators1 = {'1', '2'};
+    	String[] datatype = {"float", "double"};
+    	String[] operation = {"/", "*"};
+    	int[] multiplier = {10, 100, 1000};
+    	
+		if(qNumber == -1) {
+			qNumber = rand.nextInt(4);
+		}    	
+    	
+    	switch(qNumber) {
 		
 		//BinaryMathQuestions
 		case 0:
 			// Logic to setup data for Binary Math questions
-	    	Random rand1 = new Random();
-	    	Integer arg1 = rand1.nextInt(16)+1;
-	    	Integer arg2 = rand1.nextInt(8)+1;
-	    	Integer opIndex = rand1.nextInt(operators.length);
+	    	Integer arg1 = rand.nextInt(16)+1;
+	    	Integer arg2 = rand.nextInt(8)+1;
+	    	Integer opIndex = rand.nextInt(operators.length);
 	    	char operator = operators[opIndex];
 	    	
 	        // maximum binary number for testing is 15, we need to be reasonable
@@ -402,7 +409,8 @@ public class FinalMath extends QuestionMC {
 	        	this.answer = String.format("sqrt(" + root + ") = " + answerCalc1);
 	        }
 	        break;
-    
+	      default:
+	    	  ConsoleMethods.println("Error in FinalMath setupQuestionData");
 	}
 		
 }

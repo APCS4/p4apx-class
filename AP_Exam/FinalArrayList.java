@@ -21,232 +21,21 @@ public class FinalArrayList extends QuestionMC {
 	public static boolean RandomBased = true;
 	
 	public FinalArrayList() {
-		setupQuestion();
-	}
-	
-	public FinalArrayList(boolean Text, boolean Random) {
-		TextBased = Text;
-		RandomBased = Random;
-		//createTest();
+		setupQuestion(qNumber);
 	}
 	
 	public FinalArrayList(int qNumber) {
 		choiceArray.clear();
-		setupQuestionData(qNumber);
-	}
-
-	@Override
-	protected void setupQuestionData() {
-        ConsoleMethods.println("ArrayList class setupQuestionData method");
-		
-		
-        int limit = RandomBased ? TextBased ? rand.nextInt(15): rand.nextInt(5) + 10: TextBased ? rand.nextInt(11): -1;
-		// format question
-		switch (limit) {
-		case 0:
-			choiceEfixed = true;
-			
-			choiceArray.addAll(Arrays.asList("nums.length", "nums.length - 1", "nums.size()", "nums.size() - 1", "None of the above"));
-			randomizeChoiceArray(choiceArray);
-			loadChoices();
-			
-			this.question = "Which index is the last element in a list called nums at?";
-			
-			answerKey = getAns(choiceArray, "nums.size() - 1");
-			answer = choiceArray.get(answerKey - 65);
-			
-			break;
-		case 1:
-			choiceEfixed = true; choiceDfixed = true;
-			
-			choiceArray.addAll(Arrays.asList("An array has faster access to its elements than a list does.", "An array knows its length, but a list doesn't know its length.",
-											 "An ArrayList can allocate more space than it needs.", "All of the above", "None of the above"));
-			randomizeChoiceArray(choiceArray);
-			loadChoices();
-			
-			this.question = "Which of the following is a reason to use an array instead of an ArrayList?";
-
-			answerKey = getAns(choiceArray, "An ArrayList can allocate more space than it needs.");
-			answer = choiceArray.get(answerKey - 65);
-			
-			break;
-		case 2:
-			choiceEfixed = true; choiceDfixed = true;
-			
-			choiceArray.addAll(Arrays.asList("An ArrayList can grow or shrink as needed, while an array is always the same size.", "You can use a for-each loop on an ArrayList, but not in an array.",
-											 "You can store objects in an ArrayList, but not in an array.", "All of the above", "None of the above"));
-			randomizeChoiceArray(choiceArray);
-			loadChoices();
-			
-			this.question = "Which of the following is a reason to use an ArrayList instead of an array";
-
-			answerKey = getAns(choiceArray, "An ArrayList can grow or shrink as needed, while an array is always the same size.");
-			answer = choiceArray.get(answerKey - 65);
-			
-			break;
-		case 3:
-			choiceEfixed = false; choiceDfixed = false;
-			
-			choiceArray.addAll(Arrays.asList("nums[0]", "nums[1]", "nums.first()", "nums.get(0)", "nums.get(1)"));
-			randomizeChoiceArray(choiceArray);
-			loadChoices();
-			
-			this.question = "Which of the following is the correct way to get the first value in a list called nums?";
-
-			answerKey = getAns(choiceArray, "nums.get(0)");
-			answer = choiceArray.get(answerKey - 65);
-			
-			break;
-		case 4:
-			choiceEfixed = false; choiceDfixed = false;
-			choiceArray.addAll(Arrays.asList("nums[1] = 5;", "nums[2] = 5;", "nums.set(5,1);", "nums.set(1,5);", "nums.set(2,5);"));
-			randomizeChoiceArray(choiceArray);
-			loadChoices();
-			
-			this.question = "Which of the following is the correct way to set the second value in a list called nums to 5?";
-
-			answerKey = getAns(choiceArray, "nums.set(1,5);");
-			answer = choiceArray.get(answerKey -  65);
-			
-			break;
-		case 5:
-			choiceEfixed = false; choiceDfixed = false;
-			choiceArray.addAll(Arrays.asList("[P, Q, R, s, T]", "[P, Q, s, T, u]", "[P, Q, T, s, u]", "[P, T, Q, s, u]", "[P, T, s, R, u]"));
-			randomizeChoiceArray(choiceArray);
-			loadChoices();
-			
-			this.question = "Consider the following code segment.\n"
-					+ "ArrayList<String> list 5 new ArrayList<String>();\n"
-					+ "list.add(\"P\");\n"
-					+ "list.add(\"Q\");\n"
-					+ "list.add(\"R\");\n"
-					+ "list.set(2, \"s\");\n"
-					+ "list.add(2, \"T\");\n"
-					+ "list.add(\"u\");\n"
-					+ "System.out.println(list);\n"
-					+ "What is printed as a result of executing the code segment?";
-
-			answerKey = getAns(choiceArray, "[P, Q, T, s, u]");
-			answer = choiceArray.get(answerKey -  65);
-			
-			break;
-		case 6:
-			choiceEfixed = true; choiceDfixed = false;
-			choiceArray.addAll(Arrays.asList("[1,2,3,4,5]", "[1,2,4,5,6]", "[1,2,5,4,6]", "[1,5,2,4,6]", "None of the above"));
-			randomizeChoiceArray(choiceArray);
-			loadChoices();
-			
-			this.question = "List<Integer> list1 = new ArrayList<Integer>();\n" + 
-							"list1.add(new Integer(1));\n"+ 
-							"list1.add(new Integer(2));\n" + 
-							"list1.add(new Integer(3));\n"+ 
-							"list1.set(2, new Integer(4));\n" + 
-							"list1.add(2, new Integer(5));\n"+ 
-							"list1.add(new Integer(6));\n" + 
-							"System.out.println(list1);";
-
-			answerKey = getAns(choiceArray, "[1,2,5,4,6]");
-			answer = choiceArray.get(answerKey -  65);
-			
-			break;
-		case 7:
-			choiceEfixed = false; choiceDfixed = false;
-			
-			choiceArray.addAll(Arrays.asList("[1,2,5,4,6,3]", "[6,5,4,3,2,1]", "[1,2,3,4,5,6]", "[1,4,2,6,3]", "[1,2,4,6,3]"));
-			randomizeChoiceArray(choiceArray);
-			loadChoices();
-			
-			this.question = "List<Integer> aList = new ArrayList<Integer>();\n" + 
-							"aList.add(new Integer(1));\n"+ 
-							"aList.add(new Integer(2));\n" + 
-							"aList.add(1, new Integer(5));\n"+ 
-							"aList.set(1, new Integer(4));\n" + 
-							"aList.add(new Integer(6));\n"+ 
-							"aList.add(new Integer(3));\n" + 
-							"System.out.println(list);";
-			answerKey = getAns(choiceArray, "[1,4,2,6,3]");
-			answer = choiceArray.get(answerKey - 65);
-			
-			break;
-		case 8:
-			choiceEfixed = true; choiceDfixed = false;
-			
-			choiceArray.addAll(Arrays.asList("[pig, chicken, unicorn, dog]", "[dog, unicorn]", "[dog, unicorn, chicken]", "[dog, chicken, unicorn]", "None of the above"));
-			randomizeChoiceArray(choiceArray);
-			loadChoices();
-			
-			//format question
-			this.question = String.format(
-			"ArrayList<String> animals = new ArrayList<String>() \n"
-			+ "animals.add(\"pig\");\n" 
-			+ "animals.add(\"chicken\");\n" 
-			+ "animals.add(1, \"unicorn\");\n" 
-			+ "animals.remove(0);\n" 
-			+ "animals.set(0, \"dog\"); \n"
-			+ "System.out.println(animals); \n "
-			);
-
-	        this.answerKey = getAns(choiceArray, "[dog, unicorn]");
-	        this.answer = "[dog, unicorn]";
-	        break;
-		case 9: 
-			//getting random numbers to fill array
-			int[] num = IntStream.generate(() -> new Random().nextInt(10)).limit(6).toArray();		
-
-			question = String.format("What is the value stored in list when:\n"
-										+ "ArrayList<Integer> list = new ArrayList<Integer>();\n"
-										+ "list.add(%d); \n"
-										+ "list.add(%d); \n"
-										+ "list.add(%d); \n"
-										+ "list.add(%d); \n"
-										+ "list.remove(2); \n"
-										+ "list.add(%d); \n"
-										+ "list.add(%d); \n"
-										+ "list.remove(1); \n"
-										+ "list.set(1, %d);", num[0], num[1], num[2], num[3], num[4], num[5], num[5]);
-			
-			//correct answer
-			answer =  String.format("[%d, %d, %d, %d, %d]", num[0], num[5], num[3], num[4], num[5]);
-			//%d is the format() format for an integer to print
-			
-			Set<String> choiceSet = new HashSet<String>();
-			choiceSet.add(answer);
-			
-			while(choiceSet.size() < 5) {
-				choiceSet.add(String.format("[%d, %d, %d, %d, %d]", num[rand.nextInt(6)], num[rand.nextInt(6)], num[rand.nextInt(6)], num[rand.nextInt(6)], num[rand.nextInt(6)]));
-			}
-			
-			for(String s: choiceSet) {
-				choiceArray.add(s);
-			}
-			randomizeChoiceArray(choiceArray);
-			loadChoices();
-			
-			answerKey = getAns(choiceArray, answer);
-			break;
-		case 10: 
-			randomBased1();
-			break;
-		case 11:
-			randomBased2();
-			break;
-		case 12:
-			randomBased3();
-			break;
-		case 13:
-			randomBased4();
-			break;
-		case 14: 
-			randomBased5();
-			break;
-		} 
+		setupQuestion(qNumber);
 	}
 	
-	protected void setupQuestionData(int ID) {
+	protected void setupQuestionData(int qNumber) {
         ConsoleMethods.println("ArrayList class setupQuestionData method");
-		setID(ID);
+		if(qNumber == -1) {
+			qNumber = rand.nextInt(14);
+		}
 		// format question
-		switch (ID) {
+		switch (qNumber) {
 		case 0:
 			choiceEfixed = true;
 			choiceArray.addAll(Arrays.asList("nums.length", "nums.length - 1", "nums.size()", "nums.size() - 1", "None of the above"));
@@ -618,22 +407,11 @@ public class FinalArrayList extends QuestionMC {
         answer = choiceArray.get(index);
         answerKey = getAns(choiceArray, Integer.toString(array[index]));
 	}
-		
-	public CircleQueue createTest() {
-		CircleQueue exam = new CircleQueue();
-		Question q;
-		int loopStart;
-		int loopEnd;
-		
-		loopStart = RandomBased ? TextBased ? 0: 10: TextBased ? 0: null;
-		loopEnd = RandomBased ? TextBased ? 15: 15: TextBased ? 11: null;
-		
-		for(int i = loopStart; i < loopEnd; i++) {
-			q = new FinalArrayList();
-			q.setID(i+1);
-			exam.add(q);
-		}
-		return exam;
+	
+	public static void main (String[] args) {
+		Question q = new FinalArrayList(-1);
+		ConsoleMethods.println( "" + q );
 	}
+	
 }
 

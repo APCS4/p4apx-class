@@ -51,4 +51,28 @@ public class fillDB {
 			db.addQuestion(q.getQuestion(), q.getChoiceA(), q.getChoiceB(), q.getChoiceC(), q.getChoiceD(), q.getChoiceE(), q.getAnswer());
 		}
 	}
+	
+	public static void addMath() throws ClassNotFoundException, SQLException {
+		QuestionMC q;
+		for(int a = 0; a < 4; a++) {
+			q = new FinalMath(a);
+			db.addQuestion(q.getQuestion(), q.getChoiceA(), q.getChoiceB(), q.getChoiceC(), q.getChoiceD(), q.getChoiceE(), q.getAnswer());
+		}
+	}
+	
+	public static void addPolymorph() throws ClassNotFoundException, SQLException {
+		QuestionMC q;
+		for(int a = 0; a < 9; a++) {
+			q = new FinalPolymorphQuestions(a);
+			db.addQuestion(q.getQuestion(), q.getChoiceA(), q.getChoiceB(), q.getChoiceC(), q.getChoiceD(), q.getChoiceE(), q.getAnswer());
+		}
+	}
+	
+	public static void addRecursion() throws ClassNotFoundException, SQLException {
+		QuestionMC q;
+		for(int a = 1; a < 10; a++) {
+			q = new FinalRecursion(a);
+			db.addQuestion(q.getQuestion(), q.getChoiceA(), q.getChoiceB(), q.getChoiceC(), q.getChoiceD(), q.getChoiceE(), q.getAnswer());
+		}
+	}
 }

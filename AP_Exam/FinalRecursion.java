@@ -20,52 +20,53 @@ import java.io.*;
  */
 public class FinalRecursion extends QuestionMC
 {
-	private Random rand;
 	private String code;
-	private String type;
-
-	private String[] ansq = new String[5]; //string array that holds all of the answers
-	private char[] ansc = {'A', 'B', 'C', 'D', 'E'}; //character array to hold a, b, c, d, and e
-	private int correct; //number of the correct substring of the answer array
-	private String ans; //String that contains the correct answer
+	private String type = Integer.toString(rand.nextInt(2) + 1);
 	
-	public FinalRecursion()
+	private String[] loadQuestArray (String q0, String q1, String q2, String q3, String q4)
 	{
-		rand = new Random();	
-		type = Integer.toString(rand.nextInt(2)+1);
-		
-		super.setupQuestion();
-	}
-	
-	@Override
-	public void setupQuestionData() //question method
-	{
-		Random randomize = new Random();
-		int x = randomize.nextInt(3);
-		switch (x)
+		int rand;
+		String[] choices = new String[5];
+		String hold;
+		choices[0] = q0;
+		choices[1] = q1;
+		choices[2] = q2;
+		choices[3] = q3;
+		choices[4] = q4;
+		//randomly swap the Strings
+		for(int i = 0; i <5; i++)
 		{
-			case 0:
-				recursionp4();
-				break;
-			case 1:
-				recursion2();
-				break;
-			case 2: 
-				recursionp3();
-				break;
-			default:
-				break;
+			hold = choices[i];
+			rand = (int) Math.floor(Math.random() * 5);
+			choices[i] = choices[rand];
+			choices[rand] = hold;
 		}
+		return choices;	
+	}
+	public FinalRecursion()
+	{	
+		setupQuestion(qNumber);
 	}
 	
-	private void recursionp4()
+	public FinalRecursion(int qNumber) {
+		setupQuestion(qNumber);
+	}
+	
+	protected void setupQuestionData(int qNumber)
 	{
 		ConsoleMethods.println("Recursion class setupQuestionData method");
-		int bruh = (int)(Math.random() * 4 + 1); //	randomize this number to choose a question 
-		switch (bruh) //switch case for questions
+		
+		String[] ansq = new String[5];//string array that holds all of the answers
+		char[] ansc = {'A', 'B', 'C', 'D', 'E'};//character array to hold a, b, c, d, and e
+		String type = Integer.toString(rand.nextInt(2)+1);
+		
+		if(qNumber == -1) {
+			qNumber = rand.nextInt(9) + 1;
+		}
+		switch (qNumber) //switch case for questions
 		{
 			case 1: //question #1
-				ans = "248832"; //correct answer
+				answer = "248832"; //correct answer
 				
 				this.question = "Consider the following code:\r\n" + //display the question
 				                "\r\n" + 
@@ -84,17 +85,12 @@ public class FinalRecursion extends QuestionMC
 				                "\r\n" + 
 				                "What is the output for the code above?";
 				
-				ansq[0] = "144"; //answer choices
-				ansq[1] = "48";
-				ansq[2] = "1728";
-				ansq[3] = "248832";
-				ansq[4] = "104";
-				
-				shuffle(); //shuffle the array
-				answers(); //display the answers
+				choices = loadQuestArray("144", "48", "1728", "248832", "104");
+				loadChoices(choices);
+				answerKey = getAns(choices, "248832");
 				break;
 			case 2: //question #2
-				ans = "public long factorial(long a)\r\n" + //correct answer 
+				answer = "public long factorial(long a)\r\n" + //correct answer 
 					  "{\r\n" + 
 					  "     if(a <= 1)\r\n" + 
 					  "         return 1;\r\n" + 
@@ -107,37 +103,41 @@ public class FinalRecursion extends QuestionMC
 						        "\r\n" + 
 						        "5!=5*4*3*2*1";
 				
-				ansq[0] = "public long factorial(long a)\r\n" + //answer choices
+				choices = loadQuestArray(
+						"public long factorial(long a)\r\n" + //answer choices
 						  "{\r\n" + 
 						  "    return a * factorial(a-1) * factorial(a-2);\r\n" + 
-						  "}";
-				ansq[1] = "public long factorial(long a)\r\n" + 
-						  "{\r\n" + 
-						  "    long ret = 1;\r\n" + 
-						  "\r\n" + 
-						  "    for(int i = 2; i < a; i++)\r\n" + 
-						  "        ret *= i;\r\n" + 
-						  "\r\n" + 
-						  "    return ret;\r\n" +
-						  "}";
-				ansq[2] = "public long factorial(long a)\r\n" + 
-						  "{\r\n" + 
-						  "     if(a <= 1)\r\n" + 
-						  "         return 1;\r\n" + 
-						  "\r\n" + 
-						  "     return a * factorial(a-1);\r\n" + 
-						  "}";
-				ansq[3] = "public long factorial(long a)\r\n" + 
-						  "{\r\n" + 
-						  "    a * a-1 * a-2 * a-3 * a-4;\r\n" + 
-						  "}";
-				ansq[4] = "None of these";
-				
-				shuffle(); //shuffle the answers
-				answers(); //display the answers
+						  "}", 
+						  
+						  "public long factorial(long a)\r\n" + 
+								  "{\r\n" + 
+								  "    long ret = 1;\r\n" + 
+								  "\r\n" + 
+								  "    for(int i = 2; i < a; i++)\r\n" + 
+								  "        ret *= i;\r\n" + 
+								  "\r\n" + 
+								  "    return ret;\r\n" +
+								  "}",
+								 
+							"public long factorial(long a)\r\n" + 
+								  "{\r\n" + 
+								  "     if(a <= 1)\r\n" + 
+								  "         return 1;\r\n" + 
+					    		  "\r\n" + 
+								  "     return a * factorial(a-1);\r\n" + 
+								  "}",
+								 
+							"public long factorial(long a)\r\n" + 
+									  "{\r\n" + 
+									  "    a * a-1 * a-2 * a-3 * a-4;\r\n" + 
+									  "}",
+									  
+							 "None of these");
+					loadChoices(choices);
+					answerKey = getAns(choices, answer);
 				break;
 			case 3: //question #3
-				ans = "tHISISMYFAVORITEyAYFORPROGRAMMING"; //correct answer
+				answer = "tHISISMYFAVORITEyAYFORPROGRAMMING"; //correct answer
 				
 				this.question = "Consider the following code:\r\n" + //display the question
 						        "\r\n" + 
@@ -167,17 +167,12 @@ public class FinalRecursion extends QuestionMC
 						        "\r\n" + 
 						        "What is the output for the main function above?";
 				
-				ansq[0] = "ThIs iS mY fAvOriTe: YaY fOr PrOgRaMmIng!!!"; //answer choices
-				ansq[1] = "tHIS IS MY FAVORITE: yAY FOR PROGRAMMING!!!";
-				ansq[2] = "tHIS IS MYFAVORITE";
-				ansq[3] = "tHISISMYFAVORITEyAYFORPROGRAMMING";
-				ansq[4] = "ThIs iS mY fAvOriTe";
-				
-				shuffle(); //shuffle the answers
-				answers(); //display the answers
+				choices = loadQuestArray("ThIs iS mY fAvOriTe: YaY fOr PrOgRaMmIng!!!", "tHIS IS MY FAVORITE: yAY FOR PROGRAMMING!!!", "tHIS IS MYFAVORITE", "tHISISMYFAVORITEyAYFORPROGRAMMING", "ThIs iS mY fAvOriTe");
+				loadChoices(choices);
+				answerKey = getAns(choices, answer);
 				break;
 			case 4:
-				ans = "24"; //correct answer
+				answer = "24"; //correct answer
 				
 				this.question = "public static int foo(int a, int b)\r\n" + //display the question
 								"{\r\n" + 
@@ -190,17 +185,12 @@ public class FinalRecursion extends QuestionMC
 								"Based on the code above, what is the value of the following function call:\r\n" +
 								"foo(5,9);";
 				
-				ansq[0] = "36"; //answer choices
-				ansq[1] = "24";
-				ansq[2] = "32";
-				ansq[3] = "18";
-				ansq[4] = "16";
-				
- 				shuffle(); //shuffle the answers
-				answers(); //display the answers
+				choices = loadQuestArray("36", "24", "32", "18", "16");
+				loadChoices(choices);
+				answerKey = getAns(choices, answer);
 				break;
 			case 5:
-				ans = "Error, infinite loop"; //correct answer
+				answer = "Error, infinite loop"; //correct answer
 				
 				this.question = "public void draw()\r\n" + //display the question
 								"{\r\n" + 
@@ -219,68 +209,38 @@ public class FinalRecursion extends QuestionMC
 								"    }\r\n" + 
 								"}";
 				
-				ansq[0] = "11 9 7 5 3 1 -1"; //answer choices
-				ansq[1] = "9 7 5 3 1";
-				ansq[2] = "9 7 5 3 1 -1";
-				ansq[3] = "11 9 7 5 3 1";
-				ansq[4] = "Error, infinite loop";
-				
-				shuffle(); //shuffle the answers
-				answers(); //display the answers
+				choices = loadQuestArray("11 9 7 5 3 1 -1", "9 7 5 3 1", "9 7 5 3 1 -1", "11 9 7 5 3 1", "Error, infinite loop");
+				loadChoices(choices);
+				answerKey = getAns(choices, answer);
 				break;
+			case 6:
+				recursion2(0);
+				break;
+			case 7:
+				recursion2(1);
+				break;
+			case 8:
+				recursion2(2);
+				break;
+			case 9:
+				recursionp3(type);
+				
 				}
 		}
-		
-		private int shuffle() //shuffle function
-		{
-			int num = ansq.length; //get the length of the string array
-			
-			for(int i = 0; i < num; i++) //repeat until end of array is reached
-			{
-				Random rnd = ThreadLocalRandom.current(); 
-				int s = rnd.nextInt(i + 1); //get a random integer
-				
-				String temp = ansq[s]; //sorting process
-				ansq[s] = ansq[i];
-				ansq[i] = temp;
-				
-				if (ans.equals(ansq[i])) //if the strings are equal, correct gets that substring number
-					correct = i;
-			}
-			
-			return correct; //return the correct answer
-		}
-		
-		private void answers() //displaying answer method
-		{
-			this.choiceA = ansq[0]; //display answers
-			this.choiceB = ansq[1];
-			this.choiceC = ansq[2];
-			this.choiceD = ansq[3];
-			this.choiceE = ansq[4];
-			this.answer = ansq[correct];
-			this.answerKey = ansc[correct];
-		}
 	
-		
 		// recursion 2 start
-		private void recursion2() 
+		private void recursion2(int qID) 
 		{
 			
 			int value; 	
-	    	Random r = new Random();
-	    	value = r.nextInt(15);
+	    	value = rand.nextInt(15);
 	    	/** 
 	    	 * We randomized an integer between the numbers 0, 1, 2 in order to switch randomly between 
 	    	 * our three types of questions. All three have different recursion code displayed. 
 	    	 * */ 	
 	    	//number = r.nextInt((max - min) + 1) + min;
-	    	int number = r.nextInt(2);
-		    /** 
-		     * Here we're randomizing integers to assign different numbers to the "value" 
-		     * the "value" is what gets entered in as an input into the recursion methods.
-		     */
-	    	switch(number) 
+	    	
+	    	switch(qID) 
 	    	{
 	    	
 	    	/**
@@ -368,7 +328,7 @@ public class FinalRecursion extends QuestionMC
 		
 	// recursionp3 start
 	    	// placeholder
-	private void recursionp3() 
+	private void recursionp3(String type) 
 	{
 		//generates 2 random numbers as starting x and y value to run sample recursion code
 				int random1 = rand.nextInt(10)+1;

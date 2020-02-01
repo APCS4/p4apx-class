@@ -5,33 +5,37 @@ import model_questions.QuestionMC;
 
 public class TestModeLogic /*extends MenuControl */{
 	
-	int trackQCalls[] = {0,0,0,0,0,0,0,0,0}; //tracks # of times each class was called, starts at 0 (array has 13 spots, ranges from 0-12)
-	public String [][] test = new String[36][8]; //creating a new 2-D String array that will hold in each column: a question type object, and its corresponding 
-	public int testQs = 4;
-	public int testQsFields = 1;				// number of fields in question
+	
+	public int numQTypes = 2; 
+	public int testQs = 8; //THIS CAN CHANGE
+	public int testQsFields = 8;				// number of fields in question, THIS CAN'T CHANGE 
+	public String [][] test = new String[testQs][testQsFields]; //creating a new 2-D String array that will hold in each column: a question type object, and its corresponding 
+
+	int trackQCalls[] = new int [numQTypes];//tracks # of times each class was called, starts at 0 (array has 13 spots, ranges from 0-12)
+	
 
 	
 	public TestModeLogic()
 	{
+		
 		makeQuestions();
+		
+		
 	}
 	
 	
 	public void makeQuestions()
 	{
+		
+		for(int i = 0; i <numQTypes; i++)
+		{
+			trackQCalls[i]=0; 
+		}
+		
+		
 
 		// array of exam questions
-		Question [] questionList = {
-				/*new AP_Exam.FinalMath(),
-				new AP_Exam.FinalCodeAnalysis(),
-				new AP_Exam.FinalBooleanQuestions(),
-				new AP_Exam.finalInfoQuestions(),
-				new AP_Exam.FinalLoopQuestion(), */
-				//new AP_Exam.FinalPolymorphQuestions(), 
-				//new AP_Exam.FinalRecursion(), //has error 
-				new AP_Exam.FinalArrayList(), //perfect 
-				//new AP_Exam.finalStrings() 
-		};
+		
 		
 		// 2D array management values
 		// 1st dimension of 2D array defining number of questions
@@ -42,11 +46,27 @@ public class TestModeLogic /*extends MenuControl */{
 				ANSKEY=7; 				// correct choice
 											  //actual question text, answer options A-E, and the answer text, see below:
 		
-		// this variable instantiation declares that question will always be in the 0 position of the column, choice A will be in the 1 position, etc.	
-		int randNum; //defining variable, random integer
-		int randMax = questionList.length;
+	
 		for (int testQsIndex = 0; testQsIndex < testQs; testQsIndex++) //for each increasing index of the test array
 		{
+			
+			Question [] questionList = {
+					//new AP_Exam.FinalMath(),
+					//new AP_Exam.FinalCodeAnalysis(), 
+					//new AP_Exam.FinalBooleanQuestions(),
+					//new AP_Exam.FinalInfoQuestions(),
+					//new AP_Exam.FinalLoopQuestion(), 
+					new AP_Exam.FinalPolymorphQuestions(), 
+					//new AP_Exam.FinalRecursion(), //has error 
+					new AP_Exam.FinalArrayList(), //perfect 
+					//new AP_Exam.finalStrings() 
+			};
+			
+			// this variable instantiation declares that question will always be in the 0 position of the column, choice A will be in the 1 position, etc.	
+
+			int randNum; //defining variable, random integer
+			int randMax = questionList.length;
+			
 			randNum= getRandNum(randMax); //assignments of Strings to each object of the array
 			Question q = questionList[randNum];		// simplify object reference for assignment
 			QuestionMC mcq = (QuestionMC)q;			// same object cast to MC to access -- Choices	
@@ -83,11 +103,28 @@ public String printAll()
 		String fullTest = ""; 
 		for (int x=0; x< testQs; x++)
 		{
-			for(int y = 0; y< testQsFields; y++)
+			for(int y = 0; y< testQsFields-2; y++)
 			
+				if(y == 0)
+				{
+					fullTest += x+1 + " " + getTestElement(x, y) + "\n\n";
+
+				}
 				
-				fullTest += getTestElement(x, y) + "\n\n";
+				else if (y == 1)
+				fullTest += "\ta. " +  getTestElement(x, y) + "\n\n";
 				
+				else if(y ==2 )
+				fullTest += "\tb. " + getTestElement(x, y) + "\n\n";
+			
+				else if(y ==3)
+				fullTest += "\tc. " + getTestElement(x, y) + "\n\n";
+			
+				else if(y ==4)
+				fullTest += "\td. " + getTestElement(x, y) + "\n\n";
+			
+				else
+				fullTest += "\te. " + getTestElement(x, y) + "\n\n";
 		} 
 		
 		return fullTest;

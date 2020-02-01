@@ -25,13 +25,21 @@ public class FinalPolymorphQuestions extends QuestionMC {
 		}
 		return choices;
 	}
+	
 	public FinalPolymorphQuestions()
 	{
-		setupQuestionData();
-		setupQuestion();
-		Random random1 = new Random();
-		int randp = random1.nextInt(15);
-		switch (randp)
+		setupQuestion(qNumber);
+	}
+	
+	public FinalPolymorphQuestions(int qNumber) {
+		setupQuestion(qNumber);
+	}
+	
+	protected void setupQuestionData(int qNumber) {
+		if(qNumber == -1) {
+			qNumber = rand.nextInt(15);
+		}
+		switch (qNumber)
 		{
 		case 0:
 			this.question = "What is polymorphism?";

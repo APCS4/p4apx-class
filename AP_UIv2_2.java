@@ -582,7 +582,7 @@ public class AP_UIv2_2 extends JFrame implements ActionListener
 				            pausedOnFrame = event.getFrame();
 				        }
 				    });
-					player.play(pausedOnFrame, Integer.MAX_VALUE);
+					player.play(pausedOnFrame, Integer.MAX_VALUE);//f
 				}
 				catch(Exception exc)
 				{

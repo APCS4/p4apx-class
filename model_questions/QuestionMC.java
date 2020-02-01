@@ -8,6 +8,9 @@ public class QuestionMC extends Question {
 
 	// question id or number
 	private int ID;
+	
+	//whether setupQuestionData returns random questions(negative one) or questions in order for database purposes(zero to any other number)
+	protected int qNumber = -1;
 
 	// question setup values
 	protected String choiceA, choiceB, choiceC, choiceD, choiceE;
@@ -53,7 +56,54 @@ public class QuestionMC extends Question {
     protected void setupQuestion() {
     	// This outputs constructor being run
         ConsoleMethods.println("Question class setupQuestion method");
-    	setupQuestionData();
+    	setupQuestionData(qNumber);
+    	
+    	// number of fixed answers
+     	int modBase = choiceEfixed ? answers.length - 1 : answers.length;
+	
+    	// scramble logic using modulo math
+    	aOffset = choiceOffset % modBase;
+    	bOffset = (choiceOffset+1) % modBase;
+    	cOffset = (choiceOffset+2) % modBase;
+    	dOffset = (choiceOffset+3) % modBase;
+    	eOffset = choiceEfixed ? answers.length-1 : (choiceOffset+4) % modBase;
+    	
+    	// call super for standardized assignment
+    	// choice assignment
+    	choices[aOffset] = choiceA;
+    	choices[bOffset] = choiceB;
+    	choices[cOffset] = choiceC;
+    	choices[dOffset] = choiceD;
+    	choices[eOffset] = choiceE;
+    	
+    	// answer key set to match choice offset
+		ConsoleMethods.println("answerKey original: " +answerKey);
+    	switch (answerKey) {
+		case charA:
+			answerKey = answers[aOffset];
+			break;
+		case charB:
+			answerKey = answers[bOffset];
+			break;
+		case charC:
+			answerKey = answers[cOffset];
+			break;
+		case charD:
+			answerKey = answers[dOffset];
+			break;
+		case charE:
+			answerKey = answers[eOffset];
+			break;
+    	}
+		ConsoleMethods.println("answerKey scrambled: " +answerKey);
+
+    }
+    
+    //@Override
+    protected void setupQuestion(int qNumber) {
+    	// This outputs constructor being run
+        ConsoleMethods.println("Question class setupQuestion method");
+    	setupQuestionData(qNumber);
     	
     	// number of fixed answers
      	int modBase = choiceEfixed ? answers.length - 1 : answers.length;
@@ -104,6 +154,20 @@ public class QuestionMC extends Question {
       */
     @Override
     protected void setupQuestionData() {
+    	// This outputs constructor being run
+        ConsoleMethods.println("Question class setupQuestionData method");
+
+    	question = "What type of programming language is Java?";
+		choiceA = "Data-oriented";
+		choiceB = "Iterative";
+		choiceC = "Object-oriented";
+		choiceD = "Imperative";
+		answer = choiceC;
+		answerKey = charC;
+    }    
+    
+    
+    protected void setupQuestionData(int qNumber) {
     	// This outputs constructor being run
         ConsoleMethods.println("Question class setupQuestionData method");
 
@@ -178,12 +242,30 @@ public class QuestionMC extends Question {
     	choiceE = choiceArray.get(4);
     }
     
+    protected void loadChoices(String[] choices) {
+    	choiceA = choices[0];
+    	choiceB = choices[1];
+    	choiceC = choices[2];
+    	choiceD = choices[3];
+    	choiceE = choices[4];
+    }
+    
     protected char getAns(ArrayList<String> choiceArray, String ans) {
     	char retCh = 'X';
     	for(int i = 0; i < choiceArray.size(); i++) {
     		if( choiceArray.get(i).contentEquals(ans)) {
     			retCh = (char)(i + 65);
-    			System.out.println(retCh);
+    			break;
+    		}
+    	}
+    	return retCh;
+    }
+    
+    protected char getAns(String[] choices, String ans) {
+    	char retCh = 'X';
+    	for(int i = 0; i < choices.length; i++) {
+    		if( choices[i].contentEquals(ans)) {
+    			retCh = (char)(i + 65);
     			break;
     		}
     	}

@@ -24,6 +24,10 @@ public class questionDB {
 				fillDB.addCodeAnalysis();
 				fillDB.addInfoQuestion();
 				fillDB.addLoop();
+				fillDB.addMath();
+				fillDB.addPolymorph();
+				fillDB.addRecursion();
+				
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
