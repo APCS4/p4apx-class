@@ -32,6 +32,11 @@ public class FinalCodeAnalysis extends QuestionMC {
      * sets up question by passing question and answer choices to superclass
      */
 	
+	public static void main (String[] args) {
+		Question q = new FinalCodeAnalysis();
+		ConsoleMethods.println( "" + q );
+	}
+	
 	@Override
 	protected void setupQuestionData(int qNumber) {
 		System.out.println("start");
@@ -315,9 +320,4 @@ public class FinalCodeAnalysis extends QuestionMC {
         q.askQuestionConsole();
         return q.getCounterMsg();
     }
-    
-	public static void main (String[] args) {
-		Question q = new FinalCodeAnalysis();
-		ConsoleMethods.println( "" + q );
-	}
 }
