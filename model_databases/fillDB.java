@@ -39,7 +39,7 @@ public class fillDB {
 	public static void addInfoQuestion() throws ClassNotFoundException, SQLException {
 		QuestionMC q;
 		for(int a = 0; a < 16; a++) {
-			q = new finalInfoQuestions(a);
+			q = new FinalInfoQuestions(a);
 			db.addQuestion(q.getQuestion(), q.getChoiceA(), q.getChoiceB(), q.getChoiceC(), q.getChoiceD(), q.getChoiceE(), q.getAnswer());
 		}
 	}

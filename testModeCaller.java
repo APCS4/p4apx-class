@@ -300,7 +300,7 @@ public class testModeCaller extends MenuControl{
 					 
 				case 3: 
 					calls[3]+=1;
-					QuestionMC d = new AP_Exam.finalInfoQuestions();
+					QuestionMC d = new AP_Exam.FinalInfoQuestions();
 					   TestQ.setText(d.getQuestion());
 					chA.setText(d.getChoiceA());
 					chB.setText(d.getChoiceB());
@@ -398,7 +398,7 @@ public class testModeCaller extends MenuControl{
 					break; 
 				case 8: 
 					calls[question]+=1;
-					QuestionMC m = new AP_Exam.finalStrings();
+					QuestionMC m = new AP_Exam.FinalStrings();
 					TestQ.setText(m.getQuestion());
 					chA.setText(m.getChoiceA());
 					chB.setText(m.getChoiceB());
