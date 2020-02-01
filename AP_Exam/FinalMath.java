@@ -38,13 +38,6 @@ public class FinalMath extends QuestionMC {
     	setupQuestion(qNumber);
     }
     
-    // broken?
-    /*public static void main (String[] args) {
-		Question q = new FinalMath();
-		ConsoleMethods.println( "" + q );
-	}
-	*/
-    
     /**
      * Main test method to support console execution
      * 
