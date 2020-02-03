@@ -18,13 +18,10 @@ import model_questions.QuestionMC;
 
 public class FinalStrings extends QuestionMC {
 	
-	private Integer arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10;
+	private int arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10;
 	
 	public FinalStrings()
-    {
-
-		Random rand = new Random();
-		
+    {		
 		 //answer set	
 		arg1 = rand.nextInt(20);
 		arg2 = rand.nextInt(20);
@@ -84,7 +81,7 @@ public class FinalStrings extends QuestionMC {
 		
 			
 		setupQuestionData();
-		setupQuestion();
+		setupQuestion(qNumber);
  
     }
 
@@ -93,13 +90,15 @@ public class FinalStrings extends QuestionMC {
 		ConsoleMethods.println( "" + q );
 	}
 	
-	protected void setupQuestionData() {
-		
-		Random rand = new Random();
+	protected void setupQuestionData(int qNumber) {
+	
+		if(qNumber == -1) {
+			qNumber = rand.nextInt(4);
+		}
 		int random = rand.nextInt(4);
 		
 		
-		switch(random){
+		switch(qNumber){
 		
 		case 0:
 			System.out.println("Case 0");
@@ -114,9 +113,8 @@ public class FinalStrings extends QuestionMC {
 			sentences[6] = "Boba can also be called pearl tea, tapioca tea, and bubble tea";
 			sentences[7] = "The average cup of boba milk tea contains 299 calories and 38 grams of sugar";
 			sentences[8] = "A cool substitute for tapioca pearls are popping boba pearls";
-			
-			Random random1 = new Random();
-			int randp = random1.nextInt(8);
+
+			int randp = rand.nextInt(8);
 	         
 			String sentence;
 			sentence = sentences[randp];
