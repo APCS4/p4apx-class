@@ -74,10 +74,12 @@ public class AP_UI extends MenuControl
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(6, 23, 676, 237);
 		contentPane.add(scrollPane);
+		testQuestion.setBackground(Color.BLACK);
 		scrollPane.setViewportView(testQuestion);
 		
 		testQuestion.setEditable(false);
-		testQuestion.setLineWrap(true);
+		testQuestion.setBorder(null);
+		testQuestion.setBackground(new Color(0, 0, 0, 80));
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
 		scrollPane_1.setBounds(6, 278, 676, 140);
