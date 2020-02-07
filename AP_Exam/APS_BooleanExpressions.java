@@ -135,6 +135,7 @@ public class APS_BooleanExpressions extends QuestionMC {
 			
 			answerKey = 'D';
 			answer = "7";
+			break;
 		}
 	}
 }
