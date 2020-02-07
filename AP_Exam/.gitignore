@@ -82,4 +82,9 @@
 /FinalMath2.class
 /FinalStrings$Shuffle.class
 /FinalStrings.class
+<<<<<<< HEAD
 /APS_PrimitiveTypes.class
+=======
+/APS_Objects.class
+/APS_BooleanExpressions.class
+>>>>>>> branch 'master' of https://github.com/APCS4/p4apx-class.git
